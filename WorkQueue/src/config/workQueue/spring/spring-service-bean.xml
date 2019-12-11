@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- MAIL -->
+	<bean id="org.springframework.mail.javamail.JavaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.sb.pccw.com" />
+		<property name="protocol" value="smtp" />
+		<property name="javaMailProperties">
+        	<props>
+	  			<prop key="mail.smtp.localhost">sb.pccw.com</prop>
+        	</props>
+    	</property>
+		
+	</bean>
+
+	<!-- SERVICE BEAN -->
+	<bean id="com.pccw.wq.service.WorkQueueService" class="com.pccw.wq.service.WorkQueueServiceImpl"/>
+
+	<bean id="com.pccw.wq.service.WorkQueueDataService" class="com.pccw.wq.service.WorkQueueDataServiceImpl" />
+
+	<bean id="com.pccw.wq.service.WorkQueueTriggerService" class="com.pccw.wq.service.WorkQueueTriggerServiceImpl" />
+	
+    <bean id="com.pccw.wq.service.ConstantLkupService" class="com.pccw.wq.service.ConstantLkupServiceImpl"/>
+
+    <bean id="WQNatureCache" class="com.pccw.wq.service.WorkQueueCacheServiceImpl">
+          <property name="constantLkupDAO" ref="WQNatureLkup"/>    
+    </bean>
+
+    <bean id="WQTypeCache" class="com.pccw.wq.service.WorkQueueCacheServiceImpl">
+          <property name="constantLkupDAO" ref="WQTypeLkup"/>    
+    </bean>
+
+    <bean id="WQSubTypeCache" class="com.pccw.wq.service.WorkQueueCacheServiceImpl">
+          <property name="constantLkupDAO" ref="WQSubTypeLkup"/>    
+    </bean>
+    
+    <bean id="WQStatusCache" class="com.pccw.wq.service.WorkQueueCacheServiceImpl">
+          <property name="constantLkupDAO" ref="WQStatusLkup"/>    
+    </bean>
+
+    <bean id="WQReasonCache" class="com.pccw.wq.service.WorkQueueCacheServiceImpl">
+          <property name="constantLkupDAO" ref="WQReasonLkup"/>    
+    </bean>
+
+    <bean id="WQStatusFlowSystem" class="com.pccw.wq.service.WorkQueueStatusFlowServiceImpl">
+          <property name="constantLkupDAO" ref="WQStatusLkupSystem"/>
+    </bean>
+
+    <bean id="RemarkReqdStatusCache" class="com.pccw.wq.service.WorkQueueStatusFlowServiceImpl">
+          <property name="constantLkupDAO" ref="RemarkReqdStatusLkup"/>
+    </bean>
+
+    <bean id="com.pccw.wq.service.WorkQueueReportDataServiceImpl" class="com.pccw.wq.service.WorkQueueReportDataServiceImpl" />
+    
+
+<!--added by ims steven 20130228 start-->
+    <bean id="WQReasonCacheAll" class="com.pccw.wq.service.WorkQueueCacheServiceImpl">
+          <property name="constantLkupDAO" ref="WQReasonLkupAll"/>    
+    </bean>
+    
+    <bean id="WQRemarkReasonStatusCache" class="com.pccw.wq.service.WorkQueueCacheServiceImpl">
+          <property name="constantLkupDAO" ref="WQRemarkReasonStatusLkup"/>    
+    </bean>
+<!--added by ims steven 20130228 end-->
+
+   	<import resource="classpath:/config/workQueue/spring/spring-jdbc.xml"/>
+</beans>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="com.pccw.util.spring.ApplicationContextProvider" class="com.pccw.util.spring.ApplicationContextProvider" />
+ 	
+	<bean id="OracleSelectHelper" class="com.pccw.util.db.OracleSelectHelper" scope="prototype">
+		<property name="dataSource" ref="WorkQueueDS" />
+	</bean>
+
+	<bean id="OracleSelectHelper-WorkQueueDS" class="com.pccw.util.db.OracleSelectHelper" scope="prototype">
+		<property name="dataSource" ref="WorkQueueDS" />
+	</bean>
+
+	<bean id="OracleSpHelper" class="com.pccw.util.db.OracleSpHelper" scope="prototype">
+		<property name="dataSource" ref="WorkQueueDS" />
+	</bean>
+
+	<bean id="OracleSpHelper-WorkQueueDS" class="com.pccw.util.db.OracleSpHelper" scope="prototype">
+		<property name="dataSource" ref="WorkQueueDS" />
+	</bean>
+	
+	<bean id="org.dozer.Mapper" class="org.dozer.DozerBeanMapper">
+		<property name="mappingFiles">
+			<list>
+				<value>dozer-bean-mappings.xml</value>
+			</list>
+		</property>
+	</bean>
+
+    <!-- DAOs --> 
+    <bean id="DaoBaseImpl" class="com.pccw.util.db.DaoBaseImpl" scope="prototype">
+        <property name="dataSource" ref="WorkQueueDS" />
+    </bean>
+
+	<bean id="com.pccw.wq.dao.QWorkQueueDAO" class="com.pccw.wq.dao.QWorkQueueDAOImpl" autowire="byType">
+		<property name="dataSource" ref="WorkQueueDS" />
+		<property name="wqIdORACLE" ref="WqIdSeqDAO" />
+	</bean>
+
+	<bean id="com.pccw.wq.dao.QWqWqNatureAssgnDAO" class="com.pccw.wq.dao.QWqWqNatureAssgnDAOImpl">
+		<property name="dataSource" ref="WorkQueueDS" />
+	</bean>
+
+	<bean id="com.pccw.wq.dao.WorkQueueInquiryDAO" class="com.pccw.wq.dao.WorkQueueInquiryDAOImpl">
+		<property name="dataSource" ref="WorkQueueDS" />
+	</bean>
+
+    <bean id="com.pccw.wq.dao.QWqWpAssgnDAO" class="com.pccw.wq.dao.QWqWpAssgnDAOImpl" parent="DaoBaseImpl"/>
+    
+    <bean id="com.pccw.wq.dao.QWpStaffAssgnDAO" class="com.pccw.wq.dao.QWpStaffAssgnDAOImpl" parent="DaoBaseImpl"/>
+
+    <bean id="com.pccw.wq.dao.QWqWpAssgnStatusLogDAO" class="com.pccw.wq.dao.QWqWpAssgnStatusLogDAOImpl" parent="DaoBaseImpl"/>
+
+    <bean id="com.pccw.wq.dao.QWqRemarksDAO" class="com.pccw.wq.dao.QWqRemarksDAOImpl" parent="DaoBaseImpl">
+            <property name="remarkSeqORACLE" ref="WqRemarkSeqMaxDAO" />
+    </bean>
+		
+	<!-- Lookups --> 
+	<bean id="WQNatureLkup" class="com.pccw.wq.dao.ConstantLkupDAOImpl">
+		<property name="dataSource" ref="WorkQueueDS" />
+        <property name="lkupCode"   value="WQ_NATURE" />		
+	</bean>
+
+    <bean id="WQTypeLkup" class="com.pccw.wq.dao.ConstantLkupDAOImpl">
+        <property name="dataSource" ref="WorkQueueDS" />
+        <property name="lkupCode"   value="WQ_TYPE" />
+    </bean>
+
+    <bean id="WQSubTypeLkup" class="com.pccw.wq.dao.ConstantLkupDAOImpl">
+        <property name="dataSource" ref="WorkQueueDS" />
+        <property name="lkupCode"   value="WQ_SUB_TYPE" />
+    </bean>
+
+    <bean id="WQStatusLkup" class="com.pccw.wq.dao.ConstantLkupDAOImpl">
+        <property name="dataSource" ref="WorkQueueDS" />
+        <property name="lkupCode"   value="WQ_STATUS" />
+    </bean>
+
+    <bean id="WQReasonLkup" class="com.pccw.wq.dao.ConstantLkupDAOImpl">
+        <property name="dataSource" ref="WorkQueueDS" />
+        <property name="lkupCode"   value="FALLOUT_REASON" />
+    </bean>
+	
+    <bean id="WQStatusLkupSystem" class="com.pccw.wq.dao.ConstantLkupDAOImpl">
+        <property name="dataSource" ref="WorkQueueDS" />
+        <property name="lkupCode"   value="WQ_STATUS_FLOW_SYS" />
+    </bean>	
+    
+<!--added by ims steven 20130228 start-->
+    <bean id="WQReasonLkupAll" class="com.pccw.wq.dao.ConstantLkupDAOImpl">
+        <property name="dataSource" ref="WorkQueueDS" />
+        <property name="lkupCode"   value="FALLOUT_REASON','CS_CANCEL_REASON','CS_PENDING_REASON" />
+    </bean>
+    
+    <bean id="WQRemarkReasonStatusLkup" class="com.pccw.wq.dao.ConstantLkupDAOImpl">
+        <property name="dataSource" ref="WorkQueueDS" />
+        <property name="lkupCode"   value="REASON_REMARK_REQ" />
+    </bean>	
+<!--added by ims steven 20130228 end-->
+	
+    <!-- Sequence --> 	
+	<bean id="WqIdSeqDAO" class="com.pccw.util.db.stringOracleType.OraNumberInsertValueFromSelectSeq" scope="prototype">
+		<constructor-arg value=""/>
+		<constructor-arg value="Q_WQ_ID_SEQ"/>
+	</bean>
+	
+    <bean id="WqRemarkSeqMaxDAO" class="com.pccw.util.db.stringOracleType.OraNumberInsertValueFromSelectMax" scope="prototype">
+        <constructor-arg value="remarkSeq" />
+        <constructor-arg value="Q_WQ_REMARKS"/>
+        <constructor-arg value="wqId"/> 
+    </bean>	
+	
+</beans>

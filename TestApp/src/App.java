@@ -5,7 +5,7 @@ public class App {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		methodA("", "");
+		methodA("Roy", "Malinao");
 		methodA("", 0);
 		methodA(0, "");
 	}

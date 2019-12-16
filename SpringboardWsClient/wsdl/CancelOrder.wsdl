@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:conv="http://www.openuri.org/2002/04/soap/conversation/" xmlns:cw="http://www.openuri.org/2002/04/wsdl/conversation/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:jms="http://www.openuri.org/2002/04/wsdl/jms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://www.openuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://www.openuri.org/">
+  <types>
+    <s:schema xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:ope="http://www.openuri.org/" elementFormDefault="qualified" targetNamespace="http://www.openuri.org/">
+      <s:element name="create">
+        <s:complexType>
+          <s:sequence/>
+        </s:complexType>
+      </s:element>
+      <s:element name="createResponse">
+        <s:complexType>
+          <s:sequence/>
+        </s:complexType>
+      </s:element>
+      <s:element name="cancel">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="pOcId" type="s:long"/>
+            <s:element name="pSrvId" type="s:string" minOccurs="0"/>
+            <s:element name="pTypeOfSrv" type="s:string" minOccurs="0"/>
+            <s:element name="pUserId" type="s:string" minOccurs="0"/>
+            <s:element name="pBoc" type="s:string" minOccurs="0"/>
+            <s:element name="pCancelReasonCode" type="s:string" minOccurs="0"/>
+            <s:element name="pCancelRemark" type="s:string" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cancelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="cancelResult" type="ope:ServiceResponseDTO" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ServiceResponseDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="ErrorSeverity" type="s:string" minOccurs="0"/>
+              <s:element name="RejectMessage" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ValueObject">
+        <s:sequence>
+          <s:element name="ValidationRulesID" type="s:string" minOccurs="0"/>
+          <s:element name="ObjectAction" type="s:int"/>
+          <s:element name="ObjectUniqueID" type="s:string" minOccurs="0"/>
+          <s:element name="ModifiedFields" type="ope:ArrayOfString" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element name="String" type="s:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+
+  </types>
+  <message name="createSoapIn">
+    <part name="parameters" element="s0:create"/>
+  </message>
+  <message name="createSoapOut">
+    <part name="parameters" element="s0:createResponse"/>
+  </message>
+  <message name="cancelSoapIn">
+    <part name="parameters" element="s0:cancel"/>
+  </message>
+  <message name="cancelSoapOut">
+    <part name="parameters" element="s0:cancelResponse"/>
+  </message>
+  <portType name="CancelOrderSoap">
+    <operation name="create">
+      <input message="s0:createSoapIn"/>
+      <output message="s0:createSoapOut"/>
+    </operation>
+    <operation name="cancel">
+      <input message="s0:cancelSoapIn"/>
+      <output message="s0:cancelSoapOut"/>
+    </operation>
+  </portType>
+  <binding name="CancelOrderSoap" type="s0:CancelOrderSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="create">
+      <soap:operation soapAction="http://www.openuri.org/create" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="cancel">
+      <soap:operation soapAction="http://www.openuri.org/cancel" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="CancelOrder">
+    <port name="CancelOrderSoap" binding="s0:CancelOrderSoap">
+      <soap:address location="http://bomeaidev:7581/LtsSbOrderGateway/ws/CancelOrder.jws"/>
+    </port>
+  </service>
+</definitions>

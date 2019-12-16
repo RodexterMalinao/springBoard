@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:conv="http://www.openuri.org/2002/04/soap/conversation/" xmlns:cw="http://www.openuri.org/2002/04/wsdl/conversation/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:jms="http://www.openuri.org/2002/04/wsdl/jms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://www.openuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://www.openuri.org/">
+  <types>
+    <s:schema xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:ope="http://www.openuri.org/" elementFormDefault="qualified" targetNamespace="http://www.openuri.org/">
+      <s:element name="createAccountInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="accountInfoDTO" type="ope:AccountInfoDTO" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createAccountInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="createAccountInfoResult" type="ope:AccountInfoResponse" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AccountInfoDTO">
+        <s:sequence>
+          <s:element name="CustNum" type="s:string" minOccurs="0"/>
+          <s:element name="CustCatg" type="s:string" minOccurs="0"/>
+          <s:element name="SystemId" type="s:string" minOccurs="0"/>
+          <s:element name="AcctName" type="s:string" minOccurs="0"/>
+          <s:element name="AcctType" type="s:string" minOccurs="0"/>
+          <s:element name="AcctSubType" type="s:string" minOccurs="0"/>
+          <s:element name="BillFreq" type="s:string" minOccurs="0"/>
+          <s:element name="BillLang" type="s:string" minOccurs="0"/>
+          <s:element name="EffStartDate" type="s:string" minOccurs="0"/>
+          <s:element name="EffEndDate" type="s:string" minOccurs="0"/>
+          <s:element name="LastUpdBy" type="s:string" minOccurs="0"/>
+          <s:element name="NetvigatorInd" type="s:string" minOccurs="0"/>
+          <s:element name="CustAddressDTO" type="ope:CustAddressDTO" minOccurs="0"/>
+          <s:element name="CustFuturePaymentMethodDTO" type="ope:CustFuturePaymentMethodDTO" minOccurs="0"/>
+          <s:element name="EmailAddr" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustAddressDTO">
+        <s:sequence>
+          <s:element name="Acctnb" type="s:long"/>
+          <s:element name="AddrChi1" type="s:string" minOccurs="0"/>
+          <s:element name="AddrChi2" type="s:string" minOccurs="0"/>
+          <s:element name="AddrChi3" type="s:string" minOccurs="0"/>
+          <s:element name="AddrID" type="s:int"/>
+          <s:element name="AddrIDStr" type="s:string" minOccurs="0"/>
+          <s:element name="AddrLine1" type="s:string" minOccurs="0"/>
+          <s:element name="AddrLine2" type="s:string" minOccurs="0"/>
+          <s:element name="AddrLine3" type="s:string" minOccurs="0"/>
+          <s:element name="AddrLine4" type="s:string" minOccurs="0"/>
+          <s:element name="AddrLine5" type="s:string" minOccurs="0"/>
+          <s:element name="AddrLine6" type="s:string" minOccurs="0"/>
+          <s:element name="AddrType" type="s:string" minOccurs="0"/>
+          <s:element name="AddrUsage" type="s:string" minOccurs="0"/>
+          <s:element name="AffectAccount" type="ope:ArrayOfString" minOccurs="0"/>
+          <s:element name="AffectCust" type="ope:ArrayOfString" minOccurs="0"/>
+          <s:element name="AffectFSA" type="ope:ArrayOfString" minOccurs="0"/>
+          <s:element name="AreaCode" type="s:string" minOccurs="0"/>
+          <s:element name="AreaDesc" type="s:string" minOccurs="0"/>
+          <s:element name="BuildNum" type="s:string" minOccurs="0"/>
+          <s:element name="Custnb" type="s:string" minOccurs="0"/>
+          <s:element name="District" type="s:string" minOccurs="0"/>
+          <s:element name="DistrictNum" type="s:string" minOccurs="0"/>
+          <s:element name="FloorNum" type="s:string" minOccurs="0"/>
+          <s:element name="ForeignAddrFlag" type="s:string" minOccurs="0"/>
+          <s:element name="Hit" type="s:string" minOccurs="0"/>
+          <s:element name="HlLotNum" type="s:string" minOccurs="0"/>
+          <s:element name="LdLotNum" type="s:string" minOccurs="0"/>
+          <s:element name="NewAssignEquipment" type="s:string" minOccurs="0"/>
+          <s:element name="PoBoxNum" type="s:string" minOccurs="0"/>
+          <s:element name="PostalCode" type="s:string" minOccurs="0"/>
+          <s:element name="PostalRegion" type="s:string" minOccurs="0"/>
+          <s:element name="Section" type="s:string" minOccurs="0"/>
+          <s:element name="SectionCode" type="s:string" minOccurs="0"/>
+          <s:element name="Serialno" type="s:string" minOccurs="0"/>
+          <s:element name="Street" type="s:string" minOccurs="0"/>
+          <s:element name="StreetCatCode" type="s:string" minOccurs="0"/>
+          <s:element name="StreetCatCodeDesc" type="s:string" minOccurs="0"/>
+          <s:element name="StreetName" type="s:string" minOccurs="0"/>
+          <s:element name="StreetNum" type="s:string" minOccurs="0"/>
+          <s:element name="Subsrlno" type="s:int"/>
+          <s:element name="UnitNum" type="s:string" minOccurs="0"/>
+          <s:element name="AttnBillName" type="s:string" minOccurs="0"/>
+          <s:element name="City" type="s:string" minOccurs="0"/>
+          <s:element name="Country" type="s:string" minOccurs="0"/>
+          <s:element name="Province" type="s:string" minOccurs="0"/>
+          <s:element name="SecBillName" type="s:string" minOccurs="0"/>
+          <s:element name="PbLastUpdDate" type="s:dateTime" minOccurs="0"/>
+          <s:element name="PbLastUpdBy" type="s:string" minOccurs="0"/>
+          <s:element name="PbSecLastUpdDate" type="s:dateTime" minOccurs="0"/>
+          <s:element name="PbSecLastUpdBy" type="s:string" minOccurs="0"/>
+          <s:element name="State" type="s:string" minOccurs="0"/>
+          <s:element name="Fsa" type="s:string" minOccurs="0"/>
+          <s:element name="BillingAcctDtl" type="s:string" minOccurs="0"/>
+          <s:element name="SrvId" type="s:string" minOccurs="0"/>
+          <s:element name="SrvNum" type="s:string" minOccurs="0"/>
+          <s:element name="SrvBdryNum" type="s:string" minOccurs="0"/>
+          <s:element name="SbiInd" type="s:string" minOccurs="0"/>
+          <s:element name="AftInd" type="s:string" minOccurs="0"/>
+          <s:element name="LastUpdBy" type="s:string" minOccurs="0"/>
+          <s:element name="SysId" type="s:string" minOccurs="0"/>
+          <s:element name="EffDate" type="s:string" minOccurs="0"/>
+          <s:element name="TerminateDate" type="s:string" minOccurs="0"/>
+          <s:element name="ShopCode" type="s:string" minOccurs="0"/>
+          <s:element name="GiftContactName" type="s:string" minOccurs="0"/>
+          <s:element name="GiftContactNumber" type="s:string" minOccurs="0"/>
+          <s:element name="WeeklyReportIND" type="s:string" minOccurs="0"/>
+          <s:element name="IsExistPendingAddr" type="s:string" minOccurs="0"/>
+          <s:element name="modify" type="s:boolean"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element name="String" type="s:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustFuturePaymentMethodDTO">
+        <s:sequence>
+          <s:element name="AutopayClearingBankCode" type="s:string" minOccurs="0"/>
+          <s:element name="AutopayClearingBankCodem" type="s:string" minOccurs="0"/>
+          <s:element name="SerialNum" type="s:string" minOccurs="0"/>
+          <s:element name="AcctNum" type="s:string" minOccurs="0"/>
+          <s:element name="AssRowId" type="s:string" minOccurs="0"/>
+          <s:element name="AssRowSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="AuthzReportDate" type="s:string" minOccurs="0"/>
+          <s:element name="AutopayApplDate" type="s:string" minOccurs="0"/>
+          <s:element name="AutopayStatementInd" type="s:string" minOccurs="0"/>
+          <s:element name="BankAcctHolderIdNum" type="s:string" minOccurs="0"/>
+          <s:element name="BankAcctHolderIdType" type="s:string" minOccurs="0"/>
+          <s:element name="BankAcctHolderName" type="s:string" minOccurs="0"/>
+          <s:element name="BankAcctNum" type="s:string" minOccurs="0"/>
+          <s:element name="BankCode" type="s:string" minOccurs="0"/>
+          <s:element name="BankName" type="s:string" minOccurs="0"/>
+          <s:element name="BillFmt" type="s:string" minOccurs="0"/>
+          <s:element name="BillMedia" type="s:string" minOccurs="0"/>
+          <s:element name="BranchCode" type="s:string" minOccurs="0"/>
+          <s:element name="CccNum" type="s:string" minOccurs="0"/>
+          <s:element name="CcCreateDate" type="s:string" minOccurs="0"/>
+          <s:element name="ClearingBankCd" type="s:string" minOccurs="0"/>
+          <s:element name="CreditCardExpiryDate" type="s:string" minOccurs="0"/>
+          <s:element name="CreditCardHolderName" type="s:string" minOccurs="0"/>
+          <s:element name="CreditCardIdDocNum" type="s:string" minOccurs="0"/>
+          <s:element name="CreditCardIdDocType" type="s:string" minOccurs="0"/>
+          <s:element name="CreditCardIssueBank" type="s:string" minOccurs="0"/>
+          <s:element name="CreditCardNum" type="s:string" minOccurs="0"/>
+          <s:element name="CreditCardSerialNum" type="s:string" minOccurs="0"/>
+          <s:element name="CreditCardType" type="s:string" minOccurs="0"/>
+          <s:element name="CustNum" type="s:string" minOccurs="0"/>
+          <s:element name="EffEndDate" type="s:string" minOccurs="0"/>
+          <s:element name="EffStartDate" type="s:string" minOccurs="0"/>
+          <s:element name="IIndicator" type="s:string" minOccurs="0"/>
+          <s:element name="LastUpdateProcess" type="s:string" minOccurs="0"/>
+          <s:element name="PayMethodKey" type="s:string" minOccurs="0"/>
+          <s:element name="PayMethodType" type="s:string" minOccurs="0"/>
+          <s:element name="RejDesc" type="s:string" minOccurs="0"/>
+          <s:element name="RowId" type="s:string" minOccurs="0"/>
+          <s:element name="RowSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="SystemId" type="s:string" minOccurs="0"/>
+          <s:element name="TermCd" type="s:string" minOccurs="0"/>
+          <s:element name="UserId" type="s:string" minOccurs="0"/>
+          <s:element name="AutopayUpperLimitAmt" type="s:string" minOccurs="0"/>
+          <s:element name="ThirdPartyInd" type="s:string" minOccurs="0"/>
+          <s:element name="Status" type="s:string" minOccurs="0"/>
+          <s:element name="ShopCode" type="s:string" minOccurs="0"/>
+          <s:element name="DomainType" type="s:string" minOccurs="0"/>
+          <s:element name="WaivePaperInd" type="s:string" minOccurs="0"/>
+          <s:element name="WaivePaperRemarks" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AccountInfoResponse">
+        <s:complexContent>
+          <s:extension base="ope:ServiceResponse">
+            <s:sequence>
+              <s:element name="AccountDTO" type="ope:AccountDTO" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ServiceResponse">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="ErrorSeverity" type="s:string" minOccurs="0"/>
+              <s:element name="RejectMessage" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ValueObject">
+        <s:sequence>
+          <s:element name="ValidationRulesID" type="s:string" minOccurs="0"/>
+          <s:element name="ObjectAction" type="s:int"/>
+          <s:element name="ObjectUniqueID" type="s:string" minOccurs="0"/>
+          <s:element name="ModifiedFields" type="ope:ArrayOfString" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AccountDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="MobSmsAlert" type="s:string" minOccurs="0"/>
+              <s:element name="AddressMaintDTO" type="ope:AddressMaintDTO" minOccurs="0"/>
+              <s:element name="ExistingPaymentMethodDTO" type="ope:PaymentMethodDTO" minOccurs="0"/>
+              <s:element name="FuturePaymentMethodDTO" type="ope:PaymentMethodDTO" minOccurs="0"/>
+              <s:element name="PayMethodChangeInd" type="s:boolean"/>
+              <s:element name="BillPeriodChangeInd" type="s:boolean"/>
+              <s:element name="SecBillName" type="s:string" minOccurs="0"/>
+              <s:element name="AttnBillName" type="s:string" minOccurs="0"/>
+              <s:element name="CrstRemarks" type="s:string" minOccurs="0"/>
+              <s:element name="Supstafg" type="s:string" minOccurs="0"/>
+              <s:element name="Supendfg" type="s:string" minOccurs="0"/>
+              <s:element name="ImsRowSeqNbCustblac" type="s:int"/>
+              <s:element name="BillDetailsInd" type="s:string" minOccurs="0"/>
+              <s:element name="AcctName" type="s:string" minOccurs="0"/>
+              <s:element name="AcctNum" type="s:string" minOccurs="0"/>
+              <s:element name="AcctStatus" type="s:string" minOccurs="0"/>
+              <s:element name="AcctSubType" type="s:string" minOccurs="0"/>
+              <s:element name="AcctType" type="s:string" minOccurs="0"/>
+              <s:element name="AutopayUpperLimitAmt" type="s:string" minOccurs="0"/>
+              <s:element name="BadDebtInd" type="s:string" minOccurs="0"/>
+              <s:element name="BadDebtStatus" type="s:string" minOccurs="0"/>
+              <s:element name="BillEnqInd" type="s:string" minOccurs="0"/>
+              <s:element name="BillFmtInd" type="s:string" minOccurs="0"/>
+              <s:element name="BillFreq" type="s:string" minOccurs="0"/>
+              <s:element name="BillingAddrId" type="s:string" minOccurs="0"/>
+              <s:element name="BillLang" type="s:string" minOccurs="0"/>
+              <s:element name="BillPeriod" type="s:string" minOccurs="0"/>
+              <s:element name="BillStsDate" type="s:string" minOccurs="0"/>
+              <s:element name="BlacklistInd" type="s:string" minOccurs="0"/>
+              <s:element name="CardPackInd" type="s:string" minOccurs="0"/>
+              <s:element name="CcCreateDate" type="s:string" minOccurs="0"/>
+              <s:element name="ChiNameCd" type="s:string" minOccurs="0"/>
+              <s:element name="CreditClass" type="s:string" minOccurs="0"/>
+              <s:element name="CreditLimit" type="s:string" minOccurs="0"/>
+              <s:element name="CreditStartDate" type="s:string" minOccurs="0"/>
+              <s:element name="NewCreditStatus" type="s:string" minOccurs="0"/>
+              <s:element name="ExistingCreditStatus" type="s:string" minOccurs="0"/>
+              <s:element name="CredMngtHoldDate" type="s:string" minOccurs="0"/>
+              <s:element name="CredMngtHoldRdate" type="s:string" minOccurs="0"/>
+              <s:element name="CredMngtHoldRemark" type="s:string" minOccurs="0"/>
+              <s:element name="CurrOSAdverAmt" type="s:string" minOccurs="0"/>
+              <s:element name="CurrOSHktAmt" type="s:string" minOccurs="0"/>
+              <s:element name="CustCatg" type="s:string" minOccurs="0"/>
+              <s:element name="CustNum" type="s:string" minOccurs="0"/>
+              <s:element name="DemnoteStsCd" type="s:string" minOccurs="0"/>
+              <s:element name="DonationRoundingAmt" type="s:string" minOccurs="0"/>
+              <s:element name="DtlCCCreateDate" type="s:string" minOccurs="0"/>
+              <s:element name="EffEndDate" type="s:string" minOccurs="0"/>
+              <s:element name="EffStartDate" type="s:string" minOccurs="0"/>
+              <s:element name="EmailAddr" type="s:string" minOccurs="0"/>
+              <s:element name="FinalAcctDate" type="s:string" minOccurs="0"/>
+              <s:element name="ImsRowSeqNb" type="s:string" minOccurs="0"/>
+              <s:element name="InvGenBefInd" type="s:string" minOccurs="0"/>
+              <s:element name="InvToBdas" type="s:string" minOccurs="0"/>
+              <s:element name="LastInvPaymentDueDate" type="s:string" minOccurs="0"/>
+              <s:element name="LastUpdProcess" type="s:string" minOccurs="0"/>
+              <s:element name="LastUpdBy" type="s:string" minOccurs="0"/>
+              <s:element name="LtsRowSeqNb" type="s:string" minOccurs="0"/>
+              <s:element name="MailingName" type="s:string" minOccurs="0"/>
+              <s:element name="ManualSuppEndMth" type="s:string" minOccurs="0"/>
+              <s:element name="ManualSuppStMth" type="s:string" minOccurs="0"/>
+              <s:element name="NetvigatorInd" type="s:string" minOccurs="0"/>
+              <s:element name="PrintCrLimitInd" type="s:string" minOccurs="0"/>
+              <s:element name="Remarks" type="s:string" minOccurs="0"/>
+              <s:element name="RentBillToDate" type="s:string" minOccurs="0"/>
+              <s:element name="RowSeqNb" type="s:string" minOccurs="0"/>
+              <s:element name="SortOption" type="s:string" minOccurs="0"/>
+              <s:element name="SuppCnt" type="s:string" minOccurs="0"/>
+              <s:element name="SystemId" type="s:string" minOccurs="0"/>
+              <s:element name="TentIdNum" type="s:string" minOccurs="0"/>
+              <s:element name="TentIdType" type="s:string" minOccurs="0"/>
+              <s:element name="TentName" type="s:string" minOccurs="0"/>
+              <s:element name="WrittenOffAmt" type="s:string" minOccurs="0"/>
+              <s:element name="PendingBillPeriod" type="s:string" minOccurs="0"/>
+              <s:element name="TariffGrp" type="s:string" minOccurs="0"/>
+              <s:element name="SubrAGROnlyInd" type="s:boolean"/>
+              <s:element name="MobRowSeqNb" type="s:int"/>
+              <s:element name="StatusReaCd" type="s:string" minOccurs="0"/>
+              <s:element name="SmsNum" type="s:string" minOccurs="0"/>
+              <s:element name="RetMailDate" type="s:string" minOccurs="0"/>
+              <s:element name="Ccc" type="s:string" minOccurs="0"/>
+              <s:element name="SplitAcctCode" type="s:string" minOccurs="0"/>
+              <s:element name="Poid" type="s:string" minOccurs="0"/>
+              <s:element name="InitDunGrp" type="s:string" minOccurs="0"/>
+              <s:element name="MobLastUpdDate" type="s:string" minOccurs="0"/>
+              <s:element name="MobLastUpdBy" type="s:string" minOccurs="0"/>
+              <s:element name="MobCcCreateDate" type="s:string" minOccurs="0"/>
+              <s:element name="MobLastUpdProcess" type="s:string" minOccurs="0"/>
+              <s:element name="MobBillMediaDTOArray" type="ope:ArrayOfMOBBillMediaDTO" minOccurs="0"/>
+              <s:element name="ShopCode" type="s:string" minOccurs="0"/>
+              <s:element name="ExistBillDay" type="s:string" minOccurs="0"/>
+              <s:element name="NextBillDate" type="s:string" minOccurs="0"/>
+              <s:element name="LastBillDate" type="s:string" minOccurs="0"/>
+              <s:element name="PendEffBillDate" type="s:string" minOccurs="0"/>
+              <s:element name="Channel" type="s:string" minOccurs="0"/>
+              <s:element name="PoolEffDate" type="s:string" minOccurs="0"/>
+              <s:element name="PoolTermDate" type="s:string" minOccurs="0"/>
+              <s:element name="DisplayPoolEffDate" type="s:string" minOccurs="0"/>
+              <s:element name="DisplayPoolTermDate" type="s:string" minOccurs="0"/>
+              <s:element name="PoolIndType" type="s:string" minOccurs="0"/>
+              <s:element name="E0060CreditLimit" type="s:string" minOccurs="0"/>
+              <s:element name="PaperBill" type="s:string" minOccurs="0"/>
+              <s:element name="OnLanAtWork" type="s:string" minOccurs="0"/>
+              <s:element name="PortalErrorText" type="s:string" minOccurs="0"/>
+              <s:element name="AcctStatusDate" type="s:string" minOccurs="0"/>
+              <s:element name="EBillAgent" type="s:string" minOccurs="0"/>
+              <s:element name="RedemMedia" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="AddressMaintDTO">
+        <s:complexContent>
+          <s:extension base="ope:AddressDTO">
+            <s:sequence>
+              <s:element name="AffectedAddrList" type="ope:ArrayOfAddressDTO" minOccurs="0"/>
+              <s:element name="AffectedMAList" type="ope:ArrayOfAddressDTO" minOccurs="0"/>
+              <s:element name="AffectedBAList" type="ope:ArrayOfAddressDTO" minOccurs="0"/>
+              <s:element name="AffectedDAList" type="ope:ArrayOfAddressDTO" minOccurs="0"/>
+              <s:element name="AffectedAddress" type="ope:List" minOccurs="0"/>
+              <s:element name="MailingAddressList" type="ope:List" minOccurs="0"/>
+              <s:element name="BillingAddressList" type="ope:List" minOccurs="0"/>
+              <s:element name="DeliveryAddressList" type="ope:List" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="AddressDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="Acctnb" type="s:long"/>
+              <s:element name="AddrChi1" type="s:string" minOccurs="0"/>
+              <s:element name="AddrChi2" type="s:string" minOccurs="0"/>
+              <s:element name="AddrChi3" type="s:string" minOccurs="0"/>
+              <s:element name="AddrID" type="s:int"/>
+              <s:element name="AddrIDStr" type="s:string" minOccurs="0"/>
+              <s:element name="AddrLine1" type="s:string" minOccurs="0"/>
+              <s:element name="AddrLine2" type="s:string" minOccurs="0"/>
+              <s:element name="AddrLine3" type="s:string" minOccurs="0"/>
+              <s:element name="AddrLine4" type="s:string" minOccurs="0"/>
+              <s:element name="AddrLine5" type="s:string" minOccurs="0"/>
+              <s:element name="AddrLine6" type="s:string" minOccurs="0"/>
+              <s:element name="AddrType" type="s:string" minOccurs="0"/>
+              <s:element name="AddrUsage" type="s:string" minOccurs="0"/>
+              <s:element name="AffectAccount" type="ope:ArrayOfString" minOccurs="0"/>
+              <s:element name="AffectCust" type="ope:ArrayOfString" minOccurs="0"/>
+              <s:element name="AffectFSA" type="ope:ArrayOfString" minOccurs="0"/>
+              <s:element name="AreaCode" type="s:string" minOccurs="0"/>
+              <s:element name="AreaDesc" type="s:string" minOccurs="0"/>
+              <s:element name="BuildNum" type="s:string" minOccurs="0"/>
+              <s:element name="Custnb" type="s:string" minOccurs="0"/>
+              <s:element name="District" type="s:string" minOccurs="0"/>
+              <s:element name="DistrictNum" type="s:string" minOccurs="0"/>
+              <s:element name="FloorNum" type="s:string" minOccurs="0"/>
+              <s:element name="ForeignAddrFlag" type="s:string" minOccurs="0"/>
+              <s:element name="Hit" type="s:string" minOccurs="0"/>
+              <s:element name="HlLotNum" type="s:string" minOccurs="0"/>
+              <s:element name="LdLotNum" type="s:string" minOccurs="0"/>
+              <s:element name="NewAssignEquipment" type="s:string" minOccurs="0"/>
+              <s:element name="PoBoxNum" type="s:string" minOccurs="0"/>
+              <s:element name="PostalCode" type="s:string" minOccurs="0"/>
+              <s:element name="PostalRegion" type="s:string" minOccurs="0"/>
+              <s:element name="Section" type="s:string" minOccurs="0"/>
+              <s:element name="SectionCode" type="s:string" minOccurs="0"/>
+              <s:element name="Serialno" type="s:string" minOccurs="0"/>
+              <s:element name="Street" type="s:string" minOccurs="0"/>
+              <s:element name="StreetCatCode" type="s:string" minOccurs="0"/>
+              <s:element name="StreetCatCodeDesc" type="s:string" minOccurs="0"/>
+              <s:element name="StreetName" type="s:string" minOccurs="0"/>
+              <s:element name="StreetNum" type="s:string" minOccurs="0"/>
+              <s:element name="Subsrlno" type="s:int"/>
+              <s:element name="UnitNum" type="s:string" minOccurs="0"/>
+              <s:element name="AttnBillName" type="s:string" minOccurs="0"/>
+              <s:element name="City" type="s:string" minOccurs="0"/>
+              <s:element name="Country" type="s:string" minOccurs="0"/>
+              <s:element name="Province" type="s:string" minOccurs="0"/>
+              <s:element name="SecBillName" type="s:string" minOccurs="0"/>
+              <s:element name="PbLastUpdDate" type="s:dateTime" minOccurs="0"/>
+              <s:element name="PbLastUpdBy" type="s:string" minOccurs="0"/>
+              <s:element name="PbSecLastUpdDate" type="s:dateTime" minOccurs="0"/>
+              <s:element name="PbSecLastUpdBy" type="s:string" minOccurs="0"/>
+              <s:element name="State" type="s:string" minOccurs="0"/>
+              <s:element name="Fsa" type="s:string" minOccurs="0"/>
+              <s:element name="BillingAcctDtl" type="s:string" minOccurs="0"/>
+              <s:element name="SrvId" type="s:string" minOccurs="0"/>
+              <s:element name="SrvNum" type="s:string" minOccurs="0"/>
+              <s:element name="SrvBdryNum" type="s:string" minOccurs="0"/>
+              <s:element name="SbiInd" type="s:string" minOccurs="0"/>
+              <s:element name="AftInd" type="s:string" minOccurs="0"/>
+              <s:element name="LastUpdBy" type="s:string" minOccurs="0"/>
+              <s:element name="SysId" type="s:string" minOccurs="0"/>
+              <s:element name="EffDate" type="s:string" minOccurs="0"/>
+              <s:element name="TerminateDate" type="s:string" minOccurs="0"/>
+              <s:element name="ShopCode" type="s:string" minOccurs="0"/>
+              <s:element name="GiftContactName" type="s:string" minOccurs="0"/>
+              <s:element name="GiftContactNumber" type="s:string" minOccurs="0"/>
+              <s:element name="WeeklyReportIND" type="s:string" minOccurs="0"/>
+              <s:element name="IsExistPendingAddr" type="s:string" minOccurs="0"/>
+              <s:element name="modify" type="s:boolean"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfAddressDTO">
+        <s:sequence>
+          <s:element name="AddressDTO" type="ope:AddressDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="List">
+        <s:sequence>
+          <s:element name="item" type="s:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PaymentMethodDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="AutopayClearingBankCode" type="s:string" minOccurs="0"/>
+              <s:element name="AutopayClearingBankCodem" type="s:string" minOccurs="0"/>
+              <s:element name="SerialNum" type="s:string" minOccurs="0"/>
+              <s:element name="AcctNum" type="s:string" minOccurs="0"/>
+              <s:element name="AssRowId" type="s:string" minOccurs="0"/>
+              <s:element name="AssRowSeqNum" type="s:string" minOccurs="0"/>
+              <s:element name="AuthzReportDate" type="s:string" minOccurs="0"/>
+              <s:element name="AutopayApplDate" type="s:string" minOccurs="0"/>
+              <s:element name="AutopayStatementInd" type="s:string" minOccurs="0"/>
+              <s:element name="BankAcctHolderIdNum" type="s:string" minOccurs="0"/>
+              <s:element name="BankAcctHolderIdType" type="s:string" minOccurs="0"/>
+              <s:element name="BankAcctHolderName" type="s:string" minOccurs="0"/>
+              <s:element name="BankAcctNum" type="s:string" minOccurs="0"/>
+              <s:element name="BankCode" type="s:string" minOccurs="0"/>
+              <s:element name="BankName" type="s:string" minOccurs="0"/>
+              <s:element name="BillFmt" type="s:string" minOccurs="0"/>
+              <s:element name="BillMedia" type="s:string" minOccurs="0"/>
+              <s:element name="BranchCode" type="s:string" minOccurs="0"/>
+              <s:element name="CccNum" type="s:string" minOccurs="0"/>
+              <s:element name="CcCreateDate" type="s:string" minOccurs="0"/>
+              <s:element name="ClearingBankCd" type="s:string" minOccurs="0"/>
+              <s:element name="CreditCardExpiryDate" type="s:string" minOccurs="0"/>
+              <s:element name="CreditCardHolderName" type="s:string" minOccurs="0"/>
+              <s:element name="CreditCardIdDocNum" type="s:string" minOccurs="0"/>
+              <s:element name="CreditCardIdDocType" type="s:string" minOccurs="0"/>
+              <s:element name="CreditCardIssueBank" type="s:string" minOccurs="0"/>
+              <s:element name="CreditCardNum" type="s:string" minOccurs="0"/>
+              <s:element name="CreditCardSerialNum" type="s:string" minOccurs="0"/>
+              <s:element name="CreditCardType" type="s:string" minOccurs="0"/>
+              <s:element name="CustNum" type="s:string" minOccurs="0"/>
+              <s:element name="EffEndDate" type="s:string" minOccurs="0"/>
+              <s:element name="EffStartDate" type="s:string" minOccurs="0"/>
+              <s:element name="IIndicator" type="s:string" minOccurs="0"/>
+              <s:element name="LastUpdateProcess" type="s:string" minOccurs="0"/>
+              <s:element name="PayMethodKey" type="s:string" minOccurs="0"/>
+              <s:element name="PayMethodType" type="s:string" minOccurs="0"/>
+              <s:element name="RejDesc" type="s:string" minOccurs="0"/>
+              <s:element name="RowId" type="s:string" minOccurs="0"/>
+              <s:element name="RowSeqNum" type="s:string" minOccurs="0"/>
+              <s:element name="SystemId" type="s:string" minOccurs="0"/>
+              <s:element name="TermCd" type="s:string" minOccurs="0"/>
+              <s:element name="UserId" type="s:string" minOccurs="0"/>
+              <s:element name="AutopayUpperLimitAmt" type="s:string" minOccurs="0"/>
+              <s:element name="ThirdPartyInd" type="s:string" minOccurs="0"/>
+              <s:element name="Status" type="s:string" minOccurs="0"/>
+              <s:element name="ShopCode" type="s:string" minOccurs="0"/>
+              <s:element name="DomainType" type="s:string" minOccurs="0"/>
+              <s:element name="WaivePaperInd" type="s:string" minOccurs="0"/>
+              <s:element name="WaivePaperRemarks" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfMOBBillMediaDTO">
+        <s:sequence>
+          <s:element name="MOBBillMediaDTO" type="ope:MOBBillMediaDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MOBBillMediaDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="AcctNum" type="s:string" minOccurs="0"/>
+              <s:element name="BillMedium" type="s:string" minOccurs="0"/>
+              <s:element name="BillFmt" type="s:string" minOccurs="0"/>
+              <s:element name="OfferSubKey" type="s:string" minOccurs="0"/>
+              <s:element name="OfferId" type="s:string" minOccurs="0"/>
+              <s:element name="EffStartDate" type="s:string" minOccurs="0"/>
+              <s:element name="BillMediumMode" type="s:string" minOccurs="0"/>
+              <s:element name="Period" type="s:string" minOccurs="0"/>
+              <s:element name="OrgPeriodFrPortal" type="s:string" minOccurs="0"/>
+              <s:element name="EffEndDate" type="s:string" minOccurs="0"/>
+              <s:element name="ToPortalAction" type="s:string" minOccurs="0"/>
+              <s:element name="LastUpdDate" type="s:string" minOccurs="0"/>
+              <s:element name="LastUpdBy" type="s:string" minOccurs="0"/>
+              <s:element name="CcCreateDate" type="s:string" minOccurs="0"/>
+              <s:element name="LastUpdProcess" type="s:string" minOccurs="0"/>
+              <s:element name="Rowseqnb" type="s:int"/>
+              <s:element name="OcOrderId" type="s:int"/>
+              <s:element name="ActionInd" type="s:string" minOccurs="0"/>
+              <s:element name="ChargeAmt" type="s:string" minOccurs="0"/>
+              <s:element name="WaiveInd" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+
+  </types>
+  <message name="createAccountInfoSoapIn">
+    <part name="parameters" element="s0:createAccountInfo"/>
+  </message>
+  <message name="createAccountInfoSoapOut">
+    <part name="parameters" element="s0:createAccountInfoResponse"/>
+  </message>
+  <portType name="AcctInfoSoap">
+    <operation name="createAccountInfo">
+      <input message="s0:createAccountInfoSoapIn"/>
+      <output message="s0:createAccountInfoSoapOut"/>
+    </operation>
+  </portType>
+  <binding name="AcctInfoSoap" type="s0:AcctInfoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="createAccountInfo">
+      <soap:operation soapAction="http://www.openuri.org/createAccountInfo" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="AcctInfo">
+    <port name="AcctInfoSoap" binding="s0:AcctInfoSoap">
+      <soap:address location="http://bomeaidev:7381/CustProfileGateway/ws/AcctInfo.jws"/>
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,136 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="sales_h">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ROWDATA">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ROW">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="Store_ID"/>
+                      <xs:attribute type="xs:string" name="Register_ID"/>
+                      <xs:attribute type="xs:string" name="Trans_Num"/>
+                      <xs:attribute type="xs:string" name="Bus_Date"/>
+                      <xs:attribute type="xs:string" name="Txn_Date"/>
+                      <xs:attribute type="xs:string" name="SM_Type"/>
+                      <xs:attribute type="xs:string" name="Cashier_ID"/>
+                      <xs:attribute type="xs:string" name="SalesMan_ID"/>
+                      <xs:attribute type="xs:string" name="Salesman_Ext"/>
+                      <xs:attribute type="xs:string" name="Team_Code"/>
+                      <xs:attribute type="xs:string" name="channel"/>
+                      <xs:attribute type="xs:string" name="salesman_code"/>
+                      <xs:attribute type="xs:string" name="QU_Num"/>
+                      <xs:attribute type="xs:string" name="SM_Num"/>
+                      <xs:attribute type="xs:short" name="TotalAmt"/>
+                      <xs:attribute type="xs:string" name="SI_Need"/>
+                      <xs:attribute type="xs:string" name="SM_CreateDate"/>
+                      <xs:attribute type="xs:string" name="Modifyby"/>
+                      <xs:attribute type="xs:string" name="ModifyDate"/>
+                      <xs:attribute type="xs:string" name="ConsolDate"/>
+                      <xs:attribute type="xs:string" name="SettlementDate"/>
+                      <xs:attribute type="xs:string" name="Settle_Log_Date"/>
+                      <xs:attribute type="xs:string" name="Settlement_Staff_ID"/>
+                      <xs:attribute type="xs:string" name="StaChgDate"/>
+                      <xs:attribute type="xs:string" name="StaChgBy"/>
+                      <xs:attribute type="xs:string" name="Pay_Settle_PhyDate"/>
+                      <xs:attribute type="xs:string" name="Pay_Settle_LogDate"/>
+                      <xs:attribute type="xs:string" name="Status"/>
+                      <xs:attribute type="xs:string" name="CU_Title"/>
+                      <xs:attribute type="xs:string" name="CU_Name"/>
+                      <xs:attribute type="xs:string" name="CU_CCCNO"/>
+                      <xs:attribute type="xs:string" name="CU_Tel"/>
+                      <xs:attribute type="xs:string" name="CU_Prime"/>
+                      <xs:attribute type="xs:string" name="CU_FaxNo"/>
+                      <xs:attribute type="xs:string" name="CU_MemType"/>
+                      <xs:attribute type="xs:string" name="CU_ContPer"/>
+                      <xs:attribute type="xs:string" name="CU_MemberNo"/>
+                      <xs:attribute type="xs:string" name="CU_InterCom"/>
+                      <xs:attribute type="xs:string" name="CU_IDBusType"/>
+                      <xs:attribute type="xs:string" name="CU_IDBusNo"/>
+                      <xs:attribute type="xs:string" name="CU_Remark"/>
+                      <xs:attribute type="xs:string" name="CU_Request_Date"/>
+                      <xs:attribute type="xs:string" name="CU_Request_Time"/>
+                      <xs:attribute type="xs:string" name="CU_PosBadDebt"/>
+                      <xs:attribute type="xs:string" name="CU_CFLATUNIT"/>
+                      <xs:attribute type="xs:string" name="CU_CFLOOR"/>
+                      <xs:attribute type="xs:string" name="CU_CBLDG"/>
+                      <xs:attribute type="xs:string" name="CU_CPOBOX"/>
+                      <xs:attribute type="xs:string" name="CU_CHSESTNO"/>
+                      <xs:attribute type="xs:string" name="CU_CLOTLDNO"/>
+                      <xs:attribute type="xs:string" name="CU_CSTNAME"/>
+                      <xs:attribute type="xs:string" name="CU_CSTCAT"/>
+                      <xs:attribute type="xs:string" name="CU_CSECT"/>
+                      <xs:attribute type="xs:string" name="CU_CDISTR"/>
+                      <xs:attribute type="xs:string" name="CU_CAREA"/>
+                      <xs:attribute type="xs:string" name="CU_CPOSTREGN"/>
+                      <xs:attribute type="xs:string" name="CU_CPOSTCD"/>
+                      <xs:attribute type="xs:string" name="CU_CCOUNTRY"/>
+                      <xs:attribute type="xs:string" name="CU_CATTETO"/>
+                      <xs:attribute type="xs:string" name="CU_CCO"/>
+                      <xs:attribute type="xs:string" name="CU_IFLATUNIT"/>
+                      <xs:attribute type="xs:string" name="CU_IFLOOR"/>
+                      <xs:attribute type="xs:string" name="CU_IBLDG"/>
+                      <xs:attribute type="xs:string" name="CU_IPOBOX"/>
+                      <xs:attribute type="xs:string" name="CU_IHSESTNO"/>
+                      <xs:attribute type="xs:string" name="CU_ILOTLDNO"/>
+                      <xs:attribute type="xs:string" name="CU_ISTNAME"/>
+                      <xs:attribute type="xs:string" name="CU_ISTCAT"/>
+                      <xs:attribute type="xs:string" name="CU_ISECT"/>
+                      <xs:attribute type="xs:string" name="CU_IDISTR"/>
+                      <xs:attribute type="xs:string" name="CU_IAREA"/>
+                      <xs:attribute type="xs:string" name="CU_IPOSTREGN"/>
+                      <xs:attribute type="xs:string" name="CU_IPOSTCD"/>
+                      <xs:attribute type="xs:string" name="CU_ICOUNTRY"/>
+                      <xs:attribute type="xs:string" name="CPEFLAG"/>
+                      <xs:attribute type="xs:string" name="Trans_Discount"/>
+                      <xs:attribute type="xs:string" name="Trans_Reason"/>
+                      <xs:attribute type="xs:string" name="CPE_Work_Num"/>
+                      <xs:attribute type="xs:string" name="Converted"/>
+                      <xs:attribute type="xs:string" name="Org_QU_Num"/>
+                      <xs:attribute type="xs:string" name="Ref_SM_No"/>
+                      <xs:attribute type="xs:string" name="Invalidated_Flag"/>
+                      <xs:attribute type="xs:string" name="ExchangeFlag"/>
+                      <xs:attribute type="xs:string" name="Download"/>
+                      <xs:attribute type="xs:string" name="CU_Email"/>
+                      <xs:attribute type="xs:string" name="Store_Type"/>
+                      <xs:attribute type="xs:string" name="Store_Name"/>
+                      <xs:attribute type="xs:string" name="Store_Tel"/>
+                      <xs:attribute type="xs:string" name="Store_Begin_Hours"/>
+                      <xs:attribute type="xs:string" name="Store_End_Hours"/>
+                      <xs:attribute type="xs:string" name="Store_Addr_1"/>
+                      <xs:attribute type="xs:string" name="Store_Addr_2"/>
+                      <xs:attribute type="xs:string" name="Store_Addr_3"/>
+                      <xs:attribute type="xs:string" name="Salesman_Name"/>
+                      <xs:attribute type="xs:string" name="Settle_Staff_Name"/>
+                      <xs:attribute type="xs:string" name="CMR"/>
+                      <xs:attribute type="xs:string" name="UM"/>
+                      <xs:attribute type="xs:string" name="Title"/>
+                      <xs:attribute type="xs:string" name="Team_Name"/>
+                      <xs:attribute type="xs:string" name="Dep"/>
+                      <xs:attribute type="xs:string" name="Dep_Name"/>
+                      <xs:attribute type="xs:string" name="coll_time"/>
+                      <xs:attribute type="xs:string" name="IMS_Acno"/>
+                      <xs:attribute type="xs:short" name="Paid_Amt"/>
+                      <xs:attribute type="xs:string" name="Txn_Date_POS_BOM"/>
+                      <xs:attribute type="xs:string" name="Txn_Time_POS_BOM"/>
+                      <xs:attribute type="xs:string" name="OCID"/>
+                      <xs:attribute type="xs:string" name="Request_ID"/>
+                      <xs:attribute type="xs:string" name="Customer_ID"/>
+                      <xs:attribute type="xs:string" name="Account_Code"/>
+                      <xs:attribute type="xs:string" name="SSAgreeNo"/>
+                      <xs:attribute type="xs:string" name="CU_MobileNo"/>
+                      <xs:attribute type="xs:string" name="MobileNoType"/>
+                      <xs:attribute type="xs:string" name="MobileNo"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

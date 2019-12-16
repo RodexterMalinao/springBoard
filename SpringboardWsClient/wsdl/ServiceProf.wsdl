@@ -1,0 +1,1641 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:conv="http://www.openuri.org/2002/04/soap/conversation/" xmlns:cw="http://www.openuri.org/2002/04/wsdl/conversation/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:jms="http://www.openuri.org/2002/04/wsdl/jms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://www.openuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://www.openuri.org/">
+  <types>
+    <s:schema xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:ope="http://www.openuri.org/" elementFormDefault="qualified" targetNamespace="http://www.openuri.org/">
+      <s:element name="getServiceAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="srvType" type="s:string" minOccurs="0"/>
+            <s:element name="srvNum" type="s:string" minOccurs="0"/>
+            <s:element name="systemId" type="s:string" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getServiceAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="getServiceAddrResult" type="ope:SrvAddEnqResponse" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getIddffpInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="srvType" type="s:string" minOccurs="0"/>
+            <s:element name="srvNum" type="s:string" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getIddffpInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="getIddffpInfoResult" type="ope:ArrayOfArpuInfoDTO" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDNAssignmentResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="srvNum" type="s:string" minOccurs="0"/>
+            <s:element name="accountCd" type="s:string" minOccurs="0"/>
+            <s:element name="boc" type="s:string" minOccurs="0"/>
+            <s:element name="projectCd" type="s:string" minOccurs="0"/>
+            <s:element name="srvType" type="s:string" minOccurs="0"/>
+            <s:element name="datCd" type="s:string" minOccurs="0"/>
+            <s:element name="specialSrvGrp" type="s:string" minOccurs="0"/>
+            <s:element name="specialSrvName" type="s:string" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDNAssignmentResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="getDNAssignmentResultResult" type="ope:ArrayOfDNAssignmentResultDTO" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dnAssignReq">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="srvNum" type="s:string" minOccurs="0"/>
+            <s:element name="inventStsCd" type="s:string" minOccurs="0"/>
+            <s:element name="action" type="s:string" minOccurs="0"/>
+            <s:element name="srvType" type="s:string" minOccurs="0"/>
+            <s:element name="gatewayNum" type="s:string" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dnAssignReqResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="dnAssignReqResult" type="ope:DNAssignOutput" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DNStatusAssig">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="srvNum" type="s:string" minOccurs="0"/>
+            <s:element name="inventStsCd" type="s:string" minOccurs="0"/>
+            <s:element name="action" type="s:string" minOccurs="0"/>
+            <s:element name="srvType" type="s:string" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DNStatusAssigResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="DNStatusAssigResult" type="ope:ServiceResponse" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDrgSvcDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="srvNum" type="s:string" minOccurs="0"/>
+            <s:element name="srvType" type="s:string" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDrgSvcDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="getDrgSvcDetailResult" type="ope:ExtgInvInfoReturn" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getRecurringCharges">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="systemId" type="s:string" minOccurs="0"/>
+            <s:element name="acctNum" type="s:string" minOccurs="0"/>
+            <s:element name="serviceId" type="s:string" minOccurs="0"/>
+            <s:element name="effectiveInd" type="s:string" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getRecurringChargesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="getRecurringChargesResult" type="ope:ArrayOfOfferDetailRecurringChargesDTO" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SrvAddEnqResponse">
+        <s:complexContent>
+          <s:extension base="ope:ServiceResponse">
+            <s:sequence>
+              <s:element name="AddressDTO" type="ope:AddressDTO" minOccurs="0"/>
+              <s:element name="FreeFmtAddr" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ServiceResponse">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="ErrorSeverity" type="s:string" minOccurs="0"/>
+              <s:element name="RejectMessage" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ValueObject">
+        <s:sequence>
+          <s:element name="ValidationRulesID" type="s:string" minOccurs="0"/>
+          <s:element name="ObjectAction" type="s:int"/>
+          <s:element name="ObjectUniqueID" type="s:string" minOccurs="0"/>
+          <s:element name="ModifiedFields" type="ope:ArrayOfString" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element name="String" type="s:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AddressDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="Acctnb" type="s:long"/>
+              <s:element name="AddrChi1" type="s:string" minOccurs="0"/>
+              <s:element name="AddrChi2" type="s:string" minOccurs="0"/>
+              <s:element name="AddrChi3" type="s:string" minOccurs="0"/>
+              <s:element name="AddrID" type="s:int"/>
+              <s:element name="AddrIDStr" type="s:string" minOccurs="0"/>
+              <s:element name="AddrLine1" type="s:string" minOccurs="0"/>
+              <s:element name="AddrLine2" type="s:string" minOccurs="0"/>
+              <s:element name="AddrLine3" type="s:string" minOccurs="0"/>
+              <s:element name="AddrLine4" type="s:string" minOccurs="0"/>
+              <s:element name="AddrLine5" type="s:string" minOccurs="0"/>
+              <s:element name="AddrLine6" type="s:string" minOccurs="0"/>
+              <s:element name="AddrType" type="s:string" minOccurs="0"/>
+              <s:element name="AddrUsage" type="s:string" minOccurs="0"/>
+              <s:element name="AffectAccount" type="ope:ArrayOfString" minOccurs="0"/>
+              <s:element name="AffectCust" type="ope:ArrayOfString" minOccurs="0"/>
+              <s:element name="AffectFSA" type="ope:ArrayOfString" minOccurs="0"/>
+              <s:element name="AreaCode" type="s:string" minOccurs="0"/>
+              <s:element name="AreaDesc" type="s:string" minOccurs="0"/>
+              <s:element name="BuildNum" type="s:string" minOccurs="0"/>
+              <s:element name="Custnb" type="s:string" minOccurs="0"/>
+              <s:element name="District" type="s:string" minOccurs="0"/>
+              <s:element name="DistrictNum" type="s:string" minOccurs="0"/>
+              <s:element name="FloorNum" type="s:string" minOccurs="0"/>
+              <s:element name="ForeignAddrFlag" type="s:string" minOccurs="0"/>
+              <s:element name="Hit" type="s:string" minOccurs="0"/>
+              <s:element name="HlLotNum" type="s:string" minOccurs="0"/>
+              <s:element name="LdLotNum" type="s:string" minOccurs="0"/>
+              <s:element name="NewAssignEquipment" type="s:string" minOccurs="0"/>
+              <s:element name="PoBoxNum" type="s:string" minOccurs="0"/>
+              <s:element name="PostalCode" type="s:string" minOccurs="0"/>
+              <s:element name="PostalRegion" type="s:string" minOccurs="0"/>
+              <s:element name="Section" type="s:string" minOccurs="0"/>
+              <s:element name="SectionCode" type="s:string" minOccurs="0"/>
+              <s:element name="Serialno" type="s:string" minOccurs="0"/>
+              <s:element name="Street" type="s:string" minOccurs="0"/>
+              <s:element name="StreetCatCode" type="s:string" minOccurs="0"/>
+              <s:element name="StreetCatCodeDesc" type="s:string" minOccurs="0"/>
+              <s:element name="StreetName" type="s:string" minOccurs="0"/>
+              <s:element name="StreetNum" type="s:string" minOccurs="0"/>
+              <s:element name="Subsrlno" type="s:int"/>
+              <s:element name="UnitNum" type="s:string" minOccurs="0"/>
+              <s:element name="AttnBillName" type="s:string" minOccurs="0"/>
+              <s:element name="City" type="s:string" minOccurs="0"/>
+              <s:element name="Country" type="s:string" minOccurs="0"/>
+              <s:element name="Province" type="s:string" minOccurs="0"/>
+              <s:element name="SecBillName" type="s:string" minOccurs="0"/>
+              <s:element name="PbLastUpdDate" type="s:dateTime" minOccurs="0"/>
+              <s:element name="PbLastUpdBy" type="s:string" minOccurs="0"/>
+              <s:element name="PbSecLastUpdDate" type="s:dateTime" minOccurs="0"/>
+              <s:element name="PbSecLastUpdBy" type="s:string" minOccurs="0"/>
+              <s:element name="State" type="s:string" minOccurs="0"/>
+              <s:element name="Fsa" type="s:string" minOccurs="0"/>
+              <s:element name="BillingAcctDtl" type="s:string" minOccurs="0"/>
+              <s:element name="SrvId" type="s:string" minOccurs="0"/>
+              <s:element name="SrvNum" type="s:string" minOccurs="0"/>
+              <s:element name="SrvBdryNum" type="s:string" minOccurs="0"/>
+              <s:element name="SbiInd" type="s:string" minOccurs="0"/>
+              <s:element name="AftInd" type="s:string" minOccurs="0"/>
+              <s:element name="LastUpdBy" type="s:string" minOccurs="0"/>
+              <s:element name="SysId" type="s:string" minOccurs="0"/>
+              <s:element name="EffDate" type="s:string" minOccurs="0"/>
+              <s:element name="TerminateDate" type="s:string" minOccurs="0"/>
+              <s:element name="ShopCode" type="s:string" minOccurs="0"/>
+              <s:element name="GiftContactName" type="s:string" minOccurs="0"/>
+              <s:element name="GiftContactNumber" type="s:string" minOccurs="0"/>
+              <s:element name="WeeklyReportIND" type="s:string" minOccurs="0"/>
+              <s:element name="IsExistPendingAddr" type="s:string" minOccurs="0"/>
+              <s:element name="modify" type="s:boolean"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfArpuInfoDTO">
+        <s:sequence>
+          <s:element name="ArpuInfoDTO" type="ope:ArpuInfoDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArpuInfoDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="ArpuType" type="s:string" minOccurs="0"/>
+              <s:element name="GrossEffPrice" type="s:string" minOccurs="0"/>
+              <s:element name="IddFreeMin" type="s:string" minOccurs="0"/>
+              <s:element name="NetEffPrice" type="s:string" minOccurs="0"/>
+              <s:element name="TpEffDate" type="s:string" minOccurs="0"/>
+              <s:element name="TpEndDate" type="s:string" minOccurs="0"/>
+              <s:element name="Category" type="s:string" minOccurs="0"/>
+              <s:element name="Description" type="s:string" minOccurs="0"/>
+              <s:element name="TpExpiredMonths" type="s:double"/>
+              <s:element name="PromoStartDate" type="s:string" minOccurs="0"/>
+              <s:element name="PromoEndDate" type="s:string" minOccurs="0"/>
+              <s:element name="PromotionExpiredMonths" type="s:string" minOccurs="0"/>
+              <s:element name="ReturnMsg" type="s:string" minOccurs="0"/>
+              <s:element name="ReturnCd" type="s:int"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfDNAssignmentResultDTO">
+        <s:sequence>
+          <s:element name="DNAssignmentResultDTO" type="ope:DNAssignmentResultDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DNAssignmentResultDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="OrdServiceDTO" type="ope:OrdServiceDTO" minOccurs="0"/>
+              <s:element name="OrdDetailDTO" type="ope:OrdDetailDTO" minOccurs="0"/>
+              <s:element name="PrimaryOrderDtID" type="s:string" minOccurs="0"/>
+              <s:element name="PrimaryOrderServiceID" type="s:string" minOccurs="0"/>
+              <s:element name="PilotSrvNum" type="s:string" minOccurs="0"/>
+              <s:element name="SelectedCustomer" type="s:string" minOccurs="0"/>
+              <s:element name="SelectedHostExchangeID" type="s:string" minOccurs="0"/>
+              <s:element name="CableBuildID" type="s:string" minOccurs="0"/>
+              <s:element name="CableMdfSeqNum" type="s:string" minOccurs="0"/>
+              <s:element name="CableMdfBarSeqNum" type="s:string" minOccurs="0"/>
+              <s:element name="CableCD" type="s:string" minOccurs="0"/>
+              <s:element name="CablePairNum" type="s:string" minOccurs="0"/>
+              <s:element name="CableDpsdfCD" type="s:string" minOccurs="0"/>
+              <s:element name="LvlNewSrvNum" type="s:string" minOccurs="0"/>
+              <s:element name="EnTargetExchangeID" type="s:string" minOccurs="0"/>
+              <s:element name="InvestigateIND" type="s:boolean"/>
+              <s:element name="Investigate" type="s:string" minOccurs="0"/>
+              <s:element name="Gp" type="s:string" minOccurs="0"/>
+              <s:element name="GpID" type="s:string" minOccurs="0"/>
+              <s:element name="ServiceAddress" type="s:string" minOccurs="0"/>
+              <s:element name="Methods" type="s:string" minOccurs="0"/>
+              <s:element name="Overwrite" type="s:string" minOccurs="0"/>
+              <s:element name="IntercomNo" type="s:string" minOccurs="0"/>
+              <s:element name="Assign" type="s:string" minOccurs="0"/>
+              <s:element name="ErrDetail" type="s:string" minOccurs="0"/>
+              <s:element name="ErrMnmonic" type="s:string" minOccurs="0"/>
+              <s:element name="ErrMachineID" type="s:string" minOccurs="0"/>
+              <s:element name="ErrDesc" type="s:string" minOccurs="0"/>
+              <s:element name="ErrSeverity" type="s:string" minOccurs="0"/>
+              <s:element name="ActvSeqNum" type="s:string" minOccurs="0"/>
+              <s:element name="AftInd" type="s:string" minOccurs="0"/>
+              <s:element name="AvailableDNs" type="ope:ArrayOfDnDTO" minOccurs="0"/>
+              <s:element name="CcnRLU" type="s:string" minOccurs="0"/>
+              <s:element name="CcnBuildID" type="s:string" minOccurs="0"/>
+              <s:element name="CcnCustomer" type="ope:ArrayOfString" minOccurs="0"/>
+              <s:element name="CcnHostExchangeId" type="ope:ArrayOfString" minOccurs="0"/>
+              <s:element name="CcnInd" type="s:string" minOccurs="0"/>
+              <s:element name="DatCD" type="s:string" minOccurs="0"/>
+              <s:element name="DnAssignmentOption" type="ope:DNAssignmentOptionDTO" minOccurs="0"/>
+              <s:element name="DuplexInd" type="s:string" minOccurs="0"/>
+              <s:element name="ExchangeIDIn" type="ope:ArrayOfString" minOccurs="0"/>
+              <s:element name="ExchangeIDOut" type="ope:ArrayOfString" minOccurs="0"/>
+              <s:element name="ExtServiceID" type="s:string" minOccurs="0"/>
+              <s:element name="FeaCD" type="ope:ArrayOfString" minOccurs="0"/>
+              <s:element name="FeaChangeInd" type="s:string" minOccurs="0"/>
+              <s:element name="FeaQty" type="ope:ArrayOfint" minOccurs="0"/>
+              <s:element name="GroupFeaCd" type="ope:ArrayOfString" minOccurs="0"/>
+              <s:element name="GroupFeaQty" type="ope:ArrayOfint" minOccurs="0"/>
+              <s:element name="GroupLinesQty" type="s:int"/>
+              <s:element name="InventSTSCD" type="s:string" minOccurs="0"/>
+              <s:element name="InventSTSCDIn" type="ope:ArrayOfString" minOccurs="0"/>
+              <s:element name="InventSTSCDOut" type="s:string" minOccurs="0"/>
+              <s:element name="LastSearchDN" type="s:int"/>
+              <s:element name="LegacyOrderNum" type="s:string" minOccurs="0"/>
+              <s:element name="MaxSearchLimit" type="s:int"/>
+              <s:element name="Message" type="ope:ArrayOfString" minOccurs="0"/>
+              <s:element name="MoreInd" type="s:string" minOccurs="0"/>
+              <s:element name="NetworkID" type="s:string" minOccurs="0"/>
+              <s:element name="NewDatCD" type="s:string" minOccurs="0"/>
+              <s:element name="NewDatQualCD" type="s:string" minOccurs="0"/>
+              <s:element name="NewServiceID" type="s:string" minOccurs="0"/>
+              <s:element name="NewServiceIDIN" type="s:string" minOccurs="0"/>
+              <s:element name="OcID" type="s:string" minOccurs="0"/>
+              <s:element name="OrderDtID" type="s:string" minOccurs="0"/>
+              <s:element name="OrderModifyInd" type="s:string" minOccurs="0"/>
+              <s:element name="OrderServiceID" type="s:string" minOccurs="0"/>
+              <s:element name="OrderStsCD" type="s:string" minOccurs="0"/>
+              <s:element name="OrderTypeCD" type="s:string" minOccurs="0"/>
+              <s:element name="SelectedDN" type="ope:DnDTO" minOccurs="0"/>
+              <s:element name="ServiceNumIn" type="ope:ArrayOfString" minOccurs="0"/>
+              <s:element name="ServiceNumOut" type="ope:ArrayOfString" minOccurs="0"/>
+              <s:element name="SrvReqID" type="s:string" minOccurs="0"/>
+              <s:element name="SrvReqIDOut" type="s:string" minOccurs="0"/>
+              <s:element name="TargetSoftswitch" type="s:string" minOccurs="0"/>
+              <s:element name="TypeOfSrv" type="s:string" minOccurs="0"/>
+              <s:element name="VoipInd" type="s:string" minOccurs="0"/>
+              <s:element name="GatewayNum" type="s:string" minOccurs="0"/>
+              <s:element name="GatewayNumIN" type="s:string" minOccurs="0"/>
+              <s:element name="ContinueLvlID" type="s:string" minOccurs="0"/>
+              <s:element name="DragonReasonCd" type="s:string" minOccurs="0"/>
+              <s:element name="DragonReasonDesc" type="s:string" minOccurs="0"/>
+              <s:element name="ReservationAccount" type="s:string" minOccurs="0"/>
+              <s:element name="ReservationBoc" type="s:string" minOccurs="0"/>
+              <s:element name="ReservationProject" type="s:string" minOccurs="0"/>
+              <s:element name="StartRange" type="s:string" minOccurs="0"/>
+              <s:element name="EndRange" type="s:string" minOccurs="0"/>
+              <s:element name="ExchangeID" type="s:string" minOccurs="0"/>
+              <s:element name="BbgGroupID" type="s:string" minOccurs="0"/>
+              <s:element name="ImsDtlID" type="s:string" minOccurs="0"/>
+              <s:element name="ImsDtlSeq" type="s:string" minOccurs="0"/>
+              <s:element name="ImsOcID" type="s:string" minOccurs="0"/>
+              <s:element name="RetainSrvId" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="OrdServiceDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="OrderDetail" type="ope:OrdDetailDTO" minOccurs="0"/>
+              <s:element name="OrderServiceID" type="s:string" minOccurs="0"/>
+              <s:element name="ServiceID" type="s:string" minOccurs="0"/>
+              <s:element name="ServiceIDType" type="s:string" minOccurs="0"/>
+              <s:element name="GenericFixFields" type="ope:ArrayOfGenericFixFieldDTO" minOccurs="0"/>
+              <s:element name="LegacyOrderActivity" type="ope:LegacyOrderActivityDTO" minOccurs="0"/>
+              <s:element name="OrderComponentMap" type="ope:Map" minOccurs="0"/>
+              <s:element name="OrderComponents" type="ope:ArrayOfOrdOfferProductComponentDTO" minOccurs="0"/>
+              <s:element name="ProfileImage" type="ope:OrdServiceDTO" minOccurs="0"/>
+              <s:element name="DeliveryAddressID" type="s:string" minOccurs="0"/>
+              <s:element name="MaxServiceComponentSeq" type="s:int"/>
+              <s:element name="ServiceRemarks" type="ope:ArrayOfRemarksDTO" minOccurs="0"/>
+              <s:element name="CcServiceMemberNum" type="s:string" minOccurs="0"/>
+              <s:element name="ExistingServiceID" type="s:string" minOccurs="0"/>
+              <s:element name="RetainSrvId" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ValueObjectWithAction">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence/>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="OrdDetailDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="UserID" type="s:string" minOccurs="0"/>
+              <s:element name="ReasonCode" type="s:string" minOccurs="0"/>
+              <s:element name="DiscDayPhone" type="s:string" minOccurs="0"/>
+              <s:element name="DiscFaxNum" type="s:string" minOccurs="0"/>
+              <s:element name="DiscNightPhone" type="s:string" minOccurs="0"/>
+              <s:element name="DiscDate" type="s:string" minOccurs="0"/>
+              <s:element name="DiscReaCd" type="s:string" minOccurs="0"/>
+              <s:element name="NewDatCode" type="s:string" minOccurs="0"/>
+              <s:element name="ServiceID" type="s:string" minOccurs="0"/>
+              <s:element name="LegacyOrderNum" type="s:string" minOccurs="0"/>
+              <s:element name="TpDat" type="s:string" minOccurs="0"/>
+              <s:element name="LegacyOrderType" type="s:string" minOccurs="0"/>
+              <s:element name="LegacyOrderStatus" type="s:string" minOccurs="0"/>
+              <s:element name="PrimaryLegacyOrderActivityStatus" type="s:string" minOccurs="0"/>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="OrderProducts" type="ope:ArrayOfOrdOfferProductDTO" minOccurs="0"/>
+              <s:element name="OrderOfferAssignments" type="ope:ArrayOfOrdOfferAssignmentDTO" minOccurs="0"/>
+              <s:element name="OrderServiceAccounts" type="ope:ArrayOfOrdServiceAccountDTO" minOccurs="0"/>
+              <s:element name="OrderServices" type="ope:ArrayOfOrdServiceDTO" minOccurs="0"/>
+              <s:element name="ApplicationDate" type="s:string" minOccurs="0"/>
+              <s:element name="AppointmentDate" type="s:string" minOccurs="0"/>
+              <s:element name="CeaseRentalDate" type="s:string" minOccurs="0"/>
+              <s:element name="DatCode" type="s:string" minOccurs="0"/>
+              <s:element name="InstallationAddress" type="ope:OrdAddressDTO" minOccurs="0"/>
+              <s:element name="IssueDate" type="s:string" minOccurs="0"/>
+              <s:element name="OrderDtlID" type="s:string" minOccurs="0"/>
+              <s:element name="ServiceRequestDate" type="s:string" minOccurs="0"/>
+              <s:element name="TypeOfService" type="s:string" minOccurs="0"/>
+              <s:element name="Lob" type="s:string" minOccurs="0"/>
+              <s:element name="InventoryReqd" type="s:string" minOccurs="0"/>
+              <s:element name="ToVisitReqd" type="s:string" minOccurs="0"/>
+              <s:element name="FromVisitReqd" type="s:string" minOccurs="0"/>
+              <s:element name="SalesInformation" type="ope:OrdSalesInfoDTO" minOccurs="0"/>
+              <s:element name="CustomerNum" type="s:string" minOccurs="0"/>
+              <s:element name="Domain" type="s:string" minOccurs="0"/>
+              <s:element name="Appointment" type="ope:UamsAppointmentDTO" minOccurs="0"/>
+              <s:element name="BomStatus" type="s:string" minOccurs="0"/>
+              <s:element name="OrderDetailGroup" type="ope:OrdDetailGroupDTO" minOccurs="0"/>
+              <s:element name="ProfileImage" type="ope:OrdDetailDTO" minOccurs="0"/>
+              <s:element name="MaxOrderServiceID" type="s:int"/>
+              <s:element name="CustomerLevel" type="s:int"/>
+              <s:element name="CustomerSystemID" type="s:string" minOccurs="0"/>
+              <s:element name="OrderDetailRemarks" type="ope:ArrayOfOrdDetailRemarkDTO" minOccurs="0"/>
+              <s:element name="CcSeviceID" type="s:string" minOccurs="0"/>
+              <s:element name="SiteContact" type="s:string" minOccurs="0"/>
+              <s:element name="TempLineInd" type="s:string" minOccurs="0"/>
+              <s:element name="TargetDisconnectDate" type="s:string" minOccurs="0"/>
+              <s:element name="PrimaryOrderService" type="ope:OrdServiceDTO" minOccurs="0"/>
+              <s:element name="DuplexGroupID" type="s:string" minOccurs="0"/>
+              <s:element name="OrderDepartments" type="ope:ArrayOfOrdDeptDTO" minOccurs="0"/>
+              <s:element name="SecondaryOrderServices" type="ope:ArrayOfOrdServiceDTO" minOccurs="0"/>
+              <s:element name="SslInd" type="s:string" minOccurs="0"/>
+              <s:element name="AssignedStaffId" type="s:string" minOccurs="0"/>
+              <s:element name="Boc" type="s:string" minOccurs="0"/>
+              <s:element name="InstallExpansionInd" type="s:string" minOccurs="0"/>
+              <s:element name="InitialDepositInd" type="s:string" minOccurs="0"/>
+              <s:element name="ServiceRequestTime" type="s:string" minOccurs="0"/>
+              <s:element name="ManualBillInd" type="s:string" minOccurs="0"/>
+              <s:element name="ApplicationTime" type="s:string" minOccurs="0"/>
+              <s:element name="PseudoOrdInd" type="s:string" minOccurs="0"/>
+              <s:element name="PenaltyHandleInd" type="s:string" minOccurs="0"/>
+              <s:element name="AgreementNum" type="s:string" minOccurs="0"/>
+              <s:element name="ErChargeMethod" type="s:string" minOccurs="0"/>
+              <s:element name="UserSbIdInput" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrdOfferProductDTO">
+        <s:sequence>
+          <s:element name="OrdOfferProductDTO" type="ope:OrdOfferProductDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrdOfferProductDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="OrderDetailMap" type="ope:Map" minOccurs="0"/>
+              <s:element name="OrderUniqueKey" type="s:string" minOccurs="0"/>
+              <s:element name="OrderSubItemID" type="s:string" minOccurs="0"/>
+              <s:element name="ProductID" type="s:string" minOccurs="0"/>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="OrderOfferAssignment" type="ope:OrdOfferAssignmentDTO" minOccurs="0"/>
+              <s:element name="OrderComponents" type="ope:ArrayOfOrdOfferProductComponentDTO" minOccurs="0"/>
+              <s:element name="OrderDetails" type="ope:ArrayOfOrdDetailDTO" minOccurs="0"/>
+              <s:element name="Lob" type="s:string" minOccurs="0"/>
+              <s:element name="OrderPricingSchemeMap" type="ope:Map" minOccurs="0"/>
+              <s:element name="OrderPricingSchemes" type="ope:ArrayOfOrdPricingSchemeDTO" minOccurs="0"/>
+              <s:element name="ProfileImage" type="ope:OrdOfferProductDTO" minOccurs="0"/>
+              <s:element name="MaxOrderComponentSeq" type="s:int"/>
+              <s:element name="CcProductSubKey" type="s:string" minOccurs="0"/>
+              <s:element name="OrderPsef" type="ope:OrdPsefDTO" minOccurs="0"/>
+              <s:element name="ChargeCategory" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Map">
+        <s:sequence>
+          <s:element name="item" nillable="true" minOccurs="0" maxOccurs="unbounded">
+            <s:complexType>
+              <s:sequence>
+                <s:element name="key" type="s:anyType" nillable="true"/>
+                <s:element name="value" type="s:anyType" nillable="true"/>
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrdOfferAssignmentDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="ChildOrdOfferAssignments" type="ope:ArrayOfOrdOfferAssignmentDTO" minOccurs="0"/>
+              <s:element name="ParentOrdOfferAssignment" type="ope:OrdOfferAssignmentDTO" minOccurs="0"/>
+              <s:element name="Domain" type="s:string" minOccurs="0"/>
+              <s:element name="OrderDetailMap" type="ope:Map" minOccurs="0"/>
+              <s:element name="OrderTermMap" type="ope:Map" minOccurs="0"/>
+              <s:element name="OrderPricingSchemeMap" type="ope:Map" minOccurs="0"/>
+              <s:element name="OrdOffer" type="ope:OrdOfferDTO" minOccurs="0"/>
+              <s:element name="OfferSubID" type="s:string" minOccurs="0"/>
+              <s:element name="Products" type="ope:ArrayOfOrdOfferProductDTO" minOccurs="0"/>
+              <s:element name="OrderTerms" type="ope:ArrayOfOrdTermsDTO" minOccurs="0"/>
+              <s:element name="OrderSubOfferItemID" type="s:string" minOccurs="0"/>
+              <s:element name="OrderPricingSchemes" type="ope:ArrayOfOrdPricingSchemeDTO" minOccurs="0"/>
+              <s:element name="OrderProducts" type="ope:ArrayOfOrdOfferProductDTO" minOccurs="0"/>
+              <s:element name="OrderDetails" type="ope:ArrayOfOrdDetailDTO" minOccurs="0"/>
+              <s:element name="OrderDiscounts" type="ope:ArrayOfOrdDiscountDTO" minOccurs="0"/>
+              <s:element name="OrderIncentives" type="ope:ArrayOfOrdIncentiveDTO" minOccurs="0"/>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="ProfileImage" type="ope:OrdOfferAssignmentDTO" minOccurs="0"/>
+              <s:element name="ProductId" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrdOfferAssignmentDTO">
+        <s:sequence>
+          <s:element name="OrdOfferAssignmentDTO" type="ope:OrdOfferAssignmentDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrdOfferDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="OrderProducts" type="ope:ArrayOfOrdOfferProductDTO" minOccurs="0"/>
+              <s:element name="OrderOfferAssignmentMap" type="ope:Map" minOccurs="0"/>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="OrderOfferAssignments" type="ope:ArrayOfOrdOfferAssignmentDTO" minOccurs="0"/>
+              <s:element name="OfferClassification" type="s:string" minOccurs="0"/>
+              <s:element name="OfferID" type="s:string" minOccurs="0"/>
+              <s:element name="OfferReason" type="s:string" minOccurs="0"/>
+              <s:element name="OfferSubReason" type="s:string" minOccurs="0"/>
+              <s:element name="OrderOfferItemID" type="s:string" minOccurs="0"/>
+              <s:element name="Lob" type="s:string" minOccurs="0"/>
+              <s:element name="ApplicationDate" type="s:string" minOccurs="0"/>
+              <s:element name="OrderDetailGroup" type="ope:OrdDetailGroupDTO" minOccurs="0"/>
+              <s:element name="ProfileImage" type="ope:OrdOfferDTO" minOccurs="0"/>
+              <s:element name="MaxOrderSubItemID" type="s:int"/>
+              <s:element name="CcOfferSubKey" type="s:string" minOccurs="0"/>
+              <s:element name="ExistingQuantity" type="s:int"/>
+              <s:element name="NewQuantity" type="s:int"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="OrdDetailGroupDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="SplitGrpInd" type="s:string" minOccurs="0"/>
+              <s:element name="Description" type="s:string" minOccurs="0"/>
+              <s:element name="GroupID" type="s:string" minOccurs="0"/>
+              <s:element name="GroupType" type="s:string" minOccurs="0"/>
+              <s:element name="OrderOffer" type="ope:OrdOfferDTO" minOccurs="0"/>
+              <s:element name="OrderDetailGroupMemberMap" type="ope:Map" minOccurs="0"/>
+              <s:element name="OrderDetailGroupMembers" type="ope:ArrayOfOrdDetailGroupMemberDTO" minOccurs="0"/>
+              <s:element name="ChildOrdDetailGroups" type="ope:ArrayOfOrdDetailGroupDTO" minOccurs="0"/>
+              <s:element name="ParentOrdDetailGroup" type="ope:OrdDetailGroupDTO" minOccurs="0"/>
+              <s:element name="OrderGroupSeq" type="s:string" minOccurs="0"/>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="MaxGroupFeatureSequence" type="s:int"/>
+              <s:element name="OrderGroupFeatures" type="ope:ArrayOfOrdGroupFeatureDTO" minOccurs="0"/>
+              <s:element name="OrderGroupFeatureMap" type="ope:Map" minOccurs="0"/>
+              <s:element name="OrderDetailGroupMemberSvcIDMap" type="ope:Map" minOccurs="0"/>
+              <s:element name="OrderDetailGroupMemberSvcIDs" type="ope:ArrayOfOrdDetailGroupMemberSvcldOnlyDTO" minOccurs="0"/>
+              <s:element name="GroupDetail" type="ope:OrdDetailGroupDetailDTO" minOccurs="0"/>
+              <s:element name="NewNetworkInd" type="s:string" minOccurs="0"/>
+              <s:element name="ExistNetworkInd" type="s:string" minOccurs="0"/>
+              <s:element name="ExistDiversityInd" type="s:string" minOccurs="0"/>
+              <s:element name="NewDiversityInd" type="s:string" minOccurs="0"/>
+              <s:element name="ProfileParentOrdDetailGroup" type="ope:OrdDetailGroupDTO" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrdDetailGroupMemberDTO">
+        <s:sequence>
+          <s:element name="OrdDetailGroupMemberDTO" type="ope:OrdDetailGroupMemberDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrdDetailGroupMemberDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="OrderDetail" type="ope:OrdDetailDTO" minOccurs="0"/>
+              <s:element name="ProfileImage" type="ope:OrdDetailGroupMemberDTO" minOccurs="0"/>
+              <s:element name="OrderDetailGroup" type="ope:OrdDetailGroupDTO" minOccurs="0"/>
+              <s:element name="OrderDetailID" type="s:string" minOccurs="0"/>
+              <s:element name="HuntSequence" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrdDetailGroupDTO">
+        <s:sequence>
+          <s:element name="OrdDetailGroupDTO" type="ope:OrdDetailGroupDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrdGroupFeatureDTO">
+        <s:sequence>
+          <s:element name="OrdGroupFeatureDTO" type="ope:OrdGroupFeatureDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrdGroupFeatureDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="ActionCode" type="s:string" minOccurs="0"/>
+              <s:element name="ActionQuantity" type="s:int"/>
+              <s:element name="ComponentID" type="s:string" minOccurs="0"/>
+              <s:element name="ExistingQuantity" type="s:int"/>
+              <s:element name="OrderDetailGroup" type="ope:OrdDetailGroupDTO" minOccurs="0"/>
+              <s:element name="OrderGroupFeatureSeq" type="s:string" minOccurs="0"/>
+              <s:element name="PsefCode" type="s:string" minOccurs="0"/>
+              <s:element name="PsefInd" type="s:string" minOccurs="0"/>
+              <s:element name="Quantity" type="s:int"/>
+              <s:element name="ProfileImage" type="ope:OrdGroupFeatureDTO" minOccurs="0"/>
+              <s:element name="OrderDetailGroupSequence" type="s:string" minOccurs="0"/>
+              <s:element name="OrderGroupFeatureAttributes" type="ope:ArrayOfOrdGroupFeatureAttributeDTO" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrdGroupFeatureAttributeDTO">
+        <s:sequence>
+          <s:element name="OrdGroupFeatureAttributeDTO" type="ope:OrdGroupFeatureAttributeDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrdGroupFeatureAttributeDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="AttributeID" type="s:string" minOccurs="0"/>
+              <s:element name="OrderGroupFeature" type="ope:OrdGroupFeatureDTO" minOccurs="0"/>
+              <s:element name="ParamCode" type="s:string" minOccurs="0"/>
+              <s:element name="ParamValue" type="s:string" minOccurs="0"/>
+              <s:element name="ProfileImage" type="ope:OrdGroupFeatureAttributeDTO" minOccurs="0"/>
+              <s:element name="Action" type="s:int"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrdDetailGroupMemberSvcldOnlyDTO">
+        <s:sequence>
+          <s:element name="OrdDetailGroupMemberSvcldOnlyDTO" type="ope:OrdDetailGroupMemberSvcldOnlyDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrdDetailGroupMemberSvcldOnlyDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="DatCd" type="s:string" minOccurs="0"/>
+              <s:element name="ServiceType" type="s:string" minOccurs="0"/>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="HuntSequence" type="s:string" minOccurs="0"/>
+              <s:element name="OrderDetailGroup" type="ope:OrdDetailGroupDTO" minOccurs="0"/>
+              <s:element name="ServiceID" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="OrdDetailGroupDetailDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="EnDiversityInd" type="s:string" minOccurs="0"/>
+              <s:element name="ProfileImage" type="ope:OrdDetailGroupDetailDTO" minOccurs="0"/>
+              <s:element name="ExistingEnDiversityInd" type="s:string" minOccurs="0"/>
+              <s:element name="NetworkInd" type="s:string" minOccurs="0"/>
+              <s:element name="ExistingNetworkInd" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrdTermsDTO">
+        <s:sequence>
+          <s:element name="OrdTermsDTO" type="ope:OrdTermsDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrdTermsDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="WaiveReason" type="s:string" minOccurs="0"/>
+              <s:element name="OrderPenaltyMap" type="ope:Map" minOccurs="0"/>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="CustomizeManualDelete" type="s:string" minOccurs="0"/>
+              <s:element name="CustomizeQuantity" type="s:string" minOccurs="0"/>
+              <s:element name="EffectiveDependancy" type="ope:OrdTermsDTO" minOccurs="0"/>
+              <s:element name="ExpectedEndDate" type="s:string" minOccurs="0"/>
+              <s:element name="OrderTermGroup" type="ope:OrdTermsGroupDTO" minOccurs="0"/>
+              <s:element name="TermsID" type="s:string" minOccurs="0"/>
+              <s:element name="CsCustomizedDisplay" type="s:string" minOccurs="0"/>
+              <s:element name="OrderOfferAssignment" type="ope:OrdOfferAssignmentDTO" minOccurs="0"/>
+              <s:element name="CreditProductID" type="s:string" minOccurs="0"/>
+              <s:element name="TermGroupID" type="s:string" minOccurs="0"/>
+              <s:element name="ProfileImage" type="ope:OrdTermsDTO" minOccurs="0"/>
+              <s:element name="DomainType" type="s:string" minOccurs="0"/>
+              <s:element name="Duration" type="s:int" minOccurs="0"/>
+              <s:element name="MeasureUnit" type="s:string" minOccurs="0"/>
+              <s:element name="StartMonth" type="s:int"/>
+              <s:element name="TerminateDate" type="s:string" minOccurs="0"/>
+              <s:element name="OrderPenalties" type="ope:ArrayOfOrdPenaltyDTO" minOccurs="0"/>
+              <s:element name="CommitmentOption" type="s:string" minOccurs="0"/>
+              <s:element name="EffectiveEndDate" type="s:string" minOccurs="0"/>
+              <s:element name="EffectiveStartDate" type="s:string" minOccurs="0"/>
+              <s:element name="PenaltyAmount" type="s:string" minOccurs="0"/>
+              <s:element name="ServiceOrderNumber" type="s:string" minOccurs="0"/>
+              <s:element name="EarlyTermDate" type="s:string" minOccurs="0"/>
+              <s:element name="LastUpdBy" type="s:string" minOccurs="0"/>
+              <s:element name="LastUpdDate" type="s:string" minOccurs="0"/>
+              <s:element name="CcOfferSubKey" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="OrdTermsGroupDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="OrderTermMap" type="ope:Map" minOccurs="0"/>
+              <s:element name="CustomizedInd" type="s:string" minOccurs="0"/>
+              <s:element name="ConditionGroupID" type="s:string" minOccurs="0"/>
+              <s:element name="OrderOfferAssignment" type="ope:OrdOfferAssignmentDTO" minOccurs="0"/>
+              <s:element name="OrderTerms" type="ope:ArrayOfOrdTermsDTO" minOccurs="0"/>
+              <s:element name="Action" type="s:int"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrdPenaltyDTO">
+        <s:sequence>
+          <s:element name="OrdPenaltyDTO" type="ope:OrdPenaltyDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrdPenaltyDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="OrderPenaltyTierMap" type="ope:Map" minOccurs="0"/>
+              <s:element name="PenaltyCustomizedAmount" type="s:string" minOccurs="0"/>
+              <s:element name="PenaltyID" type="s:string" minOccurs="0"/>
+              <s:element name="Waive" type="s:string" minOccurs="0"/>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="GenerateDate" type="s:string" minOccurs="0"/>
+              <s:element name="OrderPenaltyAssignment" type="ope:OrdPenaltyAssignmentDTO" minOccurs="0"/>
+              <s:element name="OrderTerms" type="ope:OrdTermsDTO" minOccurs="0"/>
+              <s:element name="PenaltyCustomizedPercentage" type="s:float"/>
+              <s:element name="PenaltyEstimatedAmount" type="s:string" minOccurs="0"/>
+              <s:element name="RemainingQty" type="s:float"/>
+              <s:element name="UsedQty" type="s:float"/>
+              <s:element name="WaiveReason" type="s:string" minOccurs="0"/>
+              <s:element name="ProfileImage" type="ope:OrdPenaltyDTO" minOccurs="0"/>
+              <s:element name="OrderPenaltyTiers" type="ope:ArrayOfOrdPenaltyTierDTO" minOccurs="0"/>
+              <s:element name="PenaltyPsefCode" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="OrdPenaltyAssignmentDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="OrderPenaltyMap" type="ope:Map" minOccurs="0"/>
+              <s:element name="PenaltyGroupID" type="s:string" minOccurs="0"/>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="OrderOfferAssignment" type="ope:OrdOfferAssignmentDTO" minOccurs="0"/>
+              <s:element name="PenalizeOrderTerm" type="ope:OrdTermsDTO" minOccurs="0"/>
+              <s:element name="OrderPenalties" type="ope:ArrayOfOrdPenaltyDTO" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrdPenaltyTierDTO">
+        <s:sequence>
+          <s:element name="OrdPenaltyTierDTO" type="ope:OrdPenaltyTierDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrdPenaltyTierDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="PenaltyTierID" type="s:string" minOccurs="0"/>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="ProfileImage" type="ope:OrdPenaltyTierDTO" minOccurs="0"/>
+              <s:element name="OrderPenalty" type="ope:OrdPenaltyDTO" minOccurs="0"/>
+              <s:element name="Month" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrdPricingSchemeDTO">
+        <s:sequence>
+          <s:element name="OrdPricingSchemeDTO" type="ope:OrdPricingSchemeDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrdPricingSchemeDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="LegacyProdId" type="s:string" minOccurs="0"/>
+              <s:element name="LegacyTariffCatg" type="s:string" minOccurs="0"/>
+              <s:element name="LegacyTariffHdId" type="s:string" minOccurs="0"/>
+              <s:element name="ChargeType" type="s:string" minOccurs="0"/>
+              <s:element name="CombinationId" type="s:string" minOccurs="0"/>
+              <s:element name="Quantity" type="s:int"/>
+              <s:element name="OrderPricingTierMap" type="ope:Map" minOccurs="0"/>
+              <s:element name="OrderPricingAssignment" type="ope:OrdPricingAssignmentDTO" minOccurs="0"/>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="OrderPricingTiers" type="ope:ArrayOfOrdPricingTierDTO" minOccurs="0"/>
+              <s:element name="WaiveOneTime" type="s:string" minOccurs="0"/>
+              <s:element name="WaiveOneTimeReason" type="s:string" minOccurs="0"/>
+              <s:element name="PricingSchemeID" type="s:string" minOccurs="0"/>
+              <s:element name="OrderOfferAssignment" type="ope:OrdOfferAssignmentDTO" minOccurs="0"/>
+              <s:element name="OrderOfferProduct" type="ope:OrdOfferProductDTO" minOccurs="0"/>
+              <s:element name="ProfileImage" type="ope:OrdPricingSchemeDTO" minOccurs="0"/>
+              <s:element name="ComponentId" type="s:string" minOccurs="0"/>
+              <s:element name="ProductID" type="s:string" minOccurs="0"/>
+              <s:element name="OrderPsef" type="ope:OrdPsefDTO" minOccurs="0"/>
+              <s:element name="PricingSchemeType" type="s:string" minOccurs="0"/>
+              <s:element name="PromotionCode" type="s:string" minOccurs="0"/>
+              <s:element name="PromotionRecurringReductMonth" type="s:string" minOccurs="0"/>
+              <s:element name="PromotionRecurringStartDate" type="s:string" minOccurs="0"/>
+              <s:element name="PromotionRecurringEndDate" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="OrdPricingAssignmentDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="OrderPricingSchemeMap" type="ope:Map" minOccurs="0"/>
+              <s:element name="PricingAssignmentID" type="s:string" minOccurs="0"/>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="OrderOfferAssignment" type="ope:OrdOfferAssignmentDTO" minOccurs="0"/>
+              <s:element name="OrderPricingSchemes" type="ope:ArrayOfOrdPricingSchemeDTO" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrdPricingTierDTO">
+        <s:sequence>
+          <s:element name="OrdPricingTierDTO" type="ope:OrdPricingTierDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrdPricingTierDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="OrderPricingScheme" type="ope:OrdPricingSchemeDTO" minOccurs="0"/>
+              <s:element name="CustomizePercentage" type="s:float"/>
+              <s:element name="PricingTierID" type="s:string" minOccurs="0"/>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="ProfileImage" type="ope:OrdPricingTierDTO" minOccurs="0"/>
+              <s:element name="CustomizeAmount" type="s:string" minOccurs="0"/>
+              <s:element name="ExistingAmount" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="OrdPsefDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="ActionQuantity" type="s:int"/>
+              <s:element name="AttachTo" type="ope:OrdServiceDTO" minOccurs="0"/>
+              <s:element name="ChargeCategory" type="s:string" minOccurs="0"/>
+              <s:element name="ColorCode" type="s:string" minOccurs="0"/>
+              <s:element name="ExistingQuantity" type="s:int"/>
+              <s:element name="GenerateFrom" type="s:anyType" minOccurs="0"/>
+              <s:element name="OneTimeChargeType" type="s:string" minOccurs="0"/>
+              <s:element name="OrderPsefSequence" type="s:string" minOccurs="0"/>
+              <s:element name="PsefCode" type="s:string" minOccurs="0"/>
+              <s:element name="PsefInd" type="s:string" minOccurs="0"/>
+              <s:element name="ActionCode" type="s:string" minOccurs="0"/>
+              <s:element name="ChildPsefs" type="ope:ArrayOfOrdPsefDTO" minOccurs="0"/>
+              <s:element name="ParentPsef" type="ope:OrdPsefDTO" minOccurs="0"/>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="OneTimeChargeAmount" type="s:string" minOccurs="0"/>
+              <s:element name="PrimaryInd" type="s:string" minOccurs="0"/>
+              <s:element name="MeasureUnitQty" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrdPsefDTO">
+        <s:sequence>
+          <s:element name="OrdPsefDTO" type="ope:OrdPsefDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrdDetailDTO">
+        <s:sequence>
+          <s:element name="OrdDetailDTO" type="ope:OrdDetailDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrdDiscountDTO">
+        <s:sequence>
+          <s:element name="OrdDiscountDTO" type="ope:OrdDiscountDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrdDiscountDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="DiscountID" type="s:string" minOccurs="0"/>
+              <s:element name="OrderDiscountAssignment" type="ope:OrdDiscountAssignmentDTO" minOccurs="0"/>
+              <s:element name="OrderOfferAssignment" type="ope:OrdOfferAssignmentDTO" minOccurs="0"/>
+              <s:element name="CreditProductID" type="s:string" minOccurs="0"/>
+              <s:element name="DiscountGroupID" type="s:string" minOccurs="0"/>
+              <s:element name="ProfileImage" type="ope:OrdDiscountDTO" minOccurs="0"/>
+              <s:element name="Remark" type="s:string" minOccurs="0"/>
+              <s:element name="EffectiveDate" type="s:string" minOccurs="0"/>
+              <s:element name="OrderNo" type="s:string" minOccurs="0"/>
+              <s:element name="SentDate" type="s:string" minOccurs="0"/>
+              <s:element name="TerminationDate" type="s:string" minOccurs="0"/>
+              <s:element name="UserCreateDate" type="s:string" minOccurs="0"/>
+              <s:element name="CcOfferSubKey" type="s:string" minOccurs="0"/>
+              <s:element name="Duration" type="s:string" minOccurs="0"/>
+              <s:element name="RebatePsefCode" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="OrdDiscountAssignmentDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="OrderDiscountMap" type="ope:Map" minOccurs="0"/>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="DiscountAssignmentID" type="s:string" minOccurs="0"/>
+              <s:element name="OrderOfferAssignment" type="ope:OrdOfferAssignmentDTO" minOccurs="0"/>
+              <s:element name="OrderDiscounts" type="ope:ArrayOfOrdDiscountDTO" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrdIncentiveDTO">
+        <s:sequence>
+          <s:element name="OrdIncentiveDTO" type="ope:OrdIncentiveDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrdIncentiveDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="IncentiveID" type="s:string" minOccurs="0"/>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="OrderIncentiveAssignment" type="ope:OrdIncentiveAssignmentDTO" minOccurs="0"/>
+              <s:element name="OrderOfferAssignment" type="ope:OrdOfferAssignmentDTO" minOccurs="0"/>
+              <s:element name="CreditProductID" type="s:string" minOccurs="0"/>
+              <s:element name="IncentiveGroupID" type="s:string" minOccurs="0"/>
+              <s:element name="ProfileImage" type="ope:OrdIncentiveDTO" minOccurs="0"/>
+              <s:element name="Remark" type="s:string" minOccurs="0"/>
+              <s:element name="EffectiveDate" type="s:string" minOccurs="0"/>
+              <s:element name="CcOfferSubKey" type="s:string" minOccurs="0"/>
+              <s:element name="OrderNo" type="s:string" minOccurs="0"/>
+              <s:element name="SentDate" type="s:string" minOccurs="0"/>
+              <s:element name="TerminationDate" type="s:string" minOccurs="0"/>
+              <s:element name="UserCreateDate" type="s:string" minOccurs="0"/>
+              <s:element name="Duration" type="s:string" minOccurs="0"/>
+              <s:element name="RebatePsefCode" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="OrdIncentiveAssignmentDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="OrderIncentiveMap" type="ope:Map" minOccurs="0"/>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="OrderOfferAssignment" type="ope:OrdOfferAssignmentDTO" minOccurs="0"/>
+              <s:element name="OrderIncentives" type="ope:ArrayOfOrdIncentiveDTO" minOccurs="0"/>
+              <s:element name="IncentiveAssignmentID" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrdOfferProductComponentDTO">
+        <s:sequence>
+          <s:element name="OrdOfferProductComponentDTO" type="ope:OrdOfferProductComponentDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrdOfferProductComponentDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="OrderUniqueKey" type="s:string" minOccurs="0"/>
+              <s:element name="OrderComponentSeq" type="s:string" minOccurs="0"/>
+              <s:element name="OrderProduct" type="ope:OrdOfferProductDTO" minOccurs="0"/>
+              <s:element name="OrderService" type="ope:OrdServiceDTO" minOccurs="0"/>
+              <s:element name="ComponentID" type="s:string" minOccurs="0"/>
+              <s:element name="OrderPsef" type="ope:OrdPsefDTO" minOccurs="0"/>
+              <s:element name="OrderPsefAttributes" type="ope:ArrayOfOrdPsefAttributeDTO" minOccurs="0"/>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="MaxPsefAttributeSequence" type="s:int"/>
+              <s:element name="ExistingQuantity" type="s:int"/>
+              <s:element name="Quantity" type="s:int"/>
+              <s:element name="OrderServiceComponentSeq" type="s:string" minOccurs="0"/>
+              <s:element name="CcComponentSubKey" type="s:string" minOccurs="0"/>
+              <s:element name="ExtensionPsefs" type="ope:ArrayOfOrdPsefDTO" minOccurs="0"/>
+              <s:element name="ExtensionPsefMap" type="ope:Map" minOccurs="0"/>
+              <s:element name="ColorCode" type="s:string" minOccurs="0"/>
+              <s:element name="MeasureUnitQty" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrdPsefAttributeDTO">
+        <s:sequence>
+          <s:element name="OrdPsefAttributeDTO" type="ope:OrdPsefAttributeDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrdPsefAttributeDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="AttributeID" type="s:string" minOccurs="0"/>
+              <s:element name="OrderComponent" type="ope:OrdOfferProductComponentDTO" minOccurs="0"/>
+              <s:element name="ParamCode" type="s:string" minOccurs="0"/>
+              <s:element name="ParamValue" type="s:string" minOccurs="0"/>
+              <s:element name="ProfileImage" type="ope:OrdPsefAttributeDTO" minOccurs="0"/>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="OrderPsefAttributeSequence" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrdServiceAccountDTO">
+        <s:sequence>
+          <s:element name="OrdServiceAccountDTO" type="ope:OrdServiceAccountDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrdServiceAccountDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="AccountCode" type="s:string" minOccurs="0"/>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="ChargeCategoryCode" type="s:string" minOccurs="0"/>
+              <s:element name="OrderDetail" type="ope:OrdDetailDTO" minOccurs="0"/>
+              <s:element name="ProfileImage" type="ope:OrdServiceAccountDTO" minOccurs="0"/>
+              <s:element name="OrderServiceUniqueKey" type="s:string" minOccurs="0"/>
+              <s:element name="CustomerNum" type="s:string" minOccurs="0"/>
+              <s:element name="CustomerSystemID" type="s:string" minOccurs="0"/>
+              <s:element name="CustomerLevel" type="s:int"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrdServiceDTO">
+        <s:sequence>
+          <s:element name="OrdServiceDTO" type="ope:OrdServiceDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrdAddressDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="AddressID" type="s:string" minOccurs="0"/>
+              <s:element name="ExistingAddressID" type="s:string" minOccurs="0"/>
+              <s:element name="ProfileImage" type="ope:OrdAddressDTO" minOccurs="0"/>
+              <s:element name="SiteOfficeInd" type="s:string" minOccurs="0"/>
+              <s:element name="BuildID" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="OrdSalesInfoDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="AgentCode" type="s:string" minOccurs="0"/>
+              <s:element name="AsmContact" type="s:string" minOccurs="0"/>
+              <s:element name="AsmFax" type="s:string" minOccurs="0"/>
+              <s:element name="AsmName" type="s:string" minOccurs="0"/>
+              <s:element name="CallListID" type="s:string" minOccurs="0"/>
+              <s:element name="OverseaBusinessManager" type="s:string" minOccurs="0"/>
+              <s:element name="OverseaSalesChannel" type="s:string" minOccurs="0"/>
+              <s:element name="OverseaSalesmanID" type="s:string" minOccurs="0"/>
+              <s:element name="OverseaSalesTeam" type="s:string" minOccurs="0"/>
+              <s:element name="ProjectID" type="s:string" minOccurs="0"/>
+              <s:element name="ContractId" type="s:string" minOccurs="0"/>
+              <s:element name="ContractDesc" type="s:string" minOccurs="0"/>
+              <s:element name="RefereeSalesmanID" type="s:string" minOccurs="0"/>
+              <s:element name="SalesChannel" type="s:string" minOccurs="0"/>
+              <s:element name="SalesmanID" type="s:string" minOccurs="0"/>
+              <s:element name="SalesTeam" type="s:string" minOccurs="0"/>
+              <s:element name="ApplicationMethod" type="s:string" minOccurs="0"/>
+              <s:element name="CfoType" type="s:string" minOccurs="0"/>
+              <s:element name="InOutBound" type="s:string" minOccurs="0"/>
+              <s:element name="SalesType" type="s:string" minOccurs="0"/>
+              <s:element name="SerialNum" type="s:string" minOccurs="0"/>
+              <s:element name="SourceCode" type="s:string" minOccurs="0"/>
+              <s:element name="StaffID" type="s:string" minOccurs="0"/>
+              <s:element name="ProfileImage" type="ope:OrdSalesInfoDTO" minOccurs="0"/>
+              <s:element name="SalesmanReferenceID" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="UamsAppointmentDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="AftInd" type="s:string" minOccurs="0"/>
+              <s:element name="AlertFieldCode" type="s:string" minOccurs="0"/>
+              <s:element name="AlertFieldRemark" type="s:string" minOccurs="0"/>
+              <s:element name="AreaCode" type="s:string" minOccurs="0"/>
+              <s:element name="CusterNum" type="s:string" minOccurs="0"/>
+              <s:element name="CxsOrderId" type="s:string" minOccurs="0"/>
+              <s:element name="DelayReasonCode" type="s:string" minOccurs="0"/>
+              <s:element name="DistrictCode" type="s:string" minOccurs="0"/>
+              <s:element name="ExchID" type="s:string" minOccurs="0"/>
+              <s:element name="ForcedDelayInd" type="s:string" minOccurs="0"/>
+              <s:element name="FromApptEndDT" type="s:string" minOccurs="0"/>
+              <s:element name="FromApptStartDT" type="s:string" minOccurs="0"/>
+              <s:element name="FromApptType" type="s:string" minOccurs="0"/>
+              <s:element name="FromVisitInd" type="s:string" minOccurs="0"/>
+              <s:element name="Grid" type="s:string" minOccurs="0"/>
+              <s:element name="OcID" type="s:string" minOccurs="0"/>
+              <s:element name="OcProducts" type="s:string" minOccurs="0"/>
+              <s:element name="OrderStatus" type="s:string" minOccurs="0"/>
+              <s:element name="OrderTypeCode" type="s:string" minOccurs="0"/>
+              <s:element name="ProdType" type="s:string" minOccurs="0"/>
+              <s:element name="SbiInd" type="s:string" minOccurs="0"/>
+              <s:element name="SerialNum" type="s:string" minOccurs="0"/>
+              <s:element name="Srd" type="s:string" minOccurs="0"/>
+              <s:element name="SrvNum" type="s:string" minOccurs="0"/>
+              <s:element name="SrvType" type="s:string" minOccurs="0"/>
+              <s:element name="Tariff" type="s:string" minOccurs="0"/>
+              <s:element name="TidInd" type="s:string" minOccurs="0"/>
+              <s:element name="ToApptEndDT" type="s:string" minOccurs="0"/>
+              <s:element name="ToApptStartDT" type="s:string" minOccurs="0"/>
+              <s:element name="ToApptType" type="s:string" minOccurs="0"/>
+              <s:element name="ToVisitInd" type="s:string" minOccurs="0"/>
+              <s:element name="UserID" type="s:string" minOccurs="0"/>
+              <s:element name="ServiceLevel" type="s:string" minOccurs="0"/>
+              <s:element name="CpdInd" type="s:string" minOccurs="0"/>
+              <s:element name="CustomerInsistedInd" type="s:string" minOccurs="0"/>
+              <s:element name="TentativeInd" type="s:string" minOccurs="0"/>
+              <s:element name="VisitReasonCode" type="s:string" minOccurs="0"/>
+              <s:element name="OrderDtlID" type="s:string" minOccurs="0"/>
+              <s:element name="ResultCd" type="s:string" minOccurs="0"/>
+              <s:element name="ResultMsg" type="s:string" minOccurs="0"/>
+              <s:element name="AddressID" type="s:string" minOccurs="0"/>
+              <s:element name="TranID" type="s:string" minOccurs="0"/>
+              <s:element name="InstantFallbackInd" type="s:string" minOccurs="0"/>
+              <s:element name="SmsIndex" type="s:string" minOccurs="0"/>
+              <s:element name="SmsLanguage" type="s:string" minOccurs="0"/>
+              <s:element name="SmsMobile" type="s:string" minOccurs="0"/>
+              <s:element name="DocType" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrdDetailRemarkDTO">
+        <s:sequence>
+          <s:element name="OrdDetailRemarkDTO" type="ope:OrdDetailRemarkDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrdDetailRemarkDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="ServiceID" type="s:string" minOccurs="0"/>
+              <s:element name="DtlID" type="s:string" minOccurs="0"/>
+              <s:element name="OcID" type="s:string" minOccurs="0"/>
+              <s:element name="RemarkContents" type="s:string" minOccurs="0"/>
+              <s:element name="UpdateBy" type="s:string" minOccurs="0"/>
+              <s:element name="UpdateDate" type="s:string" minOccurs="0"/>
+              <s:element name="OrderDetail" type="ope:OrdDetailDTO" minOccurs="0"/>
+              <s:element name="NewRemark" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrdDeptDTO">
+        <s:sequence>
+          <s:element name="OrdDeptDTO" type="ope:OrdDeptDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrdDeptDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObjectWithAction">
+            <s:sequence>
+              <s:element name="AccountNumber" type="s:string" minOccurs="0"/>
+              <s:element name="ChargeCategory" type="s:string" minOccurs="0"/>
+              <s:element name="CustomerNumber" type="s:string" minOccurs="0"/>
+              <s:element name="OrderDetail" type="ope:OrdDetailDTO" minOccurs="0"/>
+              <s:element name="ItemNumber" type="s:string" minOccurs="0"/>
+              <s:element name="NewDeptName" type="s:string" minOccurs="0"/>
+              <s:element name="NewDeptId" type="s:string" minOccurs="0"/>
+              <s:element name="OldDeptName" type="s:string" minOccurs="0"/>
+              <s:element name="ServiceNumber" type="s:string" minOccurs="0"/>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="OrderServiceAccount" type="ope:OrdServiceAccountDTO" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfGenericFixFieldDTO">
+        <s:sequence>
+          <s:element name="GenericFixFieldDTO" type="ope:GenericFixFieldDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GenericFixFieldDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="MandatoryInd" type="s:string" minOccurs="0"/>
+              <s:element name="Action" type="s:int"/>
+              <s:element name="ActionType" type="s:string" minOccurs="0"/>
+              <s:element name="RemarkSequence" type="s:int"/>
+              <s:element name="RemarkType" type="s:string" minOccurs="0"/>
+              <s:element name="Value1" type="s:string" minOccurs="0"/>
+              <s:element name="Value2" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="LegacyOrderActivityDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="Status" type="s:string" minOccurs="0"/>
+              <s:element name="ChgPPPOESessionInd" type="s:string" minOccurs="0"/>
+              <s:element name="L1SystemOnly" type="s:string" minOccurs="0"/>
+              <s:element name="AppointmentDateTime" type="s:string" minOccurs="0"/>
+              <s:element name="FieldService" type="s:string" minOccurs="0"/>
+              <s:element name="LegacyActivitySeqNum" type="s:string" minOccurs="0"/>
+              <s:element name="LegacyOrder" type="ope:LegacyOrderDTO" minOccurs="0"/>
+              <s:element name="LegacyOrderRemarks" type="ope:ArrayOfRemarksDTO" minOccurs="0"/>
+              <s:element name="OrderService" type="ope:OrdServiceDTO" minOccurs="0"/>
+              <s:element name="OrderType" type="s:string" minOccurs="0"/>
+              <s:element name="ProfileImage" type="ope:LegacyOrderActivityDTO" minOccurs="0"/>
+              <s:element name="AddressInvestigateInd" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="LegacyOrderDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="LegacyOrderRemarks" type="ope:ArrayOfRemarksDTO" minOccurs="0"/>
+              <s:element name="LegacyOrderActivityMap" type="ope:Map" minOccurs="0"/>
+              <s:element name="IssueDate" type="s:string" minOccurs="0"/>
+              <s:element name="LegacyOrderActivities" type="ope:ArrayOfLegacyOrderActivityDTO" minOccurs="0"/>
+              <s:element name="LegacyOrderNum" type="s:string" minOccurs="0"/>
+              <s:element name="OrderService" type="ope:OrdServiceDTO" minOccurs="0"/>
+              <s:element name="ProfileImage" type="ope:LegacyOrderDTO" minOccurs="0"/>
+              <s:element name="Status" type="s:string" minOccurs="0"/>
+              <s:element name="RequestID" type="s:string" minOccurs="0"/>
+              <s:element name="UamsAppointment" type="ope:UamsAppointmentDTO" minOccurs="0"/>
+              <s:element name="TrueOrderType" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfRemarksDTO">
+        <s:sequence>
+          <s:element name="RemarksDTO" type="ope:RemarksDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RemarksDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="GroupID" type="s:string" minOccurs="0"/>
+              <s:element name="DtlID" type="s:string" minOccurs="0"/>
+              <s:element name="Lob" type="s:string" minOccurs="0"/>
+              <s:element name="RemarkContents" type="s:string" minOccurs="0"/>
+              <s:element name="RemarkSequence" type="s:string" minOccurs="0"/>
+              <s:element name="UpdateBy" type="s:string" minOccurs="0"/>
+              <s:element name="UpdateDate" type="s:string" minOccurs="0"/>
+              <s:element name="Oc_id" type="s:string" minOccurs="0"/>
+              <s:element name="Remarkid" type="s:string" minOccurs="0"/>
+              <s:element name="LegacyNumber" type="s:string" minOccurs="0"/>
+              <s:element name="RemarkType" type="s:string" minOccurs="0"/>
+              <s:element name="AttachTo" type="s:anyType" minOccurs="0"/>
+              <s:element name="OrdServiceDTO" type="ope:OrdServiceDTO" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfLegacyOrderActivityDTO">
+        <s:sequence>
+          <s:element name="LegacyOrderActivityDTO" type="ope:LegacyOrderActivityDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDnDTO">
+        <s:sequence>
+          <s:element name="DnDTO" type="ope:DnDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DnDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="ExchangeCategory" type="s:string" minOccurs="0"/>
+              <s:element name="AssignPriority" type="s:string" minOccurs="0"/>
+              <s:element name="TypeOfService" type="s:string" minOccurs="0"/>
+              <s:element name="Message" type="s:string" minOccurs="0"/>
+              <s:element name="RequestID" type="s:string" minOccurs="0"/>
+              <s:element name="OrderServiceID" type="s:string" minOccurs="0"/>
+              <s:element name="OcID" type="s:string" minOccurs="0"/>
+              <s:element name="OrderDtID" type="s:string" minOccurs="0"/>
+              <s:element name="Dn" type="s:string" minOccurs="0"/>
+              <s:element name="ExchangeId" type="s:string" minOccurs="0"/>
+              <s:element name="InventStsCD" type="s:string" minOccurs="0"/>
+              <s:element name="DragonReasonCd" type="s:string" minOccurs="0"/>
+              <s:element name="DragonReasonDesc" type="s:string" minOccurs="0"/>
+              <s:element name="StartRange" type="s:string" minOccurs="0"/>
+              <s:element name="EndRange" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="DNAssignmentOptionDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="ExtSrvNum" type="s:string" minOccurs="0"/>
+              <s:element name="SelectedCustomer" type="s:string" minOccurs="0"/>
+              <s:element name="SelectedHostExchangeID" type="s:string" minOccurs="0"/>
+              <s:element name="CcnZoneNum" type="s:string" minOccurs="0"/>
+              <s:element name="CcnDnRange" type="ope:ArrayOfString" minOccurs="0"/>
+              <s:element name="CcnDPNum" type="s:string" minOccurs="0"/>
+              <s:element name="OcID" type="s:string" minOccurs="0"/>
+              <s:element name="OrderDtID" type="s:string" minOccurs="0"/>
+              <s:element name="OrderServiceID" type="s:string" minOccurs="0"/>
+              <s:element name="CcnBuildId" type="s:string" minOccurs="0"/>
+              <s:element name="CcnRlu" type="s:string" minOccurs="0"/>
+              <s:element name="ConsecutiveInd" type="s:string" minOccurs="0"/>
+              <s:element name="DnSelectionInd" type="s:string" minOccurs="0"/>
+              <s:element name="LevelID" type="s:string" minOccurs="0"/>
+              <s:element name="OoaInd" type="s:string" minOccurs="0"/>
+              <s:element name="RequestDN" type="s:string" minOccurs="0"/>
+              <s:element name="RequestDNInd" type="s:string" minOccurs="0"/>
+              <s:element name="RequestDNQty" type="s:int"/>
+              <s:element name="ReservationAccount" type="s:string" minOccurs="0"/>
+              <s:element name="ReservationBoc" type="s:string" minOccurs="0"/>
+              <s:element name="ReservationProject" type="s:string" minOccurs="0"/>
+              <s:element name="SpecialSrvGrp" type="s:string" minOccurs="0"/>
+              <s:element name="SpecialSrvName" type="s:string" minOccurs="0"/>
+              <s:element name="TargetExchangeID" type="s:string" minOccurs="0"/>
+              <s:element name="Remarks" type="s:string" minOccurs="0"/>
+              <s:element name="ReservationBy" type="s:string" minOccurs="0"/>
+              <s:element name="SrvReqID" type="s:string" minOccurs="0"/>
+              <s:element name="RequestDN2" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfint">
+        <s:sequence>
+          <s:element name="int" type="s:int" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DNAssignOutput">
+        <s:sequence>
+          <s:element name="DnAssignOutArray" type="ope:ArrayOfDNAssignOutDetail" minOccurs="0"/>
+          <s:element name="DrgRtnSts" type="ope:DragonReturnStatus" minOccurs="0"/>
+          <s:element name="ReaoArray" type="ope:ArrayOfBoMSrvReaOut" minOccurs="0"/>
+          <s:element name="ReqoArray" type="ope:ArrayOfBoMSrvReqOut" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDNAssignOutDetail">
+        <s:sequence>
+          <s:element name="DNAssignOutDetail" type="ope:DNAssignOutDetail" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DNAssignOutDetail">
+        <s:sequence>
+          <s:element name="GatewayNum" type="s:string" minOccurs="0"/>
+          <s:element name="InventSts" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DragonReturnStatus">
+        <s:sequence>
+          <s:element name="ErrorDesc" type="s:string" minOccurs="0"/>
+          <s:element name="ErrorDetail" type="s:string" minOccurs="0"/>
+          <s:element name="ErrorMachineid" type="s:string" minOccurs="0"/>
+          <s:element name="ErrorMnemonic" type="s:string" minOccurs="0"/>
+          <s:element name="ErrorSeverity" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfBoMSrvReaOut">
+        <s:sequence>
+          <s:element name="BoMSrvReaOut" type="ope:BoMSrvReaOut" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BoMSrvReaOut">
+        <s:sequence>
+          <s:element name="OreaCd" type="s:string" minOccurs="0"/>
+          <s:element name="OreaDesc" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfBoMSrvReqOut">
+        <s:sequence>
+          <s:element name="BoMSrvReqOut" type="ope:BoMSrvReqOut" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BoMSrvReqOut">
+        <s:sequence>
+          <s:element name="OreqId" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExtgInvInfoReturn">
+        <s:sequence>
+          <s:element name="StsCd" type="s:string" minOccurs="0"/>
+          <s:element name="StsCdDesc" type="s:string" minOccurs="0"/>
+          <s:element name="StsDate" type="s:string" minOccurs="0"/>
+          <s:element name="AdslInd" type="s:string" minOccurs="0"/>
+          <s:element name="BbgId" type="s:string" minOccurs="0"/>
+          <s:element name="BuildId" type="s:string" minOccurs="0"/>
+          <s:element name="CitnGpNum" type="s:string" minOccurs="0"/>
+          <s:element name="DpsdfCd" type="s:string" minOccurs="0"/>
+          <s:element name="DpSubCat" type="s:string" minOccurs="0"/>
+          <s:element name="DptypeCd" type="s:string" minOccurs="0"/>
+          <s:element name="Ext2nTie1" type="s:string" minOccurs="0"/>
+          <s:element name="Ext2nTie2" type="s:string" minOccurs="0"/>
+          <s:element name="ExtLalType" type="s:string" minOccurs="0"/>
+          <s:element name="ExtShrSrvNum" type="s:string" minOccurs="0"/>
+          <s:element name="ExtShrSrvType" type="s:string" minOccurs="0"/>
+          <s:element name="FznInventInd" type="s:string" minOccurs="0"/>
+          <s:element name="MbgId" type="s:string" minOccurs="0"/>
+          <s:element name="OoaInd" type="s:string" minOccurs="0"/>
+          <s:element name="PayPhonId" type="s:string" minOccurs="0"/>
+          <s:element name="PndgOrderId" type="s:string" minOccurs="0"/>
+          <s:element name="PndgOrderType" type="s:string" minOccurs="0"/>
+          <s:element name="RelIMSOrder" type="s:string" minOccurs="0"/>
+          <s:element name="RelIMSOrdType" type="s:string" minOccurs="0"/>
+          <s:element name="IddTosInd" type="s:string" minOccurs="0"/>
+          <s:element name="TosColsrv1" type="s:string" minOccurs="0"/>
+          <s:element name="TosColsrv2" type="s:string" minOccurs="0"/>
+          <s:element name="DpCat" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOfferDetailRecurringChargesDTO">
+        <s:sequence>
+          <s:element name="OfferDetailRecurringChargesDTO" type="ope:OfferDetailRecurringChargesDTO" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OfferDetailRecurringChargesDTO">
+        <s:complexContent>
+          <s:extension base="ope:ServiceResponse">
+            <s:sequence>
+              <s:element name="ServiceNum" type="s:string" minOccurs="0"/>
+              <s:element name="OfferCode" type="s:string" minOccurs="0"/>
+              <s:element name="ProductId" type="s:string" minOccurs="0"/>
+              <s:element name="ProductDesc" type="s:string" minOccurs="0"/>
+              <s:element name="ChargeCode" type="s:string" minOccurs="0"/>
+              <s:element name="ChargeDesc" type="s:string" minOccurs="0"/>
+              <s:element name="DefaultAmount" type="s:string" minOccurs="0"/>
+              <s:element name="ChargeAmount" type="s:string" minOccurs="0"/>
+              <s:element name="EffectiveDate" type="s:string" minOccurs="0"/>
+              <s:element name="TerminateDate" type="s:string" minOccurs="0"/>
+              <s:element name="ContractOrPromotionStartDate" type="s:string" minOccurs="0"/>
+              <s:element name="ContractOrPromotionEndDate" type="s:string" minOccurs="0"/>
+              <s:element name="ReturnMsg" type="s:string" minOccurs="0"/>
+              <s:element name="ReturnCd" type="s:int"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+
+  </types>
+  <message name="getServiceAddrSoapIn">
+    <part name="parameters" element="s0:getServiceAddr"/>
+  </message>
+  <message name="getServiceAddrSoapOut">
+    <part name="parameters" element="s0:getServiceAddrResponse"/>
+  </message>
+  <message name="getIddffpInfoSoapIn">
+    <part name="parameters" element="s0:getIddffpInfo"/>
+  </message>
+  <message name="getIddffpInfoSoapOut">
+    <part name="parameters" element="s0:getIddffpInfoResponse"/>
+  </message>
+  <message name="getDNAssignmentResultSoapIn">
+    <part name="parameters" element="s0:getDNAssignmentResult"/>
+  </message>
+  <message name="getDNAssignmentResultSoapOut">
+    <part name="parameters" element="s0:getDNAssignmentResultResponse"/>
+  </message>
+  <message name="dnAssignReqSoapIn">
+    <part name="parameters" element="s0:dnAssignReq"/>
+  </message>
+  <message name="dnAssignReqSoapOut">
+    <part name="parameters" element="s0:dnAssignReqResponse"/>
+  </message>
+  <message name="DNStatusAssigSoapIn">
+    <part name="parameters" element="s0:DNStatusAssig"/>
+  </message>
+  <message name="DNStatusAssigSoapOut">
+    <part name="parameters" element="s0:DNStatusAssigResponse"/>
+  </message>
+  <message name="getDrgSvcDetailSoapIn">
+    <part name="parameters" element="s0:getDrgSvcDetail"/>
+  </message>
+  <message name="getDrgSvcDetailSoapOut">
+    <part name="parameters" element="s0:getDrgSvcDetailResponse"/>
+  </message>
+  <message name="getRecurringChargesSoapIn">
+    <part name="parameters" element="s0:getRecurringCharges"/>
+  </message>
+  <message name="getRecurringChargesSoapOut">
+    <part name="parameters" element="s0:getRecurringChargesResponse"/>
+  </message>
+  <portType name="ServiceProfSoap">
+    <operation name="getServiceAddr">
+      <input message="s0:getServiceAddrSoapIn"/>
+      <output message="s0:getServiceAddrSoapOut"/>
+    </operation>
+    <operation name="getIddffpInfo">
+      <input message="s0:getIddffpInfoSoapIn"/>
+      <output message="s0:getIddffpInfoSoapOut"/>
+    </operation>
+    <operation name="getDNAssignmentResult">
+      <input message="s0:getDNAssignmentResultSoapIn"/>
+      <output message="s0:getDNAssignmentResultSoapOut"/>
+    </operation>
+    <operation name="dnAssignReq">
+      <input message="s0:dnAssignReqSoapIn"/>
+      <output message="s0:dnAssignReqSoapOut"/>
+    </operation>
+    <operation name="DNStatusAssig">
+      <input message="s0:DNStatusAssigSoapIn"/>
+      <output message="s0:DNStatusAssigSoapOut"/>
+    </operation>
+    <operation name="getDrgSvcDetail">
+      <input message="s0:getDrgSvcDetailSoapIn"/>
+      <output message="s0:getDrgSvcDetailSoapOut"/>
+    </operation>
+    <operation name="getRecurringCharges">
+      <input message="s0:getRecurringChargesSoapIn"/>
+      <output message="s0:getRecurringChargesSoapOut"/>
+    </operation>
+  </portType>
+  <binding name="ServiceProfSoap" type="s0:ServiceProfSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="getServiceAddr">
+      <soap:operation soapAction="http://www.openuri.org/getServiceAddr" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getIddffpInfo">
+      <soap:operation soapAction="http://www.openuri.org/getIddffpInfo" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getDNAssignmentResult">
+      <soap:operation soapAction="http://www.openuri.org/getDNAssignmentResult" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="dnAssignReq">
+      <soap:operation soapAction="http://www.openuri.org/dnAssignReq" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="DNStatusAssig">
+      <soap:operation soapAction="http://www.openuri.org/DNStatusAssig" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getDrgSvcDetail">
+      <soap:operation soapAction="http://www.openuri.org/getDrgSvcDetail" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getRecurringCharges">
+      <soap:operation soapAction="http://www.openuri.org/getRecurringCharges" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ServiceProf">
+    <port name="ServiceProfSoap" binding="s0:ServiceProfSoap">
+      <soap:address location="http://bomeaidev:7381/CustProfileGateway/ws/ServiceProf.jws"/>
+    </port>
+  </service>
+</definitions>

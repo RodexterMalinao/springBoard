@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:conv="http://www.openuri.org/2002/04/soap/conversation/" xmlns:cw="http://www.openuri.org/2002/04/wsdl/conversation/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:jms="http://www.openuri.org/2002/04/wsdl/jms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://www.openuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://www.openuri.org/">
+  <types>
+    <s:schema xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:ope="http://www.openuri.org/" elementFormDefault="qualified" targetNamespace="http://www.openuri.org/">
+      <s:element name="createSalesMemo">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="pStoreIP" type="s:string" minOccurs="0"/>
+            <s:element name="pOrderRegInfo" type="s:string" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createSalesMemoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="createSalesMemoResult" type="ope:SalesMemoResponse" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retrieveSalesMemo">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="pStoreIP" type="s:string" minOccurs="0"/>
+            <s:element name="pSalesMemoNum" type="s:string" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retrieveSalesMemoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="retrieveSalesMemoResult" type="ope:RetrieveSalesMemoReturn" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPposBusinessDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="pStoreIP" type="s:string" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPposBusinessDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="getPposBusinessDateResult" type="s:string" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SalesMemoResponse">
+        <s:sequence>
+          <s:element name="SmNumber" type="s:string" minOccurs="0"/>
+          <s:element name="Result" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RetrieveSalesMemoReturn">
+        <s:sequence>
+          <s:element name="Result" type="s:string" minOccurs="0"/>
+          <s:element name="HXmlData" type="s:string" minOccurs="0"/>
+          <s:element name="DXmlData" type="s:string" minOccurs="0"/>
+          <s:element name="TXmlData" type="s:string" minOccurs="0"/>
+          <s:element name="CXmlData" type="s:string" minOccurs="0"/>
+          <s:element name="MXmlData" type="s:string" minOccurs="0"/>
+          <s:element name="LXmlData" type="s:string" minOccurs="0"/>
+          <s:element name="ErrMsg" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+
+  </types>
+  <message name="createSalesMemoSoapIn">
+    <part name="parameters" element="s0:createSalesMemo"/>
+  </message>
+  <message name="createSalesMemoSoapOut">
+    <part name="parameters" element="s0:createSalesMemoResponse"/>
+  </message>
+  <message name="retrieveSalesMemoSoapIn">
+    <part name="parameters" element="s0:retrieveSalesMemo"/>
+  </message>
+  <message name="retrieveSalesMemoSoapOut">
+    <part name="parameters" element="s0:retrieveSalesMemoResponse"/>
+  </message>
+  <message name="getPposBusinessDateSoapIn">
+    <part name="parameters" element="s0:getPposBusinessDate"/>
+  </message>
+  <message name="getPposBusinessDateSoapOut">
+    <part name="parameters" element="s0:getPposBusinessDateResponse"/>
+  </message>
+  <portType name="PPOSSoap">
+    <operation name="createSalesMemo">
+      <input message="s0:createSalesMemoSoapIn"/>
+      <output message="s0:createSalesMemoSoapOut"/>
+    </operation>
+    <operation name="retrieveSalesMemo">
+      <input message="s0:retrieveSalesMemoSoapIn"/>
+      <output message="s0:retrieveSalesMemoSoapOut"/>
+    </operation>
+    <operation name="getPposBusinessDate">
+      <input message="s0:getPposBusinessDateSoapIn"/>
+      <output message="s0:getPposBusinessDateSoapOut"/>
+    </operation>
+  </portType>
+  <binding name="PPOSSoap" type="s0:PPOSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="createSalesMemo">
+      <soap:operation soapAction="http://www.openuri.org/createSalesMemo" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="retrieveSalesMemo">
+      <soap:operation soapAction="http://www.openuri.org/retrieveSalesMemo" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getPposBusinessDate">
+      <soap:operation soapAction="http://www.openuri.org/getPposBusinessDate" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="PPOS">
+    <port name="PPOSSoap" binding="s0:PPOSSoap">
+      <soap:address location="http://bomeaidev:7581/PPOSGateway/ws/PPOS.jws"/>
+    </port>
+  </service>
+</definitions>

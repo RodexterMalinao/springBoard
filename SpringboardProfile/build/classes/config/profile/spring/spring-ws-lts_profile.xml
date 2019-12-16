@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:sws="http://www.springframework.org/schema/web-services"
+       xmlns:oxm="http://www.springframework.org/schema/oxm"
+          xsi:schemaLocation=
+           "http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/web-services
+           http://www.springframework.org/schema/web-services/web-services-2.0.xsd
+           http://www.springframework.org/schema/oxm
+           http://www.springframework.org/schema/oxm/spring-oxm-1.5.xsd">
+ 
+ 	<bean id="bomWsClient" class="com.bomwebportal.lts.wsClientLts.BomWsClient">
+   		<property name="webServiceTemplate" ref="webServiceTemplate" />
+ 	</bean>    
+  
+ 	<bean id="webServiceTemplate" class="org.springframework.ws.client.core.WebServiceTemplate"
+  		p:marshaller-ref="jaxbMarshaller"
+  		p:unmarshaller-ref="jaxbMarshaller"
+  		p:defaultUri="${ws.lts.wsclient}"
+  		p:messageSender-ref="messageSender">
+  		<constructor-arg ref="messageFactory"/>
+  		<property name="interceptors">
+   			<list>
+    			<ref local="wss4jSecurityInterceptor"/>
+   			</list>
+  		</property>  
+ 	</bean>
+ 	
+ 	<bean id="wss4jSecurityInterceptor" class="org.springframework.ws.soap.security.wss4j.Wss4jSecurityInterceptor">
+  		<property name="securementActions" value="UsernameToken" />
+  		<property name="securementUsername" value="${ws.lts.user}" />
+  		<property name="securementPassword" value="${ws.lts.password}" />
+  		<property name="securementPasswordType" value="PasswordText"/>  
+ 	</bean>
+</beans>

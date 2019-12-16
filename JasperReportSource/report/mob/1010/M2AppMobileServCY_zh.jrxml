@@ -1,0 +1,3022 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AppMobileServ" language="groovy" pageWidth="595" pageHeight="841" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.9487171000000014"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="253"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<field name="serviceType" class="java.lang.String"/>
+	<field name="districtDesc" class="java.lang.String"/>
+	<field name="mnpType" class="java.lang.String"/>
+	<field name="buildingName" class="java.lang.String"/>
+	<field name="idDocType" class="java.lang.String"/>
+	<field name="addrProofInd" class="java.lang.String"/>
+	<field name="msisdn" class="java.lang.String"/>
+	<field name="custFirstName" class="java.lang.String"/>
+	<field name="emailAddr" class="java.lang.String"/>
+	<field name="csPortalBool" class="java.lang.Boolean"/>
+	<field name="cutoverDate" class="java.util.Date"/>
+	<field name="lob" class="java.lang.String"/>
+	<field name="mainServDtls" class="java.util.ArrayList"/>
+	<field name="agreementNum" class="java.lang.String"/>
+	<field name="serviceNum" class="java.lang.String"/>
+	<field name="sectionDesc" class="java.lang.String"/>
+	<field name="serviceReqDate" class="java.util.Date"/>
+	<field name="dob" class="java.util.Date"/>
+	<field name="vasDtls" class="java.util.ArrayList"/>
+	<field name="vasOnetimeAmtList" class="java.util.ArrayList"/>
+	<field name="vasOnetimeAmtFee" class="java.lang.String"/>
+	<field name="rebateList" class="java.util.ArrayList"/>
+	<field name="areaCode" class="java.lang.String"/>
+	<field name="flat" class="java.lang.String"/>
+	<field name="streetName" class="java.lang.String"/>
+	<field name="floor" class="java.lang.String"/>
+	<field name="custLastName" class="java.lang.String"/>
+	<field name="idDocNum" class="java.lang.String"/>
+	<field name="contactPhone" class="java.lang.String"/>
+	<field name="customerType" class="java.lang.String"/>
+	<field name="streetCatgDesc" class="java.lang.String"/>
+	<field name="appInDate" class="java.util.Date"/>
+	<field name="handsetDeviceDescription" class="java.lang.String"/>
+	<field name="iccid" class="java.lang.String"/>
+	<field name="billMedia" class="java.lang.String"/>
+	<field name="imei" class="java.lang.String"/>
+	<field name="contractPeriod" class="java.lang.String"/>
+	<field name="penaltyType" class="java.lang.String"/>
+	<field name="penaltyAmt" class="java.lang.String"/>
+	<field name="username" class="java.lang.String"/>
+	<field name="handsetDeviceAmount" class="java.lang.String"/>
+	<field name="firstMonthFee" class="java.lang.String"/>
+	<field name="lotHouseInd" class="java.lang.String"/>
+	<field name="lotNum" class="java.lang.String"/>
+	<field name="salesCd" class="java.lang.String"/>
+	<field name="companyLogo" class="java.lang.String"/>
+	<field name="billPeriod" class="java.lang.String"/>
+	<field name="customerCopyInd" class="java.lang.String"/>
+	<field name="smsLang" class="java.lang.String"/>
+	<field name="billLang" class="java.lang.String"/>
+	<field name="billingAreaCode" class="java.lang.String"/>
+	<field name="billingFlat" class="java.lang.String"/>
+	<field name="billingStreetName" class="java.lang.String"/>
+	<field name="billingFloor" class="java.lang.String"/>
+	<field name="billingStreetCatgDesc" class="java.lang.String"/>
+	<field name="billingLotHouseInd" class="java.lang.String"/>
+	<field name="billingLotNum" class="java.lang.String"/>
+	<field name="billingDistrictDesc" class="java.lang.String"/>
+	<field name="billingBuildingName" class="java.lang.String"/>
+	<field name="billingSectionDesc" class="java.lang.String"/>
+	<field name="streetNum" class="java.lang.String"/>
+	<field name="billingStreetNum" class="java.lang.String"/>
+	<field name="salesName" class="java.lang.String"/>
+	<field name="companyName" class="java.lang.String"/>
+	<field name="isConSrv" class="java.lang.String"/>
+	<field name="shopCd" class="java.lang.String"/>
+	<field name="title" class="java.lang.String"/>
+	<field name="otherContactPhone" class="java.lang.String"/>
+	<field name="firstMonthServiceLicenceFee" class="java.lang.String"/>
+	<field name="vasFreeGifsDtls" class="java.util.ArrayList"/>
+	<field name="vasOptionalDtls" class="java.util.ArrayList"/>
+	<field name="additionalChargeDtls" class="java.util.ArrayList"/>
+	<field name="miscellaneousChargeDtls" class="java.util.ArrayList"/>
+	<field name="custSignature" class="java.io.InputStream"/>
+	<field name="unicomMsisdn" class="java.lang.String"/>
+	<field name="haveMultiSim" class="java.lang.Boolean"/>
+	<field name="multipleMrtSimList" class="java.util.List"/>
+	<field name="multiSimList" class="java.util.List"/>
+	<field name="custReminderChi" class="java.lang.String"/>
+	<field name="docAttMNP" class="java.lang.Boolean"/>
+	<field name="docAttSecSrv" class="java.lang.Boolean"/>
+	<field name="docAttThirdParty" class="java.lang.Boolean"/>
+	<field name="docAttConci" class="java.lang.Boolean"/>
+	<field name="docAttTradeDesc" class="java.lang.Boolean"/>
+	<field name="docAttChgOfSrv" class="java.lang.Boolean"/>
+	<field name="pfHKIDPass" class="java.lang.Boolean"/>
+	<field name="pfAddrPf" class="java.lang.Boolean"/>
+	<field name="pfBRCopy" class="java.lang.Boolean"/>
+	<field name="pfBRNameCard" class="java.lang.Boolean"/>
+	<field name="pfEmpCont" class="java.lang.Boolean"/>
+	<field name="pfPreparidSIM" class="java.lang.Boolean"/>
+	<field name="pfCCCopy" class="java.lang.Boolean"/>
+	<field name="pfMNPDoc" class="java.lang.Boolean"/>
+	<field name="privacyInd" class="java.lang.Boolean"/>
+	<field name="personInfoCollectState1" class="java.lang.String"/>
+	<field name="personInfoCollectState2" class="java.lang.String"/>
+	<field name="simType" class="java.lang.String"/>
+	<field name="nfcInd" class="java.lang.String"/>
+	<field name="octFlag" class="java.lang.String"/>
+	<field name="custAgree" class="java.lang.String"/>
+	<field name="sectionGDTOList" class="java.util.ArrayList"/>
+	<field name="companyBottomLogo" class="java.lang.String"/>
+	<field name="suppressLocalTopUpInd" class="java.lang.Boolean"/>
+	<field name="suppressRoamTopUpInd" class="java.lang.Boolean"/>
+	<field name="mob0060OptOutInd" class="java.lang.Boolean"/>
+	<field name="depositList" class="java.util.List"/>
+	<field name="depositTotal" class="java.lang.String"/>
+	<field name="mobCustNotice" class="java.lang.Boolean"/>
+	<field name="companyBottomLeftLogo" class="java.lang.String"/>
+	<field name="repIdDocNum" class="java.lang.String"/>
+	<field name="csPortalInd" class="java.lang.String"/>
+	<field name="csPortalStatus" class="java.lang.String"/>
+	<field name="dummyEmail" class="java.lang.String"/>
+	<field name="hktOptOut" class="java.lang.Boolean"/>
+	<field name="clubOptOut" class="java.lang.Boolean"/>
+	<field name="hktClubOptOut" class="java.lang.Boolean"/>
+	<field name="sectionH" class="java.lang.String"/>
+	<variable name="VAS_CHARGE" class="java.lang.Double"/>
+	<variable name="SERV_CHARGE" class="java.lang.Double"/>
+	<variable name="TOTAL_PAYABLE" class="java.lang.Double" resetType="Page" incrementType="Report" calculation="Sum">
+		<initialValueExpression><![CDATA[0.0]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement x="8" y="49" width="519" height="15">
+					<printWhenExpression><![CDATA["Y".equalsIgnoreCase( $F{customerCopyInd} )]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[[客戶副本]]]></text>
+			</staticText>
+			<image scaleImage="RetainShape">
+				<reportElement x="8" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyLogo}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="73" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText-1" x="8" y="14" width="519" height="29" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[csl流動通訊服務申請書]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="386" y="0" width="141" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["表格編號 " + $F{agreementNum}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-137" x="8" y="43" width="519" height="30"/>
+				<box leftPadding="3">
+					<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+					<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[根據本申請，就流動通訊服務協議之條款及細則，我們同意提供，及閣下同意獲取流動通訊服務。本申請內所引用詞彙之特別含義已於流動通訊服務協議之條款及細則第18條款內列明。]]></text>
+			</staticText>
+		</band>
+		<band height="69" splitType="Stretch">
+			<printWhenExpression><![CDATA[false]]></printWhenExpression>
+			<frame>
+				<reportElement positionType="Float" x="8" y="0" width="519" height="63"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-31" x="0" y="1" width="519" height="18" backcolor="#000000"/>
+					<box leftPadding="10">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[<b>購買前須知:</b>]]></text>
+				</staticText>
+				<frame>
+					<reportElement positionType="Float" x="8" y="22" width="503" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="14" y="0" width="489" height="10"/>
+						<box rightPadding="0"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["你的申請書及服務指南列明你所選購的流動自選服務 (「服務」)，你須支付之費用包括服務月費，及根據使用量收取之費用 (如額外流動數據計劃之費用) 及負責提供該等服務之公司。有關服務之更多資料及本公司店舖地址，你可瀏覽 http://www.hkcsl.com或致電我們的客戶服務熱線25 123 123。"]]></textFieldExpression>
+					</textField>
+					<rectangle>
+						<reportElement x="5" y="4" width="3" height="3" backcolor="#000000"/>
+					</rectangle>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="8" y="36" width="503" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="14" y="0" width="489" height="10"/>
+						<box rightPadding="0"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["我們向你提供的是4G流動通訊服務(如適用)。在我們4G網絡覆蓋以外的地方，你仍可享用我們的3G流動通訊服務。流動數據及 csl wi-fi 服務的實際速度會相當地少於相關的網絡規格及會受到你的流動裝置及如合約中所列出之其他因素而有所影響。"]]></textFieldExpression>
+					</textField>
+					<rectangle>
+						<reportElement x="5" y="4" width="3" height="3" backcolor="#000000"/>
+					</rectangle>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="8" y="49" width="503" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="14" y="0" width="489" height="10"/>
+						<box rightPadding="0"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["你所申請服務之承諾期 (如適用) 將列明於你的申請上。你可於最少30日前通知我們要求終止服務。然而，若於承諾期屆滿前終止合約，你須支付於申請上所列明之提前終止費用。你亦需要向我們賠償所獲得任何禮品之價值。我們有可能更改或終止合約，若有關更改會對你造成重大負面影響或將導致你須繳付的服務費用有所增加，你將有權終止合約而不會產生任何提前終止費用。"]]></textFieldExpression>
+					</textField>
+					<rectangle>
+						<reportElement x="5" y="4" width="3" height="3" backcolor="#000000"/>
+					</rectangle>
+				</frame>
+			</frame>
+		</band>
+		<band height="161" splitType="Prevent">
+			<frame>
+				<reportElement key="frame-1" x="8" y="1" width="519" height="160" isRemoveLineWhenBlank="true"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-166" x="284" y="48" width="76" height="13">
+						<printWhenExpression><![CDATA["HKID".equalsIgnoreCase($F{idDocType})||"PASS".equalsIgnoreCase($F{idDocType})]]></printWhenExpression>
+					</reportElement>
+					<box topPadding="0" leftPadding="2"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[姓 ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-166" x="247" y="48" width="32" height="13">
+						<printWhenExpression><![CDATA["BS".equalsIgnoreCase($F{idDocType})]]></printWhenExpression>
+					</reportElement>
+					<box topPadding="0" leftPadding="2"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[公司]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-8" x="248" y="33" width="240" height="15">
+						<printWhenExpression><![CDATA["BS".equalsIgnoreCase($F{idDocType})]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["BS".equalsIgnoreCase($F{idDocType})?$F{companyName}:("")]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-30" x="248" y="75" width="75" height="13"/>
+					<box topPadding="0" leftPadding="2">
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[日/月/年]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-31" x="0" y="0" width="519" height="18" backcolor="#000000"/>
+					<box leftPadding="10">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[<b>第 一 節:  客戶資料</b>]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-5" x="248" y="87" width="99" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{idDocNum}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-8" x="375" y="33" width="116" height="15">
+						<printWhenExpression><![CDATA[("HKID".equalsIgnoreCase($F{idDocType})||"PASS".equalsIgnoreCase($F{idDocType}))]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[("HKID".equalsIgnoreCase($F{idDocType})||"PASS".equalsIgnoreCase($F{idDocType}))?$F{custFirstName}:("")]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-9" x="281" y="33" width="79" height="15">
+						<printWhenExpression><![CDATA[("HKID".equalsIgnoreCase($F{idDocType})||"PASS".equalsIgnoreCase($F{idDocType}))]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[("HKID".equalsIgnoreCase($F{idDocType})||"PASS".equalsIgnoreCase($F{idDocType}))?$F{custLastName}:("")]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-14" x="248" y="102" width="99" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{contactPhone}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-17" x="4" y="87" width="239" height="15"/>
+					<box leftPadding="3"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[("PASS".equalsIgnoreCase($F{idDocType}))? "護照號碼:" :
+("BS".equalsIgnoreCase($F{idDocType}))? "商業登記號碼:" :
+"香港身份證" + ":"]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM" isBlankWhenNull="true">
+					<reportElement key="textField-20" x="248" y="62" width="20" height="13"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.util.Date"><![CDATA[$F{dob}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-166" x="375" y="48" width="114" height="13">
+						<printWhenExpression><![CDATA["HKID".equalsIgnoreCase($F{idDocType})||"PASS".equalsIgnoreCase($F{idDocType})]]></printWhenExpression>
+					</reportElement>
+					<box topPadding="0" leftPadding="2"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[名]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-137" x="4" y="18" width="72" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[新客戶:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-137" x="4" y="33" width="72" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[客戶姓名:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-137" x="4" y="60" width="72" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[出生日期:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-137" x="4" y="102" width="239" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[聯絡流動電話號碼 (數據服務計劃必須填寫):]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-137" x="4" y="117" width="239" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[其他聯絡號碼(住宅/辦公室):]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-137" x="4" y="132" width="239" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[電郵地址:]]></text>
+				</staticText>
+				<line>
+					<reportElement stretchType="RelativeToBandHeight" x="244" y="18" width="1" height="142"/>
+				</line>
+				<textField isBlankWhenNull="true">
+					<reportElement x="248" y="132" width="179" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[($F{emailAddr}==null||"".equals($F{emailAddr}))?"N/A":$F{emailAddr}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="248" y="19" width="179" height="13"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Bottom" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{mnpType}.equalsIgnoreCase("New Number")?"新號碼":
+$F{mnpType}.equalsIgnoreCase("MNP")?"攜號轉台(即轉攜)":
+$F{mnpType}.equalsIgnoreCase("1-Card-2-Number (New Number)")?"一卡兩號(新號碼)":
+$F{mnpType}.equalsIgnoreCase("1-Card-2-Number (MNP)")?"一卡兩號(攜號轉台(即轉攜))":"新號碼"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-14" x="248" y="117" width="99" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{otherContactPhone}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-9" x="248" y="33" width="35" height="15">
+						<printWhenExpression><![CDATA[("HKID".equalsIgnoreCase($F{idDocType})||"PASS".equalsIgnoreCase($F{idDocType}))]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Bottom" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[("Dr".equalsIgnoreCase($F{title}))?"博士":
+("Mdm".equalsIgnoreCase($F{title}))?"夫人":
+("Miss".equalsIgnoreCase($F{title}))?"小姐":
+("Mr".equalsIgnoreCase($F{title}))?"先生":
+("Mrs".equalsIgnoreCase($F{title}))?"太太":
+("Ms".equalsIgnoreCase($F{title}))?"女士":
+("Prof".equalsIgnoreCase($F{title}))?"教授":
+("Rev".equalsIgnoreCase($F{title}))?"牧師":("")]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement key="staticText-137" x="248" y="148" width="243" height="10" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true">
+						<printWhenExpression><![CDATA["Y".equalsIgnoreCase($F{csPortalInd}) || "D".equalsIgnoreCase($F{csPortalInd})]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{csPortalStatus} == null || "".equals($F{csPortalStatus}) ?
+    "以上聯絡電郵地址將被用作登記「My HKT」及「The Club」帳戶。" :
+    ("C".equals($F{csPortalStatus}) ?
+        "以上聯絡電郵地址將被用作登記「My HKT」帳戶。" :
+        "以上聯絡電郵地址將被用作登記「The Club」帳戶。")]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement key="textField-20" x="268" y="62" width="79" height="13"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.util.Date"><![CDATA["/****"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<elementGroup>
+				<elementGroup/>
+			</elementGroup>
+			<elementGroup/>
+		</band>
+		<band height="101" splitType="Prevent">
+			<frame>
+				<reportElement key="frame-1" x="8" y="0" width="519" height="92" isRemoveLineWhenBlank="true"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-62" x="0" y="0" width="519" height="13"/>
+					<box leftPadding="3">
+						<topPen lineWidth="1.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[登記地址:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-64" x="115" y="12" width="19" height="13"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[/F]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-66" x="4" y="24" width="40" height="13"/>
+					<box leftPadding="2">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[室/ 房]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-67" x="85" y="24" width="37" height="13"/>
+					<box leftPadding="2">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[樓層]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-73" x="4" y="77" width="77" height="13"/>
+					<box leftPadding="2">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[區]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-74" x="4" y="50" width="189" height="13"/>
+					<box leftPadding="2">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[街道]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-75" x="279" y="24" width="172" height="13"/>
+					<box leftPadding="2">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[大廈  / 屋苑 / 地段號數 / 村屋]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-76" x="191" y="77" width="75" height="13"/>
+					<box leftPadding="2">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[區域]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-1" x="191" y="64" width="74" height="13"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{areaCode}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-4" x="4" y="12" width="40" height="13"/>
+					<box leftPadding="2">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{flat}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-11" x="279" y="11" width="235" height="13"/>
+					<box leftPadding="2">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[(($F{lotNum}== null ? "" :$F{lotNum})+($F{buildingName}== null ? "" :$F{buildingName}))]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-12" x="4" y="37" width="270" height="13"/>
+					<box leftPadding="2">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[( $F{lotHouseInd}.equalsIgnoreCase( "L" ) ? "" : new String(($F{streetNum} == null ? "" : $F{streetNum})
++ " " +
+($F{streetName} == null ? "" : $F{streetName})
++ " " +
+($F{streetCatgDesc} == null ? "" : $F{streetCatgDesc})
+).trim() )]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-15" x="4" y="64" width="180" height="13"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{districtDesc}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-18" x="85" y="12" width="30" height="13"/>
+					<box leftPadding="2">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{floor}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-126" x="279" y="50" width="99" height="13"/>
+					<box leftPadding="2">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[地段]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="279" y="37" width="235" height="13"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionDesc}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="97" splitType="Prevent">
+			<printWhenExpression><![CDATA[false]]></printWhenExpression>
+			<frame>
+				<reportElement x="8" y="0" width="519" height="97"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-10" x="279" y="13" width="235" height="13"/>
+					<box leftPadding="2">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[(($F{billingLotNum}== null ? "" :$F{billingLotNum})+($F{billingBuildingName}== null ? "" :$F{billingBuildingName}))]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-134" x="193" y="79" width="75" height="13"/>
+					<box leftPadding="2">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[區域]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-120" x="0" y="0" width="519" height="13"/>
+					<box leftPadding="3">
+						<topPen lineWidth="1.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[通訊地址:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-125" x="87" y="26" width="49" height="13"/>
+					<box leftPadding="2">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[樓層]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-19" x="87" y="13" width="30" height="13"/>
+					<box leftPadding="2">
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{billingFloor}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-126" x="279" y="53" width="99" height="13"/>
+					<box leftPadding="2">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[地段]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-3" x="3" y="13" width="38" height="13"/>
+					<box leftPadding="2">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{billingFlat}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-132" x="4" y="53" width="189" height="13"/>
+					<box leftPadding="2">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[街道]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-64" x="117" y="13" width="20" height="13"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[/F]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-131" x="5" y="80" width="77" height="13"/>
+					<box leftPadding="2">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[區]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-124" x="4" y="26" width="37" height="13"/>
+					<box leftPadding="2">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[室/ 房]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-133" x="279" y="26" width="173" height="13"/>
+					<box leftPadding="2">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[大廈  / 屋苑 / 地段號數 / 村屋]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-13" x="4" y="40" width="270" height="13"/>
+					<box leftPadding="2">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[( $F{billingLotHouseInd}.equalsIgnoreCase( "L" ) ? "" : new String(($F{billingStreetNum} == null ? "" : $F{billingStreetNum})
++ " " +
+($F{billingStreetName} == null ? "" : $F{billingStreetName})
++ " " +
+($F{billingStreetCatgDesc} == null ? "" : $F{billingStreetCatgDesc})
+).trim() )]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-16" x="5" y="67" width="180" height="13"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{billingDistrictDesc}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="279" y="40" width="235" height="13"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{billingSectionDesc}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-2" x="193" y="67" width="74" height="13"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{billingAreaCode}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="30" splitType="Prevent">
+			<printWhenExpression><![CDATA[false]]></printWhenExpression>
+			<frame>
+				<reportElement x="8" y="0" width="519" height="30"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textField isBlankWhenNull="true">
+					<reportElement x="104" y="0" width="106" height="14"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[( $F{addrProofInd}.matches( "2" ) ? "是, " : "N/A" ) + new String( $F{addrProofInd}.matches( "2" ) ? $F{lob} : "" ).trim()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="153" y="14" width="100" height="13"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[new String( $F{addrProofInd}.matches( "2" ) ? $F{serviceNum} : "" ).trim()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-137" x="4" y="0" width="100" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[電訊盈科現有登記客戶:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-140" x="4" y="14" width="151" height="13"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[服務帳戶號碼或流動電話戶口號碼:	]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="45" splitType="Prevent">
+			<frame>
+				<reportElement positionType="Float" x="8" y="0" width="519" height="36"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-144" x="4" y="20" width="56" height="13"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[預計生效日:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-31" x="0" y="1" width="519" height="18" backcolor="#000000"/>
+					<box leftPadding="10">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[<b>第 二 節:  生效日</b>]]></text>
+				</staticText>
+				<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement x="61" y="19" width="60" height="13"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.util.Date"><![CDATA[($F{mnpType}.contains("MNP"))?$F{cutoverDate}:$F{serviceReqDate}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-172" x="120" y="19" width="70" height="13"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[(日/月/年)]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="100" splitType="Prevent">
+			<frame>
+				<reportElement key="frame-2" x="8" y="0" width="519" height="90"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-38" x="0" y="0" width="518" height="18" backcolor="#000000"/>
+					<box leftPadding="10">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[<b>第 三 節:  服務號碼及上台類別</b>]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-100" x="0" y="18" width="151" height="13"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[csl流動通訊服務電話號碼:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-101" x="0" y="31" width="151" height="13"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[SIM卡號碼:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-167" x="276" y="17" width="103" height="13">
+						<printWhenExpression><![CDATA[false]]></printWhenExpression>
+					</reportElement>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[中國聯通流動電話號碼:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="163" y="19" width="108" height="13"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{msisdn}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="163" y="31" width="108" height="13"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{iccid}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="379" y="17" width="90" height="13">
+						<printWhenExpression><![CDATA[false]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{unicomMsisdn}]]></textFieldExpression>
+				</textField>
+				<frame>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="56" width="509" height="26"/>
+					<staticText>
+						<reportElement key="staticText-102" x="22" y="0" width="215" height="13">
+							<printWhenExpression><![CDATA[$F{suppressLocalTopUpInd}]]></printWhenExpression>
+						</reportElement>
+						<box leftPadding="3">
+							<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+							<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+							<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[禁止購買額外本地流動數據組合]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-102" x="22" y="13" width="215" height="13">
+							<printWhenExpression><![CDATA[$F{suppressRoamTopUpInd}]]></printWhenExpression>
+						</reportElement>
+						<box leftPadding="3">
+							<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+							<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+							<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[禁止購買額外海外流動數據組合]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="localTopUpBox" x="2" y="5" width="6" height="6">
+							<printWhenExpression><![CDATA[$F{suppressLocalTopUpInd}]]></printWhenExpression>
+						</reportElement>
+						<box leftPadding="3">
+							<topPen lineWidth="0.5" lineStyle="Solid"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="roamTopUpBox" x="2" y="18" width="6" height="6">
+							<printWhenExpression><![CDATA[$F{suppressRoamTopUpInd}]]></printWhenExpression>
+						</reportElement>
+						<box leftPadding="3">
+							<topPen lineWidth="0.5" lineStyle="Solid"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[]]></text>
+					</staticText>
+				</frame>
+				<staticText>
+					<reportElement key="staticText-98" x="0" y="43" width="75" height="13"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[帳單截數日期: 每月第]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="74" y="43" width="22" height="13"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Bottom" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{billPeriod}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-98" x="95" y="43" width="15" height="13"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[日]]></text>
+				</staticText>
+				<subreport>
+					<reportElement key="subreport-7" stretchType="RelativeToBandHeight" x="1" y="84" width="518" height="1" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true">
+						<printWhenExpression><![CDATA[$F{haveMultiSim}]]></printWhenExpression>
+					</reportElement>
+					<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{multipleMrtSimList})]]></dataSourceExpression>
+					<subreportExpression class="java.lang.String"><![CDATA["mob/M2AppMobileServ_subreport7.jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+			<staticText>
+				<reportElement key="localTopUp" x="9" y="58" width="9" height="9">
+					<printWhenExpression><![CDATA[$F{suppressLocalTopUpInd}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="6"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="roamTopUp" x="9" y="71" width="9" height="9">
+					<printWhenExpression><![CDATA[$F{suppressRoamTopUpInd}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="6"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+		</band>
+		<band height="120" splitType="Prevent">
+			<frame>
+				<reportElement key="frame-4" stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="8" y="0" width="519" height="110"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-46" x="0" y="0" width="519" height="32" isPrintWhenDetailOverflows="true"/>
+					<box leftPadding="10">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[<b>第 四 節:  服務</b><br>
+<b>第 一 段:  服務計劃<b>]]></text>
+				</staticText>
+				<subreport isUsingCache="true">
+					<reportElement key="subreport-1" positionType="Float" x="16" y="57" width="503" height="16"/>
+					<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{mainServDtls})]]></dataSourceExpression>
+					<returnValue subreportVariable="SERV_CHARGE" toVariable="SERV_CHARGE"/>
+					<subreportExpression class="java.lang.String"><![CDATA["mob/M2AppMobileServ_subreport0.jasper"]]></subreportExpression>
+				</subreport>
+				<line>
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="415" y="32" width="1" height="78" isPrintWhenDetailOverflows="true"/>
+				</line>
+				<staticText>
+					<reportElement isPrintRepeatedValues="false" x="216" y="0" width="41" height="18" isPrintWhenDetailOverflows="true"/>
+					<textElement verticalAlignment="Middle" markup="none">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[(CONT')]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-148" x="416" y="32" width="103" height="26"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[月費]]></text>
+				</staticText>
+				<subreport isUsingCache="true">
+					<reportElement key="subreport-4" positionType="Float" x="16" y="75" width="503" height="16"/>
+					<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{vasDtls})]]></dataSourceExpression>
+					<returnValue subreportVariable="VAS_CHARGE" toVariable="VAS_CHARGE"/>
+					<subreportExpression class="java.lang.String"><![CDATA["mob/M2AppMobileServ_subreport4_CY.jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+		</band>
+		<band height="85" splitType="Prevent">
+			<frame>
+				<reportElement key="frame-6" stretchType="RelativeToBandHeight" x="8" y="0" width="519" height="75"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-209" x="0" y="0" width="519" height="18" isPrintWhenDetailOverflows="true"/>
+					<box leftPadding="10">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[<b>第 二 段:  自選增值服務</b>]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-242" x="415" y="18" width="104" height="26" isPrintWhenDetailOverflows="true"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[月費]]></text>
+				</staticText>
+				<line>
+					<reportElement key="frame-6" positionType="Float" stretchType="RelativeToBandHeight" x="415" y="18" width="1" height="57" isPrintWhenDetailOverflows="true"/>
+				</line>
+				<staticText>
+					<reportElement isPrintRepeatedValues="false" x="246" y="0" width="42" height="18"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[(CONT')]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-242" positionType="Float" x="5" y="18" width="281" height="15" isPrintWhenDetailOverflows="true"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[自選增值服務(不包括於服務計劃內):]]></text>
+				</staticText>
+				<elementGroup/>
+				<subreport>
+					<reportElement positionType="Float" x="16" y="45" width="503" height="16"/>
+					<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{vasOptionalDtls})]]></dataSourceExpression>
+					<subreportExpression class="java.lang.String"><![CDATA["mob/M2AppMobileServ_subreport6_CY.jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+		</band>
+		<band height="8" splitType="Prevent"/>
+		<band height="65" splitType="Prevent">
+			<frame>
+				<reportElement key="frame-6" stretchType="RelativeToBandHeight" x="8" y="0" width="519" height="52"/>
+				<box>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<elementGroup/>
+				<subreport>
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="16" y="24" width="406" height="20"/>
+					<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{vasFreeGifsDtls})]]></dataSourceExpression>
+					<subreportExpression class="java.lang.String"><![CDATA["mob/M2AppMobileServ_subreport2.jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+			<staticText>
+				<reportElement key="staticText-209" x="8" y="0" width="519" height="16" isPrintWhenDetailOverflows="true"/>
+				<box leftPadding="10">
+					<pen lineWidth="0.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[<b>第 三 段：贈品及禮品</b>]]></text>
+			</staticText>
+		</band>
+		<band height="28" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{multiSimList}!=null]]></printWhenExpression>
+			<frame>
+				<reportElement key="frame-2" x="8" y="0" width="519" height="20"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<subreport>
+					<reportElement key="subreport-10b" stretchType="RelativeToBandHeight" x="0" y="19" width="518" height="1" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true">
+						<printWhenExpression><![CDATA[$F{multiSimList}!=null]]></printWhenExpression>
+					</reportElement>
+					<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{multiSimList})]]></dataSourceExpression>
+					<subreportExpression class="java.lang.String"><![CDATA["mob/M2AppMobileServ_subreport10b.jasper"]]></subreportExpression>
+				</subreport>
+				<staticText>
+					<reportElement key="staticText-38" x="0" y="0" width="518" height="18" backcolor="#000000"/>
+					<box leftPadding="10">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[<b>Multi SIM增值服務</b>]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="72" splitType="Prevent">
+			<printWhenExpression><![CDATA[false]]></printWhenExpression>
+			<frame>
+				<reportElement key="frame-4" stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="8" y="0" width="519" height="64"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-46" x="0" y="0" width="405" height="32" isPrintWhenDetailOverflows="true"/>
+					<box leftPadding="10">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[<b>第 五 節:  收費</b><br>
+<b>第 一 段:  附加收費<b>]]></text>
+				</staticText>
+				<line>
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="405" y="0" width="1" height="64" isPrintWhenDetailOverflows="true"/>
+				</line>
+				<staticText>
+					<reportElement key="staticText-46" x="406" y="0" width="113" height="32" isPrintWhenDetailOverflows="true"/>
+					<box leftPadding="10">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[<b>費用</b>]]></text>
+				</staticText>
+				<subreport>
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="42" width="518" height="16"/>
+					<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{additionalChargeDtls})]]></dataSourceExpression>
+					<subreportExpression class="java.lang.String"><![CDATA["mob/M2AppMobileServ_subreport1.jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+		</band>
+		<band height="60" splitType="Prevent">
+			<printWhenExpression><![CDATA[false]]></printWhenExpression>
+			<frame>
+				<reportElement key="frame-4" stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="8" y="0" width="519" height="51"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-46" x="0" y="0" width="405" height="18" isPrintWhenDetailOverflows="true"/>
+					<box leftPadding="10">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[<b>第 二 段:  雜項服務費用<b>]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-46" x="406" y="0" width="113" height="18" isPrintWhenDetailOverflows="true"/>
+					<box leftPadding="10">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[<b>費用</b>]]></text>
+				</staticText>
+				<subreport>
+					<reportElement stretchType="RelativeToBandHeight" x="1" y="28" width="517" height="16"/>
+					<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{miscellaneousChargeDtls})]]></dataSourceExpression>
+					<subreportExpression class="java.lang.String"><![CDATA["mob/M2AppMobileServ_subreport3.jasper"]]></subreportExpression>
+				</subreport>
+				<line>
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="405" y="0" width="1" height="51" isPrintWhenDetailOverflows="true"/>
+				</line>
+			</frame>
+		</band>
+		<band height="162" splitType="Prevent">
+			<frame>
+				<reportElement key="frame-7" positionType="Float" stretchType="RelativeToBandHeight" x="7" y="0" width="519" height="148"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-214" positionType="Float" x="1" y="0" width="518" height="18"/>
+					<box leftPadding="10">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[<b>第 五 節:  收費</b><br>]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-215" positionType="Float" x="0" y="18" width="152" height="17"/>
+					<box topPadding="3" leftPadding="3">
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[項目]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-217" positionType="Float" x="153" y="17" width="95" height="19"/>
+					<box topPadding="3" leftPadding="5"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isStrikeThrough="false"/>
+					</textElement>
+					<text><![CDATA[金額詳情]]></text>
+				</staticText>
+				<subreport isUsingCache="true">
+					<reportElement key="subreport-5" positionType="Float" x="253" y="42" width="265" height="50"/>
+					<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{rebateList})]]></dataSourceExpression>
+					<subreportExpression class="java.lang.String"><![CDATA["mob/M2AppMobileServ_subreport5.jasper"]]></subreportExpression>
+				</subreport>
+				<staticText>
+					<reportElement key="staticText-243" positionType="Float" x="250" y="17" width="197" height="19"/>
+					<box topPadding="3" leftPadding="5"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[回贈]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-244" positionType="Float" x="447" y="17" width="71" height="19"/>
+					<box topPadding="3" leftPadding="5"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[金額詳情]]></text>
+				</staticText>
+				<line>
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="448" y="18" width="1" height="130"/>
+				</line>
+				<line>
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="249" y="18" width="1" height="130"/>
+				</line>
+				<textField pattern="¤ #,##0.00">
+					<reportElement x="158" y="73" width="92" height="19">
+						<printWhenExpression><![CDATA[false]]></printWhenExpression>
+					</reportElement>
+					<box leftPadding="10"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Double"><![CDATA[Double.parseDouble($F{handsetDeviceAmount})]]></textFieldExpression>
+				</textField>
+				<textField pattern="¤ #,##0.00">
+					<reportElement x="158" y="35" width="91" height="19"/>
+					<box leftPadding="10"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Double"><![CDATA[Double.parseDouble($F{firstMonthFee})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-215" positionType="Float" x="0" y="109" width="152" height="17"/>
+					<box topPadding="0" leftPadding="0" rightPadding="8">
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[總額 :
+]]></text>
+				</staticText>
+				<textField pattern="¤ #,##0.00">
+					<reportElement positionType="Float" x="158" y="109" width="90" height="17"/>
+					<box leftPadding="10"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Double"><![CDATA[$V{TOTAL_PAYABLE}.valueOf( $F{handsetDeviceAmount} )
++
+$V{TOTAL_PAYABLE}.valueOf( $F{firstMonthFee} )
++
+$V{TOTAL_PAYABLE}.valueOf( $F{firstMonthServiceLicenceFee} )
++
+$V{TOTAL_PAYABLE}.valueOf( $F{vasOnetimeAmtFee} )
++
+$V{TOTAL_PAYABLE}.valueOf( $F{depositTotal} )]]></textFieldExpression>
+				</textField>
+				<textField pattern="¤ #,##0.00">
+					<reportElement x="158" y="54" width="91" height="19"/>
+					<box leftPadding="10"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Double"><![CDATA[Double.parseDouble($F{firstMonthServiceLicenceFee})]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="152" y="18" width="1" height="130"/>
+				</line>
+				<staticText>
+					<reportElement key="staticText-215" positionType="Float" x="0" y="35" width="152" height="19"/>
+					<box topPadding="3" leftPadding="3">
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[預繳首期承諾期內月費]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-215" positionType="Float" x="0" y="54" width="152" height="19"/>
+					<box topPadding="3" leftPadding="3">
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[港鐵/隧道/流動電訊牌照/行政費]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-215" positionType="Float" x="0" y="73" width="152" height="19">
+						<printWhenExpression><![CDATA[false]]></printWhenExpression>
+					</reportElement>
+					<box topPadding="3" leftPadding="3">
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[儀器付款:]]></text>
+				</staticText>
+				<subreport>
+					<reportElement x="0" y="94" width="249" height="5"/>
+					<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{vasOnetimeAmtList})]]></dataSourceExpression>
+					<subreportExpression class="java.lang.String"><![CDATA["mob/M2AppMobileServ_subreport8.jasper"]]></subreportExpression>
+				</subreport>
+				<subreport runToBottom="false">
+					<reportElement positionType="Float" x="0" y="102" width="249" height="5"/>
+					<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{depositList})]]></dataSourceExpression>
+					<subreportExpression class="java.lang.String"><![CDATA["mob/M2AppMobileServ_subreport9.jasper"]]></subreportExpression>
+				</subreport>
+				<textField pattern="(¤ #,##0.00)">
+					<reportElement positionType="Float" x="158" y="128" width="90" height="17">
+						<printWhenExpression><![CDATA[$F{depositTotal}!= "0"]]></printWhenExpression>
+					</reportElement>
+					<box leftPadding="10"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Double"><![CDATA[Double.parseDouble($F{depositTotal})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-215" positionType="Float" x="0" y="128" width="152" height="17">
+						<printWhenExpression><![CDATA[$F{depositTotal}!= "0"]]></printWhenExpression>
+					</reportElement>
+					<box topPadding="0" leftPadding="0" rightPadding="8">
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[保證金總額 :
+]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="58" splitType="Prevent">
+			<frame>
+				<reportElement positionType="Float" x="8" y="0" width="519" height="48"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-145" x="0" y="19" width="114" height="13"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[短訊/電郵/ 帳單語言選擇:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-144" x="0" y="34" width="105" height="13"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[帳單形式:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="false">
+					<reportElement x="118" y="19" width="393" height="13"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[(new String("02").equalsIgnoreCase($F{smsLang}) ? "英文" : (new String("01").equalsIgnoreCase($F{smsLang}) ? "簡體中文" : "繁體中文"))
++ " / "
++ (new String("ENG").equalsIgnoreCase($F{billLang}) ? "英文" : (new String("CHN").equalsIgnoreCase($F{billLang}) ? "繁體中文" : "雙語"))]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-31" x="0" y="1" width="519" height="18" backcolor="#000000"/>
+					<box leftPadding="10">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[<b>第 六 節:  帳單選項</b>]]></text>
+				</staticText>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement x="119" y="34" width="392" height="13"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{billMedia}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="10" splitType="Prevent">
+			<subreport>
+				<reportElement isPrintRepeatedValues="false" x="0" y="0" width="535" height="5"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionGDTOList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["mob/M2AppMobileServCY_zh_subreport_section_G.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="7" splitType="Prevent"/>
+		<band height="40" splitType="Prevent">
+			<frame>
+				<reportElement positionType="Float" x="8" y="0" width="519" height="40"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-31" x="0" y="1" width="519" height="18" backcolor="#000000"/>
+					<box leftPadding="10">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[<b>第 八 節:  特別條款及細則</b>]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="0" y="19" width="519" height="15"/>
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement x="2" y="0" width="506" height="15" isRemoveLineWhenBlank="true"/>
+						<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionH}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</frame>
+		</band>
+		<band height="7" splitType="Prevent"/>
+		<band height="68" splitType="Prevent">
+			<frame>
+				<reportElement key="CsPortal Frame" stretchType="RelativeToBandHeight" x="8" y="0" width="519" height="68"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-38" x="0" y="0" width="519" height="18" backcolor="#000000"/>
+					<box leftPadding="10">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[<b>第 九 節:  The Club及My HKT</b>]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement key="reg-Both 1a" x="2" y="18" width="510" height="15" isRemoveLineWhenBlank="true">
+						<printWhenExpression><![CDATA[($F{csPortalStatus} == null || "".equals($F{csPortalStatus}))&&!($F{emailAddr}==null || "".equals($F{emailAddr}))&& !"N".equals($F{csPortalInd})]]></printWhenExpression>
+					</reportElement>
+					<box bottomPadding="0">
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["閣下作為於本申請書下申請服務（「<b>本服務</b>」）的客戶，您將會自動成為The Club會員及My HKT 服務（「<b>My HKT</b>」）用戶（分別由Club HKT Limited及HKT CSP Limited 提供及管理，兩間公司均為香港電訊有限公司的附屬公司）。透過簽署本申請書，您明白及同意 (a) 受The Club及My HKT各自的條款及細則，以及香港電訊集團和電訊盈科集團各自的《私隱聲明》約束（分別載於<u>www.theclub.com.hk</u>、<u>www.cs.hkt.com</u>、<u>www.hkt.com/legal/privacy.html</u> 及 <u>www.pccw.com/legal/privacy.html</u>）；及 (b) 委任The Club及My HKT作為您的代理，以代您接入您與香港電訊集團及電訊盈科集團的任何或所有服務帳戶，有助於 (i) 開啟您的The Club會籍、My HKT及本服務；及 (ii) 您使用及我們支援The Club、My HKT及本服務的各項功能。您下列的電郵地址和手機號碼將作為您就有關The Club及My HKT服務的聯繫資料（包括該電郵地址作為您的登入名稱）。"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement key="don&apos;t have Both 1b" x="2" y="18" width="510" height="15" isRemoveLineWhenBlank="true">
+						<printWhenExpression><![CDATA[($F{csPortalStatus} == null || "".equals($F{csPortalStatus}))&&($F{emailAddr}==null || "".equals($F{emailAddr}))&& !"N".equals($F{csPortalInd})]]></printWhenExpression>
+					</reportElement>
+					<box bottomPadding="0">
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["閣下作為於本申請書下申請服務（「<b>本服務</b>」）的客戶，您將會自動成為The Club會員（由Club HKT Limited提供及管理，為香港電訊有限公司的附屬公司）。透過簽署本申請書，您明白及同意 (a) 受The Club的條款及細則，以及香港電訊集團和電訊盈科集團各自的《私隱聲明》約束（分別載於<u>www.theclub.com.hk</u>、<u>www.hkt.com/legal/privacy.html</u>及<u>www.pccw.com/legal/privacy.html</u>）；及 (b) 委任The Club作為您的代理，以代您接入您與香港電訊集團及電訊盈科集團的任何或所有服務帳戶，有助於 (i) 開啟您的The Club會籍及本服務；及 (ii) 您使用及我們支援The Club及本服務的各項功能。您下列的電郵地址和手機號碼將作為您就有關The Club的聯繫資料（包括該電郵地址作為您的登入名稱）。"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement key="reg-Club 2" x="2" y="18" width="510" height="15" isRemoveLineWhenBlank="true">
+						<printWhenExpression><![CDATA[$F{csPortalStatus} != null && $F{csPortalStatus}.equals("H")&& !"N".equals($F{csPortalInd})]]></printWhenExpression>
+					</reportElement>
+					<box bottomPadding="0">
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["作為我們My HKT 服務（「<b>My HKT</b>」）的登記用戶，閣下可繼續享用由My HKT帶給您的優惠和方便。<br><br>閣下作為於本申請書下申請服務（「<b>本服務</b>」）的客戶，您將會自動成為The Club會員（由Club HKT Limited提供及管理，為香港電訊有限公司的附屬公司）。透過簽署本申請書，您明白及同意 (a) 受The Club的條款及細則，以及香港電訊集團和電訊盈科集團各自的《私隱聲明》約束（分別載於 www.theclub.com.hk、<u>www.hkt.com/legal/privacy.html</u> 及 <u>www.pccw.com/legal/privacy.html</u>）；及 (b) 委任The Club作為您的代理，以代您接入您與香港電訊集團及電訊盈科集團的任何或所有服務帳戶，有助於 (i) 開啟您的The Club會籍及本服務；及 (ii) 您使用及我們支援The Club及本服務的各項功能。您下列的電郵地址和手機號碼將作為您就有關The Club的聯繫資料（包括該電郵地址作為您的登入名稱）。"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement key="reg-HKT 3a" x="2" y="18" width="510" height="15" isRemoveLineWhenBlank="true">
+						<printWhenExpression><![CDATA[$F{csPortalStatus} != null && $F{csPortalStatus}.equals("C")&&!($F{emailAddr}==null || "".equals($F{emailAddr}))&& !"N".equals($F{csPortalInd})]]></printWhenExpression>
+					</reportElement>
+					<box bottomPadding="0">
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["作為我們The Club 服務的登記用戶，閣下可繼續享用由The Club帶給您的優惠和方便。<br><br>閣下作為於本申請書下申請服務（「<b>本服務</b>」）的客戶，您將會自動成為My HKT 服務（「<b>My HKT</b>」）用戶（由HKT CSP Limited 提供及管理，為香港電訊有限公司的附屬公司）。透過簽署本申請書，您明白及同意 (a) 受My HKT的條款及細則，以及香港電訊集團和電訊盈科集團各自的《私隱聲明》約束（分別載於<u>www.cs.hkt.com</u>、<u>www.hkt.com/legal/privacy.html</u> 及 <u>www.pccw.com/legal/privacy.html</u>）；及 (b) 委任My HKT作為您的代理，以代您接入您與香港電訊集團及電訊盈科集團的任何或所有服務帳戶，有助於 (i) 開啟您的My HKT及本服務；及 (ii) 您使用及我們支援My HKT及本服務的各項功能。您下列的電郵地址和手機號碼將作為您就有關My HKT服務的聯繫資料（包括該電郵地址作為您的登入名稱）。"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement key="3b" x="2" y="18" width="510" height="15">
+						<printWhenExpression><![CDATA[($F{csPortalStatus}.equals("C")&&($F{emailAddr}==null || "".equals($F{emailAddr})))||($F{csPortalInd}.equals("N")&&!$F{csPortalStatus}.equals("HC"))]]></printWhenExpression>
+					</reportElement>
+					<box bottomPadding="0">
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["作為我們The Club 服務的登記用戶，閣下可繼續享用由The Club帶給您的優惠和方便。"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement key="reg-none 4" x="2" y="18" width="510" height="15" isRemoveLineWhenBlank="true">
+						<printWhenExpression><![CDATA[$F{csPortalStatus} != null && $F{csPortalStatus}.equals("HC")]]></printWhenExpression>
+					</reportElement>
+					<box bottomPadding="0">
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["作為我們The Club及My HKT 服務（「<b>My HKT</b>」）的登記用戶，閣下可繼續享用由The Club及My HKT帶給您的優惠和方便。"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" x="2" y="33" width="102" height="13">
+						<printWhenExpression><![CDATA[!("HC".equals($F{csPortalStatus})||(($F{emailAddr}==null || "".equals($F{emailAddr}))&&"C".equals($F{csPortalStatus})))&& !"N".equals($F{csPortalInd})]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[電郵地址 / 登入名稱： ]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="105" y="33" width="201" height="13">
+						<printWhenExpression><![CDATA[!("HC".equals($F{csPortalStatus})||(($F{emailAddr}==null || "".equals($F{emailAddr}))&&"C".equals($F{csPortalStatus})))&& !"N".equals($F{csPortalInd})]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[(( $F{emailAddr} == null||"".equals($F{emailAddr}))? $F{dummyEmail} : $F{emailAddr} )]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" x="342" y="33" width="61" height="13">
+						<printWhenExpression><![CDATA[!("HC".equals($F{csPortalStatus})||(($F{emailAddr}==null || "".equals($F{emailAddr}))&&"C".equals($F{csPortalStatus})))&& !"N".equals($F{csPortalInd})]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[手機號碼： ]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="404" y="33" width="108" height="13">
+						<printWhenExpression><![CDATA[!("HC".equals($F{csPortalStatus})||(($F{emailAddr}==null || "".equals($F{emailAddr}))&&"C".equals($F{csPortalStatus})))&& !"N".equals($F{csPortalInd})]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{contactPhone}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement key="don&apos;t have Both 1b" positionType="Float" x="2" y="48" width="510" height="15" isRemoveLineWhenBlank="true">
+						<printWhenExpression><![CDATA[($F{csPortalStatus} == null || "".equals($F{csPortalStatus}))&&($F{emailAddr}==null || "".equals($F{emailAddr}))&& !"N".equals($F{csPortalInd})]]></printWhenExpression>
+					</reportElement>
+					<box bottomPadding="0">
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["如閣下未能提供一個有效的電子郵件地址和手機號碼，My HKT的登記用戶將無法建立，Club HKT Limited將安排一個電子郵件地址為閣下的登錄標誌，以供閣下註冊The Club服務。"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement key="2" positionType="Float" x="2" y="48" width="510" height="15" isRemoveLineWhenBlank="true">
+						<printWhenExpression><![CDATA[$F{csPortalStatus} != null && $F{csPortalStatus}.equals("H")&& !"N".equals($F{csPortalInd})]]></printWhenExpression>
+					</reportElement>
+					<box bottomPadding="0">
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["如閣下未能提供一個有效的電子郵件地址和手機號碼，My HKT帳戶將無法建立，Club HKT Limited將安排一個電子郵件地址為閣下的登錄標誌，以供閣下註冊The Club服務。"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="9" splitType="Prevent"/>
+		<band height="69" splitType="Prevent">
+			<frame>
+				<reportElement key="frame-2" stretchType="RelativeToBandHeight" x="8" y="0" width="519" height="69" isRemoveLineWhenBlank="true"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-38" x="0" y="0" width="519" height="18" backcolor="#000000"/>
+					<box leftPadding="10">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[<b>第 十 節:  《個人資料（私隱）條列》下的個人資料收集聲明</b>]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement key="reg-Both" x="2" y="20" width="510" height="15" isRemoveLineWhenBlank="true">
+						<printWhenExpression><![CDATA[!((($F{csPortalStatus}.equals("C")||$F{csPortalStatus}.equals("")||$F{csPortalStatus}==null)&&($F{emailAddr}==null || "".equals($F{emailAddr})))||$F{csPortalStatus}.equals("HC"))&& !"N".equals($F{csPortalInd})]]></printWhenExpression>
+					</reportElement>
+					<box bottomPadding="0">
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["閣下就本服務、The Club及My HKT或與其有關而提供的個人資料和其他資料（統稱「<b>資料</b>」）將由一家或多家香港電訊集團內及電訊盈科集團內的服務供應商，包括Hong Kong Telecommunications (HKT) Limited、香港移動通訊有限公司、電訊盈科媒體有限公司、MOOV (Hong Kong) Limited、PCCW OTT (Hong Kong) Limited 、益體健有限公司、HKT Education Limited、Club HKT Limited、HKT CSP Limited及HKT Payment Limited（視乎情況而定），根據《個人資料（私隱）條列》及香港電訊集團和電訊盈科集團各自的《私隱聲明》（載於<u>www.hkt.com/legal/privacy.html</u> 及 <u>www.pccw.com/legal/privacy.html</u>）的規定所收集、使用及保留。本服務、The Club及My HKT的適用條款及細則，以及香港電訊集團和電訊盈科集團各自的《私隱聲明》，適用及監管資料被收集的原因、資料會被如何使用、保存及其披露對象。被收集的資料，或會披露予香港電訊集團及電訊盈科集團的關聯公司或有關公司、其各自的代理（包括債務追收代理）、業務合作夥伴，以及適用監管或政府機關（任何時候均在適用法律、牌照、規則及規例容許的範圍內），及/或由該等公司使用或保存，以處理有關本服務、The Club及/或My HKT的事項（包括處理申請、提供及日常運作本服務、The Club及My HKT，管理及保存各項該等服務的帳戶，及使您能透過My HKT以接入及檢索有關您申請本服務的部份帳戶資料，及履行適用法律、牌照、規則及規例）。<br><br>視乎客戶行使權利時於以下空格加上記號或保留為空，所有資料，包括您的聯絡資料、出生日期、服務號碼及服務帳戶號碼（如提供），及其後編製的資料（如地區資料），可能會被用作直接促銷目的（受制於適用法律、牌照、規則及規例），包括但不限於向客戶發出與本服務、The Club及My HKT、或受容許的其他類型的商品及服務，包括電訊網絡服務、電腦周邊產品、配件和軟件、秘書服務、個人助理服務和資訊服務有關的禮品、折扣、尊享優惠、優惠、產品及任何其他宣傳之通知，以及各種類型的產品或服務的最新情報，包括遊戲、運動、音樂、美容產品、電子產品、科技、電子商務、雲端服務、手機付款、旅遊、銀行服務、投資、娛樂、交通、家居、時尚、餐飲、煙酒、保險、教育、健康及保健、社交網絡、媒體及高端消費產品及服務。<br><br>資料查閱、更改或使用的要求，或任何有關資料的查詢，可致函私隱條例事務主任（香港電訊集團：香港郵政總局信箱9896號；電訊盈科集團：香港郵政總局信箱9872號）。<br><br>如客戶不願意接收任何有關以下服務而作上述直接促銷目的之宣傳禮品、折扣、產品、服務、優惠、情報或材料，於以下空格加上記號："]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement key="reg-HKT" x="2" y="20" width="510" height="15" isRemoveLineWhenBlank="true">
+						<printWhenExpression><![CDATA[((($F{csPortalStatus} != null && $F{csPortalStatus}.equals("C"))||($F{csPortalStatus}==null||$F{csPortalStatus}.equals("")))&& ($F{emailAddr}==null || "".equals($F{emailAddr})))||("N".equals($F{csPortalInd})&&!$F{csPortalStatus}.equals("HC"))]]></printWhenExpression>
+					</reportElement>
+					<box bottomPadding="0">
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["閣下就本服務、The Club及My HKT或與其有關而提供的個人資料和其他資料（統稱「<b>資料</b>」）將由一家或多家香港電訊集團內及電訊盈科集團內的服務供應商，包括Hong Kong Telecommunications (HKT) Limited、香港移動通訊有限公司、電訊盈科媒體有限公司、MOOV (Hong Kong) Limited、PCCW OTT (Hong Kong) Limited 、益體健有限公司、HKT Education Limited、Club HKT Limited、HKT CSP Limited及HKT Payment Limited（視乎情況而定），根據《個人資料（私隱）條列》及香港電訊集團和電訊盈科集團各自的《私隱聲明》（載於<u>www.hkt.com/legal/privacy.html</u> 及 <u>www.pccw.com/legal/privacy.html</u>）的規定所收集、使用及保留。本服務、The Club及My HKT的適用條款及細則（如適用），以及香港電訊集團和電訊盈科集團各自的《私隱聲明》，適用及監管資料被收集的原因、資料會被如何使用、保存及其披露對象。被收集的資料，或會披露予香港電訊集團及電訊盈科集團的關聯公司或有關公司、其各自的代理（包括債務追收代理）、業務合作夥伴，以及適用監管或政府機關（任何時候均在適用法律、牌照、規則及規例容許的範圍內），及/或由該等公司使用或保存，以處理有關本服務、The Club及/或My HKT的事項（包括處理申請、提供及日常運作本服務、The Club及My HKT，管理及保存各項該等服務的帳戶，及使您能透過My HKT以接入及檢索有關您申請本服務的部份帳戶資料，及履行適用法律、牌照、規則及規例）（如適用）。<br><br>視乎客戶行使權利時於以下空格加上記號或保留為空，所有資料，包括您的聯絡資料、出生日期、服務號碼及服務帳戶號碼（如提供），及其後編製的資料（如地區資料），可能會被用作直接促銷目的（受制於適用法律、牌照、規則及規例），包括但不限於向客戶發出與本服務、The Club及My HKT、或受容許的其他類型的商品及服務，包括電訊網絡服務、電腦周邊產品、配件和軟件、秘書服務、個人助理服務和資訊服務有關的禮品、折扣、尊享優惠、優惠、產品及任何其他宣傳之通知，以及各種類型的產品或服務的最新情報，包括遊戲、運動、音樂、美容產品、電子產品、科技、電子商務、雲端服務、手機付款、旅遊、銀行服務、投資、娛樂、交通、家居、時尚、餐飲、煙酒、保險、教育、健康及保健、社交網絡、媒體及高端消費產品及服務。<br><br>資料查閱、更改或使用的要求，或任何有關資料的查詢，可致函私隱條例事務主任（香港電訊集團：香港郵政總局信箱9896號；電訊盈科集團：香港郵政總局信箱9872號）。<br><br>如客戶不願意接收任何有關以下服務而作上述直接促銷目的之宣傳禮品、折扣、產品、服務、優惠、情報或材料，於以下空格加上記號："]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement key="4" x="2" y="20" width="510" height="15" isRemoveLineWhenBlank="true">
+						<printWhenExpression><![CDATA[$F{csPortalStatus}.equals("HC")]]></printWhenExpression>
+					</reportElement>
+					<box bottomPadding="0">
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["閣下就本服務或與其有關而提供的個人資料和其他資料（統稱「<b>資料</b>」）將由一家或多家香港電訊集團內及電訊盈科集團內的服務供應商，包括Hong Kong Telecommunications (HKT) Limited、香港移動通訊有限公司、電訊盈科媒體有限公司、MOOV (Hong Kong) Limited、PCCW OTT (Hong Kong) Limited 、益體健有限公司、HKT Education Limited、Club HKT Limited、HKT CSP Limited及HKT Payment Limited（視乎情況而定），根據《個人資料（私隱）條列》及香港電訊集團和電訊盈科集團各自的《私隱聲明》（載於<u>www.hkt.com/legal/privacy.html</u>及<u>www.pccw.com/legal/privacy.html</u>）的規定所收集、使用及保留。本服務的適用條款及細則，以及香港電訊集團和電訊盈科集團各自的《私隱聲明》，適用及監管資料被收集的原因、資料會被如何使用、保存及其披露對象。被收集的資料，或會披露予香港電訊集團及電訊盈科集團的關聯公司或有關公司、其各自的代理（包括<u>債務追收代理</u>）、業務合作夥伴，以及適用監管或政府機關（任何時候均在適用法律、牌照、規則及規例容許的範圍內），及/或由該等公司使用或保存，以處理有關本服務的事項（包括處理申請、提供及日常運作本服務，管理及保存本服務的帳戶，及履行適用法律、牌照、規則及規例）。<br><br>視乎客戶行使權利時於以下空格加上記號或保留為空，所有資料，包括您的聯絡資料、出生日期、服務號碼及服務帳戶號碼（如提供），及其後編製的資料（如地區資料），可能會被用作直接促銷目的（受制於適用法律、牌照、規則及規例），包括但不限於向客戶發出與本服務、或受容許的其他類型的商品及服務，包括電訊網絡服務、電腦周邊產品、配件和軟件、秘書服務、個人助理服務和資訊服務有關的禮品、折扣、尊享優惠、優惠、產品及任何其他宣傳之通知，以及各種類型的產品或服務的最新情報，包括遊戲、運動、音樂、美容產品、電子產品、科技、電子商務、雲端服務、手機付款、旅遊、銀行服務、投資、娛樂、交通、家居、時尚、餐飲、煙酒、保險、教育、健康及保健、社交網絡、媒體及高端消費產品及服務。<br><br>資料查閱、更改或使用的要求，或任何有關資料的查詢，可致函私隱條例事務主任（香港電訊集團：香港郵政總局信箱9896號；電訊盈科集團：香港郵政總局信箱9872號）。<br><br>如客戶不願意接收任何有關以下服務而作上述直接促銷目的之宣傳禮品、折扣、產品、服務、優惠、情報或材料，於以下空格加上記號："]]></textFieldExpression>
+				</textField>
+				<frame>
+					<reportElement positionType="Float" x="2" y="35" width="510" height="15"/>
+					<staticText>
+						<reportElement key="staticText-101" x="3" y="4" width="6" height="6"/>
+						<box leftPadding="3">
+							<topPen lineWidth="0.5" lineStyle="Solid"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="2" y="3" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{privacyInd}]]></printWhenExpression>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.0"/>
+							<leftPen lineWidth="0.0"/>
+							<bottomPen lineWidth="0.0"/>
+							<rightPen lineWidth="0.0"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Top">
+							<font fontName="PCCW-zh-Ming" size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+					<textField isStretchWithOverflow="true">
+						<reportElement key="reg-Both" x="14" y="0" width="495" height="15" isRemoveLineWhenBlank="true"/>
+						<box bottomPadding="0">
+							<bottomPen lineWidth="0.0"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["本服務 (除The Club及My HKT外)"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="3" y="50" width="510" height="15">
+						<printWhenExpression><![CDATA[!"N".equals($F{csPortalInd})]]></printWhenExpression>
+					</reportElement>
+					<staticText>
+						<reportElement key="staticText-101" x="3" y="4" width="6" height="6">
+							<printWhenExpression><![CDATA[!("HC".equals($F{csPortalStatus})||(($F{emailAddr}==null || "".equals($F{emailAddr}))&&"C".equals($F{csPortalStatus})))]]></printWhenExpression>
+						</reportElement>
+						<box leftPadding="3">
+							<topPen lineWidth="0.5" lineStyle="Solid"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="2" y="3" width="9" height="9">
+							<printWhenExpression><![CDATA[($F{hktOptOut}||$F{clubOptOut}||$F{hktClubOptOut})&&!("HC".equals($F{csPortalStatus})||(($F{emailAddr}==null || "".equals($F{emailAddr}))&&"C".equals($F{csPortalStatus})))]]></printWhenExpression>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.0"/>
+							<leftPen lineWidth="0.0"/>
+							<bottomPen lineWidth="0.0"/>
+							<rightPen lineWidth="0.0"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Top">
+							<font fontName="PCCW-zh-Ming" size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+					<textField isStretchWithOverflow="true">
+						<reportElement key="reg-HKT" x="14" y="0" width="495" height="15" isRemoveLineWhenBlank="true">
+							<printWhenExpression><![CDATA[$F{csPortalStatus} != null && $F{csPortalStatus}.equals("C") && !($F{emailAddr}==null || "".equals($F{emailAddr}))]]></printWhenExpression>
+						</reportElement>
+						<box bottomPadding="0">
+							<bottomPen lineWidth="0.0"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["My HKT"]]></textFieldExpression>
+					</textField>
+					<textField isStretchWithOverflow="true">
+						<reportElement key="reg-Club" x="14" y="0" width="495" height="15" isRemoveLineWhenBlank="true">
+							<printWhenExpression><![CDATA[($F{csPortalStatus} != null && $F{csPortalStatus}.equals("H"))||(($F{csPortalStatus} == null || $F{csPortalStatus}.equals("") )&& ($F{emailAddr}==null || "".equals($F{emailAddr})))]]></printWhenExpression>
+						</reportElement>
+						<box bottomPadding="0">
+							<bottomPen lineWidth="0.0"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["The Club"]]></textFieldExpression>
+					</textField>
+					<textField isStretchWithOverflow="true">
+						<reportElement key="reg-Both" x="14" y="0" width="495" height="15" isRemoveLineWhenBlank="true">
+							<printWhenExpression><![CDATA[($F{csPortalStatus} == null || "".equals($F{csPortalStatus}))&&!($F{emailAddr}==null || "".equals($F{emailAddr}))]]></printWhenExpression>
+						</reportElement>
+						<box bottomPadding="0">
+							<bottomPen lineWidth="0.0"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["The Club 及 My HKT"]]></textFieldExpression>
+					</textField>
+				</frame>
+			</frame>
+		</band>
+		<band splitType="Stretch">
+			<printWhenExpression><![CDATA["Y".equalsIgnoreCase($F{csPortalInd}) || "D".equalsIgnoreCase($F{csPortalInd})]]></printWhenExpression>
+		</band>
+		<band height="9" splitType="Prevent">
+			<frame>
+				<reportElement x="8" y="0" width="519" height="1"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+			</frame>
+		</band>
+		<band height="46" splitType="Prevent">
+			<printWhenExpression><![CDATA[false]]></printWhenExpression>
+			<frame>
+				<reportElement key="frame-2" x="8" y="0" width="519" height="38" isRemoveLineWhenBlank="true"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-38" x="0" y="0" width="518" height="18" backcolor="#000000"/>
+					<box leftPadding="10">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[<b>第 十 節:  客戶同意</b>]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="2" y="20" width="510" height="15"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{custAgree}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="80" splitType="Prevent">
+			<textField isBlankWhenNull="true">
+				<reportElement x="8" y="0" width="212" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["客戶簽署"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="8" y="70" width="209" height="1"/>
+			</line>
+			<staticText>
+				<reportElement key="staticText-224" positionType="Float" x="15" y="56" width="12" height="15"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<image hAlign="Center" isUsingCache="false" onErrorType="Blank">
+				<reportElement positionType="Float" x="57" y="43" width="133" height="28"/>
+				<imageExpression class="java.io.InputStream"><![CDATA[$F{custSignature}]]></imageExpression>
+			</image>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="59" y="15" width="161" height="15"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{appInDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="8" y="15" width="50" height="15"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[申請日期:]]></text>
+			</staticText>
+		</band>
+		<band height="40" splitType="Prevent">
+			<printWhenExpression><![CDATA[false]]></printWhenExpression>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="8" y="0" width="518" height="25">
+					<printWhenExpression><![CDATA[false]]></printWhenExpression>
+				</reportElement>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["本人已閱畢及了解第九節 (個人資料收集聲明) 及第十節 (客戶同意)，並知悉及同意所有csl流動通訊服務可能會受制於服務優化措施。<br>本人已收到、閱畢及了解csl流動通訊服務協議及服務指南。<br>"+($F{custReminderChi} == null ? "" : $F{custReminderChi})]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="90" splitType="Prevent">
+			<frame>
+				<reportElement key="frame-9" positionType="Float" x="8" y="0" width="519" height="81"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-233" positionType="Float" x="-172" y="63" width="83" height="16"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Staff number]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="94" y="49" width="280" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{salesName} + "(" + $F{salesCd} + ")"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-228" positionType="Float" x="2" y="19" width="80" height="15"/>
+					<box leftPadding="0"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[每月帳單截數日期:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="94" y="19" width="280" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{billPeriod}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-228" positionType="Float" x="2" y="34" width="30" height="15"/>
+					<box leftPadding="0"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[備註:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-232" positionType="Float" x="2" y="64" width="91" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[代理商 / csl代碼:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="94" y="63" width="280" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{shopCd}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="2" y="1" width="100" height="18"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[僅供本公司內部使用:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-232" positionType="Float" x="2" y="49" width="44" height="15"/>
+					<box leftPadding="0"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[銷售人員:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="94" y="34" width="280" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{isConSrv}.equalsIgnoreCase( "Y" )?
+($F{imei}.isEmpty()? (""):("機身號碼: " + $F{imei}))
+:("")]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="101" splitType="Prevent">
+			<printWhenExpression><![CDATA[!$F{shopCd}.contains("SBO")]]></printWhenExpression>
+			<frame>
+				<reportElement key="frame-9" positionType="Float" x="8" y="0" width="519" height="101"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="2" y="1" width="100" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Documents Attached: ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="2" y="51" width="100" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Document Collected:]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="102" y="1" width="417" height="47"/>
+					<staticText>
+						<reportElement key="staticText-101" x="10" y="2" width="129" height="15"/>
+						<box leftPadding="3">
+							<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+							<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+							<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[Application Form]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="3" y="6" width="6" height="6"/>
+						<box leftPadding="3">
+							<topPen lineWidth="0.5" lineStyle="Solid"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="PCCW-Arial" size="9"/>
+						</textElement>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="288" y="2" width="129" height="15"/>
+						<box leftPadding="3">
+							<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+							<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+							<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[MNP Application Form]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="281" y="6" width="6" height="6"/>
+						<box leftPadding="3">
+							<topPen lineWidth="0.5" lineStyle="Solid"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="PCCW-Arial" size="9"/>
+						</textElement>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="3" y="36" width="6" height="6"/>
+						<box leftPadding="3">
+							<topPen lineWidth="0.5" lineStyle="Solid"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="PCCW-Arial" size="9"/>
+						</textElement>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="10" y="32" width="129" height="15"/>
+						<box leftPadding="3">
+							<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+							<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+							<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[Concierge Service Form]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="3" y="22" width="6" height="6"/>
+						<box leftPadding="3">
+							<topPen lineWidth="0.5" lineStyle="Solid"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="PCCW-Arial" size="9"/>
+						</textElement>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="10" y="16" width="268" height="15"/>
+						<box leftPadding="3">
+							<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+							<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+							<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[Mob Secretarial Service Supplement Form]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="142" y="37" width="6" height="6"/>
+						<box leftPadding="3">
+							<topPen lineWidth="0.5" lineStyle="Solid"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="PCCW-Arial" size="9"/>
+						</textElement>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="149" y="32" width="129" height="15"/>
+						<box leftPadding="3">
+							<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+							<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+							<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[Product Information]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="2" y="4" width="9" height="9"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="142" y="7" width="6" height="6"/>
+						<box leftPadding="3">
+							<topPen lineWidth="0.5" lineStyle="Solid"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="PCCW-Arial" size="9"/>
+						</textElement>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="281" y="21" width="6" height="6"/>
+						<box leftPadding="3">
+							<topPen lineWidth="0.5" lineStyle="Solid"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="PCCW-Arial" size="9"/>
+						</textElement>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="288" y="17" width="129" height="15"/>
+						<box leftPadding="3">
+							<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+							<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+							<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[3<sup>rd</sup> Party Autopay Form]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="281" y="36" width="6" height="6"/>
+						<box leftPadding="3">
+							<topPen lineWidth="0.5" lineStyle="Solid"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="PCCW-Arial" size="9"/>
+						</textElement>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="288" y="31" width="129" height="15"/>
+						<box leftPadding="3">
+							<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+							<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+							<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[Change of Service Form]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="141" y="5" width="9" height="9"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="149" y="2" width="129" height="15"/>
+						<box leftPadding="3">
+							<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+							<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+							<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[Service Guide]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="280" y="4" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{docAttMNP}]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="2" y="20" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{docAttSecSrv}]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="2" y="34" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{docAttConci}]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="141" y="35" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{docAttTradeDesc}]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="280" y="34" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{docAttChgOfSrv}]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="280" y="19" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{docAttThirdParty}]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="241" y="51" width="139" height="47"/>
+					<staticText>
+						<reportElement key="staticText-101" x="10" y="2" width="129" height="15"/>
+						<box leftPadding="3">
+							<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+							<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+							<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[Address Proof]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="3" y="7" width="6" height="6"/>
+						<box leftPadding="3">
+							<topPen lineWidth="0.5" lineStyle="Solid"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="PCCW-Arial" size="9"/>
+						</textElement>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="3" y="21" width="6" height="6"/>
+						<box leftPadding="3">
+							<topPen lineWidth="0.5" lineStyle="Solid"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="PCCW-Arial" size="9"/>
+						</textElement>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="10" y="17" width="129" height="15"/>
+						<box leftPadding="3">
+							<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+							<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+							<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[Employment Contract Copy]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="10" y="31" width="129" height="15"/>
+						<box leftPadding="3">
+							<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+							<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+							<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[MNP Doc Copy]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="2" y="34" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{pfMNPDoc}]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="3" y="36" width="6" height="6"/>
+						<box leftPadding="3">
+							<topPen lineWidth="0.5" lineStyle="Solid"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="2" y="5" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{pfAddrPf}]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="2" y="19" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{pfEmpCont}]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="102" y="51" width="139" height="47"/>
+					<staticText>
+						<reportElement key="staticText-101" x="10" y="2" width="129" height="15"/>
+						<box leftPadding="3">
+							<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+							<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+							<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[HKID/Passport copy]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="3" y="7" width="6" height="6"/>
+						<box leftPadding="3">
+							<topPen lineWidth="0.5" lineStyle="Solid"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="PCCW-Arial" size="9"/>
+						</textElement>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="3" y="22" width="6" height="6"/>
+						<box leftPadding="3">
+							<topPen lineWidth="0.5" lineStyle="Solid"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="PCCW-Arial" size="9"/>
+						</textElement>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="10" y="17" width="129" height="15"/>
+						<box leftPadding="3">
+							<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+							<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+							<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[BR Name Card]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="10" y="31" width="129" height="15"/>
+						<box leftPadding="3">
+							<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+							<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+							<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[Credit Card Copy]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="3" y="36" width="6" height="6"/>
+						<box leftPadding="3">
+							<topPen lineWidth="0.5" lineStyle="Solid"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="PCCW-Arial" size="9"/>
+						</textElement>
+						<text><![CDATA[]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="380" y="52" width="139" height="33"/>
+					<staticText>
+						<reportElement key="staticText-101" x="10" y="0" width="129" height="15"/>
+						<box leftPadding="3">
+							<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+							<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+							<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[BR Copy]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="3" y="5" width="6" height="6"/>
+						<box leftPadding="3">
+							<topPen lineWidth="0.5" lineStyle="Solid"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="PCCW-Arial" size="9"/>
+						</textElement>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="3" y="21" width="6" height="6"/>
+						<box leftPadding="3">
+							<topPen lineWidth="0.5" lineStyle="Solid"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Top">
+							<font fontName="PCCW-Arial" size="9"/>
+						</textElement>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="2" y="19" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{pfPreparidSIM}]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="2" y="3" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{pfBRCopy}]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="staticText-101" x="10" y="15" width="129" height="15"/>
+						<box leftPadding="3">
+							<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+							<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+							<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+						</box>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[Pre-paid SIM Copy]]></text>
+					</staticText>
+				</frame>
+				<staticText>
+					<reportElement x="104" y="71" width="9" height="9">
+						<printWhenExpression><![CDATA[$F{pfBRNameCard}]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="6"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="104" y="56" width="9" height="9">
+						<printWhenExpression><![CDATA[$F{pfHKIDPass}]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="6"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="104" y="85" width="9" height="9">
+						<printWhenExpression><![CDATA[$F{pfCCCopy}]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="6"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Prevent"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="50" splitType="Prevent">
+			<image scaleImage="RetainShape" hAlign="Right" vAlign="Bottom">
+				<reportElement x="407" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyBottomLogo}]]></imageExpression>
+			</image>
+			<image scaleImage="RetainShape" hAlign="Left" vAlign="Bottom">
+				<reportElement x="0" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyBottomLeftLogo}]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

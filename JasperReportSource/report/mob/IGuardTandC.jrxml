@@ -1,0 +1,1427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="iGuardCustInfo" language="groovy" pageWidth="595" pageHeight="842" columnWidth="520" leftMargin="37" rightMargin="38" topMargin="20" bottomMargin="20" whenResourceMissingType="Empty">
+	<property name="ireport.zoom" value="1.4019755979255695"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="96"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText-1" x="0" y="0" width="520" height="45" backcolor="#FFFFFF"/>
+				<box leftPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[i-GUARD Phone&Tablet<i>Protector</i> Lost/Damaged Beyond Repair/Stolen Handset Reimbursement Plan<br>Terms and Conditions]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="220" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="250" height="10"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>1. <u>DEFINITIONS</u></b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="10" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["\"<b>Accidental</b>\" means sudden, unforeseen and unexpected, and happening by chance."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="20" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["\"<b>Customer Information Form</b>\" means Your completed and accepted information form for the i-GUARD <b>Phone&Tablet<i>Protector</i> Lost/Damaged Beyond Repair/Stolen Handset Reimbursement Plan</b> which together with these terms and conditions forms the Service Contract."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="30" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["\"<b>Damaged Beyond Repair</b>\" means a mobile phone handset or tablet is confirmed by the mobile phone manufacturer or its appointed service center to be damaged beyond repair or the cost of repair is greater than the handset or tablet value."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="40" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["\"<b>Handset</b>\" means a mobile phone handset or tablet (including but not limited to iPad), able to be connected to one or more networks operated by PCCW-HKT."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="50" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["\"<b>Loss</b>\" means a permanent and involuntary failure to keep possession of property. For the avoidance of doubt, Loss does not include instances when You sell or give away the Handset (as defined in paragraph 2)."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="60" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["\"<b>PCCW</b>\" means PCCW Mobile HK Limited and/or any of its holding companies, subsidiaries or subsidiaries of any such holding companies which sell(s) Handset or operate(s) mobile telecommunications networks in Hong Kong."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="70" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["\"<b>Reimbursement Amount</b>\" means the percentage of the original Handset purchase price to be reimbursed under this Service Contract being:"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="80" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["If the reimbursement is approved:"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="0" y="90" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["a."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["for Handsets with an original purchase cost of up to HK\$4,000, 50% of such original purchase cost in year 1 and 40% at the original Handset cost in year 2 of this Service Contract; and"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="100" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["for Handsets with an original purchase cost of more than HK\$4,000, 50% of such the original Handset cost up to a maximum of HK\$4,000 in year 1 and 40% of the original Handset cost up to a maximum of HK\$2,500 in year 2 of this Service Contract; and"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["b."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="110" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["if original Handset model not available, You shall purchase a Handset from same manufacturer at PCCW-HKT shops; or if no model from the same manufacturer is available at all PCCW-HKT shops, You shall purchase a Handset from another manufacturer; or from Apple Shops or Apple Authorized Resellers in Hong Kong for replacement of iPhone. This excludes replacing a Handset of second generation (2G) or third generation (3G) by a Handset using fourth generation standards (4G or equivalent)."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["c."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="120" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["\"<b>Service Contract</b>\" has the meaning described in paragraph 2."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="130" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["\"<b>Stolen</b>\" means the taking and removing of property by another person without consent and with the intent to permanently deprive the true owner of possession, including by force, intimidation or deception."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="140" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["\"<b>We</b>\", \"<b>Us</b>\" and \"<b>Our</b>\" refers to i-Guard Direct Limited."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="150" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["\"<b>You</b>\" and \"<b>Your</b>\" refers to purchaser of this i-GUARD <b>Phone&Tablet<i>Protector</i> Lost/Damaged Beyond Repair/Stolen Handset Reimbursement Plan</b>."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="170" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>2. <u>THE SERVICE CONTRACT</u></b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="180" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["The i-GUARD <b>Phone&Tablet<i>Protector</i> Lost/Damaged Beyond Repair/Stolen Handset Reimbursement Plan</b> comprising Your Customer Information Form and these terms and conditions (this \"Service Contract\") provides reimbursement of Your Handset in the event of:"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="270" y="60" width="250" height="10"/>
+			</frame>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="270" y="0" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["The Handset must be a new handset/tablet purchased from PCCW. The purchase of this Service Contract must be made the same date of the date of purchase of the Handset."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="270" y="20" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["This Service Contract will automatically terminate in the event that a reimbursement for replacement of the Handset is made by You and is settled by Us. However, you will be responsible for any outstanding monthly service fees from the Service Contract for the rest of the contract service period. We recommend You to purchase a new i-GUARD <b>Phone&Tablet<i>Protector</i> Lost/Damaged Beyond Repair/Stolen Handset Reimbursement Plan</b> for the new Handset after replacement."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="270" y="10" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["The term of this Service Contract is, unless the parties otherwise agree, for the same period as your PCCW-HKT service subscription plan and commences on the date of purchase of the Handset and this Service Contract as set out in the Customer Information Form. This Customer Information Form is a service contract and not a guarantee or promise in light of the nature of the material, workmanship or performance of the Handset."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="270" y="40" width="250" height="10"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>3. <u>RECORD KEEPING</u></b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="270" y="50" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Although We maintain a record of Your Service Contract, We recommend that You place these documents in a safe place. This Service Contract is personal to You and may not be assigned without our agreement."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="270" y="70" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>4. <u>ELIGIBILITY AND REIMBURSEMENT</u></b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="270" y="90" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["With respect to reimbursement handling under this Service Contract, You shall adhere to the procedures specified in this Service Contract or such other procedures We may specify from time to time. Adherence to these procedures by You shall be a condition precedent to recovery under this Service Contract."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="270" y="80" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For the Handset to be eligible to be included by this Service Contract, You must be a customer of PCCW-HKT who has purchased the Handset from PCCW-HKT, as well as subscribed to a PCCW-HKT service subscription plan of at least 12 months and start the mobile service plan within 30 days of the purchase of this Service Contract, and continue to be a PCCW-HKT Mobile service subscription plan subscriber throughout the term of this Service Contract, and be a Hong Kong resident. You must not have more than two (2) Service Contracts at the same time. You must not have had two (2) or more prior reimbursements for replacement of a Handset under any service contract for i-GUARD <b>Phone&Tablet<i>Protector</i> Lost/Damaged Beyond Repair/Stolen Handset Reimbursement Plan</b> in order to be eligible for reimbursement under this Service Contract."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="270" y="100" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["You shall notify Us, in writing, of any reimbursement application under this Service Contract following Loss, Stolen or Accidental destruction by written notice within one (1) month of the occurrence of such event. Failure to give written notice will invalidate the reimbursement. When providing such written notice of reimbursement application, You shall provide all information and documents in connection with such request for reimbursement, including but not be limited to:"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="270" y="110" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["a."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Your name and contact information;"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="270" y="120" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["b."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Your HK Identity card number;"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="270" y="130" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Handset Model/Type/IMEI Number;"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["c."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="270" y="140" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["d."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Date of loss;"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="270" y="150" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["e."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Date of notification of reimbursement;"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="270" y="160" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["f."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Location of loss;"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="270" y="170" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["g."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Cause of loss;"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="270" y="180" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["For Loss or Stolen reimbursement, file a Police Report within 24 hours of the lost or stolen; and"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["h."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="270" y="190" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["i."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="290" y="190" width="230" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For Accidental destruction reimbursement, a written confirmation from the phone manufacturer or its appointed service center stating that the Handset is beyond repair or the cost of repair is greater than the Handset cost."]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="0" y="200" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["b."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Loss or Stolen of the Handset in each case during the term of this Service Contract."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="190" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["a."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="190" width="230" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Accidental destruction of the Handset resulting in the loss of use of the Handset which cannot be restored without expense exceeding the Reimbursement Amount, as quoted by manufacturer, or designated service center by the manufacturer, of the Handset; or"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="213" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="1" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["If the reimbursement is for Loss or Stolen, you shall return to Us if so requested by Us the charger of such Handset. Upon a reimbursement being settled by Us, ownership of, and title to, such items shall vest in Us."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="21" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["If a reimbursement is made under this Service Contract, We may settle such reimbursement by confirming Your entitlement to purchase a new Handset from PCCW-HKT shop or Apple shop in Hong Kong or Apple Authorized Reseller in Hong Kong and reimbursement by Us of the Reimbursement Amount upon receipt by Us of the original purchase receipt for such new Handset from PCCW-HKT shop or Apple shop in Hong Kong or Apple Authorized Reseller in Hong Kong from You. Due to technology advances, the replacement Handset may have different functions or specifications/or may be of lower retail value than the original Handset. Any outstanding monthly service fee for the rest of the contract service period under Your Service Contract shall be deducted from the Reimbursement Amount. You shall fully cooperate with Us in Our handling of Your reimbursement."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="31" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["We shall not entertain or be liable for any reimbursement for replacement of Handset when there is any due and outstanding fee owed by You to Us."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="62" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["This Service Contract does not apply to any Handset or any reimbursement which is due to, based upon, arising from or as a consequence of any of the following:"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="52" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>5. <u>EXCLUSIONS FROM SERVICES</u></b>"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="0" y="72" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["a."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Damage to the Handset which is not Accidental;"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="82" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["b."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Gradual deterioration;"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="92" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["c."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Damage that does not affect the functioning of the Handset, including but not limited to scratches, cracks (other than cracked glass/display), split, distortion, or change of colour or outward form;"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="102" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["d."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Any loss or damage which is covered by any warranty, other than warranties provided under this Service Contract;"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="112" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["e."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Losses for which service or recovery may be under any recall or class action suit;"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="122" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["f."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Any incidental or consequential loss, operating software, or files;"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="132" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["g."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Losses resulting from war, invasion, act of foreign enemy, hostilities or warlike operations (whether war be declared or not), civil war, rebellion, revolution, insurrection, military or usurped power, direct participation in a riot, strike, civil commotion;"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="142" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["h."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Confiscation or damage by any government, police officer, customs official, or other person acting under colour of law;"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="152" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["i."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Loss due to any virus, or the malfunction of any software, including but not limited to application programs (apps), files or stored data;"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="162" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["j."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Damage to the Handset which is not Accidental;"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="172" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["k."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Loss due to illegal activity or any criminal or civil fines, penalties or punitive or exemplary or aggravated damages;"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="182" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["l."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Any act which is intended by You to cause, or could be expected from the standpoint of a reasonable person to cause damage, even if the damage is of a different degree or type than actually intended or expected; or"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="192" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["m."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Any loss/damaged beyond repair/stolen Handset in relation to which You have received any payment from an Insurer or a service plan provider."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="270" y="1" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>6. <u>PERSONAL INFORMATION</u></b>"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="270" y="11" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["6.1"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["You authorize Us to collect Your personal information, including but not limited to Your name, address, Hong Kong identity card number, mobile phone number, Handset type, Handset model and IMEI number to enable Us to perform Our obligations under this Service Contract. You also authorize Us to pass such information on to any third party providing or arranging for the provision of the Handset reimbursement services indicated in this Service Contract and to the insurer from whom We have purchased cover for our liabilities under this Service Contract."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="270" y="21" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["6.2"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["You agree that We may use your personal information for the purposes set out in Our personal information collection statement, a copy of which has been supplied to you, and which is available on our website, and that this may be amended by Us from time to time by posting an updated version on our website."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="270" y="41" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>7. <u>TERMINATION</u></b>"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="270" y="51" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["7.1"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["This Service Contract may be terminated with immediate effect by Us without prior notice to you upon the occurrence of any of the following events:"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="270" y="61" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["a."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="40" y="0" width="210" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["your service plan with PCCW-HKT is terminated;"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="270" y="71" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["b."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="40" y="0" width="210" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["any monthly service fees are not paid in full and remain overdue for two (2) consecutive months;"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="270" y="81" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["c."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="40" y="0" width="210" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["you are in breach of the terms of this Service Contract or guilty of fraud or misrepresentation in Your dealings with Us."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="270" y="91" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["7.2"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["We may also terminate this Service Contract at any time on giving you at least 30 days’ prior notice."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="270" y="101" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["7.3"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["You may terminate this plan by giving Us not less than 30 days’ prior notice. If You wish to terminate earlier, You will remain liable for the monthly service fees for such notice period."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="270" y="111" width="250" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["7.4"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Following termination of this Service Contract, neither You or Us shall have any liability to the other, but without prejudice to any rights and obligations which have accrued prior to termination of this Service Contract."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="270" y="131" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>8. <u>GOVERNING LAW</u></b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="270" y="141" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["This Service Contract shall be governed by the law of Hong Kong."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="270" y="151" width="250" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Any terms of this Service Contract which are in conflict with the applicable statutes, laws or regulations of Hong Kong are deemed amended to conform to such statutes, laws or regulations. It is agreed that this Service Contract does not apply to the extent that trade or economic sanctions or other similar laws or regulations prohibit the coverage of this Service Contract."]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="0" y="41" width="250" height="10"/>
+			</frame>
+		</band>
+		<band height="16" splitType="Prevent"/>
+		<band height="10" splitType="Stretch">
+			<break>
+				<reportElement x="0" y="5" width="520" height="1"/>
+			</break>
+		</band>
+		<band height="17" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="520" height="17"/>
+				<textElement textAlignment="Center">
+					<font fontName="PCCW-zh-Ming" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Personal Information Collection Statement]]></text>
+			</staticText>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="520" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["The protection of privacy in relation to personal information is the concern of RMI. We respect personal information and are committed to fully implementing and complying with the Data Protection Principles and all relevant provisions of the Personal Data (Privacy) Ordinance (“the Ordinance”)."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["1)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Personal Information We Collect and/or Hold<br>The personal information that we collect and/or hold includes your contact information such as your name, age, passport or identification numbers, telephone number, address, and similar information for other persons to be insured and their relation to you."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["2)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Importance of Information Collection<br>The provision of your personal information is on a voluntary basis; however, if you do not provide sufficient information, the insurance broker(s) or other companies within the RMI group may not be able to provide you with the information, product or service that you have requested."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["3)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Purposes of Information Collection and Usage<br>Your personal information held by RMI may be used for the following purposes:-"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["i)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="0" width="480" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["establishing and serving you as a customer of RMI and any of its group companies, including any of its branches, subsidiaries, holding companies, associated companies or their respective affiliates;"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["ii)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="0" width="480" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["constructing and maintenance of contact lists;"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["iii)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="0" width="480" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["providing you with, the person to be insured, the dependants, next of kin and beneficiaries of the insurance policies of the insured person with any insurance or financial related information, product or service or any alternations, variations, cancellations or renewal of them and any claim or analysis of it;"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["iv)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="0" width="480" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["identity verification and records purposes;"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["v)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="0" width="480" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["compiling aggregate statistics on Web Site Usage;"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["vi)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="0" width="480" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["complying with any law or regulation binding on or applicable to RMI or any of its group companies; and"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["vii)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="0" width="480" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(with your consent - see section 7 below) direct marketing including but not limited to promoting, marketing or selling of RMI or co-branded insurance or financial or investment related products or services by electronic or other means."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["4)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Information Confidentiality<br>Your personal information held by RMI will be kept confidential, but may be shared with:-"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["i)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="0" width="480" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["any agent, contractor or third party service provider who provides administrative, telecommunications, computer, payment or other services to RMI for any of the purposes set out above;"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["ii)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="0" width="480" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["any insurance company on whose behalf RMI acts as agent, so the insurance company may administer any insurance policy sold by RMI on the insurance company’s behalf"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["iii)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="0" width="480" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["any branch, subsidiary, holding company, associated company or affiliates of RMI for any of the purposes set out above;"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["iv)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="0" width="480" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["any financial institution or credit / charge card issuer related to your premium payment account;"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["v)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="0" width="480" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["any person to whom RMI is under an obligation to make disclosure under the requirement of any law or regulation binding on or applicable to RMI or any of its group companies;"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["vi)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="0" width="480" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["any other person under a duty of confidentiality to RMI which has undertaken to keep such information confidential; and"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["vii)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="0" width="480" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(with your consent - see section 7 below) any third party product or service providers including insurance companies, insurance brokers, financial planners, wealth management consultants and cross-marketing companies for their own direct marketing purposes in relation to promoting, marketing or selling of insurance, financial, investment, health and wellness, travel, telecommunications, entertainment, food & beverage, home improvement, education related products or services by electronic or other means."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["vii)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="0" width="480" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(with your consent - see section 7 below) any third party product or service providers including insurance companies, insurance brokers, financial planners, wealth management consultants and cross-marketing companies for their own direct marketing purposes in relation to promoting, marketing or selling of insurance, financial, investment, health and wellness, travel, telecommunications, entertainment, food & beverage, home improvement, education related products or services by electronic or other means."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["RMI will share your personal data for gain."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["5)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Transfer of Information Outside Hong Kong<br>RMI may from time to time transfer your personal information outside Hong Kong for different purposes including processing or storage."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["6)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Data Access"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["6.1"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="0" width="480" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Under and in accordance with the terms of the Ordinance, you have the right to:-"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["i)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="60" y="0" width="460" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["check whether RMI holds data about you and seek access to such data; and"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["ii)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="60" y="0" width="460" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["require RMI to correct any data relating to you which is inaccurate."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["6.2"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="0" width="480" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["RMI may charge a reasonable fee for the processing of any data access request."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["6.3"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="0" width="480" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Requests under section 6.1 should be addressed to the following:<br>RMI’s Data Protection Officer<br>E-mail: cs@i-guard.hk"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["7)"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Direct Marketing<br>With your consent, RMI may:"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<ellipse>
+				<reportElement x="25" y="6" width="3" height="3" forecolor="#000000" backcolor="#000000"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</ellipse>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="0" width="480" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["use any of the personal information it holds about you (including your name, demographic details, email, contact telephone number and correspondence address)  for direct marketing purposes in relation to insurance, financial or investment related products or services; and"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<ellipse>
+				<reportElement x="25" y="6" width="3" height="3" forecolor="#000000" backcolor="#000000"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</ellipse>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="40" y="0" width="480" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["share any of the personal information it holds about you (including your name, demographic details, email, contact telephone number and correspondence address), for gain, with any third party product or service providers including insurance companies, insurance brokers, financial planners, wealth management consultants and cross-marketing companies for their own direct marketing purposes in relation to promoting, marketing or selling of insurance, financial, investment, health and wellness, travel, telecommunications, entertainment, food & beverage, home improvement, education related products or services."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="0" width="20" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="20" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["If you do not consent to RMI using and sharing your personal information for one or both of those purposes, please tick the relevant “opt-out” box in our communications, or on RMI’s website, and we will not do so.  You may also subsequently withdraw your consent by writing to RMI’s Data Protection Officer at the above e-mail address.  If you exercise your right to opt out of the use/share of your personal information for one or both of the above purposes, it will mean that RMI and/or the above classes of persons will not be able to send you any direct marketing, targeted or special offers in the future."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<break>
+				<reportElement x="0" y="5" width="100" height="1"/>
+			</break>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="0" width="520" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["This Personal Information Collection Statement shall from the date hereinafter appearing be deemed an integral part of all contracts, agreements and other binding arrangements which you have entered into or intend to enter into with RMI. For any enquiries regarding this Personal Information Collection Statement, please contact our Customer Services Hotline at +852 8209 0098. For the purpose of this Personal Information Collection Statement, “RMI” means i-GUARD Direct Limited, a wholly-owned subsidiaries of Relevant Marketing (HK) Limited (“RMI”)."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="0" width="520" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Release Date: March 2013"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,1001 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- add 20111123 Margaret -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsSupportDocController">
+		<property name="sessionForm" value="true" />
+		<property name="commandName" value="mobCcsSupportDoc" />
+		<property name="commandClass"
+			value="com.bomwebportal.mob.ccs.dto.MobCcsSupportDocUI" />
+		<property name="mobCcsSupportDocService" ref="mobCcsSupportDocService" />
+		<property name="mobCcsPaymentUpfrontService" ref="mobCcsPaymentUpfrontService" />
+		<property name="orderService" ref="orderService" />
+		<property name="vasDetailService" ref="vasDetailService" />
+		<property name="codeLkupService" ref="codeLkupService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsSimTypeSelectionController">
+		<property name="commandName" value="mobccssimtypeselection" />
+		<property name="commandClass"
+			value="com.bomwebportal.dto.VasDetailDTO" />
+		<property name="vasDetailService" ref="vasDetailService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsPaymentAdminController">
+		<property name="sessionForm" value="true" />
+		<property name="commandName" value="mobCcsPaymentAdmin" />
+		<property name="commandClass"
+			value="com.bomwebportal.mob.ccs.dto.MobCcsPaymentAdminUI" />
+		<property name="mobCcsPaymentAdminService" ref="mobCcsPaymentAdminService" />
+	</bean>
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsPaymentNewTransController">
+		<property name="sessionForm" value="true" />
+		<property name="commandName" value="mobCcsPaymentNewTrans" />
+		<property name="commandClass"
+			value="com.bomwebportal.mob.ccs.dto.MobCcsPaymentNewTransUI" />
+		<property name="mobCcsPaymentAdminService" ref="mobCcsPaymentAdminService" />
+	</bean>
+
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsSummaryController">
+		<property name="commandName" value="mobccssummary" />
+		<property name="commandClass" value="com.bomwebportal.mob.ccs.dto.ui.SummaryUI" />
+		<property name="formView" value="mobccssummary" />
+		<property name="goldenMrtAdminService" ref="goldenMrtAdminService" />
+		<property name="vasDetailService" ref="vasDetailService"/>
+	    <property name="mobileDetailService" ref="mobileDetailService"/> 
+	    <property name="customerProfileService" ref="customerProfileService"/> 
+	    <property name="orderService" ref="orderService"/>  
+	     <property name="mobCcsMrtService" ref="mobCcsMrtService" />
+	     <property name="deliveryService" ref="deliveryService" />
+	      <property name="mobCcsPaymentUpfrontService" ref="mobCcsPaymentUpfrontService" />
+	     <property name="mobCcsSupportDocService" ref="mobCcsSupportDocService" />
+	     <property name="staffInfoService" ref="staffInfoService" />
+	     <property name="releaseLockService" ref="releaseLockService" />
+		<property name="mobileSimInfoService" ref="mobileSimInfoService" />
+		<property name="mobCcsApprovalLogService" ref="mobCcsApprovalLogService" />
+		<property name="mobCcsOrderRemarkService" ref="mobCcsOrderRemarkService"/>	
+		<property name="mobCcsCancelService" ref="mobCcsCancelService" />
+		<property name="mobCcsSbOrderAmendService" ref="mobCcsSbOrderAmendService" />
+		<property name="mobCcsUrgentOrderAlertService" ref="mobCcsUrgentOrderAlertService"/>
+		<property name="iGuardService" ref="iGuardService" />
+    	<property name="depositService" ref="depositService"/>
+    	<property name="mobQuotaService" ref="mobQuotaService" />
+    	<property name="mobPreActReqService" ref="mobPreActReqService"/>
+    	<property name="orderHsrmService" ref="orderHsrmService"/>
+    	<property name="mobCcsReportService" ref="mobCcsReportService"/>
+    	<property name="ordDocService" ref="ordDocService"/>
+    	<property name="orderEsignatureService" ref="orderEsignatureService"/>
+    	<property name="ordEmailReqService" ref="ordEmailReqService"/>
+	</bean>
+	<!-- Start of James Wong modification -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsPreviewController">
+		<property name="commandName" value="mobccspreview" />
+		<property name="commandClass" value="com.bomwebportal.mob.ccs.dto.PreviewDTO" />
+		<property name="validator">
+			<bean class="com.bomwebportal.mob.ccs.validator.MobCcsPreviewValidator">
+				<property name="mobCcsMrtService" ref="mobCcsMrtService"/>
+				<property name="deliveryService" ref="deliveryService" />
+				<property name="multiSimInfoService" ref="multiSimInfoService" />
+				<property name="mobItemQuotaService" ref="mobItemQuotaService" />
+ 			   <property name="mobQuotaService" ref="mobQuotaService" />
+ 			   <property name="orderHsrmService" ref="orderHsrmService" />
+			</bean>
+		</property> 
+		<property name="formView" value="mobccspreview" />
+		<property name="mobCcsMrtService" ref="mobCcsMrtService" />
+		<property name="vasDetailService" ref="vasDetailService"/>
+		<property name="mobileDetailService" ref="mobileDetailService"/>
+	 	<property name="mobCcsPaymentUpfrontService" ref="mobCcsPaymentUpfrontService"/>
+		<property name="orderService" ref="orderService"/>
+		<property name="customerProfileService" ref="customerProfileService"/>
+		<property name="deliveryService" ref="deliveryService" />
+		<property name="mobCcsSupportDocService" ref="mobCcsSupportDocService" />
+		<property name="staffInfoService" ref="staffInfoService" />
+		<property name="releaseLockService" ref="releaseLockService" />	
+		<property name="mobCcsOrderRemarkService" ref="mobCcsOrderRemarkService"/>
+		<property name="mobCcsOrderSearchService" ref="mobCcsOrderSearchService"/>
+		<property name="mobCcsOrderRescueService" ref="mobCcsOrderRescueService"/>
+		<property name="iGuardService" ref="iGuardService" />
+		<property name="depositService" ref="depositService" />
+		<property name="multiSimInfoService" ref="multiSimInfoService" />
+		<property name = "quotaPlanInfoService" ref = "quotaPlanInfoService"/>
+		<property name = "itemDisplayService" ref = "itemDisplayService"/>
+		<property name="itemFuncMobService" ref="itemFuncMobService" />
+		<property name="mobCcsApprovalLogService" ref="mobCcsApprovalLogService" />
+
+	</bean>
+	<!-- End of James Wong modification -->
+	
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsDeliveryController">
+		<property name="commandName" value="mobccsdelivery" />
+		<property name="commandClass" value="com.bomwebportal.mob.ccs.dto.ui.DeliveryUI" />
+		<property name="formView" value="mobccsdelivery" />
+		<property name="codeLkupService" ref="codeLkupService" />
+		<property name="deliveryService" ref="deliveryService" />
+		<property name="vasDetailService" ref="vasDetailService" />
+		<property name="validator">
+            <bean class="com.bomwebportal.mob.ccs.validator.DeliveryValidator">
+            	<property name="deliveryService" ref="deliveryService" />
+            </bean>
+        </property> 
+	</bean>
+
+
+
+
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsCustomerProfileController">
+		<property name="commandName" value="mobccscustomerProfile" />
+		<property name="commandClass"
+			value="com.bomwebportal.mob.ccs.dto.ui.CustomerProfileUI" />
+		<property name="formView" value="mobccscustomerprofile" />
+		<!-- <property name="validator"> <bean class="com.bomwebportal.validator.CustomerProfileValidator"> 
+			<property name="bulkNewActClient" ref="bulkNewActClient"/> </bean> </property> -->
+		<!-- <property name="service" ref="customerProfileService"/> -->
+	</bean>
+
+	<!-- 2011-12-01 -->
+	<bean class="com.bomwebportal.web.CustomerInformationQuotaController">
+		<property name="sessionForm" value="true" />
+		<property name="commandName" value="customerInformationQuota" />
+		<property name="commandClass"
+			value="com.bomwebportal.dto.CustomerInformationQuotaUI" />
+		<property name="customerInformationQuotaService" ref="customerInformationQuotaService" />
+		<property name="remarkService" ref="mobCcsOrderRemarkService"></property>
+	</bean>
+
+
+	<!-- add 20111202 Eric mrtadmin -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsMRTAdminController">
+		<property name="goldenMrtAdminService" ref="goldenMrtAdminService" />
+	</bean>
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsMRTAdminDetailController">
+		<property name="goldenMrtAdminService" ref="goldenMrtAdminService" />
+		<property name="validator">
+			<bean class="com.bomwebportal.mob.ccs.validator.MRTAdminValidator" />
+		</property>
+	</bean>
+
+	<!-- add 20111206 Eric mrtstock -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsMRTStockController">
+		<property name="mrtInventoryService" ref="mrtInventoryService" />
+		<property name="codeLkupService" ref="codeLkupService" />
+		<property name="mobCcsMrtService" ref="mobCcsMrtService" />
+		<property name="validator">
+			<bean class="com.bomwebportal.mob.ccs.validator.MRTStockValidator" />
+		</property>
+	</bean>
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsMRTStockInController">
+		<property name="mrtInventoryService" ref="mrtInventoryService" />
+		<property name="codeLkupService" ref="codeLkupService" />
+		<property name="mobCcsMrtService" ref="mobCcsMrtService"/>
+		<property name="validator">
+			<bean class="com.bomwebportal.mob.ccs.validator.MRTStockInValidator">
+				<property name="mrtInventoryService" ref="mrtInventoryService" />
+				<property name="codeLkupService" ref="codeLkupService" />
+				<property name="mobCcsMrtService" ref="mobCcsMrtService"/>
+			</bean>
+		</property>
+	</bean>
+
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsMRTStockDetailController">
+		<property name="mrtInventoryService" ref="mrtInventoryService" />
+		<property name="codeLkupService" ref="codeLkupService" />
+		<property name="mobCcsMrtService" ref="mobCcsMrtService" />
+		<property name="mobCcsMrtStatusService" ref="mobCcsMrtStatusService" />
+		<property name="validator">
+			<bean class="com.bomwebportal.mob.ccs.validator.MRTStockDetailValidator">
+				<property name="mrtInventoryService" ref="mrtInventoryService" />
+				<property name="mobCcsMrtStatusService" ref="mobCcsMrtStatusService" />
+				<property name="codeLkupService" ref="codeLkupService" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsMRTStockOrderController">
+		<property name="mrtInventoryOrderService" ref="mrtInventoryOrderService" />
+	</bean>
+
+	<!-- ######check finish ############################################ -->
+	<bean class="com.bomwebportal.web.CustSelectController">
+		<property name="validator">
+            <bean class="com.bomwebportal.validator.CustSelectValidator" />
+        </property>  
+		<property name="commandName" value="custSelect" />
+		<property name="commandClass" value="com.bomwebportal.dto.CustomerInformationDTO" />
+		<property name="customerInformationService" ref="customerInformationService" />
+	</bean>
+	
+	
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsStaffInfoController">
+		<property name="validator">
+            <bean class="com.bomwebportal.mob.ccs.validator.StaffInfoValidator" >
+            	<property name="staffInfoService" ref="staffInfoService" />
+            </bean>
+        </property>  
+		<property name="commandName" value="staffInfo" />
+		<property name="commandClass" value="com.bomwebportal.mob.ccs.dto.ui.StaffInfoUI" />
+		<property name="formView" value="mobccsstaffinfo" />
+		<property name="sessionForm" value="true" />
+		<property name="staffInfoService" ref="staffInfoService" />
+		<property name="mobCcsSalesInfoService" ref="mobCcsSalesInfoService" />
+	</bean>
+	
+	
+	
+	<!-- 1. Stock Main -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsStockController">
+		<property name="validator">
+            <bean class="com.bomwebportal.mob.ccs.validator.StockValidator" />
+        </property>  
+		<property name="commandName" value="stockInventory" />
+		<property name="commandClass"
+			value="com.bomwebportal.mob.ccs.dto.StockDTO" />
+		<property name="stockService" ref="stockService" />
+		<property name="codeLkupService" ref="codeLkupService" />
+		<property name="sessionForm" value="true" />
+	</bean>
+	
+	<!-- 2. Stock Details -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsStockModelDetailsController">
+		<property name="validator">
+            <bean class="com.bomwebportal.mob.ccs.validator.StockModelDetailsValidator">
+            	<property name="stockModelDetailsService" ref="stockModelDetailsService"/>	
+            </bean>
+        </property>  
+		<property name="commandName" value="stockModelDetails" />
+		<property name="commandClass"
+			value="com.bomwebportal.mob.ccs.dto.StockModelDetailsDTO" />
+		<property name="stockModelDetailsService" ref="stockModelDetailsService" />
+		<property name="codeLkupService" ref="codeLkupService" />
+		<property name="sessionForm" value="true" />
+	</bean>
+	
+	<!-- 3. Stock Details Update -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsStockModelDetailsUpdateController">
+		<property name="validator">
+            <bean class="com.bomwebportal.mob.ccs.validator.StockModelDetailsUpdateValidator" />
+        </property>  
+		<property name="commandName" value="stockModelDetailsUpdate" />
+		<property name="commandClass"
+			value="com.bomwebportal.mob.ccs.dto.StockModelDetailsDTO" />
+		<property name="stockModelDetailsService" ref="stockModelDetailsService" />
+		<property name="codeLkupService" ref="codeLkupService" />
+		<property name="sessionForm" value="true" />
+	</bean>
+	
+	<!-- 4. Stock In -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsStockInController">
+		<property name="validator">
+            <bean class="com.bomwebportal.mob.ccs.validator.StockInValidator">
+            	<property name="stockInService" ref="stockInService"/>	
+            	<property name="codeLkupService" ref="codeLkupService"/>	
+            </bean>
+        </property>  
+		<property name="commandName" value="stockIn" />
+		<property name="commandClass"
+			value="com.bomwebportal.mob.ccs.dto.StockInDTO" />
+		<property name="stockInService" ref="stockInService" />
+		<property name="codeLkupService" ref="codeLkupService" />
+		<property name="sessionForm" value="true" />
+		<property name="stockService" ref="stockService" />
+	</bean>
+	
+	<!-- 5. Stock Update -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsStockUpdateController">
+		<property name="validator">
+            <bean class="com.bomwebportal.mob.ccs.validator.StockUpdateValidator">
+            	<property name="stockUpdateService" ref="stockUpdateService"/>	
+            </bean>
+        </property>  
+		<property name="commandName" value="stockUpdate" />
+		<property name="commandClass"
+			value="com.bomwebportal.mob.ccs.dto.StockUpdateDTO" />
+		<property name="stockUpdateService" ref="stockUpdateService" />
+		<property name="codeLkupService" ref="codeLkupService" />
+		<property name="sessionForm" value="true" />
+		<property name="stockService" ref="stockService" />
+	</bean>
+	
+	<!-- 6. Stock Assgn -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsStockAssgnController">
+		<property name="validator">
+            <bean class="com.bomwebportal.mob.ccs.validator.StockAssgnValidator" />
+        </property>  
+		<property name="commandName" value="stockAssgn" />
+		<property name="commandClass"
+			value="com.bomwebportal.mob.ccs.dto.StockAssgnDTO" />
+		<property name="sessionForm" value="true" />
+	</bean>
+
+	
+	<!-- add 20111213 Eliot -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsPaymentMonthyController">
+	<property name="bomCosOrderWsClient" ref="bomCosOrderWsClient" />
+		<property name="commandName" value="mobccspaymentmonthy" />
+		<property name="commandClass"
+			value="com.bomwebportal.mob.ccs.dto.ui.PaymentMonthyUI" />
+		<property name="formView" value="mobccspaymentmonthy" />
+		<property name="service" ref="paymentService" />
+		<!--  add by herbert 20111228-->
+		<property name="codeLkupService" ref="codeLkupService" />
+		<property name="validator">
+            <bean class="com.bomwebportal.mob.ccs.validator.MobCcsPaymentMonthlyValidator">
+            	<property name="validateService" ref="validateService" />
+            </bean>
+        </property>
+        
+	</bean>
+	<!-- add 20111213 Eliot -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsPaymentUpFrontController">
+		<property name="commandName" value="mobccspaymentupfront" />
+		<property name="commandClass" value="com.bomwebportal.mob.ccs.dto.ui.PaymentUpFrontUI" />
+		<property name="formView" value="mobccspaymentupfront" />
+		<property name="service" ref="paymentService" />
+		<property name="paymentUpfrontService" ref="mobCcsPaymentUpfrontService" />
+		<property name="vasDetailService" ref="vasDetailService"/>
+		<property name="codeLkupService" ref="codeLkupService" /> <!--  add by herbert 20111228-->
+		<property name="validator">
+            <bean class="com.bomwebportal.mob.ccs.validator.MobCcsPaymentUpFrontValidator"/>
+        </property>
+	</bean>
+
+	<!-- add 20111214 Eric Basket Associate -->
+
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsBasketAssoController">
+	</bean>
+
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsBasketAssoJobListController">
+		<property name="mobCcsBasketAssoJobListService" ref="mobCcsBasketAssoJobListService" />
+		<property name="codeLkupService" ref="codeLkupService" />
+	</bean>
+	
+	<bean
+		class="com.bomwebportal.mob.ccs.web.MobCcsBasketAssoJobListCreateController">
+		<property name="mobCcsBasketAssoJobListService" ref="mobCcsBasketAssoJobListService" />
+		<property name="mobCcsBasketAssoSalesAssignService" ref="mobCcsBasketAssoSalesAssignService" />
+		<property name="codeLkupService" ref="codeLkupService" />
+		<property name="validator">
+			<bean class="com.bomwebportal.mob.ccs.validator.BasketAssoJobListCreateValidator">
+				<property name="mobCcsBasketAssoJobListService" ref="mobCcsBasketAssoJobListService" />
+			</bean>
+		</property>
+
+	</bean>
+	
+	<bean
+		class="com.bomwebportal.mob.ccs.web.MobCcsBasketAssoJobListEditController">
+		<property name="mobCcsBasketAssoJobListService" ref="mobCcsBasketAssoJobListService" />
+		<property name="validator">
+			<bean class="com.bomwebportal.mob.ccs.validator.BasketAssoJobListEditValidator">
+				<property name="mobCcsBasketAssoJobListService" ref="mobCcsBasketAssoJobListService" />
+			</bean>
+		</property>
+
+	</bean>
+
+	<bean
+		class="com.bomwebportal.mob.ccs.web.MobCcsBasketAssoJobListTeamAssoController">
+		<property name="mobCcsBasketAssoJobListTeamAssoService" ref="mobCcsBasketAssoJobListTeamAssoService" />
+		<property name="mobCcsCcsChannelService" ref="mobCcsCcsChannelService" />
+	</bean>
+
+	<bean
+		class="com.bomwebportal.mob.ccs.web.MobCcsBasketAssoJobListTeamAssoCreateController">
+		<property name="mobCcsBasketAssoJobListService" ref="mobCcsBasketAssoJobListService" />
+		<property name="mobCcsBasketAssoJobListTeamAssoService" ref="mobCcsBasketAssoJobListTeamAssoService" />
+		<property name="mobCcsBasketAssoSalesAssignService" ref="mobCcsBasketAssoSalesAssignService" />
+		<property name="validator">
+			<bean class="com.bomwebportal.mob.ccs.validator.BasketAssoJobListTeamAssoCreateValidator">
+				<property name="mobCcsBasketAssoJobListService" ref="mobCcsBasketAssoJobListService" />
+				<property name="mobCcsBasketAssoJobListTeamAssoService" ref="mobCcsBasketAssoJobListTeamAssoService" />
+			</bean>
+		</property>
+	</bean>
+
+
+
+	<bean
+		class="com.bomwebportal.mob.ccs.web.MobCcsBasketAssoJobListTeamAssoEditController">
+		<property name="mobCcsBasketAssoJobListTeamAssoService" ref="mobCcsBasketAssoJobListTeamAssoService" />
+		<property name="mobCcsCcsChannelService" ref="mobCcsCcsChannelService" />
+		<property name="validator">
+			<bean class="com.bomwebportal.mob.ccs.validator.BasketAssoJobListTeamAssoEditValidator">
+				<property name="mobCcsBasketAssoJobListTeamAssoService" ref="mobCcsBasketAssoJobListTeamAssoService" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean
+		class="com.bomwebportal.mob.ccs.web.MobCcsBasketAssoJobListBskAssoController">
+		<property name="mobCcsBasketAssoJobListService" ref="mobCcsBasketAssoJobListService" />
+		<property name="mobCcsBasketAssoJobListBskAssoService" ref="mobCcsBasketAssoJobListBskAssoService" />
+	</bean>
+
+	<bean
+		class="com.bomwebportal.mob.ccs.web.MobCcsBasketAssoJobListBskAssoCreateController">
+		<property name="mobCcsBasketAssoJobListService" ref="mobCcsBasketAssoJobListService" />
+		<property name="mobCcsBasketAssoJobListBskAssoService" ref="mobCcsBasketAssoJobListBskAssoService" />
+		<property name="mobCcsBasketAssoWBasketService" ref="mobCcsBasketAssoWBasketService" />
+		<property name="mobCcsBasketAssoWBasketAttrService" ref="mobCcsBasketAssoWBasketAttrService" />
+		<property name="validator">
+			<bean class="com.bomwebportal.mob.ccs.validator.BasketAssoJobListBskAssoCreateValidator">
+				<property name="mobCcsBasketAssoJobListService" ref="mobCcsBasketAssoJobListService" />
+			</bean>
+		</property>
+	</bean>
+
+	<!-- end add 20111214 Eric Basket Associate -->
+
+
+	<!-- ######checking pool ############################################ -->
+
+	<!-- end add 20111214 Eric Basket Associate -->
+
+
+
+
+
+	<!-- ######still process ################# -->
+	
+	
+	<!-- Eliot -->
+	<!-- add 20111117 Eliot -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsMRTController">
+	  <property name="commandName" value="mobccsmrt" />
+	  <property name="commandClass" value="com.bomwebportal.mob.ccs.dto.ui.MRTUI" />	  
+	  <property name="goldenMrtAdminService" ref="goldenMrtAdminService" />
+	  <property name="mobCcsMrtService" ref="mobCcsMrtService" />
+	  <property name="mobCcsApprovalLogService" ref="mobCcsApprovalLogService"/>
+	  <property name="itemFuncMobService" ref="itemFuncMobService" />
+	  <property name="vasDetailService" ref="vasDetailService"/> 
+	    <property name="validator">
+			<bean class="com.bomwebportal.mob.ccs.validator.MRTValidator" >
+					<property name="service" ref="mnpService"/> 
+             		<property name="mobile2GRetiredInd" value="${mobile2GRetiredInd}"/>
+             		<property name="mobCcsMrtService" ref="mobCcsMrtService"/>         
+             		<property name="mobCcsOrderFalloutService" ref="mobCcsOrderFalloutService"/>
+             		<property name="validateService" ref="validateService"/>         		
+            </bean>
+	  </property>  
+	</bean>
+ 
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsMrtAJAXController">
+	  <property name="mobCcsMrtService" ref="mobCcsMrtService" />
+	  <property name="goldenMrtAdminService" ref="goldenMrtAdminService" />
+	  <property name="mobCcsApprovalLogService" ref="mobCcsApprovalLogService" />
+	  <property name="mobCcsSalesInfoService" ref="mobCcsSalesInfoService" />	  	  
+	</bean>
+	
+	
+	<!-- Eliot -->
+
+	<!--  add 20111228 EricHui -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsCeksController">
+		<property name="mobCcsCeksService" ref="mobCcsCeksService" />
+	</bean>
+	<!--  EricHui -->
+
+	<!--  add 20120118 EricHui -->
+	
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsBasketAssoSearchBasketController">
+		<property name="mobCcsBasketAssoWBasketAttrService" ref="mobCcsBasketAssoWBasketAttrService" />
+	</bean>
+	
+	<bean
+		class="com.bomwebportal.mob.ccs.web.MobCcsBasketAssoJobListBskAssoEndController">
+		<property name="mobCcsBasketAssoJobListService" ref="mobCcsBasketAssoJobListService" />
+		<property name="mobCcsBasketAssoJobListBskAssoService" ref="mobCcsBasketAssoJobListBskAssoService" />
+		<property name="validator">
+			<bean class="com.bomwebportal.mob.ccs.validator.BasketAssoJobListBskAssoEndValidator">
+				<property name="mobCcsBasketAssoJobListService" ref="mobCcsBasketAssoJobListService" />
+				<property name="mobCcsBasketAssoJobListBskAssoService" ref="mobCcsBasketAssoJobListBskAssoService" />
+			</bean>
+		</property>
+	</bean>
+	<!--  end 20120118 EricHui -->
+	
+	<!--  add 20120126 EricHui basket comparison -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsBasketCompareController">
+		<property name="mobCcsBasketAssoWBasketAttrService" ref="mobCcsBasketAssoWBasketAttrService"/>
+	</bean>
+	
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsBasketCompareDetailController">
+		<property name="mobileDetailService" ref="mobileDetailService"/> 
+		<property name="vasDetailService" ref="vasDetailService"/>
+	</bean>
+	<!--  end 20120118 EricHui basket comparison -->
+	
+	<!-- MRT Reserve -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsMRTReserveController">
+		<property name="mrtInventoryService" ref="mrtInventoryService" />
+		<property name="mrtService" ref="mobCcsMrtService" />
+		<property name="mrtReserveService" ref="mrtReserveService" />
+		<property name="validator">
+            <bean class="com.bomwebportal.mob.ccs.validator.MRTReserveValidator" />
+        </property>  
+		<property name="commandName" value="mrtReserve" />
+		<property name="commandClass"
+			value="com.bomwebportal.mob.ccs.dto.ui.MRTReserveUI" />
+		<property name="sessionForm" value="true" />
+	</bean>
+	
+	<!--  add 20120130 EricHui Search basket attr -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsBasketAssoSearchBasketAttrRatePlanController">
+		<property name="mobCcsBasketAssoWBasketAttrService" ref="mobCcsBasketAssoWBasketAttrService" />
+	</bean>
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsBasketAssoSearchBasketAttrBrandModelController">
+		<property name="mobCcsBasketAssoWBasketAttrService" ref="mobCcsBasketAssoWBasketAttrService" />
+	</bean>
+	<!--  end 20120130 EricHui Search basket attr -->
+	
+	<!-- add 20120131 EricHui Payment trans history -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsPaymentTransHistoryController">
+		<property name="mobCcsPaymentAdminService" ref="mobCcsPaymentAdminService" />
+	</bean>
+	<!-- end 20120131 EricHui Payment trans history -->
+	
+	<!-- add 20120209 EricHui Bulk Print -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsBulkPrintController">
+		<property name="mobCcsBulkPrintService" ref="mobCcsBulkPrintService" />
+	</bean>
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsBulkPrintExportController">
+	</bean>
+	<!-- end 20120209 EricHui Bulk Print -->
+	
+	<!-- Stock Manual -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsStockManualController">
+		<property name="validator">
+            <bean class="com.bomwebportal.mob.ccs.validator.StockManualValidator" />
+        </property>  
+		<property name="commandName" value="stockManual" />
+		<property name="commandClass"
+			value="com.bomwebportal.mob.ccs.dto.ui.StockManualUI" />
+		<property name="stockManualService" ref="stockManualService" />
+		<property name="sessionForm" value="true" />
+	</bean>
+	
+	<!-- Stock Manual Detail (after click order id in stock manual)-->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsStockManualDetailController">
+		<property name="validator">
+            <bean class="com.bomwebportal.mob.ccs.validator.StockManualDetailValidator">
+            	<property name="mobCcsUtilService" ref="mobCcsUtilService" />
+            	<property name="stockManualAssgnService" ref="stockManualAssgnService" />
+            </bean>
+        </property>  
+		<property name="commandName" value="stockManualDetail" />
+		<property name="commandClass"
+			value="com.bomwebportal.mob.ccs.dto.ui.StockManualDetailUI" />
+		<property name="stockManualDetailService" ref="stockManualDetailService" />
+		<property name="orderService" ref="orderService" />
+		<property name="sessionForm" value="true" />
+	</bean>
+	
+	<!-- Stock Manual Search (for ajax, inside stock manual)-->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsStockManualSearchController">
+		<property name="stockManualService" ref="stockManualService" />
+	</bean>
+	
+	<!-- Stock Manual Assign (after click item code in stock manual detail)-->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsStockManualAssgnController">
+		<property name="validator">
+            <bean class="com.bomwebportal.mob.ccs.validator.StockManualAssgnValidator">
+            	<property name="mobCcsUtilService" ref="mobCcsUtilService" />
+            	<property name="stockManualAssgnService" ref="stockManualAssgnService" />
+            </bean>
+        </property>  
+		<property name="commandName" value="stockManualAssgn" />
+		<property name="commandClass"
+			value="com.bomwebportal.mob.ccs.dto.ui.StockManualAssgnUI" />
+		<property name="stockManualAssgnService" ref="stockManualAssgnService" />
+		<property name="stockManualDetailService" ref="stockManualDetailService" />
+		<property name="codeLkupService" ref="codeLkupService" />
+		<property name="sessionForm" value="true" />
+	</bean>
+	
+	<!-- Stock Manual Assign Search (for ajax, inside stock manual assign)-->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsStockManualAssgnSearchController">
+		<property name="stockManualAssgnService" ref="stockManualAssgnService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsReportController">
+		<property name="vasDetailService" ref="vasDetailService" />
+		<property name="orderService" ref="orderService" />
+		<property name="mobileDetailService" ref="mobileDetailService" />
+		<property name="mobCcsMrtService" ref="mobCcsMrtService" />
+		<property name="mobCcsPaymentUpfrontService" ref="mobCcsPaymentUpfrontService" />
+		<property name="staffInfoService" ref="staffInfoService" />
+		<property name="customerProfileService" ref="customerProfileService" />
+		<property name="deliveryService" ref="deliveryService" />
+		<property name="mobileSimInfoService" ref="mobileSimInfoService" />
+		<property name="mobCcsReportService" ref="mobCcsReportService" />
+		<property name="mobCcsSupportDocService" ref="mobCcsSupportDocService" />
+		<property name="iGuardService" ref="iGuardService" />
+		<property name="ordDocService" ref="ordDocService" />
+	    <property name="depositService" ref="depositService" />
+		<property name="multiSimInfoService" ref="multiSimInfoService" />
+		<property name="reportService" ref="reportService" />
+	</bean>
+	
+	<!-- add 20120221 EricHui Order Rescue -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsOrderRescueSearchController">
+		<property name="mobCcsOrderRescueService" ref="mobCcsOrderRescueService" />
+	</bean>
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsOrderRescueCreateController">
+		<property name="codeLkupService" ref="codeLkupService" />
+		<property name="orderService" ref="orderService" />
+		<property name="mobCcsOrderRescueService" ref="mobCcsOrderRescueService" />
+	</bean>
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsOrderRescueDetailController">
+		<property name="codeLkupService" ref="codeLkupService" />
+		<property name="mobCcsOrderRescueService" ref="mobCcsOrderRescueService" />
+		<property name="mobCcsIncidentCauseService" ref="mobCcsIncidentCauseService" />
+	</bean>
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsOrderRescueEditController">
+		<property name="codeLkupService" ref="codeLkupService" />
+		<property name="orderService" ref="orderService" />
+		<property name="mobCcsOrderRescueService" ref="mobCcsOrderRescueService" />
+	</bean>
+	<!-- end 20120221 EricHui Order Rescue -->
+
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsPaymentUpFrontAJAXController">
+	  <property name="mobCcsPaymentUpfrontService" ref="mobCcsPaymentUpfrontService" />
+	  <property name="paymentService" ref="paymentService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsOrderSearchController">
+		<property name="commandClass"
+			value="com.bomwebportal.mob.ccs.dto.ui.MobCcsOrderSearchUI" />
+			<property name="commandName" value="orderSearch" />
+		<property name="mobCcsOrderSearchService" ref="mobCcsOrderSearchService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsUrgentOrderSearchController">
+		<property name="commandClass"
+			value="com.bomwebportal.mob.ccs.dto.ui.MobCcsUrgentOrderSearchUI" />
+			<property name="commandName" value="urgentOrderSearch" />
+		<property name="mobCcsUrgentOrderSearchService" ref="mobCcsUrgentOrderSearchService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsOrderSearchLookupController">
+		<property name="mobCcsOrderSearchService" ref="mobCcsOrderSearchService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsMRTNumSelectionController">
+		<property name="mobCcsMrtService" ref="mobCcsMrtService" />
+	</bean>
+		
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsStockQuantityEnquiryController">
+		<property name="commandClass"
+			value="com.bomwebportal.mob.ccs.dto.ui.StockQuantityEnquiryUI" />
+			<property name="commandName" value="stockQuantityEnquiry" />
+		<property name="codeLkupService" ref="codeLkupService"></property>
+		<property name="mobCcsMaintParmLkupService" ref="mobCcsMaintParmLkupService"/>
+		<property name="stockService" ref="stockService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsStockQuantityEnquirySearchController">
+		<property name="stockQuantityEnquiryService" ref="stockQuantityEnquiryService"></property>
+		<property name="mobCcsMaintParmLkupService" ref="mobCcsMaintParmLkupService"/>
+	</bean>
+	
+	<!--  add by Eliot 20120314 -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsHottestModelManagementAJAXController">
+		<property name="stockService" ref="stockService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsUrgentOrderManagementController">
+		<property name="commandName" value="mobccsurgentordermanagement" />
+		<property name="commandClass" value="com.bomwebportal.mob.ccs.dto.ui.MobCcsUrgentOrderManagementUI" />
+		<property name="validator">
+			<bean class="com.bomwebportal.mob.ccs.validator.MobCcsUrgentOrderManagementValidator">
+			</bean>
+		</property>
+		<property name="formView" value="mobccsurgentordermanagement" />
+		<property name="vasDetailService" ref="vasDetailService"/>
+		<property name="mobCcsPaymentUpfrontService" ref="mobCcsPaymentUpfrontService"/>
+		<property name="orderService" ref="orderService"/>
+		<property name="deliveryService" ref="deliveryService" />
+		<property name="mobCcsSupportDocService" ref="mobCcsSupportDocService" />
+		<property name="codeLkupService" ref="codeLkupService" />	
+		<property name="mobCcsPaymentAdminService" ref="mobCcsPaymentAdminService" />	
+		<property name="releaseLockService" ref="releaseLockService" />
+    <property name="depositService" ref="depositService" />		
+	</bean>
+	
+	<!-- add by Erichui 20120314 -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsAuthorizeController">
+	 	<property name="commandName" value="authorizeModel"/>
+ 		<property name="commandClass" value="com.bomwebportal.mob.ccs.dto.ui.AuthorizeUI"/> 
+		<property name="validator">
+			<bean class="com.bomwebportal.mob.ccs.validator.MobCcsAuthorizeValidator">
+				<property name="loginService" ref="loginService"/> 
+			</bean>
+		</property>
+		<property name="mobCcsSalesInfoService" ref="mobCcsSalesInfoService" />
+		<property name="mobCcsApprovalLogService" ref="mobCcsApprovalLogService" />
+		<property name="authorizeService" ref="authorizeService" />
+		<property name="vasDetailService" ref="vasDetailService" />
+	</bean>
+	
+	
+	<!-- add by Eliot 20120315 -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsHottestModelManagementController">
+		<property name="stockService" ref="stockService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.mob.ccs.web.AlertMessageController">
+		<property name="commandName" value="alertMsg" />
+		<property name="mobCcsOrderSearchService" ref="mobCcsOrderSearchService" />
+	</bean>
+	
+	<!--  add by EricHui 20120320 -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsCallLogController">
+		<property name="customerProfileService" ref="customerProfileService"/>
+		<property name="deliveryService" ref="deliveryService" />
+		<property name="codeLkupService" ref="codeLkupService" />
+		<property name="mobCcsCsiCaseLogService" ref="mobCcsCsiCaseLogService" />
+	</bean>
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsCallLogCreateController">
+		<property name="commandName" value="mobccscalllogcreate" />
+		<property name="commandClass" value="com.bomwebportal.mob.ccs.dto.CsiCaseLogDTO" />
+		<property name="validator">
+			<bean class="com.bomwebportal.mob.ccs.validator.MobCcsCallLogCreateValidator">
+				<property name="codeLkupService" ref="codeLkupService" />
+			</bean>
+		</property>
+		<property name="customerProfileService" ref="customerProfileService"/>
+		<property name="codeLkupService" ref="codeLkupService" />
+		<property name="mobCcsCsiCaseLogService" ref="mobCcsCsiCaseLogService" />
+		<property name="mobCcsCsiCaseService" ref="mobCcsCsiCaseService" />
+		
+	</bean>
+	
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsFalloutController">
+		<property name="commandClass"
+			value="com.bomwebportal.mob.ccs.dto.ui.MobCcsFalloutUI" />
+		<property name="commandName" value="fallout" />
+		<property name="mobCcsOrderRemarkService" ref="mobCcsOrderRemarkService"></property>
+		<property name="orderService" ref="orderService"></property>
+	</bean>
+	
+	<!-- add by EricHui 20120328 -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsCancellationController">
+		<property name="validator">
+			<bean class="com.bomwebportal.mob.ccs.validator.MobCcsCancellationValidator">
+				<property name="orderService" ref="orderService" />
+				<property name="codeLkupService" ref="codeLkupService" />
+				<property name="releaseLockService" ref="releaseLockService" />
+			</bean>
+		</property>
+		<property name="mobCcsCancelService" ref="mobCcsCancelService" />
+		<property name="orderService" ref="orderService" />
+		<property name="codeLkupService" ref="codeLkupService" />
+		<property name="releaseLockService" ref="releaseLockService" />
+		<property name="mobQuotaService" ref="mobQuotaService" />
+		<property name="orderHsrmService" ref="orderHsrmService" />
+
+	</bean>
+	
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsFalloutHistoryController">
+		<property name="orderService" ref="orderService" />
+		<property name="commandClass"
+			value="com.bomwebportal.mob.ccs.dto.ui.MobCcsFalloutUI" />
+			<property name="commandName" value="falloutHist" />
+	</bean>	
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsDoaHandlingController">
+		<property name="commandName" value="doaHandling" />
+		<property name="validator">
+			<bean class="com.bomwebportal.mob.ccs.validator.DoaHandlingValidator">
+			</bean>
+		</property>
+		<property name="commandClass"
+			value="com.bomwebportal.mob.ccs.dto.ui.StockManualDetailUI" />
+		<property name="stockManualDetailService" ref="stockManualDetailService" />
+		<property name="deliveryService" ref="deliveryService" />
+		<property name="orderService" ref="orderService" />
+		<property name="mobCcsMrtService" ref="mobCcsMrtService" />
+		<property name="mobCcsOrderRemarkService" ref="mobCcsOrderRemarkService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsDoaHandlingDeassignController">
+		<property name="stockManualDetailService" ref="stockManualDetailService" />
+	</bean>
+	<!-- add by EricHui 20120405 -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsDoaRequestController">
+		<property name="validator">
+			<bean class="com.bomwebportal.mob.ccs.validator.MobCcsDoaRequestValidator">
+				<property name="orderService" ref="orderService" />
+				<property name="mobCcsDoaRequestService" ref="mobCcsDoaRequestService" />
+			</bean>
+		</property>
+		<property name="orderService" ref="orderService"/>
+		<property name="mobCcsDoaRequestService" ref="mobCcsDoaRequestService" />
+		<property name="codeLkupService" ref="codeLkupService" />
+	</bean>
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsDoaRequestRejectController">
+		<property name="orderService" ref="orderService"/>
+		<property name="mobCcsDoaRequestService" ref="mobCcsDoaRequestService" />
+	</bean>
+	<!-- add by EricHui 20120411 -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsRunForceCancelController">
+		<property name="mobCcsForceCancelService" ref="mobCcsForceCancelService" />
+	</bean>
+	<!-- added by James 20120504 -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsDoaDetailController">
+		<property name="commandName" value="doaDetail" />
+		<property name="commandClass"
+			value="com.bomwebportal.mob.ccs.dto.ui.StockManualDetailUI" />
+		<property name="stockManualDetailService" ref="stockManualDetailService" />
+		<property name="orderService" ref="orderService" />
+		<property name="mobCcsOrderRemarkService" ref="mobCcsOrderRemarkService" />
+	</bean>
+	<!-- added by James 20120510 -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsDoaDeliveryController">
+		<property name="commandName" value="mobccsdoadelivery" />
+		<property name="commandClass" value="com.bomwebportal.mob.ccs.dto.ui.DeliveryUI" />
+		<property name="formView" value="mobccsdoadelivery" />
+		<property name="codeLkupService" ref="codeLkupService" />
+		<property name="deliveryService" ref="deliveryService" />
+		<property name="validator">
+            <bean class="com.bomwebportal.mob.ccs.validator.DoaDeliveryValidator">
+            	<property name="deliveryService" ref="deliveryService" />
+            </bean>
+        </property> 
+	</bean>
+	<!-- add by EricHui 20120510 -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsDoaUpdateMrtController">
+		<property name="orderService" ref="orderService" />
+		<property name="mobCcsDoaUpdateMrtService" ref="mobCcsDoaUpdateMrtService" />
+		<property name="mobCcsOrderSearchService" ref="mobCcsOrderSearchService" />
+		<property name="mobCcsApprovalLogService" ref="mobCcsApprovalLogService" />
+		<property name="validator">
+			<bean class="com.bomwebportal.mob.ccs.validator.MobCcsDoaUpdateMrtValidator">
+				<property name="orderService" ref="orderService" />
+				<property name="mobCcsMrtService" ref="mobCcsMrtService" />
+				<property name="mnpService" ref="mnpService" />
+				<property name="mobCcsOrderSearchService" ref="mobCcsOrderSearchService" />
+				<property name="mobile2GRetiredInd" value="${mobile2GRetiredInd}"/>
+				<property name="mobCcsDoaUpdateMrtService" ref="mobCcsDoaUpdateMrtService" />
+				<property name="mobCcsOrderFalloutService" ref="mobCcsOrderFalloutService"/> 
+				<property name="validateService" ref="validateService" />
+			</bean>
+		</property>
+	</bean>
+	
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsStockManualOrderStatusProcessController">
+		<property name="stockManualDetailService" ref="stockManualDetailService" />
+		<property name="orderService" ref="orderService"/> 
+	</bean>
+	
+	<!-- add by Herbert 20120604 -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsCsiCaseController">
+		<property name="mobCcsCsiCaseService" ref="mobCcsCsiCaseService" />
+		<property name="customerProfileService" ref="customerProfileService"/>
+		<property name="orderService" ref="orderService"/> 
+		<property name="deliveryService" ref="deliveryService" />
+		<property name="codeLkupService" ref="codeLkupService" />
+	</bean>
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsCsiCaseCreateController">
+		<property name="commandName" value="mobccscsicasecreate" />
+		<property name="commandClass" value="com.bomwebportal.mob.ccs.dto.CsiCaseDTO" />
+		<property name="validator">
+			<bean class="com.bomwebportal.mob.ccs.validator.MobCcsCsiCaseCreateValidator">
+				<property name="codeLkupService" ref="codeLkupService" />
+			</bean>
+		</property>
+		<property name="mobCcsCsiCaseService" ref="mobCcsCsiCaseService" />
+		<property name="mobCcsCsiCaseLogService" ref="mobCcsCsiCaseLogService" />
+		<property name="customerProfileService" ref="customerProfileService"/>
+		<property name="deliveryService" ref="deliveryService" />
+		<property name="orderService" ref="orderService"/> 
+		<property name="codeLkupService" ref="codeLkupService" />
+		<property name="mobCcsCsiSmsLogService" ref="mobCcsCsiSmsLogService" />
+	</bean>
+	
+	<!-- add by Gary 20120601 -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsUrgentDeliveryReportController">
+		<!-- <property name="commandName" value="mobccsurgentdeliveryreport" />
+		<property name="commandClass" value="com.bomwebportal.mob.ccs.dto.ui.UrgentDeliveryReportUI" />
+		 <property name="formView" value="mobccsurgentdeliveryreport" />
+		  -->
+		<property name="mobCcsUrgentDeliveryReportService" ref="mobCcsUrgentDeliveryReportService" /> 
+	</bean>
+	
+	<!-- Stock Manual Order Lock Check (for ajax, inside stock manual)-->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsOrderLockCheckController">
+		<property name="releaseLockService" ref="releaseLockService" />
+	</bean>
+	<!-- Order Lock (for ajax)-->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsOrderLockController">
+		<property name="releaseLockService" ref="releaseLockService" />
+	</bean>
+		
+	<!-- add by Herbert 20120611 -->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsCsiSmsLogCreateController">
+		<property name="commandName" value="mobccscsismslogcreate" />
+		<property name="commandClass" value="com.bomwebportal.mob.ccs.dto.CsiSmsLogDTO" />
+		<!-- <property name="validator">
+			<bean class="com.bomwebportal.mob.ccs.validator.MobCcsCsiCaseCreateValidator">
+				<property name="codeLkupService" ref="codeLkupService" />
+			</bean>
+		</property> -->
+		<property name="mobCcsCsiSmsLogService" ref="mobCcsCsiSmsLogService" />
+		<property name="mobCcsCsiCaseService" ref="mobCcsCsiCaseService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsCheckStockQtyAJAXController">
+		<property name="stockService" ref="stockService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsCreditCheckController">
+		<property name="custCreditCheckClient" ref="custCreditCheckClient" />
+		<property name="mobCcsApprovalLogService" ref="mobCcsApprovalLogService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsEligibilityController">
+		<property name="validator">
+			<bean class="com.bomwebportal.mob.ccs.validator.MobCcsEligibilityValidator">
+				<property name="mobCcsEligibilityService" ref="mobCcsEligibilityService" />
+			</bean>
+		</property>
+		<property name="mobCcsEligibilityService" ref="mobCcsEligibilityService" />
+	</bean>
+	
+  <bean class="com.bomwebportal.mob.ccs.web.MobStaffSponsorshipInfoController">
+    <property name="commandName" value="mobSponsorshipDTO" />
+    <property name="commandClass" value="com.bomwebportal.mob.ccs.dto.MobSponsorshipDTO" />
+    <property name="vasDetailService" ref="vasDetailService"/>
+    <property name="validator">
+       <bean class="com.bomwebportal.mob.ccs.validator.MobStaffSponsorshipInfoValidator">
+          <property name="bCccLookupService" ref="bCccLookupService" />
+       </bean>
+    </property>
+  </bean>	
+  
+  
+  	<!-- Special MRT-->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsSpecialMrtRequestController">
+		<property name="validator">
+            <bean class="com.bomwebportal.mob.ccs.validator.SpecialMrtRequestValidator">  
+            	<property name="mobCcsMrtService" ref="mobCcsMrtService" />  
+            	<property name="mrtInventoryService" ref="mrtInventoryService" />  	
+            	<property name="mobCcsSpecialMrtRequestService" ref="mobCcsSpecialMrtRequestService" /> 
+            	<property name="codeLkupService" ref="codeLkupService" /> 		
+            	<property name="specialMRTReserveService" ref="specialMRTReserveService" /> 
+            </bean>
+        </property>
+		<property name="commandName" value="mobccsspecialmrtrequest" />
+		<property name="commandClass" value="com.bomwebportal.mob.ccs.dto.SpecialMrtRequestDTO" />
+		<property name="mobCcsSpecialMrtRequestService" ref="mobCcsSpecialMrtRequestService" />
+		<property name="mobReqLogService" ref="mobReqLogService" /> 
+		<property name="mobCcsMaintParmLkupService" ref="mobCcsMaintParmLkupService" /> 
+		<property name="specialMrtReserveService" ref="specialMRTReserveService" /> 
+		<property name="mrtInventoryService" ref="mrtInventoryService" /> 
+		<property name="mobCcsApprovalLogService" ref="mobCcsApprovalLogService"/>
+	</bean>
+	
+		
+	<!-- To add Special MRT Reserve added by Fiona Chan 20130926-->
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsSpecialMRTReserveController">
+		<property name="specialMRTReserveService" ref="specialMRTReserveService" />
+		<property name="commandName" value="specialMRTReserve" />
+		<property name="commandClass" value="com.bomwebportal.mob.ccs.dto.ui.SpecialMRTReserveUI" />
+		<property name="sessionForm" value="true"/>
+	</bean>
+	
+	<bean class="com.bomwebportal.mob.ccs.web.MobCcsSpecialMRTSummaryController">
+		<property name="mobCcsSpecialMRTSummaryService" ref="mobCcsSpecialMRTSummaryService"/>
+		<property name="commandName" value="specialMRTSummary" />
+		<property name="commandClass" value="com.bomwebportal.mob.ccs.dto.ui.MobCcsSpecialMRTSummaryUI" />
+		<property name="sessionForm" value="true"/>
+	</bean>
+	
+	<!-- End -->
+	
+		 
+	
+</beans>

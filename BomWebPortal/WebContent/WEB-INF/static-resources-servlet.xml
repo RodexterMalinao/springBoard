@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:sb="http://sb.pccw.com/schema/sb"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       
+       ">
+
+  <bean
+    class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="locations">
+        <list>
+            <value>classpath:configuration.properties</value>
+            <value>classpath:configuration_bwp.properties</value>
+        </list>
+    </property>
+  </bean>
+  
+  <!-- This is a port of spring 3's mvc:resources to spring 2.x -->
+  <!-- To use sb:resources, you have to disable eclipses validator, validation errors otherwise (but still works fine in spring) -->
+  <!-- schema locations : "http://sb.pccw.com/schema/sb http://sb.pccw.com/schema/sb/spring-sb.xsd"  -->
+  <!-- Otherwise, you may specify the bean one by one as below.... -->
+  
+<!-- 
+
+  <sb:resources mapping="/phone/**" location="${resources.static.mob}/phone/,/phone/"/>
+  <sb:resources mapping="/vas/**" location="${resources.static.mob}/vas/,/vas/"/>
+   -->
+
+<!-- lookup image files from external file systems first, then from the war if not exists  -->
+  <bean
+    class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+    <property name="alwaysUseFullPath" value="true"/>
+    <property name="mappings">
+        <props>
+            <prop key="/phone/**">phone_resources</prop>
+            <prop key="/vas/**">vas_resources</prop>
+        </props>
+    </property>
+  </bean>
+  <bean id="phone_resources" class="com.bomwebportal.spring.resource.ResourceHttpRequestHandler">
+      <property name="locations">
+          <list>
+              <value>${resources.static.mob}/phone/</value>
+              <value>/phone/</value>
+          </list>
+      </property>
+  </bean>
+  <bean id="vas_resources" class="com.bomwebportal.spring.resource.ResourceHttpRequestHandler">
+      <property name="locations">
+          <list>
+              <value>${resources.static.mob}/vas/</value>
+              <value>/vas/</value>
+          </list>
+      </property>
+  </bean>
+
+</beans>

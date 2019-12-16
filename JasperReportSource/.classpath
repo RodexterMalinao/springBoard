@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="resources"/>
+	<classpathentry kind="src" path="spring-config"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="lib/SpringboardCommon.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/commons-beanutils-1.7.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/commons-digester-1.8.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/iText-2.1.7.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/iTextAsian.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/iTextAsianCmaps.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/groovy-all-1.7.5.jar"/>
+	<classpathentry kind="lib" path="lib/SpringboardInterface.jar"/>
+	<classpathentry kind="lib" path="lib/pccwUtilities.jar" sourcepath="/PccwUtilities/src"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/spring-aop.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/spring-beans.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/spring-context-support.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/spring-context.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/spring-core.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/spring-jdbc.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/spring-jms.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/spring-orm.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/spring-test.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/spring-tx.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/spring-web.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/spring.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/commons-collections-3.2.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/jasperreports-fonts-4.5.0.jar"/>
+	<classpathentry kind="lib" path="lib/jasperreports-4.5.0.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/Font-PCCW-Arial.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/Font-PCCW-zh-Ming.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/posbom-bulk-new-act-ws-client.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/commons-lang-2.5.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

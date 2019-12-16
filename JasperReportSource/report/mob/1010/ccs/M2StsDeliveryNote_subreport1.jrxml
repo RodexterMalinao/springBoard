@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DeliveryNote_subreport1" pageWidth="520" pageHeight="802" columnWidth="520" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="2.3325369010486665"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<field name="itemCode" class="java.lang.String"/>
+	<field name="itemSerial" class="java.lang.String"/>
+	<field name="itemDesc" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement x="30" y="0" width="60" height="15"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="2" y="0" width="58" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="10"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{itemCode}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="92" y="0" width="30" height="15"/>
+				<staticText>
+					<reportElement x="2" y="0" width="28" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="10"/>
+					</textElement>
+					<text><![CDATA[1]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement x="122" y="0" width="130" height="15"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="2" y="0" width="128" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="10"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{itemSerial}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="250" y="0" width="270" height="15"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="2" y="0" width="268" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="10"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{itemDesc}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="0" width="30" height="15"/>
+				<rectangle>
+					<reportElement x="8" y="2" width="12" height="12"/>
+				</rectangle>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,57 @@
+<jsp:root	
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:form="http://www.springframework.org/tags/form"
+	xmlns:pccw-util="urn:jsptagdir:/WEB-INF/tags/util/"
+	version="2.0"
+>
+	<jsp:output omit-xml-declaration="yes" />
+	<jsp:directive.tag import="com.bomwebportal.dto.*"/>
+	<jsp:directive.attribute name="clubPointValue" type="java.util.List" required="true" rtexprvalue="true" description="clubPointDetailDTO" />
+	<jsp:directive.attribute name="theClubLogin" />
+
+	<table>
+		<tr>
+			<td width="31%"><b>Member no: </b></td>
+			<c:choose>
+			<c:when test='${empty clubPointValue[0].clubMemberId}'>
+				<td width="69%">TBC</td>
+			</c:when>
+			<c:otherwise>
+				<td width="69%">${clubPointValue[0].clubMemberId}</td>
+			</c:otherwise>
+			</c:choose>
+		</tr>
+		<tr>
+			<td><b>Login ID: </b></td>
+			<td>${theClubLogin}</td>
+			<td></td>
+		</tr> 
+		<tr>
+			<td colspan="2">
+				<table class="table_style1" border="1" width="40%">
+					<thead>
+						<tr>
+							<th width="10%">#</th>
+							<th width="45%">Point earn @ submission</th>
+							<th width="45%">Point earn @ completion</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${clubPointValue}" var="itemId" varStatus="count">
+							<tr align="center">
+								<td><c:out value="${count.count}"/></td>
+								<td>${itemId.subClubPoint}</td>
+								<td>${itemId.comClubPoint}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</table>
+	
+</jsp:root>

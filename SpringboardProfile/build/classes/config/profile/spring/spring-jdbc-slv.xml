@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="com.smartliving.dao.SmartLivingDAO" class="com.smartliving.dao.SmartLivingDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+ 	<import resource="classpath:/config/workQueue/spring/spring-jdbc.xml"/>
+</beans>

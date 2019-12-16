@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- Common -->
+	<bean id="multipartResolver"
+        class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="${orddoc.upload.maxSize}"/>
+    </bean>
+	
+	<bean id="ajaxViewResolver" class="com.bomltsportal.web.ext.AjaxViewResolver">
+		<property name="ajaxView">
+			<bean class="com.bomltsportal.web.ext.AjaxView" />
+		</property>
+		<property name="ajaxPrefix" value="ajax_"></property>
+	</bean>
+
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<property name="defaultLocale" value="en" />
+	</bean>
+
+	<bean id="localeChangeInterceptor"
+		class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+		<property name="paramName" value="lang" />
+	</bean>
+
+	<bean id="browserCheckInterceptor" class="com.bomltsportal.interceptor.BrowserCheckInterceptor">
+	</bean>
+	
+	<bean id="LtsCommonInterceptor" class="com.bomltsportal.interceptor.LtsCommonInterceptor">
+		<property name="searchHelper" ref="searchHelper" />
+		<property name="livechatpathService" ref="livechatpathService"/>
+	</bean>
+	
+	<bean id="availableServiceInterceptor" class="com.bomltsportal.interceptor.AvailableServiceInterceptor">
+		<property name="availablePeriodService" ref="availablePeriodService"/>		
+	</bean>
+	
+	<bean id="requestLogInterceptor" class="com.bomltsportal.interceptor.RequestLogInterceptor">
+		<property name="onlineSalesLogService" ref="onlineSalesLogService"/>
+	</bean>
+	
+	<bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping">
+		<property name="interceptors">
+			<list>
+				<ref bean="localeChangeInterceptor" />
+				<ref bean="browserCheckInterceptor" />
+				<ref bean="LtsCommonInterceptor" />
+				<ref bean="availableServiceInterceptor" />
+				<ref bean="requestLogInterceptor" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/jsp/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+		<property name="exposedContextBeanNames">
+        	<list><value>coverageCheck</value></list>
+    	</property>
+	</bean>
+
+	<bean id="propertyConfigurer"
+		class="com.bomltsportal.configuration.BomPropertyPlaceholderConfigurer">
+		<property name="ignoreResourceNotFound" value="false" />
+		<property name="locations">
+			<list>
+				<value>classpath:configuration_ltsos.properties</value>
+			</list>
+		</property>
+	</bean>
+
+<!-- Ajax -->
+	<bean class="com.bomltsportal.web.AjaxAppointmentController">
+		<property name="appointmentDwfmService" ref="appointmentDwfmService"/>
+		<property name="applicantInfoService" ref="applicantInfoService"/>
+	</bean>
+
+	<!-- <bean class="com.bomltsportal.web.AjaxAddressRolloutController">
+		<property name="addressLookupService" ref="addressLookupService"/>
+		<property name="onlineAddressRolloutService" ref="onlineAddressRolloutService"/>
+		<property name="addressRolloutService" ref="addressRolloutService"/>
+	</bean>-->
+	
+	<bean class="com.bomltsportal.web.AjaxAddressLookupController">
+		<property name="searchHelper" ref="searchHelper" />
+	</bean>
+	
+	<bean class="com.bomltsportal.web.AjaxProfileLookupController">
+		<property name="customerDetailService" ref="customerDetailService" />
+		<property name="imsDetailService" ref="imsDetailService" />
+		<property name="livechatpathService" ref="livechatpathService"/>
+		<property name="specialHandleDocIdLkupCacheService" ref="specialHandleDocIdLkupCacheService"/>
+		<property name="custPdpoProfileService" ref="custPdpoProfileService"/> <!--PDPO-->
+	</bean>
+	
+	<bean class="com.bomltsportal.web.DistrictSearchController">
+		<property name="searchHelper" ref="searchHelper" />
+	</bean>
+	
+	<bean class="com.bomltsportal.web.AjaxCsPortalController">
+		<property name="csPortalService" ref="csPortalLtsService"/>
+	</bean>
+	
+	
+<!-- Controller -->
+
+	<bean class="com.bomltsportal.web.RegistrationController" />
+	
+	<bean class="com.bomltsportal.web.MarkerController">
+		<property name="addressLookupService" ref="addressLookupService" />
+	</bean>
+
+	<bean class="com.bomltsportal.web.AddressLookupController">
+		<property name="commandName" value="addressLookupForm" />
+		<property name="commandClass" value="com.bomltsportal.dto.form.AddressLookupFormDTO" />
+		<property name="formView" value="addresslookup" />
+		<property name="addressLookupService" ref="addressLookupService"/>
+		<property name="googleApiKeyCacheService" ref="googleApiKeyCacheService"/>
+		<property name="environment" value="${environment}" />
+	</bean>
+	
+	<bean class="com.bomltsportal.web.AddressRolloutController">
+		<property name="commandName" value="addressRolloutForm" />
+		<property name="commandClass" value="com.bomltsportal.dto.form.AddressRolloutFormDTO" />
+		<property name="formView" value="addressrollout" />
+		<property name="onlineAddressRolloutService" ref="onlineAddressRolloutService"/>
+		<property name="addressRolloutService" ref="addressRolloutService" />
+		<property name="addressDetailLtsService" ref="addressDetailLtsService" />
+		<property name="onlineSalesLogService" ref="onlineSalesLogService"/>
+		<property name="validator">
+			<bean class="com.bomltsportal.validator.AddressRolloutValidator" >
+				<property name="captchaService" ref="jcaptchaService" />
+			</bean>
+		</property>
+	</bean>
+	
+	<bean class="com.bomltsportal.web.BasketSelectController">
+		<property name="commandName" value="basketSelectForm" />
+		<property name="commandClass" value="com.bomltsportal.dto.form.BasketSelectFormDTO" />
+		<property name="formView" value="basketselect" />
+		<property name="basketDetailService" ref="basketDetailService" />
+		<property name="onlineSalesLogService" ref="onlineSalesLogService"/>
+	</bean>
+	
+	<bean class="com.bomltsportal.web.BasketDetailController">
+		<property name="commandName" value="basketDetailForm" />
+		<property name="commandClass" value="com.bomltsportal.dto.form.BasketDetailFormDTO" />
+		<property name="formView" value="basketdetail" />
+		<property name="itemDetailService" ref="itemDetailService" />
+		<property name="nowTvChannelService" ref="nowTvChannelService" />
+		<property name="validator">
+			<bean class="com.bomltsportal.validator.BasketDetailValidator" />
+		</property>
+	</bean>
+	
+	<bean class="com.bomltsportal.web.VasDetailController">
+		<property name="commandName" value="vasDetailForm" />
+		<property name="commandClass" value="com.bomltsportal.dto.form.VasDetailFormDTO" />
+		<property name="formView" value="vasdetail" />
+		<property name="itemDetailService" ref="itemDetailService" />
+		<property name="nowTvChannelService" ref="nowTvChannelService" />
+		<property name="validator">
+			<bean class="com.bomltsportal.validator.VasDetailValidator" >
+				<property name="itemDetailService" ref="itemDetailService" />
+			</bean>
+		</property>
+	</bean>
+	
+	<bean class="com.bomltsportal.web.ApplicantInfoController">
+		<property name="commandName" value="applicantInfoForm" />
+		<property name="commandClass" value="com.bomltsportal.dto.form.ApplicantInfoFormDTO" />
+		<property name="formView" value="applicantinfo" />
+		<property name="applicantInfoService" ref="applicantInfoService"/>
+		<property name="appointmentDwfmService" ref="appointmentDwfmService"/>
+		<property name="dnPoolService" ref="dnPoolService"/>
+		<property name="summaryService" ref="summaryService"/>
+		<property name="itemDetailService" ref="itemDetailService" />
+		<property name="csPortalTcUrlCacheService" ref="csPortalTcUrlCacheService"/>
+		<property name="basketDetailService" ref="basketDetailService" />
+		<property name="validator">
+			<bean class="com.bomltsportal.validator.ApplicantInfoValidator" />
+		</property>
+		<property name="imsProfileService" ref="imsProfileService"/>
+		<property name="customerProfileLtsService" ref="customerProfileLtsService"/>
+		<property name="eyeProfileCountService" ref="eyeProfileCountService"/>
+		<property name="offerService" ref="offerService" />
+	</bean>
+	
+	<bean class="com.bomltsportal.web.SummaryController">
+		<property name="commandName" value="summaryForm" />
+		<property name="commandClass" value="com.bomltsportal.dto.form.SummaryFormDTO" />
+		<property name="formView" value="summary" />
+		<property name="summaryService" ref="summaryService"/>
+	</bean>
+	
+	<bean class="com.bomltsportal.web.ReminderController">
+		<property name="commandName" value="reminderForm" />
+		<property name="commandClass" value="com.bomltsportal.dto.form.ReminderFormDTO" />
+		<property name="formView" value="reminder" />
+	</bean>
+	
+	<bean class="com.bomltsportal.web.CreditPaymentController">
+		<property name="sessionForm" value="true"/>
+		<property name="commandName" value="creditPaymentForm" />
+		<property name="commandClass" value="com.bomltsportal.dto.form.CreditPaymentFormDTO" />
+		<property name="formView" value="creditpayment" />
+		<property name="ceksService" ref="ceksService"/>
+		<property name="orderSubmitService" ref="orderSubmitService"/>
+		<property name="summaryService" ref="summaryService"/>
+		<property name="itemDetailService" ref="itemDetailService"/>
+		<property name="ceksLoc" value="${ceksLocation}" />
+		<property name="environment" value="${TestUAT}" />
+	</bean>
+	
+	<bean class="com.bomltsportal.web.AcknowledgementController">
+		<property name="commandName" value="acknowledgementForm" />
+		<property name="commandClass" value="com.bomltsportal.dto.form.AcknowledgementFormDTO" />
+		<property name="formView" value="acknowledgement" />
+	</bean>
+	
+	<bean class="com.bomltsportal.web.GetImageController">
+		<property name="downloadImageService" ref="com.bomwebportal.lts.service.image.DownloadImageService"/>
+	</bean>
+	
+	<bean class="com.bomltsportal.web.OrderSubmitController">
+		<property name="orderSubmitService" ref="orderSubmitService"/>
+		<property name="onlineSalesLogService" ref="onlineSalesLogService"/>
+	</bean>
+	
+	<bean class="com.bomltsportal.web.OrderSignoffController">
+		<property name="orderSignoffService" ref="orderSignoffService"/>
+	</bean>
+	
+	<bean class="com.bomltsportal.web.ReportController">
+		<property name="orderRetrieveLtsService" ref="orderRetrieveLtsService"/>
+		<property name="reportCreationLtsService" ref="reportCreationLtsService"/>
+		<property name="reportSetLkupCacheService" ref="reportSetLkupCacheService"/>
+	</bean>
+	
+	<bean class="com.bomltsportal.web.AmendmentController">
+		<property name="commandName" value="amendmentForm" />
+		<property name="commandClass" value="com.bomltsportal.dto.form.AmendmentFormDTO" />
+		<property name="summaryService" ref="summaryService"/>
+		<property name="orderRetrieveLtsService" ref="orderRetrieveLtsService"/>
+		<property name="applicantInfoService" ref="applicantInfoService"/>
+		<property name="appointmentDwfmService" ref="appointmentDwfmService"/>
+		<property name="amendNatureSrdCodeLkupCacheService" ref="amendNatureSrdCodeLkupCacheService"/>
+		<property name="amendNatureSrdDelCodeLkupCacheService" ref="amendNatureSrdDelCodeLkupCacheService"/>
+		<property name="amendmentSubmitService" ref="amendmentSubmitService"/>
+		<property name="amendmentService" ref="amendmentService" />
+		<property name="ltsEmailService" ref="ltsEmailService" />
+		<property name="onlineSalesLogService" ref="onlineSalesLogService"/>
+	</bean>
+	
+	<bean class="com.bomltsportal.web.ShoppingCartController">
+		<property name="commandName" value="shoppingCartForm" />
+		<property name="commandClass" value="com.bomltsportal.dto.form.ShoppingCartFormDTO" />
+		<property name="summaryService" ref="summaryService"/>
+		<property name="itemDetailService" ref="itemDetailService"/>
+	</bean>
+	
+	<bean class="com.bomltsportal.web.DocImgUploadController">
+		<property name="ordDocService" ref="ordDocService"/>
+		<property name="formView" value="docimguploadform"/>
+		<property name="commandClass" value="com.bomltsportal.dto.DocImgUploadDTO"/>
+		<property name="commandName" value="docImgUploadForm"/>
+		<property name="docRepository" ref="reportRepositoryCommon"/>
+		<property name="saveDirectory" value="${dataFilePath}"/>
+		<property name="allowedExtensions" value="${orddoc.upload.allowedExtensions}"/>
+		<property name="maxUploadSizeInfo" value="${orddoc.upload.maxSize}"/>
+		<property name="validator">
+			<bean class="com.bomltsportal.validator.DocImgUploadValidator">
+				<property name="allowedExtensions" value="${orddoc.upload.allowedExtensions}"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean class="com.bomltsportal.web.SalesLeadFormController">
+		<property name="formView" value="saleslead"/>
+		<property name="commandClass" value="com.bomltsportal.dto.form.SalesLeadFormDTO"/>
+		<property name="commandName" value="salesleadform"/>
+		<property name="searchHelper" ref="searchHelper"/>
+		<property name="onlineAddressRolloutService" ref="onlineAddressRolloutService"/>
+		<property name="addressDetailLtsService" ref="addressDetailLtsService"/>
+		<property name="onlineSalesRequestService" ref="onlineSalesRequestService"/>
+		<property name="messageSource" ref="messageSource"/>
+	</bean>
+	
+	<bean class="com.bomltsportal.web.ClearCacheController">
+        <property name="clearCacheService" ref="clearCacheService"/>
+        <property name="clearCacheDao" ref="clearCacheDao"/>
+    </bean>
+	
+	<bean class="com.bomltsportal.web.CaptchaController">
+		<property name="captchaService" ref="jcaptchaService" />
+	</bean>
+	
+	<bean class="com.bomltsportal.web.LivechatlogController">
+		<property name="onlineSalesLogService" ref="onlineSalesLogService"/>
+	</bean>
+	
+	<bean class="com.bomltsportal.web.BasketDetailSlideController">
+		<property name="sessionForm" value="true"/>
+		<property name="formView" value="basketdetailslide"/>
+		<property name="commandClass" value="com.bomltsportal.dto.form.BasketDetailSlideFormDTO"/>
+		<property name="commandName" value="basketDetailSlideForm"/>
+		<property name="itemDetailService" ref="itemDetailService" />
+		<property name="basketDetailService" ref="basketDetailService" />
+		<property name="validator">
+			<bean class="com.bomltsportal.validator.BasketDetailSlideValidator" />
+		</property>
+	</bean>
+	
+	<bean class="com.bomltsportal.web.MessageController"></bean>
+	
+	<bean class="com.bomltsportal.web.ConnectionCheckController">
+		<property name="connectionCheckService" ref="connectionCheckService" />
+	</bean>
+	
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/tdo.html">tdoController</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean name="tdoController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">  
+	    <property name="viewName" value="tdo"/>  
+	</bean>  
+	
+	<bean class="com.bomltsportal.web.ExceptionLogController" >
+		<property name="onlineSalesLogService" ref="onlineSalesLogService"/>
+	</bean>
+</beans>
+	

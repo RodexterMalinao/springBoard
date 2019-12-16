@@ -1,0 +1,1219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="ltsBackendMessageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames"> 
+			<list>
+				<value>ltsbackend</value>
+			</list>
+		</property>
+	</bean>	
+	
+	<bean name="thirdPartyApplnService" class="com.bomwebportal.lts.service.order.ThirdPartyApplnServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.ThirdPartyApplnDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+	
+	<bean name="sbOrderService" class="com.bomwebportal.lts.service.order.SbOrderServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.SbOrderLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+
+	<bean name="accountLtsService" class="com.bomwebportal.lts.service.order.AccountLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.AccountLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+	
+	<bean name="addressLtsService" class="com.bomwebportal.lts.service.order.AddressLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.AddressLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+	
+	<bean name="addressInventoryLtsService" class="com.bomwebportal.lts.service.order.AddressInventoryLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.AddressInventoryLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+
+	<bean name="appointmentLtsService" class="com.bomwebportal.lts.service.order.AppointmentLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.AppointmentLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+	
+	<bean name="channelLtsService" class="com.bomwebportal.lts.service.order.ChannelLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.ChannelLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+
+	<bean name="customerLtsService" class="com.bomwebportal.lts.service.order.CustomerLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.CustomerLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+
+	<bean name="itemAttributeLtsService" class="com.bomwebportal.lts.service.order.ItemAttributeLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.ItemAttributeLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+
+	<bean name="itemLtsService" class="com.bomwebportal.lts.service.order.ItemLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.ItemLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+
+	<bean name="nowtvDetailLtsService" class="com.bomwebportal.lts.service.order.NowtvDetailLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.NowtvDetailLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+
+	<bean name="paymentLtsService" class="com.bomwebportal.lts.service.order.PaymentLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.PaymentLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+
+	<bean name="remarkLtsService" class="com.bomwebportal.lts.service.order.RemarkLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.RemarkLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+
+	<bean name="serviceDetailService" class="com.bomwebportal.lts.service.order.ServiceDetailServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.ServiceDetailDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+
+	<bean name="serviceDetailLtsService" class="com.bomwebportal.lts.service.order.ServiceDetailLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.ServiceDetailLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+
+	<bean name="serviceDetailOtherService" class="com.bomwebportal.lts.service.order.ServiceDetailOtherServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.ServiceDetailOtherDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+
+	<bean name="service0060DetailLtsService" class="com.bomwebportal.lts.service.order.Service0060DetailLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.Service0060DetailLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+
+	<bean name="serviceCallPlanDetailLtsService" class="com.bomwebportal.lts.service.order.ServiceCallPlanDetailLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.ServiceCallPlanDetailLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+
+	<bean name="channelAttbLtsService" class="com.bomwebportal.lts.service.order.ChannelAttbLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.ChannelAttbLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+	
+	<bean name="staffInfoLtsService" class="com.bomwebportal.lts.service.order.StaffInfoServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.StaffInfoLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+	
+	<bean name="contactLtsService" class="com.bomwebportal.lts.service.order.ContactLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.ContactLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+	
+	<bean name="accountServiceAssignLtsService" class="com.bomwebportal.lts.service.order.AccountServiceAssignLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.AccountServiceAssignLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+	
+	<bean name="appointmentDwfmService" class="com.bomwebportal.lts.service.order.AppointmentDwfmServiceImpl">
+		<property name="appointmentDwfmDao" ref="appointmentDwfmDao" />
+	</bean>
+	
+	<bean id="appointmentDwfmDao" class="com.bomwebportal.lts.dao.order.AppointmentDwfmDAO">
+		<property name="dataSource" ref="UamsDS" />
+	</bean>
+	
+	<bean id="orderStatusDao" class="com.bomwebportal.lts.dao.order.OrderStatusDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean name="orderStatusService" class="com.bomwebportal.lts.service.order.OrderStatusServiceImpl">
+		<property name="orderStatusDao" ref="orderStatusDao" />
+	</bean>
+	
+	<bean name="orderRetrieveLtsService" class="com.bomwebportal.lts.service.order.OrderRetrieveLtsServiceImpl">
+		<property name="orderStatusService" ref="orderStatusService" />
+	</bean>
+	
+	<bean name="orderCancelLtsService" class="com.bomwebportal.lts.service.order.OrderCancelLtsServiceImpl">
+		<property name="orderStatusService" ref="orderStatusService" />
+		<property name="appointmentDwfmService" ref="appointmentDwfmService" />
+		<property name="workQueueSubmissionService" ref="workQueueSubmissionService" />
+	</bean>
+	
+	<bean name="saveSbOrderLtsService" class="com.bomwebportal.lts.service.order.SaveSbOrderLtsServiceImpl">
+	</bean>	
+
+	<bean name="amendmentSubmitService" class="com.bomwebportal.lts.service.order.AmendmentSubmitServiceImpl">
+		<property name="workQueueSubmissionService" ref="workQueueSubmissionService" />
+		<property name="delayReasonCodeLkupCacheService" ref="delayReasonCodeLkupCacheService" />
+		<property name="saveSbOrderLtsService" ref="saveSbOrderLtsService" />
+		<property name="creditCardTyepCodeLkupCacheService" ref="creditCardTyepCodeLkupCacheService" />
+		<property name="idDocTypeLkupCacheService" ref="idDocTypeLkupCacheService" />
+		<property name="orderRetrieveLtsService" ref="orderRetrieveLtsService" />
+	</bean>
+	
+	<bean name="allOrdDocAssgnLtsService" class="com.bomwebportal.lts.service.order.AllOrdDocAssgnLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.AllOrdDocAssgnLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+
+	<bean name="billingAddressLtsService" class="com.bomwebportal.lts.service.order.BillingAddressLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.BillingAddressLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+
+	<bean name="recontractLtsService" class="com.bomwebportal.lts.service.order.RecontractLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.RecontractLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+
+	<bean name="imsOfferDetailService" class="com.bomwebportal.lts.service.order.ImsOfferDetailServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.ImsOfferDetailDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+	
+	<bean name="resDnLtsService" class="com.bomwebportal.lts.service.order.ResDnLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.ResDnLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+	
+	<bean name="pipbLtsService" class="com.bomwebportal.lts.service.order.PipbLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.PipbLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+	
+	<bean name="customerIguardRegService" class="com.bomwebportal.lts.service.order.CustomerIguardRegServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.CustomerIguardRegDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+	
+	<bean name="prepayLtsService" class="com.bomwebportal.lts.service.order.PrepayLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.PrepayLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+	
+	<bean name="ltsDsOrderInfoService" class="com.bomwebportal.lts.service.order.LtsDsOrderInfoServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.LtsDsOrderInfoDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+	
+	<bean id="orderDetailDao" class="com.bomwebportal.lts.dao.order.OrderDetailDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean name="orderDetailService" class="com.bomwebportal.lts.service.order.OrderDetailServiceImpl">
+		<property name="orderDetailDao" ref="orderDetailDao" />
+		<property name="serviceProfileLtsService" ref="serviceProfileLtsService" />
+		<property name="imsProfileService" ref="imsProfileService" />
+	</bean>
+	
+	<bean id="ltsDrgDownTimeDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+        <property name="dataSource" ref="BomWebPortalDS" />
+        <property name="lkupCode" value="LTS_ACQ_DRG_DOWNTIME" />
+        <property name="lkupTable" value="BOMWEB_CODE_LKUP" />
+    </bean>
+    
+    <bean name="ltsDrgDownTimeCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+        <property name="codeLkupDAO" ref="ltsDrgDownTimeDao" />
+    </bean>		
+
+    <bean id="serviceActionTypeLookupService" class="com.bomwebportal.lts.service.order.ServiceActionTypeLookupServiceImpl">
+        <property name="ltsActionLkupCache" ref="ltsActionLkupCache" />
+        <property name="imsActionLkupCache" ref="imsActionLkupCache" />
+        <property name="otherActionLkupCache" ref="otherActionLkupCache" />
+        <property name="eyeImsSignoffActionLkupCache" ref="eyeImsSignoffActionLkupCache" />
+        <property name="sbOrderInfoLtsService" ref="sbOrderInfoLtsService" />
+        <property name="ltsDrgDownTimeCacheService" ref="ltsDrgDownTimeCacheService" />		
+    </bean>
+	
+	<bean id="offerProductLkupDao" class="com.bomwebportal.lts.dao.bom.OfferProductLkupDAO">
+		<property name="dataSource" ref="BomDS" />
+	</bean>
+	
+	<bean name="bomOfferProductLkupService" class="com.bomwebportal.lts.service.bom.BomOfferProductLkupServiceImpl">
+		<property name="offerProductLkupDao" ref="offerProductLkupDao" />
+	</bean>
+	
+	<bean id="imsOfferLookupDao" class="com.bomwebportal.lts.dao.order.ImsOfferLookupDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean name="imsOfferLookupService" class="com.bomwebportal.lts.service.order.ImsOfferLookupServiceImpl">
+		<property name="imsOfferLookupDao" ref="imsOfferLookupDao" />
+		<property name="offerProductLkupDao" ref="offerProductLkupDao" />
+	</bean>
+	
+	 <bean id="imsSbOrderDAO" class="com.bomwebportal.lts.dao.order.ImsSbOrderDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean name="imsSbOrderService" class="com.bomwebportal.lts.service.order.ImsSbOrderServiceImpl">
+		<property name="imsSbOrderDAO" ref="imsSbOrderDAO" />
+		<property name="imsOfferLookupService" ref="imsOfferLookupService" />
+		<property name="applMethodLkupCacheService" ref="applMethodLkupCacheService" />
+		<property name="sourceCdLkupCacheService" ref="sourceCdLkupCacheService" />
+		<property name="sbOrderInfoLtsService" ref="sbOrderInfoLtsService" />
+	</bean>
+	
+	<bean id="offerDetailDao" class="com.bomwebportal.lts.dao.OfferDetailDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="basketDetailDao" class="com.bomwebportal.lts.dao.BasketDetailDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+    <bean id="com.bomwebportal.lts.dao.order.WItemChargesRptTemplateVDAO" class="com.bomwebportal.lts.dao.order.WItemChargesRptTemplateVDAOImpl" parent="DaoBase-BomWebPortalDS" scope="prototype"/>
+    
+    <bean id="delReportLtsService" class="com.bomwebportal.lts.service.report.DelReportLtsServiceImpl" scope="prototype">
+		<property name="basketDetailService" ref="basketDetailLtsService" />
+   		<property name="paymentService" ref="paymentServiceLts" />
+   		<property name="offerService" ref="offerService" />
+   		<property name="reportFixedDataService" ref="com.pccw.rpt.service.ReportFixedDataService" />
+   		<property name="penaltyHandleLtsLkupCacheService" ref="penaltyHandleLtsLkupCacheService" />
+   		<property name="erEyeHandleCacheService" ref="erEyeHandleCacheService" />
+   		<property name="erDelHandleCacheService" ref="erDelHandleCacheService" />
+   		<property name="ltsOrderDocumentService" ref="ltsOrderDocumentService" />
+   		<property name="ltsWaiveReasonCacheService" ref="ltsWaiveReasonCacheService" />
+   		<property name="ltsDocTypeLkupCacheService" ref="ltsDocTypeLkupCacheService" />
+   		<property name="orderDetailDao" ref="orderDetailDao" />
+   		<property name="waiveReasonLkupCacheService" ref="waiveReasonLkupCacheService" />
+	</bean>
+	
+    <bean id="del2ndReportLtsService" class="com.bomwebportal.lts.service.report.Del2ndReportLtsServiceImpl" scope="prototype">
+		<property name="basketDetailService" ref="basketDetailLtsService" />
+   		<property name="paymentService" ref="paymentServiceLts" />
+   		<property name="offerService" ref="offerService" />
+   		<property name="reportFixedDataService" ref="com.pccw.rpt.service.ReportFixedDataService" />
+   		<property name="penaltyHandleLtsLkupCacheService" ref="penaltyHandleLtsLkupCacheService" />
+   		<property name="erEyeHandleCacheService" ref="erEyeHandleCacheService" />
+   		<property name="erDelHandleCacheService" ref="erDelHandleCacheService" />
+   		<property name="ltsOrderDocumentService" ref="ltsOrderDocumentService" />
+   		<property name="ltsWaiveReasonCacheService" ref="ltsWaiveReasonCacheService" />
+   		<property name="ltsDocTypeLkupCacheService" ref="ltsDocTypeLkupCacheService" />
+   		<property name="orderDetailDao" ref="orderDetailDao" />
+   		<property name="waiveReasonLkupCacheService" ref="waiveReasonLkupCacheService" />
+	</bean>
+	
+   	<bean id="springboardLtsEyeReportDataService" class="com.bomwebportal.lts.service.report.EyeReportDataLtsServiceImpl" scope="prototype">
+   		<property name="upgradeEyeReportLtsService" ref="upgradeEyeReportLtsService" />
+   		<property name="delReportLtsService" ref="delReportLtsService" />
+   		<property name="del2ndReportLtsService" ref="del2ndReportLtsService" />
+   		<property name="nsdReportLtsService" ref="nsdReportLtsService" />
+   		<property name="tdoReportLtsService" ref="tdoReportLtsService" />
+   		<property name="productSpecReportLtsService" ref="productSpecReportLtsService" />
+   		<property name="itemSpecReportLtsService" ref="itemSpecReportLtsService" />
+   		<property name="recontractReportLts2017Service" ref="recontractReportLts2017Service" />
+   		<property name="pipbNsdReportLtsService" ref="pipbNsdReportLtsService" />
+   		<property name="pipbCrfReportLtsService" ref="pipbCrfReportLtsService" />
+   		<property name="amendmentReportLtsService" ref="amendmentReportLtsService" />
+   	   	<property name="smartWrtyReportLtsService" ref="smartWrtyReportLtsService" />
+   	   	<property name="cslSimReportLtsService" ref="cslSimReportLtsService" />
+   	   	<property name="concertTicketReportLtsService" ref="concertTicketReportLtsService" />
+   	   	<property name="weeeReportLtsService" ref="weeeReportLtsService" />
+		<property name="paymentSlipReportDataLtsService" ref="paymentSlipReportDataLtsService" />
+		<property name="iguardCareCashReportDataLtsService" ref="iguardCareCashReportDataLtsService" />
+	</bean>
+	
+	<bean id="smartWrtyReportLtsService" class="com.bomwebportal.lts.service.report.SmartWrtyReportLtsServiceImpl" scope="prototype">
+		<property name="swNoSignatureDisplayLkupCacheService" ref="swNoSignatureDisplayLkupCacheService" />
+	</bean>
+			
+	<bean id="cslSimReportLtsService" class="com.bomwebportal.lts.service.report.CslSimReportLtsServiceImpl" scope="prototype">
+		<property name="swNoSignatureDisplayLkupCacheService" ref="swNoSignatureDisplayLkupCacheService" />
+	</bean>
+	
+	<bean id="concertTicketReportLtsService" class="com.bomwebportal.lts.service.report.ConcertTicketReportLtsServiceImpl" scope="prototype">
+		<property name="swNoSignatureDisplayLkupCacheService" ref="swNoSignatureDisplayLkupCacheService" />
+	</bean>
+	
+	<bean id="weeeReportLtsService" class="com.bomwebportal.lts.service.report.WeeeReportLtsServiceImpl" scope="prototype">
+		<property name="swNoSignatureDisplayLkupCacheService" ref="swNoSignatureDisplayLkupCacheService" />
+		<property name="offerDetailDao" ref="offerDetailDao" />
+	</bean>
+	
+	<bean id="amendmentReportLtsService" class="com.bomwebportal.lts.service.report.AmendmentReportLtsServiceImpl" scope="prototype">
+		<property name="amendmentSubmitService" ref="amendmentSubmitService" />
+		<property name="relationshipCodeLkupCacheService" ref="relationshipCodeLkupCacheService" />
+	</bean>
+	
+	<bean id="pipbNsdReportLtsService" class="com.bomwebportal.lts.service.report.PipbNsdReportLtsServiceImpl" scope="prototype">
+	</bean>
+	
+	<bean id="productSpecReportLtsService" class="com.bomwebportal.lts.service.report.ProductSpecReportLtsServiceImpl" scope="prototype">
+	</bean>
+	
+	<bean id="itemSpecReportLtsService" class="com.bomwebportal.lts.service.report.ItemSpecReportLtsServiceImpl" scope="prototype">
+		<property name="swNoSignatureDisplayLkupCacheService" ref="swNoSignatureDisplayLkupCacheService" />
+	</bean>
+	
+	<bean id="nsdReportLtsService" class="com.bomwebportal.lts.service.report.NsdReportLtsServiceImpl" scope="prototype">
+	</bean>
+	
+	<bean id="iguardCareCashReportDataLtsService" class="com.bomwebportal.lts.service.report.IguardCareCashReportDataLtsServiceImpl" scope="prototype">
+	</bean>
+	
+	<bean id="pipbCrfReportLtsService" class="com.bomwebportal.lts.service.report.PipbCrfReportLtsServiceImpl" scope="prototype">
+		<property name="bomWsBackendClient" ref="bomWsBackendClient" />
+		<property name="updNnDAO" ref="updNnDAO"/>
+	</bean>
+	
+	<bean id="recontractReportLts2017Service" class="com.bomwebportal.lts.service.report.RecontractReportLts2017ServiceImpl" scope="prototype">
+		<property name="relationshipBrCodeLkupCacheService" ref="relationshipBrCodeLkupCacheService" />
+		<property name="relationshipCodeLkupCacheService" ref="relationshipCodeLkupCacheService" />
+	</bean>
+	
+	<bean id="recontractReportLtsService" class="com.bomwebportal.lts.service.report.RecontractReportLtsServiceImpl" scope="prototype">
+	</bean>
+	
+	<bean id="recontractReportSupplLtsService" class="com.bomwebportal.lts.service.report.RecontractReportSupplLtsServiceImpl" scope="prototype">
+	</bean>
+	
+	<bean id="tdoReportLtsService" class="com.bomwebportal.lts.service.report.TdoReportLtsServiceImpl" scope="prototype">
+		<property name="reportFixedDataService" ref="com.pccw.rpt.service.ReportFixedDataService" />
+	</bean>
+
+	<bean name="allOrdDocLtsService" class="com.bomwebportal.lts.service.order.AllOrdDocLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.AllOrdDocLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+ 	
+	<bean id="upgradeEyeReportLtsService" class="com.bomwebportal.lts.service.report.UpgradeEyeReportLtsServiceImpl" scope="prototype">
+   		<property name="basketDetailService" ref="basketDetailLtsService" />
+   		<property name="paymentService" ref="paymentServiceLts" />
+   		<property name="offerService" ref="offerService" />
+   		<property name="reportFixedDataService" ref="com.pccw.rpt.service.ReportFixedDataService" />
+   		<property name="technologyDescLkupCacheService" ref="technologyDescLkupCacheService" />
+   		<property name="remarkTemplateCacheService" ref="remarkTemplateCacheService" />
+   		<property name="penaltyHandleLtsLkupCacheService" ref="penaltyHandleLtsLkupCacheService" />
+   		<property name="erEyeHandleCacheService" ref="erEyeHandleCacheService" />
+   		<property name="erDelHandleCacheService" ref="erDelHandleCacheService" />
+   		<property name="ltsOrderDocumentService" ref="ltsOrderDocumentService" />
+   		<property name="ltsWaiveReasonCacheService" ref="ltsWaiveReasonCacheService" />
+   		<property name="ltsDocTypeLkupCacheService" ref="ltsDocTypeLkupCacheService" />
+   		<property name="orderDetailDao" ref="orderDetailDao" />
+   		<property name="messageSource" ref="ltsBackendMessageSource" />
+   		<property name="waiveReasonLkupCacheService" ref="waiveReasonLkupCacheService" />
+   		<property name="lostModemService" ref="lostModemService"/>
+	</bean>
+	
+	<bean id="basketDetailLtsService" class="com.bomwebportal.lts.service.BasketDetailServiceImpl" scope="singleton">
+		<property name="basketDetailDao" ref="basketDetailDao" />
+	</bean>
+
+	<bean id="offerService" class="com.bomwebportal.lts.service.OfferServiceImpl" scope="singleton">
+		<property name="offerDetailProfileDao" ref="offerDetailDao" />
+	</bean>
+
+	<bean id="paymentServiceLts" class="com.bomwebportal.lts.service.PaymentServiceImpl" scope="singleton">
+		<property name="paymentDao" ref="bankCodeLkupDAO" />
+	</bean>
+	
+	<bean name="relationshipCodeLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="relationshipCdCodeLkupDao" />
+	</bean>
+	
+	<bean name="relationshipBrCodeLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="relationshipBrCodeLkupDao" />
+	</bean>
+	
+	<bean name="pipbDayLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="pipbDayLkupDao" />
+	</bean>
+	
+	<bean name="contactInfoPeriodCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="cntctInfoPeriodLkupDao" />
+	</bean>
+	
+	<bean id="technologyDescLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="TECH_DESC" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>
+    
+	<bean name="technologyDescLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="technologyDescLkupDao" />
+	</bean>
+
+	<bean name="remarkTemplateCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="remarkTemplateDao" />
+	</bean>	
+	
+	<bean id="DaoBase-BomWebPortalDS" class="com.pccw.util.db.DaoBaseImpl" scope="prototype">
+        <property name="dataSource" ref="BomWebPortalDS" />
+    </bean> 
+	
+	<bean name="rptPrintCustCopyLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="rptPrintCustCopyLkupDao" />
+	</bean>
+	
+	<bean name="workQueueService" class="com.pccw.wq.service.WorkQueueServiceImpl"/>
+	
+	<bean name="delayReasonCodeLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="delayReasonCodeLkupDao" />
+	</bean>
+	
+	<bean name="workQueueSubmissionService" class="com.bomwebportal.lts.service.order.WorkQueueSubmissionServiceImpl">
+		<property name="workQueueService" ref="workQueueService" />
+		<property name="dozerMapper" ref="dozerMapper" />
+		<property name="delayReasonCodeLkupCacheService" ref="delayReasonCodeLkupCacheService" />
+		<property name="imsSbOrderService" ref="imsSbOrderService" />
+		<property name="orderDetailService" ref="orderDetailService" />
+		<property name="reportCreationLtsService" ref="reportCreationLtsService" />
+		<property name="reportSetLkupCacheService" ref="reportSetLkupCacheService" />
+	</bean>
+	
+	<bean name="bomOrderStatusSynchService" class="com.bomwebportal.lts.service.bom.BomOrderStatusSynchServiceImpl">
+		<property name="bomOrderStatusSynchDAO" ref="bomOrderStatusSynchDAO" />
+	</bean>
+	
+    <bean id="bomOrderStatusSynchDAO" class="com.bomwebportal.lts.dao.bom.BomOrderStatusSynchDAO">
+        <property name="dataSource" ref="BomDS" />
+    </bean>        
+    
+    <bean id="bomOrderAppointmentDAO" class="com.bomwebportal.lts.dao.bom.BomOrderAppointmentDAO">
+        <property name="dataSource" ref="BomDS" />
+    </bean>            
+
+	<bean id="ltsDeviceService" class="com.bomwebportal.lts.service.LtsDeviceServiceImpl" >
+		<property name="deviceDetailDao" ref="deviceDetailDao"/>
+	</bean>
+	
+	<bean id="deviceDetailDao" class="com.bomwebportal.lts.dao.DeviceDetailDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="ltsOrderDocumentService" class="com.bomwebportal.lts.service.LtsOrderDocumentServiceImpl" >
+		<property name="orderDocumentDao" ref="orderDocumentDao"/>
+		<property name="orderRetrieveLtsService" ref="orderRetrieveLtsService" />
+	</bean>
+	
+	<bean id="orderDocumentDao" class="com.bomwebportal.lts.dao.OrderDocumentDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean name="custOptOutInfoLtsService" class="com.bomwebportal.lts.service.order.CustOptOutInfoLtsServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.CustOptOutInfoLtsDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+	
+	<bean name="com.bomwebportal.service.lts.OrderSignoffLtsService" class="com.bomwebportal.lts.service.order.OrderSignoffLtsServiceImpl">
+		<property name="orderStatusService" ref="orderStatusService" />
+		<property name="orderDetailService" ref="orderDetailService" />
+		<property name="serviceActionTypeLookupService" ref="serviceActionTypeLookupService" />
+		<property name="workQueueSubmissionService" ref="workQueueSubmissionService" />
+		<property name="wqPriorityonCodeLkupDao" ref="wqPriorityonCodeLkupDao" />
+		<property name="orderRetrieveLtsService" ref="orderRetrieveLtsService" />
+		<property name="workQueueRemarkFactory" ref="workQueueRemarkFactory" />
+		<property name="saveSbOrderLtsService" ref="saveSbOrderLtsService" />
+		<property name="csPortalService" ref="csPortalLtsService" />
+		<property name="bomInvPreassgnService" ref="bomInvPreassgnService" />
+		<property name="customerIguardApiService" ref="customerIguardApiService" />
+	</bean>	
+
+
+	<bean name="osTypeIosL2JobCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="osTypeIosL2JobCodeLkupDao" />
+	</bean>
+	
+	<bean id="osTypeIosL2JobCodeLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="OS_TYPE_IOS_L2_JOB" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>
+	
+	<bean name="rentalRouterL2JobCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="rentalRouterL2JobCodeLkupDao" />
+	</bean>
+	
+	<bean id="rentalRouterL2JobCodeLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="RENTAL_ROUTER_L2_JOB" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>
+		
+	<bean name="brmTechChangeL2JobCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="brmTechChangeL2JobCodeLkupDao" />
+	</bean>
+	
+	<bean id="brmTechChangeL2JobCodeLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="BRM_TECH_CHG_L2_JOB" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>
+	
+	
+	<bean name="brmL2JobCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="brmL2JobCodeLkupDao" />
+	</bean>
+	
+	<bean id="brmL2JobCodeLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="BRM_MODEM_L2_JOB" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>
+	
+	<bean name="brmViL2JobCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="brmViL2JobCodeLkupDao" />
+	</bean>
+	
+	<bean id="brmViL2JobCodeLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="BRM_MODEM_VI_L2_JOB" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>		
+	
+    <bean id="specialHandleDocIdLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomDS" />
+		<property name="lkupCode" value="BL_IDDOC_NUM" />
+		<property name="lkupTable" value="B_LOOKUP" />
+    </bean>
+     
+    <bean name="specialHandleDocIdLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+        <property name="codeLkupDAO" ref="specialHandleDocIdLkupDao" />
+    </bean>
+    
+	<bean id="csPortalLtsDAO" class="com.bomwebportal.lts.dao.CsPortalDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+    <bean id="csPortalLtsService" class="com.bomwebportal.lts.service.CsPortalServiceImpl">
+    	<property name="systemId" value="${csPortal.sysId}"/>
+    	<property name="systemPwd" value="${csPortal.sysPwd}"/>
+    	<property name="verfUrl" value="${csPortal.verfUrl}"/>
+    	<property name="regUrl" value="${csPortal.regUrl}"/>
+    	<property name="regProUrl" value="${csPortal.regProUrl}"/>
+    	<property name="csIdCheckUrl" value="${csPortal.csIdCheckUrl}"/>
+    	<property name="csIdRegrUrl" value="${csPortal.csIdRegrUrl}"/>
+    	<property name="csPortalDAO" ref="csPortalLtsDAO"/>
+    </bean>
+        
+	<bean id="customerIguardApiService" class="com.bomwebportal.lts.service.CustomerIguardApiServiceImpl">
+    	<property name="systemId" value="${carecash.sysId}"/>
+    	<property name="systemPwd" value="${carecash.sysPwd}"/>
+    	<property name="custIguardUrl" value="${carecash.custIguardUrl}"/>
+		<property name="apiProxy" value="${carecash.apiProxy}"/>
+    	<property name="apiPort" value="${carecash.apiPort}"/>
+		<property name="csPortalDAO" ref="csPortalLtsDAO"/>
+    </bean>
+	
+    <!--New DAOs and Cache that replaces SB_SRV_ACTION_TYPE_LKUP Starts -->
+    <bean id="ltsActionLkupDao" class="com.bomwebportal.lts.dao.order.ServiceActionLkupDAO">
+        <property name="dataSource" ref="BomWebPortalDS" />
+        <property name="lkupTable" value="W_LTS_ACTION_WQ_LKUP_V" />
+        <property name="itemKey"   value="" />        
+    </bean>     
+    
+    <bean name="ltsActionLkupCache" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+        <property name="codeLkupDAO" ref="ltsActionLkupDao" />
+    </bean>
+
+    <bean id="imsActionLkupDao" class="com.bomwebportal.lts.dao.order.ServiceActionLkupDAO">
+        <property name="dataSource" ref="BomWebPortalDS" />
+        <property name="lkupTable" value="W_IMS_ACTION_WQ_LKUP_V" />
+        <property name="itemKey"   value="" />        
+    </bean>     
+    
+    <bean name="imsActionLkupCache" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+        <property name="codeLkupDAO" ref="imsActionLkupDao" />
+    </bean>
+    
+    <bean id="otherActionLkupDao" class="com.bomwebportal.lts.dao.order.ServiceActionLkupDAO">
+        <property name="dataSource" ref="BomWebPortalDS" />
+        <property name="lkupTable" value="W_OTHER_ACTION_WQ_LKUP_V" />
+        <property name="lkupCode"  value="ACTION_TYPE NOT IN ('OE-ERROR','APPNT_DRC')" />
+        <property name="itemKey"   value="" />        
+    </bean>     
+    
+    <bean name="otherActionLkupCache" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+        <property name="codeLkupDAO" ref="otherActionLkupDao" />
+    </bean> 
+
+    <bean id="oeActionLkupDao" class="com.bomwebportal.lts.dao.order.ServiceActionLkupDAO">
+        <property name="dataSource" ref="BomWebPortalDS" />
+        <property name="lkupTable" value="W_OTHER_ACTION_WQ_LKUP_V" />
+        <property name="lkupCode"  value="ACTION_TYPE ='OE-ERROR'" />
+        <property name="itemKey"   value="STATUS" />
+    </bean>     
+    
+    <bean name="oeActionLkupCache" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+        <property name="codeLkupDAO" ref="oeActionLkupDao" />
+    </bean> 
+
+    <bean id="drcActionLkupDao" class="com.bomwebportal.lts.dao.order.ServiceActionLkupDAO">
+        <property name="dataSource" ref="BomWebPortalDS" />
+        <property name="lkupTable" value="W_OTHER_ACTION_WQ_LKUP_V" />
+        <property name="lkupCode"  value="ACTION_TYPE ='APPNT_DRC'" />
+        <property name="itemKey"   value="STATUS" />
+    </bean>     
+    
+    <bean name="drcActionLkupCache" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+        <property name="codeLkupDAO" ref="drcActionLkupDao" />
+    </bean> 
+    
+    <bean id="eyeImsActionLkupDao" class="com.bomwebportal.lts.dao.order.ServiceActionLkupDAO">
+        <property name="dataSource" ref="BomWebPortalDS" />
+        <property name="lkupTable" value="W_EYE_IMS_ACTION_WQ_LKUP_V" />
+        <property name="itemKey"   value="" />        
+    </bean>     
+    
+    <bean id="eyeImsSignoffActionLkupDao" class="com.bomwebportal.lts.dao.order.ServiceActionLkupDAO">
+        <property name="dataSource" ref="BomWebPortalDS" />
+        <property name="lkupTable" value="W_EYE_IMS_ACTION_WQ_LKUP_V" />
+        <property name="lkupCode"  value="WQ_NATURE_ID NOT IN ('27')" />
+        <property name="itemKey"   value="" />        
+    </bean>     
+    
+    <bean name="eyeImsSignoffActionLkupCache" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+        <property name="codeLkupDAO" ref="eyeImsSignoffActionLkupDao" />
+    </bean>        
+    
+    <bean name="eyeImsActionLkupCache" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+        <property name="codeLkupDAO" ref="eyeImsActionLkupDao" />
+    </bean>             
+    
+    <!--New DAOs and Cache that replaces SB_SRV_ACTION_TYPE_LKUP Ends -->
+    
+    <bean name="ltsOfferActionCache" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+        <property name="codeLkupDAO" ref="ltsOfferActionLookupDao" />
+    </bean>
+     
+    <bean name="imsOfferActionCache" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+        <property name="codeLkupDAO" ref="imsOfferActionLookupDao" />
+    </bean>
+    
+    <bean name="imsViOfferActionCache" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+        <property name="codeLkupDAO" ref="imsViOfferActionLookupDao" />
+    </bean>
+    
+    <bean name="ltsEquipOfferActionCache" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+        <property name="codeLkupDAO" ref="ltsEquipOfferActionLookupDao" />
+    </bean>
+    
+    <bean name="ltsTvOfferActionCache" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+        <property name="codeLkupDAO" ref="ltsTvOfferActionLookupDao" />
+    </bean>
+	
+	<bean name="deviceCodeLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="deviceCodeLkupDao" />
+	</bean>
+	
+	<bean name="idDocTypeLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="idDocTypeLkupDao" />
+	</bean>
+	
+	<bean name="penaltyHandleLtsLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="penaltyHandleLtsLkupDao" />
+	</bean>
+	
+	<bean name="applMethodLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="applMethodLkupDao" />
+	</bean>
+	
+	<bean name="sourceCdLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="sourceCdLkupDao" />
+	</bean>
+	
+	<bean name="offerActionService" class="com.bomwebportal.lts.service.order.OfferActionServiceImpl">
+		<property name="deviceCodeLkupCacheService" ref="deviceCodeLkupCacheService" />
+		<property name="ltsOfferActionCache" ref="ltsOfferActionCache" />
+		<property name="imsOfferActionCache" ref="imsOfferActionCache" />
+		<property name="imsViOfferActionCache" ref="imsViOfferActionCache" />
+		<property name="ltsEquipOfferActionCache" ref="ltsEquipOfferActionCache" />
+		<property name="ltsTvOfferActionCache" ref="ltsTvOfferActionCache" />
+		<property name="ltsChannelOfferActionCache" ref="ltsChannelOfferActionCache" />
+		<property name="ltsRestrictedOfferActionCache" ref="ltsRestrictedOfferActionCache" />
+		<property name="conditionLtsService" ref="conditionLtsService" />
+	</bean>
+	
+	<bean name="recontractSrvHandleCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="recontractSrvHandleLtsLkupDao" />
+	</bean>
+	
+	<bean name="recontractModeCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="recontractModeLtsLkupDao" />
+	</bean>
+	
+	<bean name="erEyeHandleCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="erEyeHandleLtsLkupDao" />
+	</bean>
+	
+	<bean name="erDelHandleCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="erDelHandleLtsLkupDao" />
+	</bean>
+	
+	<bean name="erHandleCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="erHandleLtsLkupDao" />
+	</bean>
+	
+	<bean name="creditCardTyepCodeLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="creditCardTyepCodeLkupDao" />
+	</bean>
+		
+	<bean name="ltsWaiveReasonCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="ltsWaiveReasonLkupDao" />
+	</bean>
+		
+	<bean name="ltsDocTypeLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="ltsDocTypeLkupDao" />
+	</bean>
+	
+	<bean name="workQueueRemarkFactory" class="com.bomwebportal.lts.service.order.WorkQueueRemarkFactory" scope="singleton">
+		<property name="offerService" ref="offerService" />
+		<property name="ltsOrderDocumentService" ref="ltsOrderDocumentService" />
+		<property name="callPlanLtsService" ref="callPlanLtsService" />
+		<property name="waiveDFormReasonLkupCacheService" ref="waiveDFormReasonLkupCacheService" />
+		<property name="delDisconnectReasonLkupCacheService" ref="delDisconnectReasonLkupCacheService" />
+		<property name="eyeDisconnectReasonLkupCacheService" ref="eyeDisconnectReasonLkupCacheService" />
+		<property name="workQueueService" ref="workQueueService" />
+		<property name="recontractSrvHandleCacheService" ref="recontractSrvHandleCacheService" />
+		<property name="optOutReasonLkupCacheService" ref="optOutReasonLkupCacheService" />
+		<property name="updImsWgProfileBillInfoLkupCacheService" ref="updImsWgProfileBillInfoLkupCacheService" />
+	</bean>
+
+	<bean id="upgradePcdSrvDAO" class="com.bomwebportal.lts.dao.UpgradePcdSrvDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean name="upgradePcdSrvService" class="com.bomwebportal.lts.service.UpgradePcdSrvServiceImpl">
+		<property name="upgradePcdSrvDAO" ref="upgradePcdSrvDAO" />
+	</bean>
+
+	<bean name="modemAssignService" class="com.bomwebportal.lts.service.ModemAssignSerivceImpl">
+		<property name="upgradePcdSrvService" ref="upgradePcdSrvService" />
+		<property name="techAssgnSeqLkupCacheService" ref="techAssgnSeqLkupCacheService" />
+		<property name="autoUpgradeTechLkupCacheService" ref="autoUpgradeTechLkupCacheService" />
+	</bean>
+	
+	<bean name="techAssgnSeqLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="techAssgnSeqLkupDao" />
+	</bean>
+	
+	<bean id="techAssgnSeqLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="TECH_ASSGN_SEQ" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>
+	
+	<bean name="autoUpgradeTechLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="autoUpgradeTechLkupDao" />
+	</bean>
+	
+	<bean id="autoUpgradeTechLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="AUTO_UPGRADE_TECH" />
+		<property name="lkupTable" value="BOMWEB_CODE_LKUP" />
+	</bean>
+	
+	
+	<bean name="swNoSignatureDisplayLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="swNoSignatureDisplayLkupDao" />
+	</bean>
+	
+	<bean id="swNoSignatureDisplayLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="SW_NO_SIGNATURE" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>
+	
+	<bean name="waiveDFormReasonLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="waiveDFormReasonLkupDao" />
+	</bean>
+	
+	<bean id="waiveDFormReasonLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="WAIVE_D_FORM_CD" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>
+
+	<bean name="ltsEffStartDateLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="ltsEffStartDateLkupDao" />
+	</bean>
+	
+	<bean id="ltsEffStartDateLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="LTS_TP_MONTH" />
+		<property name="lkupTable" value="BOMWEB_CODE_LKUP" />
+	</bean>
+		
+	<bean id="delDisconnectReasonLkupCacheDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="LTS_DEL_DISC_REASON" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>
+	
+	<bean id="eyeDisconnectReasonLkupCacheDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="LTS_EYE_DISC_REASON" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>
+	
+	<bean name="delDisconnectReasonLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="delDisconnectReasonLkupCacheDao" />
+	</bean>
+	
+	<bean name="eyeDisconnectReasonLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="eyeDisconnectReasonLkupCacheDao" />
+	</bean>
+	
+	<bean name="ltsChannelOfferActionCache" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="ltsChannelOfferActionLkupDao" />
+	</bean>
+	
+	<bean name="ltsRestrictedOfferActionCache" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="ltsRestrictedOfferActionLkupDao" />
+	</bean>
+	
+	
+	<bean name="conditionLkupCache" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="conditionLkupDao" />
+	</bean>
+	
+	<bean name="conditionLtsService" class="com.bomwebportal.lts.service.order.ConditionLtsServiceImpl" scope="singleton">
+		<property name="conditionLkupCache" ref="conditionLkupCache" />
+		<property name="conditionOperandLtsService" ref="conditionOperandLtsService" />
+		<property name="conditionCompareLtsService" ref="conditionCompareLtsService" />
+	</bean>
+	
+	<bean name="conditionOperandLtsService" class="com.bomwebportal.lts.service.order.ConditionOperandLtsServiceImpl" scope="singleton" />
+	
+	<bean name="conditionCompareLtsService" class="com.bomwebportal.lts.service.order.ConditionCompareLtsServiceImpl" scope="singleton" />
+	
+	<bean name="reportCreationLtsService" class="com.bomwebportal.lts.service.report.ReportCreationLtsServiceImpl" scope="singleton">
+		<property name="storePathPrefix" value="${dataFilePath}"/>
+		<property name="offerDetailDao" ref="offerDetailDao" />
+		<property name="ltsOrderDocumentService" ref="ltsOrderDocumentService" />
+		<property name="cslSimItemLkupCacheService" ref="cslSimItemLkupCacheService" />
+		<property name="concertTicketItemLkupCacheService" ref="concertTicketItemLkupCacheService" />
+	</bean>
+	
+	<bean id="cslSimItemLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="CSL_SIM_ITEM_ID" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>
+
+    <bean name="cslSimItemLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+        <property name="codeLkupDAO" ref="cslSimItemLkupDao" />
+    </bean>
+    
+    <bean id="concertTicketItemLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="CONCERT_TICKET_ITEM_ID" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>
+
+    <bean name="concertTicketItemLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+        <property name="codeLkupDAO" ref="concertTicketItemLkupDao" />
+    </bean>
+	
+	<bean name="reportSetLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+            <property name="codeLkupDAO" ref="reportSetLkupDao" />
+    </bean>
+    
+    <bean id="callPlanLtsDao" class="com.bomwebportal.lts.dao.order.CallPlanLtsDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	 <bean id="callPlanLtsService" class="com.bomwebportal.lts.service.order.CallPlanLtsServiceImpl">
+ 		<property name="callPlanLtsDao" ref="callPlanLtsDao"/>
+ 	</bean>
+ 	
+ 	<bean id="ltsActivityWorkQueueService" class="com.bomwebportal.lts.service.activity.LtsActivityWorkQueueServiceImpl">
+ 	</bean>
+ 	
+    <bean name="orderActivityLtsSubmissionService" class="com.bomwebportal.lts.service.activity.OrderActivityLtsSubmissionServiceImpl" scope="prototype">
+		<property name="saveActivityService" ref="saveActivityService" />
+		<property name="activityIdFactory" ref="activityIdFactory" />
+		<property name="activityStatusService" ref="activityStatusService" />
+		<property name="activityRemarkService" ref="activityRemarkService" />
+		<property name="activityTaskFactory" ref="activityTaskFactory" />
+		<property name="documentSubmissionService" ref="documentSubmissionService" />
+		<property name="orderTransactionSLVService" ref="orderTransactionSLVService" />
+		<property name="saveOrderSLVService" ref="saveOrderSLVService" />		
+	</bean>
+	
+   	<bean name="pipbActivityLtsSubmissionService" class="com.bomwebportal.lts.service.activity.PipbActivityLtsSubmissionServiceImpl" scope="prototype">
+		<property name="saveActivityService" ref="saveActivityService" />
+		<property name="activityIdFactory" ref="activityIdFactory" />
+		<property name="activityStatusService" ref="activityStatusService" />
+		<property name="activityRemarkService" ref="activityRemarkService" />
+		<property name="activityTaskFactory" ref="activityTaskFactory" />
+		<property name="documentSubmissionService" ref="documentSubmissionService" />
+		<property name="reportCreationLtsService" ref="reportCreationLtsService" />
+		<property name="reportSetLkupCacheService" ref="reportSetLkupCacheService" />
+		<property name="retrieveLtsActivityService" ref="retrieveLtsActivityService" />
+		<property name="orderRetrieveLtsService" ref="orderRetrieveLtsService" />
+		<property name="ltsOrderDocumentService" ref="ltsOrderDocumentService" />
+		<property name="workQueueService" ref="workQueueService" />
+		<property name="offerService" ref="offerService" />
+	</bean>	 	
+	
+	<bean name="workQueueStatusChangeServiceLTS" class="com.bomwebportal.lts.service.activity.WorkQueueStatusChangeServiceImpl" scope="prototype">
+		<property name="retrieveLtsActivityService" ref="retrieveLtsActivityService" />
+		<property name="activityStatusService" ref="activityStatusService" />
+		<property name="pipbOrderResumeSubmitService" ref="pipbOrderResumeSubmitService" />
+		<property name="pipbActivityLtsSubmissionService" ref="pipbActivityLtsSubmissionService" />
+		<property name="amendLtsService" ref="amendLtsService" />
+		<property name="dsServiceLtsService" ref="dsServiceLtsService" />
+		<property name="ltsDsOrderApprovalSubmitService" ref="ltsDsOrderApprovalSubmitService" />
+		<property name="wqNatureLkupService" ref="wqNatureLkupService" />
+		<property name="orderStatusService" ref="orderStatusService" />
+	</bean>
+	
+	<bean name="workQueueStatusChangeServiceTEL"  class="com.bomwebportal.lts.service.activity.WorkQueueStatusChangeServiceImpl" scope="prototype">
+		<property name="retrieveLtsActivityService" ref="retrieveLtsActivityService" />
+		<property name="activityStatusService" ref="activityStatusService" />
+		<property name="pipbOrderResumeSubmitService" ref="pipbOrderResumeSubmitService" />
+		<property name="pipbActivityLtsSubmissionService" ref="pipbActivityLtsSubmissionService" />
+		<property name="amendLtsService" ref="amendLtsService" />
+		<property name="dsServiceLtsService" ref="dsServiceLtsService" />
+		<property name="ltsDsOrderApprovalSubmitService" ref="ltsDsOrderApprovalSubmitService" />
+		<property name="wqNatureLkupService" ref="wqNatureLkupService" />
+		<property name="orderStatusService" ref="orderStatusService" />
+	</bean>
+	
+	<bean name="retrieveLtsActivityService" class="com.bomwebportal.lts.service.activity.RetrieveLtsActivityServiceImpl" scope="prototype">
+	    <property name="activityDetailService" ref="activityDetailService" />
+	    <property name="activityService" ref="activityService" />
+		<property name="documentService" ref="documentService" />
+		<property name="documentDetailService" ref="documentDetailService" />
+		<property name="activityTaskService" ref="activityTaskService" />
+		<property name="activityAttachDocService" ref="activityAttachDocService" />
+		<property name="activityRemarkService" ref="activityRemarkService" />
+		<property name="activityAttributeService" ref="activityAttributeService" />
+		<property name="activityAddressService" ref="activityAddressService" />
+		<property name="activityCustDtlService" ref="activityCustDtlService" />		
+		<property name="activityStatusService" ref="activityStatusService" />
+	</bean>
+		 
+    <bean name="pipbOrderResumeSubmitService" class="com.bomwebportal.lts.service.order.PipbOrderResumeSubmitServiceImpl" scope="prototype">
+	    <property name="orderStatusService" ref="orderStatusService" />
+		<property name="orderDetailService" ref="orderDetailService" />
+		<property name="serviceActionTypeLookupService" ref="serviceActionTypeLookupService" />
+		<property name="workQueueSubmissionService" ref="workQueueSubmissionService" />
+		<property name="wqPriorityonCodeLkupDao" ref="wqPriorityonCodeLkupDao" />
+		<property name="orderRetrieveLtsService" ref="orderRetrieveLtsService" />
+		<property name="workQueueRemarkFactory" ref="workQueueRemarkFactory" />
+		<property name="saveSbOrderLtsService" ref="saveSbOrderLtsService" />
+	    <property name="imsSbOrderService" ref="imsSbOrderService" />
+		<property name="bomWsBackendClient" ref="bomWsBackendClient" />	
+		<property name="serviceDetailLtsService" ref="ltsDetailService" />
+		<property name="ltsSignatureService" ref="ltsOrderSignatureService" />
+		<property name="ltsAcqDnPoolService" ref="ltsAcqDnPoolService" />
+	</bean>
+	
+	<bean name="pipbOrderSignoffLtsServiceImpl" class="com.bomwebportal.lts.service.order.PipbOrderSignoffLtsServiceImpl" scope="prototype">
+	    <property name="imsSbOrderService" ref="imsSbOrderService" />
+	    <property name="orderStatusService" ref="orderStatusService" />
+		<property name="orderDetailService" ref="orderDetailService" />
+		<property name="serviceActionTypeLookupService" ref="serviceActionTypeLookupService" />
+		<property name="workQueueSubmissionService" ref="workQueueSubmissionService" />
+		<property name="wqPriorityonCodeLkupDao" ref="wqPriorityonCodeLkupDao" />
+		<property name="orderRetrieveLtsService" ref="orderRetrieveLtsService" />
+		<property name="workQueueRemarkFactory" ref="workQueueRemarkFactory" />
+		<property name="saveSbOrderLtsService" ref="saveSbOrderLtsService" />
+		<property name="serviceDetailLtsService" ref="ltsDetailService" />
+		<property name="ltsSignatureService" ref="ltsOrderSignatureService" />
+		<property name="bomInvPreassgnService" ref="bomInvPreassgnService" />
+	</bean>
+	
+	<bean name="ltsDsOrderApprovalSubmitService" class="com.bomwebportal.lts.service.order.LtsDsOrderApprovalSubmitServiceImpl" scope="prototype">
+		<property name="orderRetrieveLtsService" ref="orderRetrieveLtsService" />
+	    <property name="orderStatusService" ref="orderStatusService" />
+	    <property name="pipbActivityLtsSubmissionService" ref="pipbActivityLtsSubmissionService" />
+	    <property name="pipbOrderResumeSubmitService" ref="pipbOrderResumeSubmitService" />
+	    <property name="dsServiceLtsService" ref="dsServiceLtsService" />
+	</bean>
+	
+	<bean name="ltsOrderSignatureService" class="com.bomwebportal.lts.service.LtsSignatureServiceImpl" scope="singleton">
+	    <property name="orderSignatureDao" ref="ltsOrderSignatureDao" />	
+	</bean>
+	
+	<bean id="ltsOrderSignatureDao" class="com.bomwebportal.lts.dao.OrderSignatureDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean name="pipbActvLtsService" class="com.bomwebportal.lts.service.PipbActvLtsServiceImpl" scope="singleton">
+	    <property name="pipbActivityLtsSubmissionService" ref="pipbActivityLtsSubmissionService" />	
+	    <property name="orderStatusDao" ref="orderStatusDao" />
+	    <property name="pipbLtsServiceDAO" ref="pipbLtsServiceDAO" />
+	    <property name="pipbLtsWQServiceDAO" ref="pipbLtsWQServiceDAO" />
+	</bean>
+	
+	<bean name="ltsDetailService" class="com.bomwebportal.lts.service.ServiceDetailLtsServiceImpl" scope="singleton">
+	    <property name="serviceDetailLtsDAO" ref="ltsDetailServiceDAO" />	
+	</bean>
+	    
+	<bean id="ltsDetailServiceDAO" class="com.bomwebportal.lts.dao.ServiceDetailLtsDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean> 
+	
+	<bean id="updNnDAO" class="com.bomwebportal.lts.dao.UpdNnDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>   
+    	
+	<bean id="ltsQrCodeService" class="com.bomwebportal.lts.service.LtsQrCodeServiceImpl" />	
+    	
+	<bean id="paymentSlipReportDataLtsService" class="com.bomwebportal.lts.service.report.PaymentSlipReportDataLtsServiceImpl" scope="prototype">
+		<property name="dataFilePath" value="${dataFilePath}"/>
+		<property name="ltsQrCodeService" ref="ltsQrCodeService" />
+	</bean>			
+	
+		<bean name="orderLtsAmendService" class="com.bomwebportal.lts.service.order.OrderLtsAmendServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.OrderLtsAmendDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+	
+	<bean name="orderLtsAmendDetailService" class="com.bomwebportal.lts.service.order.OrderLtsAmendDetailServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.OrderLtsAmendDetailDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+	
+	<bean id="amendLtsService" class="com.bomwebportal.lts.service.AmendLtsServiceImpl">
+		<property name="amendLtsDao" ref="amendLtsDao" />
+		<property name="imsSbOrderService" ref="imsSbOrderService" />
+		<property name="amendmentSubmitService" ref="amendmentSubmitService" />
+		<property name="reportCreationLtsService" ref="reportCreationLtsService" />
+		<property name="reportSetLkupCacheService" ref="reportSetLkupCacheService" />
+		<property name="bomReadOnlyLkupCacheService" ref="bomReadOnlyLkupCacheService" />
+		<property name="autoAmendModeLkupCacheService" ref="autoAmendModeLkupCacheService" />
+		<property name="allOrdDocLtsService" ref="allOrdDocLtsService" />
+		<property name="orderDetailService" ref="orderDetailService" />
+		<property name="orderStatusService" ref="orderStatusService" />
+		<property name="saveSbOrderLtsService" ref="saveSbOrderLtsService" />
+		<property name="pipbActvLtsService" ref="pipbActvLtsService" />
+		<property name="bomWsBackendClient" ref="bomWsBackendClient" />
+		<property name="orderRetrieveLtsService" ref="orderRetrieveLtsService" />
+		<property name="pipbActivityLtsSubmissionService" ref="pipbActivityLtsSubmissionService" />
+		<property name="ordEmailReqService" ref="ordEmailReqService" />
+		<property name="orderCancelLtsService" ref="orderCancelLtsService" />
+		<property name="formPrintReqDao" ref="formPrintReqDao"></property>
+		<property name="pipbLtsWQServiceDAO" ref="pipbLtsWQServiceDAO" />
+	</bean>
+
+	<bean id="bomReadOnlyLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="LTS_BOM_READONLY_IND" />
+		<property name="lkupTable" value="BOMWEB_CODE_LKUP" />
+	</bean>
+	
+	<bean name="bomReadOnlyLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+	    <property name="codeLkupDAO" ref="bomReadOnlyLkupDao" />
+	</bean>
+	
+	<bean id="autoAmendModeLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="LTS_AUTO_AMEND_IND" />
+		<property name="lkupTable" value="BOMWEB_CODE_LKUP" />
+	</bean>
+	
+	<bean name="autoAmendModeLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+	    <property name="codeLkupDAO" ref="autoAmendModeLkupDao" />
+	</bean>
+	
+	<bean id="waiveReasonLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="LTS_PAPER_WAIVE" />
+		<property name="lkupTable" value="BOMWEB_CODE_LKUP" />
+	</bean>
+	
+	<bean name="waiveReasonLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+	    <property name="codeLkupDAO" ref="waiveReasonLkupDao" />
+	</bean>
+		
+	<bean id="waiveReasonPropertiesLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="LTS_PAPER_WAIVE_PROP" />
+		<property name="lkupTable" value="BOMWEB_CODE_LKUP" />
+	</bean>	
+	
+	<bean name="waiveReasonPropertiesLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+	    <property name="codeLkupDAO" ref="waiveReasonPropertiesLkupDao" />
+	</bean>
+	
+	<bean id="dsServiceLtsService" class="com.bomwebportal.lts.service.DsServiceLtsServiceImpl">
+		<property name="dsServiceLtsDAO" ref="dsServiceLtsDAO" />
+	</bean>	
+	
+	<bean id="ordEmailReqService" class="com.bomwebportal.service.OrdEmailReqServiceImpl">
+		<property name="ordEmailReqDAO" ref="ordEmailReqDAO"/>
+		<property name="ordEmailReqWriteDAO" ref="ordEmailReqWriteDAO"/>
+	</bean>
+	
+	<bean name="wqNatureCodeLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="wqNatureCodeLkupDao" />
+	</bean>
+	
+	<bean name="bomInvPreassgnService" class="com.bomwebportal.lts.service.bom.BomInvPreassgnServiceImpl" scope="singleton">
+		<property name="bomWsBackendClient" ref="bomWsBackendClient" />
+	</bean>
+	
+	<bean id="optOutReasonLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="OPT_OUT_REASON" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>
+	
+	<bean name="optOutReasonLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="optOutReasonLkupDao" />
+	</bean>
+	
+	<bean id="itemSetDetailDao" class="com.bomwebportal.lts.dao.offer.ItemSetDetailDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean name="itemSetDetailService" class="com.bomwebportal.lts.service.offer.ItemSetDetailServiceImpl">
+		<property name="itemSetDetailDao" ref="itemSetDetailDao" />
+	</bean>
+	
+	<bean id="ltsAcqDnPoolService" class="com.bomwebportal.lts.service.LtsAcqDnPoolServiceImpl" >		
+		<property name="ltsAcqDnPoolDAO" ref="ltsAcqDnPoolDAO"/>
+	</bean>
+	
+	<bean id="wqNatureLkupService" class="com.bomwebportal.lts.service.WqNatureLkupServiceImpl" >
+		<property name="wqNatureLkupDao" ref="wqNatureCodeLkupDao"/>
+	</bean>
+	
+	<bean id="lostModemService" class="com.bomwebportal.lts.service.LostModemServiceImpl" >
+		<property name="lostModemDAO" ref="lostModemDAO"/>
+	</bean>
+	
+	<bean name="imsL2JobService" class="com.bomwebportal.lts.service.order.ImsL2JobServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.ImsL2JobDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+	
+	<bean id="eyeProfileCountService" class="com.bomwebportal.lts.service.bom.EyeProfileCountServiceImpl" >
+		<property name="eyeProfileCountDAO" ref="eyeProfileCountDAO"/>
+	</bean>
+	
+			<!-- bom serivce data privacy Opt-Out checking (moved from BomWebPortal) -->
+	<bean id="custPdpoProfileService" class="com.bomwebportal.lts.service.bom.CustPdpoProfileServiceImpl">
+		<property name="bCustDataPrivacyLtsDAO" ref="bCustDataPrivacyLtsDAO" />
+	</bean>	
+	
+    <bean id="updImsWgProfileBillInfoLkupCacheDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomDS" />
+		<property name="lkupCode" value="SBLTS_UPDIMSBILL" />
+		<property name="lkupTable" value="B_LOOKUP" />
+    </bean>
+     
+    <bean name="updImsWgProfileBillInfoLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+        <property name="codeLkupDAO" ref="updImsWgProfileBillInfoLkupCacheDao" />
+    </bean>
+	
+	<bean name="orderAttbService" class="com.bomwebportal.lts.service.order.OrderAttbServiceImpl" scope="prototype">
+		<property name="dao" ref="com.bomwebportal.lts.dao.order.OrderAttbDAO" />
+		<property name="dozerMapper" ref="dozerMapper" />
+	</bean>
+	
+</beans>

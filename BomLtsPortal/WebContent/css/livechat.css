@@ -1,0 +1,59 @@
+/*************************Live Chat Button******************************/
+.left, .float_left {
+float: left;
+}
+
+#headermain .button {
+height: 35px;
+font-size: 15px;
+font-weight: 700;
+color: #592B79;
+}
+
+#headermain #livechat {
+margin-left: 15px;
+}
+
+#headermain .button .buttonleft {
+	width: 11px;
+	height: 35px;
+	background-image: url(../images/header/header_main_button_left.png);
+}
+
+#headermain .button {
+font-size: 15px;
+font-weight: 700;
+color: #592B79;
+}
+
+#headermain #livechat.button .buttonmiddle {
+color: #0086AC;
+padding-right: 12px;
+}
+
+#headermain .button .buttonmiddle {
+height: 27px;
+padding-top: 8px;
+background-image: url('../images/header/header_main_button_middle.png');
+}
+
+#headermain #livechat.button .buttonright {
+background-image: url('../images/header/header_main_button_right_blue.png');
+}
+
+#headermain .button .buttonright {
+width: 18px;
+height: 35px;
+}
+
+.clear {
+clear: both;
+display: block;
+overflow: hidden;
+visibility: hidden;
+height: 0px;
+}
+
+.right, .float_right { float:right	}
+
+/*************************Live Chat Button******************************/

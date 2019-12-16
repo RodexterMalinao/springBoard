@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MobileSafetyPhone_TnC" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.2100000000000002"/>
+	<property name="ireport.x" value="39"/>
+	<property name="ireport.y" value="50"/>
+	<import value="java.io.*"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<field name="title" class="java.lang.String"/>
+	<field name="custLastName" class="java.lang.String"/>
+	<field name="custFirstName" class="java.lang.String"/>
+	<field name="msisdn" class="java.lang.String"/>
+	<field name="companyLogo" class="java.lang.String"/>
+	<field name="appInDate" class="java.util.Date"/>
+	<field name="monthlyRate" class="java.lang.String"/>
+	<field name="commitmentPeriod" class="java.lang.String"/>
+	<field name="monthlyRateAfter" class="java.lang.String"/>
+	<field name="custSignature" class="java.io.InputStream"/>
+	<field name="companyBottomLogo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyLogo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="50" width="555" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[平安手機®服務計劃申請書附加條款及條件
+Supplementary Terms and Conditions for Mobile Safety Phone Service Plan]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="35" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="30"/>
+				<staticText>
+					<reportElement x="0" y="0" width="98" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[客戶姓名Customer Name:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="98" y="0" width="178" height="12"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{title} + " " + $F{custLastName} + " " + $F{custFirstName}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="276" y="0" width="109" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[申請日期Application Date：]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="385" y="0" width="25" height="12"/>
+					<box leftPadding="3">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[new java.text.SimpleDateFormat("dd", java.util.Locale.US).format($F{appInDate})]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="435" y="0" width="25" height="12"/>
+					<box leftPadding="3">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[new java.text.SimpleDateFormat("MM", java.util.Locale.US).format($F{appInDate})]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="485" y="0" width="45" height="12"/>
+					<box leftPadding="3">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[new java.text.SimpleDateFormat("yyyy", java.util.Locale.US).format($F{appInDate})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="530" y="0" width="25" height="15"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[(yyyy)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="460" y="0" width="25" height="15"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[(mm)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="410" y="0" width="25" height="15"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[(dd)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="15" width="233" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[PCCW-HKT 流動通訊服務電話號碼PCCW-HKT mobile No.:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="233" y="15" width="322" height="12"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{msisdn}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="45">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="45"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="0" width="185" height="45"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="10" isBold="true" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[平安手機®服務計劃
+Mobile Safety Phone Service Plan]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="185" y="0" width="185" height="25"/>
+					<box>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[承諾期內月費
+Monthly Rate within Commitment Period]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="370" y="0" width="185" height="25"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[承諾期後月費
+Monthly Rate after Commitment Period]]></text>
+				</staticText>
+				<textField isBlankWhenNull="false">
+					<reportElement x="185" y="25" width="185" height="20"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="10"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["HK\$" + ( $F{monthlyRate}==null ? "   " : $F{monthlyRate} ) + " x "
++ ( $F{commitmentPeriod}==null ? "   " : $F{commitmentPeriod} ) + "個月 Months"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement x="370" y="25" width="185" height="20"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="10"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["HK\$" + ( $F{monthlyRateAfter}==null ? "   " :$F{monthlyRateAfter} )]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="185" splitType="Stretch">
+			<frame>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="555" height="175"/>
+				<frame>
+					<reportElement positionType="Float" x="0" y="0" width="555" height="15"/>
+					<staticText>
+						<reportElement x="0" y="0" width="15" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming"/>
+						</textElement>
+						<text><![CDATA[1.]]></text>
+					</staticText>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="15" y="0" width="540" height="15"/>
+						<box rightPadding="0"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isPdfEmbedded="true"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["現有PCCW-HKT流動通訊服務客戶轉用平安手機®服務計劃只適用於(i). 沒有PCCW-HKT流動通訊服務承諾期合約的客戶；或(ii). 原有的PCCW-HKT流動通訊服務合約承諾期少於30天的客戶。Existing PCCW-HKT mobile customer switching to Mobile Safety Phone (“MSP”) Service Plan is only applicable to (i). free-to-go customers (those customers whose contracts with PCCW- HKT mobile service does not have any commitment period); or (ii). existing PCCW-HKT mobile service customers the commitment period of which will expire in 30 days."]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="20" width="555" height="15"/>
+					<staticText>
+						<reportElement x="0" y="0" width="15" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming"/>
+						</textElement>
+						<text><![CDATA[2.]]></text>
+					</staticText>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="15" y="0" width="540" height="15"/>
+						<box rightPadding="0"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isPdfEmbedded="true"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["本人確認及同意本人不能於長者安居協會(「協會」)提供平安手機®服務期間更改 PCCW-HKT流動通訊服務計劃。如本人於承諾期期內更改流動通訊計劃，本人須向PCCW Mobile HK Limited繳付於您的PCCW-HKT流動通訊服務申請書及／或PCCW-HKT流動通訊服務指南(統稱為「服務申請」)中提及的提早終止費用。I acknowledge that I cannot change to other PCCW-HKT mobile service plan(s) during the term of the provision of MSP Service by Senior Citizens Home Safety Association (“SCHSA”).  If I change my mobile plan within any commitment period, I will need to pay an Early Termination Charge to the Company as set out in your PCCW-HKT mobile service application and/or PCCW-HKT mobile Service Guide (together known as “Application”)."]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="40" width="555" height="15"/>
+					<staticText>
+						<reportElement x="0" y="0" width="15" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming"/>
+						</textElement>
+						<text><![CDATA[3.]]></text>
+					</staticText>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="15" y="0" width="540" height="15"/>
+						<box rightPadding="0"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isPdfEmbedded="true"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["本人確認及同意平安手機®服務會因下列情況立即停止：(i) 本人更改至其他PCCW-HKT流動通訊服務計劃；或 (ii) 本人的流動通訊服務因任何原因被取消或暫停，PCCW Mobile HK Limited不會就有關平安手機®服務 (包括任何取消或暫停該平安手機®服務) 而可能引起的任何損失或損害而負責或承擔任何責任。I acknowledge and agree that MSP Service will cease immediately if (i) I change to other PCCW-HKT mobile service plan; or (ii) my Mobile Service is terminated or suspended for any reason.  PCCW Mobile HK Limited shall not be responsible for or liable to any losses or damages which may arise in connection with MSP Service (including any termination or suspension thereof)."]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="60" width="555" height="15"/>
+					<staticText>
+						<reportElement x="0" y="0" width="15" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming"/>
+						</textElement>
+						<text><![CDATA[4.]]></text>
+					</staticText>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="15" y="0" width="540" height="15"/>
+						<box rightPadding="0"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isPdfEmbedded="true"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["本人同意及確認平安手機®於特定時間搜尋智能卡大約位置服務是由長者安居協會(「協會」)提供，並受協會有關的條款及條件約束。無論是協會或PCCW Mobile HK Limited均不會就下列情況作出任何保證或聲明：(i) 平安手機®服務所提供的有關資料的準確性與及時程度；或(ii)在緊急時能否搜尋平安手機®內智能卡的位置。協會或PCCW Mobile HK Limited均不會因使用位置搜尋服務而引起的任何損失或損害而負責或承擔任何責任。I agree and acknowledge that the location service for searching the last known approximate location of the SIM card of the MSP at a particular time is provided by SCHSA and the provision of such service is subject to the relevant terms and conditions of SCHSA.  Neither SCHSA nor PCCW Mobile HK Limited makes any warranty or representation as to (i) the accuracy and timeliness of the data provided under the MSP service or (ii) whether the SIM card of the MSP could be located in times of emergency.  Neither SCHSA nor PCCW Mobile HK Limited shall be responsible for any losses or damages arising from or in connection with the use of the location service."]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="80" width="555" height="15"/>
+					<staticText>
+						<reportElement x="0" y="0" width="15" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming"/>
+						</textElement>
+						<text><![CDATA[5.]]></text>
+					</staticText>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="15" y="0" width="540" height="15"/>
+						<box rightPadding="0"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isPdfEmbedded="true"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["本人明示地確認及同意，PCCW Mobile HK Limited不是位置搜尋及全面關顧及緊急支援服務提供者，亦並非平安手機®的製造商。本人並明示已確認及同意以下事項：I expressly acknowledge and agree that PCCW Mobile HK Limited is not the service provider of the location searching and comprehensive care and emergency support services, nor the manufacturer of the MSP.  I further expressly acknowledge and agree that:"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="95" width="555" height="15"/>
+					<staticText>
+						<reportElement x="15" y="0" width="15" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming"/>
+						</textElement>
+						<text><![CDATA[(a).]]></text>
+					</staticText>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="30" y="0" width="525" height="15"/>
+						<box rightPadding="0"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isPdfEmbedded="true"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["使用平安手機®位置搜尋及全面關顧及緊急支援服務以及是否依賴所提供的任何資訊及意見乃本人之個人決定，而本人亦須承擔所有風險；the use of and reliance on any information or advice provided from the use of the location searching and comprehensive care and emergency support services is at my sole discretion and risk;"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="110" width="555" height="15"/>
+					<staticText>
+						<reportElement x="15" y="0" width="15" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming"/>
+						</textElement>
+						<text><![CDATA[(b).]]></text>
+					</staticText>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="30" y="0" width="525" height="15"/>
+						<box rightPadding="0"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isPdfEmbedded="true"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["在法律容許的範圍內，PCCW Mobile HK Limited明示地對位置搜尋及全面關顧及緊急支援服務及平安手機®本身(包括但不限於其可銷售性、擁有權、某一特定用途的適用性、準確性及非侵犯性的任何保證) 不作任何明示或暗示的聲明或保證，以及本人明示地放棄與PCCW Mobile HK Limited 或其各自的相關聯公司的任何索償；to the extent permitted by law, PCCW Mobile HK Limited expressly disclaims and excludes any representation or warranty, whether express or implied, in relation to the location searching and comprehensive care and emergency support services and the MSP (including but not limited to any warranties of merchantability, title, fitness for a particular purpose, accuracy and non-infringement) and I expressly waive any claims I may have against PCCW Mobile HK Limited or any of its affiliated companies in this regard;"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="125" width="555" height="15"/>
+					<staticText>
+						<reportElement x="15" y="0" width="15" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming"/>
+						</textElement>
+						<text><![CDATA[(c).]]></text>
+					</staticText>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="30" y="0" width="525" height="15"/>
+						<box rightPadding="0"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isPdfEmbedded="true"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["在法律容許的範圍內，PCCW Mobile HK Limited 明示地對就使用位置搜尋及全面關顧及緊急支援服務以及就該等使用所招致的或本人或我的指定服務使用者所產生或要承擔的任何形式的退款、索償、損失或損害 (包括但不限於任何從中得取或提供的資訊或意見或所宣傳之任何產品或服務) 均不承擔任何相關的責任；及to the extent permitted by law, PCCW Mobile HK Limited expressly disclaims any responsibility or liability whatsoever and shall not be responsible or liable in connection with any refund, claim, loss or damage of any kind incurred as the result of or suffered by me or any service user in relation to the use of the location searching and comprehensive care and emergency support services (including but not limited to any information or advice available or provided or any products or services advertised); and"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="140" width="555" height="15"/>
+					<staticText>
+						<reportElement x="15" y="0" width="15" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming"/>
+						</textElement>
+						<text><![CDATA[(d).]]></text>
+					</staticText>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="30" y="0" width="525" height="15"/>
+						<box rightPadding="0"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isPdfEmbedded="true"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["PCCW Mobile HK Limited不會認可及並未與任何平安手機®製造商有任何合作、合資或聯繫，亦不會對從協會或任何平安手機®製造商處購置或取得的任何貨物、服務、資料及/或意見承擔任何責任。PCCW Mobile HK Limited does not endorse and are not in any partnership, joint venture or association with any manufacturers of the MSP, and shall not be responsible in any way for any goods, services, information and/or advice purchased or obtained from SCHSA or any of the manufacturers of the MSP."]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="160" width="555" height="15"/>
+					<staticText>
+						<reportElement x="0" y="0" width="15" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming"/>
+						</textElement>
+						<text><![CDATA[6.]]></text>
+					</staticText>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="15" y="0" width="540" height="15"/>
+						<box rightPadding="0"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isPdfEmbedded="true"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["本人確認上述附加條款及條件受服務申請中的條款及條件所規範。I acknowledge that these Supplementary Terms and Conditions are subject to the terms and conditions under the Application."]]></textFieldExpression>
+					</textField>
+				</frame>
+			</frame>
+		</band>
+		<band height="51">
+			<image hAlign="Center" isUsingCache="true" isLazy="true" onErrorType="Blank">
+				<reportElement positionType="Float" x="0" y="15" width="260" height="36"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<imageExpression class="java.io.InputStream"><![CDATA[$F{custSignature}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="0" y="15" width="260" height="36"/>
+				<box leftPadding="3">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["x"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="260" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[客戶簽署CUSTOMER SIGNATURE]]></text>
+			</staticText>
+			<image>
+				<reportElement x="435" y="1" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyBottomLogo}]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band/>
+	</pageFooter>
+	<lastPageFooter>
+		<band/>
+	</lastPageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

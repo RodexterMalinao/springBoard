@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TradeInHS" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.4641000000000008"/>
+	<property name="ireport.x" value="22"/>
+	<property name="ireport.y" value="22"/>
+	<field name="title" class="java.lang.String"/>
+	<field name="custLastName" class="java.lang.String"/>
+	<field name="custFirstName" class="java.lang.String"/>
+	<field name="contactPhone" class="java.lang.String"/>
+	<field name="msisdn" class="java.lang.String"/>
+	<field name="orderId" class="java.lang.String"/>
+	<field name="custSignature" class="java.io.InputStream"/>
+	<field name="deliveryDate" class="java.util.Date"/>
+	<field name="imei" class="java.lang.String"/>
+	<field name="tradeInExpiryDate" class="java.util.Date"/>
+	<field name="rebateSchedule" class="java.lang.String"/>
+	<field name="companyLogo" class="java.lang.String"/>
+	<field name="companyBottomLogo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="50" width="555" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="PCCW-zh-Ming" size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Trade-in Handset - Acknowledgement of Receipt (回收手機確認收據)]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyLogo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="55" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="45" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Order No.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="15" width="45" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mobile No:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="242" y="0" width="89" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="242" y="15" width="89" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contact No:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="242" y="30" width="89" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Handset Collection Date:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="45" y="0" width="170" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{orderId}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="45" y="15" width="170" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{msisdn}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="331" y="0" width="203" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{title} + " " + $F{custLastName} + " " + $F{custFirstName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="331" y="15" width="203" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{contactPhone}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement x="331" y="30" width="203" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{deliveryDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="21" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="1" width="555" height="15"/>
+					<textElement textAlignment="Center" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[<b>Equipment Details 手機資料</b> (Please tick appropriate box below) ]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="51" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="51"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<line>
+					<reportElement x="45" y="0" width="1" height="51"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="68" y="5" width="77" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Apple 手機型號：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="68" y="30" width="77" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" isBold="true"/>
+					</textElement>
+					<text><![CDATA[其他 (請註明)：]]></text>
+				</staticText>
+				<line>
+					<reportElement x="46" y="25" width="509" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="0" y="5" width="45" height="40"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Brand<br/>品牌]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="55" y="9" width="6" height="6"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="55" y="34" width="6" height="6"/>
+				</rectangle>
+				<textField>
+					<reportElement x="153" y="30" width="300" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement>
+						<font fontName="PCCW-zh-Ming"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Any Handset Model 任何手機型號"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="54" y="32" width="9" height="9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="25"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="4" width="68" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" isBold="true"/>
+					</textElement>
+					<text><![CDATA[IMEI手機編號：]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="145" y="4" width="187" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{imei}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="49" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="32" isPrintInFirstWholeBand="true"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="0" width="145" height="30"/>
+					<textElement markup="html">
+						<font fontName="PCCW-zh-Ming" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Expiry Date of Trade-in Amount:<br/>回收手機金額有效日期：]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="145" y="13" width="308" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement>
+						<font fontName="PCCW-zh-Ming"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["N/A"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Part II 項目乙– Acknowledge Receipt of Payment 收款確認]]></text>
+			</staticText>
+		</band>
+		<band height="21" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="21" backcolor="#CCCCCC"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="3" width="555" height="15"/>
+					<textElement textAlignment="Center" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Payment Details 付款詳情]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="50" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="50"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<line>
+					<reportElement x="287" y="0" width="1" height="50"/>
+				</line>
+				<staticText>
+					<reportElement x="5" y="0" width="125" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Paid Amount回收手機金額：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="298" y="0" width="125" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Received by收款人姓名 :]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="50" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="50"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="7" y="0" width="291" height="15"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Trade-in Extra Monthly Fee Rebate / Trade-in 額外月費回贈:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="7" y="15" width="538" height="35"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{rebateSchedule}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="38" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="38" backcolor="#CCCCCC"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="5" y="0" width="540" height="38"/>
+					<textElement markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[I have read and agree to the Terms and Conditions printed below and I declare that the information given above is true and accurate. I also declare that the sold handset is my own property.<br/>本人已詳閱下列有關條款及條件並簽署以表同意。本人茲證實上述資料正確無訛及上述回收之手機是本人名下擁有。
+]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="21" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="21"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="0" width="555" height="21"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Terms and Conditions(條款及條件)]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="272" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="264"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<line>
+					<reportElement x="286" y="0" width="1" height="264"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="4" y="0" width="17" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="21" y="0" width="259" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Collected items are limited to models specifies by the Company.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="15" width="17" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[2.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="21" y="15" width="259" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Collected items are irrecoverable.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="30" width="17" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[3.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="21" y="30" width="259" height="30"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Collected items must be in good condition and functional which is determined by an inspection performed by the Company.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="60" width="17" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[4.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="21" y="60" width="259" height="30"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[The Company reserves the right to determine whether the handset is accepted.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="90" width="17" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[5.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="21" y="90" width="259" height="30"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[The Company will not be responsible for the  loss / retrieval / restoration or transference of personal data in the traded handset.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="120" width="17" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[6.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="21" y="120" width="259" height="30"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[The Company excludes all liability, in any way or in any connection related with the collection of traded-in handset.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="150" width="17" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[7.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="21" y="150" width="259" height="74"/>
+					<textElement markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[The personal data collected herein will be used by the Company to verify your identity as may be required in administering the handset collection Services and may be transferred to third parties, under an obligation of confidentiality, to satisfy that purpose. The Company's privacy policy is available at our internet web site <u>http://www.hk.pccw.com/legal/privacy.html</u>.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="5" y="224" width="17" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[8.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="21" y="224" width="259" height="40"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[These terms and conditions are written in both English and Chinese. English terms shall prevail in the event of inconsistency of the terms and conditions.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="291" y="0" width="17" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="308" y="0" width="237" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[回收之手機只適用於本公司指定之型號。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="291" y="15" width="17" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[2.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="308" y="15" width="237" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[在任何情況下，交易一經完成，回收之手機將不獲退回。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="291" y="30" width="17" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[3.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="308" y="30" width="237" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[回收之手機必須經本公司驗証為正常操作及性能良好。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="291" y="45" width="17" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[4.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="308" y="45" width="237" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[本公司保留對回收任何手機之權利。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="291" y="60" width="17" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[5.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="308" y="60" width="237" height="30"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[本公司將不負責任何因是項回收手機安排導致之資料損失 / 存取重置 / 轉移。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="291" y="84" width="17" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[6.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="308" y="84" width="237" height="30"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[本公司將不會負責任何因是項回收手機安排可能導致之損失。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="291" y="108" width="17" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[7.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="308" y="108" width="237" height="45"/>
+					<textElement markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[客戶同意本公司所記錄之個人資料作為公司內部處理與回收手機有關之行政用途及保密情況下提供該等個人資料予第三者。本公司之私隱致策可於以下網頁內查閱。<br/><u>http://www.hk.pccw. com/legal/privacy.html</u>
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="291" y="154" width="17" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[8.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="308" y="154" width="237" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[本條款分中、英文版本，如遇任何歧義，慨以英文版為準。]]></text>
+				</staticText>
+				<line>
+					<reportElement x="287" y="169" width="268" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="291" y="170" width="254" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Customer Signature 客戶簽署:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="291" y="224" width="254" height="20"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[x]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="291" y="244" width="51" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Date 日期:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="342" y="244" width="203" height="17"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement/>
+					<text><![CDATA[]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="50" splitType="Stretch">
+			<image>
+				<reportElement x="435" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyBottomLogo}]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

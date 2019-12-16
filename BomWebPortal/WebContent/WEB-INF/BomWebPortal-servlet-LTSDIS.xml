@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+       
+	<bean class="com.bomwebportal.lts.web.disconnect.LtsTerminateOrderController" >
+		<property name="ltsTerminateOrderService" ref="ltsTerminateOrderService"/>
+		<property name="orderStatusService" ref="orderStatusService"/>
+		<property name="csPortalService" ref="csPortalLtsService"/>
+		<property name="ltsCommonService" ref="ltsCommonService"/>
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.disconnect.LtsTerminateCustomerInquiryController">
+		<property name="ltsProfileService" ref="ltsProfileService"/>
+        <property name="ltsOfferService" ref="ltsOfferService"/>
+        <property name="specialHandleDocIdLkupCacheService" ref="specialHandleDocIdLkupCacheService" />
+        <property name="restrictPsefLkupCacheService" ref="restrictPsefLkupCacheService" />
+    	<property name="customerProfileLtsService" ref="customerProfileLtsService" />
+    	<property name="sbOrderInfoLtsService" ref="sbOrderInfoLtsService" />
+    	<property name="bypassSso" value="${sso.development.bypass}"/>
+	 	<property name="validator">
+            <bean class="com.bomwebportal.lts.validator.disconnect.LtsTerminateCustomerInquiryValidator"/>
+        </property>
+    </bean>
+    
+	<bean class="com.bomwebportal.lts.web.disconnect.LtsTerminateServiceSelectionController">
+		<property name="bomCustProfileWsClient" ref="bomWsCreateCustClient" />
+		<property name="ltsRetrieveFsaService" ref="ltsRetrieveFsaService"/>
+		<property name="imsServiceProfileAccessService" ref="imsServiceProfileAccessService" />
+		<property name="serviceProfileLtsService" ref="serviceProfileLtsService"/>
+		<property name="callPlanLtsService" ref="callPlanLtsService" />
+		<property name="ltsAcqAccountProfileService" ref="ltsAcqAccountProfileService" />
+		
+		<property name="relationshipCodeLkupCacheService" ref="relationshipCodeLkupCacheService"/>
+		<property name="titleLkupCacheService" ref="titleLkupCacheService"/>
+		<property name="relationshipBrCodeLkupCacheService" ref="relationshipBrCodeLkupCacheService"/>
+		<property name="eyeDisconnectReasonLkupCacheService" ref="eyeDisconnectReasonLkupCacheService"/>
+		<property name="delDisconnectReasonLkupCacheService" ref="delDisconnectReasonLkupCacheService"/>
+		<property name="waiveDFormReasonLkupCacheService" ref="waiveDFormReasonLkupCacheService"/>
+		<property name="waiveLossPenaltyReasonLkupCacheService" ref="waiveLossPenaltyReasonLkupCacheService"/>
+		<property name="validator">
+			 <bean class="com.bomwebportal.lts.validator.disconnect.LtsTerminateServiceSelectionValidator">
+			 <property name="ltsCommonService" ref="ltsCommonService"/>
+			 </bean>
+		</property>		
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.disconnect.LtsTerminateSalesInfoController" >
+		<property name="commandName" value="ltsTerminateSalesInfoCmd"/>
+		<property name="commandClass" value="com.bomwebportal.lts.dto.form.LtsSalesInfoFormDTO"/>
+		<property name="ltsSalesInfoService" ref="ltsSalesInfoService"/>
+		<property name="validator">
+			<bean class="com.bomwebportal.lts.validator.LtsSalesInfoValidator">
+				<property name="ltsSalesInfoService" ref="ltsSalesInfoService"/>
+				<property name="ltsCommonService" ref="ltsCommonService"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.disconnect.LtsTerminateBillingInfoController" >
+		<property name="commandName" value="ltsterminatebillinginfoCmd"/>
+		<property name="commandClass" value="com.bomwebportal.lts.dto.form.disconnect.LtsTerminateBillingInfoFormDTO"/>
+		<property name="validator">
+			<bean class="com.bomwebportal.lts.validator.disconnect.LtsTerminateBillingInfoValidator">
+			</bean>
+		</property>
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.disconnect.LtsTerminateAppointmentController">
+		<property name="commandName" value="ltsterminateappointmentCmd"/>
+		<property name="commandClass" value="com.bomwebportal.lts.dto.form.disconnect.LtsTerminateAppointmentFormDTO"/>
+		<property name="ltsAddressRolloutService" ref="ltsAddressRolloutService"/>
+		<property name="ltsAppointmentService" ref="ltsAppointmentService"/>
+		<property name="appointmentDwfmService" ref="appointmentDwfmService"/>
+		<property name="ltsTerminateOrderService" ref="ltsTerminateOrderService" />
+		<property name="suspendReasonLkupCacheService" ref="suspendReasonLkupCacheService"/>
+		<property name="imsServiceProfileAccessService" ref="imsServiceProfileAccessService"/>
+		<property name="ltsRetrieveFsaService" ref="ltsRetrieveFsaService"/>
+		<property name="validator">
+			<bean class="com.bomwebportal.lts.validator.disconnect.LtsTerminateAppointmentValidator" >
+				<property name="ltsCommonService" ref="ltsCommonService"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.disconnect.LtsTerminateSupportDocController" >
+		<property name="commandName" value="ltsTerminateSupportDocCmd"/>
+		<property name="commandClass" value="com.bomwebportal.lts.dto.form.disconnect.LtsTerminateSupportDocFormDTO"/>
+		<property name="ltsOrderDocumentService" ref="ltsOrderDocumentService"/>
+		<property name="suspendReasonLkupCacheService" ref="suspendReasonLkupCacheService"/>
+		<property name="validator">
+			<bean class="com.bomwebportal.lts.validator.disconnect.LtsTerminateSupportDocValidator">
+				<property name="ltsCommonService" ref="ltsCommonService"/>
+			</bean>
+		</property>
+	</bean> 
+	
+	<bean class="com.bomwebportal.lts.web.disconnect.LtsTerminateSummaryController" >
+		<property name="commandName" value="serviceSummary" />
+		<property name="commandClass" value="com.bomwebportal.lts.dto.form.disconnect.LtsTerminateSummaryFormDTO"/>
+		<property name="orderStatusService" ref="orderStatusService"/>
+		<property name="orderRetrieveLtsService" ref="orderRetrieveLtsService"/>
+		<property name="ltsOrderDocumentService" ref="ltsOrderDocumentService"/>
+		<property name="suspendReasonLkupCacheService" ref="suspendReasonLkupCacheService"/>
+		<property name="summaryDisconnectService" ref="summaryDisconnectService"/>
+		<property name="serviceProfileLtsDrgService" ref="serviceProfileLtsDrgService"/>
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.disconnect.LtsTerminateAcctSelectionController">
+		<property name="ltsAcqAccountProfileService" ref="ltsAcqAccountProfileService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.disconnect.LtsTerminateServiceAjaxController">
+		<property name="ltsAcqAccountProfileService" ref="ltsAcqAccountProfileService" />
+	</bean>
+	   
+</beans>
+       

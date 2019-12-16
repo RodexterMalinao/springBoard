@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MobileNumPortAppForm" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.6105100000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="285"/>
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<field name="msisdn" class="java.lang.String">
+		<fieldDescription><![CDATA[msisdn]]></fieldDescription>
+	</field>
+	<field name="jasperName" class="java.lang.String"/>
+	<field name="orderId" class="java.lang.String"/>
+	<field name="appInDate" class="java.util.Date"/>
+	<field name="companyLogo" class="java.lang.String"/>
+	<field name="companyBottomLogo" class="java.lang.String"/>
+	<field name="custName" class="java.lang.String"/>
+	<field name="addrLn1" class="java.lang.String"/>
+	<field name="addrLn2" class="java.lang.String"/>
+	<field name="addrLn3" class="java.lang.String"/>
+	<field name="addrLn4" class="java.lang.String"/>
+	<field name="addrLn5" class="java.lang.String"/>
+	<field name="postingInd" class="java.lang.String"/>
+	<field name="printDateNTime" class="java.lang.String"/>
+	<field name="companyBottomLeftLogo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="56" splitType="Stretch">
+			<image>
+				<reportElement x="16" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyLogo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement key="staticText-1" x="383" y="29" width="87" height="14"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[Application No.:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="470" y="29" width="65" height="14"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{orderId}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="100">
+			<printWhenExpression><![CDATA[$F{postingInd}.equals("true")]]></printWhenExpression>
+			<textField isBlankWhenNull="true">
+				<reportElement x="16" y="0" width="217" height="17"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{custName}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement x="16" y="77" width="77" height="14"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{printDateNTime}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="16" y="17" width="217" height="48"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{addrLn1} == null ? "" : ($F{addrLn1}+"<br>"))+
+($F{addrLn2} == null ? "" : ($F{addrLn2}+"<br>"))+
+($F{addrLn3} == null ? "" : ($F{addrLn3}+"<br>"))+
+($F{addrLn4} == null ? "" : ($F{addrLn4}+"<br>"))+
+($F{addrLn5} == null ? "" : ($F{addrLn5}+"<br>"))]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="327">
+			<frame>
+				<reportElement x="0" y="0" width="535" height="169"/>
+				<staticText>
+					<reportElement key="staticText-6" x="93" y="48" width="285" height="16"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="11" isBold="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[Service plan – written confirmation for registered mobile no.   ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="15" width="94" height="17"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Dear Valued Customer,]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="68" width="503" height="37"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Thank you for choosing csl. We are pleased to confirm that your chosen Commitment Period for mobile service renewal or append contract has taken effect as per our telephone conversation. Please find a copy of the Application & Service Guide attached for your records. ]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="369" y="48" width="65" height="16"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="11" isBold="true" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{msisdn}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="16" y="107" width="503" height="28"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[You do not need to sign and return any of these documents. Please call our Customer Service Hotline 25 123 123, if you have any inquiries.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="144" width="105" height="17"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[CSL Mobile Limited]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement x="0" y="169" width="535" height="158"/>
+				<staticText>
+					<reportElement x="16" y="21" width="95" height="17"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[親愛的客戶：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="74" width="503" height="28"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[多謝您選用csl。您所選擇的流動通訊服務續約或附加合約已經如我們早前的電話對話內容所述正式生效。現附上相關的服務申請書及服務指南副本一份作為閣下記錄。]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="347" y="49" width="65" height="16"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="11" isBold="true" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{msisdn}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="16" y="106" width="503" height="19"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[請注意您無須於附上的文件上作任何簽署及回覆。如有查詢，請致電客戶服務熱線25 123 123。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="134" width="105" height="17"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[香港移動通訊有限公司]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-6" x="138" y="49" width="215" height="16"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="11" isBold="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[服務計劃書面確認 – 登記流動電話號碼：   ]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="50" splitType="Prevent">
+			<image hAlign="Right" vAlign="Bottom" isUsingCache="false">
+				<reportElement x="407" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyBottomLogo}]]></imageExpression>
+			</image>
+			<image vAlign="Bottom">
+				<reportElement x="16" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyBottomLeftLogo}]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

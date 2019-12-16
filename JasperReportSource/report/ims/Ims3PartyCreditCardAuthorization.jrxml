@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CreditCardDDAuthorization" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="26"/>
+	<property name="ireport.y" value="752"/>
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<style name="style1" markup="styled"/>
+	<field name="jasperName" class="java.lang.String"/>
+	<field name="appNo" class="java.lang.String">
+		<fieldDescription><![CDATA[appNo]]></fieldDescription>
+	</field>
+	<field name="appDate" class="java.lang.String">
+		<fieldDescription><![CDATA[appDate]]></fieldDescription>
+	</field>
+	<field name="shopCd" class="java.lang.String">
+		<fieldDescription><![CDATA[shopCd]]></fieldDescription>
+	</field>
+	<field name="custLastName" class="java.lang.String">
+		<fieldDescription><![CDATA[custLastName]]></fieldDescription>
+	</field>
+	<field name="custFirstName" class="java.lang.String">
+		<fieldDescription><![CDATA[custFirstName]]></fieldDescription>
+	</field>
+	<field name="idDocType" class="java.lang.String">
+		<fieldDescription><![CDATA[idDocType]]></fieldDescription>
+	</field>
+	<field name="idDocNum" class="java.lang.String">
+		<fieldDescription><![CDATA[idDocNum]]></fieldDescription>
+	</field>
+	<field name="contactPhone" class="java.lang.String">
+		<fieldDescription><![CDATA[contactPhone]]></fieldDescription>
+	</field>
+	<field name="creditCardType" class="java.lang.String">
+		<fieldDescription><![CDATA[creditCardType]]></fieldDescription>
+	</field>
+	<field name="creditCardHolderName" class="java.lang.String">
+		<fieldDescription><![CDATA[creditCardHolderName]]></fieldDescription>
+	</field>
+	<field name="creditCardNum" class="java.lang.String">
+		<fieldDescription><![CDATA[creditCardNum]]></fieldDescription>
+	</field>
+	<field name="creditExpiryDate" class="java.lang.String">
+		<fieldDescription><![CDATA[creditExpiryDate]]></fieldDescription>
+	</field>
+	<field name="custSignature" class="java.io.InputStream"/>
+	<field name="companyLogo" class="java.lang.String"/>
+	<field name="companyName" class="java.lang.String"/>
+	<field name="companyFaxNo" class="java.lang.String">
+		<fieldDescription><![CDATA[companyFaxNo]]></fieldDescription>
+	</field>
+	<field name="thirdPartySignature" class="java.io.InputStream"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="110" splitType="Stretch">
+			<image>
+				<reportElement x="415" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyLogo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement key="staticText-6" x="0" y="50" width="535" height="20" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[網上行寬頻 / Now寬頻電視 / snaap! 跨媒體影像分享服務聲明及信用卡授權書]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-6" x="0" y="70" width="535" height="34" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-Arial" size="11" isBold="true" pdfEncoding="Cp1252"/>
+				</textElement>
+				<text><![CDATA[NETVIGATOR Broadband / Now TV / snaap! - Cross-platform multimedia sharing service<br />Declaration and Credit Card Payment Authorization]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="131" splitType="Stretch">
+			<frame>
+				<reportElement key="frame" x="0" y="0" width="535" height="130" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Double"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-44" x="0" y="0" width="535" height="13"/>
+					<box leftPadding="4"/>
+					<textElement verticalAlignment="Top" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[此表格只供申請網上行寬頻、Now寬頻電視及 / 或 snaap! 服務及負責繳付有關費用的信用卡持卡人人士填寫。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-12" x="16" y="57" width="250" height="13"/>
+					<box leftPadding="3"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Services subscription via sales representative]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-101" x="5" y="47" width="7" height="7"/>
+					<box leftPadding="3">
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-47" x="16" y="43" width="150" height="13"/>
+					<box leftPadding="3"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[直接向營業代表申請]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField" x="16" y="100" width="505" height="25"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Services subscription via hotline, please fax the completed form to Hong Kong Telecommunications (HKT) Limited at _________________ or mail to GPO Box 320 Hong Kong."]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-101" x="5" y="79" width="7" height="7"/>
+					<box leftPadding="3">
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField" x="16" y="75" width="505" height="25"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["透過熱賣專線申請，表格填妥後請傳真至 _______________________ 或郵寄至香港郵政局信箱 320 號，Hong Kong Telecommunications (HKT) Limited 收．"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-40" x="0" y="14" width="535" height="25"/>
+					<box leftPadding="4"/>
+					<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[To be completed by subscriber who has subscribed to NETVIGATOR Broadband, Now TV and/or snaap! Service and cardholder responsible for payment of related fees.]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="240">
+			<frame>
+				<reportElement key="frame" x="0" y="0" width="534" height="240"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-41" x="18" y="10" width="27" height="16"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[聲明]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-57" x="35" y="140" width="70" height="13"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[登記用戶姓名]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-56" x="105" y="140" width="90" height="13"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Applicant's Name:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-8" x="18" y="75" width="508" height="37"/>
+					<textElement verticalAlignment="Top" markup="html">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[I have requested subscription to NETVIGATOR Broadband and/or Value-Added Service(s), snaap!, NETVIGATOR 56K Dial-up Internet Access, now.com.hk Service and Now TV Service and require payment for all related fees to be made by the cardholder specified below. I have read the terms and conditions attached and agree to be bound by them.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-57" x="35" y="160" width="110" height="13"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[香港身份證 / 護照號碼]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-43" x="18" y="58" width="508" height="13" isRemoveLineWhenBlank="true"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[本人年齡已超過十八歲並確認於本聲明及申請所提供的全部資料均屬正確無誤。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-9" x="145" y="160" width="100" height="13"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9" pdfEncoding="Cp1252"/>
+					</textElement>
+					<text><![CDATA[HKID / Passport No.:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-42" x="18" y="30" width="508" height="28"/>
+					<textElement verticalAlignment="Top" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[本人已經申請網上行寬頻及 / 或各增值服務、snaap!、網上行56K撥號上網、now.com.hk 服務及 Now寬頻電視服務並要求下列信用卡持卡人繳付所有有關費用，本人已詳閱隨此聲明附上之條款及細則，並謹此同意受其約束。]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField" x="250" y="140" width="200" height="13"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{custLastName} + " " + $F{custFirstName}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField" x="250" y="160" width="200" height="13"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{idDocNum}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-11" x="18" y="115" width="508" height="13"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[I am over 18 years old and all information provided in the course and on this Declaration is true and correct.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-57" x="35" y="180" width="70" height="13"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[聯絡電話號碼]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-57" x="35" y="200" width="70" height="13"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[登記用戶簽署]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-57" x="35" y="220" width="30" height="13"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[日期]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-9" x="105" y="180" width="95" height="13"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9" pdfEncoding="Cp1252"/>
+					</textElement>
+					<text><![CDATA[Contact Tel. No.:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-9" x="105" y="200" width="110" height="13"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9" pdfEncoding="Cp1252"/>
+					</textElement>
+					<text><![CDATA[Applicant's Signature:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-9" x="65" y="220" width="95" height="13"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9" pdfEncoding="Cp1252"/>
+					</textElement>
+					<text><![CDATA[Date:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField" x="250" y="180" width="200" height="13"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{contactPhone}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField" x="250" y="220" width="200" height="13"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-41" x="45" y="10" width="70" height="16"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="10" isBold="true" pdfEncoding="Cp1252"/>
+					</textElement>
+					<text><![CDATA[Declaration:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-224" positionType="Float" x="250" y="198" width="12" height="15"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+				<line>
+					<reportElement x="250" y="212" width="209" height="1"/>
+				</line>
+				<image scaleImage="FillFrame" isUsingCache="false" onErrorType="Blank">
+					<reportElement x="262" y="193" width="50" height="19"/>
+					<box>
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<imageExpression class="java.io.InputStream"><![CDATA[$F{custSignature}]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+		<band height="252">
+			<frame>
+				<reportElement key="frame" x="0" y="0" width="534" height="248" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-101" x="265" y="105" width="18" height="13">
+						<printWhenExpression><![CDATA["M".equalsIgnoreCase($F{creditCardType})]]></printWhenExpression>
+					</reportElement>
+					<box leftPadding="0">
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[x]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-101" x="465" y="105" width="18" height="13">
+						<printWhenExpression><![CDATA["A".equalsIgnoreCase($F{creditCardType})]]></printWhenExpression>
+					</reportElement>
+					<box leftPadding="0">
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[x]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-44" x="18" y="2" width="72" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[信用卡授權書]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-12" x="90" y="2" width="170" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="10"/>
+					</textElement>
+					<text><![CDATA[Credit Card Authorization Notice:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-14" x="100" y="145" width="90" height="13"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Card Number:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-16" x="100" y="185" width="121" height="13"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Cardholder's Signature:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-18" x="100" y="125" width="100" height="13"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Cardholder's Name:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-49" x="40" y="125" width="60" height="13"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[持有人姓名]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-47" x="40" y="145" width="60" height="13"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[信用卡號碼]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-51" x="40" y="185" width="60" height="13"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[持卡人簽署]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-15" x="90" y="165" width="70" height="13"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Expiry Date:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-48" x="40" y="165" width="50" height="13"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[有效日期]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField" x="250" y="145" width="220" height="13"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{creditCardNum}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField" x="250" y="165" width="220" height="13"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{creditExpiryDate}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField" x="250" y="125" width="220" height="13"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{creditCardHolderName}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-40" x="20" y="105" width="55" height="13"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Visa 信用卡]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-101" x="100" y="105" width="18" height="13">
+						<printWhenExpression><![CDATA["V".equalsIgnoreCase($F{creditCardType})]]></printWhenExpression>
+					</reportElement>
+					<box leftPadding="0">
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[x]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-101" x="105" y="108" width="7" height="7"/>
+					<box leftPadding="3">
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-101" x="270" y="108" width="7" height="7"/>
+					<box leftPadding="3">
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-40" x="140" y="105" width="65" height="13"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[萬事達信用卡]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-101" x="470" y="108" width="7" height="7"/>
+					<box leftPadding="3">
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-40" x="380" y="105" width="85" height="13"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[American Express]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-50" x="18" y="20" width="508" height="37"/>
+					<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[本人授權 Hong Kong Telecommunications (HKT) Limited 按月就以上申請人使用網上行寬頻及 / 或各增值服務、snaap!、網上行56K撥號上網、now.com.hk 服務及 Now寬頻電視服務收取*全部有關的費用，本人欲以下列信用卡 (有效期至少達3個月) 支付上述費用：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-15" x="18" y="57" width="508" height="45"/>
+					<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[I acknowledge that Hong Kong Telecommunications (HKT) Limited will charge* me on a monthly basis for all fees relating to the above applicant's use of NETVIGATOR Broadband and/or Value-Added Service(s), snaap!, NETVIGATOR 56K Dial-up Internet Access, now.com.hk Service and Now TV Service. I agree to pay these charges by credit card (which must be more than 3 months before expiry date) below:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-40" x="75" y="105" width="25" height="13"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Visa]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-40" x="205" y="105" width="60" height="13"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[MasterCard]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-40" x="305" y="105" width="75" height="13"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[美國運通信用卡]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-51" x="18" y="205" width="508" height="13"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[* 有關費用於安裝後即時生效，而此聲明及信用卡授權書只作確認之用．]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-16" x="18" y="220" width="508" height="25"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Service billing will commence immediately upon installation. This Declaration and Credit Card Payment Authorization is for confirmation purpose only.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-224" positionType="Float" x="250" y="183" width="12" height="15"/>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+				<line>
+					<reportElement x="250" y="197" width="209" height="1"/>
+				</line>
+				<image scaleImage="FillFrame" isUsingCache="false" onErrorType="Blank">
+					<reportElement x="262" y="179" width="50" height="19"/>
+					<box>
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<imageExpression class="java.io.InputStream"><![CDATA[$F{thirdPartySignature}]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+		<band height="50">
+			<frame>
+				<reportElement key="frame" x="0" y="0" width="534" height="50"/>
+				<box>
+					<pen lineStyle="Dotted"/>
+					<topPen lineWidth="0.5" lineStyle="Dotted"/>
+					<leftPen lineWidth="0.5" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.5" lineStyle="Dotted"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-17" x="20" y="5" width="70" height="12"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[To Customer : ]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField" x="90" y="5" width="130" height="12"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="8"/>
+					</textElement>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-17" x="220" y="5" width="45" height="12"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[ / Fax no.]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField" x="265" y="5" width="100" height="12"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="8"/>
+					</textElement>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-17" x="20" y="19" width="80" height="12"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[From : Salesman ]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField" x="100" y="19" width="120" height="12"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="8"/>
+					</textElement>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-17" x="220" y="19" width="55" height="12"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Contact no.]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField" x="275" y="19" width="100" height="12"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="8"/>
+					</textElement>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-17" x="375" y="19" width="45" height="12"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[ / Fax no.]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField" x="420" y="19" width="100" height="12"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="8"/>
+					</textElement>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-17" x="20" y="33" width="70" height="12"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Reference No :]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField" x="90" y="33" width="150" height="12"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-Arial" size="8"/>
+					</textElement>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="10" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="10"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="6"/>
+				</textElement>
+				<text><![CDATA[V201607180700]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

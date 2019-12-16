@@ -1,0 +1,43 @@
+<jsp:root xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:form="http://www.springframework.org/tags/form"
+	xmlns:sb-util="urn:jsptagdir:/WEB-INF/tags/util/"
+	version="2.0">
+  <jsp:output omit-xml-declaration="yes" />
+  <jsp:directive.tag import="java.util.*"/>
+  <jsp:directive.tag import="org.springframework.web.context.*"/>
+  <jsp:directive.tag import="org.springframework.web.context.support.*"/>
+
+  <jsp:directive.attribute name="name" type="java.lang.String" required="true" rtexprvalue="true" description="Bean Name" />
+  <jsp:directive.attribute name="var" type="java.lang.String" required="false" rtexprvalue="false" description="variable" />
+  <jsp:directive.attribute name="useEnv" type="java.lang.Boolean" required="false" rtexprvalue="true" description="variable" />
+
+  <sb-util:bean var="bean" name="propertyConfigurer"/>
+  <c:set var="mergedProperties" value="${bean.mergedProperties }"/>
+  <c:set var="environment" value="${mergedProperties['environment'] }"/>
+  <c:set var="key" value="${name }"/>
+  <c:if test="${empty useEnv or useEnv ne false}">
+  	<c:set var="key" value="${environment}.${name}"/>
+  </c:if>
+  
+  <c:set var="value" value="${mergedProperties[key] }"/>
+  <c:choose>
+	  <c:when test="${not empty var }">
+		  <jsp:scriptlet>
+		    <![CDATA[
+		 			synchronized(jspContext) {
+			             String var = (String)jspContext.getAttribute("var");
+			             Object value = jspContext.getAttribute("value");
+			             jspContext.setAttribute(var, value, PageContext.REQUEST_SCOPE);
+					}
+		    ]]>
+		  </jsp:scriptlet>
+	  </c:when>
+	  <c:otherwise>
+	  	<jsp:text>${value }</jsp:text>
+	  </c:otherwise>
+  </c:choose>
+</jsp:root>

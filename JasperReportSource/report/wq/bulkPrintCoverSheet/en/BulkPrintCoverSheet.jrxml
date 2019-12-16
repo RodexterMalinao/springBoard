@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.7715610000000017"/>
+	<property name="ireport.x" value="755"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<field name="printOutDate" class="java.lang.String"/>
+	<field name="totalCase" class="java.lang.String"/>
+	<field name="detailsList" class="java.util.ArrayList"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="17" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="153" height="13"/>
+				<textElement>
+					<font fontName="PCCW-Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bulk Print Summary Sheet]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[Print Out Date:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{printOutDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="20" width="100" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[Total Case:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="100" y="20" width="454" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{totalCase}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<subreport>
+				<reportElement x="0" y="17" width="650" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{detailsList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["wq/bulkPrintCoverSheet/en/BulkPrintCoverSheet_subreportDetails.jasper"]]></subreportExpression>
+			</subreport>
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="442" y="0" width="83" height="37" isPrintWhenDetailOverflows="true"/>
+			</rectangle>
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="30" y="0" width="90" height="37" isPrintWhenDetailOverflows="true"/>
+			</rectangle>
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="210" y="0" width="64" height="37" isPrintWhenDetailOverflows="true"/>
+			</rectangle>
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="274" y="0" width="113" height="37" isPrintWhenDetailOverflows="true"/>
+			</rectangle>
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="387" y="0" width="55" height="37" isPrintWhenDetailOverflows="true"/>
+			</rectangle>
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="525" y="0" width="60" height="37" isPrintWhenDetailOverflows="true"/>
+			</rectangle>
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="585" y="0" width="65" height="37" isPrintWhenDetailOverflows="true"/>
+			</rectangle>
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="30" height="37" isPrintWhenDetailOverflows="true"/>
+			</rectangle>
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="120" y="0" width="90" height="37" isPrintWhenDetailOverflows="true"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="2" width="21" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="122" y="2" width="86" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[WQ Serial]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="2" width="61" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[WQ Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="276" y="2" width="30" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[WQ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="389" y="2" width="51" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[Shop Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="2" width="60" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[Total Page]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="527" y="2" width="46" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[Assignee]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="588" y="2" width="62" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[Print Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="2" width="86" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[Service Num]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="resources"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/commons-beanutils-1.7.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/cnmService.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/commons-collections-3.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/commons-digester-1.8.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/commons-discovery-0.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/ezmorph-1.0.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/flexjson-2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/hw-webservice-client.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/jaxp.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/jaxrpc.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/json-lib-2.2.2-jdk15.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/json-lib-ext-spring-1.0.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/jstl.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/log4j-1.2.15.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/lucene-core-3.0.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/mail-1.4.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/poi-3.0.2-FINAL-20080204.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/posbom-bulk-new-act-ws-client.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/saaj.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-aop.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-beans.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-context.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-context-support.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-core.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-jdbc.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-jms.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-orm.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-test.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-tx.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-web.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-webmvc.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-webmvc-portlet.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-webmvc-struts.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/standard.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/webserviceclient.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/wsdl4j-1.5.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/wsse.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/SpringboardCommon.jar" sourcepath="/SpringboardCommon/src"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/SpringboardLogin.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/SpringboardService.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/groovy-all-1.7.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/axis.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v6.0"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/dozer-5.3.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/pccwUtilities.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spImsClient.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/activation-1.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/axiom-api-1.2.9.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/axiom-dom-1.2.9.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/axiom-impl-1.2.9.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-fileupload-1.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/httpcore-4.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/neethi-2.0.4.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/woden-api-1.0M8.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/woden-impl-dom-1.0M8.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/wss4j-1.5.8.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/xml-resolver-1.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/xmlbeans-2.3.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/XmlSchema-1.4.3.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/xmlsec-1.4.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/WorkQueue.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/SpringboardInterface.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/springboard_printout.jar" sourcepath="/JasperReportSource/src"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/SpringboardLtsBackend.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/SpringboardActivity.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/SpringboardImsCommon.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/SpringboardProfile.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/SpringboardWsClient.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLtsBackend/output/SpringboardLtsBackend.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

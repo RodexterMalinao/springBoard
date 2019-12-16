@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+           
+
+	
+	
+	<!-- SBS -->
+	
+	<bean id="sbsOrderDAO" class="com.bomwebportal.sbs.dao.SbsOrderDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="sbsOrderService" class="com.bomwebportal.sbs.service.SbsOrderService"/>
+	<bean id="sbsDeliveryTimeSlotDAO" class="com.bomwebportal.sbs.dao.SbsDeliveryTimeSlotDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="sbsDeliveryService" class="com.bomwebportal.sbs.service.SbsDeliveryService"/>
+
+	<bean id="onlineApiTxnDAO" class="com.bomwebportal.sbs.dao.OnlineApiTxnDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="virtualPrepaidService" class="com.bomwebportal.sbs.service.VirtualPrepaidService">
+	    <property name="failureEmailFrom" value="${virtualprepaid.failureEmail.from}"/>
+	    <property name="failureEmailTo" value="${virtualprepaid.failureEmail.to}"/>
+	    <property name="failureEmailSubject" value="${virtualprepaid.failureEmail.subject}"/>
+	    <property name="url" value="${virtualprepaid.url}"/>
+	</bean>
+	<!-- <bean class="com.bomwebportal.sbs.aspect.NotifyVkkEmailChangedAspect"/> -->
+	
+</beans>

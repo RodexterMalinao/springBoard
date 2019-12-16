@@ -1,0 +1,124 @@
+#middle_content table{
+	padding-left:35px;
+	padding-right:35px;
+/* 	margin-top:-6px; */
+}
+
+#middle_content hr{
+	padding-left:35px;
+	padding-right:35px;
+	margin:20px;
+}
+
+#middle_content h3{
+	padding-left:35px;
+	padding-right:35px;
+}
+
+#middle_content p{
+	padding-left:35px;
+	padding-right:35px;
+}
+
+#ChForm>span{
+	padding-left:35px;
+	padding-right:35px;
+}
+
+
+#middle_content strong{
+	padding-left:35px;
+	padding-right:35px;
+	margin-top:-6px;
+	color:GREY;
+	
+}
+
+#middle_content {
+
+	color:#707070;
+/*	font-weight: 600;*/
+}
+
+
+#middle_content .topic{
+ 	padding-left:35px;
+	padding-right:10px;
+/* 	margin-top:-6px; */
+	color:#707070;
+	font-weight:bold; 
+/*	font-weight: 600;*/
+}
+
+#editBtn1, #editBtn2{
+	padding-left: 35px;
+	
+}
+
+
+
+
+
+.deep {
+	
+	color: #363636;
+	font-weight: bold;
+}
+
+.light {
+	
+	color: #4E4E4E;
+}
+
+#ChForm {
+	
+	color: #4E4E4E;
+}
+
+#middle_content{
+	
+	color: #4E4E4E;
+}
+
+
+
+/* #dobY{ */
+/* 	margin:2px; */
+/* 	height:22px; */
+/* 	width:100px; */
+/* 	border-style:inset; */
+/* } */
+
+/* #dobM{ */
+/* 	margin:2px; */
+/* 	height:22px; */
+/* 	width:100px; */
+/* 	border-style:inset; */
+/* } */
+/* #dobD{ */
+/* 	margin:2px; */
+/* 	height:22px; */
+/* 	width:100px; */
+/* 	border-style:inset; */
+		
+/* } */
+
+#dobY, #dobM, #dobD, #custLastName, #docType, #custFirstName, #docNum, #mobileNum, #ContactEmailAddress, #loginName, #timeSlot, #instdate, #Birth{
+	width:200px;
+	border-style:inset;
+}
+
+#dobY, #dobM, #dobD, #docType{
+	margin:2px;
+	height:22px;
+	width:60px;
+}
+
+#timeSlot {
+	margin:2px;
+	height:22px;
+	width:200px;
+}
+
+
+	

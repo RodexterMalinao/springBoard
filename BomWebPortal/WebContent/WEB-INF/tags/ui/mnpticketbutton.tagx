@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jsp:root xmlns:c="http://java.sun.com/jsp/jstl/core"
+  xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+  xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+  xmlns:jsp="http://java.sun.com/JSP/Page"
+  xmlns:spring="http://www.springframework.org/tags"
+  xmlns:form="http://www.springframework.org/tags/form"
+  version="2.0">
+  <jsp:output omit-xml-declaration="yes" />
+  <jsp:directive.tag import="java.util.*"/>
+  <jsp:directive.attribute name="id" type="java.lang.String" required="false" rtexprvalue="true" description="button ID"/>
+  <jsp:directive.attribute name="textfield" type="java.lang.String" required="true" rtexprvalue="true" description="text field selector"/>
+  <jsp:directive.attribute name="dn" type="java.lang.String" required="true" rtexprvalue="true" description="dn selector"/>
+  <jsp:directive.attribute name="cutover" type="java.lang.String" required="true" rtexprvalue="true" description="cutover selector"/>
+  <jsp:directive.attribute name="session" type="java.lang.String" required="true" rtexprvalue="true" description="session selector"/>
+  <jsp:directive.attribute name="cssClass" type="java.lang.String" required="false" rtexprvalue="true" description="cssClass" />
+  <jsp:directive.attribute name="cssStyle" type="java.lang.String" required="false" rtexprvalue="true" description="cssStyle" />
+  
+  <c:set var="_count_" value="${_count_ +1 }" scope="request"/>
+  <c:set var="_defaultId" value="btn_mnp_ticket_${_count_}"/>
+  <c:set var="id" value="${(empty id) ? _defaultId : id }"/>
+  
+<button id="${id }" class="${cssClass }" style="${cssStyle}">
+<jsp:doBody/>
+</button>
+ <div id="_mnp-dialog-form-${id}" title="Get MNP Ticket" style="display: none">
+  <table>
+    <tr>
+      <td>CTS Account :</td>
+      <td><input type="text" id="ctsAccount"/></td>
+    </tr>
+    <tr>
+      <td>CTS Password :</td>
+      <td><input type="password" id="ctsPassword"/></td>
+    </tr>
+  </table>
+</div>  
+<jsp:text>
+<![CDATA[
+
+
+<script>
+$(function() {
+	$("#${id}").click(getmnpticket);
+	
+	function getmnpticket(event) {
+	 
+	  event.preventDefault();
+	  
+    var dn = $("${dn}").val();
+    var cutover = $("${cutover}").val();
+    var session = $("${session}").val();
+    
+    if (dn == "" || cutover == "" || session == "") {
+      alert("Please input mnp number, cutover date and cutover time");
+      return;
+    }
+    
+	  $("#_mnp-dialog-form-${id}").dialog({
+      modal: true,
+      width: 350,
+      buttons: {
+        "Submit" : function () {
+          var ac = $("#ctsAccount", this).val();
+          var pin = $("#ctsPassword", this).val();
+          if (ac == "" || pin == "") {
+            alert("Please input both CTS account and password");
+            return;
+          }
+          $(this).dialog("close");
+          var ok = confirm("Are you sure to get mnp ticket for \nnumber : " + dn + ", \ncut over date: " + cutover + ", \nsession: " + (session==0?'AM' : 'PM'));
+          if (ok)
+            _getmnpticket(ac, pin, dn, cutover, session);
+
+        },
+        "Cancel" : function() {
+          $(this).dialog("close");
+        }
+      },
+      open: function (e, ui) {
+        $("#ctsAccount", this).val('');
+        $("#ctsPassword", this).val('');
+      }
+    }).show();
+	  
+
+	}
+	
+	function _getmnpticket(ac, pin, dn, cutover, session) {
+	    //console.log('ac='+ac+',pin='+pin+'date='+cutover+',dn='+dn+',session='+session);
+	    showLoading();
+	    $.ajax({
+	      url: "mnp/ticket.html",
+	      type: "POST",
+	      dataType : 'JSON',
+	      data: {
+	        ac: ac,
+	        pin: pin,
+	        dn: dn,
+	        date: cutover,
+	        session: session
+	      }
+	    }).done(function(data) {
+          hideLoading();
+          var obj = data;//$.parseJSON(data);
+          if ( data !== Object(data)) {
+            obj = $.parseJSON(data);
+          } 
+          var ticket =  obj.ticket;
+          if (ticket) {
+            //console.log(ticket);
+            $("${textfield}").val(ticket);
+          } else {
+            
+            var err = obj.error || "Unknown error";
+            //console.log("err = " + err);
+            alert(err);
+          }
+      }).fail(function(jqXHR, textStatus, errorThrown) {
+          hideLoading();
+          alert(errorThrown);
+          
+      });
+
+	}
+	
+	
+});
+
+</script>
+]]>
+</jsp:text>
+
+</jsp:root>

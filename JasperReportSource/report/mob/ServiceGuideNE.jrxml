@@ -1,0 +1,1746 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ServiceGuide" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="2879"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<subDataset name="dataset1"/>
+	<subDataset name="dataset2"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\Springboard\\SB_workspace\\sb_R2SVN\\mob_now\\"]]></defaultValueExpression>
+	</parameter>
+	<field name="companyLogo" class="java.lang.String"/>
+	<field name="agreementNum" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="67" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement key="staticText-1" x="15" y="50" width="306" height="15" backcolor="#FFFFFF"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NETVIGATOR Everywhere Service Guide"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="335" y="31" width="200" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>Application No.</b> " + $F{agreementNum}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="15" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyLogo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[About this Service Guide]]></text>
+			</staticText>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["This NETVIGATOR Everywhere Service Guide provides further information relating to NETVIGATOR Everywhere Service, the Service Plans, optional value-added services, optional premiums and Deposits in the NETVIGATOR Everywhere Application."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Please read this Service Guide carefully as it contains important information that applies to the NETVIGATOR Everywhere Service and the optional value-added services and optional premiums that you may select under your NETVIGATOR Everywhere Application."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<line>
+				<reportElement positionType="Float" x="15" y="5" width="520" height="1"/>
+			</line>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PART I.     Important Information]]></text>
+			</staticText>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Service Providers]]></text>
+			</staticText>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NETVIGATOR Everywhere Service offers PCCW Wi-Fi Service and PCCW mobile 4G-LTE/HSPA/3G mobile data Service under a single tariff. PCCW Wi-Fi Service is provided by <b>Hong Kong Telecommunications (HKT) Limited</b> (\"HKT\") and PCCW mobile Service is provided by <b>PCCW Mobile HK Limited</b>. PCCW Mobile HK Limited will issue statements for the fees and charges for the NETVIGATOR Everywhere Service."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>HKT</b> provides all telecommunications Services (other than PCCW mobile Service) upon the terms of your Application, this Service Guide, the General Conditions of Telecommunications Service (Consumer Customers) (available at www.pccw.com/Terms+of+Use) (the \"General Conditions\") and the applicable special conditions (if any). The Special Conditions of PCCW Wi-Fi Service for Consumer Customers are available at http://cs.netvigator.com/tnc_e.html. HKT provides certain non-telecommunication Services upon the terms of your Application, this Service Guide, and HKT's General Conditions of Service (available at http://cs.netvigator.com/tnc_e.html) and the applicable special conditions (if any). HKT also provides uHub Service (a non-telecommunication service) upon the terms of your Application, this Service Guide, the General Conditions of uHub and the Special Conditions of uHub (both available at www.uhub.com). HKT also provides PCCW eBill Service upon the PCCW eBill Service Terms and Conditions of Use, available at ebill.pccw.com."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>PCCW Mobile HK Limited</b> provides PCCW mobile Services upon the terms and conditions of your NETVIGATOR Everywhere Application, this Service Guide, the General Conditions and the Special Conditions of PCCW mobile Service for Consumer Customers, available at http://www.pccwmobile.com/specialcondition_e."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Things You Need to Know]]></text>
+			</staticText>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>NETVIGATOR Everywhere APPLICATION</u>:</b> When processing your NETVIGATOR Everywhere Application and your Application contains any missing or incorrectly entered charges that are payable by you, your selected options in a Service Plan in your NETVIGATOR Everywhere Application is not offered by us as specified in this Service Guide or there are any other discrepancies, then our customer service will contact you as soon as practicable to rectify such discrepancies and we will resume processing your Application when all discrepancies have been rectified."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>CAN I TERMINATE A SERVICE?</u>:</b> You can terminate the NETVIGATOR Everywhere Service by giving us 30 days' prior notice by calling our hotline on 1000 or submitting a completed termination request form. However, if you terminate your NETVIGATOR Everywhere Service, all other optional services and premiums under your NETVIGATOR Everywhere Application are non-severable services and will also be terminated at the same time. You are required to pay us the Early Termination Charge and other Cancellation Charges specified for the Service, optional services and optional premiums (as applicable) if you terminate these services during the Commitment Period. When you terminate any NETVIGATOR Everywhere Service and/or optional services that have a Commitment Period, any pre-paid charges for the next billing cycle will not be refunded on a pro-rata basis upon termination and for the purposes of early termination of the relevant Commitment Period, the Early Termination Charge may include any pre-paid service charges for the billing month commencing in the last month of the relevant Commitment Period for the terminated NETVIGATOR Everywhere service and/or optional services. When you terminate any NETVIGATOR Everywhere Service and/or any optional services that do not have a Commitment Period and are provided by us on a monthly basis, any pre-paid charges for the next billing cycle will not be refunded on a pro-rata basis upon termination. Please refer to Clause 13.3 of the General Conditions for details."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>WHAT HAPPENS WHEN THE COMMITMENT PERIOD OF A SERVICE ENDS?</u>:</b> At the end of the Commitment Period of the Service, if (a) we are unable to contact you; (b) you do not contact us; or (c) you are undecided as to whether to renew your existing Contract, we will continue to provide the Service and any optional value-added services to you under the existing Contract on a month to month basis subject to payment of the Charges after Commitment Period (i.e. the Monthly Rate within Commitment Period) specified in the existing Contract until you cancel the Service by giving us at least 30 days' advance written notice by calling our hotline on 1000 or submitting a completed service termination form at our shops. You may refer to Clauses 23.6 and 23.7 of the General Conditions for details."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>CAN I EXTEND THE COMMITMENT PERIOD?</u>:</b> You can extend the Commitment Period of the Service by agreeing to an additional Commitment Period. You can also agree to replace the Contract with another new Contract upon expiry of the Commitment Period of the Service or optional services."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>WHICH CONTRACT TERMS OF A SERVICE CAN BE CHANGED?</u>:</b> We can change all terms and conditions of the Service or optional service by publishing the changes online at the websites listed in Part III of this Service Guide. If we believe that the change causes you material disadvantage or result in your charges for the Services or optional services (other than IDD or roaming services), we shall give you at least 30 days' prior notice. You have the right to terminate your Contract in certain circumstances without incurring any charges in respect of that termination (other than incidental costs) when we increase Charges and change terms and conditions of the Service or optional services within 15 days upon our advice to you of the change by giving us prior notice. Please refer Clause 22.4 of the General Conditions for details."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>CANCELLATION</u>:</b> If for any reason you cancel your NETVIGATOR Everywhere Application before we commence providing the Service or you do not provide us with all necessary documentation by such time as we may require so that we can provide NETVIGATOR Everywhere Service to you by the Target Commencement Date, you will have to pay us the Pre-Activation Cancellation Charge."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>QoS MEASURES</u>:</b> In order to meet our commitment to ensure quality of service, we may take traffic control measures to optimize the performance of our mobile network. Our traffic control measures may be triggered when there is actual or anticipated congestion in our mobile network and typically involve prioritizing certain types of traffic over others (for example we may prioritize e-mail or web browsing traffic over peer-to-peer traffic)."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>REBATES</u>:</b> We may give different types of rebates to Customers under different Service Plans, offers and promotions. We will indicate in your NETVIGATOR Everywhere Application any rebate(s) which is/are applicable to you, the rebate amount and rebate schedule. Unless otherwise specified, all rebates will be credited to your account in consecutive months starting from the 1<sup>st</sup> month. All outstanding rebates will be forfeited if for any reason NETVIGATOR Everywhere Service or optional service is suspended or terminated."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>PROMOTIONS TO PCCW CUSTOMERS</u>:</b> Promotions may be offered to existing PCCW customers (i.e. customers of NETVIGATOR, now TV, fixed line and PCCW mobile Service) with good payment standing. If at any time during your subscription to NETVIGATOR Everywhere Service you terminate these other PCCW service(s) or cease to have a good payment standing, all promotions including Rebates (if applicable) will be terminated automatically."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>PREPAYMENT</u>:</b> In some cases, we may require you to make a prepayment. If you are required to make a prepayment, we will specify this in your NETVIGATOR Everywhere Application or this Service Guide. Prepayment will be refunded to you as Rebates as specified in your NETVIGATOR Everywhere Application. Prepayment will not be refunded to you if you terminate the NETVIGATOR Everywhere Service, optional services or optional premiums before the Commitment Period ends."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>OVERSEAS USAGE</u>:</b> Unless otherwise specified, all NETVIGATOR Everywhere Service and optional services are intended for use in Hong Kong only. If you use NETVIGATOR Everywhere Service or any optional services outside Hong Kong, roaming charges may apply."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>CHARGES</u>:</b> Unless otherwise specified in your NETVIGATOR Everywhere Application, you will be charged (i) the Monthly Rate within Commitment Period for the services listed in Section D Sub-Section I of your Application during the Commitment Period and afterward; (ii) the Monthly Rate after Commitment Period for the services listed in Section D Sub-Section II of your Application; unless you have committed to a Commitment Period for those services, in which case you will be charged the Monthly Rate within Commitment Period during the Commitment Period and the Monthly Rate after Commitment Period thereafter; (iii) any usage based charges (if applicable); and (iv) any other miscellaneous charges listed in your NETVIGATOR Everywhere Application and/or this Service Guide when applicable."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>SYSTEM REQUIREMENTS</u>:</b> NETVIGATOR Everywhere supports Windows XP / Vista / Windows 7 & Mac OS 10.5.X / 10.6.X. For detailed computer system requirements please visit www.netvigatoreverywhere.com."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>NETWORK SPECIFICATIONS</u>:</b> Reference to a speed in conjunction with a service plan is a reference to the network specifications of the modem supplied in conjunction with that service plan. The actual speed enjoyed by a customer will be significantly less than the network specifications and will be affected by the user's device; transmission technology, individual network and software used; network configuration and coverage, and extraneous factors."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="45" y="2" width="490" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NETVIGATOR 4G Plan subscribers will have access to PCCW 4G-LTE mobile data service which complies with a network specification of downstream speed of 100Mbps and upstream speed of 35Mbps in those areas where we have appropriate coverage. In areas where we cannot provide 4G-LTE service, subscribers will be provided with PCCW HSPA/3G mobile data service which complies with a network specification of downstream speed of 42Mbps and upstream speed of 5.76Mbps (the modem itself complies with a network specification of downstream speed of 100Mbps and upstream speed of 50Mbps).Our 4G-LTE network meets the standard of LTE laid down in 3GPP Release 8."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="30" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</ellipse>
+		</band>
+		<band height="12" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="45" y="2" width="490" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NETVIGATOR 42 Plan subscribers will have access to PCCW mobile HSPA/3G mobile data service which complies with a network specification of a HSDPA downstream speed of 42Mbps and a HSUPA upstream speed of 5.76Mbps (the modem itself complies with a network specification of 42Mbps)."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="30" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</ellipse>
+		</band>
+		<band height="12" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="45" y="2" width="490" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NETVIGATOR 21 Plan subscribers will have access to PCCW mobile HSPA/3G mobile data service which complies with a network specification of a HSDPA downstream speed of 21Mbps and a HSUPA upstream speed of 5.76Mbps (the modem itself complies with a network specification of 21Mbps)."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="30" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</ellipse>
+		</band>
+		<band height="12" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="45" y="2" width="490" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NETVIGATOR 7 Plan subscribers will have access to a PCCW mobile HSPA/3G mobile data service which complies with a network specification of a HSDPA downstream speed of 7.2Mbps and a HSUPA upstream speed of 5.76Mbps (the modem itself complies with a network specification of 7Mbps)."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="30" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</ellipse>
+		</band>
+		<band height="12" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="45" y="2" width="490" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NETVIGATOR 3 Plan subscribers will have access to a PCCW mobile HSPA/3G mobile data service which complies with a network specification of a HSDPA downstream speed of 3.6Mbps and a HSUPA upstream speed of 2Mbps (the modem itself complies with a network specification of 7Mbps)."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="30" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</ellipse>
+		</band>
+		<band height="12" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="45" y="2" width="490" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Pocket Wi-Fi 4G Plan subscribers will have access to PCCW 4G-LTE mobile data service which complies with a network specification of downstream speed of 100Mbps and upstream speed of 35Mbps in those areas where we have appropriate coverage. In areas where we cannot provide 4G-LTE service, subscribers will be provided with PCCW HSPA/3G mobile data service which complies with a network specification of downstream speed of 42Mbps and upstream speed of 5.76Mbps (the modem itself complies with a network specification of downstream speed of 100Mbps and upstream speed of 50Mbps).Our 4G-LTE network meets the standard of LTE laid down in 3GPP Release 8."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="30" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</ellipse>
+		</band>
+		<band height="12" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="45" y="2" width="490" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Pocket Wi-Fi 21 Plan subscribers will have access to a PCCW mobile HSPA/3G mobile data service which complies with a network specification of a HSDPA downstream speed of 21Mbps and a HSUPA upstream speed of 5.76Mbps (the modem itself complies with a network specification of 21Mbps)."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="30" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</ellipse>
+		</band>
+		<band height="12" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="45" y="2" width="490" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Pocket Wi-Fi 7 Plan subscribers will have access to a PCCW mobile HSPA/3G mobile data service which complies with a network specification of a HSDPA downstream speed of 7.2Mbps and a HSUPA upstream speed of 5.76Mbps (the modem itself complies with a network specification of 21Mbps)."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="30" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</ellipse>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>ROAMING SERVICES</u>:</b> The Service does not include Hong Kong mobile data usage except as specified in \"Section D Sub-Section I : Service Plan\" and any other optional value-added service (such as local or roaming SMS), which will be charged separately according to the PCCW mobile's prevailing rates and only applies to the data roaming usage by NETVIGATOR Everywhere modem."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>CONNECTION MANAGER</u>:</b> As the \"Connection Manager\" feature of NETVIGATOR Everywhere Service detects and selects the best possible connectivity, auto-switching between the Wi-Fi and the HSPA/3G mobile service can occur. If you wish to use the Internet via the PCCW Wi-Fi Service only, you may use the Wi-Fi function in the computer to connect via the PCCW Wi-Fi Portal or set the \"Connection Manager\" feature to \"Override Connection\" so that HSPA/3G will not be activated or connected."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>DEPOSITS</u>:</b> You shall be responsible for all charges under this contract. Deposits paid by you will be jointly held by all our service providers who provide services to you. Deposits paid in relation to a service provided by one service provider may be used to pay outstanding charges in relation to another service provided by the same or another service provider or used to settle the outstanding amount of any payment at PCCW mobile and/or HKT. Any remaining deposits will be refunded to you when all charges are paid at the end of this contract or at the end of your subscription to relevant service. Please refer to Clause 13.5 of the General Conditions for details."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<line>
+				<reportElement positionType="Float" x="15" y="5" width="520" height="1"/>
+			</line>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PART II.     NETVIGATOR Everywhere Application]]></text>
+			</staticText>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECTION A     CUSTOMER DETAILS]]></text>
+			</staticText>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["A new mobile number will be assigned to each customer for the use of the NETVIGATOR Everywhere Service."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>Email Address</u>:</b> This is the email address for receiving your monthly bill statements and reminders of the remaining mobile data entitlement."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>Registered Address</u>:</b> This is the registered address for your NETVIGATOR Everywhere Application. We do not accept PO Box address as registered address. You must provide us address proof for this address for the last 3 months."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>Correspondence Address</u>:</b> This is the correspondence address to be used by us for all kinds of customer correspondence including billing. If you do not provide a correspondence address, all correspondences will be sent to your registered address."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>Existing registered PCCW customer</u>:</b> Please provide your account information for us to check the account status."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECTION B     CONTRACT TERM]]></text>
+			</staticText>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>Commitment Period</u>:</b> This is the Commitment Period which you agree to subscribe to NETVIGATOR Everywhere Service and any optional value-added services (which may be different from the NETVIGATOR Everywhere Service) under your NETVIGATOR Everywhere Application. The Commitment Period commences on the Target Commencement Date."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>Target Commencement Date</u>:</b> This is the target date on which services applied for under your NETVIGATOR Everywhere Application will commence. You must timely submit necessary information and documentation in order for all of the services you applied for to commence on or before this target date. We will inform you if the Target Commencement Date changes. If your payment is paid by cheque, service will be activated on the Target Commencement Date after clearance of the cheque."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECTION C     SERVICE NUMBER AND MODEM TYPE]]></text>
+			</staticText>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>PCCW Mobile No.</u>:</b> This is the mobile number selected by you for PCCW mobile Service under your NETVIGATOR Everywhere Application. You may login to the Service website to view Customer's account and to purchase your mobile data top-up pack once your service entitlement in a billing month have been exhausted by using your PCCW mobile number as login ID."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>SIM Number</u>:</b> This is the number specified on the back side of the SIM Card provided to you."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECTION D     SERVICES]]></text>
+			</staticText>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUBSECTION I: SERVICE PLAN]]></text>
+			</staticText>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>Monthly Rate within Commitment Period</u>:</b> Monthly Rate within Commitment Period include unlimited local usage of the PCCW Wi-Fi Service and the specified amount of local usage of PCCW mobile's 4G-LTE/HSPA/3G mobile data Service by using the NETVIGATOR Everywhere Connection Manager supplied by us, and the USB Modem / Wireless Modem and SIM card as described in your NETVIGATOR Everywhere Application."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Service Entitlements]]></text>
+			</staticText>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Service entitlements to NETVIGATOR Everywhere Services under different Service Plans vary. Please refer to your NETVIGATOR Everywhere Application for your monthly entitlements to NETVIGATOR Everywhere Service and any optional services under the Service Plan. You will have to pay thereafter charges if your usage exceeds your monthly entitlements. Please see below for brief descriptions of NETVIGATOR Everywhere core Service."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mobile Data]]></text>
+			</staticText>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Downloading and/or uploading of local data with \"PCCW\" set as the Access Point Name (APN)."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Usage is rounded up to the next KB unless otherwise specified."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Local mobile data service will be suspended after the mobile data service entitlements for a billing month are consumed. You are required to pay for additional mobile data service entitlement in order to resume the mobile data service."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Thereafter Charges: These rates apply if your usage exceeds your monthly entitlements under any Service Plan, Upgrades or Packages."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Modem Plans Included in the Service]]></text>
+			</staticText>
+		</band>
+		<band height="90" splitType="Prevent">
+			<textField>
+				<reportElement x="15" y="0" width="260" height="15"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Description / Entitlements:"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="15" y="15" width="260" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["NETVIGATOR 4G Plan includes a USB Modem (as identified on your Application) and complies with the network specification as mentioned above."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="51" width="260" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["NETVIGATOR 7 Plan includes a USB Modem (as identified on your Application) and complies with the network specification as mentioned above."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="63" width="260" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["NETVIGATOR 3 Plan includes a USB Modem (as identified on your Application) and complies with the network specification as mentioned above."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="285" y="0" width="250" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Pocket Wi-Fi 21 Plan includes a Wireless Modem (as identified on your Application) (support up to 5 concurrent Wi-Fi connection) and complies with the network specification as mentioned above."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="285" y="12" width="250" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Pocket Wi-Fi 7 Plan includes a Wireless Modem (as identified on your Application) (support up to 5 concurrent Wi-Fi connections) and complies with the network specification as mentioned above."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement positionType="Float" x="285" y="24" width="250" height="15"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Prepayments Required:"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="285" y="51" width="250" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Prepayments made for the modem will be offset from the Monthly Charges during the Commitment Period."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="285" y="39" width="250" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Prepayment for USB Modem or Pocket Wi-Fi (as indentified on your Application in Section F Sub-Section III) is required if customer settled the charges in cash."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="27" width="260" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["NETVIGATOR 42 Plan includes a USB Modem (as identified on your Application) and complies with the network specification as mentioned above."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="39" width="260" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["NETVIGATOR 21 Plan includes a USB Modem (as identified on your Application) and complies with the network specification as mentioned above."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement positionType="Float" x="285" y="63" width="250" height="15"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Eligibility:"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="285" y="78" width="250" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Customer must subscribe a NETVIGATOR Everywhere Service Plan."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="75" width="260" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Pocket Wi-Fi 4G Plan includes a Wireless Modem (as identified on your Application) (support up to 10 concurrent Wi-Fi connection) and complies with the network specification as mentioned above."]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NETVIGATOR Everywhere SERVICE]]></text>
+			</staticText>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Basic Plan:]]></text>
+			</staticText>
+		</band>
+		<band height="51" splitType="Prevent">
+			<textField>
+				<reportElement x="15" y="0" width="260" height="15"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Service Description / Entitlements:"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="15" y="15" width="260" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["1 NETVIGATOR Everywhere USB Modem or Wireless Modem (as identified on your Application in Section C)."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="285" y="0" width="250" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Unlimited usage of PCCW Wi-Fi Service."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="285" y="12" width="250" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["uHub Service – Customer is required to register for the service via www.uhub.com and is entitled to 10GB storage."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="27" width="260" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Customer may apply for a NETVIGATOR 4G, NETVIGATOR 42, NETVIGATOR 21, NETVIGATOR 7, Pocket Wi-Fi 4G, Pocket Wi-Fi 21 or Pocket Wi-Fi 7 Plan."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="39" width="260" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Customer entitles the Monthly Mobile Data as indicated in Section D Sub-Section I of your Application."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement positionType="Float" x="285" y="24" width="250" height="15"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Eligibility:"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="285" y="39" width="250" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Customer must subscribe for service for <b><u>at least 24/30-month Commitment Period</u></b>."]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Plan for Selected Customer:]]></text>
+			</staticText>
+		</band>
+		<band height="63" splitType="Stretch">
+			<textField>
+				<reportElement x="15" y="0" width="260" height="15"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Service Description / Entitlements:"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="15" y="15" width="260" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["1 NETVIGATOR Everywhere USB Modem (as identified on your Application in Section C)."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="285" y="0" width="250" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["uHub Service – Customer is required to register for the service via www.uhub.com and is entitled to 10GB storage."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="27" width="260" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Customer may apply for a NETVIGATOR 3 Plan."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="39" width="260" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Customer entitles the Monthly Mobile Data as indicated in Section D Sub-Section I of your Application."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement positionType="Float" x="285" y="12" width="250" height="15"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Eligibility:"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="285" y="27" width="250" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Customer must subscribe for service for <b><u>at least 12/24-month Commitment Period</u></b>."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="51" width="260" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Unlimited usage of PCCW Wi-Fi Service."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="285" y="39" width="250" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Customer's HKID No. starting with the prefix \"W\"."]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUBSECTION II: ADDITIONAL/OPTIONAL VALUE-ADDED SERVICES]]></text>
+			</staticText>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ROAMING SERVICE]]></text>
+			</staticText>
+		</band>
+		<band height="75" splitType="Stretch">
+			<frame>
+				<reportElement x="15" y="0" width="260" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["<b>PCCW Mobile HK Limited</b> provides International Roaming, China Roaming and Discounted Roaming Data PAUG. The charges of International Roaming, China Roaming, and Discounted Roaming Data PAUG and charges are <u>subject to change</u>:"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement positionType="Float" x="285" y="48" width="250" height="15"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Eligibility:"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="285" y="63" width="250" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="6" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Customer must subscribe to a NETVIGATOR Everywhere Basic Plan."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="12" width="260" height="12"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="2" width="220" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["International Roaming / China Roaming / Discounted Roaming Data PAUG allows you to use mobile data and SMS services while International Wi-Fi Roaming allows you to use Wi-Fi service via selected hotspots outside Hong Kong on a pay as you go basis. For details of charges (which are subject to change) and other terms, please visit www.netvigatoreverywhere.com > Data Roaming > Standard Data Roaming Rates"]]></textFieldExpression>
+				</textField>
+				<ellipse>
+					<reportElement x="15" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+					<graphicElement>
+						<pen lineWidth="0.25"/>
+					</graphicElement>
+				</ellipse>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="36" width="260" height="12"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="2" width="220" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["The day pass will be activated 24 hours after your successful application and will be valid from 0:00 to 23:59 daily, Hong Kong time. If you use mobile data or Wi-Fi Roaming in more than one place during the same day (Hong Kong time), only one day pass will be charged for."]]></textFieldExpression>
+				</textField>
+				<ellipse>
+					<reportElement x="15" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+					<graphicElement>
+						<pen lineWidth="0.25"/>
+					</graphicElement>
+				</ellipse>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="24" width="260" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["All-in-one Roaming Passport (Day Pass) allows you to use mobile data and Wi-Fi services at selected destinations outside Hong Kong."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="285" y="0" width="250" height="12"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="2" width="220" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Mobile data roaming service will be suspended after the daily free entitlement of 20MB for \$88 Day Pass / 50MB for \$168 Day Pass in a billing day is consumed. You are required to top up and pay for additional mobile data service entitlement by \$38/10MB in order to resume the service."]]></textFieldExpression>
+				</textField>
+				<ellipse>
+					<reportElement x="15" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+					<graphicElement>
+						<pen lineWidth="0.25"/>
+					</graphicElement>
+				</ellipse>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="285" y="12" width="250" height="12"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="2" width="220" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["A flat rate \$1.5 per minute applies after the daily Wi-Fi roaming entitlement of 60 minutes for a billing day is consumed."]]></textFieldExpression>
+				</textField>
+				<ellipse>
+					<reportElement x="15" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+					<graphicElement>
+						<pen lineWidth="0.25"/>
+					</graphicElement>
+				</ellipse>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="285" y="24" width="250" height="12"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="2" width="220" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["In order to enjoy this offer, you must also subscribe to International/China Roaming"]]></textFieldExpression>
+				</textField>
+				<ellipse>
+					<reportElement x="15" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+					<graphicElement>
+						<pen lineWidth="0.25"/>
+					</graphicElement>
+				</ellipse>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="285" y="36" width="250" height="12"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="2" width="220" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to www.netvigatoreverywhere.com > All-in-one Roaming Passport"]]></textFieldExpression>
+				</textField>
+				<ellipse>
+					<reportElement x="15" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+					<graphicElement>
+						<pen lineWidth="0.25"/>
+					</graphicElement>
+				</ellipse>
+			</frame>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECTION E     GIFTS AND PREMIUMS]]></text>
+			</staticText>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Optional Premiums - Pocket Wi-Fi Battery]]></text>
+			</staticText>
+		</band>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement x="15" y="0" width="260" height="15"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Service Description / Entitlements:"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="15" y="15" width="260" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["1 Pocket Wi-Fi Battery"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement positionType="Float" x="285" y="0" width="250" height="15"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Eligibility:"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="285" y="15" width="250" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Customer must subscribe to a Pocket Wi-Fi 21 or Pocket Wi-Fi 7 service plan"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECTION F     CHARGES AND PAYMENT]]></text>
+			</staticText>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUB-SECTIONS I AND II     ADDITIONAL AND MISCELLANEOUS CHARGES]]></text>
+			</staticText>
+		</band>
+		<band height="48" splitType="Stretch">
+			<frame>
+				<reportElement positionType="Float" x="15" y="0" width="520" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="510" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["<b>Pre-activation Cancellation Charges:</b> Charges for cancelling your Netvigator Everywhere Application prior to service activation."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="12" width="520" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="510" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["<b>Early Termination Charges:</b> Monthly Rate within Commitment Period X remaining months of the Commitment Period. Any partial month will be regarded as one full month. Rebates and monthly fee waivers will be automatically forfeited and will not be applied to offset any Early Termination Charges payable."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="24" width="520" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="510" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["<b>Transfer of Ownership:</b> Applicable if you acquire a PCCW mobile number from another PCCW customer who is subscribing to PCCW mobile Service on a monthly service plan. You must sign up a new Commitment Period Service Plan and be responsible for all accrued charges prior to the transfer."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="36" width="520" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="510" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Additional Charges are described in the Application."]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUB-SECTION III     PAYMENT DETAILS]]></text>
+			</staticText>
+		</band>
+		<band height="12" splitType="Stretch">
+			<frame>
+				<reportElement positionType="Float" x="15" y="0" width="520" height="12"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="0" y="2" width="520" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["The amount of the initial payment due under your Contract and any Deposit, Prepayment and Rebates payable are specified on your Application in Section F Sub-section III."]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEPOSIT]]></text>
+			</staticText>
+		</band>
+		<band height="12" splitType="Stretch">
+			<frame>
+				<reportElement positionType="Float" x="15" y="0" width="520" height="12"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="0" y="2" width="520" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["In some cases, you will have to pay a deposit, please refer to your NETVIGATOR Everywhere Application. If you end the Services to which the deposit relates, the deposit will first be offset against monies that you owed us and any other PCC group companies in accordance with Clause 13.5 of the General Conditions and the balance will be refunded to you."]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECTION G     BILL PREFERENCES]]></text>
+			</staticText>
+		</band>
+		<band height="36" splitType="Stretch">
+			<frame>
+				<reportElement positionType="Float" x="15" y="0" width="260" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Bills will be issued in the language and by such means as selected by you. Paper bills will be issued, subject to payment of additional charges as specified in your NETVIGATOR Everywhere Application."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="285" y="12" width="250" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["A monthly fee of \$10 will apply if you wish to receive a paper copy of your bill statements."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="12" width="260" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["SMS bills will be sent to your PCCW mobile number monthly."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="24" width="260" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["You can also login to 'My Account' on web or wap to view last 3 months' bill statements."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="285" y="0" width="250" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["You can further apply for email bill service in which case we will email your monthly bill statements to your email address (billing) as specified in Section A above."]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="10" splitType="Stretch">
+			<line>
+				<reportElement positionType="Float" x="15" y="5" width="520" height="1"/>
+			</line>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PART III     Other Information]]></text>
+			</staticText>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>PCCW mobile LOGIN ID & PASSWORD</u>:</b> You may login to the Service Website to view Customer's account, to purchase your mobile data top-up pack once your service entitlement in a billing month have been exhausted and to send SMS through the Service Website. Your login ID is Customer's PCCW mobile number; the preset password is the first 6 digits of Customer's HKID card number or passport number as provided in your NETVIGATOR Everywhere Application. This preset password will be required when you set up remote call forwarding via IVRS at our hotline 1000 and for other services which require a password unless we provide you with an alternate password. For security reasons, please change your password regularly."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>PREMIUM PACKAGES AND OPTIONAL PREMIUMS</u>:</b> All third party products in premium packages and optional premiums are only available while supplies last and are non-redeemable for cash or other benefits. Please refer to the manufacturer's warranty statement included with the product for a detailed explanation of the product warranty terms applicable to a particular product."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>MODEM</u>:</b>The manufacturer Huawei Technologies Co., Ltd. will provide one-year and half-year free carry-in maintenance and warranty for the modem and the battery & USB charger of Pocket Wi-Fi respectively. For list of repair centres, please visit our website at http://www.netvigatoreverywhere.com"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>NETVIGATOR EVERYWHERE CUSTOMER SERVICE</u>:</b> You may call our customer service hotline at 1000 or send your email to custserv@netvigator.com."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>My HKT Customer Service:</u></b>  \"My HKT Customer Service\" (http://cs.hkt.com) is an all-in-one online service platform for you to manage your fixedline /eye, mobile, NETVIGATOR and now TV services with HKT and PCCW through a single login."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>OUR SERVICE WEBSITES</u>:</b> The following are websites of Services referred to in this Service Guide:"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="200" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["PCCW mobile Service:"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="225" y="2" width="200" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["www.pccwmobile.com"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="200" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NETVIGATOR Everywhere Service:"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="225" y="2" width="200" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["www.netvigatoreverywhere.com"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="200" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["PCCW Wi-Fi Service:"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="225" y="2" width="200" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["www.pccwwifi.com"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="200" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["uHub Service:"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="225" y="2" width="200" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["www.uhub.com"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

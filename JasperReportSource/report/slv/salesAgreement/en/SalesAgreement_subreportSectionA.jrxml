@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SalesAgreement_subreportSectionA" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="41"/>
+	<field name="printTermsCondition" class="java.lang.Boolean"/>
+	<field name="thirdPartyInd" class="java.lang.Boolean"/>
+	<field name="slvCustSignatureStream" class="java.io.InputStream"/>
+	<field name="applicationDate" class="java.lang.String"/>
+	<field name="orderMode" class="java.lang.String"/>
+	<field name="sectionA.sectionTitle" class="java.lang.String"/>
+	<field name="sectionA.customerTitle" class="java.lang.String"/>
+	<field name="sectionA.customer.firstName" class="java.lang.String"/>
+	<field name="sectionA.customer.lastName" class="java.lang.String"/>
+	<field name="sectionA.customer.idDocType" class="java.lang.String"/>
+	<field name="sectionA.customer.idDocNum" class="java.lang.String"/>
+	<field name="sectionA.customer.title" class="java.lang.String"/>
+	<field name="sectionA.customer.companyName" class="java.lang.String"/>
+	<field name="sectionA.customer.idVerified" class="java.lang.Boolean"/>
+	<field name="sectionA.customer.contactMobileNum" class="java.lang.String"/>
+	<field name="sectionA.customer.custType" class="java.lang.String"/>
+	<field name="sectionA.customer.emailAddr" class="java.lang.String"/>
+	<field name="sectionA.contractorTitleDisplay" class="java.lang.String"/>
+	<field name="sectionA.contractor.firstName" class="java.lang.String"/>
+	<field name="sectionA.contractor.lastName" class="java.lang.String"/>
+	<field name="sectionA.contractor.idDocType" class="java.lang.String"/>
+	<field name="sectionA.contractor.idDocNum" class="java.lang.String"/>
+	<field name="sectionA.contractor.title" class="java.lang.String"/>
+	<field name="sectionA.contractor.companyName" class="java.lang.String"/>
+	<field name="sectionA.contractor.idVerified" class="java.lang.Boolean"/>
+	<field name="sectionA.contractor.contactMobileNum" class="java.lang.String"/>
+	<field name="sectionA.contractor.custType" class="java.lang.String"/>
+	<field name="sectionA.contractor.emailAddr" class="java.lang.String"/>
+	<field name="sectionA.iaInd" class="java.lang.String"/>
+	<field name="sectionA.installAddress.unitNo" class="java.lang.String"/>
+	<field name="sectionA.installAddress.floorNo" class="java.lang.String"/>
+	<field name="sectionA.installAddress.blockNo" class="java.lang.String"/>
+	<field name="sectionA.installAddress.buildNo" class="java.lang.String"/>
+	<field name="sectionA.installAddress.strDesc" class="java.lang.String"/>
+	<field name="sectionA.installAddress.sectDesc" class="java.lang.String"/>
+	<field name="sectionA.installAddress.distDesc" class="java.lang.String"/>
+	<field name="sectionA.installAddress.areaDesc" class="java.lang.String"/>
+	<field name="sectionA.installAddress.singleLineAddress" class="java.lang.String"/>
+	<field name="sectionA.baInd" class="java.lang.String"/>
+	<field name="sectionA.billingAddress.singleLineAddress" class="java.lang.String"/>
+	<field name="sectionA.fullAddress" class="java.lang.String"/>
+	<field name="sectionA.instantUpdBA" class="java.lang.Boolean"/>
+	<field name="sectionA.hasCustomer" class="java.lang.Boolean"/>
+	<field name="sectionA.hasContractor" class="java.lang.Boolean"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="1" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Prevent">
+			<staticText>
+				<reportElement x="5" y="13" width="57" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECTION A:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="62" y="13" width="416" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-Arial" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionA.sectionTitle}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="10" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="29" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="10" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="10" width="1" height="20"/>
+			</line>
+			<staticText>
+				<reportElement x="478" y="13" width="67" height="15"/>
+				<textElement textAlignment="Right">
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[* Mandatory]]></text>
+			</staticText>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{sectionA.hasCustomer}]]></printWhenExpression>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="5" y="3" width="540" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-Arial" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionA.customerTitle}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20"/>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[!$F{sectionA.customer.companyName}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="180" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="4" width="161" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Full Name: *]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="191" y="4" width="287" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionA.customer.companyName}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="191" y="18" width="287" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="35" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{sectionA.hasCustomer}]]></printWhenExpression>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="191" y="15" width="35" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Title]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="191" y="15" width="35" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="231" y="2" width="115" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionA.customer.lastName}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="231" y="15" width="115" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="231" y="15" width="115" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Family Name]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="352" y="2" width="126" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionA.customer.firstName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="352" y="15" width="126" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Given Name]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="352" y="15" width="126" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="180" y="0" width="1" height="35" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="161" height="15">
+					<printWhenExpression><![CDATA[$F{sectionA.customer.companyName}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Full Name: *]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="191" y="2" width="35" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionA.customer.title}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="35" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="3" width="161" height="14">
+					<printWhenExpression><![CDATA[!$F{sectionA.customer.companyName}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Primary Contact: *]]></text>
+			</staticText>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="35" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{sectionA.hasCustomer}]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="180" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="100" height="15">
+					<printWhenExpression><![CDATA["HKID".equals( $F{sectionA.customer.idDocType} )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[HKID Number: *]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="2" width="100" height="15">
+					<printWhenExpression><![CDATA["PASS".equals( $F{sectionA.customer.idDocType} )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Passport Number: *]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="191" y="2" width="287" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionA.customer.idDocNum}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="191" y="16" width="287" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="100" height="15">
+					<printWhenExpression><![CDATA["BS".equals( $F{sectionA.customer.idDocType} )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[HKBR Number: *]]></text>
+			</staticText>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[!$F{sectionA.customer.contactMobileNum}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="180" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="139" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Contact Number: *]]></text>
+			</staticText>
+			<line>
+				<reportElement x="191" y="16" width="287" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="191" y="2" width="287" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionA.customer.contactMobileNum}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{sectionA.hasCustomer}]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="180" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="139" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Contact Email Address:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="191" y="2" width="287" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["null".equals($F{sectionA.customer.emailAddr}) ? "" : $F{sectionA.customer.emailAddr}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="191" y="16" width="287" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="1" y="19" width="554" height="1"/>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{sectionA.hasContractor}]]></printWhenExpression>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="5" y="3" width="540" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-Arial" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionA.contractorTitleDisplay}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20"/>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[!$F{sectionA.contractor.companyName}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="180" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="4" width="161" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Full Name: *]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="191" y="4" width="287" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionA.contractor.companyName}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="191" y="18" width="287" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="35" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{sectionA.hasContractor}]]></printWhenExpression>
+			<staticText>
+				<reportElement x="191" y="15" width="35" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Title]]></text>
+			</staticText>
+			<line>
+				<reportElement x="191" y="15" width="35" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="231" y="2" width="115" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionA.contractor.lastName}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="231" y="15" width="115" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="231" y="15" width="115" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Family Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="352" y="2" width="126" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionA.contractor.firstName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="352" y="15" width="126" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Given Name]]></text>
+			</staticText>
+			<line>
+				<reportElement x="352" y="15" width="126" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="180" y="0" width="1" height="35" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="161" height="15">
+					<printWhenExpression><![CDATA[$F{sectionA.contractor.companyName}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Full Name: *]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="191" y="2" width="35" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionA.contractor.title}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="35" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="3" width="161" height="14">
+					<printWhenExpression><![CDATA[!$F{sectionA.contractor.companyName}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Primary Contact: *]]></text>
+			</staticText>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="35" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{sectionA.hasContractor}]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="180" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="100" height="15">
+					<printWhenExpression><![CDATA["HKID".equals( $F{sectionA.contractor.idDocType} )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[HKID Number:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="2" width="100" height="15">
+					<printWhenExpression><![CDATA["PASS".equals( $F{sectionA.contractor.idDocType} )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Passport Number:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="191" y="2" width="287" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionA.contractor.idDocNum}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="191" y="16" width="287" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="100" height="15">
+					<printWhenExpression><![CDATA["BS".equals( $F{sectionA.contractor.idDocType} )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[HKBR Number:]]></text>
+			</staticText>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[!$F{sectionA.contractor.contactMobileNum}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="180" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="139" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Contact Number: *]]></text>
+			</staticText>
+			<line>
+				<reportElement x="191" y="16" width="287" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="191" y="2" width="287" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionA.contractor.contactMobileNum}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{sectionA.hasContractor}]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="180" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="139" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Contact Email Address:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="191" y="2" width="287" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["null".equals($F{sectionA.contractor.emailAddr}) ? "" : $F{sectionA.contractor.emailAddr}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="191" y="16" width="287" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="1" y="19" width="554" height="1"/>
+			</line>
+		</band>
+		<band height="41" splitType="Prevent">
+			<printWhenExpression><![CDATA[!"O".equals($F{orderMode})]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="4" width="175" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Billing / Corresponding Address: *]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="5" y="22" width="540" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionA.billingAddress.singleLineAddress}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="40" width="555" height="1"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

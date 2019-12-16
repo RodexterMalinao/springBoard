@@ -1,0 +1,913 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="iGuardCustInfo" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" whenResourceMissingType="Empty">
+	<property name="ireport.zoom" value="1.464100000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="java.io.*"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+    <field name="companyLogo" class="java.lang.String"/>
+	<field name="companyBottomLogo" class="java.lang.String"/>
+	<field name="companyBottomLeftLogo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="50" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyLogo}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="420" splitType="Stretch">
+
+			<frame>
+				<reportElement x="0" y="0" width="528" height="419"/>
+				<staticText>
+					<reportElement x="15" y="0" width="470" height="20"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-Arial" size="12" isBold="true" isUnderline="true" pdfEncoding="Cp1252"/>
+					</textElement>
+					<text><![CDATA[<i>Octopus Mobile SIM</i>  —  Octopus Function]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="15" y="31" width="470" height="20"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-Arial" size="11" isBold="false" isUnderline="true" pdfEncoding="Cp1252"/>
+					</textElement>
+					<text><![CDATA[Terms and Conditions regarding the Octopus Function on the <i>Octopus Mobile SIM</i>]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="35" y="69" width="470" height="50"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[<i>Octopus Mobile SIM</i> is a mobile phone SIM card incorporated with Octopus function.  The <i>Octopus Mobile SIM</i> consists of both Octopus function and mobile telecommunication function for use on NFC (Near Field Communication) enabled mobile phones as tested by Octopus Cards Limited.  The list of tested mobile phones is available on Octopus Cards Limited’s website:  <u>www.octopus.com.hk</u>.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="15" y="69" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="15" y="118" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[2.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="35" y="118" width="470" height="64"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[<i>Octopus Mobile SIM</i> is issued subject to the “Conditions of Issue of Octopus” published by Octopus Cards Limited, as may be amended from time to time.  The “Conditions of Issue of Octopus” is downloadable from Octopus Cards Limited’s website at <u>www.octopus.com.hk</u>, dispatched or displayed at designated transport stations.  Use of the Octopus function on the <i>Octopus Mobile SIM</i> is subject to the “Conditions of Issue of Octopus”.  Use of the mobile telecommunication function is subject to the relevant regulations as advised by the mobile network operator.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="35" y="180" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[<i>Octopus Mobile SIM</i> functions as a normal adult Octopus.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="15" y="180" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[3.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="35" y="199" width="470" height="34"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[<i>Octopus Mobile SIM</i> has no initial stored value.  Please add value before use.  You may add value to your <i>Octopus Mobile SIM</i> at all Octopus Authorised Add Value Service Providers with cash up to a maximum of HK$1,000.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="15" y="199" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[4.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="15" y="232" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[5.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="35" y="232" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[<i>Octopus Mobile SIM</i> has no deposit and is non-returnable.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="35" y="251" width="470" height="26"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[If the value on your <i>Octopus Mobile SIM</i> is zero or negative, Octopus payment function on this <i>Octopus Mobile SIM</i> cannot be used until it is reloaded.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="15" y="251" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[6.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="35" y="276" width="470" height="44"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Any requests to refund a malfunctioned <i>Octopus Mobile SIM</i> or cancel an <i>Octopus Mobile SIM</i> with a remaining value of HK$500 or above stored on it should be made through our website at <u>www.octopus.com.hk</u>. In all other cases, you may approach our Authorised Service Centres to submit your refund or cancellation request.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="35" y="320" width="470" height="24"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[All applicable Octopus function(s) on this <i>Octopus Mobile SIM</i> will be permanently disabled once it is cancelled.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="15" y="276" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[7.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="15" y="320" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[8.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="343" width="470" height="25"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[If your <i>Octopus Mobile SIM</i> is linked to Octopus Automatic Add Value Service, you will automatically be provided with Lost Octopus Service.  To report loss, please call our Lost Octopus Reporting Hotline on 2266 2266.  ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="15" y="343" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[9.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="368" width="470" height="51"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[In the event of loss or malfunction of any function in the <i>Octopus Mobile SIM</i>, you are required to obtain a new <i>Octopus Mobile SIM</i> from the designated mobile network operator. (A new <i>Octopus Mobile SIM</i> may be subject to surcharge or other fees charged by and payable to the mobile network operator.  You should check with your mobile network operator directly for details.)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="368" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[10.]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="110" splitType="Stretch">
+
+			<frame>
+				<reportElement x="0" y="0" width="528" height="110"/>
+				<staticText>
+					<reportElement x="36" y="44" width="470" height="33"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[You may use this <i>Octopus Mobile SIM</i> to apply for the Octopus Automatic Add Value Service to enjoy greater convenience on stored value top up.  For details, please visit <u>www.octopus.com.hk/aavs</u> or call application hotline: 2266 2338.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="17" y="44" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="17" y="77" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[2.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="77" width="470" height="28"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[You may use this <i>Octopus Mobile SIM</i> to register for the Octopus Rewards Programme to enjoy more benefits from Octopus Rewards merchants.  For details, please visit <u>www.octopusrewards.com.hk</u>.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="15" y="12" width="470" height="20"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-Arial" size="11" isBold="false" isUnderline="true" pdfEncoding="Cp1252"/>
+					</textElement>
+					<text><![CDATA[Octopus Automatic Add Value Service and Octopus Rewards Programme]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="205">
+
+			<frame>
+				<reportElement x="0" y="0" width="528" height="205"/>
+				<staticText>
+					<reportElement x="36" y="48" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[To support the use of Octopus function on <i>Octopus Mobile SIM</i>, you should:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="48" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="15" width="470" height="20"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-Arial" size="11" isBold="false" isUnderline="true" pdfEncoding="Cp1252"/>
+					</textElement>
+					<text><![CDATA[<b>Dos and Don’ts</b> for using OctopusFunction on <i>Octopus Mobile SIM</i>]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="36" y="68" width="430" height="20"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="415" height="20"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Insert the <i>Octopus Mobile SIM</i> into your Octopus tested and NFC-enabled mobile phone. ]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="88" width="470" height="20"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="20"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Turn on the NFC function on your mobile phone so that the Octopus function on the <i>Octopus Mobile SIM</i> can be performed.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="107" width="430" height="20"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="415" height="20"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Download the <b>“Octopus” App</b> from Google Play to your mobile phone immediately.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="126" width="470" height="28"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="28"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Ensure sufficient battery power of your mobile phone throughout the use of the Octopus function, in particular, entrance and exit points on payment gate for the whole journey on public transportation and fare ticket inspection.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="153" width="470" height="38"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="38"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Record your Octopus number (relating to use of Octopus function) and ICCID (Integrated Circuit Card Identifier) (relating to use of mobile telecommunication function) of the <i>Octopus Mobile SIM</i> to facilitate service enquiries regarding Octopus functions and/or mobile telecommunication functions and keep them confidential. ]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="153">
+
+			<frame>
+				<reportElement x="0" y="0" width="528" height="153"/>
+				<staticText>
+					<reportElement x="36" y="8" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[To use the Octopus function on your <i>Octopus Mobile SIM</i>, you should:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="8" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[2.]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="36" y="28" width="470" height="35"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="35"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Place your mobile phone steadily over an Octopus reader, hold and wait until you hear a “Dood” sound and there is an indication that the transaction is completed and the remaining value is shown on the screen before removing your mobile phone.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="62" width="471" height="26"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="456" height="26"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Present your mobile phone over the Octopus reader again if the transaction is incomplete because you may have removed your mobile phone too quickly from the reader. ]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="88" width="470" height="26"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["X"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="26"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="true" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Not place the <i>Octopus Mobile SIM</i> near any metallic material (e.g. metal mobile phone case) as it may affect the performance of the Octopus function.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="114" width="470" height="35"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["X"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="35"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="true" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Not hold the mobile phone with your <i>Octopus Mobile SIM</i> together with another Octopus or contactless smart card, over an Octopus reader at one time as such may affect the performance of the Octopus function.]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="97">
+
+			<frame>
+				<reportElement x="0" y="0" width="528" height="97"/>
+				<staticText>
+					<reportElement x="36" y="8" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[To check the Octopus remaining value and transaction record(s) on your <i>Octopus Mobile SIM</i>, you can:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="8" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[3.]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="36" y="27" width="430" height="20"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="415" height="20"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Use the <b>“Octopus” App</b>. installed on your mobile phone.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="46" width="470" height="22"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="22"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Check the remaining value by just clicking on the <b>“Octopus” App</b> widget on your home screen.  For details, please refer to the FAQ section of the <i>Octopus Mobile SIM</i> web page.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="67" width="470" height="24"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="24"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[It is recommended that you use the login function on your mobile phone (for example setting password) to avoid unauthorized browsing of the Octopus remaining value and latest transaction record(s). ]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="162">
+
+			<frame>
+				<reportElement x="0" y="0" width="528" height="162"/>
+				<staticText>
+					<reportElement x="36" y="8" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[When using the Octopus function on public transport with <i>Octopus Mobile SIM</i>, you should:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="8" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[4.]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="36" y="27" width="470" height="38"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="38"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Ensure sufficient battery power of your mobile phone throughout, in particular, entrance and exit points on payment gate for the whole journey and fare ticket inspection. Failure to produce a valid ticket may lead to prosecution or surcharge imposed by related transport operator.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="64" width="470" height="58"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="58"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[If you find your mobile phone with sufficient battery power and its NFC function has been turned on, but you still cannot use the Octopus function to get through the exit points on the payment gate, please contact the Customer Service Centre of related transport operator for assistance. If the problem relates to the Octopus function, please contact Octopus Cards Limited.  If the problem relates to the mobile telecommunication function, please contact your mobile network operator for assistance.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="121" width="470" height="37"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["X"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="37"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="true" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Not replace the <i>Octopus Mobile SIM</i> with other mobile SIM before exiting the payment gate (or paid area) (especially on cross border transportations) to ensure smooth and proper deduction of fares at the exit points.]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="298" splitType="Stretch">
+
+			<frame>
+				<reportElement x="0" y="0" width="528" height="298"/>
+				<staticText>
+					<reportElement x="36" y="212" width="470" height="80"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[<b>IMPORTANT:</b> Once you submit refund request of your <i>Octopus Mobile SIM</i>, all applicable Octopus function(s) of your <i>Octopus Mobile SIM</i> will be permanently disabled but the mobile telecommunication function will remain unaffected. If your <i>Octopus Mobile SIM</i> is registered under the Octopus Rewards Programme, you are reminded to use up all the Reward$ before submitting the refund request. Once refund request is made, the Reward$ on your <i>Octopus Mobile SIM</i> will be forfeited.  You are not required to return the <i>Octopus Mobile SIM</i> to Octopus Cards Limited.  You are reminded to keep your <i>Octopus Mobile SIM</i> safe and intact before you receive the refund.  To facilitate an accurate calculation of the refund amount, you should not use the Octopus function(s) on your <i>Octopus Mobile SIM</i>, e.g. add value and payment, once you have submitted the refund request. The final refund amount will be confirmed at the time when Octopus Cards Limited processes your request. Once you receive the refund, you are advised to cut the <i>Octopus Mobile SIM</i> into halves and dispose of it properly.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="8" width="479" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[To cancel the Octopus function and apply for refund of the remaining value stored on your <i>Octopus Mobile SIM</i> : ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="8" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[5.]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="37" y="52" width="470" height="35"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="35"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Receive an on-the-spot refund at any MTR Customer Service Centre.  Please ensure your <i>Octopus Mobile SIM</i> is properly inserted into your Octopus tested and NFC-enabled mobile phone and with sufficient battery power when you place it over the Octopus reader at the MTR Customer Service Centre.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="120" width="470" height="20"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="20"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Visit <u>www.octopus.com.hk/sim-refund-en</u> to submit the refund request. ]]></text>
+					</staticText>
+				</frame>
+				<staticText>
+					<reportElement x="36" y="30" width="479" height="22"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[<b>In case the <i>Octopus Mobile SIM</i> is functioning properly and the remaining value is less than HK$500</b>, you can: ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="100" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[<b>In case the <i>Octopus Mobile SIM</i> is malfunctioned or its remaining value is HK$500 or above</b>, you can:]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="36" y="139" width="470" height="20"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="20"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[To complete the online refund request form, please make sure you have the following information:]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="51" y="158" width="300" height="20"/>
+					<rectangle>
+						<reportElement x="5" y="3" width="3" height="3" backcolor="#000000"/>
+					</rectangle>
+					<staticText>
+						<reportElement x="15" y="0" width="285" height="20"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Octopus number of your <i>Octopus Mobile SIM</i> ; and]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="51" y="177" width="455" height="24"/>
+					<rectangle>
+						<reportElement x="5" y="3" width="3" height="3" backcolor="#000000"/>
+					</rectangle>
+					<staticText>
+						<reportElement x="15" y="0" width="440" height="24"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[ICCID (SIM card number) of your <i>Octopus Mobile SIM</i> (If you cannot find your ICCID, please contact your mobile network operator for assistance).]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="93">
+
+			<frame>
+				<reportElement x="0" y="0" width="528" height="93"/>
+				<staticText>
+					<reportElement x="36" y="8" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[Lost <i>Octopus Mobile SIM</i> Reporting Service]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="8" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[6.]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="36" y="27" width="470" height="35"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="35"/>
+						<textElement textAlignment="Left" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Octopus function on Octopus Mobile SIM  —  If your <i>Octopus Mobile SIM</i> is linked to Octopus Automatic Add Value Service, you will automatically be provided with lost Octopus service.  To report loss, please call Lost Octopus Reporting Hotline on 2266 2266.  ]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="63" width="470" height="24"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="24"/>
+						<textElement textAlignment="Left" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Mobile telecommunication function on <i>Octopus Mobile SIM</i>  —  Please contact your mobile network operator separately to suspend the mobile telecommunication function on the <i>Octopus Mobile SIM</i> card. ]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="75">
+
+			<frame>
+				<reportElement x="0" y="0" width="528" height="75"/>
+				<staticText>
+					<reportElement x="36" y="8" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[Upon termination of mobile telecommunication service, you should:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="8" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[7.]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="36" y="27" width="470" height="22"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="22"/>
+						<textElement textAlignment="Left" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Cancel the Octopus function and apply for refund of the remaining value of the Octopus function on the <i>Octopus Mobile SIM</i>. Please refer to point 5 above for details of the procedures. ]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="49" width="470" height="23"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["X"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="23"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="true" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[NOT give your <i>Octopus Mobile SIM</i> to any third party under any circumstances. ]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="204">
+
+			<frame>
+				<reportElement x="0" y="0" width="528" height="204"/>
+				<staticText>
+					<reportElement x="36" y="44" width="470" height="28"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[Information on <i>Octopus Mobile SIM</i><br>
+Website:<u> www.octopus.com.hk/sim-en</u>]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="44" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="72" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[2.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="72" width="470" height="28"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Refund Request Form – Online Application for Cancellation of <i>Octopus Mobile SIM</i> <br>
+Website: <u>www.octopus.com.hk/sim-refund-en</u>
+
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="15" width="470" height="20"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-Arial" size="12" isBold="false" isUnderline="true" pdfEncoding="Cp1252"/>
+					</textElement>
+					<text><![CDATA[Useful contact at a glance]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="100" width="470" height="36"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Apply for Octopus Automatic Add Value Service<br>
+Website:<u> www.octopus.com.hk/aavs</u><br>
+Hotline: 2266 2338
+
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="100" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[3.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="136" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[4.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="164" width="470" height="28"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Lost Octopus Reporting Hotline<br>
+24-hour Hotline: 2266 2266]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="164" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[5.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="136" width="470" height="28"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[Register for Octopus Rewards Programme <br>
+Website:<u> www.octopusrewards.com.hk</u>
+
+]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="50">
+			<image scaleImage="RetainShape" hAlign="Right" vAlign="Bottom">
+				<reportElement x="400" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyBottomLogo}]]></imageExpression>
+			</image>
+			<image vAlign="Bottom">
+				<reportElement x="0" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyBottomLeftLogo}]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

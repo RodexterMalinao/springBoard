@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="iGuardCustInfo" language="groovy" pageWidth="595" pageHeight="842" columnWidth="520" leftMargin="37" rightMargin="38" topMargin="20" bottomMargin="20" whenResourceMissingType="Empty">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="986"/>
+	<import value="java.io.*"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<field name="copy" class="java.lang.String"/>
+	<field name="phoneProtectorLogo" class="java.lang.String"/>
+	<field name="directLogo" class="java.lang.String"/>
+	<field name="serialNo" class="java.lang.String"/>
+	<field name="custLastName" class="java.lang.String"/>
+	<field name="custFirstName" class="java.lang.String"/>
+	<field name="title" class="java.lang.String"/>
+	<field name="idDocNum" class="java.lang.String"/>
+	<field name="dob" class="java.lang.String"/>
+	<field name="flat" class="java.lang.String"/>
+	<field name="floor" class="java.lang.String"/>
+	<field name="building" class="java.lang.String"/>
+	<field name="street" class="java.lang.String"/>
+	<field name="section" class="java.lang.String"/>
+	<field name="district" class="java.lang.String"/>
+	<field name="region" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="contactNo" class="java.lang.String"/>
+	<field name="otherContactNo" class="java.lang.String"/>
+	<field name="handsetDeviceDescription" class="java.lang.String"/>
+	<field name="imei" class="java.lang.String"/>
+	<field name="contractPeriod" class="java.lang.String"/>
+	<field name="tgtEffDate" class="java.lang.String"/>
+	<field name="msisdn" class="java.lang.String"/>
+	<field name="hsPurchasePrice" class="java.lang.String"/>
+	<field name="ldsSrvPlanFee" class="java.lang.String"/>
+	<field name="shopCd" class="java.lang.String"/>
+	<field name="salesCd" class="java.lang.String"/>
+	<field name="custSignature" class="java.io.InputStream"/>
+	<field name="hsReceivedDate" class="java.lang.String"/>
+	<field name="privacyInd99992" class="java.lang.String"/>
+	<field name="privacyInd99993" class="java.lang.String"/>
+	<field name="privacyInd99994" class="java.lang.String"/>
+	<field name="brand1010Ind" class="java.lang.String"/>
+	<field name="orderId" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="72" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText-1" x="3" y="39" width="520" height="33" backcolor="#FFFFFF"/>
+				<box leftPadding="0"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="PCCW-zh-Ming" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[i-GUARD Phone & Tablet Repair Plan 嘉保手機及平板電腦維修計劃
+Customer Information Form 客戶資料記錄表]]></text>
+			</staticText>
+			<textField>
+				<reportElement key="staticText-1" x="350" y="19" width="150" height="20" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Serial No. " + $F{orderId}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="RetainShape">
+				<reportElement x="0" y="0" width="165" height="46"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{phoneProtectorLogo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="520" height="18" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="3">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Please fill in the following information in English block letters  請以英文正楷填寫以下資料 ( *Mandatory 必須填寫)]]></text>
+			</staticText>
+		</band>
+		<band height="49" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="520" height="48"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textField>
+					<reportElement x="0" y="0" width="180" height="15" forecolor="#000000"/>
+					<box leftPadding="3">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Surname 姓* " + $F{custLastName}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="180" y="0" width="240" height="15"/>
+					<box leftPadding="3">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Given Name 名* " + $F{custFirstName}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="420" y="0" width="100" height="15"/>
+					<box leftPadding="3">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Title 稱謂* " + $F{title}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="15" width="240" height="15"/>
+					<box leftPadding="3">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["HKID Card No. 香港身份證號碼* " + $F{idDocNum}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="240" y="15" width="145" height="15"/>
+					<box leftPadding="3">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Age Range 年齡組別* " + $F{dob}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="30" width="317" height="15"/>
+					<box leftPadding="3">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Email 電郵地址*  " + $F{email}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="385" y="15" width="132" height="15"/>
+					<box leftPadding="3">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Contact No. 聯絡電話* " + $F{contactNo}]]></textFieldExpression>
+				</textField>
+				<frame>
+					<reportElement x="320" y="29" width="197" height="19"/>
+				</frame>
+				<textField>
+					<reportElement x="317" y="32" width="197" height="16"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["1O1O/csl Mobile No 流動電話號碼* "+$F{msisdn}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="18" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="-1" width="520" height="18" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="3">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Service Subscription Plan Details 服務計劃詳情 – 1O1O/csl Shop Use Only ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="448" y="6" width="10" height="10">
+					<printWhenExpression><![CDATA["N".equals( $F{brand1010Ind} )]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="PCCW-zh-Ming" size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[√]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="360" y="6" width="10" height="10"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="448" y="6" width="10" height="10"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="FixRelativeToBottom" x="370" y="3" width="78" height="13"/>
+				<box topPadding="0" leftPadding="3">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["1O1O customer"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="FixRelativeToBottom" x="458" y="3" width="62" height="13"/>
+				<box topPadding="0" leftPadding="3">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["csl customer"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="359" y="7" width="10" height="10">
+					<printWhenExpression><![CDATA["Y".equals( $F{brand1010Ind} )]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="PCCW-zh-Ming" size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[√]]></text>
+			</staticText>
+		</band>
+		<band height="50" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="520" height="49"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="360" y="0" width="160" height="23"/>
+					<box leftPadding="3">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Top" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["IMEI No 機身編碼 <br>" + $F{imei}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="0" y="0" width="360" height="23"/>
+					<box leftPadding="3">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Top" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Product Brand & Model 產品牌子及型號<br> " + $F{handsetDeviceDescription}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="0" y="23" width="205" height="26"/>
+					<box topPadding="0" leftPadding="3">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Top" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Product Purchase Price HK\$<br> 產品購買價 HK\$ "
+ + $F{hsPurchasePrice}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement positionType="Float" x="0" y="23" width="520" height="1"/>
+				</line>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="209" y="24" width="160" height="25"/>
+					<box topPadding="0" leftPadding="3">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Top" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Shop Code " + $F{shopCd}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="18" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="520" height="18" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="3">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Declaration 聲明]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="82" y="0" width="178" height="18" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="3">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+		<band height="30" splitType="Stretch">
+			<frame>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="520" height="30"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<frame>
+					<reportElement positionType="Float" x="0" y="3" width="520" height="13"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="3" y="0" width="490" height="10"/>
+						<box rightPadding="0"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="8"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["1. I confirm that the details provided above are correct. 本人確認以上資料正確無誤。"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="16" width="520" height="13"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="3" y="0" width="490" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="8"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["2. I have read, and agree to, the terms and conditions of this i-GUARD Phone&Tablet Repair Plan (“Terms and Conditions”) and the Personal Information Collection Statement (“PICS”) attached with this form, and agree to comply and be bound by such. I also consent to the use of my personal information in accordance with the Terms and Conditions and the PICS. 本人確認已經清楚閱讀此嘉保手機及平板電腦維修計劃的條款及細則(「該條款及細則」)及本表格所附的個人資料收集(「該聲明」)，並同意遵守該條款及細則及聲明並受其約束。本人亦同意本人的個人資料會根據該條款及細則和該聲明所使用。"]]></textFieldExpression>
+					</textField>
+				</frame>
+			</frame>
+		</band>
+		<band height="470" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="520" height="470"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="3" y="0" width="305" height="13" isRemoveLineWhenBlank="true"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[PERSONAL INFORMATION COLLECTION STATEMENT 個人資料收集聲明]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="3" y="13" width="514" height="101"/>
+					<textElement markup="html">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["The personal data and other information (collectively, \"Data\") that you provided as a result of or in connection with the service(s) (collectively, the \"Services\") you have subscribed hereunder are collected, used and retained by the relevant service provider(s) of the Services, being one or more of the members of the Group (being, HKT Limited and PCCW Limited and their respective subsidiaries, affiliates and associated companies), including but not limited to Hong Kong Telecommunications (HKT) Limited, CSL Mobile Limited, PCCW Media Limited, MOOV (Hong Kong) Limited, PCCW OTT (Hong Kong) Limited, eSmarthealth Limited, HKT Education Limited, Club HKT Limited, HKT CSP Limited, HKT Payment Limited, HKT Financial (IA) Services Limited and Club Services (HKT) Limited (as the case maybe), in accordance with the requirements of the Personal Data (Privacy) Ordinance (Chapter 486 of the Laws of Hong Kong), other applicable laws, rules and regulations relating to data privacy and the Privacy Statement of the HKT Group (www.hkt.com/legal/privacy.html) and of the PCCW Group (www.pccw.com/legal/privacy.html) (collectively, the “Privacy Statement”). The applicable terms and conditions of the Services, the Privacy Statement, and this Personal Information Collection Statement all apply to and govern our collection, use and disclosure of your Data. "]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="3" y="114" width="514" height="57"/>
+					<textElement markup="html">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Your Data is collected, may be used or maintained by and/or disclosed, at all times to the extent permitted under applicable laws, rules, regulations and licence requirements, to affiliates and/or related companies of the Group, their respective agents (including debt collection agent) and business partners, and/or applicable regulatory bodies or governmental authorities for purposes in connection with the Services, including without limitation processing your application, providing the Services to you, enabling your access and retrieval of account information in relation to the Services, and complying with applicable laws, rules, regulations and licence requirements."]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="3" y="168" width="514" height="12"/>
+					<textElement markup="html">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Please note that in the event you do not provide the Data marked with asterisks we may not be able to provide you with the Services."]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="3" y="183" width="514" height="20"/>
+					<textElement markup="html">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Data not marked with asterisks is provided by you on a voluntary basis. In the event you choose not to provide such Data, your user experience may be affected if the requested Data is used to enhance or personalise the Services offered or provided to you.<br>"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="3" y="203" width="514" height="42"/>
+					<textElement markup="html">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Where cookies are used to collect Data about visitors: Our websites and apps use cookies or similar tracking tools on your machine or device in order for us to, for example, personalise your user experience and/or maintain your identity across multiple webpages and/or Internet sessions. Our websites and apps are initially set up to accept cookies. You can opt-out of or delete historical cookies by changing the settings on your web or mobile browsers; however, if you do so, you may find that certain features on our websites and/or our apps do not work properly.<br>"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="3" y="245" width="514" height="128"/>
+					<textElement markup="html">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Subject to your rights indicated by marking in the box below or leaving it unmarked, we may, in compliance with applicable laws, rules, regulations and licence requirements, use your Data (including, without limitation, your name and contact particulars), for us, members of the Group and our respective business partners (collectively, \"Service Providers\") to provide you with direct marketing content, including sending to you notices and/or updates about gifts, discounts, privileged offers, benefits and promotions related to the Services as well as other products and/or services offered by us, members of the Group and/or the Service Providers, including without limitation: TV, telecommunications, over-the-top (OTT) services, content services, mobile voice, SMS and data communications, IDD/roaming, Internet connectivity, cloud services, mobile payment, entertainment, secretarial services, personal assistant services and information services (such as weather, finance and news information), device accessories, mobile applications and software, computer peripheral, accessories and software (including notebooks, handsets, mobile devices and accessories, keyboards, security installations and mobile applications), reward, loyalty and privilege programs, lifestyle, networking events, travelling, banking, alcohol and tobacco, sports, music, gaming, transportation, household products, food and beverages, finance, insurance, wealth management services and products, pensions, investments, brokering, financial advisory, credit and other financial services and products, betting, education, health and wellness, beauty products and services, fashion and accessories, electronics, social networking, technology, e-commerce, logistics, retail, home and decor, media and high-end consumer products and services. The processing of your Data for the purposes of direct marketing is carried out in our legitimate interests. "]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="2" y="373" width="514" height="51"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[我們就本申請書下申請服務（「本服務」）或與其有關而獲取有關閣下的個人資料和其他資料（統稱「資料」）是由本集團（即香港電訊有限公司和電訊盈科有限公司以及其各自的附屬公司、聯營公司和關聯公司）一家或多家成員公司根據香港法例第486章《個人資料（私隱）條例》、與資料私隱相關的其他適用法律、規則及規例以及香港電訊集團及電訊盈科集團各自的《私隱聲明》[載於www.hkt.com/legal/privacy.html 及 www.pccw.com/legal/privacy.html（「《私隱聲明》」）的規定所收集、使用及保留。本服務的適用條款及細則、《私隱聲明》及此個人資料收集聲明均適用於及監管我們對閣下資料之收集、使用和披露。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="2" y="424" width="514" height="33"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[所收集有關閣下的資料可能由本集團聯營公司及／或關連公司、其各自的代理和業務合作夥伴及／或適用監管機構或政府機關使用或保存及／或向其披露（任何時候均在適用法律、規則、規例及牌照規定容許的範圍內），以處理有關本服務的事項，包括但不限於處理閣下的申請、向閣下提供本服務、使閣下能接入及檢索有關本服務的帳戶資料，及履行適用法律、規定、規例及牌照規定。 ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="2" y="456" width="514" height="10"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[請注意，如閣下不提供註明*號的資料，我們可能無法為閣下提供本服務。 ]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="239" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="520" height="238"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<frame>
+					<reportElement positionType="Float" x="2" y="121" width="518" height="46"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement x="18" y="31" width="497" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="8" isBold="false"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["I object to the proposed use of my Data for direct marketing as stated above. 本人反對按照上文所述使用本人的資料作直接促銷用途。"]]></textFieldExpression>
+					</textField>
+					<rectangle>
+						<reportElement x="2" y="32" width="10" height="10"/>
+					</rectangle>
+					<staticText>
+						<reportElement x="2" y="32" width="10" height="10">
+							<printWhenExpression><![CDATA["Y".equals( $F{privacyInd99994} )]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center">
+							<font fontName="PCCW-zh-Ming" size="6" isBold="false"/>
+						</textElement>
+						<text><![CDATA[√]]></text>
+					</staticText>
+				</frame>
+				<staticText>
+					<reportElement x="2" y="64" width="514" height="86"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[受閣下有權透過剔選或留空以下空格作出指示所規限，我們在遵守適用法律、規例、規例和牌照規定的情況下，或會使用閣下的資料（包括但不限於閣下的姓名及聯絡資料），以便我們、本集團成員公司及我們各自的零售商、授權人、供應商及／或業務合作夥伴（統稱「服務供應商」）為閣下提供直接促銷資料，包括向閣下發出與本服務以及由我們、本集團成員公司及／或服務供應商所提供的其他產品及／或服務有關的禮品、折扣、尊享優惠、優惠和推廣的通知及／或最新情報，包括但不限於：電視、電訊、OTT服務、內容服務、流動話音、短訊及數據通訊、IDD／漫遊、互聯網連接、雲端服務、手機付款、娛樂、秘書服務、個人助理服務和資訊服務（例如天氣、財經和新聞資訊）、裝置配件、流動應用程式和軟件、電腦周邊產品、配件和軟件（包括手提電腦、手機、流動裝置及配件、鍵盤、保安裝置及流動應用程式）、獎賞、忠誠或尊貴計劃、生活方式、社交活動、旅遊、銀行、酒精及煙草、運動、音樂、遊戲、交通、家居產品、餐飲、金融、保險、財富管理服務和產品、退休金、投資、經紀服務、理財顧問、信貸及其他理財服務和產品、博彩、教育、健康及保健、美容產品和服務、時尚及配飾、電子產品、社交網絡、科技、電子商務、物流、零售、家居佈置、媒體及高端消費類產品及服務。為直接促銷之目的處理閣下的資料時會根據我們的合法權益進行。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="2" y="206" width="514" height="30"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[閣下有權於任何時間就按照上述方式處理閣下的資料撤回同意。閣下亦有權查閱、修正或查詢我們所持有有關閣下的資料。如閣下有意撤回同意或查閱、修正或查詢我們所持有有關閣下的資料，請以書面方式致函以下地址：香港電訊集團私隱條例事務主任（香港電訊集團：香港郵政總局信箱9896號或電郵至：privacy@pccw.com）或電訊盈科集團私隱條例事務主任（香港郵政總局信箱9872號或電郵至：privacy@pccw.com。)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="2" y="167" width="514" height="39"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[You have a right to withdraw your consent the processing in the above manner at any time. You are also entitled to access, correct or enquire about the Data held by us about you. If you wish to withdraw your consent, access, correct or enquire about any Data held by us about you, you can do so by writing to the HKT Group's Privacy Compliance Officer (HKT Group: GPO Box 9896 or via email to: privacy@pccw.com) or the PCCW Group's Privacy Compliance Officer (GPO Box 9872 or via email to: privacy@pccw.com). ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="2" y="22" width="514" height="41"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[如使用「曲奇」（cookies）收集有關訪客的資料：我們的網站和應用程式會在閣下的電腦或裝置中使用「曲奇」或類似的追蹤工具，以便我們（例如）為閣下提供個人化的服務及／或於閣下瀏覽不同網頁及／或互聯網期間進行身份識別。我們的網站和應用程式在最初會設定為接受「曲奇」。閣下可以透過更改閣下網頁或手機瀏覽器的設定選擇拒絕或刪除「曲奇」的歷史記錄；但是，閣下在更改有關設定後，可能無法如常使用我們網站及／或應用程式的某些功能。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="2" y="1" width="514" height="21"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[無註明*號的資料是由閣下自願提供。如閣下選擇不提供該等資料，而所要求提供的資料是用於提升本服務或向閣下提供個人化的本服務，則閣下在使用本服務時的體驗或會因此而受到影響。]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="43" splitType="Stretch">
+			<textField>
+				<reportElement x="260" y="0" width="260" height="40"/>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Product Received Date 簽收產品日期*<br>" + $F{hsReceivedDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="260" height="40"/>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Top" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Signature 簽署* "]]></textFieldExpression>
+			</textField>
+			<image hAlign="Center" isUsingCache="true" isLazy="true" onErrorType="Blank">
+				<reportElement positionType="Float" x="0" y="15" width="260" height="25"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<imageExpression class="java.io.InputStream"><![CDATA[$F{custSignature}]]></imageExpression>
+			</image>
+		</band>
+		<band height="12" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="520" height="11"/>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="PCCW-zh-Ming" size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["HKT Care 乃HKT Financial Services (IA) Limited「HKTIA」之營銷品牌名稱。HKTIA乃香港電訊集團的附屬公司。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText-1" x="0" y="1" width="520" height="24" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[HKT Financial Services (IA) Limited PO Box 9896, GPO, Hong Kong
+HKT Care Hotline: 8209 0098     Fax: 2477 1288     Email: cs.hktcare@pccw.com]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

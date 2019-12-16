@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	                    http://www.springframework.org/schema/beans/spring-beans.xsd
+	                    http://www.springframework.org/schema/tx 
+	                    http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+ 	<tx:annotation-driven transaction-manager="txBomWebPortalManager" />
+ 
+	<bean id="txBomWebPortalManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="BomWebPortalDS"/>
+	</bean>
+
+	<bean id="BomWebPortalDS"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@10.87.120.194:1521:sbacp" />
+		<property name="username" value="ops$cnm" />
+		<property name="password" value="cnm" />
+	</bean>
+
+	<bean id="propertyConfigurer"
+		class="com.bomwebportal.configuration.BomPropertyPlaceholderConfigurer">
+		<property name="ignoreResourceNotFound" value="false" />
+		<property name="locations">
+			<list>
+				<value>classpath:configuration.properties</value>
+				<value>classpath:qmConfiguration.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="com.pccw.util.spring.ApplicationContextProvider" class="com.pccw.util.spring.ApplicationContextProvider" />
+
+	<bean id="com.bomwebportal.service.ReportDataService" class="com.pccw.rpt.test.DummyDataReportDataServiceImpl" />
+<!-- 
+ 	<bean id="org.dozer.Mapper" class="org.dozer.spring.DozerBeanMapperFactoryBean" scope="singleton">
+		<property name="mappingFiles" value="classpath:/config/workQueue/dozer/dozer-bean-mappings-wq.xml"/>
+	</bean>
+-->
+
+ 	<import resource="classpath:/config/report/spring/spring-service-bean.xml"/>
+</beans>

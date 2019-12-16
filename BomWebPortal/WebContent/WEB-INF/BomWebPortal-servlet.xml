@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:aop="http://www.springframework.org/schema/aop"       
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+		    <list>
+		        <value>classpath:configuration.properties</value>
+		        <value>classpath:configuration_bwp.properties</value>
+		    </list>
+		</property>
+	</bean>
+	
+<!-- backup alex thread program
+ 	<bean id="bomOrderRequestPool" class="com.bomwebportal.thread.BomOrderRequestPool"/>
+ 
+ 	<bean id="loadExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+  		<property name="corePoolSize" value="1" />
+  		<property name="maxPoolSize" value="1" />
+  		<property name="queueCapacity" value="1" />
+	</bean>
+ 
+	<bean id="processExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+  		<property name="corePoolSize" value="5" />
+  		<property name="maxPoolSize" value="10" />
+  		<property name="queueCapacity" value="10" />  		
+	</bean>
+	
+ 
+	<bean id="bomRequestProcessor" class="com.bomwebportal.thread.BomRequestProcessor">
+  		<constructor-arg ref="loadExecutor" />
+  		<constructor-arg ref="processExecutor" />
+  		<property name="createBomOrder" ref="createBomOrder"/> 
+  		<property name="orderService" ref="orderService"/>   	
+  		<property name="bomRequestService" ref="bomRequestService"/>  	
+	</bean>
+
+ 	<bean id="bomRequestProcessor" class="com.bomwebportal.thread.BomRequestProcessor">
+  		<constructor-arg ref="processExecutor" />
+  		<property name="bomOrderRequestPool" ref="bomOrderRequestPool"/> 
+  		<property name="createBomOrder" ref="createBomOrder"/> 
+  		<property name="orderService" ref="orderService"/>   	  	
+	</bean>
+ 
+ 
+ 	<bean id="createBomOrder" class="com.bomwebportal.thread.CreateBomOrder">
+  		<property name="orderService" ref="orderService"/> 
+  		<property name="customerProfileService" ref="customerProfileService"/>	 
+  		<property name="bulkNewActClient" ref="bulkNewActClient"/> 
+	</bean>
+-->	
+
+	<context:annotation-config />
+	<aop:aspectj-autoproxy />
+
+	
+	<bean class="com.bomwebportal.web.MobCosReportController">
+		<property name="mobCosReportService" ref="mobCosReportService"/>
+	</bean>	
+
+ 	<bean class="com.bomwebportal.web.ReloadConstantTableLkupController">
+ 		<property name="constantLkupService" ref="constantLkupService"/>  	
+ 	</bean>
+ 
+ 	<bean class="com.bomwebportal.web.ItemEditController">
+    	<property name="commandName" value="itemEdit"/>
+    	<property name="commandClass" value="com.bomwebportal.dto.ItemEditDTO"/> 
+    	<property name="itemEditService" ref="itemEditService"/> 
+	</bean> 
+ 	
+ 	<bean class="com.bomwebportal.web.CeksController">
+    	<property name="sessionForm" value="true"/>
+    	<property name="commandName" value="payment"/>
+    	<property name="commandClass" value="com.bomwebportal.dto.PaymentDTO"/> 
+  		<property name="formView" value="ceks"/>
+ 	</bean>
+ 	
+	<bean id="ajaxViewResolver"
+        class="com.bomwebportal.web.ext.AjaxViewResolver">
+        <property name="ajaxView">
+            <bean class="com.bomwebportal.web.ext.AjaxView" />
+        </property>
+        <property name="ajaxPrefix" value="ajax_"></property>      
+    </bean>
+    <!-- Add by Whelan, jsonView for json response - start -->
+    <bean name="jsonView" class="net.sf.json.spring.web.servlet.view.JsonView">
+ 	</bean>
+ 	<bean id="jsonViewResolver"
+        class="com.bomwebportal.web.ext.AjaxViewResolver">
+        <property name="ajaxView" ref="jsonView">
+        </property>
+        <property name="ajaxPrefix" value="json_"></property>      
+    </bean>
+     <!-- Add by Whelan, jsonView for json response - end -->
+   	<bean class="com.bomwebportal.web.ConfirmationController">
+   		<property name="bulkNewActClient" ref="bulkNewActClient"/>	
+		<property name="orderService" ref="orderService"/> 
+		<property name="service" ref="reportService"></property>  
+    	<property name="reportHelper" ref="reportHelper"></property>
+    	<property name="orderEsignatureService" ref="orderEsignatureService" />
+    	<property name="ordDocService" ref="ordDocService" />
+		<property name="vasDetailService" ref="vasDetailService"/>
+		<property name="iGuardService" ref="iGuardService"/>
+		<property name="remarkService" ref="mobCcsOrderRemarkService"/>
+		<property name="genericReportHelper" ref="genericReportHelper" />
+		<property name ="itemDisplayService" ref = "itemDisplayService"/>
+	</bean> 
+
+   	<bean class="com.bomwebportal.web.VasAttbController">
+   		<property name="queueRefService" ref="queueRefService" />
+		<property name="service" ref="vasDetailService"/>
+	</bean> 
+
+ <bean class="com.bomwebportal.web.MnpController">
+      <property name="commandName" value="mnp"/>
+        <property name="commandClass" value="com.bomwebportal.dto.MnpDTO"/> 
+   		<property name="formView" value="mnp"/>
+   			<property name="validator">
+          	  	<bean class="com.bomwebportal.validator.MnpValidator">
+             		<property name="service" ref="mnpService"/> 
+             		<property name="mobile2GRetiredInd" value="${mobile2GRetiredInd}"/>
+             		<property name="orderService" ref="orderService" />
+            		<property name="validateService" ref="validateService" />
+            	</bean>
+        	</property>
+        <property name="service" ref="mnpService"/>   
+        <property name="orderService" ref="orderService"/>
+        <property name="mobDsMrtManagementService" ref="mobDsMrtManagementService"/>
+  </bean>
+ 
+  <!--  tinker add --> 
+  <bean class="com.bomwebportal.web.VasMrtSelectionController">
+  	<property name="commandName" value="vasMrtSelection"/>
+	<property name="commandClass" value="com.bomwebportal.dto.VasMrtSelectionDTO" />
+	<property name="mobCcsMrtService" ref="mobCcsMrtService"/>
+	<property name="mnpService" ref="mnpService"/>  
+    <property name="validator">
+       <bean class="com.bomwebportal.validator.VasMrtSelectionValidator">
+          <!-- property name="bCccLookupService" ref="bCccLookupService" />  -->
+       </bean>
+    </property>
+  </bean>	
+ 
+ 	<bean class="com.bomwebportal.web.ServiceSelectionController" >
+		<property name="serviceSelectionService" ref="serviceSelectionService"/> 
+		<property name="customerInformationQuotaService" ref="customerInformationQuotaService" /> 
+	</bean>
+	
+	<bean class="com.bomwebportal.web.ServiceSelectionLookupController">
+	  <property name="serviceSelectionService" ref="serviceSelectionService"/>  
+	</bean>
+	
+  	<bean class="com.bomwebportal.web.ReportController">
+ 		<property name="service" ref="reportService"></property>
+ 		<property name="reportHelper" ref="reportHelper"></property>
+ 		<property name="genericReportHelper" ref="genericReportHelper" />
+ 	</bean>
+ 	
+ 	<bean class="com.bomwebportal.web.CreateBomOrderController">
+ 		<property name="bulkNewActClient" ref="bulkNewActClient"/>
+ 		<property name="orderService" ref="orderService"/> 
+ 	</bean>
+
+   	<bean class="com.bomwebportal.web.AddressLookupController">
+   		<property name="addrHelper" ref="addressHelper"/>
+   	</bean>  	
+
+	<bean class="com.bomwebportal.web.ClearCustomerSessionController"/>
+
+	<bean class="com.bomwebportal.web.MobileSimInfoController">
+		<property name="sessionForm" value="true"/>
+		<property name="commandName" value="mobileSimInfo"/>
+		<property name="commandClass" value="com.bomwebportal.dto.MobileSimInfoDTO"/> 
+		<property name="formView" value="mobilesiminfo"/> 
+		<property name="validator">
+				<bean class="com.bomwebportal.validator.MobileSimInfoValidator">
+						<property name="service" ref="mobileSimInfoService"/> 
+						<property name="iGuardService" ref="iGuardService" />
+						<property name="vasDetailService" ref="vasDetailService"/>
+						<property name="orderService" ref="orderService" />
+						<property name="stockService" ref="stockService" />
+						<property name="loginService" ref="loginService" />
+						<property name="validateService" ref="validateService" />
+						<property name="staffInfoService" ref="staffInfoService" />
+						<property name="mobCcsSalesInfoService" ref="mobCcsSalesInfoService" />	
+						<property name="codeLkupService" ref="codeLkupService" />	
+
+				</bean>
+		</property> 
+		<property name="mobileSimInfoService" ref="mobileSimInfoService"/>
+		<property name="vasDetailService" ref="vasDetailService"/>
+		<property name="stockService" ref="stockService"/>
+		<property name="orderService" ref="orderService"/>
+		<property name="codeLkupService" ref="codeLkupService"/>
+		
+								<property name="staffInfoService" ref="staffInfoService" />
+						<property name="mobCcsSalesInfoService" ref="mobCcsSalesInfoService" />		
+	</bean>
+		
+ 	<bean class="com.bomwebportal.web.CustomerProfileController">
+	    <property name="commandName" value="customerProfile"/>
+        <property name="commandClass" value="com.bomwebportal.dto.CustomerProfileDTO"/> 
+		<property name="formView" value="customerprofile"/>
+		<property name="validator">
+            <bean class="com.bomwebportal.validator.CustomerProfileValidator">
+            	<property name="csPortalService" ref="csPortalService"/>
+            	<property name="validateService" ref="validateService"/>
+            	<property name="bulkNewActClient" ref="bulkNewActClient"/>
+            	<property name="custCreditCheckClient" ref="custCreditCheckClient"/>
+            	<property name="customerProfileService" ref="customerProfileService" />         	
+            </bean>
+        </property>        
+		<property name="service" ref="customerProfileService"/>	
+		<property name="customerInformationService" ref="customerInformationService"/>
+		<property name="depositService" ref="depositService"/>
+		<property name="ordEmailReqService" ref="ordEmailReqService" />
+		<property name="orderService" ref="orderService"/>
+	</bean>
+	
+	<bean class="com.bomwebportal.web.CustomerInformationController">
+  	    <property name="sessionForm" value="true"/>
+		<property name="commandName" value="customerInformation"/>
+		<property name="commandClass" value="com.bomwebportal.dto.CustomerInformationDTO"/> 
+		<property name="formView" value="customerinformation"/> 
+ 		<property name="ntvDomain" value="${ntv.domain}"/>
+ 		<property name="bomDomain" value="${bom.domain}"/>
+		<property name="validator">
+				<bean class="com.bomwebportal.validator.CustomerInformationValidator">
+<!--						<property name="service" ref="mobileSimInfoService"/> -->
+				</bean>
+		</property> 
+		<property name="custSearchClient" ref="custSearchClient"/>
+		<property name="customerInformationService" ref="customerInformationService"/>
+		<property name="loggingService" ref="loggingService"/>
+		<property name="custProfileClient" ref="custProfileClient" />
+		<property name="ims1AMSEnquiryService" ref="ims1AMSEnquiryService" />
+		<property name="pageTrackService" ref="pageTrackService"/>
+	</bean>
+ 
+ 	<bean class="com.bomwebportal.web.ModelListController">
+ 		<property name="service" ref="modelListService"/>
+ 	</bean>
+ 
+  	<bean class="com.bomwebportal.web.LogoutController">
+  		<property name="service" ref="loginService"/> 
+		<property name="releaseLockService" ref="releaseLockService"/>
+  	</bean>
+ 	
+ 	<bean class="com.bomwebportal.web.WelcomeController">
+ 		<property name="welcomeService" ref="welcomeService"/> 
+		<property name="imsOrderService" ref="imsOrderService" /> 
+ 		<property name="appFlow" ref="bomWebPortalApplicationFlow"></property>   		
+ 		<property name="releaseLockService" ref="releaseLockService"/>
+ 		<property name="mappingLkupService" ref="mappingLkupService"/> 	
+		<property name="codeLkupService" ref="codeLkupService"/>
+		<property name="ltsAlertMessageService" ref="ltsAlertMessageService"/>
+		<property name="ntvDomain" value="${ntv.domain}"/>
+        <property name="loginService" ref="loginService"/> 
+ 	</bean>
+ 	
+	<bean class="com.bomwebportal.web.LoginController">
+	    <property name="commandName" value="bomsalesuser"/>
+        <property name="commandClass" value="com.bomwebportal.dto.BomSalesUserDTO"/>
+        <property name="service" ref="loginService"/> 
+		<property name="formView" value="login"/>
+		<property name="validator">
+            <bean class="com.bomwebportal.validator.LoginValidator">
+            	<property name="service" ref="loginService"/>	
+            </bean>
+        </property>
+        <property name="environment"  value="${environment}"/>
+        <property name="singleLogin"  value="${singleLogin}"/>
+        <property name="singleLoginReplaceConfirm" value="${singleLoginReplaceConfirm}"/>
+        <property name="authorizeService" ref="authorizeService"/>
+	</bean>
+	<bean class="com.bomwebportal.web.ApprovalLoginController">
+	    <property name="commandName" value="approvalLoginForm"/>
+        <property name="commandClass" value="com.bomwebportal.dto.ApprovalLoginFormDTO"/>
+        <property name="service" ref="loginService"/> 
+		<property name="formView" value="approvallogin"/>
+		<property name="validator">
+            <bean class="com.bomwebportal.validator.ApprovalLoginValidator">
+            	<property name="service" ref="loginService"/>	
+            </bean>
+        </property>
+	</bean>
+	
+	<bean class="com.bomwebportal.web.ApprovalLoginDuplexController">
+	    <property name="commandName" value="approvalLoginDuplexForm"/>
+        <property name="commandClass" value="com.bomwebportal.dto.ApprovalLoginFormDTO"/>
+        <property name="service" ref="loginService"/> 
+		<property name="formView" value="approvalloginduplex"/>
+		<property name="validator">
+            <bean class="com.bomwebportal.validator.ApprovalLoginDuplexValidator">
+            	<property name="service" ref="loginService"/>	
+            </bean>
+        </property>
+	</bean>
+	
+	<bean class="com.bomwebportal.web.PaymentController">
+	    <property name="commandName" value="payment"/>
+        <property name="commandClass" value="com.bomwebportal.dto.PaymentDTO"/> 
+		<property name="formView" value="payment"/>
+		<property name="validator">
+            <bean class="com.bomwebportal.validator.PaymentValidator">
+            	<property name="validateService" ref="validateService"/>
+            </bean>
+        </property>        
+        <property name="successView" value="welcome.html"/>	
+        <property name="service" ref="paymentService"/>	
+		<property name="bomCosOrderWsClient" ref="bomCosOrderWsClient" />
+	</bean>
+ 	
+ 	<bean class="com.bomwebportal.web.MobileDetailController">
+ 		<property name="service" ref="mobileDetailService"/>
+ 		<property name="customerInformationQuotaService" ref="customerInformationQuotaService" />
+ 	</bean>
+ 	
+ 	   <bean class="com.bomwebportal.web.VasDetailOfferController">
+		<property name="commandName" value="vasDetail"/>
+		<property name="service" ref="vasDetailService"/>
+		<property name="commandClass" value="com.bomwebportal.dto.VasDetailDTO"/> 
+		<property name="validator">
+			<bean class="com.bomwebportal.validator.VasDetailValidator">
+				<property name="vasDetailservice" ref="vasDetailService"/> 
+				<property name="mobCcsMrtService" ref="mobCcsMrtService"/>
+				<property name="service" ref="mnpService"/>
+			</bean>
+		</property> 
+		<property name="mobileDetailService" ref="mobileDetailService"/>
+	</bean>
+	
+	<bean class="com.bomwebportal.web.OrderSummaryController">		
+		<property name="retentionRecallUrl" value="${imsOrderEnquiry.Retention}"/>
+		<property name="imsOrderAmendservice" ref="imsOrderAmendService" />		
+		<property name="retentionViewUrl" value="${imsOrderEnquiry.Retention.view}"/>
+		<property name="terminationRecallUrl" value="${imsOrderEnquiry.Termination}"/>
+		<property name="terminationViewUrl" value="${imsOrderEnquiry.Termination.view}"/>
+		<property name="orderService" ref="orderService"/>
+		<property name="serviceProfileLtsService" ref="serviceProfileLtsService"/> 
+		<property name="ntvDomain" value="${ntv.domain}"/>
+	</bean>
+        
+	<bean class="com.bomwebportal.web.VasDetailController">
+ 		<property name="commandName" value="vasDetail"/>
+ 		<property name="service" ref="vasDetailService"/>
+ 		<property name="commandClass" value="com.bomwebportal.dto.VasDetailDTO"/> 
+ 		<property name="validator">
+ 		   <bean class="com.bomwebportal.validator.VasDetailValidator">
+ 			    <property name="vasDetailservice" ref="vasDetailService"/> 
+ 			    <property name="mobCcsMrtService" ref="mobCcsMrtService"/>
+ 			    <property name="service" ref="mnpService"/>  
+ 			    <property name="relationshipCheckService" ref="relationshipCheckService"/>
+				<property name="codeLkupService" ref="codeLkupService"/>
+				<property name="iGuardService" ref="iGuardService" />
+ 			  	<property name="itemsRelationshipService" ref="itemsRelationshipService" />
+ 			  	<property name="itemFuncMobService" ref="itemFuncMobService" /> 
+ 			  	<property name="mobItemQuotaService" ref="mobItemQuotaService" />
+ 			  	<property name="mobQuotaService" ref="mobQuotaService" />
+ 			  	<property name="validateService" ref="validateService"/>
+   		   </bean>
+ 		</property>     
+ 		<property name="mobileDetailService" ref="mobileDetailService"/>
+ 		<property name="orderService" ref="orderService"/>
+	    <property name="itemFuncMobService" ref="itemFuncMobService"/> 
+	    <property name="mnpService" ref="mnpService" />
+	    <property name="codeLkupService" ref="codeLkupService"/>
+	    <property name="mobItemQuotaService" ref="mobItemQuotaService"/>
+	    <property name="mobCcsApprovalLogService" ref="mobCcsApprovalLogService"/>
+	</bean>
+ 	
+ 	<bean class="com.bomwebportal.web.SummaryController">
+	   
+	    <property name="commandName" value="summary"/>
+ 	
+ 		<property name="commandClass" value="com.bomwebportal.dto.SummaryDTO"/> 
+ 		<property name="validator">
+ 		   <bean class="com.bomwebportal.validator.SummaryValidator">
+			   <property name="validateService" ref="validateService"/> 
+			   <property name="mobileSimInfoService" ref="mobileSimInfoService"/> 
+			   <property name="orderDAO" ref="orderDao"/>
+			   <property name="mobile2GRetiredInd" value="${mobile2GRetiredInd}"/>
+			   <property name="mnpService" ref="mnpService"/> 
+			   <property name="multiSimInfoService" ref="multiSimInfoService" />
+   		   </bean>
+ 		</property> 
+ 		 <property name="service" ref="vasDetailService"/>
+	    <property name="mobileDetailService" ref="mobileDetailService"/> 
+	    <property name="customerProfileService" ref="customerProfileService"/> 
+	    <property name="orderService" ref="orderService"/> 
+		<property name="supportDocService" ref="supportDocService" />
+		<property name="iGuardService" ref="iGuardService" />
+		<property name="mobCcsSbOrderAmendService" ref="mobCcsSbOrderAmendService" />
+		<property name="mobCcsApprovalLogService" ref="mobCcsApprovalLogService" /><!--20130925 Athena paper bill -->
+		<property name="mobPreActReqService" ref="mobPreActReqService" />
+		<property name="mobItemQuotaService" ref="mobItemQuotaService" />
+		<property name="mobQuotaService" ref="mobQuotaService" />
+		<property name="remarkService" ref="mobCcsOrderRemarkService"/> 
+		<property name="orderHsrmService" ref="orderHsrmService"/> 
+		<property name="mobCcsMrtService" ref="mobCcsMrtService" />
+		<property name ="quotaPlanInfoService" ref ="quotaPlanInfoService"/>
+		<property name ="itemDisplayService" ref = "itemDisplayService"/>
+		<property name="mobileSimInfoService" ref="mobileSimInfoService" />
+		<property name="reportService" ref="reportService"></property>  
+	</bean>
+ 	
+ 	<bean class="com.bomwebportal.web.OrderDetailController">
+		<property name="orderService" ref="orderService"/> 
+		<property name="customerProfileService" ref="customerProfileService"/> 
+		<property name="vasDetailService" ref="vasDetailService"/>
+		<property name="mobileDetailService" ref="mobileDetailService"/>
+		<property name="supportDocService" ref="supportDocService" />
+		<property name="remarkService" ref="mobCcsOrderRemarkService"/> 
+		<property name="iGuardService" ref="iGuardService" />
+		<property name="mobDsOrderService" ref="mobDsOrderService"/> 
+		<property name="mobDsQaRecordService" ref="mobDsQaRecordService"/> 
+		<property name="mobDsMrtManagementService" ref="mobDsMrtManagementService" />
+		<property name="depositService" ref="depositService"/>	
+		<property name="multiSimInfoService" ref="multiSimInfoService" />
+		<property name ="quotaPlanInfoService" ref ="quotaPlanInfoService"/>
+		<property name ="itemDisplayService" ref = "itemDisplayService"></property>
+		<property name="itemFuncMobService" ref="itemFuncMobService" />
+		<property name="mobCcsApprovalLogService" ref="mobCcsApprovalLogService" />
+		<property name="mobileSimInfoService" ref="mobileSimInfoService" />
+	</bean> 
+
+	<bean class="com.bomwebportal.web.AddressDistrictLookupController">
+		<property name="customerProfileService" ref="customerProfileService"/>	
+	</bean>
+	
+	<bean class="com.bomwebportal.web.BomAddressDtlController">
+		<property name="customerProfileService" ref="customerProfileService"/>	
+	</bean>
+	
+	<bean class="com.bomwebportal.web.TimeSlotLookupController">
+		<property name="deliveryService" ref="deliveryService"/>
+		<property name="orderService" ref="orderService"/>		
+	</bean>
+	
+<!-- 	<bean class="com.bomwebportal.web.DeliveryDateRangeLookupController">
+		<property name="deliveryService" ref="deliveryService"/>	
+		<property name="orderService" ref="orderService"/>	
+	</bean> -->
+	
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<property name="defaultLocale" value="en"/>
+	</bean>
+ 
+ 	<bean id="localeChangeInterceptor"
+		class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+		<property name="paramName" value="language"/> 
+	</bean>
+ 
+ 	<bean class="com.bomwebportal.web.ItemDisplayController">
+		<property name="commandName" value="itemDisplay"/>
+		<property name="commandClass" value="com.bomwebportal.dto.ItemDisplayDTO"/> 
+		<property name="itemDisplayService" ref="itemDisplayService"/> 
+	</bean> 
+
+ 
+	<bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping" >
+		<property name="interceptors">
+		   <list>
+			<ref bean="imsDirectSalesInterceptor"/>
+		  <ref bean="ssoAuthInterceptor"/>
+			<ref bean="localeChangeInterceptor"/>
+			<ref bean="commonInterceptor"/>
+			<ref bean="imsCommonInterceptor"/>
+		   </list>
+		</property>
+	</bean>
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+	    <property name="interceptors">
+		   <list>
+			<ref bean="imsDirectSalesInterceptor"/>
+		  <ref bean="ssoAuthInterceptor"/>
+			<ref bean="localeChangeInterceptor"/>
+			<ref bean="commonInterceptor"/>
+			<ref bean="imsCommonInterceptor"/>
+		   </list>
+		</property>
+	</bean>
+	<!-- 
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+	<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+	 -->
+    
+	<bean id="commonInterceptor" class="com.bomwebportal.interceptor.CommonInterceptor">
+		<property name="appFlow" ref="bomWebPortalApplicationFlow"></property>   
+		<property name="service" ref="loginService"/> 
+		<property name="propertyConfigurer" ref="propertyConfigurer" />
+	</bean>
+	
+    <!-- Register the bomwebportal.properties -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>bomwebportal</value>
+				<value>bomwebportal_lts</value>
+				<value>bomwebportal_lts_acq</value>
+				<value>bomwebportal_ims</value>
+			</list>
+		</property> 	
+	</bean>
+
+	<bean id="viewResolver"
+    	class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
+    	<property name="prefix">
+        	<value>/WEB-INF/jsp/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+ 	</bean>
+ 	
+ 	<bean class="com.bomwebportal.web.AndroidSignoffController">
+    	<property name="commandName" value="androidsignoff"/>
+    	<property name="commandClass" value="com.bomwebportal.dto.SignoffDTO"/>
+ 	</bean>
+
+ 	<bean class="com.bomwebportal.web.SignoffController">
+    	<property name="commandName" value="signoff"/>
+    	<property name="commandClass" value="com.bomwebportal.dto.SignoffDTO"/>
+	</bean> 
+	
+	<bean class="com.bomwebportal.web.ChangeShopCodeController">
+    	<property name="commandName" value="changeShopCode"/>
+     	<property name="commandClass" value="com.bomwebportal.dto.BomSalesUserDTO"/>
+     	<property name="service" ref="loginService"/>
+     	<property name="salesservice" ref="SalesService"/>
+	</bean>
+	
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="${orddoc.upload.maxSize}"/>
+	</bean>
+	
+	<bean class="com.bomwebportal.web.DocCaptureController">
+		<property name="ordDocService" ref="ordDocService"/>
+	</bean> 
+	
+	<bean class="com.bomwebportal.web.DocImgUploadController">
+		<property name="docImgUploadDAO" ref="docImgUploadDAO" /> 
+		<property name="ordDocService" ref="ordDocService"/>
+		<property name="orderService" ref="orderService"/> 
+		<property name="orderServiceIms" ref="imsOrderService" /> 
+		<property name="formView" value="docimguploadform"/>
+		<property name="commandClass" value="com.bomwebportal.dto.DocImgUploadDTO"/>
+		<property name="commandName" value="docImgUploadForm"/>
+		<property name="docRepository" ref="reportRepository"/>
+		<property name="saveDirectory" value="${dataFilePath}"/>
+		<property name="allowedExtensions" value="${orddoc.upload.allowedExtensions}"/>
+		<property name="maxUploadSizeInfo" value="${orddoc.upload.maxSize}"/>
+		<property name="successView" value="redirect:doccapture.html"/>
+		<property name="validator">
+			<bean class="com.bomwebportal.validator.DocImgUploadValidator">
+				<property name="allowedExtensions" value="${orddoc.upload.allowedExtensions}"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean class="com.bomwebportal.web.MobSignController">
+    	<property name="commandName" value="mobsign"/>
+    	<property name="commandClass" value="com.bomwebportal.dto.SignoffDTO"/>
+    	<property name="vasDetailService" ref="vasDetailService"/>
+    	<property name="signCaptureService" ref="signCaptureService"/>
+    	<property name="iGuardService" ref="iGuardService"/>
+    	<property name="itemDisplayService" ref="itemDisplayService"/>
+    	<property name="reportService" ref="reportService"/>
+    	<property name="validator">
+			<bean class="com.bomwebportal.validator.MobSignValidator"></bean>
+		</property>
+	</bean>
+	
+<!-- 	<bean class="com.bomwebportal.web.CustomerSignController">
+    	<property name="commandName" value="customersign"/>
+    	<property name="commandClass" value="com.bomwebportal.dto.SignoffDTO"/>
+    	<property name="vasDetailService" ref="vasDetailService"/>
+	</bean> -->
+	
+<!-- 	<bean class="com.bomwebportal.web.MnpSignController">
+    	<property name="commandName" value="mnpsign"/>
+    	<property name="commandClass" value="com.bomwebportal.dto.SignoffDTO"/>
+	</bean> -->
+	
+<!-- 	<bean class="com.bomwebportal.web.BankSignController">
+    	<property name="commandName" value="banksign"/>
+    	<property name="commandClass" value="com.bomwebportal.dto.SignoffDTO"/>
+	</bean> -->
+	
+	<bean class="com.bomwebportal.web.ConciergeSignController">
+    	<property name="commandName" value="conciergesign"/>
+    	<property name="commandClass" value="com.bomwebportal.dto.SignoffDTO"/>
+	</bean>
+		
+	<!-- add by erichui 20120727 -->
+	<bean class="com.bomwebportal.web.SupportDocController">
+		<property name="mobileDetailService" ref="mobileDetailService" />
+		<property name="supportDocService" ref="supportDocService" />
+		<property name="vasDetailService" ref="vasDetailService" />
+		<property name="validator">
+			<bean class="com.bomwebportal.validator.SupportDocValidator">
+			</bean>
+		</property>
+		<property name="iGuardService" ref="iGuardService" />
+	</bean>
+
+
+	<bean class="com.bomwebportal.web.SupportDocAdminController">
+		<property name="orderService" ref="orderService" />
+		<property name="supportDocAdminService" ref="supportDocAdminService" />
+	</bean>	
+	
+	<bean class="com.bomwebportal.web.RequiredProofAdminController">
+		<property name="orderService" ref="orderService" />
+		<property name="ordDocService" ref="ordDocService" />
+		<property name="supportDocAdminService" ref="supportDocAdminService" />
+		<property name="supportDocService" ref="supportDocService" />
+		<property name="formView" value="requiredproofadmin"/>
+		<property name="sessionForm" value="true"/>
+		<property name="ltsOrderDocumentService" ref="ltsOrderDocumentService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.web.RequiredProofAdminUpdateController">
+		<property name="ordDocService" ref="ordDocService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.web.RequiredProofDownloadController">
+		<property name="saveDirectory" value="${dataFilePath}"/>
+		<property name="orderService" ref="orderService" />
+		<property name="ordDocService" ref="ordDocService" />
+	</bean>	
+
+	<bean class="com.bomwebportal.web.ReportDownloadController">
+		<property name="reportRepository" ref="reportRepository"/>
+		<property name="orderService" ref="orderService" />
+		<property name="genericReportHelper" ref="genericReportHelper" />
+		<property name="signCaptureService" ref="signCaptureService" />
+		<property name="mobCcsOrderRemarkService" ref="mobCcsOrderRemarkService"/>
+	</bean>
+	
+	<!-- Order Send Email History -->
+	<bean class="com.bomwebportal.web.OrderSendEmailHistController">
+		<property name="orderService" ref="orderService" /> 
+		<property name="ordEmailReqService" ref="ordEmailReqService" />
+		<property name="orderEsignatureService" ref="orderEsignatureService" />
+		<property name="orderRetrieveLtsService" ref="orderRetrieveLtsService" />
+		<property name="orderservice" ref="imsOrderService" />
+    	<property name="imsSMSService" ref="imsSMSService" />
+		<property name="imsOrderAmendservice" ref="imsOrderAmendService" />
+		<property name="signOffLogService" ref="imsSignOffLogService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.web.TestMergeProcessController">
+		<property name="process" ref="mergingDocAutoProcess" />
+	</bean>
+	
+<!-- 	<bean class="com.bomwebportal.web.IGuardSignController">
+    	<property name="commandName" value="iguardsign"/>
+    	<property name="commandClass" value="com.bomwebportal.dto.SignoffDTO"/>
+	</bean> -->
+	
+	<bean class="com.bomwebportal.web.VasMaintenanceSearchController">
+		<property name="vasMaintenanceService" ref="vasMaintenanceService"/>
+	</bean>
+		
+	<!-- added on 20141216 -->
+	<bean class="com.bomwebportal.web.VasMaintenanceSearchRecurringController">
+		<property name="vasMaintenanceService" ref="vasMaintenanceService"/>
+	</bean>
+	
+	<!-- added on 20141217 -->
+	<bean class="com.bomwebportal.web.VasMaintenanceSearchOneTimeController">
+		<property name="vasMaintenanceService" ref="vasMaintenanceService"/>
+	</bean>	
+		
+	<bean class="com.bomwebportal.web.VasMaintenanceController">
+		<property name="commandName" value="vasmaintenance"/>
+		<property name="commandClass" value="com.bomwebportal.dto.ui.VasMaintenanceUI" /> 
+		<property name="vasMaintenanceService" ref="vasMaintenanceService"/>
+	</bean>
+	
+	<bean class="com.bomwebportal.web.MobSupportController">
+		<property name="formView" value="mobsupport" /> 
+		<property name="commandName" value="mobSupport" /> 
+		<property name="commandClass" value="com.bomwebportal.dto.MobSupportDTO" /> 
+		<property name="mobSupportService" ref="mobSupportService" /> 
+		<property name="orderService" ref="orderService" />
+		<property name="mobCcsOrderRemarkService" ref="mobCcsOrderRemarkService" />
+		<property name="successView" value="mobsupport" /> 
+		<property name="simStatusMap">
+			<map>
+				<entry key="2"><value>Normal</value></entry>
+				<entry key="3"><value>Lock</value></entry>
+				<entry key="4"><value>Sold</value></entry>
+				<entry key="5"><value>Frozen</value></entry>
+				<entry key="7"><value>Abandon</value></entry>
+				<entry key="8"><value>Faulty</value></entry>
+				<entry key="11"><value>In-transit</value></entry>
+			</map>
+		</property>
+		<property name="mrtStatusMap">
+			<map>
+				<entry key="2"><value>Normal</value></entry>
+				<entry key="3"><value>Lock</value></entry>
+				<entry key="4"><value>Active</value></entry>
+				<entry key="5"><value>Frozen</value></entry>
+				<entry key="18"><value>Reserved</value></entry>
+				<entry key="19"><value>Pre-assgn</value></entry>
+				<entry key="99"><value>Port-Out</value></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean class="com.bomwebportal.web.BasketPreviewController"/>
+	
+	<bean class="com.bomwebportal.web.AmendAFController">
+		<property name="supportDocAdminService" ref="supportDocAdminService" />
+		<property name="orderService" ref="orderService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.web.MultiSimInfoController">
+		<property name="commandName" value="multiSimInfo"/>
+		<property name="commandClass" value="com.bomwebportal.dto.MultiSimInfoDTO"/> 
+		<property name="formView" value="multisiminfo"/> 
+		<property name="successView" value="mnp" /> 
+		<property name="validator">
+				<bean class="com.bomwebportal.validator.MultiSimInfoValidator">
+					<property name="mnpService" ref="mnpService"/>
+					<property name="simService" ref="mobileSimInfoService"/>
+					<property name="orderService" ref="orderService"/>
+					<property name="vasDetailService" ref="vasDetailService"/>
+					<property name="itemsRelationshipService" ref="itemsRelationshipService" />
+					<property name="multiSimInfoService" ref="multiSimInfoService"/>
+					<property name="relationshipCheckService" ref="relationshipCheckService"/>
+					<property name="mobDsMrtManagementService" ref="mobDsMrtManagementService"/>
+					<property name="validateService" ref="validateService"/>
+				</bean>
+		</property> 
+		<property name="multiSimInfoService" ref="multiSimInfoService"/>
+		<property name="vasDetailService" ref="vasDetailService"/>
+		<property name="mnpService" ref="mnpService"/>
+		<property name="mobCcsOrderSearchService" ref="mobCcsOrderSearchService"/>
+		<property name="codeLkupService" ref="codeLkupService"/>
+		<property name="mobDsMrtManagementService" ref="mobDsMrtManagementService"/>
+	</bean>
+	
+	<!-- IMS's BomWebPortal-servlet.xml  -->
+ 	<import resource="BomWebPortal-servlet-IMS.xml"/>
+ 	<import resource="BomWebPortal-servlet-LTS.xml"/>
+ 	<import resource="BomWebPortal-servlet-LTSACQ.xml"/>
+ 	<import resource="BomWebPortal-servlet-LTSAPN.xml"/> 	 	
+ 	<import resource="BomWebPortal-servlet-LTSDIS.xml"/>
+ 	<!-- MOB CCS's BomWebPortal-servlet.xml  -->
+ 	<import resource="BomWebPortal-servlet-MOBCCS.xml"/>
+ 	<import resource="BomWebPortal-servlet-SBO.xml"/>
+ 	<import resource="BomWebPortal-servlet-MOBDS.xml"/>
+ 	<import resource="BomWebPortal-servlet-SBS.xml"/>
+ 	<import resource="BomWebPortal-servlet-MOBCOS.xml"/>
+ 	
+ 	<import resource="BomWebPortal-servlet-sso.xml"/>
+ 	<import resource="BomWebPortal-servlet-svc.xml"/>
+	
+ 	
+ 	
+ <!-- 	<bean class="com.bomwebportal.web.TdoSignController">
+    	<property name="commandName" value="tdosign"/>
+    	<property name="commandClass" value="com.bomwebportal.dto.SignoffDTO"/>
+	</bean> -->
+	
+  <bean class="com.bomwebportal.web.DepositInfoController">
+    <property name="formView" value="depositinfo" /> 
+    <property name="commandName" value="depositInfo" /> 
+    <property name="commandClass" value="com.bomwebportal.dto.ui.DepositUI" /> 
+    <property name="depositService" ref="depositService" /> 
+    <property name="waiveService" ref="waiveService"/>
+  </bean> 	
+	
+	<bean class="com.bomwebportal.web.CsPortalController">
+		<property name="csPortalService" ref="csPortalService"/>	
+	</bean>
+	
+	<bean class="com.bomwebportal.web.SimInfoController">
+		<property name="mobileSimInfoService" ref="mobileSimInfoService"/>
+		<property name="stockManualDetailService" ref="stockManualDetailService"/>		
+	</bean>
+	
+	<bean class="com.bomwebportal.web.MrtAJAXController">
+		<property name="mnpService" ref="mnpService" />	
+	</bean>
+ 	
+	<bean class="com.bomwebportal.sig.web.SignCaptureController">
+    	<property name="signCaptureService" ref="signCaptureService"/>
+    	<property name="loginService" ref="loginService"/>
+    	<property name="orderService" ref="orderService"/>
+    	<property name="customerProfileService" ref="customerProfileService"/>
+    	<property name="supportDocService" ref="supportDocService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.web.MrtSelectionController" >
+		<property name="mnpService" ref="mnpService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.web.MrtSelectionAJAXController">
+		<property name="mnpService" ref="mnpService" />	
+	</bean>
+	
+    <bean class="com.bomwebportal.web.MnpTicketController">
+      <property name="mnpTicketService" ref="mnpTicketService"/>
+    </bean>	
+	
+	<bean class="com.bomwebportal.offercode.web.OfferCodeReqController"/>
+	
+	<!-- <bean class="com.bomwebportal.web.MobPreActReqReportController">
+		<property name="mobPreActReqService" ref="mobPreActReqService"/>
+		<property name="imageFilePath" value="${imageFilePath}" />
+	</bean>	 -->
+	
+	<bean class="com.bomwebportal.htmlpdf.web.PDFReportController"></bean>
+	<bean class="com.bomwebportal.web.MobQuotaCheckController"></bean>
+
+	<bean class="com.bomwebportal.web.QueueRefController">
+		<property name="sqpcService" ref="sqpcService" />	
+		<property name="queueRefService" ref="queueRefService" />
+		<property name="orderHsrmService" ref="orderHsrmService" />
+		<property name="vasDetailService" ref="vasDetailService"/>
+	</bean>
+	
+	 <bean class="com.bomwebportal.web.HealthCheckController">
+	 	<property name="tngPsgService" ref="tngPsgService" />
+	 	<property name="ccUnifiedInterfaceClient" ref="ccUnifiedInterfaceClient"></property>
+    </bean>	
+    
+   	<bean class="com.bomwebportal.web.QuotaPlanInfoController">
+		<property name ="quotaPlanInfoService" ref ="quotaPlanInfoService"/>
+		<property name ="itemDisplayService" ref = "itemDisplayService"/>
+		<property name="commandName" value="quotaPlanInfoUI"/>
+		<property name="commandClass" value="com.bomwebportal.dto.QuotaPlanInfoUI"/> 
+		<property name="validator">
+	   	  	<bean class="com.bomwebportal.validator.QuotaPlanInfoValidator">
+	     	</bean>
+        </property>
+	</bean>
+
+	<bean class="com.bomwebportal.web.BomAccountAJAXController">
+			<property name="customerProfileService" ref="customerProfileService" />
+			<property name="bomCosOrderWsClient" ref="bomCosOrderWsClient" />
+		</bean>
+	
+	<bean class="com.bomwebportal.web.MigrateCurrentLineMrtCheckController">
+		<property name="multiSimInfoService" ref="multiSimInfoService" />
+		<property name="bomCosOrderWsClient" ref="bomCosOrderWsClient" />
+		<property name="orderService" ref="orderService"/> 
+		<property name="codeLkupService" ref="codeLkupService"/> 
+	</bean>
+	
+	<bean class="com.bomwebportal.web.CcsDeliveryController">
+		<property name="deliveryService" ref="deliveryService" />
+	</bean>
+	
+</beans>

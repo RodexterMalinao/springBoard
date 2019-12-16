@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd    
+">
+
+  <aop:aspectj-autoproxy />
+  
+	
+  <bean id="orderHsrmService" class="com.bomwebportal.service.OrderHsrmServiceImpl">
+		<property name="orderHsrmDAO" ref="orderHsrmDAO" />
+		<property name="queueRefService" ref="queueRefService" />
+		<property name="hsrmService" ref="hsrmService" />		
+		<property name="sqpcService" ref="sqpcService" />
+	</bean>
+	
+	<bean id="orderHsrmDAO" class="com.bomwebportal.dao.OrderHsrmDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+  <bean id="hsrmService" class="com.hkcsl.hsrm.service.HSRMService">
+      <constructor-arg index="0" value="${ws.hsrm.wsdl}" />
+  </bean>
+	<bean id="sqpcService" class="com.hkcsl.hsrm.service.SQPCService">
+      <constructor-arg index="0" value="${ws.sqpc.url}" />
+  </bean>
+  
+	 <bean id="queueRefDAO" class="com.bomwebportal.dao.QueueRefDAO">
+	<property name="dataSource" ref="BomWebPortalDS" />
+ </bean>
+  <bean id="queueRefService" class="com.bomwebportal.service.QueueRefServiceImpl">
+		<property name="queueRefDAO" ref="queueRefDAO" />
+		<property name="sqpcService" ref="sqpcService" />
+		<property name="hsrmService" ref="hsrmService" />
+  </bean>
+  
+  
+</beans>

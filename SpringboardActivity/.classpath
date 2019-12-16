@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/commons-io-2.2.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/commons-lang-2.5.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/spring.jar"/>
+	<classpathentry kind="lib" path="lib/pccwUtilities.jar"/>
+	<classpathentry kind="lib" path="lib/SpringboardCommon.jar" sourcepath="/SpringboardCommon"/>
+	<classpathentry kind="lib" path="lib/WorkQueue.jar"/>
+	<classpathentry kind="lib" path="lib/SpringboardInterface.jar"/>
+	<classpathentry kind="lib" path="lib/SpringboardService.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/gson-1.7.1.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/jersey-bundle-1.19.1.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/jersey-multipart-1.19.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

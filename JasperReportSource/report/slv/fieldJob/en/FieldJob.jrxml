@@ -1,0 +1,1110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SalesAgreement" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.5394743546921221"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="486"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\pvcs\\working\\BOM\\Programs\\Springboard\\SBWPR2\\JasperReportSource\\report\\slv\\fieldJob\\en\\"]]></defaultValueExpression>
+	</parameter>
+	<field name="slvFieldJobTitle" class="java.lang.String"/>
+	<field name="workRegNo" class="java.lang.String"/>
+	<field name="visitType" class="java.lang.String"/>
+	<field name="orderId" class="java.lang.String"/>
+	<field name="custName" class="java.lang.String"/>
+	<field name="actvId" class="java.lang.String"/>
+	<field name="packageName" class="java.lang.String"/>
+	<field name="profileId" class="java.lang.String"/>
+	<field name="address" class="java.lang.String"/>
+	<field name="premierInd" class="java.lang.String"/>
+	<field name="fsa" class="java.lang.String"/>
+	<field name="slvLogo" class="java.lang.String"/>
+	<field name="hereToServeLogo" class="java.lang.String"/>
+	<field name="groupLogo" class="java.lang.String"/>
+	<field name="appDateTime" class="java.lang.String"/>
+	<field name="contactName" class="java.lang.String"/>
+	<field name="contactNum" class="java.lang.String"/>
+	<field name="remark" class="java.lang.String"/>
+	<field name="staffName" class="java.lang.String"/>
+	<field name="tcContactNum" class="java.lang.String"/>
+	<field name="sStaffName" class="java.lang.String"/>
+	<field name="sTcContactNum" class="java.lang.String"/>
+	<field name="salesStaffName" class="java.lang.String"/>
+	<field name="salesContactNum" class="java.lang.String"/>
+	<field name="sSalesStaffName" class="java.lang.String"/>
+	<field name="sSalesContactNum" class="java.lang.String"/>
+	<field name="equipItemList" class="java.util.Collection"/>
+	<field name="jobItemList" class="java.util.Collection"/>
+	<field name="contractorName" class="java.lang.String"/>
+	<field name="assignStaffId" class="java.lang.String"/>
+	<field name="assignStaffContactNum" class="java.lang.String"/>
+	<field name="prepareById" class="java.lang.String"/>
+	<field name="prepareByName" class="java.lang.String"/>
+	<field name="sleAuthorizedName" class="java.lang.String"/>
+	<field name="mainNo" class="java.lang.String"/>
+	<field name="warrEndDate" class="java.lang.String"/>
+	<field name="mainDate" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="100">
+			<staticText>
+				<reportElement x="4" y="67" width="141" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial" size="10"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Activity Id:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="47" width="537" height="16"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-Arial" size="12" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{slvFieldJobTitle}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="414" y="67" width="132" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{workRegNo}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="145" y="86" width="141" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="308" y="67" width="106" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Work Req No.:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="145" y="67" width="161" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{actvId}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="413" y="85" width="141" height="1"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="99" width="555" height="1"/>
+			</line>
+			<image onErrorType="Blank">
+				<reportElement stretchType="RelativeToBandHeight" x="-10" y="0" width="248" height="46"/>
+				<imageExpression><![CDATA[$F{slvLogo}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="77" splitType="Prevent">
+			<textField>
+				<reportElement x="145" y="51" width="411" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{custName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="414" y="11" width="141" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{orderId}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="51" width="140" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Customer Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="308" y="11" width="106" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Order No:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="145" y="30" width="141" height="1"/>
+			</line>
+			<line>
+				<reportElement x="414" y="31" width="141" height="1"/>
+			</line>
+			<line>
+				<reportElement x="145" y="70" width="141" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="11" width="140" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="10"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Visit Type: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="145" y="11" width="133" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{visitType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="145" y="31" width="129" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{profileId}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="145" y="51" width="141" height="1"/>
+			</line>
+		</band>
+		<band height="250">
+			<staticText>
+				<reportElement x="1" y="72" width="268" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="12" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Appointment]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="4" y="102" width="451" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packageName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="121" width="140" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Address:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="144" y="121" width="407" height="20" isPrintWhenDetailOverflows="true"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="144" width="140" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[PT Address:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="144" y="143" width="407" height="20" isPrintWhenDetailOverflows="true"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{premierInd}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="168" width="140" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[FSA:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="144" y="168" width="407" height="20" isPrintWhenDetailOverflows="true"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fsa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="4" y="188" width="140" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Appointment Date / Time :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="FixRelativeToBottom" x="144" y="185" width="356" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{appDateTime}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="400" y="187" width="151" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[(dd/mm/yyyy)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="4" y="208" width="140" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Contact Name:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="FixRelativeToBottom" x="144" y="208" width="407" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contactName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="4" y="228" width="140" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Contact Number:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="FixRelativeToBottom" x="144" y="226" width="407" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contactNum}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="144" y="140" width="407" height="1"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="144" y="163" width="407" height="1"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="144" y="186" width="407" height="1"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="144" y="206" width="407" height="1"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="144" y="227" width="407" height="1"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="144" y="245" width="407" height="1"/>
+			</line>
+			<line>
+				<reportElement x="145" y="24" width="141" height="1"/>
+			</line>
+			<line>
+				<reportElement x="145" y="43" width="141" height="1"/>
+			</line>
+			<line>
+				<reportElement x="145" y="62" width="141" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="4" y="44" width="140" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Warranty End Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="24" width="140" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Last maintenance Visit Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="4" width="140" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[No of Maintenance Visit:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="-46" width="140" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Profile Id:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="145" y="4" width="411" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mainNo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="144" y="24" width="411" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mainDate}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="144" y="44" width="411" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{warrEndDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="287" y="25" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[(dd/mm/yyyy)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="43" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[(dd/mm/yyyy)]]></text>
+			</staticText>
+		</band>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="4" y="0" width="140" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Remark: ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="144" y="0" width="407" height="20" isPrintWhenDetailOverflows="true"/>
+				<textElement markup="html">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{remark}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="144" y="20" width="407" height="1"/>
+			</line>
+		</band>
+		<band height="190">
+			<staticText>
+				<reportElement x="1" y="11" width="268" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="12" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Sales Information]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="41" width="120" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[(1)Staff Name:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="124" y="41" width="141" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{salesStaffName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="61" width="120" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[    Contact No:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="124" y="61" width="141" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{salesContactNum}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="278" y="40" width="120" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[(2)Staff Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="60" width="120" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[    Contact No:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="398" y="41" width="141" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sSalesStaffName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="398" y="60" width="141" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sSalesContactNum}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="124" y="61" width="141" height="1"/>
+			</line>
+			<line>
+				<reportElement x="124" y="79" width="141" height="1"/>
+			</line>
+			<line>
+				<reportElement x="398" y="79" width="141" height="1"/>
+			</line>
+			<line>
+				<reportElement x="398" y="61" width="141" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="278" y="151" width="120" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[    Contact No:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="124" y="152" width="141" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tcContactNum}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="278" y="131" width="120" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[(2)Staff Name:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="124" y="132" width="141" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{staffName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="132" width="120" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[(1)Staff Name:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="124" y="170" width="141" height="1"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="398" y="132" width="141" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sStaffName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="102" width="268" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="12" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Technical Consultant Information]]></text>
+			</staticText>
+			<line>
+				<reportElement x="398" y="170" width="141" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="4" y="152" width="120" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[    Contact No:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="124" y="152" width="141" height="1"/>
+			</line>
+			<line>
+				<reportElement x="398" y="152" width="141" height="1"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="398" y="152" width="141" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sTcContactNum}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="1" y="11" width="268" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="12" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Field Job(s)]]></text>
+			</staticText>
+		</band>
+		<band height="26" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="4" y="1" width="547" height="23"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="26" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="554" y="0" width="1" height="26" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="5" width="554" height="1"/>
+			</line>
+			<subreport>
+				<reportElement stretchType="RelativeToBandHeight" x="1" y="0" width="554" height="5"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{jobItemList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["slv/fieldJob/en/FieldJob_subreportJobItem.jasper"]]></subreportExpression>
+			</subreport>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="5" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="554" y="0" width="1" height="5" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="12" width="268" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="12" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Equipment(s) / Delivery Item(s)]]></text>
+			</staticText>
+		</band>
+		<band height="24" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="4" y="1" width="244" height="23"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="332" y="1" width="120" height="23"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Serial No.]]></text>
+			</staticText>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="451" y="1" width="1" height="23" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="289" y="1" width="1" height="23" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="250" y="2" width="37" height="22"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="1" width="1" height="23" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="291" y="1" width="37" height="23"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[WO No]]></text>
+			</staticText>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="248" y="1" width="1" height="23" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="330" y="0" width="1" height="24" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="452" y="2" width="50" height="22"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Effective Start Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="504" y="2" width="50" height="22"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Effective End Date]]></text>
+			</staticText>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="502" y="1" width="1" height="23" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="554" y="1" width="1" height="23" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="5" width="554" height="1"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="554" y="0" width="1" height="5" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="289" y="0" width="1" height="5" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="554" height="5"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{equipItemList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["slv/fieldJob/en/FieldJob_subreportEquipItem.jasper"]]></subreportExpression>
+			</subreport>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="5" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="248" y="0" width="1" height="5" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="330" y="0" width="1" height="5" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="451" y="0" width="1" height="5" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="502" y="0" width="1" height="5" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="174" splitType="Prevent">
+			<staticText>
+				<reportElement x="0" y="17" width="268" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="12" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Contractor / SLE Information]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="137" y="49" width="132" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contractorName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="137" y="69" width="132" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{assignStaffId}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="137" y="89" width="132" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{assignStaffContactNum}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="137" y="133" width="131" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prepareById}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="49" width="133" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Contractor Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="69" width="133" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Contractor Staff Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="89" width="133" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Contact Number:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="133" width="133" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Prepared by:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="137" y="153" width="124" height="1"/>
+			</line>
+			<line>
+				<reportElement x="137" y="108" width="124" height="1"/>
+			</line>
+			<line>
+				<reportElement x="137" y="89" width="124" height="1"/>
+			</line>
+			<line>
+				<reportElement x="137" y="69" width="124" height="1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="120" width="553" height="1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="165" width="553" height="1"/>
+			</line>
+		</band>
+		<band height="238">
+			<staticText>
+				<reportElement x="4" y="0" width="224" height="34"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial" size="8" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[I certify that the work has been satisfactorily carried out and the equipment is properly installed.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="34" width="224" height="11"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="HanWangMingLight" size="8" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[茲證明一切工作已進行完畢，器材亦已安裝妥當。]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="160" width="62" height="36"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial" size="8" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Company Chop & Signature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="65" y="160" width="35" height="36"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="HanWangMingLight" size="8" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[公司蓋章及簽名]]></text>
+			</staticText>
+			<line>
+				<reportElement x="104" y="188" width="124" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="199" width="62" height="38"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-Arial" size="8" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="65" y="199" width="35" height="38"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="HanWangMingLight" size="8" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[日期]]></text>
+			</staticText>
+			<line>
+				<reportElement x="104" y="223" width="124" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="230" y="2" width="157" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Commenced]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="387" y="2" width="157" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Received]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="23" width="157" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Completed]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="387" y="23" width="157" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[To Staff]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="44" width="157" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Service Given]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="65" width="157" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Service Ceased]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="387" y="44" width="157" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Return to S.O.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="387" y="65" width="157" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Return to Office]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="86" width="157" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Staff No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="387" y="86" width="157" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Inspected by]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="107" width="157" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Certified Correct]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="139" width="157" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<line>
+				<reportElement x="229" y="2" width="1" height="157"/>
+			</line>
+			<line>
+				<reportElement x="544" y="2" width="1" height="157"/>
+			</line>
+			<line>
+				<reportElement x="230" y="2" width="314" height="1"/>
+			</line>
+			<line>
+				<reportElement x="229" y="159" width="316" height="1"/>
+			</line>
+			<line>
+				<reportElement x="386" y="3" width="1" height="157"/>
+			</line>
+			<line>
+				<reportElement x="229" y="105" width="316" height="1"/>
+			</line>
+			<line>
+				<reportElement x="229" y="84" width="316" height="1"/>
+			</line>
+			<line>
+				<reportElement x="229" y="63" width="316" height="1"/>
+			</line>
+			<line>
+				<reportElement x="229" y="43" width="316" height="1"/>
+			</line>
+			<line>
+				<reportElement x="229" y="22" width="316" height="1"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="41" width="195" height="12" forecolor="#828282"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="8" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Hong Kong Telecommunications (HKT) Limited]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="53" width="297" height="15" forecolor="#828282"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[PO Box 320 GPO Hong Kong      Tel +852 2888 1888      Fax +852 2877 8877]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="188" y="41" width="95" height="12" forecolor="#828282"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[smartliving.hkt.com]]></text>
+			</staticText>
+			<image onErrorType="Blank">
+				<reportElement stretchType="RelativeToBandHeight" x="1" y="0" width="270" height="41"/>
+				<imageExpression><![CDATA[$F{hereToServeLogo}]]></imageExpression>
+			</image>
+			<image onErrorType="Blank">
+				<reportElement stretchType="RelativeToBandHeight" x="356" y="0" width="196" height="68"/>
+				<imageExpression><![CDATA[$F{groupLogo}]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="70">
+			<staticText>
+				<reportElement x="0" y="41" width="195" height="12" forecolor="#828282"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="8" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Hong Kong Telecommunications (HKT) Limited]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="53" width="297" height="15" forecolor="#828282"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[PO Box 320 GPO Hong Kong      Tel +852 2888 1888      Fax +852 2877 8877]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="41" width="95" height="12" forecolor="#828282"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[smartliving.hkt.com]]></text>
+			</staticText>
+			<image onErrorType="Blank">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="270" height="41"/>
+				<imageExpression><![CDATA[$F{hereToServeLogo}]]></imageExpression>
+			</image>
+			<image onErrorType="Blank">
+				<reportElement stretchType="RelativeToBandHeight" x="355" y="0" width="196" height="68"/>
+				<imageExpression><![CDATA[$F{groupLogo}]]></imageExpression>
+			</image>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band/>
+	</summary>
+	<noData>
+		<band/>
+	</noData>
+</jasperReport>

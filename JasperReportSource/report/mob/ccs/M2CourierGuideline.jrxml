@@ -1,0 +1,2526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CourierGuideline" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.5394743546921206"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="880"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\Springboard\\SB_workspace\\sb_R2SVN\\mob\\ccs\\"]]></defaultValueExpression>
+	</parameter>
+	<field name="throughDelivery" class="java.lang.Boolean"/>
+	<field name="throughPickUp" class="java.lang.Boolean"/>
+	<field name="brCust" class="java.lang.Boolean"/>
+	<field name="customerContactName" class="java.lang.String"/>
+	<field name="deliveryContactName" class="java.lang.String"/>
+	<field name="deliveryContactNum" class="java.lang.String"/>
+	<field name="orderId" class="java.lang.String"/>
+	<field name="iccid" class="java.lang.String"/>
+	<field name="imei" class="java.lang.String"/>
+	<field name="deliveryDayStr" class="java.lang.String"/>
+	<field name="mnpInd" class="java.lang.Boolean"/>
+	<field name="ssFormNewMrtInd" class="java.lang.Boolean"/>
+	<field name="ssFormRenewalInd" class="java.lang.Boolean"/>
+	<field name="neFormInd" class="java.lang.Boolean"/>
+	<field name="ownershipFormInd" class="java.lang.Boolean"/>
+	<field name="idDocCopy" class="java.lang.Boolean"/>
+	<field name="addressProof" class="java.lang.Boolean"/>
+	<field name="thirdPartyCreditCardAuthorization" class="java.lang.Boolean"/>
+	<field name="thirdPartyCreditCardHolderIDDocumentCopy" class="java.lang.Boolean"/>
+	<field name="mnpApplicationForm" class="java.lang.Boolean"/>
+	<field name="creditCardCopy" class="java.lang.Boolean"/>
+	<field name="studentCardCopy" class="java.lang.Boolean"/>
+	<field name="changeOfServiceForm" class="java.lang.Boolean"/>
+	<field name="validForeignDomesticHelperContractCopy" class="java.lang.Boolean"/>
+	<field name="prepaidSIMcopy" class="java.lang.Boolean"/>
+	<field name="conciergeServiceAuthorizationLetter" class="java.lang.Boolean"/>
+	<field name="authorizationLetterfor3rdPartycollection" class="java.lang.Boolean"/>
+	<field name="brCustomerBusinessNameCardOfContactPerson" class="java.lang.Boolean"/>
+	<field name="brCustomerBusinessNameCardStaffCopy" class="java.lang.Boolean"/>
+	<field name="twoNRegisterHKIDCopy" class="java.lang.Boolean"/>
+	<field name="cash" class="java.lang.Double"/>
+	<field name="authorizationLetterAndIDCollection" class="java.lang.Boolean"/>
+	<field name="authorizationLetterName" class="java.lang.String"/>
+	<field name="authorizationLetterContractNum" class="java.lang.String"/>
+	<field name="changeOfMobileNumInd" class="java.lang.Boolean"/>
+	<field name="upFrontPaymentByCreditCard" class="java.lang.Boolean"/>
+	<field name="haveMultiSim" class="java.lang.Boolean"/>
+	<field name="multipleMrtSimListOdd" class="java.util.List"/>
+	<field name="multipleMrtSimListEven" class="java.util.List"/>
+	<field name="iGuardForm" class="java.lang.Boolean"/>
+	<field name="iGuardFormLDS" class="java.lang.Boolean"/>
+	<field name="iGuardFormAD" class="java.lang.Boolean"/>
+	<field name="mobileSafetyForm" class="java.lang.Boolean"/>
+	<field name="hasNFCSimForm" class="java.lang.Boolean"/>
+	<field name="hasOctopusSimForm" class="java.lang.Boolean"/>
+	<field name="octFlag" class="java.lang.String"/>
+	<field name="tradeInHSForm" class="java.lang.Boolean"/>
+	<field name="ddaOSForm" class="java.lang.Boolean"/>
+	<field name="receiveCopy" class="java.lang.Boolean"/>
+	<field name="bankNameChi" class="java.lang.String"/>
+	<field name="noOfSign" class="java.lang.String"/>
+	<field name="cashInd" class="java.lang.Boolean"/>
+	<field name="yahooCouponSerial" class="java.lang.String"/>
+	<field name="yahooCouponInd" class="java.lang.Boolean"/>
+	<field name="tngServiceFlag" class="java.lang.Boolean"/>
+	<field name="studentPlanFlag" class="java.lang.Boolean"/>
+	<field name="hkbnInd" class="java.lang.Boolean"/>
+	<field name="transcriptCopy" class="java.lang.Boolean"/>
+	<field name="jPrefixTngServiceInd" class="java.lang.Boolean"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="18" splitType="Stretch">
+			<staticText>
+				<reportElement x="17" y="1" width="520" height="16"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="PCCW-zh-Ming" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[〈內部文件〉Courier 送貨員指引  csl mobile services]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="66" splitType="Stretch">
+			<frame>
+				<reportElement x="17" y="0" width="520" height="66"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="2" y="2" width="50" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[* Order No.:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="52" y="2" width="100" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{orderId}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="2" y="18" width="78" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[* 請攜同SIM Card:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="84" y="18" width="100" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{iccid}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="186" y="18" width="73" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Handset IMEI No.:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="364" y="18" width="73" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[送給客戶]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="262" y="18" width="100" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{imei}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" x="2" y="50" width="280" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[* 請將Sales & Service Agreement form, SIM Card和以下的文件一併]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="2" y="34" width="137" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[* 另需攜同Secondary SIM Card:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="385" y="34" width="92" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[送給客戶 (如適用)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="290" y="50" width="66" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[送給客戶]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement positionType="Float" x="282" y="54" width="6" height="6"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</rectangle>
+				<rectangle>
+					<reportElement positionType="Float" x="356" y="54" width="6" height="6"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement positionType="Float" x="364" y="50" width="92" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[交給客戶服務中心]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="354" y="52" width="9" height="9">
+						<printWhenExpression><![CDATA[$F{throughPickUp}]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="280" y="52" width="9" height="9">
+						<printWhenExpression><![CDATA[$F{throughDelivery}]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="140" y="34" width="240" height="15"/>
+					<subreport>
+						<reportElement x="0" y="0" width="120" height="15">
+							<printWhenExpression><![CDATA[$F{haveMultiSim}]]></printWhenExpression>
+						</reportElement>
+						<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{multipleMrtSimListOdd})]]></dataSourceExpression>
+						<subreportExpression class="java.lang.String"><![CDATA["mob/ccs/M2CourierGuideline_subreport1.jasper"]]></subreportExpression>
+					</subreport>
+					<subreport>
+						<reportElement x="120" y="0" width="120" height="15">
+							<printWhenExpression><![CDATA[$F{haveMultiSim}]]></printWhenExpression>
+						</reportElement>
+						<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{multipleMrtSimListEven})]]></dataSourceExpression>
+						<subreportExpression class="java.lang.String"><![CDATA["mob/ccs/M2CourierGuideline_subreport1.jasper"]]></subreportExpression>
+					</subreport>
+					<staticText>
+						<reportElement x="120" y="0" width="120" height="15">
+							<printWhenExpression><![CDATA[$F{multipleMrtSimListEven} == null]]></printWhenExpression>
+						</reportElement>
+						<box>
+							<bottomPen lineWidth="0.5"/>
+						</box>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="0" y="0" width="118" height="15">
+							<printWhenExpression><![CDATA[$F{multipleMrtSimListOdd} == null]]></printWhenExpression>
+						</reportElement>
+						<box>
+							<bottomPen lineWidth="0.5"/>
+						</box>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="34" splitType="Stretch">
+			<frame>
+				<reportElement x="17" y="0" width="520" height="34"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="2" y="18" width="102" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[速遞送貨日期和時間:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="104" y="18" width="135" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{deliveryDayStr}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="239" y="18" width="35" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[之前]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="282" y="2" width="65" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[聯絡人姓名﹕]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="282" y="18" width="65" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[聯絡號碼﹕]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="347" y="2" width="168" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{deliveryContactName}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="347" y="18" width="100" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{deliveryContactNum}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="19" splitType="Stretch">
+			<frame>
+				<reportElement x="17" y="0" width="520" height="19"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<frame>
+					<reportElement x="100" y="0" width="320" height="19"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<rectangle>
+						<reportElement x="5" y="6" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="16" y="2" width="264" height="15"/>
+						<textElement verticalAlignment="Top">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+						</textElement>
+						<text><![CDATA[未能成功(更改送貨日期和時間]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="280" y="2" width="15" height="15"/>
+						<textElement verticalAlignment="Top">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+						</textElement>
+						<text><![CDATA[)]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="420" y="0" width="100" height="19"/>
+					<rectangle>
+						<reportElement x="5" y="6" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="16" y="2" width="60" height="15"/>
+						<textElement verticalAlignment="Top">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[取消]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="0" y="0" width="100" height="19"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<rectangle>
+						<reportElement x="5" y="6" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="16" y="2" width="68" height="15"/>
+						<textElement verticalAlignment="Top">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[成功送遞]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="65" splitType="Stretch">
+			<frame>
+				<reportElement x="17" y="2" width="520" height="63"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<frame>
+					<reportElement x="0" y="0" width="35" height="63"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="16" y="22" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[1]]></text>
+					</staticText>
+					<rectangle>
+						<reportElement x="5" y="26" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="3" y="24" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{tradeInHSForm}==true]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+				</frame>
+				<staticText>
+					<reportElement x="55" y="16" width="460" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[請根據“回收手機確認收據”核對手機型號及IMEI No.，並要求客戶簽署確認．]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="55" y="31" width="460" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[請根據“手機回收指引”檢查手機，並須確認通過測試]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="55" y="46" width="460" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[必須於以上回收手機金額有效日或之前成功送貨]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="42" y="20" width="6" height="6"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement x="40" y="18" width="9" height="9">
+						<printWhenExpression><![CDATA[$F{tradeInHSForm}==true]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="42" y="35" width="6" height="6"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement x="40" y="33" width="9" height="9">
+						<printWhenExpression><![CDATA[false]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="42" y="50" width="6" height="6"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement x="40" y="48" width="9" height="9">
+						<printWhenExpression><![CDATA[false]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="1" width="264" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[回收手機確認 Handset Trade In	(回收手機金額，有效日至]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="300" y="1" width="100" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+				</textField>
+				<staticText>
+					<reportElement x="400" y="1" width="15" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[)]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="19" splitType="Stretch">
+			<frame>
+				<reportElement x="17" y="0" width="520" height="19"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="36" y="2" width="480" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[流動電話號碼可攜服務申請表格  請客戶本人在左下角簽名<<如公司客戶，須附加上公司蓋印>>]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="0" y="0" width="35" height="19"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="16" y="2" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[2]]></text>
+					</staticText>
+					<rectangle>
+						<reportElement x="5" y="6" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="3" y="4" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{mnpApplicationForm}==true]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="50" splitType="Stretch">
+			<frame>
+				<reportElement x="17" y="0" width="520" height="50"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="36" y="2" width="480" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[csl 流動通訊服務申請書  csl mobile services APPLICATION]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="18" width="480" height="30"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[請客戶本人在第九節(Section I) "X" 位置簽署及如客戶使用信用咭，需在第七節(Section G) "X" 位置簽署及刮咭<<如公司客戶，須附加上公司蓋印>>，一式二份 (一份交回公司；一份給客戶)]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="0" y="0" width="35" height="50"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<rectangle>
+						<reportElement x="5" y="22" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="16" y="18" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[3]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="3" y="20" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{ssFormNewMrtInd}==true]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="65" splitType="Stretch">
+			<frame>
+				<reportElement x="17" y="0" width="520" height="65"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="36" y="34" width="480" height="30"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[請客戶本人在第九節(Section I) "X" 位置簽署及如客戶使用信用咭，需在第七節(Section G)  "X" 位置簽署及刮咭<<如公司客戶，須附加上公司蓋印>>，一式二份 (一份交回公司；一份給客戶)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="3" width="480" height="30"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[csl 流動通訊服務申請書 (續約/附加合約/更新計劃)
+csl mobile services APPLICATION (Renewal/ Append Contract/ Change Plan)]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="0" y="0" width="35" height="65"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="16" y="23" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[4]]></text>
+					</staticText>
+					<rectangle>
+						<reportElement x="5" y="27" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="3" y="25" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{ssFormRenewalInd}==true]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band splitType="Stretch"/>
+		<band height="97" splitType="Stretch">
+			<frame>
+				<reportElement x="17" y="0" width="520" height="97"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="36" y="2" width="150" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[更改服務/客戶資料及退款申請書]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="35" y="18" width="485" height="47"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<rectangle>
+						<reportElement x="5" y="19" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="16" y="1" width="464" height="45"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming"/>
+						</textElement>
+						<text><![CDATA[Transfer of Ownership Form
+*** 送貨員 請在方格(New Owner Box)填上智能咭號碼(SIM Card Number)
+請舊機主在左下角簽名，請新機主在右下角簽名<<如公司客戶，須附加上公司蓋印>>]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="4" y="17" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{ownershipFormInd}==true && $F{changeOfServiceForm}==true]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="0" y="0" width="35" height="97"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="16" y="41" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[6]]></text>
+					</staticText>
+					<rectangle>
+						<reportElement x="5" y="45" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="3" y="43" width="9" height="9">
+							<printWhenExpression><![CDATA[( $F{ownershipFormInd}==true && $F{changeOfServiceForm}==true )
+||
+($F{changeOfMobileNumInd} == true && $F{changeOfServiceForm}==true)]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="35" y="65" width="485" height="32"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<rectangle>
+						<reportElement x="5" y="12" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="16" y="1" width="464" height="30"/>
+						<textElement verticalAlignment="Top">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+						</textElement>
+						<text><![CDATA[Change of Mobile No.
+請客戶本人在左下角簽名<<如公司客戶，須附加上公司蓋印>>]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="4" y="10" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{changeOfMobileNumInd} == true && $F{changeOfServiceForm}==true]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="34" splitType="Stretch">
+			<frame>
+				<reportElement x="17" y="0" width="520" height="34"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<frame>
+					<reportElement x="0" y="0" width="35" height="34"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="16" y="10" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[7]]></text>
+					</staticText>
+					<rectangle>
+						<reportElement x="5" y="14" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="3" y="12" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{prepaidSIMcopy}==true]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+				</frame>
+				<staticText>
+					<reportElement x="36" y="2" width="480" height="30"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[流動儲值電話咭主聲明 (Prepaid Sim --> Post-paid)
+請客戶在左下角簽名<<如公司客戶，須附加上公司蓋印>>]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="36" splitType="Stretch">
+			<frame>
+				<reportElement x="17" y="0" width="520" height="36"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="36" y="2" width="480" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[第三者信用卡自動轉賬授權書 (請卡主本人在左中央信用卡持有人位置簽署及請在右中央空白位置刮卡) / 或]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="0" y="0" width="35" height="36"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="16" y="11" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[8]]></text>
+					</staticText>
+					<rectangle>
+						<reportElement x="5" y="15" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+				</frame>
+				<staticText>
+					<reportElement x="36" y="18" width="480" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[由客戶提供已簽署的第三者信用卡自動轉賬授權書及請在右中央空白位置刮卡]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement x="20" y="13" width="9" height="9">
+					<printWhenExpression><![CDATA[$F{thirdPartyCreditCardAuthorization}==true]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+		</band>
+		<band height="135" splitType="Stretch">
+			<frame>
+				<reportElement x="17" y="0" width="520" height="134"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<frame>
+					<reportElement x="0" y="0" width="35" height="93"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="16" y="41" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[9]]></text>
+					</staticText>
+					<rectangle>
+						<reportElement x="5" y="45" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="3" y="43" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{receiveCopy}==true]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+				</frame>
+				<staticText>
+					<reportElement x="36" y="2" width="150" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[請代收客戶:]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="35" y="18" width="243" height="116"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<frame>
+						<reportElement x="0" y="0" width="243" height="30"/>
+						<box>
+							<topPen lineWidth="0.5"/>
+							<leftPen lineWidth="0.5"/>
+							<bottomPen lineWidth="0.5"/>
+							<rightPen lineWidth="0.5"/>
+						</box>
+						<rectangle>
+							<reportElement x="5" y="4" width="6" height="6"/>
+							<graphicElement>
+								<pen lineWidth="0.5"/>
+							</graphicElement>
+						</rectangle>
+						<staticText>
+							<reportElement x="16" y="0" width="227" height="30"/>
+							<textElement verticalAlignment="Top">
+								<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+							</textElement>
+							<text><![CDATA[a. 身份證(核對簽發日期 Date of Issue 必須等於/大於 2003年6月23日)/商業登記證 副本]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="3" y="2" width="9" height="9">
+								<printWhenExpression><![CDATA[$F{idDocCopy}==true]]></printWhenExpression>
+							</reportElement>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font size="6"/>
+							</textElement>
+							<text><![CDATA[X]]></text>
+						</staticText>
+					</frame>
+					<frame>
+						<reportElement x="0" y="45" width="243" height="15"/>
+						<box>
+							<topPen lineWidth="0.5"/>
+							<leftPen lineWidth="0.5"/>
+							<bottomPen lineWidth="0.5"/>
+							<rightPen lineWidth="0.5"/>
+						</box>
+						<rectangle>
+							<reportElement x="5" y="4" width="6" height="6"/>
+							<graphicElement>
+								<pen lineWidth="0.5"/>
+							</graphicElement>
+						</rectangle>
+						<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+							<reportElement x="61" y="0" width="80" height="15"/>
+							<textElement textAlignment="Left">
+								<font fontName="PCCW-zh-Ming" size="9"/>
+							</textElement>
+							<textFieldExpression class="java.lang.Double"><![CDATA[$F{cash}]]></textFieldExpression>
+						</textField>
+						<staticText>
+							<reportElement x="16" y="0" width="45" height="15"/>
+							<textElement verticalAlignment="Top">
+								<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+							</textElement>
+							<text><![CDATA[c. 現金]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="3" y="2" width="9" height="9">
+								<printWhenExpression><![CDATA[$F{cashInd} == true]]></printWhenExpression>
+							</reportElement>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font size="6"/>
+							</textElement>
+							<text><![CDATA[X]]></text>
+						</staticText>
+					</frame>
+					<frame>
+						<reportElement x="0" y="30" width="243" height="15"/>
+						<box>
+							<topPen lineWidth="0.5"/>
+							<leftPen lineWidth="0.5"/>
+							<bottomPen lineWidth="0.5"/>
+							<rightPen lineWidth="0.5"/>
+						</box>
+						<rectangle>
+							<reportElement x="5" y="4" width="6" height="6"/>
+							<graphicElement>
+								<pen lineWidth="0.5"/>
+							</graphicElement>
+						</rectangle>
+						<staticText>
+							<reportElement x="16" y="0" width="227" height="15"/>
+							<textElement verticalAlignment="Top">
+								<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+							</textElement>
+							<text><![CDATA[b. 住址證明副本]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="3" y="2" width="9" height="9">
+								<printWhenExpression><![CDATA[$F{addressProof}==true]]></printWhenExpression>
+							</reportElement>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font size="6"/>
+							</textElement>
+							<text><![CDATA[X]]></text>
+						</staticText>
+					</frame>
+					<frame>
+						<reportElement x="0" y="60" width="243" height="15"/>
+						<box>
+							<topPen lineWidth="0.5"/>
+							<leftPen lineWidth="0.5"/>
+							<bottomPen lineWidth="0.5"/>
+							<rightPen lineWidth="0.5"/>
+						</box>
+						<rectangle>
+							<reportElement x="5" y="4" width="6" height="6"/>
+							<graphicElement>
+								<pen lineWidth="0.5"/>
+							</graphicElement>
+						</rectangle>
+						<staticText>
+							<reportElement x="16" y="0" width="227" height="15"/>
+							<textElement verticalAlignment="Top">
+								<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+							</textElement>
+							<text><![CDATA[d. 第三者信用卡身份證副本]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="3" y="2" width="9" height="9">
+								<printWhenExpression><![CDATA[$F{thirdPartyCreditCardHolderIDDocumentCopy}==true]]></printWhenExpression>
+							</reportElement>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font size="6"/>
+							</textElement>
+							<text><![CDATA[X]]></text>
+						</staticText>
+					</frame>
+					<frame>
+						<reportElement x="0" y="75" width="243" height="15"/>
+						<box>
+							<topPen lineWidth="0.5"/>
+							<leftPen lineWidth="0.5"/>
+							<bottomPen lineWidth="0.5"/>
+							<rightPen lineWidth="0.5"/>
+						</box>
+						<rectangle>
+							<reportElement x="5" y="4" width="6" height="6"/>
+							<graphicElement>
+								<pen lineWidth="0.5"/>
+							</graphicElement>
+						</rectangle>
+						<staticText>
+							<reportElement x="16" y="0" width="220" height="15"/>
+							<textElement verticalAlignment="Top">
+								<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+							</textElement>
+							<text><![CDATA[i. 代收Prepaid SIM card 影印本，並須核對SIM no.]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="3" y="2" width="9" height="9">
+								<printWhenExpression><![CDATA[$F{prepaidSIMcopy}==true]]></printWhenExpression>
+							</reportElement>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font size="6"/>
+							</textElement>
+							<text><![CDATA[X]]></text>
+						</staticText>
+					</frame>
+					<frame>
+						<reportElement x="0" y="91" width="243" height="25"/>
+						<rectangle>
+							<reportElement x="4" y="4" width="6" height="6"/>
+							<graphicElement>
+								<pen lineWidth="0.5"/>
+							</graphicElement>
+						</rectangle>
+						<staticText>
+							<reportElement x="16" y="0" width="220" height="25"/>
+							<textElement verticalAlignment="Top">
+								<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+							</textElement>
+							<text><![CDATA[k. 學生登記本人須提供指定大專院校機構於2018年期間發出的成績單副本]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="2" y="2" width="9" height="9">
+								<printWhenExpression><![CDATA[$F{transcriptCopy}==true]]></printWhenExpression>
+							</reportElement>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font size="6"/>
+							</textElement>
+							<text><![CDATA[X]]></text>
+						</staticText>
+					</frame>
+				</frame>
+				<frame>
+					<reportElement x="278" y="18" width="242" height="116"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<frame>
+						<reportElement x="0" y="0" width="242" height="15"/>
+						<box>
+							<topPen lineWidth="0.5"/>
+							<leftPen lineWidth="0.5"/>
+							<bottomPen lineWidth="0.5"/>
+							<rightPen lineWidth="0.5"/>
+						</box>
+						<rectangle>
+							<reportElement x="5" y="4" width="6" height="6"/>
+							<graphicElement>
+								<pen lineWidth="0.5"/>
+							</graphicElement>
+						</rectangle>
+						<staticText>
+							<reportElement x="16" y="0" width="225" height="15"/>
+							<textElement verticalAlignment="Top">
+								<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+							</textElement>
+							<text><![CDATA[e. 轉名服務之舊客戶身份證副本]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="3" y="2" width="9" height="9">
+								<printWhenExpression><![CDATA[($F{twoNRegisterHKIDCopy}== true) && ( $F{ownershipFormInd} ==true)]]></printWhenExpression>
+							</reportElement>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font size="6"/>
+							</textElement>
+							<text><![CDATA[X]]></text>
+						</staticText>
+					</frame>
+					<frame>
+						<reportElement x="0" y="15" width="242" height="15"/>
+						<box>
+							<topPen lineWidth="0.5"/>
+							<leftPen lineWidth="0.5"/>
+							<bottomPen lineWidth="0.5"/>
+							<rightPen lineWidth="0.5"/>
+						</box>
+						<rectangle>
+							<reportElement x="5" y="4" width="6" height="6"/>
+							<graphicElement>
+								<pen lineWidth="0.5"/>
+							</graphicElement>
+						</rectangle>
+						<staticText>
+							<reportElement x="16" y="0" width="225" height="15"/>
+							<textElement verticalAlignment="Top">
+								<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+							</textElement>
+							<text><![CDATA[f. 學生証影印本]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="3" y="2" width="9" height="9">
+								<printWhenExpression><![CDATA[$F{studentCardCopy}==true]]></printWhenExpression>
+							</reportElement>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font size="6"/>
+							</textElement>
+							<text><![CDATA[X]]></text>
+						</staticText>
+					</frame>
+					<frame>
+						<reportElement x="0" y="30" width="242" height="15"/>
+						<box>
+							<topPen lineWidth="0.5"/>
+							<leftPen lineWidth="0.5"/>
+							<bottomPen lineWidth="0.5"/>
+							<rightPen lineWidth="0.5"/>
+						</box>
+						<rectangle>
+							<reportElement x="5" y="4" width="6" height="6"/>
+							<graphicElement>
+								<pen lineWidth="0.5"/>
+							</graphicElement>
+						</rectangle>
+						<staticText>
+							<reportElement x="16" y="0" width="225" height="15"/>
+							<textElement verticalAlignment="Top">
+								<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+							</textElement>
+							<text><![CDATA[g. 護照副本(申請Tap & Go 服務的客戶身份證開頭為"J")]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="3" y="2" width="9" height="9">
+								<printWhenExpression><![CDATA[$F{jPrefixTngServiceInd}==true]]></printWhenExpression>
+							</reportElement>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font size="6"/>
+							</textElement>
+							<text><![CDATA[X]]></text>
+						</staticText>
+					</frame>
+					<frame>
+						<reportElement x="0" y="45" width="242" height="30"/>
+						<box>
+							<topPen lineWidth="0.5"/>
+							<leftPen lineWidth="0.5"/>
+							<bottomPen lineWidth="0.5"/>
+							<rightPen lineWidth="0.5"/>
+						</box>
+						<rectangle>
+							<reportElement x="5" y="4" width="6" height="6"/>
+							<graphicElement>
+								<pen lineWidth="0.5"/>
+							</graphicElement>
+						</rectangle>
+						<staticText>
+							<reportElement x="16" y="0" width="225" height="30"/>
+							<textElement verticalAlignment="Top">
+								<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+							</textElement>
+							<text><![CDATA[h. 僱佣合約影印本<<須要有6個月或以上的有效期及僱佣合約上之地址須與「住址證明」一樣>>]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="3" y="2" width="9" height="9">
+								<printWhenExpression><![CDATA[$F{validForeignDomesticHelperContractCopy}==true]]></printWhenExpression>
+							</reportElement>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font size="6"/>
+							</textElement>
+							<text><![CDATA[X]]></text>
+						</staticText>
+					</frame>
+					<frame>
+						<reportElement x="0" y="75" width="241" height="14"/>
+						<staticText>
+							<reportElement x="14" y="1" width="225" height="13"/>
+							<textElement>
+								<font fontName="PCCW-zh-Ming" size="9"/>
+							</textElement>
+							<text><![CDATA[j. HKBN 帳單副本]]></text>
+						</staticText>
+						<rectangle>
+							<reportElement x="6" y="5" width="6" height="6"/>
+							<graphicElement>
+								<pen lineWidth="0.5"/>
+							</graphicElement>
+						</rectangle>
+						<staticText>
+							<reportElement x="4" y="0" width="9" height="14">
+								<printWhenExpression><![CDATA[$F{hkbnInd}==true]]></printWhenExpression>
+							</reportElement>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font size="6"/>
+							</textElement>
+							<text><![CDATA[X]]></text>
+						</staticText>
+					</frame>
+				</frame>
+			</frame>
+		</band>
+		<band height="50" splitType="Stretch">
+			<frame>
+				<reportElement x="17" y="0" width="520" height="50"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="36" y="2" width="480" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[請在現場核對信用卡並於送貨單(Delivery Note)上刮下客戶之信用卡正面，然後請卡主簽名作實]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="18" width="480" height="30"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[(如使用第三者信用卡付款，並能提供 (1)該信用卡在現場刮卡 (2)卡主身份證副本 (3)卡主已簽署的信用卡轉賬授權書，卡主則可豁免在送貨單及合約上簽名。)]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="0" y="0" width="35" height="50"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<rectangle>
+						<reportElement x="5" y="22" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="16" y="18" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[10]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="3" y="20" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{upFrontPaymentByCreditCard}==true]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="67" splitType="Stretch">
+			<frame>
+				<reportElement x="17" y="0" width="520" height="67"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<frame>
+					<reportElement x="0" y="0" width="35" height="67"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<rectangle>
+						<reportElement x="5" y="31" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="16" y="27" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[11]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="3" y="29" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{bankNameChi} != null && $F{bankNameChi}.trim().length() > 0]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+				</frame>
+				<textField>
+					<reportElement x="150" y="2" width="100" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[($F{bankNameChi} != null && $F{bankNameChi}.trim().length() > 0) ? $F{bankNameChi} : ""]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="36" y="18" width="480" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[請在指定空白位置刮卡  及  請卡主本人完成以下資料：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="34" width="480" height="15"/>
+					<textElement markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[a) 填上完整信用卡號碼   b) 請卡主本人在指定位置簽署，共_____個簽署]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="50" width="480" height="15"/>
+					<textElement markup="none">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[***F&S must send the installment form to Payment team after courier collect and return the form**]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="2" width="110" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[信用卡分期付款授權書]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="280" y="34" width="30" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{noOfSign}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="50" splitType="Stretch">
+			<frame>
+				<reportElement x="17" y="0" width="520" height="50"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="36" y="2" width="480" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[請代收授權委託信及查核授權者的身份證號碼是否與授權委任信相同]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="18" width="480" height="15"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[請客戶在左下角簽名<<如公司客戶，須附加上公司蓋印>>]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="100" y="34" width="171" height="13"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{authorizationLetterName}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="320" y="34" width="90" height="13"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Left">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{authorizationLetterContractNum}]]></textFieldExpression>
+				</textField>
+				<frame>
+					<reportElement x="0" y="0" width="35" height="50"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<rectangle>
+						<reportElement x="5" y="22" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="16" y="18" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[12]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="3" y="20" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{authorizationLetterAndIDCollection}==true]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+				</frame>
+				<staticText>
+					<reportElement x="36" y="34" width="240" height="15"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[(被授權人姓名: ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="276" y="34" width="240" height="15"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[聯絡電話:                     )]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="19" splitType="Stretch">
+			<frame>
+				<reportElement x="17" y="0" width="520" height="19"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="36" y="2" width="480" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[須核對客戶必須年滿18歲或以上及在S&S的身份證號碼旁邊簽署作實]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="0" y="0" width="35" height="19"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="16" y="2" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[13]]></text>
+					</staticText>
+					<rectangle>
+						<reportElement x="5" y="6" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+				</frame>
+			</frame>
+		</band>
+		<band height="67" splitType="Stretch">
+			<frame>
+				<reportElement x="17" y="0" width="520" height="67"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="36" y="0" width="35" height="67"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[[商業登記客戶]]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="0" y="0" width="35" height="67"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="16" y="27" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[14]]></text>
+					</staticText>
+					<rectangle>
+						<reportElement x="5" y="31" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="3" y="29" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{brCust}]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+				</frame>
+				<staticText>
+					<reportElement x="71" y="2" width="449" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[a. 收取[聯絡人]公司咭片(正本)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="71" y="18" width="449" height="15"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[b. 收取[用戶]身份證副本，並核對用戶姓名為]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="71" y="34" width="366" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[c. 核對[聯絡人](收貨人)身份證上的姓名為]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="71" y="51" width="449" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[d. 收取[用戶]公司咭片(正本) 或 員工証副本]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="437" y="34" width="83" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[(不需收取副本)]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="262" y="18" width="168" height="15">
+						<printWhenExpression><![CDATA[$F{brCust}]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{customerContactName}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="247" y="34" width="168" height="15">
+						<printWhenExpression><![CDATA[$F{brCust}]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{deliveryContactName}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="60" splitType="Stretch">
+			<frame>
+				<reportElement x="17" y="0" width="520" height="60"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement x="55" y="0" width="465" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[嘉保手機及平板電腦星級補購計劃客戶資料記錄表 i-Guard Phone&Tablet Protector LDS Plus Customer Information form]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="55" y="15" width="465" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[請客戶本人在記錄表(一式二份) "簽署" 位置簽署。並在 "簽收手提電話日期" 位置填上交收手機當日日期。一式二份 (一份交回公司[Office Copy]；一份給客戶[Customer Copy])]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="0" y="0" width="35" height="60"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<rectangle>
+						<reportElement x="5" y="30" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="16" y="26" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[15]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="3" y="28" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{iGuardFormLDS}||$F{iGuardFormAD}]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+				</frame>
+				<line>
+					<reportElement x="54" y="0" width="1" height="60"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</line>
+				<rectangle>
+					<reportElement x="42" y="12" width="6" height="6"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement x="40" y="10" width="9" height="9">
+						<printWhenExpression><![CDATA[$F{iGuardFormLDS}]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="55" y="30" width="465" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[嘉保手機及平板電腦星級維修計劃客戶資料記錄表 i-Guard Phone&Tablet Accidental Damage Plus Repair Plan Customer Information form]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="55" y="45" width="465" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[請客戶本人在記錄表(一式二份) "簽署" 位置簽署。並在 "簽收手提電話日期" 位置填上交收手機當日日期。一式二份 (一份交回公司[Office Copy]；一份給客戶[Customer Copy])]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="42" y="39" width="6" height="6"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement x="40" y="38" width="9" height="9">
+						<printWhenExpression><![CDATA[$F{iGuardFormAD}]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+				<line>
+					<reportElement x="35" y="30" width="485" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</line>
+			</frame>
+		</band>
+		<band height="36" splitType="Stretch">
+			<frame>
+				<reportElement x="17" y="0" width="520" height="36"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="36" y="2" width="480" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[信用卡自動轉賬授權書]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="18" width="480" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[請卡主本人在左下角簽名並填寫日期]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="0" y="0" width="35" height="36"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<rectangle>
+						<reportElement x="5" y="15" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="16" y="11" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[16]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="3" y="13" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{ddaOSForm}]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="75" splitType="Stretch">
+			<frame>
+				<reportElement x="17" y="0" width="520" height="75"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement x="55" y="0" width="465" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[平安手機® 服務計劃申請書  Mobile Safety Phone Service Plan Application]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="55" y="15" width="465" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[請客戶本人在 “X” 位置簽署，一式二份 (一份交回公司；一份給客戶)]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="0" y="0" width="35" height="75"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<rectangle>
+						<reportElement x="5" y="35" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="16" y="31" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[17]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="3" y="33" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{mobileSafetyForm}==true]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+				</frame>
+				<staticText>
+					<reportElement x="35" y="0" width="20" height="30"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[a]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="35" y="30" width="20" height="30"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[b]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="55" y="30" width="465" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[平安手機® 服務計劃申請書附加條款及條件]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="55" y="45" width="465" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[請客戶本人在 “X” 位置簽署，一式二份 (一份交回公司；一份給客戶)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="35" y="60" width="20" height="15"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[c]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="55" y="60" width="465" height="15"/>
+					<textElement markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["<b>平安手機&reg; 服務客戶資料披露確認函</b>    交給客戶 (毋須簽署)"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="60" splitType="Stretch">
+			<printWhenExpression><![CDATA[$F{octFlag}.equals("Y")]]></printWhenExpression>
+			<frame>
+				<reportElement x="17" y="0" width="520" height="60"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement x="55" y="0" width="465" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[NFC Mobile Payment服務客戶資料披露同意書 Agreement for Consent to Disclosure of Customer Information for NFC mobile Payment Service]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="55" y="15" width="465" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[請客戶本人在 “X” 位置簽署，一式二份 (一份交回公司；一份給客戶)]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="0" y="0" width="35" height="60"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<rectangle>
+						<reportElement x="5" y="30" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="16" y="26" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[18]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="3" y="28" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{hasNFCSimForm} || $F{hasOctopusSimForm}]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+				</frame>
+				<line>
+					<reportElement x="54" y="0" width="1" height="60"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</line>
+				<rectangle>
+					<reportElement x="42" y="12" width="6" height="6"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement x="40" y="10" width="9" height="9">
+						<printWhenExpression><![CDATA[$F{hasNFCSimForm}]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="55" y="30" width="465" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[Octopus Payment服務客戶資料披露同意書 Agreement for Consent to Disclosure of Customer Information for Octopus Payment]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="55" y="45" width="465" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[請客戶本人在 “X” 位置簽署，一式二份 (一份交回公司；一份給客戶)]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="42" y="39" width="6" height="6"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement x="40" y="38" width="9" height="9">
+						<printWhenExpression><![CDATA[$F{hasOctopusSimForm}]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+				<line>
+					<reportElement x="35" y="30" width="485" height="1"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</line>
+			</frame>
+		</band>
+		<band height="30" splitType="Stretch">
+			<printWhenExpression><![CDATA[$F{octFlag}.equals("N")]]></printWhenExpression>
+			<frame>
+				<reportElement x="17" y="0" width="520" height="30"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement x="55" y="0" width="465" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[NFC Mobile Payment服務客戶資料披露同意書 Agreement for Consent to Disclosure of Customer Information for NFC mobile Payment Service]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="55" y="15" width="465" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[請客戶本人在 “X” 位置簽署，一式二份 (一份交回公司；一份給客戶)]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="0" y="0" width="35" height="30"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<rectangle>
+						<reportElement x="5" y="12" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="16" y="9" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[18]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="3" y="11" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{hasNFCSimForm} || $F{hasOctopusSimForm}]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+				</frame>
+				<line>
+					<reportElement x="54" y="0" width="1" height="30"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</line>
+				<rectangle>
+					<reportElement x="42" y="12" width="6" height="6"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement x="40" y="10" width="9" height="9">
+						<printWhenExpression><![CDATA[$F{hasNFCSimForm}]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="33" splitType="Stretch">
+			<frame>
+				<reportElement x="17" y="0" width="520" height="33"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<frame>
+					<reportElement x="0" y="0" width="35" height="33"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<rectangle>
+						<reportElement x="5" y="13" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="16" y="9" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[19]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="35" y="17" width="485" height="16"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<rectangle>
+						<reportElement x="5" y="5" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="16" y="1" width="135" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[(Ref: Multi-SIM)]]></text>
+					</staticText>
+					<frame>
+						<reportElement x="162" y="0" width="167" height="16"/>
+						<box>
+							<leftPen lineWidth="0.5"/>
+							<rightPen lineWidth="0.5"/>
+						</box>
+						<rectangle>
+							<reportElement x="5" y="6" width="6" height="6"/>
+							<graphicElement>
+								<pen lineWidth="0.5"/>
+							</graphicElement>
+						</rectangle>
+						<staticText>
+							<reportElement x="16" y="1" width="150" height="15"/>
+							<textElement>
+								<font fontName="PCCW-zh-Ming" size="9"/>
+							</textElement>
+							<text><![CDATA[(Ref: QoS)]]></text>
+						</staticText>
+					</frame>
+					<rectangle>
+						<reportElement x="345" y="5" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="356" y="1" width="125" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[(Ref: Mobile Security Package)]]></text>
+					</staticText>
+				</frame>
+				<textField>
+					<reportElement x="36" y="2" width="479" height="17"/>
+					<textElement markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["<b>附加申請書  Supplemental Application</b>   請客戶本人在 “X” 位置簽署  &lt;&lt;如公司客戶，須附加上公司蓋印&gt;&gt;"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="36" splitType="Stretch">
+			<frame>
+				<reportElement x="17" y="0" width="520" height="36"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="36" y="2" width="150" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[其他事項:]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="0" y="0" width="35" height="36"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="16" y="11" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[20]]></text>
+					</staticText>
+					<rectangle>
+						<reportElement x="5" y="15" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="3" y="13" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{tngServiceFlag}]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+				</frame>
+				<staticText>
+					<reportElement x="36" y="18" width="479" height="15">
+						<printWhenExpression><![CDATA[$F{tngServiceFlag}]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[請代收客戶: 拍住賞服務申請 – 提交文件確認]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="81" splitType="Stretch">
+			<frame>
+				<reportElement x="17" y="0" width="520" height="81"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="36" y="2" width="480" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[請即場在客人面前開啟Tap & Go Card信封及執行以下工序 :]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="0" y="0" width="35" height="81"/>
+					<box>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<staticText>
+						<reportElement x="16" y="33" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[21]]></text>
+					</staticText>
+					<rectangle>
+						<reportElement x="5" y="37" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="3" y="35" width="9" height="9">
+							<printWhenExpression><![CDATA[$F{studentPlanFlag}]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+				</frame>
+				<staticText>
+					<reportElement x="36" y="18" width="479" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[- 抄下Tap & Go 卡號碼之最後4個字和有效日期 在 [服務申請書] 的第七部份 [付款與授權] ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="33" width="479" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[- 刮下Tap & Go 卡正面 (必須清楚看到卡號碼) 在 Delivery Note 的空白位置]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="63" width="479" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[- 取回印有號碼的信封背頁及釘在已簽署的文件一併交回CSL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="48" width="479" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[- 完成後將卡和 啟動步驟說明書 交給客人]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement x="17" y="0" width="520" height="15"/>
+				<staticText>
+					<reportElement x="2" y="0" width="150" height="15"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[重要事項: <<送貨員注意>>]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="227" splitType="Stretch">
+			<frame>
+				<reportElement x="17" y="0" width="520" height="225"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<frame>
+					<reportElement x="0" y="0" width="520" height="40"/>
+					<staticText>
+						<reportElement x="5" y="0" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[a)]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="25" y="0" width="490" height="40"/>
+						<textElement textAlignment="Justified">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[所有文件須交由客戶即時親閱和簽署，待點收完以上列明所有文件或代收現金後，方可將智能咭交給客戶，並將銷售及服務合約一併交給客戶。要小心處理客戶資料和文件，所有文件必須在送貨當日交回Contractor(如適用)要在翌日中午前回LCK 5 F&S Mobile Order Support Team。]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="0" y="40" width="520" height="18"/>
+					<staticText>
+						<reportElement x="5" y="0" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[b)]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="25" y="0" width="490" height="18"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[如Contractor未能根據以上指引處理有關Order，必須承擔一切損失。]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="0" y="59" width="520" height="38"/>
+					<staticText>
+						<reportElement x="5" y="0" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[c)]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="25" y="0" width="490" height="38"/>
+						<textElement textAlignment="Justified">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[上門遇客人不在或不能進入送貨地點，送貨同事必須DROP CARD和留卡在客人的信箱或管理處(需在卡上寫上時間)。如遇上舊式住宅找不到信箱，請把DROP CARD緊貼在客戶的門上或攝入門內。如上門不能DROP CARD，需寫上時間及未能DROP卡原因在D/N上。]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="0" y="93" width="520" height="60"/>
+					<staticText>
+						<reportElement x="5" y="6" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[d)]]></text>
+					</staticText>
+					<textField isStretchWithOverflow="true">
+						<reportElement x="25" y="0" width="490" height="50"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["送貨同事需要求客人在收貨前出示其身份證正本，並核對收貨人姓名、身份證號碼和收貨文件內所列印相同，<u><font size='4'>並須核對身份證簽發日期(Date of Issue)必須等於/大於2003年6月23日</font></u>。同事有權將身份證檢視清楚，如客人反對出示身份證正本或只交出身份證明影印本，送貨同事應拒絕送貨和交收。如需收取身份證副本，其身份證副本和當事人應屬同一個人及同一份COPY，否則致電回公司/OST協助。"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="153" width="520" height="30"/>
+					<staticText>
+						<reportElement x="5" y="0" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[e)]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="25" y="0" width="490" height="30"/>
+						<textElement textAlignment="Justified">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[所有淨送SIM卡ORDER，如第三者簽收，必須出示有效之授權書。所有送硬件ORDER(包括手機、電腦、智能網絡搜尋器等)，不可以授權第三者代收。]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="0" y="182" width="520" height="43"/>
+					<staticText>
+						<reportElement x="5" y="0" width="18" height="15"/>
+						<textElement>
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[f)]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="25" y="0" width="490" height="43"/>
+						<textElement textAlignment="Justified">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[所有硬件(包括手機、電腦、智能網絡搜尋器等)之送貨地及交收點，地址必須在客人私人物業的室內地點交收，地址可以是住家或公司內。如在公司內交收，客人必須證明是該公司的員工，如出示員工証或在公司內客人的工作位置內交收。嚴禁在公共地方/場所交收。如遇上地址不清晰，同事應致電OST協助。]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

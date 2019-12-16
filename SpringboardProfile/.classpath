@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/pccwUtilities.jar"/>
+	<classpathentry kind="lib" path="lib/SpringboardCommon.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/spring.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/commons-beanutils-1.7.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/commons-io-2.2.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/commons-lang-2.5.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/joda-time-2.2.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/spring-ws-core-1.5.9.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/spring-xml-1.5.9.jar"/>
+	<classpathentry kind="lib" path="lib/SvcDataAccess.jar" sourcepath="/SvcDataAccess"/>
+	<classpathentry kind="lib" path="lib/WorkQueue.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

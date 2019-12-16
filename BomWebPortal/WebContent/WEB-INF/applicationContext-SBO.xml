@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+           
+	<bean id="sboOrderDAO" class="com.bomwebportal.sbo.dao.SboOrderDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="sboOrderService" class="com.bomwebportal.sbo.service.SboOrderServiceImpl">
+		<property name="sboOrderDAO" ref="sboOrderDAO" />
+	</bean>
+</beans>

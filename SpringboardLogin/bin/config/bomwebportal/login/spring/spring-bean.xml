@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- DAO -->
+
+	<bean id="loginDao" class="com.bomwebportal.dao.LoginDAO">
+		<property name="dataSource" ref="BomSsmDS" />
+		<property name="propertyConfigurer" ref="propertyConfigurer" />
+	</bean>
+
+	<bean id="shopDao" class="com.bomwebportal.dao.ShopDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="accessRoleDao" class="com.bomwebportal.dao.AccessRoleDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+<!-- SERVICE -->
+	<bean id="loginService" class="com.bomwebportal.service.LoginServiceImpl">
+		<property name="loginDao" ref="loginDao" />
+		<property name="shopDao" ref="shopDao" />
+	</bean>
+	
+	<bean id="com.bomwebportal.service.SecurityFormDTOFactory" class="com.bomwebportal.service.SecurityFormDTOFactory">
+		<property name="accessRoleCache" ref="accessRoleCache" />
+	</bean>
+
+<!-- Cache -->
+    <bean name="accessRoleCache" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+        <property name="codeLkupDAO" ref="accessRoleDao" />
+    </bean>
+    
+    
+  <bean id="ssoService" class="com.bomwebportal.sso.service.SSOService">
+      <property name="isAliveUrl" value="${sso.isAliveUrl}"/>
+      <property name="verifyEtUrl" value="${sso.verifyEtUrl}"/>
+      <property name="allocEtUrl" value="${sso.allocEtUrl}"/>
+      <property name="loginUrl" value="${sso.loginUrl}"/>
+      <property name="rejoinUrl" value="${sso.rejoinUrl}"/>
+  </bean>
+</beans>

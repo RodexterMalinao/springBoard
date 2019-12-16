@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+ 
+  <!-- dummy ... dont needed -->
+  <!-- 
+	<bean class="com.bomwebportal.sso.web.SSOLoginController">
+	     <property name="failureUrl" value="${sso.authFailureUrl}"/>
+	     <property name="defaultUrl" value="${sso.defaultUrl}"/>
+	</bean>
+	 -->
+	<bean class="com.bomwebportal.sso.service.SSOAuthenticator" id="ssoAuthenticator">
+    <property ref="ssoService" name="ssoService"/>
+    <property name="ssoAppId" value="${sso.appId}"/>
+  </bean>
+	
+	<bean id="ssoAuthInterceptor" class="com.bomwebportal.sso.interceptor.SSOAuthInterceptor">
+    <property name="failureUrl" value="${sso.authFailureUrl}"/>
+    <property name="bypass" value="${sso.development.bypass}"/>
+    <property name="ssoAuthenticator" ref="ssoAuthenticator" />
+    <property name="loginService" ref="loginService"/>
+    <property name="authorizeService" ref="authorizeService"/>
+    <property name="mappingLkupService" ref="mappingLkupService"/>
+	</bean>
+	
+	<!-- 
+  <bean id="ssoService" class="com.bomwebportal.sso.service.SSOService">
+      <property name="isAliveUrl" value="${sso.isAliveUrl}"/>
+      <property name="verifyEtUrl" value="${sso.verifyEtUrl}"/>
+      <property name="allocEtUrl" value="${sso.allocEtUrl}"/>
+      <property name="loginUrl" value="${sso.loginUrl}"/>
+  </bean>
+  <bean id="ssoAuthenticator" class="com.bomwebportal.sso.service.SSOAuthenticator">
+
+  </bean>
+  
+   -->
+   
+   <bean class="com.bomwebportal.sso.web.SSORedirController"/>
+   
+</beans>

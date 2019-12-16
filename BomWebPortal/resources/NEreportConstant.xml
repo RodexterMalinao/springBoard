@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+	<!-- enable access to externalized properties via PropertyPlaceholderConfigurer -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations"> 
+	            <list>
+	                <value>classpath:NEreportConstantConfig.properties</value>
+	            </list>
+	    </property>
+	</bean>
+
+	<!--additionalCharge  -->
+    <bean id="additionalChargeEng1" class="com.bomwebportal.dto.report.AdditionalChargeDTO">
+       <property name="additionalChargeDesc" value="${additionalChargeDescEng1}" />
+       <property name="additionalChargePrice" value="${additionalChargePriceEng1}" />
+    </bean>
+    <bean id="additionalChargeEng2" class="com.bomwebportal.dto.report.AdditionalChargeDTO">
+       <property name="additionalChargeDesc" value="${additionalChargeDescEng2}" />
+       <property name="additionalChargePrice" value="${additionalChargePriceEng2}" />
+    </bean>
+    <bean id="additionalChargeEng3" class="com.bomwebportal.dto.report.AdditionalChargeDTO">
+       <property name="additionalChargeDesc" value="${additionalChargeDescEng3}" />
+       <property name="additionalChargePrice" value="${additionalChargePriceEng3}" />
+    </bean>
+    <bean id="additionalChargeEng4" class="com.bomwebportal.dto.report.AdditionalChargeDTO">
+       <property name="additionalChargeDesc" value="${additionalChargeDescEng4}" />
+       <property name="additionalChargePrice" value="${additionalChargePriceEng4}" />
+    </bean>
+    <bean id="additionalChargeEng5" class="com.bomwebportal.dto.report.AdditionalChargeDTO">
+       <property name="additionalChargeDesc" value="${additionalChargeDescEng5}" />
+       <property name="additionalChargePrice" value="${additionalChargePriceEng5}" />
+    </bean>
+    <bean id="additionalChargeEng6" class="com.bomwebportal.dto.report.AdditionalChargeDTO">
+       <property name="additionalChargeDesc" value="${additionalChargeDescEng6}" />
+       <property name="additionalChargePrice" value="${additionalChargePriceEng6}" />
+    </bean>
+    
+    <bean id="additionalChargeChi1" class="com.bomwebportal.dto.report.AdditionalChargeDTO">
+       <property name="additionalChargeDesc" value="${additionalChargeDescChi1}" />
+       <property name="additionalChargePrice" value="${additionalChargePriceChi1}" />
+    </bean>
+    <bean id="additionalChargeChi2" class="com.bomwebportal.dto.report.AdditionalChargeDTO">
+       <property name="additionalChargeDesc" value="${additionalChargeDescChi2}" />
+       <property name="additionalChargePrice" value="${additionalChargePriceChi2}" />
+    </bean>
+    <bean id="additionalChargeChi3" class="com.bomwebportal.dto.report.AdditionalChargeDTO">
+       <property name="additionalChargeDesc" value="${additionalChargeDescChi3}" />
+       <property name="additionalChargePrice" value="${additionalChargePriceChi3}" />
+    </bean>
+    <bean id="additionalChargeChi4" class="com.bomwebportal.dto.report.AdditionalChargeDTO">
+       <property name="additionalChargeDesc" value="${additionalChargeDescChi4}" />
+       <property name="additionalChargePrice" value="${additionalChargePriceChi4}" />
+    </bean>
+    <bean id="additionalChargeChi5" class="com.bomwebportal.dto.report.AdditionalChargeDTO">
+       <property name="additionalChargeDesc" value="${additionalChargeDescChi5}" />
+       <property name="additionalChargePrice" value="${additionalChargePriceChi5}" />
+    </bean>
+    <bean id="additionalChargeChi6" class="com.bomwebportal.dto.report.AdditionalChargeDTO">
+       <property name="additionalChargeDesc" value="${additionalChargeDescChi6}" />
+       <property name="additionalChargePrice" value="${additionalChargePriceChi6}" />
+    </bean>
+    <bean id="additionalChargeChi7" class="com.bomwebportal.dto.report.AdditionalChargeDTO">
+       <property name="additionalChargeDesc" value="${additionalChargeDescChi7}" />
+       <property name="additionalChargePrice" value="${additionalChargePriceChi7}" />
+    </bean>
+    <bean id="additionalChargeChi8" class="com.bomwebportal.dto.report.AdditionalChargeDTO">
+       <property name="additionalChargeDesc" value="${additionalChargeDescChi8}" />
+       <property name="additionalChargePrice" value="${additionalChargePriceChi8}" />
+    </bean>
+    <bean id="additionalChargeChi9" class="com.bomwebportal.dto.report.AdditionalChargeDTO">
+       <property name="additionalChargeDesc" value="${additionalChargeDescChi9}" />
+       <property name="additionalChargePrice" value="${additionalChargePriceChi9}" />
+    </bean>
+    <bean id="additionalChargeChi10" class="com.bomwebportal.dto.report.AdditionalChargeDTO">
+       <property name="additionalChargeDesc" value="${additionalChargeDescChi10}" />
+       <property name="additionalChargePrice" value="${additionalChargePriceChi10}" />
+    </bean>
+    
+    
+    <!-- miscellaneousCharge -->
+    <bean id="miscellaneousChargeEng1" class="com.bomwebportal.dto.report.MiscellaneousChargeDTO">
+       <property name="miscellaneousChargeDesc" value="${miscellaneousChargeDescEng1}" />
+       <property name="miscellaneousCharge" value="${miscellaneousChargeEng1}" />
+    </bean>
+    <bean id="miscellaneousChargeEng2" class="com.bomwebportal.dto.report.MiscellaneousChargeDTO">
+       <property name="miscellaneousChargeDesc" value="${miscellaneousChargeDescEng2}" />
+       <property name="miscellaneousCharge" value="${miscellaneousChargeEng2}" />
+    </bean>
+    <bean id="miscellaneousChargeEng3" class="com.bomwebportal.dto.report.MiscellaneousChargeDTO">
+       <property name="miscellaneousChargeDesc" value="${miscellaneousChargeDescEng3}" />
+       <property name="miscellaneousCharge" value="${miscellaneousChargeEng3}" />
+    </bean>
+    <bean id="miscellaneousChargeEng4" class="com.bomwebportal.dto.report.MiscellaneousChargeDTO">
+       <property name="miscellaneousChargeDesc" value="${miscellaneousChargeDescEng4}" />
+       <property name="miscellaneousCharge" value="${miscellaneousChargeEng4}" />
+    </bean>
+    <bean id="miscellaneousChargeEng5" class="com.bomwebportal.dto.report.MiscellaneousChargeDTO">
+       <property name="miscellaneousChargeDesc" value="${miscellaneousChargeDescEng5}" />
+       <property name="miscellaneousCharge" value="${miscellaneousChargeEng5}" />
+    </bean>
+    <bean id="miscellaneousChargeEng6" class="com.bomwebportal.dto.report.MiscellaneousChargeDTO">
+       <property name="miscellaneousChargeDesc" value="${miscellaneousChargeDescEng6}" />
+       <property name="miscellaneousCharge" value="${miscellaneousChargeEng6}" />
+    </bean>
+    <bean id="miscellaneousChargeEng7" class="com.bomwebportal.dto.report.MiscellaneousChargeDTO">
+       <property name="miscellaneousChargeDesc" value="${miscellaneousChargeDescEng7}" />
+       <property name="miscellaneousCharge" value="${miscellaneousChargeEng7}" />
+    </bean>
+    
+    <bean id="miscellaneousChargeChi1" class="com.bomwebportal.dto.report.MiscellaneousChargeDTO">
+       <property name="miscellaneousChargeDesc" value="${miscellaneousChargeDescChi1}" />
+       <property name="miscellaneousCharge" value="${miscellaneousChargeChi1}" />
+    </bean>
+    <bean id="miscellaneousChargeChi2" class="com.bomwebportal.dto.report.MiscellaneousChargeDTO">
+       <property name="miscellaneousChargeDesc" value="${miscellaneousChargeDescChi2}" />
+       <property name="miscellaneousCharge" value="${miscellaneousChargeChi2}" />
+    </bean>
+    <bean id="miscellaneousChargeChi3" class="com.bomwebportal.dto.report.MiscellaneousChargeDTO">
+       <property name="miscellaneousChargeDesc" value="${miscellaneousChargeDescChi3}" />
+       <property name="miscellaneousCharge" value="${miscellaneousChargeChi3}" />
+    </bean>
+    <bean id="miscellaneousChargeChi4" class="com.bomwebportal.dto.report.MiscellaneousChargeDTO">
+       <property name="miscellaneousChargeDesc" value="${miscellaneousChargeDescChi4}" />
+       <property name="miscellaneousCharge" value="${miscellaneousChargeChi4}" />
+    </bean>
+    <bean id="miscellaneousChargeChi5" class="com.bomwebportal.dto.report.MiscellaneousChargeDTO">
+       <property name="miscellaneousChargeDesc" value="${miscellaneousChargeDescChi5}" />
+       <property name="miscellaneousCharge" value="${miscellaneousChargeChi5}" />
+    </bean>
+    <bean id="miscellaneousChargeChi6" class="com.bomwebportal.dto.report.MiscellaneousChargeDTO">
+       <property name="miscellaneousChargeDesc" value="${miscellaneousChargeDescChi6}" />
+       <property name="miscellaneousCharge" value="${miscellaneousChargeChi6}" />
+    </bean>
+    <bean id="miscellaneousChargeChi7" class="com.bomwebportal.dto.report.MiscellaneousChargeDTO">
+       <property name="miscellaneousChargeDesc" value="${miscellaneousChargeDescChi7}" />
+       <property name="miscellaneousCharge" value="${miscellaneousChargeChi7}" />
+    </bean>
+	<!-- End -->
+</beans>

@@ -1,0 +1,61 @@
+<jsp:root xmlns:c="http://java.sun.com/jsp/jstl/core"
+  xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+  xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+  xmlns:jsp="http://java.sun.com/JSP/Page"
+  xmlns:spring="http://www.springframework.org/tags"
+  xmlns:form="http://www.springframework.org/tags/form"
+  version="2.0">
+  <jsp:output omit-xml-declaration="yes" />
+  <jsp:directive.tag import="com.bomwebportal.dto.AuthorizeDTO"/>
+  <jsp:directive.tag import="java.util.*"/>
+  <jsp:directive.attribute name="permission" type="java.lang.String" required="true" rtexprvalue="true" description="requested permission[,permissions]" />
+  <jsp:directive.attribute name="var" type="java.lang.String" required="true" rtexprvalue="false" description="authorized var name" />
+  <jsp:directive.attribute name="defaultAllowed" type="java.lang.Boolean" required="false" rtexprvalue="true" description="default allowed" />
+  <jsp:directive.attribute name="path" type="java.lang.String" required="false" rtexprvalue="true" description="path" />
+  
+  <jsp:directive.variable alias="authorized" name-from-attribute="var" scope="NESTED" variable-class="java.lang.Boolean"/>
+  <jsp:directive.variable name-given="disabled"  scope="NESTED" />
+  
+  <c:set var="permissions" value="${fn:split(permission, ', ') }"/>
+  <jsp:scriptlet>
+    <![CDATA[
+    synchronized(jspContext) {
+    	  String[] permissions = (String[])jspContext.getAttribute("permissions");
+    	  String path = (String)jspContext.getAttribute("path");
+    	  
+    	  boolean defaultAllowed = (Boolean.TRUE.equals(jspContext.getAttribute("defaultAllowed")));
+    	  Map<String, List<AuthorizeDTO>> authInfos = (Map<String, List<AuthorizeDTO>>)jspContext.getAttribute("authorizationInfo", PageContext.SESSION_SCOPE);
+    	  
+    	  if (path == null || path.length() == 0) {
+	    	  String uri = request.getRequestURI();
+	    	  int start = uri.lastIndexOf("/");
+	    	  int end = uri.lastIndexOf(".");
+	    	  path = uri.substring(start+1, end);
+    	  }
+    	  
+    	  List<AuthorizeDTO> authList = authInfos.get(path);
+    	
+    	  boolean authorized = false;
+    	  if (authList != null && authList.size() > 0) {
+    		  for (String permission: permissions) {
+		    	  for (AuthorizeDTO dto : authList) {
+		    		  if (permission.equalsIgnoreCase(dto.getAttribute())) {
+		    			  authorized = true;
+		    			  break;
+		    		  }
+		    	  }
+		    	  if (authorized) break;
+    		  }
+    	  } else {
+    		  authorized = defaultAllowed;
+    	  }
+    	  
+    	  
+    	  jspContext.setAttribute("authorized", authorized);
+    	  String disabled = authorized ? "" : "disabled";
+    	  jspContext.setAttribute("disabled", disabled);
+    }
+    ]]>
+  </jsp:scriptlet>
+  <jsp:doBody/>
+ </jsp:root>

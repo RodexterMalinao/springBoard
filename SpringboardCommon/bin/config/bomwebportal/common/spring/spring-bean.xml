@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="ceksDAO" class="com.bomwebportal.dao.CeksDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="emailTemplateDAO" class="com.bomwebportal.dao.EmailTemplateDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="ordEmailReqDAO" class="com.bomwebportal.dao.OrdEmailReqDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="emailTemplateWriteDAO" class="com.bomwebportal.dao.OrdEmailReqWriteDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+				
+	<bean id="sbLockDAO" class="com.bomwebportal.dao.SbLockDAOImpl" scope="singleton">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean name="sbLockService" class="com.bomwebportal.service.SbLockServiceImpl" scope="singleton">
+		<property name="sbLockDao" ref="sbLockDAO" />
+	</bean>
+</beans>

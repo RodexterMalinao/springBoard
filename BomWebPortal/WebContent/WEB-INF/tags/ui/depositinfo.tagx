@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jsp:root xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:form="http://www.springframework.org/tags/form"
+	version="2.0">
+  <jsp:output omit-xml-declaration="yes" />
+  <jsp:directive.tag import="java.util.*"/>
+
+  <jsp:directive.attribute name="value" type="java.util.Collection" required="true" rtexprvalue="true" description="List of DepositDTO" />
+  <jsp:directive.attribute name="var" type="java.lang.String" required="true" rtexprvalue="false" description="Variable for Deposit Sum"/>
+  <jsp:directive.variable alias="depositAmount" name-from-attribute="var" scope="AT_END"/>
+
+			<table width="100%" border="0" cellspacing="0" class="contenttext">
+				
+				<tr>
+					<td class="table_title">Deposit</td>
+				</tr>
+				<tr>
+					<td valign="top" bgcolor="#FFFFFF">
+					<table width="100%" border="0" cellspacing="1">
+						<colgroup style="width:6%"></colgroup>
+						<tr>
+							<th>&#160;</th>
+							<th>Deposit Item</th>
+							<th>Deposit Amount</th>
+							<th>Waive Reason</th>
+						</tr>
+						<c:set var="depositAmount" value="0"/>
+						<c:choose>
+							<c:when test="${not empty value}">
+								<c:forEach items="${value }" var="depositDTO">
+								<tr align="center">
+									<td>&#160;</td>
+									<td>${depositDTO.depositDesc }</td>
+									<td>$<fmt:formatNumber value="${depositDTO.depositAmount }" pattern="#,###.####" /></td>
+									<td>${depositDTO.waiveInd=='Y' ? depositDTO.reasonDesc : 'N/A'}</td>
+									<c:if test="${depositDTO.waiveInd ne 'Y' }">
+										<c:set var="depositAmount" value="${depositAmount + depositDTO.depositAmount }"/>
+									</c:if>
+								</tr>
+								</c:forEach>
+							</c:when>
+							<c:otherwise>
+								<tr align="center">
+									<td>&#160;</td>
+									<td>N/A</td>
+									<td>N/A</td>
+									<td>N/A</td>
+								</tr>							
+							</c:otherwise>
+						</c:choose>					
+					</table>
+					</td>
+				</tr>
+			</table>
+</jsp:root>

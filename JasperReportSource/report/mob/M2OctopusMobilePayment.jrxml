@@ -1,0 +1,2313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="iGuardCustInfo" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" whenResourceMissingType="Empty">
+	<property name="ireport.zoom" value="1.464100000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="702"/>
+	<import value="java.io.*"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<field name="title" class="java.lang.String"/>
+	<field name="custLastName" class="java.lang.String"/>
+	<field name="custFirstName" class="java.lang.String"/>
+	<field name="msisdn" class="java.lang.String"/>
+	<field name="orderId" class="java.lang.String"/>
+	<field name="appInDate" class="java.util.Date"/>
+	<field name="custSignature" class="java.io.InputStream"/>
+	<field name="companyLogo" class="java.lang.String"/>
+	<field name="octFormP1" class="java.lang.String"/>
+	<field name="octFormP2" class="java.lang.String"/>
+	<field name="companyBottomLogo" class="java.lang.String"/>
+	<field name="companyBottomLeftLogo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="72" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyLogo}]]></imageExpression>
+			</image>
+			<frame>
+				<reportElement x="234" y="0" width="300" height="72" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$V{PAGE_NUMBER}==1]]></printWhenExpression>
+				</reportElement>
+				<staticText>
+					<reportElement x="0" y="0" width="300" height="20"/>
+					<box leftPadding="3">
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+						<paragraph leftIndent="2"/>
+					</textElement>
+					<text><![CDATA[表格編號 Application No.:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="170" y="0" width="130" height="20"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{orderId}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="20" width="300" height="30"/>
+					<box leftPadding="3">
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+						<paragraph leftIndent="2"/>
+					</textElement>
+					<text><![CDATA[客戶姓名 Customer Name:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="170" y="20" width="130" height="30"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{title} + " " + $F{custLastName} + " " + $F{custFirstName}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="50" width="300" height="20"/>
+					<box leftPadding="3">
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+						<paragraph leftIndent="2"/>
+					</textElement>
+					<text><![CDATA[csl 流動通訊服務電話號碼:
+csl mobile services Number:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="170" y="51" width="130" height="20"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{msisdn}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="3" splitType="Stretch"/>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="535" height="35" forecolor="#FFFFFF" backcolor="#000000"/>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="12" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[NFC Mobile Payment 服務<br>NFC Mobile Payment Service]]></text>
+			</staticText>
+		</band>
+		<band height="5" splitType="Stretch"/>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="535" height="35" forecolor="#000000" backcolor="#CCCCCC"/>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="12" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[NFC Mobile Payment 服務條款<br>NFC Mobile Payment Service Guide]]></text>
+			</staticText>
+		</band>
+		<band height="45" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="535" height="45"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<frame>
+					<reportElement positionType="Float" x="0" y="4" width="535" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="25" y="0" width="500" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["本近場通訊 (NFC) Mobile Payment服務 (\"MP服務\") 只用作支援客戶向個別金融機構所申請的NFC支付服務。本公司並不負責客戶與個別金融機構之交易上引起的任何事宜<br>The Near Field Communications (NFC) Mobile Payment Service (\"MP Service\") is provided to the Customer for facilitating the NFC payment service to be provided by the relevant financial institution(s) with which the Customer has made an arrangement for NFC payment by using the MP Service. The Company shall not be responsible for any matters arising from dealings between the Customer and the relevant Financial Institution or any other persons."]]></textFieldExpression>
+					</textField>
+					<ellipse>
+						<reportElement x="10" y="6" width="3" height="3" forecolor="#000000" backcolor="#000000"/>
+						<graphicElement>
+							<pen lineWidth="0.25"/>
+						</graphicElement>
+					</ellipse>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="18" width="535" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="25" y="0" width="500" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱 http://e.hkcsl.com/mobilepayment<br>For details, please refer to http://e.hkcsl.com/mobilepayment"]]></textFieldExpression>
+					</textField>
+					<ellipse>
+						<reportElement x="10" y="6" width="3" height="3" forecolor="#000000" backcolor="#000000"/>
+						<graphicElement>
+							<pen lineWidth="0.25"/>
+						</graphicElement>
+					</ellipse>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="31" width="535" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="25" y="0" width="500" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["客戶應閱讀及同意八達通服務的條款及細則，該條款及細則詳載於http://e.hkcsl.com/mobilepayment<br>You should read and understand the terms & conditions of Octopus service. The terms and conditions of Octopus service is available at http://e.hkcsl.com/mobilepayment"]]></textFieldExpression>
+					</textField>
+					<ellipse>
+						<reportElement x="10" y="6" width="3" height="3" forecolor="#000000" backcolor="#000000"/>
+						<graphicElement>
+							<pen lineWidth="0.25"/>
+						</graphicElement>
+					</ellipse>
+				</frame>
+			</frame>
+		</band>
+		<band height="5" splitType="Stretch"/>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="535" height="35" forecolor="#000000" backcolor="#CCCCCC"/>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="12" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[NFC Mobile Payment服務客戶資料披露同意書 <br/>Agreement for Consent to Disclosure of Customer Information for NFC mobile Payment Service]]></text>
+			</staticText>
+		</band>
+		<band height="213" splitType="Stretch">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="535" height="212"/>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<frame>
+					<reportElement positionType="Float" x="0" y="3" width="528" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="5" y="0" width="520" height="10"/>
+						<box rightPadding="0"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["本同意書為閣下與<u><b>CSL Mobile Limited 香港移動通訊有限公司</b></u> (「<b>本公司</b>」) 或「<b>我們</b>」) 今天簽署申請csl流動通訊服務 (「<b>流動通訊服務</b>」) 合約 (包括閣下的申請書、服務指南及其他相關的條款及條件) 的一部份。"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="17" width="528" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="5" y="0" width="520" height="10"/>
+						<box rightPadding="0"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["This Agreement forms part of the Contract (including your Application, your Service Guide and other relevant terms and conditions) which you have signed today for the csl mobile services (“Mobile Service”) you have subscribed with CSL Mobile Limited (“Company” or “we” or “us”)."]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="31" width="528" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="5" y="0" width="520" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["當閣下(「客戶」或「你」)申請NFC Mobile Payment服務(「MP服務」)，本公司會提供一張支援NFC技術的SIM卡，並根據客戶帳戶配上客戶的流動電話號碼。客戶可使用本MP服務向個別的金融機構分別申請/安排他們相關的NFC支付服務。當閣下成功申請本MP服務，即明確地表示閣下確認、同意及允許我們向金融機構提供其要求有關閣下之流動通訊服務的資料，以便金融機構提供NFC支付服務。"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="45" width="528" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="5" y="0" width="520" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["Where you (“Customer” or “You”) have applied for the NFC Mobile Payment Service (“MP Service”), the Company shall provide the Customer with a special NFC-enabled SIM card (“SIM”) with an assigned mobile number (“Mobile Number”) registered under the Customer’s account.  The MP Service is provided to the Customer for facilitating the NFC payment service to be provided by the relevant financial institution(s) with which the Customer has made/will make an arrangement for NFC payment service by using the MP Service. Upon successful application/arrangement of the MP Service, you expressly acknowledge, agree and give consent to us to provide information in relation to your Mobile Service with us to the financial institution(s) as required by them in order for financial institution(s) to provide their NFC payment service."]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="59" width="528" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="5" y="0" width="520" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["本公司就MP服務接受金融機構詢問及回答閣下的資料包括："]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="72" width="528" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="5" y="0" width="520" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["The information which will be answered by us to financial institution upon enquiry for MP Service includes:"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="86" width="528" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="40" y="0" width="483" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["閣下是否正使用支援NFC的SIM 卡。<br/>if Customer is using NFC-enabled SIM card."]]></textFieldExpression>
+					</textField>
+					<ellipse>
+						<reportElement x="25" y="6" width="3" height="3" forecolor="#000000" backcolor="#000000"/>
+						<graphicElement>
+							<pen lineWidth="0.25"/>
+						</graphicElement>
+					</ellipse>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="100" width="528" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="5" y="0" width="520" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["本公司就MP服務將會向為閣下提供NFC服務的金融機構提供閣下的資料，資料包括："]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="114" width="528" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="5" y="0" width="520" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["The information which will be provided by us to financial institution with NFC payment service in Customer’s SIM for MP service includes:"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="128" width="528" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="40" y="0" width="483" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["閣下的流動通訊服務號碼或刻在SIM卡上的參考編號;<br/>your Mobile Number or serial numbers engraved on the SIM card;"]]></textFieldExpression>
+					</textField>
+					<ellipse>
+						<reportElement x="25" y="6" width="3" height="3" forecolor="#000000" backcolor="#000000"/>
+						<graphicElement>
+							<pen lineWidth="0.25"/>
+						</graphicElement>
+					</ellipse>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="143" width="528" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="40" y="0" width="483" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["閣下流動通訊服務的任何啟動、暫停、取消或重新啟動(如適用);<br/>any Mobile Service activation, suspension, termination or reactivation(If applicable);"]]></textFieldExpression>
+					</textField>
+					<ellipse>
+						<reportElement x="25" y="6" width="3" height="3" forecolor="#000000" backcolor="#000000"/>
+						<graphicElement>
+							<pen lineWidth="0.25"/>
+						</graphicElement>
+					</ellipse>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="157" width="528" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="40" y="0" width="483" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["因任何情況下報失SIM卡或附有SIM卡的流動電話，或轉換新的SIM卡;及<br/>any reported loss of the SIM or of a mobile device with the SIM installed, or replacement of the SIM; and"]]></textFieldExpression>
+					</textField>
+					<ellipse>
+						<reportElement x="25" y="6" width="3" height="3" forecolor="#000000" backcolor="#000000"/>
+						<graphicElement>
+							<pen lineWidth="0.25"/>
+						</graphicElement>
+					</ellipse>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="171" width="528" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="40" y="0" width="483" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["因任何情況下而更改流動電話號碼所分配的新流動電話號碼。<br/>new Mobile Number(s) assigned in the event of any change of the Mobile Number."]]></textFieldExpression>
+					</textField>
+					<ellipse>
+						<reportElement x="25" y="6" width="3" height="3" forecolor="#000000" backcolor="#000000"/>
+						<graphicElement>
+							<pen lineWidth="0.25"/>
+						</graphicElement>
+					</ellipse>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="185" width="528" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="5" y="0" width="520" height="10"/>
+						<box rightPadding="0"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["閣下兹確認及同意如閣下的csl流動通訊服務計劃因任何原因被終止，本同意書有關上述所指披露閣下資料之安排亦將立即停止。"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="198" width="528" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="5" y="0" width="520" height="10"/>
+						<box rightPadding="0"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["You acknowledge and agree that the arrangement in this Agreement in relation to disclosure of your information as specified above will cease immediately if your Mobile Service is terminated for any reason."]]></textFieldExpression>
+					</textField>
+				</frame>
+			</frame>
+		</band>
+		<band height="142" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="1" width="535" height="137"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<frame>
+					<reportElement positionType="Float" x="0" y="40" width="520" height="15"/>
+					<staticText>
+						<reportElement x="25" y="0" width="490" height="15"/>
+						<textElement verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[我明確地確認、同意及允許貴公司將會如上述所指就相關金融機構服務披露有關我所指定的資料。]]></text>
+					</staticText>
+					<rectangle>
+						<reportElement x="11" y="6" width="6" height="6"/>
+						<graphicElement>
+							<pen lineWidth="0.5"/>
+						</graphicElement>
+					</rectangle>
+					<staticText>
+						<reportElement x="9" y="4" width="9" height="9">
+							<printWhenExpression><![CDATA[true]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="6"/>
+						</textElement>
+						<text><![CDATA[X]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="57" width="520" height="40"/>
+					<staticText>
+						<reportElement x="25" y="0" width="490" height="33"/>
+						<textElement verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[I expressly acknowledge, agree and give consent to the Company that the Company may disclose the information as specified above in relation to relevant financial institution's Service.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="0" y="97" width="520" height="25"/>
+					<image hAlign="Center" isUsingCache="true" isLazy="true" onErrorType="Blank">
+						<reportElement positionType="Float" x="15" y="0" width="260" height="25"/>
+						<box>
+							<bottomPen lineWidth="0.0"/>
+						</box>
+						<imageExpression class="java.io.InputStream"><![CDATA[$F{custSignature}]]></imageExpression>
+					</image>
+					<staticText>
+						<reportElement x="325" y="0" width="30" height="25"/>
+						<textElement verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[日期:
+Date:]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="355" y="0" width="160" height="25"/>
+						<box leftPadding="3">
+							<topPen lineWidth="0.0"/>
+							<leftPen lineWidth="0.0"/>
+							<bottomPen lineWidth="1.0"/>
+							<rightPen lineWidth="0.0"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Bottom" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy", java.util.Locale.US).format($F{appInDate})]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="5" y="0" width="10" height="25"/>
+						<textElement verticalAlignment="Bottom">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[x]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="15" y="0" width="260" height="25"/>
+						<box leftPadding="3">
+							<topPen lineWidth="0.0"/>
+							<leftPen lineWidth="0.0"/>
+							<bottomPen lineWidth="1.0"/>
+							<rightPen lineWidth="0.0"/>
+						</box>
+						<textElement verticalAlignment="Bottom" markup="none">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+							<paragraph lineSpacing="Single"/>
+						</textElement>
+					</textField>
+				</frame>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="535" height="25" forecolor="#FFFFFF" backcolor="#000000"/>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="12" isBold="true" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[客戶簽署 Customer's Signature]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="520" height="15"/>
+				<staticText>
+					<reportElement x="0" y="0" width="160" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Octopus Consent Form (20140608)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="360" y="0" width="160" height="15"/>
+					<textElement textAlignment="Right" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="358" splitType="Stretch">
+			<printWhenExpression><![CDATA[$F{octFormP1}.equals("CHI")]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="528" height="358"/>
+				<staticText>
+					<reportElement x="16" y="1" width="470" height="20"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="12" isBold="true" isUnderline="true" pdfEncoding="Cp1252"/>
+					</textElement>
+					<text><![CDATA[<i>八達通流動電話卡</i> — 八達通功能]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="75" width="470" height="37"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[<i>八達通流動電話卡</i>是附加上八達通功能的手機SIM卡。只需使用一部經由八達通卡有限公司測試及具備NFC（近場通訊）功能的手機，即可同時發揮八達通與流動通訊兩項功能。已獲測試適用的手機型號名單，已經刊載於八達通卡有限公司網站<u>www.octopus.com.hk</u>。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="75" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="111" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[2.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="111" width="470" height="48"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[<i>八達通流動電話卡</i>須受八達通卡有限公司發行的「八達通發卡條款」所約束，而有關條款可能不時修訂。「八達通發卡條款」已刊登於八達通卡有限公司網站<u>www.octopus.com.hk</u>以供下載，並在指定交通機構車站展示及派發。使用八達通流動電話卡的八達通功能須受「八達通發卡條款」所約束。使用<i>八達通流動電話卡</i>的流動通訊功能，則須受該流動網絡營運商所發出的相關規則所約束。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="159" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[<i>八達通流動電話卡</i>的功能，與普通成人八達通無異。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="159" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[3.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="179" width="470" height="28"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[<i>八達通流動電話卡</i>的儲值額為零，使用前請先增值。閣下可用現金於任何八達通認可的增值服務供應商為<i>八達通流動電話卡</i>增值，最高金額為港幣1,000元。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="179" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[4.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="205" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[5.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="205" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[<i>八達通流動電話卡</i>不設按金及不能退還]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="224" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[如<i>八達通流動電話卡</i>之儲值額為零或負數，此<i>八達通流動電話卡</i>的八達通付款功能即不能使用，直至增值為止。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="224" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[6.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="244" width="470" height="27"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[如要求退還失效的<i>八達通流動電話卡</i>或所註銷的<i>八達通流動電話卡</i>內之餘額達港幣500元或以上，請透過本公司網站<u>www.octopus.com.hk</u>辦理。在其他情況下，閣下可前往本公司的認可服務中心要求退款或註銷。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="271" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[該<i>八達通流動電話卡</i>一旦註銷，卡上所有的八達通功能將無法重新啟動。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="244" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[7.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="271" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[8.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="291" width="470" height="25"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[若閣下的<i>八達通流動電話卡</i>附有自動增值服務，閣下將會自動獲得八達通卡有限公司提供的報失八達通服務。如需報失，請聯絡八達通報失熱線 2266 2266。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="291" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[9.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="37" width="470" height="20"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="12" isBold="false" isUnderline="true" pdfEncoding="Cp1252"/>
+					</textElement>
+					<text><![CDATA[關於<i>八達通流動電話卡</i>上八達通功能的條款及細則]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="316" width="470" height="38"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[若遺失<i>八達通流動電話卡</i>或卡上任何功能失效，請要求指定流動網絡營運商發出新的<i>八達通流動電話卡</i>。（流動網絡營運商可能因發出新的<i>八達通流動電話卡</i>而額外收費，或要求收取其他費用。閣下應直接向有關的流動網絡營運商查詢詳情。）]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="316" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[10.]]></text>
+				</staticText>
+				<break>
+					<reportElement x="0" y="0" width="100" height="1"/>
+				</break>
+			</frame>
+		</band>
+		<band height="105" splitType="Stretch">
+			<printWhenExpression><![CDATA[$F{octFormP1}.equals("CHI")]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="528" height="105"/>
+				<staticText>
+					<reportElement x="36" y="44" width="470" height="28"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[閣下可憑此<i>八達通流動電話卡</i>申請八達通自動增值服務，增值更輕鬆便利。查詢詳情，請瀏覽<u>www.octopus.com.hk/aavs</u>或致電2266 2338。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="44" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="72" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[2.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="72" width="470" height="28"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[閣下亦可憑此<i>八達通流動電話卡</i>登記八達通日日賞計劃，享受八達通日日賞商戶提供的優惠。查詢詳情，請瀏覽<u>www.octopusrewards.com.hk</u>.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="15" width="470" height="20"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="12" isBold="false" isUnderline="true" pdfEncoding="Cp1252"/>
+					</textElement>
+					<text><![CDATA[八達通自動增值服務及八達通日日賞計劃]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="184">
+			<printWhenExpression><![CDATA[$F{octFormP1}.equals("CHI")]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="528" height="184"/>
+				<staticText>
+					<reportElement x="36" y="48" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[要使用<i>八達通流動電話卡</i>的八達通功能，必須：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="48" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="15" width="470" height="20"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="12" isBold="false" isUnderline="true" pdfEncoding="Cp1252"/>
+					</textElement>
+					<text><![CDATA[八達通流動電話卡上八達通功能的使用須知]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="36" y="68" width="430" height="20"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="415" height="20"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[將<i>八達通流動電話卡</i>插入一部經由八達通測試具備NFC功能的手機。]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="88" width="430" height="20"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="415" height="20"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[啟動手機上的NFC功能，以便使用<i>八達通流動電話卡</i>的八達通功能。]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="107" width="430" height="20"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="415" height="20"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[即時下載並安裝「八達通」App。]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="126" width="470" height="20"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="20"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[確保在使用八達通功能過程中備有足夠電量，尤其是在整個公共交通旅程上足以支持入閘、出閘及核票之用。]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="145" width="470" height="33"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="33"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[記錄該<i>八達通流動電話卡</i>的八達通號碼（關於使用八達通功能）和手機SIM卡編號ICCID（Integrated Circuit Card Identifier）（關於使用流動通訊功能）並將之保密處理，能助你更有效地查詢有關八達通功能及／或電訊功能事宜。]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="127">
+			<printWhenExpression><![CDATA[$F{octFormP1}.equals("CHI")]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="528" height="127"/>
+				<staticText>
+					<reportElement x="36" y="8" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[要使用<i>八達通流動電話卡</i>的八達通功能，必須：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="8" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[2.]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="36" y="28" width="470" height="24"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="24"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[將手機拍向於八達通讀寫器上，停留一會，直至聽到「嘟」一聲代表交易完成並看見屏幕上顯示餘額，才將手機移離讀寫器。]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="52" width="430" height="20"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="415" height="20"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[若因手機移離讀寫器太快而交易未能完成，請將手機再次拍向同一八達通讀寫器上。]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="71" width="430" height="20"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["X"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="415" height="20"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="true" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[請勿將<i>八達通流動電話卡</i>貼近任何金屬物料（例如金屬手機外殼），以免影響其八達通功能。]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="90" width="470" height="27"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["X"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="27"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="true" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[請勿將具備<i>八達通流動電話卡</i>的手機，連同其他八達通或非接觸式智能卡，同時放置於八達通讀寫器上，以免影響其八達通功能。]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="97">
+			<printWhenExpression><![CDATA[$F{octFormP1}.equals("CHI")]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="528" height="97"/>
+				<staticText>
+					<reportElement x="36" y="8" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[想查閱<i>八達通流動電話卡</i>的餘額及交易紀錄，可以：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="8" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[3.]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="36" y="27" width="430" height="20"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="415" height="20"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[透過「八達通」App查閱;]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="46" width="470" height="22"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="22"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[透過主畫面之「八達通」App小工具即時查閱<i>八達通流動電話卡</i>之餘額。查詢詳情，請瀏覽<i>八達通流動電話卡</i>網頁。]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="67" width="470" height="22"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="22"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[建議使用手機上的登入功能（例如設定密碼），避免當中的八達通餘額及最近交易紀錄在未經授權的情況下被瀏覽。]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="123">
+			<printWhenExpression><![CDATA[$F{octFormP1}.equals("CHI")]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="528" height="123"/>
+				<staticText>
+					<reportElement x="36" y="8" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[在公共交通上使用<i>八達通流動電話卡</i>的八達通功能，必須：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="8" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[4.]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="36" y="27" width="470" height="24"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="24"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[確保使用手機時備有足夠電量，尤其是在整個旅程上足以支持入閘、出閘及核票之用。倘若無法出示有效車票，可能遭受有關交通營運商檢控或收取額外費用。]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="51" width="470" height="40"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="40"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[當閣下發現手機電量充足並已啟動NFC功能，但仍未能以八達通功能通過收費閘口，請向相關交通營運商的顧客服務中心尋求協助。如果該問題涉及八達通，請聯絡八達通卡有限公司。如果該問題涉及流動通話服務，請向流動網絡營運商尋求協助。]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="91" width="470" height="27"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["X"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="27"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="true" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[在離開收費閘口（或已付車費區域）之前（尤其在跨境交通上），請勿將<i>八達通流動電話卡</i>替換為其他流動電話卡，以確保出閘時能順利及正確地扣減車費。]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="287" splitType="Stretch">
+			<printWhenExpression><![CDATA[$F{octFormP1}.equals("CHI")]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="528" height="287"/>
+				<staticText>
+					<reportElement x="36" y="8" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[註銷<i>八達通流動電話卡</i>的八達通功能並申請退還儲值額：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="8" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[5.]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="36" y="50" width="470" height="24"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="24"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[確保使用手機時備有足夠電量，尤其是在整個旅程上足以支持入閘、出閘及核票之用。倘若無法出示有效車票，可能遭受有關交通營運商檢控或收取額外費用。]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="105" width="470" height="20"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="20"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[瀏覽<u>www.octopus.com.hk/sim-refund</u>遞交退款申請。]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="191" width="470" height="92"/>
+					<staticText>
+						<reportElement x="0" y="15" width="470" height="77"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[閣下一旦為<i>八達通流動電話卡</i>遞交退款申請，<i>八達通流動電話卡</i>上適用的所有八達通功能將無法重新啟動，但流動通訊功能則不受影響。若閣下的<i>八達通流動電話卡</i>已經登記八達通日日賞計劃，請謹記在遞交退款申請前，用完所有日日賞$。一旦完成退款申請，<i>八達通流動電話卡</i>上的日日賞$將被取消。閣下毋須將<i>八達通流動電話卡</i>歸還八達通卡有限公司。在取得退款時之前，閣下應妥善保存該<i>八達通流動電話卡</i>。為使計算退款金額準確無誤，閣下一旦遞交退款申請，便不應使用<i>八達通流動電話卡</i>上任何八達通功能（例如：增值及付款）。八達通卡有限公司在處理閣下的退款申請時會確定最終的退款金額。當閣下取回退款後，應將<i>八達通流動電話卡</i>剪成兩半及妥善棄置。]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="0" y="0" width="198" height="16"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="true" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[注意： ]]></text>
+					</staticText>
+				</frame>
+				<staticText>
+					<reportElement x="36" y="30" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[<b>若<i>八達通流動電話卡</i>功能正常並且儲值餘額低於港幣500元</b>，請：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="86" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[<b>若<i>八達通流動電話卡</i>已經失效或儲值餘額為港幣500元或以上</b>，請：]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="36" y="125" width="470" height="20"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="20"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[填寫網上退款申請表時，請確保具備下列資料：]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="51" y="144" width="300" height="20"/>
+					<rectangle>
+						<reportElement x="5" y="3" width="3" height="3" backcolor="#000000"/>
+					</rectangle>
+					<staticText>
+						<reportElement x="15" y="0" width="285" height="20"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[<i>八達通流動電話卡</i>上的八達通號碼；及]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="51" y="163" width="455" height="22"/>
+					<rectangle>
+						<reportElement x="5" y="3" width="3" height="3" backcolor="#000000"/>
+					</rectangle>
+					<staticText>
+						<reportElement x="15" y="0" width="440" height="22"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[<i>八達通流動電話卡</i>上的手機SIM卡編號ICCID (若你無法找出ICCID，請向閣下的流動網絡營運商尋求協助)。]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="80">
+			<printWhenExpression><![CDATA[$F{octFormP1}.equals("CHI")]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="528" height="80"/>
+				<staticText>
+					<reportElement x="36" y="8" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[<i>八達通流動電話卡</i>報失服務]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="8" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[6.]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="36" y="27" width="470" height="28"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="28"/>
+						<textElement textAlignment="Left" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[<i>八達通流動電話卡</i>的八達通功能 — 八達通報失服務只適用於已附有八達通自動增值服務的<i>八達通流動電話卡</i>。如需報失，請聯絡八達通報失熱線 2266 2266。]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="54" width="470" height="22"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="22"/>
+						<textElement textAlignment="Left" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[<i>八達通流動電話卡</i>的流動通訊功能 — 有關<i>八達通流動電話卡</i>的流動通訊功能，請自行聯絡有關的流動網絡營運商。]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="75">
+			<printWhenExpression><![CDATA[$F{octFormP1}.equals("CHI")]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="528" height="75"/>
+				<staticText>
+					<reportElement x="36" y="8" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[當終止流動通訊服務後，必須：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="8" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[7.]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="36" y="27" width="470" height="22"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="22"/>
+						<textElement textAlignment="Left" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[註銷<i>八達通流動電話卡</i>的八達通功能及申請退還餘款。有關程序詳情，請參閱上述第5項。]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="49" width="470" height="23"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["X"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="23"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isBold="true" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[無論任何情況，請勿將<i>八達通流動電話卡</i>轉交第三方。]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="204">
+			<printWhenExpression><![CDATA[$F{octFormP1}.equals("CHI")]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="528" height="204"/>
+				<staticText>
+					<reportElement x="36" y="44" width="470" height="28"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[八達通流動電話卡資料<br>
+網址：<u>www.octopus.com.hk/sim</u>]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="44" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="72" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[2.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="72" width="470" height="28"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[網上申請註銷八達通流動電話卡之退款申請表格<br>
+網址：<u>www.octopus.com.hk/sim-refund</u>
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="15" width="470" height="20"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="12" isBold="false" isUnderline="true" pdfEncoding="Cp1252"/>
+					</textElement>
+					<text><![CDATA[有用聯絡資料一覽]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="100" width="470" height="36"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[申請八達通自動增值服務<br>
+網址：<u>www.octopus.com.hk/aavs</u><br>
+熱線：2266 2338
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="100" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[3.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="136" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[4.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="164" width="470" height="28"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[八達通報失服務熱線<br>
+24小時熱線：2266 2266
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="164" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[5.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="136" width="470" height="28"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[登記八達通日日賞計劃<br>
+網址：<u>www.octopusrewards.com.hk</u>
+]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="429" splitType="Stretch">
+			<printWhenExpression><![CDATA[$F{octFormP1}.equals("ENG")]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="528" height="429"/>
+				<staticText>
+					<reportElement x="16" y="37" width="470" height="20"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-Arial" size="11" isBold="false" isUnderline="true" pdfEncoding="Cp1252"/>
+					</textElement>
+					<text><![CDATA[Terms and Conditions regarding the Octopus Function on the <i>Octopus Mobile SIM</i>]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="1" width="470" height="20"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-Arial" size="12" isBold="true" isUnderline="true" pdfEncoding="Cp1252"/>
+					</textElement>
+					<text><![CDATA[<i>Octopus Mobile SIM</i>  —  Octopus Function]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="75" width="470" height="50"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[<i>Octopus Mobile SIM</i> is a mobile phone SIM card incorporated with Octopus function.  The <i>Octopus Mobile SIM</i> consists of both Octopus function and mobile telecommunication function for use on NFC (Near Field Communication) enabled mobile phones as tested by Octopus Cards Limited.  The list of tested mobile phones is available on Octopus Cards Limited’s website:  <u>www.octopus.com.hk</u>.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="75" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="124" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[2.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="124" width="470" height="64"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[<i>Octopus Mobile SIM</i> is issued subject to the “Conditions of Issue of Octopus” published by Octopus Cards Limited, as may be amended from time to time.  The “Conditions of Issue of Octopus” is downloadable from Octopus Cards Limited’s website at <u>www.octopus.com.hk</u>, dispatched or displayed at designated transport stations.  Use of the Octopus function on the <i>Octopus Mobile SIM</i> is subject to the “Conditions of Issue of Octopus”.  Use of the mobile telecommunication function is subject to the relevant regulations as advised by the mobile network operator.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="186" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[<i>Octopus Mobile SIM</i> functions as a normal adult Octopus.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="186" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[3.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="205" width="470" height="34"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[<i>Octopus Mobile SIM</i> has no initial stored value.  Please add value before use.  You may add value to your <i>Octopus Mobile SIM</i> at all Octopus Authorised Add Value Service Providers with cash up to a maximum of HK$1,000.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="205" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[4.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="238" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[5.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="238" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[<i>Octopus Mobile SIM</i> has no deposit and is non-returnable.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="257" width="470" height="26"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[If the value on your <i>Octopus Mobile SIM</i> SIM is zero or negative, Octopus payment function on this <i>Octopus Mobile SIM</i> cannot be used until it is reloaded.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="257" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[6.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="282" width="470" height="44"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Any requests to refund a malfunctioned <i>Octopus Mobile SIM</i> or cancel an <i>Octopus Mobile SIM</i> with a remaining value of HK$500 or above stored on it should be made through our website at <u>www.octopus.com.hk</u>. In all other cases, you may approach our Authorised Service Centres to submit your refund or cancellation request.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="326" width="470" height="24"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[All applicable Octopus function(s) on this <i>Octopus Mobile SIM</i> will be permanently disabled once it is cancelled.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="282" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[7.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="326" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[8.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="37" y="349" width="470" height="25"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[If your <i>Octopus Mobile SIM</i> is linked to Octopus Automatic Add Value Service, you will automatically be provided with Lost Octopus Service.  To report loss, please call our Lost Octopus Reporting Hotline on 2266 2266.  ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="349" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[9.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="37" y="374" width="470" height="51"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[In the event of loss or malfunction of any function in the <i>Octopus Mobile SIM</i>, you are required to obtain a new <i>Octopus Mobile SIM</i> from the designated mobile network operator. (A new Octopus Mobile SIM may be subject to surcharge or other fees charged by and payable to the mobile network operator.  You should check with your mobile network operator directly for details.)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="17" y="374" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[10.]]></text>
+				</staticText>
+				<break>
+					<reportElement x="0" y="0" width="100" height="1"/>
+				</break>
+			</frame>
+		</band>
+		<band height="110" splitType="Stretch">
+			<printWhenExpression><![CDATA[$F{octFormP1}.equals("ENG")]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="528" height="110"/>
+				<staticText>
+					<reportElement x="36" y="44" width="470" height="33"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[You may use this <i>Octopus Mobile SIM</i> to apply for the Octopus Automatic Add Value Service to enjoy greater convenience on stored value top up.  For details, please visit <u>www.octopus.com.hk/aavs</u> or call application hotline: 2266 2338.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="17" y="44" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="17" y="77" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[2.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="77" width="470" height="28"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[You may use this <i>Octopus Mobile SIM</i> to register for the Octopus Rewards Programme to enjoy more benefits from Octopus Rewards merchants.  For details, please visit <u>www.octopusrewards.com.hk</u>.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="15" y="12" width="470" height="20"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-Arial" size="11" isBold="false" isUnderline="true" pdfEncoding="Cp1252"/>
+					</textElement>
+					<text><![CDATA[Octopus Automatic Add Value Service and Octopus Rewards Programme]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="205">
+			<printWhenExpression><![CDATA[$F{octFormP1}.equals("ENG")]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="528" height="205"/>
+				<staticText>
+					<reportElement x="36" y="48" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[To support the use of Octopus function on <i>Octopus Mobile SIM</i>, you should:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="48" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="15" width="470" height="20"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-Arial" size="11" isBold="false" isUnderline="true" pdfEncoding="Cp1252"/>
+					</textElement>
+					<text><![CDATA[<b>Dos and Don’ts</b> for using OctopusFunction on <i>Octopus Mobile SIM</i>]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="36" y="68" width="430" height="20"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="415" height="20"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Insert the <i>Octopus Mobile SIM</i> into your Octopus tested and NFC-enabled mobile phone. ]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="88" width="470" height="20"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="20"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Turn on the NFC function on your mobile phone so that the Octopus function on the <i>Octopus Mobile SIM</i> can be performed.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="107" width="430" height="20"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="415" height="20"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Download the <b>“Octopus” App</b> from Google Play to your mobile phone immediately.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="126" width="470" height="28"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="28"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Ensure sufficient battery power of your mobile phone throughout the use of the Octopus function, in particular, entrance and exit points on payment gate for the whole journey on public transportation and fare ticket inspection.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="153" width="470" height="38"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="38"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Record your Octopus number (relating to use of Octopus function) and ICCID (Integrated Circuit Card Identifier) (relating to use of mobile telecommunication function) of the <i>Octopus Mobile SIM</i> to facilitate service enquiries regarding Octopus functions and/or mobile telecommunication functions and keep them confidential. ]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="153">
+			<printWhenExpression><![CDATA[$F{octFormP1}.equals("ENG")]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="528" height="153"/>
+				<staticText>
+					<reportElement x="36" y="8" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[To use the Octopus function on your <i>Octopus Mobile SIM</i>, you should:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="8" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[2.]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="36" y="28" width="470" height="35"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="35"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Place your mobile phone steadily over an Octopus reader, hold and wait until you hear a “Dood” sound and there is an indication that the transaction is completed and the remaining value is shown on the screen before removing your mobile phone.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="62" width="471" height="26"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="456" height="26"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Present your mobile phone over the Octopus reader again if the transaction is incomplete because you may have removed your mobile phone too quickly from the reader. ]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="88" width="470" height="26"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["X"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="26"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="true" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Not place the <i>Octopus Mobile SIM</i> near any metallic material (e.g. metal mobile phone case) as it may affect the performance of the Octopus function.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="114" width="470" height="35"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["X"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="35"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="true" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Not hold the mobile phone with your <i>Octopus Mobile SIM</i> together with another Octopus or contactless smart card, over an Octopus reader at one time as such may affect the performance of the Octopus function.]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="97">
+			<printWhenExpression><![CDATA[$F{octFormP1}.equals("ENG")]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="528" height="97"/>
+				<staticText>
+					<reportElement x="36" y="8" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[To check the Octopus remaining value and transaction record(s) on your <i>Octopus Mobile SIM</i>, you can:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="8" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[3.]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="36" y="27" width="430" height="20"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="415" height="20"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Use the <b>“Octopus” App</b>. installed on your mobile phone.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="46" width="470" height="22"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="22"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Check the remaining value by just clicking on the <b>“Octopus” App</b> widget on your home screen.  For details, please refer to the FAQ section of the <i>Octopus Mobile SIM</i> web page.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="67" width="470" height="24"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="24"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[It is recommended that you use the login function on your mobile phone (for example setting password) to avoid unauthorized browsing of the Octopus remaining value and latest transaction record(s). ]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="162">
+			<printWhenExpression><![CDATA[$F{octFormP1}.equals("ENG")]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="528" height="162"/>
+				<staticText>
+					<reportElement x="36" y="8" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[When using the Octopus function on public transport with <i>Octopus Mobile SIM</i>, you should:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="8" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[4.]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="36" y="27" width="470" height="38"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="38"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Ensure sufficient battery power of your mobile phone throughout, in particular, entrance and exit points on payment gate for the whole journey and fare ticket inspection. Failure to produce a valid ticket may lead to prosecution or surcharge imposed by related transport operator.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="64" width="470" height="58"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="58"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[If you find your mobile phone with sufficient battery power and its NFC function has been turned on, but you still cannot use the Octopus function to get through the exit points on the payment gate, please contact the Customer Service Centre of related transport operator for assistance. If the problem relates to the Octopus function, please contact Octopus Cards Limited.  If the problem relates to the mobile telecommunication function, please contact your mobile network operator for assistance.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="121" width="470" height="37"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["X"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="37"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="true" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Not replace the <i>Octopus Mobile SIM</i> with other mobile SIM before exiting the payment gate (or paid area) (especially on cross border transportations) to ensure smooth and proper deduction of fares at the exit points.]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="298" splitType="Stretch">
+			<printWhenExpression><![CDATA[$F{octFormP1}.equals("ENG")]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="528" height="298"/>
+				<staticText>
+					<reportElement x="36" y="212" width="470" height="80"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[<b>IMPORTANT:</b> Once you submit refund request of your <i>Octopus Mobile SIM</i>, all applicable Octopus function(s) of your <i>Octopus Mobile SIM</i> will be permanently disabled but the mobile telecommunication function will remain unaffected. If your <i>Octopus Mobile SIM</i> is registered under the Octopus Rewards Programme, you are reminded to use up all the Reward$ before submitting the refund request. Once refund request is made, the Reward$ on your Octopus Mobile SIM will be forfeited.  You are not required to return the <i>Octopus Mobile SIM</i> to Octopus Cards Limited.  You are reminded to keep your <i>Octopus Mobile SIM</i> safe and intact before you receive the refund.  To facilitate an accurate calculation of the refund amount, you should not use the Octopus function(s) on your <i>Octopus Mobile SIM</i>, e.g. add value and payment, once you have submitted the refund request. The final refund amount will be confirmed at the time when Octopus Cards Limited processes your request. Once you receive the refund, you are advised to cut the <i>Octopus Mobile SIM</i> into halves and dispose of it properly.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="8" width="479" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[To cancel the Octopus function and apply for refund of the remaining value stored on your <i>Octopus Mobile SIM</i> : ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="8" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[5.]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="37" y="52" width="470" height="35"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="35"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Receive an on-the-spot refund at any MTR Customer Service Centre.  Please ensure your <i>Octopus Mobile SIM</i> is properly inserted into your Octopus tested and NFC-enabled mobile phone and with sufficient battery power when you place it over the Octopus reader at the MTR Customer Service Centre.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="120" width="470" height="20"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="20"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Visit <u>www.octopus.com.hk/sim-refund-en</u> to submit the refund request. ]]></text>
+					</staticText>
+				</frame>
+				<staticText>
+					<reportElement x="36" y="30" width="479" height="22"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[<b>In case the <i>Octopus Mobile SIM</i> is functioning properly and the remaining value is less than HK$500</b>, you can: ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="100" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[<b>In case the <i>Octopus Mobile SIM</i> is malfunctioned or its remaining value is HK$500 or above</b>, you can:]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="36" y="139" width="470" height="20"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="20"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[To complete the online refund request form, please make sure you have the following information:]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="51" y="158" width="300" height="20"/>
+					<rectangle>
+						<reportElement x="5" y="3" width="3" height="3" backcolor="#000000"/>
+					</rectangle>
+					<staticText>
+						<reportElement x="15" y="0" width="285" height="20"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Octopus number of your <i>Octopus Mobile SIM</i> ; and]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="51" y="177" width="455" height="24"/>
+					<rectangle>
+						<reportElement x="5" y="3" width="3" height="3" backcolor="#000000"/>
+					</rectangle>
+					<staticText>
+						<reportElement x="15" y="0" width="440" height="24"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[ICCID (SIM card number) of your <i>Octopus Mobile SIM</i> (If you cannot find your ICCID, please contact your mobile network operator for assistance).]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="93">
+			<printWhenExpression><![CDATA[$F{octFormP1}.equals("ENG")]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="528" height="93"/>
+				<staticText>
+					<reportElement x="36" y="8" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[Lost <i>Octopus Mobile SIM</i> Reporting Service]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="8" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[6.]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="36" y="27" width="470" height="35"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="35"/>
+						<textElement textAlignment="Left" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Octopus function on <i>Octopus Mobile SIM</i>  —  If your <i>Octopus Mobile SIM</i> is linked to Octopus Automatic Add Value Service, you will automatically be provided with lost Octopus service.  To report loss, please call Lost Octopus Reporting Hotline on 2266 2266.  ]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="63" width="470" height="24"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="24"/>
+						<textElement textAlignment="Left" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Mobile telecommunication function on <i>Octopus Mobile SIM</i>  —  Please contact your mobile network operator separately to suspend the mobile telecommunication function on the <i>Octopus Mobile SIM</i> card. ]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="75">
+			<printWhenExpression><![CDATA[$F{octFormP1}.equals("ENG")]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="528" height="75"/>
+				<staticText>
+					<reportElement x="36" y="8" width="470" height="20"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[Upon termination of mobile telecommunication service, you should:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="8" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[7.]]></text>
+				</staticText>
+				<frame>
+					<reportElement x="36" y="27" width="470" height="22"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["\u2713"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="22"/>
+						<textElement textAlignment="Left" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[Cancel the Octopus function and apply for refund of the remaining value of the Octopus function on the <i>Octopus Mobile SIM</i>. Please refer to point 5 above for details of the procedures. ]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="36" y="49" width="470" height="23"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="16" height="20"/>
+						<textElement verticalAlignment="Top" markup="none">
+							<font fontName="DejaVu Sans" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["X"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="15" y="0" width="455" height="23"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-Arial" size="9" isBold="true" isItalic="false" pdfEncoding="Identity-H"/>
+						</textElement>
+						<text><![CDATA[NOT give your <i>Octopus Mobile SIM</i> to any third party under any circumstances. ]]></text>
+					</staticText>
+				</frame>
+			</frame>
+		</band>
+		<band height="204">
+			<printWhenExpression><![CDATA[$F{octFormP1}.equals("ENG")]]></printWhenExpression>
+			<frame>
+				<reportElement x="0" y="0" width="528" height="204"/>
+				<staticText>
+					<reportElement x="36" y="44" width="470" height="28"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[Information on Octopus Mobile SIM<br>
+Website:<u> www.octopus.com.hk/sim-en</u>]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="44" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="72" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[2.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="72" width="470" height="28"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Refund Request Form – Online Application for Cancellation of Octopus Mobile SIM <br>
+Website: <u>www.octopus.com.hk/sim-refund-en</u>
+
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="15" width="470" height="20"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-Arial" size="12" isBold="false" isUnderline="true" pdfEncoding="Cp1252"/>
+					</textElement>
+					<text><![CDATA[Useful contact at a glance]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="100" width="470" height="36"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Apply for Octopus Automatic Add Value Service<br>
+Website:<u> www.octopus.com.hk/aavs</u><br>
+Hotline: 2266 2338
+
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="100" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[3.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="136" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[4.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="164" width="470" height="28"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Lost Octopus Reporting Hotline<br>
+24-hour Hotline: 2266 2266]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="164" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-Arial" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[5.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="136" width="470" height="28"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-Arial" size="9" isBold="false" isItalic="false" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[Register for Octopus Rewards Programme <br>
+Website:<u> www.octopusrewards.com.hk</u>
+
+]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="50">
+			<image scaleImage="RetainShape" hAlign="Right" vAlign="Bottom">
+				<reportElement x="400" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyBottomLogo}]]></imageExpression>
+			</image>
+			<image vAlign="Bottom">
+				<reportElement x="0" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyBottomLeftLogo}]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.7.1
+Created-By: 20.2-b06 (Sun Microsystems Inc.)
+SB-Build-Version: R3.Local
+SB-Build-Date: 20190924-101028
+

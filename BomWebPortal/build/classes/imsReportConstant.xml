@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>imsReportMessage</value>
+				<value>bomwebportal</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+
+	<!-- enable access to externalized properties via PropertyPlaceholderConfigurer -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations"> 
+	            <list>
+	                <value>classpath:imsReportConstantConfig.properties</value>
+	            </list>
+	    </property>
+	</bean>
+
+	<!--coreCharge  -->
+    <bean id="coreChargeEng01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemEng01}" />
+       <property name="itemHtml2" value="${coreChargeDescEng01}" />
+    </bean>
+    <bean id="coreChargeEng02A" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemEng02}" />
+       <property name="itemHtml2" value="${coreChargeDescEng02A}" />
+    </bean>
+    <bean id="coreChargeEng02B" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemEng02}" />
+       <property name="itemHtml2" value="${coreChargeDescEng02B}" />
+    </bean>
+    <bean id="coreChargeEng03A" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemEng03}" />
+       <property name="itemHtml2" value="${coreChargeDescEng03A}" />
+    </bean>
+    <bean id="coreChargeEng03B" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemEng03}" />
+       <property name="itemHtml2" value="${coreChargeDescEng03B}" />
+    </bean>
+    <bean id="coreChargeEng03C" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemEng03}" />
+       <property name="itemHtml2" value="${coreChargeDescEng03C}" />
+    </bean>
+    <bean id="coreChargeEng03D" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemEng03}" />
+       <property name="itemHtml2" value="${coreChargeDescEng03D}" />
+    </bean>
+    <bean id="coreChargeEng04" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemEng04}" />
+       <property name="itemHtml2" value="${coreChargeDescEng04}" />
+    </bean>
+    <bean id="coreChargeEng05A" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemEng05}" />
+       <property name="itemHtml2" value="${coreChargeDescEng05A}" />
+    </bean>
+    <bean id="coreChargeEng05B" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemEng05}" />
+       <property name="itemHtml2" value="${coreChargeDescEng05B}" />
+    </bean>
+    <bean id="coreChargeEng05C" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemEng05}" />
+       <property name="itemHtml2" value="${coreChargeDescEng05C}" />
+    </bean>
+    <bean id="coreChargeEng06" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemEng06}" />
+       <property name="itemHtml2" value="${coreChargeDescEng06}" />
+    </bean>
+    <bean id="coreChargeEng07" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemEng07}" />
+       <property name="itemHtml2" value="${coreChargeDescEng07}" />
+    </bean>
+    <bean id="coreChargeEng08" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemEng08}" />
+       <property name="itemHtml2" value="${coreChargeDescEng08}" />
+    </bean>
+    <bean id="coreChargeEng09" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemEng09}" />
+       <property name="itemHtml2" value="${coreChargeDescEng09}" />
+    </bean>
+    
+    <bean id="coreChargeChi01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemChi01}" />
+       <property name="itemHtml2" value="${coreChargeDescChi01}" />
+    </bean>
+    <bean id="coreChargeChi02A" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemChi02}" />
+       <property name="itemHtml2" value="${coreChargeDescChi02A}" />
+    </bean>
+    <bean id="coreChargeChi02B" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemChi02}" />
+       <property name="itemHtml2" value="${coreChargeDescChi02B}" />
+    </bean>
+    <bean id="coreChargeChi03A" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemChi03}" />
+       <property name="itemHtml2" value="${coreChargeDescChi03A}" />
+    </bean>
+    <bean id="coreChargeChi03B" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemChi03}" />
+       <property name="itemHtml2" value="${coreChargeDescChi03B}" />
+    </bean>
+    <bean id="coreChargeChi03C" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemChi03}" />
+       <property name="itemHtml2" value="${coreChargeDescChi03C}" />
+    </bean>
+    <bean id="coreChargeChi03D" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemChi03}" />
+       <property name="itemHtml2" value="${coreChargeDescChi03D}" />
+    </bean>
+    <bean id="coreChargeChi04" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemChi04}" />
+       <property name="itemHtml2" value="${coreChargeDescChi04}" />
+    </bean>
+    <bean id="coreChargeChi05A" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemChi05}" />
+       <property name="itemHtml2" value="${coreChargeDescChi05A}" />
+    </bean>
+    <bean id="coreChargeChi05B" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemChi05}" />
+       <property name="itemHtml2" value="${coreChargeDescChi05B}" />
+    </bean>
+    <bean id="coreChargeChi05C" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemChi05}" />
+       <property name="itemHtml2" value="${coreChargeDescChi05C}" />
+    </bean>
+    <bean id="coreChargeChi06" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemChi06}" />
+       <property name="itemHtml2" value="${coreChargeDescChi06}" />
+    </bean>
+    <bean id="coreChargeChi07" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemChi07}" />
+       <property name="itemHtml2" value="${coreChargeDescChi07}" />
+    </bean>
+    <bean id="coreChargeChi08" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemChi08}" />
+       <property name="itemHtml2" value="${coreChargeDescChi08}" />
+    </bean>
+    <bean id="coreChargeChi09" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${coreChargeItemChi09}" />
+       <property name="itemHtml2" value="${coreChargeDescChi09}" />
+    </bean>
+	<!--coreCharge End  -->
+
+	<!--important info  -->
+    <bean id="imprtInfoEng00" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescEng00}" />
+    </bean>
+    <bean id="imprtInfoEng01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescEng01}" />
+    </bean>
+    <bean id="imprtInfoEng02" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescEng02}" />
+    </bean>
+    <bean id="imprtInfoEng03" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescEng03}" />
+    </bean>
+    <bean id="imprtInfoEng04phhos" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescEng04phhos}" />
+    </bean>
+    <bean id="imprtInfoEng04private" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescEng04private}" />
+    </bean>
+    <bean id="imprtInfoEng05" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescEng05}" />
+    </bean>
+    <bean id="imprtInfoEng06" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescEng06}" />
+    </bean>
+    <bean id="imprtInfoEng07" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescEng07}" />
+    </bean>
+    <bean id="imprtInfoEng08" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescEng08}" />
+    </bean>
+    <bean id="imprtInfoEng09" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescEng09}" />
+    </bean>
+    <bean id="imprtInfoEng10" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescEng10}" />
+    </bean>
+    <bean id="imprtInfoEng11" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescEng11}" />
+    </bean>
+    <bean id="imprtInfoEng12" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescEng12}" />
+    </bean>
+    <bean id="imprtInfoEng13" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescEng13}" />
+    </bean>
+    <bean id="imprtInfoEng14" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescEng14}" />
+    </bean>
+    <bean id="imprtInfoEng15" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescEng15}" />
+    </bean>
+    <bean id="imprtInfoEng16" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescEng16}" />
+    </bean>
+    <bean id="imprtInfoEng17" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescEng17}" />
+    </bean>
+    <bean id="imprtInfoEng18" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescEng18}" />
+    </bean>
+    <bean id="imprtInfoEng19" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescEng19}" />
+    </bean>
+    <bean id="imprtInfoEng20" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescEng20}" />
+    </bean>
+    <bean id="imprtInfoEng21" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescEng21}" />
+    </bean>
+    
+    <bean id="imprtInfoChi00" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescChi00}" />
+    </bean>
+    <bean id="imprtInfoChi01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescChi01}" />
+    </bean>
+    <bean id="imprtInfoChi02" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescChi02}" />
+    </bean>
+    <bean id="imprtInfoChi03" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescChi03}" />
+    </bean>
+    <bean id="imprtInfoChi04phhos" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescChi04phhos}" />
+    </bean>
+    <bean id="imprtInfoChi04private" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescChi04private}" />
+    </bean>
+    <bean id="imprtInfoChi05" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescChi05}" />
+    </bean>
+    <bean id="imprtInfoChi06" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescChi06}" />
+    </bean>
+    <bean id="imprtInfoChi07" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescChi07}" />
+    </bean>
+    <bean id="imprtInfoChi08" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescChi08}" />
+    </bean>
+    <bean id="imprtInfoChi09" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescChi09}" />
+    </bean>
+    <bean id="imprtInfoChi10" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescChi10}" />
+    </bean>
+    <bean id="imprtInfoChi11" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescChi11}" />
+    </bean>
+    <bean id="imprtInfoChi12" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescChi12}" />
+    </bean>
+    <bean id="imprtInfoChi13" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescChi13}" />
+    </bean>
+    <bean id="imprtInfoChi14" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescChi14}" />
+    </bean>
+    <bean id="imprtInfoChi15" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescChi15}" />
+    </bean>
+    <bean id="imprtInfoChi16" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescChi16}" />
+    </bean>
+    <bean id="imprtInfoChi17" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescChi17}" />
+    </bean>
+    <bean id="imprtInfoChi18" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescChi18}" />
+    </bean>
+    <bean id="imprtInfoChi19" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescChi19}" />
+    </bean>
+    <bean id="imprtInfoChi20" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescChi20}" />
+    </bean>
+    <bean id="imprtInfoChi21" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${imprtInfoDescChi21}" />
+    </bean>
+	<!--important info End  -->
+
+	<!--glossary  -->
+    <bean id="glossaryEng01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${glossaryDescEng01}" />
+    </bean>
+    <bean id="glossaryEng02" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${glossaryDescEng02}" />
+    </bean>
+    <bean id="glossaryEng03" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${glossaryDescEng03}" />
+    </bean>
+    <bean id="glossaryEng04" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${glossaryDescEng04}" />
+    </bean>
+    <bean id="glossaryEng05" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${glossaryDescEng05}" />
+    </bean>
+    <bean id="glossaryEng06" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${glossaryDescEng06}" />
+    </bean>
+    <bean id="glossaryEng07" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${glossaryDescEng07}" />
+    </bean>
+    
+    <bean id="glossaryChi01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${glossaryDescChi01}" />
+    </bean>
+    <bean id="glossaryChi02" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${glossaryDescChi02}" />
+    </bean>
+    <bean id="glossaryChi03" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${glossaryDescChi03}" />
+    </bean>
+    <bean id="glossaryChi04" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${glossaryDescChi04}" />
+    </bean>
+    <bean id="glossaryChi05" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${glossaryDescChi05}" />
+    </bean>
+    <bean id="glossaryChi06" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${glossaryDescChi06}" />
+    </bean>
+    <bean id="glossaryChi07" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${glossaryDescChi07}" />
+    </bean>
+	<!--glossary End  -->
+
+	<!--service explanation info  -->
+    <bean id="servPlanEng01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${servPlanDescEng01}" />
+    </bean>
+    <bean id="servPlanEng02" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${servPlanDescEng02}" />
+    </bean>
+    <bean id="servPlanEng03" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${servPlanDescEng03}" />
+    </bean>
+    <bean id="servPlanEng04" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${servPlanDescEng04}" />
+    </bean>
+    <bean id="servPlanEng05" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${servPlanDescEng05}" />
+    </bean>
+    <bean id="servPlanEng06phhos" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${servPlanDescEng06phhos}" />
+    </bean>
+    <bean id="servPlanEng06private" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${servPlanDescEng06private}" />
+    </bean>
+    
+    <bean id="servPlanChi01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${servPlanDescChi01}" />
+    </bean>
+    <bean id="servPlanChi02" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${servPlanDescChi02}" />
+    </bean>
+    <bean id="servPlanChi03" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${servPlanDescChi03}" />
+    </bean>
+    <bean id="servPlanChi04" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${servPlanDescChi04}" />
+    </bean>
+    <bean id="servPlanChi05" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${servPlanDescChi05}" />
+    </bean>
+    <bean id="servPlanChi06phhos" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${servPlanDescChi06phhos}" />
+    </bean>
+    <bean id="servPlanChi06private" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${servPlanDescChi06private}" />
+    </bean>
+	<!--service explanation End  -->
+
+	<!--term  -->
+    <bean id="termDescEng01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${termDescEng01}" />
+    </bean>
+    <bean id="termDescEng02" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${termDescEng02}" />
+    </bean>
+    <bean id="termDescEng03" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${termDescEng03}" />
+    </bean>
+    <bean id="termDescEng04" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${termDescEng04}" />
+    </bean>
+    <bean id="termDescEng05" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${termDescEng05}" />
+    </bean>
+    <bean id="termDescEng06" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${termDescEng06}" />
+    </bean>
+    
+    <bean id="termDescChi01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${termDescChi01}" />
+    </bean>
+    <bean id="termDescChi02" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${termDescChi02}" />
+    </bean>
+    <bean id="termDescChi03" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${termDescChi03}" />
+    </bean>
+    <bean id="termDescChi04" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${termDescChi04}" />
+    </bean>
+    <bean id="termDescChi05" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${termDescChi05}" />
+    </bean>
+    <bean id="termDescChi06" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${termDescChi06}" />
+    </bean>
+	<!--term End  -->
+    	<!--steven added  -->
+    <bean id="giftAndPremiumEng01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${giftAndPremiumEng01}" />
+    </bean>
+    <bean id="giftAndPremiumChi01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+       <property name="itemHtml" value="${giftAndPremiumChi01}" />
+    </bean>
+	<bean id="serviceProvideChi01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${serviceProvideChi01}" />
+	</bean>
+	<bean id="serviceProvideEng01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${serviceProvideEng01}" />
+	</bean>
+	
+	<bean id="kisChi01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${kisChi01}" />
+	</bean>
+	<bean id="kisChi02" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${kisChi02}" />
+	</bean>
+	<bean id="kisChi03" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${kisChi03}" />
+	</bean>
+	<bean id="kisChi04" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${kisChi04}" />
+	</bean>
+	<bean id="kisChi05" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${kisChi05}" />
+	</bean>
+	<bean id="kisChi06" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${kisChi06}" />
+	</bean>
+	<bean id="kisEng01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${kisEng01}" />
+	</bean>
+	<bean id="kisEng02" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${kisEng02}" />
+	</bean>
+	<bean id="kisEng03" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${kisEng03}" />
+	</bean>
+	<bean id="kisEng04" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${kisEng04}" />
+	</bean>
+	<bean id="kisEng05" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${kisEng05}" />
+	</bean>
+	<bean id="kisEng06" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${kisEng06}" />
+	</bean>
+	<bean id="personalInfoChi01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${personalInfoChi01}" />
+	</bean>
+	<bean id="personalInfoEng01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${personalInfoEng01}" />
+	</bean>
+	<bean id="personalInfoChi02" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${personalInfoChi02}" />
+	</bean>
+	<bean id="personalInfoEng02" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${personalInfoEng02}" />
+	</bean>
+	<bean id="bandwidthChi01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${bandwidthChi01}" />
+	</bean>
+	<bean id="bandwidthEng01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${bandwidthEng01}" />
+	</bean>
+	<bean id="billPreferencesChi01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${billPreferencesChi01}" />
+	</bean>
+	<bean id="billPreferencesChi02" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${billPreferencesChi02}" />
+	</bean>
+	<bean id="billPreferencesEng01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${billPreferencesEng01}" />
+	</bean>
+	<bean id="billPreferencesEng02" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${billPreferencesEng02}" />
+	</bean>
+	<bean id="custAgreeChi01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${custAgreeChi01}" />
+	</bean>
+	<bean id="custAgreeEng01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${custAgreeEng01}" />
+	</bean>
+	<bean id="hktServPortalChi01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${hktServPortalChi01}" />
+	</bean>
+	<bean id="hktServPortalEng01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${hktServPortalEng01}" />
+	</bean>
+	<bean id="creditCardChi01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${creditCardChi01}" />
+	</bean>
+	<bean id="creditCardEng01" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${creditCardEng01}" />
+	</bean>
+	<bean id="creditCardChi02" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${creditCardChi02}" />
+	</bean>
+	<bean id="creditCardEng02" class="com.bomwebportal.ims.dto.report.RptServiceInfoDTO">
+		<property name="itemHtml" value="${creditCardEng02}" />
+	</bean>
+	<!--steven added End -->
+</beans>

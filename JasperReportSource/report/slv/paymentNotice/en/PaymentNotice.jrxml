@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="slvPaymentNotice" language="groovy" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="0" rightMargin="20" topMargin="5" bottomMargin="5">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="452"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<field name="custOrCompanyName" class="java.lang.String"/>
+	<field name="address" class="java.lang.String"/>
+	<field name="paymentNoticeNo" class="java.lang.String"/>
+	<field name="issueDate" class="java.lang.String"/>
+	<field name="sbId" class="java.lang.String"/>
+	<field name="totalAmount" class="java.lang.String"/>
+	<field name="paymentNoticeDetail" class="java.util.List"/>
+	<field name="attn" class="java.lang.String"/>
+	<field name="paymentDueDate" class="java.lang.String"/>
+	<field name="footer" class="java.lang.String"/>
+	<field name="slvBannerTop" class="java.lang.String"/>
+	<field name="slvPaymentNoticeBannerLeft" class="java.lang.String"/>
+	<background>
+		<band height="802" splitType="Prevent">
+			<image scaleImage="RetainShape">
+				<reportElement x="97" y="15" width="458" height="45"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{slvBannerTop}]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame">
+				<reportElement x="5" y="0" width="39" height="800"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{slvPaymentNoticeBannerLeft}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="155" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="96" y="22" width="490" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{custOrCompanyName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="96" y="48" width="490" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="96" y="68" width="247" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{attn}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="343" y="109" width="212" height="1"/>
+			</line>
+			<line>
+				<reportElement x="343" y="122" width="212" height="1"/>
+			</line>
+			<line>
+				<reportElement x="343" y="136" width="212" height="1"/>
+			</line>
+			<line>
+				<reportElement x="343" y="95" width="1" height="55"/>
+			</line>
+			<line>
+				<reportElement x="555" y="95" width="1" height="54"/>
+			</line>
+			<staticText>
+				<reportElement x="350" y="96" width="98" height="13"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Payment Notice No.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="458" y="96" width="91" height="13"/>
+				<textElement>
+					<font fontName="PCCW-Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{paymentNoticeNo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="350" y="123" width="98" height="13"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Issue Date]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="458" y="123" width="91" height="13"/>
+				<textElement>
+					<font fontName="PCCW-Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{issueDate}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="343" y="95" width="212" height="1"/>
+			</line>
+			<line>
+				<reportElement x="343" y="149" width="212" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="458" y="109" width="92" height="16"/>
+				<textElement>
+					<font fontName="PCCW-Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sbId}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="350" y="109" width="98" height="13"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Application No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="136" width="98" height="13"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Payment Due Date]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="458" y="136" width="91" height="13"/>
+				<textElement>
+					<font fontName="PCCW-Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{paymentDueDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="91" splitType="Stretch">
+			<line>
+				<reportElement x="70" y="0" width="485" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="70" y="16" width="485" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="72" y="1" width="113" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="484" y="1" width="68" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[Amount (HKD)]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="72" y="19" width="483" height="16"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{paymentNoticeDetail})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["slv/paymentNotice/en/PaymentNotice_subreportDetail.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="367" y="73" width="91" height="14"/>
+				<textElement>
+					<font fontName="PCCW-Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Amount Due]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="358" y="72" width="194" height="1"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="358" y="86" width="194" height="1"/>
+			</line>
+			<textField>
+				<reportElement positionType="FixRelativeToBottom" x="492" y="72" width="60" height="13"/>
+				<textElement textAlignment="Right">
+					<font fontName="PCCW-Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{totalAmount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="252" splitType="Stretch">
+			<line>
+				<reportElement x="69" y="0" width="1" height="18"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="70" y="18" width="485" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="72" y="3" width="98" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Total Amount Due]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="426" y="3" width="32" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[HKD]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="492" y="3" width="60" height="15"/>
+				<textElement textAlignment="Right">
+					<font fontName="PCCW-Arial" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{totalAmount}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="36" width="555" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dashed" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="423" y="49" width="32" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[HKD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="69" y="49" width="98" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Total Amount Due]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="489" y="49" width="60" height="15"/>
+				<textElement textAlignment="Right">
+					<font fontName="PCCW-Arial" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{totalAmount}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="66" y="46" width="1" height="18"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="67" y="64" width="485" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="66" y="97" width="98" height="13"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Payment Notice No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="66" y="111" width="98" height="13"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Application No.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="185" y="125" width="114" height="13"/>
+				<textElement>
+					<font fontName="PCCW-Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{issueDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="185" y="97" width="114" height="13"/>
+				<textElement>
+					<font fontName="PCCW-Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{paymentNoticeNo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="66" y="125" width="98" height="13"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Issue Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="66" y="139" width="98" height="13"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Payment Due Date]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="185" y="111" width="114" height="13"/>
+				<textElement>
+					<font fontName="PCCW-Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sbId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="185" y="139" width="114" height="13"/>
+				<textElement>
+					<font fontName="PCCW-Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{paymentDueDate}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="66" y="165" width="483" height="31"/>
+				<textElement markup="html">
+					<font fontName="PCCW-Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{footer}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

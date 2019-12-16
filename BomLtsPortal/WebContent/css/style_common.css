@@ -1,0 +1,69 @@
+#topborder #noticeBoard {
+	float: right;
+	/* [disabled]background-color: #5EC5A8; */
+	font-size: 12px;
+	color: #FFFFFF;
+	margin-right: 10px;
+	display: none;
+	position: absolute;
+	right: -60px;
+	/* [disabled]font-weight: bold; */
+	top: 90px;
+	width: 450px;
+	white-space: nowrap;
+	padding: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	z-index: 2;
+}
+#noticeBoard .notL {
+	background-image: url(../images/popover_boxL.png);
+	background-repeat: no-repeat;
+	float: left;
+	height: 66px;
+	width: 22px;
+	background-position: right 0px;
+	margin-left: 50px;
+
+}
+#noticeBoard .notR {
+	background-image: url(../images/popover_box_R.png);
+	background-position: right 0px;
+	height: 66px;
+	float: left;
+	padding-right: 40px;
+	text-align: center;
+    width: 260px;
+	line-height: 65px;
+	/* [disabled]white-space: nowrap; */
+	/* [disabled]font-size: 14px; */
+	padding-left: 20px;
+
+}
+#noticeBoard #winClose {
+	background-image: url(../images/popover_close_icon.png);
+	background-repeat: no-repeat;
+	height: 9px;
+	width: 9px;
+	float: right;
+	position: relative;
+	right: 87px;
+	cursor: pointer;
+	margin-top: 18px;
+
+}
+#weeeCopyBtn{
+  padding: 5px 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #FF8040;
+  border: none;
+  border-radius: 10px;
+}
+#weeeCopyBtn:active {
+  background-color: #F15F31;
+}

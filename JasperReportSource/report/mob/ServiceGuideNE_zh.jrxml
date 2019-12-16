@@ -1,0 +1,1741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ServiceGuide" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="488"/>
+	<property name="ireport.y" value="2879"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<field name="companyLogo" class="java.lang.String"/>
+	<field name="agreementNum" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="67" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement key="staticText-1" x="15" y="50" width="306" height="15" backcolor="#FFFFFF"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["網上行Everywhere服務指南"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="335" y="31" width="200" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>表格編號</b> " + $F{agreementNum}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="15" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyLogo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[有關本服務指南]]></text>
+			</staticText>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["本網上行Everywhere服務指南提供有關網上行Everywhere服務、服務計劃及網上行Everywhere申請書中的自選增值服務及自選禮品和保證金的進一步資料。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["本服務指南載有關於網上行Everywhere服務以及您在網上行Everywhere申請書中可能選擇的自選增值服務及自選禮品的重要資訊，因此請仔細閱讀。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<line>
+				<reportElement positionType="Float" x="15" y="5" width="520" height="1"/>
+			</line>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第一部分     重要資料]]></text>
+			</staticText>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[服務供應商]]></text>
+			</staticText>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["網上行Everywhere服務按單一收費率提供PCCW Wi-Fi寬頻服務及PCCW mobile 4G-LTE/HSPA/3G流動數據服務。PCCW Wi-Fi寬頻服務由<b>Hong Kong Telecommunications (HKT) Limited</b>(「HKT」)提供，而電訊盈科流動通訊服務則由<b>PCCW Mobile HK Limited</b>提供。網上行Everywhere服務的費用及收費清單由<b>PCCW Mobile HK Limited</b>發出。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["HKT根據您的申請書、本服務指南、電訊服務總則(個人客戶)(詳情請瀏覽www.pccw.com/Terms+of+Use) (「總則」)及有關之特別條款(如適用)提供所有電訊服務 (電訊盈科流動通訊服務除外)。有關個人客戶PCCW Wi-Fi寬頻服務之特別條款，詳情請瀏覽http://cs.netvigator.com/tnc_c.html。HKT根據您的申請書、本服務指南、HKT之服務總則(詳情請瀏覽http://cs.netvigator.com/tnc_c.html)及有關之特別條款(如適用)提供若干非電訊服務。HKT根據您的申請書、本服務指南、uHub匣子服務之服務總則及uHub匣子服務之特別條款提供uHub匣子服務 (非電訊服務)，詳情請瀏覽www.uhub.com。HKT亦根據電訊盈科電子賬單服務使用條件及條款提供電子賬單服務，詳情請瀏覽ebill.pccw.com。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>PCCW Mobile HK Limited</b>根據您的網上行Everywhere申請書、本服務指南、總則及個人客戶電訊盈科流動通訊之特別條款而提供電訊盈科流動通訊服務(詳情請瀏覽www.pccwmobile.com/specialcondition_c)。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[客戶須知]]></text>
+			</staticText>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>網上行Everywhere申請書</u>:</b>在處理您的網上行Everywhere申請書時，如您的申請書所載的應支付費用有任何遺漏或填寫有誤，或您在網上行Everywhere申請書的服務計劃中所選擇的選項並非如本服務指南指明所述，或存在任何其他差異，本公司的客戶服務部隨後在切實可行的範圍內將盡快與您聯絡，以糾正該等差異，本公司糾正所有差異後將重新辦理您的申請。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>我能否終止服務?</u>:</b>您可於30天前，致電本公司客戶服務熱線1000或在本公司專門店提交已填妥的終止服務表格通知本公司，要求終止網上行Everywhere服務。然而，若您終止網上行Everywhere服務，在您的申請中所有自選服務及自選優惠(如適用)為不可獨立提供的服務亦將會同時終止。若您在承諾期內終止網上行Everywhere服務或自選服務(如適用)，您須向本公司支付提早終止費用。於承諾期內，當您終止任何網上行Everywhere服務及/或自選服務，您所預繳下一期賬單之費用，本公司將不會按比例由終止服務日起計退還，而有關之提早終止費用亦可能視情況而定包括該承諾期之最後一期賬單下您所預繳之費用。當您終止由本公司按月提供而沒有承諾期之任何電訊盈科流動通訊服務及/或增值服務，您所預繳下一期賬單之費用，本公司亦將不會按比例由終止服務日起計退還。請參閱總則第13.3條了解詳情。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>服務承諾期結束時會怎樣?</u>:</b>當本服務承諾期結束時，如(a)本公司未能與您聯絡;(b)您並未聯絡本公司;或(c)您未能決定是否續約，本公司將繼續在承諾期後根據現有合約繼續為您提供本服務及自選增值服務，惟須繳付現有合約中所訂明的承諾期結束後的費用(即承諾期內月費)，直至您於最少30天前，致電本公司的客戶服務熱線1000或在本公司專門店提交已填妥的終止服務表格通知本公司，要求終止訂購網上行Everyewhere服務。您可參閱總則第23.6及23.7條了解詳情。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>我能否延長承諾期?</u>:</b>您可透過同意以額外承諾期方式，延長本服務的承諾期。您亦可同意在該服務承諾期屆滿後，以新合約取代現有合約。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>服務的哪些合約條款可以更改?</u>:</b>本公司可透過本服務指南第三部分列明的網站，在網上公佈更改詳情，以更改本服務或自選服務的所有條款及條件。如果本公司認為更改給您造成重大負面影響，或導致您的服務收費有所增加(國際直撥電話或漫遊服務除外)，則本公司會向您發出最少30天的事先通知。如本公司增加網上行Everywhere服務或任何電訊服務類别的增值服務的費用，或更改前述服務的其他條款及條件時，您有權在某些情況下，在本公司向您提出有關更改的15天內，向本公司提出事先通知終止訂購有關服務，而毋須就終止服務支付任何費用(附帶成本/費用除外)。請參閱總則第22.4條了解詳情。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>取消</u>:</b>若您因任何理由取消您的網上行Everywhere申請書，或您未能按本公司可能要求的時間內向本公司提供所有必要的文件，以便本公司能夠由預計生效日期開始向您提供網上行Everywhere服務，您將須向本公司支付於啟動前之取消費用。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>服務優化措施</u>:</b>為了履行提供優質服務的承諾，我們可能會採取數據流量管制措施，以優化我們流動網絡的性能表現。當實際上或預期出現流動網絡擠塞，我們可能會採取數據流量管制措施，一般會安排某類數據流量優先於其他用途 (例如我們可能會在處理點對點傳輸前，優先處理電子郵件或網頁瀏覽等數據流量)。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>回贈</u>:</b>本公司會根據不同服務計劃、優惠及推廣優惠向客戶提供不同類型的回贈。本公司會在您的網上行Everywhere申請書中列明適用您的任何回贈、回贈金額及回贈時間表。除非另有指定，所有回贈將從首月起連續按月計入您的賬戶。若網上行Everywhere服務或自選服務因任何原因暫停或終止，所有未支付的回贈將會喪失。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>電訊盈科客戶推廣優惠</u>:</b>本公司可能向具有良好繳款信譽的現有電訊盈科客戶 (即網上行、now寬頻電視、家居電話及電訊盈科流動通訊服務客戶) 提供推廣優惠。若您在訂購網上行Everywhere服務期間，終止該等其他電訊盈科服務或不再具有良好繳款信譽，所有推廣優惠，包括回贈 (如適用) 將自動終止。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>預繳款項</u>:</b>在某些情況下，本公司可能要求您支付預繳款項。您若須支付預繳款項，本公司會在您的網上行Everywhere申請書或本服務指南中訂明此事。本公司會按申請書中所訂明，將預繳款項以回贈方式退還給您。若您在承諾期屆滿前終止網上行Everywhere服務、自選服務或自選優惠，預繳款項將不會退還給您。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>海外使用</u>:</b>除另有訂明外，所有網上行Everywhere服務僅旨在香港使用。若您在香港以外地區使用網上行Everywhere服務或任何自選服務，漫遊費或將會適用。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>費用</u>:</b>除非在您的網上行Everywhere申請書內另有指定，本公司將會以以下方式向您收費 : (i)本公司將就您於承諾期內及之後在載於申請書第四節第一段之網上行Everywhere服務向您收取承諾期內月費; (ii)如您沒有以承諾期方式訂購服務，本公司將就您在載於申請書第四節第二段申請之網上行Everywhere服務向您收取每月月費(除非您選擇以承諾期方式訂購該服務，本公司將就您於承諾期內向您收取承諾期內月費，而在承諾期後向您收取承諾期後月費); (iii) 任何按使用量收取的費用(如適用) ; 及(iv) 本公司亦將向您收取申請書及／或服務指南（如適用）中列明的其他費用。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>系統要求</u>:</b>網上行Everywhere支援Windows XP / Vista / Windows 7及Mac OS 10.5.X / 10.6.X。請瀏覽網站www.netvigatoreverywhere.com，了解有關電腦系統要求的詳情。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>網絡規格</u>:</b>服務計劃中所提述之速度是指服務計劃所提供之數據機的網絡規格，而客戶享有之實際速度將會比網絡規格顯著減少，亦會受使用者的儀器、傳送技術、個別網絡及使用之軟件、網絡設定及覆蓋範圍，及其他外在因素而有所影響。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="45" y="2" width="490" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NETVIGATOR 4G計劃申請人可在我們4G-LTE網絡覆蓋之地方使用符合網絡規格下載速度100Mbps及上載速度35Mbps的PCCW 4G-LTE流動數據服務。在我們4G-LTE網絡暫時沒有覆蓋之地方，申請人可使用符合網絡規格下載速度42Mbps及上載速度5.76Mbps的PCCW HSPA/3G流動數據服務 (數據機符合流動數據網絡規格下傳100Mbps及上傳50Mbps的網絡規格)。我們的4G-LTE網絡符合3GPP Release 8 所訂明的LTE標準。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="30" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</ellipse>
+		</band>
+		<band height="12" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="45" y="2" width="490" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NETVIGATOR 42 計劃申請人可使用符合網絡規格HSDPA下載速度42Mbps及HSUPA上載速度5.76Mbps的PCCW mobile HSPA/3G流動數據服務 (數據機符合42Mbps網絡規格)。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="30" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</ellipse>
+		</band>
+		<band height="12" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="45" y="2" width="490" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NETVIGATOR 21 計劃申請人可使用符合網絡規格HSDPA下載速度21Mbps及HSUPA上載速度5.76Mbps的PCCW mobile HSPA/3G流動數據服務 (數據機符合21Mbps網絡規格)。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="30" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</ellipse>
+		</band>
+		<band height="12" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="45" y="2" width="490" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NETVIGATOR 7 計劃申請人可使用符合網絡規格HSDPA下載速度7.2Mbps及HSUPA上載速度5.76Mbps的PCCW mobile HSPA/3G流動數據服務 (數據機符合7Mbps網絡規格)。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="30" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</ellipse>
+		</band>
+		<band height="12" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="45" y="2" width="490" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NETVIGATOR 3 計劃申請人可使用符合網絡規格HSDPA下載速度3.6Mbps及HSUPA上載速度2Mbps的PCCW mobile HSPA/3G流動數據服務 (數據機符合7Mbps網絡規格)。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="30" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</ellipse>
+		</band>
+		<band height="12" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="45" y="2" width="490" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Pocket Wi-Fi 4G計劃申請人可在我們4G-LTE網絡覆蓋之地方使用符合網絡規格下載速度100Mbps及上載速度35Mbps的PCCW 4G-LTE流動數據服務。在我們4G-LTE網絡暫時沒有覆蓋之地方，申請人可使用符合網絡規格下載速度42Mbps及上載速度5.76Mbps的PCCW HSPA/3G流動數據服務 (數據機符合流動數據網絡規格下傳100Mbps及上傳50Mbps的網絡規格)。我們的4G-LTE網絡符合3GPP Release 8 所訂明的LTE標準。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="30" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</ellipse>
+		</band>
+		<band height="12" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="45" y="2" width="490" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Pocket Wi-Fi 21 計劃申請人可使用符合網絡規格HSDPA下載速度21Mbps及HSUPA上載速度5.76Mbps的PCCW mobile HSPA/3G流動數據服務 (數據機符合21Mbps網絡規格)。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="30" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</ellipse>
+		</band>
+		<band height="12" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="45" y="2" width="490" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Pocket Wi-Fi 7 計劃申請人可使用符合網絡規格HSDPA下載速度7.2Mbps及HSUPA上載速度5.76Mbps的PCCW mobile HSPA/3G流動數據服務 (數據機符合21Mbps網絡規格)。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="30" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</ellipse>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>漫遊服務</u>:</b>此服務不包括香港無線數據用量(「第四節第一段: 服務計劃」中所述者除外)及任何其他增值服務(例如本地或漫遊短訊)，而該等費用會按照電訊盈科流動通訊現行收費另行徵收，並只適用於透過網上行Everywhere 數據機的數據漫遊用量。  "]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>連接管理器</u>:</b>網上行Everywhere服務的「Connection Manager 連接管理器」具備搜尋及選擇最佳連接之功能，因此會出現自動切換至Wi-Fi或HSPA/3G無線服務的情況。如您希望僅用PCCW Wi-Fi服務上網，可使用電腦內置之Wi-Fi功能連接PCCW Wi-Fi之入口網站，或將「連接管理器」之功能設定為「強制連接」，便可確保HSPA/3G不會被啟動或連接。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>保證金</u>:</b>您應負責支付本合約項下的所有費用。您所支付的保證金會由向您提供服務的所有電訊盈科服務供應商共同持有。就一個服務供應商所提供的一項服務而支付的保證金可被用於支付由相同或另一電訊盈科集團内的服務供應商提供的另一服務的應付費用，或用於抵銷您在電訊盈科流動通訊服務及/或HKT的應付款項。若在本合約或您相關服務的訂購結束時所有費用均已付清，剩餘保證金則將會退還給您。詳情請查閱總則第13.5條。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<line>
+				<reportElement positionType="Float" x="15" y="5" width="520" height="1"/>
+			</line>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第二部分     網上行Everywhere申請書]]></text>
+			</staticText>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第一節     客戶資料]]></text>
+			</staticText>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["本公司將向每位客戶分配一個全新的流動電話號碼，以使用網上行Everywhere服務。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>電郵地址</u>:</b>指本公司將以此電郵地址向您發送賬單及數據用量提示。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>登記地址</u>:</b>這是您申請網上行Everywhere的登記地址。本公司概不接受郵政信箱地址作為登記。您必須向本公司提供該地址過往3個月內的地址證明。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>通訊地址</u>:</b>指本公司將用此進行各類通訊所用的通訊地址，包括發送賬單。如您未提供通訊地址，則所有函件將被寄往您的登記地址。 "]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>目前已登記的電訊盈科客戶</u>:</b>請提供您的賬戶資訊，以供本公司核查賬戶狀況。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第二節     合約期]]></text>
+			</staticText>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>承諾期</u>:</b>此為您於申請書內所同意訂購網上行Everywhere服務及任何自選增值服務 (承諾期可能與網上行Everywhere服務不同)的承諾期。承諾期自網上行Everywhere服務預計生效日期起生效。 "]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>預計生效日期</u>:</b>此乃是本公司將會提供您於申請書內申請的網上行Everywhere服務的預計日期。您必須及時提交必要資料及文件，以便確定您申請的所有服務可於該預計日期或之前生效。如預計生效日期變更，本公司將通知您。如您用支票支付款項，則服務將在支票兌現後於預計生效日期啟動。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第三節     服務號碼及數據機類型]]></text>
+			</staticText>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>電訊盈科流動電話號碼</u>:</b>此乃是您在您的網上行Everywhere申請書內就電訊盈科流動通訊服務所選擇的流動電話號碼。您可以此作為登入賬號登入服務網站查看您的賬戶及於您的該月可享流動數據用量耗盡時購買數據組合。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>智能卡號碼</u>:</b>此乃是已提供給您的智能卡背面所載明的號碼。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第四節     服務]]></text>
+			</staticText>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第一段: 服務計劃]]></text>
+			</staticText>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>承諾期內月費</u>:</b>承諾期內月費包括透過使用由我們提供的網上行Everywhere連接管理器、USB數據機/無線數據機及智能卡 (根據您的網上行Everywhere申請書內訂明) 而使用無限本地PCCW Wi-Fi服務及指定本地PCCW mobile 4G-LTE/HSPA/3G無線數據服務使用量之費用。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[服務計劃可享用量]]></text>
+			</staticText>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["不同服務計劃下所包含的網上行Everywhere服務可享用量有所不同。如欲了解您每月所享有的網上行Everywhere服務及服務計劃下的其他自選服務之可享用量，請參閱您的網上行Everywhere申請書。若您的用量超出您每月服務計劃可享用量，則您須就額外用量支付附加費用。請見下文有關各種網上行Everywhere基本核心服務的簡單說明。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[流動數據]]></text>
+			</staticText>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["將接入點名稱（APN）設定為「PCCW」下傳及/或上傳本地數據。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["除非另有訂明，用量均以KB向上取整。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["當該月可享的本地流動數據用量耗盡時，本地流動數據服務將會被暫停。您需要購買額外數據用量才可恢復流動數據服務。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["額外用量費用：適用於當您的用量超出任何服務計劃、升級或組合的每月可享用量。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[服務中包含的數據機服務]]></text>
+			</staticText>
+		</band>
+		<band height="90" splitType="Stretch">
+			<textField>
+				<reportElement x="15" y="0" width="260" height="15"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["服務描述 / 應得權利:"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="15" y="15" width="260" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["NETVIGATOR 4G計劃包括USB數據機 (按您的申請書內訂明)及遵從以上提及的網絡規格。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="51" width="260" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["NETVIGATOR 7計劃包括USB數據機 (按您的申請書內訂明)及遵從以上提及的網絡規格。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="63" width="260" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["NETVIGATOR 3計劃包括USB數據機 (按您的申請書內訂明)及遵從以上提及的網絡規格。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="285" y="0" width="250" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Pocket Wi-Fi 21計劃包括無線數據機 (按您的申請書內訂明) (能同時支援5個Wi-Fi連結)及遵從以上提及的網絡規格。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="285" y="12" width="250" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Pocket Wi-Fi 7計劃包括無線數據機 (按您的申請書內訂明) (能同時支援5個Wi-Fi連結)及遵從以上提及的網絡規格。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement positionType="Float" x="285" y="24" width="250" height="15"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["預繳款項:"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="285" y="51" width="250" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["在承諾期內就數據機作出的預付款將從月費中抵銷。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="285" y="39" width="250" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["如客戶以現金繳付費用，則須就USB數據機或Pocket Wi-Fi預繳數據機的款項 (按您的申請書第六節第三段內訂明)。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="27" width="260" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["NETVIGATOR 42計劃包括USB數據機 (按您的申請書內訂明)及遵從以上提及的網絡規格。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="39" width="260" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["NETVIGATOR 21計劃包括USB數據機 (按您的申請書內訂明)及遵從以上提及的網絡規格。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement positionType="Float" x="285" y="63" width="250" height="15"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["資格:"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="285" y="78" width="250" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["客戶須訂購網上行Everywhere服務計劃。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="75" width="260" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Pocket Wi-Fi 4G計劃包括無線數據機(按您的申請書內訂明)(能同時支援10個Wi-Fi連結)及遵從以上提及的網絡規格。"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[網上行Everywhere服務]]></text>
+			</staticText>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[基本計劃:]]></text>
+			</staticText>
+		</band>
+		<band height="51" splitType="Stretch">
+			<textField>
+				<reportElement x="15" y="0" width="260" height="15"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["服務描述 / 應得權利:"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="15" y="15" width="260" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["網上行Everywhere USB數據機或無線數據機一台(按您的申請書第三節內訂明)。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="285" y="0" width="250" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["無限享用PCCW Wi-Fi寬頻服務。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="285" y="12" width="250" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["uHub匣子服務 – 客戶須於uHub網站www.uhub.com自行登記使用服務及可獲10GB儲存量。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="27" width="260" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["客戶可申請NETVIGATOR 4G、NETVIGATOR 42、NETVIGATOR 21、NETVIGATOR 21、Pocket Wi-Fi 4G、Pocket Wi-Fi 21 或Pocket Wi-Fi7基本計劃。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="39" width="260" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["客戶可享的每月流動數據用量於您的申請書第四節第一段內訂明。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement positionType="Float" x="285" y="24" width="250" height="15"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["資格:"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="285" y="39" width="250" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["客戶須訂購<b><u>至少24/30個月承諾期</u></b>的服務。"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[特選客戶計劃:]]></text>
+			</staticText>
+		</band>
+		<band height="63" splitType="Stretch">
+			<textField>
+				<reportElement x="15" y="0" width="260" height="15"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["服務描述 / 應得權利:"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="15" y="15" width="260" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["網上行Everywhere USB數據機一台(按您的申請書第三節內訂明)。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="285" y="0" width="250" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["uHub匣子服務 – 客戶須於uHub網站www.uhub.com自行登記使用服務及可獲10GB儲存量。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="27" width="260" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["客戶可申請NETVIGATOR 3計劃。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="39" width="260" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["客戶可享的每月流動數據用量於您的申請書第四節第一段內訂明。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement positionType="Float" x="285" y="12" width="250" height="15"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["資格:"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="285" y="27" width="250" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["客戶須訂購<b><u>至少12/24個月承諾期</u></b>的服務。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="51" width="260" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["無限享用PCCW Wi-Fi寬頻服務。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="285" y="39" width="250" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["客戶的香港身份證須以「W」開頭。"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第二段: 附加 / 自選增值服務]]></text>
+			</staticText>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[漫遊服務]]></text>
+			</staticText>
+		</band>
+		<band height="75" splitType="Stretch">
+			<frame>
+				<reportElement x="15" y="0" width="260" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["<b>PCCW Mobile HK Limited</b>提供國際漫遊服務、中國漫遊服務及「數據漫遊收費優惠計劃」服務。國際漫遊服務、中國漫遊服務及「流動數據漫遊月費計劃」服務的費用及收費<u>可隨時變更</u>:"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement positionType="Float" x="285" y="48" width="250" height="15"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["資格:"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="285" y="63" width="250" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="6" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["客戶須申請網上行Everywhere基本計劃。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="12" width="260" height="12"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="2" width="220" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["國際漫遊服務／中國漫遊服務／「數據漫遊收費優惠計劃」服務讓您於香港以外使用流動數據及短訊服務，而國際Wi-Fi漫遊則讓您在香港以外的指定熱點使用Wi-Fi服務，按次收費。收費和費用詳情 (可隨時變更) 請查閱 www.netvigatoreverywhere.com > 數據漫遊服務 > 數據漫遊標準收費"]]></textFieldExpression>
+				</textField>
+				<ellipse>
+					<reportElement x="15" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+					<graphicElement>
+						<pen lineWidth="0.25"/>
+					</graphicElement>
+				</ellipse>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="36" width="260" height="12"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="2" width="220" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["日費計劃將於成功申請後24小時生效，有效時段為每日00:00至23:59 (以香港時間計算)。如你於同一日內 (以香港時間計算) 於超過一個地區使用流動數據或Wi-Fi漫遊，都只會以一個日費計劃收費。"]]></textFieldExpression>
+				</textField>
+				<ellipse>
+					<reportElement x="15" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+					<graphicElement>
+						<pen lineWidth="0.25"/>
+					</graphicElement>
+				</ellipse>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="24" width="260" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["智全面漫遊通行証 (日費計劃) 讓您於香港以外的指定地區使用流動數據及Wi-Fi服務。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="285" y="0" width="250" height="12"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="2" width="220" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["如當日可享的免費流動數據漫遊用量之20MB(就\$88日費計劃而言)/50MB(就\$168日費計劃而言)耗盡時，流動數據漫遊服務將會被暫停。您須要增值及購買額外流動數據服務用量組合\$38/10MB才可恢復流動數據漫遊服務。"]]></textFieldExpression>
+				</textField>
+				<ellipse>
+					<reportElement x="15" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+					<graphicElement>
+						<pen lineWidth="0.25"/>
+					</graphicElement>
+				</ellipse>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="285" y="12" width="250" height="12"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="2" width="220" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["當日可享的Wi-Fi漫遊用量60分鐘耗盡時，額外用量會以每分鐘\$1.5劃一收費。"]]></textFieldExpression>
+				</textField>
+				<ellipse>
+					<reportElement x="15" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+					<graphicElement>
+						<pen lineWidth="0.25"/>
+					</graphicElement>
+				</ellipse>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="285" y="24" width="250" height="12"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="2" width="220" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["用戶需要登記國際/中國漫遊服務以享此優惠。"]]></textFieldExpression>
+				</textField>
+				<ellipse>
+					<reportElement x="15" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+					<graphicElement>
+						<pen lineWidth="0.25"/>
+					</graphicElement>
+				</ellipse>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="285" y="36" width="250" height="12"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="2" width="220" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["收費和費用詳情請查閱 www.netvigatoreverywhere.com > 智全面漫遊通行証 "]]></textFieldExpression>
+				</textField>
+				<ellipse>
+					<reportElement x="15" y="5" width="3" height="3" forecolor="#000000" backcolor="#FFFFFF"/>
+					<graphicElement>
+						<pen lineWidth="0.25"/>
+					</graphicElement>
+				</ellipse>
+			</frame>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第五節     贈品及禮品]]></text>
+			</staticText>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[自選禮品 - Pocket Wi-Fi電池]]></text>
+			</staticText>
+		</band>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement x="15" y="0" width="260" height="15"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["服務描述 / 應得權利:"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="15" y="15" width="260" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Pocket Wi-Fi電池一個"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement positionType="Float" x="285" y="0" width="250" height="15"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["資格:"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="285" y="15" width="250" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["客戶須申請Pocket Wi-Fi 21 或Pocket Wi-Fi 7計劃。"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第六節     收費及付款]]></text>
+			</staticText>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第一及二段     附加及雜項服務費用]]></text>
+			</staticText>
+		</band>
+		<band height="48" splitType="Stretch">
+			<frame>
+				<reportElement positionType="Float" x="15" y="0" width="520" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="510" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["<b>於服務啟動前之取消費用:</b>在服務啟動之前取消您的網上行Everywhere申請所需費用。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="12" width="520" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="510" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["<b>提前終止費:</b>承諾期內月費X承諾期餘下月數不足一個月亦將視為一個足月。回贈和月費豁免將自動註銷，亦不得用於抵銷任何應繳的提前終止費。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="24" width="520" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="510" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["<b>轉讓註冊用戶權:</b>適用於您從另一位基於月度服務計劃訂購電訊盈科流動通訊服務的電訊盈科客戶獲取電訊盈科流動電話號碼的情況。您必須登記一份新的承諾期服務計劃，並負責轉讓之前的全部應累算費用。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="36" width="520" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="510" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["附加費用於網上行Everywhere申請書中描述。"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第三段     付款詳情]]></text>
+			</staticText>
+		</band>
+		<band height="12" splitType="Stretch">
+			<frame>
+				<reportElement positionType="Float" x="15" y="0" width="520" height="12"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="0" y="2" width="520" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["您在合約下首次支付的金額及任何應支付的保證金、預繳款項及回贈在您的網上行Everywhere申請書內的第六節第三段列明。"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[保證金]]></text>
+			</staticText>
+		</band>
+		<band height="12" splitType="Stretch">
+			<frame>
+				<reportElement positionType="Float" x="15" y="0" width="520" height="12"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="0" y="2" width="520" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["在某些情況下，您須支付保證金，請參閱您的網上行Everywhere申請書。惹您終止該保證金有關服務，該保證金將首先用來抵銷您對本公司的欠款，及按總則第13.5條用來抵銷您對任何其化電訊盈科集團成員公司的欠款，而剩餘將會退還予您。"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第七節     賬單選項]]></text>
+			</staticText>
+		</band>
+		<band height="36" splitType="Stretch">
+			<frame>
+				<reportElement positionType="Float" x="15" y="0" width="260" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["賬單將按您所選定的語言及方式發出。經支付在您的申請書上所訂明須支付的附加收費後，亦可向您發出印刷賬單。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="285" y="12" width="250" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["若您有意申請收取賬單的印刷副本，本公司將向您收取每月\$10的費用。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="12" width="260" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["賬單短訊將每月發送到您的電訊盈科流動通訊電話號碼上。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="24" width="260" height="12"/>
+				<rectangle>
+					<reportElement x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["您亦可到網頁或wap上登入「我的賬戶」查閱最近3個月的賬單。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="285" y="0" width="250" height="12"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="5" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="2" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["您更可申請電郵賬單服務，在此情況下，本公司每月會將賬單以電郵方式按月發送至您的電郵地址。"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="10" splitType="Stretch">
+			<line>
+				<reportElement positionType="Float" x="15" y="5" width="520" height="1"/>
+			</line>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第三部分     其他資料]]></text>
+			</staticText>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>電訊盈科流動通訊登入ID及密碼</u>:</b>您可以登入服務網站查看您的賬戶，於您的該月可享流動數據用量耗盡時購買數據組合，並可透過服務網站發送短訊。您的登入ID是您的電訊盈科流動電話號碼；預設密碼是您的網上行Everywhere申請書中所提供的身份證或護照號碼頭6位數字。在您致電本公司熱線電話1000透過話音系統設定遙控來電轉駁或其他要求提供密碼的服務時，須提供該預設密碼，除非本公司向您提供另外一個密碼。為保安理由，請定期更改密碼。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>禮品優惠組合及自選優惠</u>:</b>所有禮品優惠組合及自選優惠內的第三方產品僅視乎存貨數量而提供，且不可兌換為現金或其他利益。請參閱製造者的保證聲明，其中載有適用於特殊產品的產品保證條款的詳細說明。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>數據機</u>:</b>製造商華為技術有限公司將分別就USB數據機 / 無線數據機及無線數據機的電池及USB充電器提供一年及半年的免費送修維護及保證。欲獲得維修中心清單，請瀏覽本公司的網站www.netvigatoreverywhere.com。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>網上行Everywhere客戶服務</u>:</b>您可致電本公司的客戶服務熱線1000，或發送電子郵件至custserv@netvigator.com。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>My HKT網上客戶服務</u>:</b>「My HKT 網上客戶服務」(http://cs.hkt.com) 是一站式網上服務平台，讓您同時管理您於HKT及PCCW的固網／eye、流動通訊、網上行及now TV服務。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>本公司的服務網站</u>:</b>以下是本服務指南中提及的服務網站:"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="200" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["電訊盈科流動通訊服務:"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="225" y="2" width="200" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["www.pccwmobile.com"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="200" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["網上行Everywhere服務:"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="225" y="2" width="200" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["www.netvigatoreverywhere.com"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="200" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["PCCW Wi-Fi寬頻服務:"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="225" y="2" width="200" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["www.pccwwifi.com"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="200" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["uHub匣子服務:"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="225" y="2" width="200" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["www.uhub.com"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

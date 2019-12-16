@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="custSearchDAO" class="com.pccw.springboard.svc.server.dao.custsearch.CustSearchDAO">
+		<property name="dataSource" ref="BomDS" />
+	</bean>
+
+	<bean id="itemOfferMappingDao" class="com.bomwebportal.lts.dao.order.ItemOfferMappingDAO">
+        <property name="dataSource" ref="BomWebPortalDS" />
+    </bean>
+    
+    <bean id="tpExpireMonthAllowanceLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="TP_EXP_ALLOW_MTH" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>
+	
+	<bean id="customerProfileLtsDao" class="com.bomwebportal.lts.dao.bom.CustomerProfileLtsDAO">
+		<property name="dataSource" ref="BomDS" />
+	</bean>
+	
+	<bean id="imsServiceProfileAccessDAO" class="com.bomwebportal.lts.dao.bom.ImsServiceProfileAccessDAO">
+		<property name="dataSource" ref="BomDS" />
+	</bean>
+	
+	<bean id="offerProfileLtsDao" class="com.bomwebportal.lts.dao.bom.OfferProfileLtsDAO">
+		<property name="dataSource" ref="BomDS" />
+	</bean>
+	
+    <bean id="serviceProfileLtsDao" class="com.bomwebportal.lts.dao.bom.ServiceProfileLtsDAO">
+		<property name="dataSource" ref="BomDS" />
+	</bean>
+	
+	<bean id="wipMessageCodeLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomDS" />
+		<property name="lkupCode" value="WIP_MSG_ALLOW" />
+		<property name="lkupTable" value="B_LOOKUP" />
+	</bean>
+		
+	<bean id="del2eyeCoreOfferLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomDS" />
+		<property name="lkupCode" value="DEL2EYE_COREPSEF" />
+		<property name="lkupTable" value="B_LOOKUP" />
+	</bean>
+	
+	<bean id="inventoryStatusCodeLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomDS" />
+		<property name="lkupCode" value="INVENT_STS_CD" />
+		<property name="lkupTable" value="B_LOOKUP" />
+	</bean>
+	
+	<bean id="offerDetailProfileDao" class="com.bomwebportal.lts.dao.OfferDetailProfileDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="idDocTypeLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomDS" />
+		<property name="lkupCode" value="IDDOCTYP" />
+		<property name="lkupTable" value="B_LOOKUP" />
+	</bean>
+
+	<bean id="custCatgLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomDS" />
+		<property name="lkupCode" value="CUSTCATG" />
+		<property name="lkupTable" value="B_LOOKUP" />
+	</bean>
+	
+	<bean id="billFreqLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomDS" />
+		<property name="lkupCode" value="LTS_BILL_FREQ" />
+		<property name="lkupTable" value="B_LOOKUP" />
+	</bean>
+	
+	<bean id="billMediaLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomDS" />
+		<property name="lkupCode" value="LTS_BILL_MEDIA" />
+		<property name="lkupTable" value="B_LOOKUP" />
+	</bean>
+	
+	<bean id="langCodeLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomDS" />
+		<property name="lkupCode" value="LTS_LANGCD" />
+		<property name="lkupTable" value="B_LOOKUP" />
+	</bean>
+	
+	<bean id="payMethodLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomDS" />
+		<property name="lkupCode" value="PAYMTHD" />
+		<property name="lkupTable" value="B_LOOKUP" />
+	</bean>
+	
+	<bean id="eyeOfferLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomDS" />
+		<property name="lkupCode" value="EYE_TYPE_PSEF" />
+		<property name="lkupTable" value="B_LOOKUP" />
+	</bean>
+	
+	<bean id="eyeDeviceLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomDS" />
+		<property name="lkupCode" value="EYE_DEVICE_PSEF" />
+		<property name="lkupTable" value="B_LOOKUP" />
+	</bean>
+	
+	<bean id="com.bomwebportal.lts.dao.order.SbOrderInfoLtsDAO" class="com.bomwebportal.lts.dao.order.SbOrderInfoLtsDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="bomOrderInfoDao" class="com.bomwebportal.lts.dao.bom.BomOrderInfoDAO">
+		<property name="dataSource" ref="BomDS" />
+	</bean>
+	
+	<bean id="com.smartliving.dao.SmartLivingDAO" class="com.smartliving.dao.SmartLivingDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+ 	<import resource="classpath:/config/workQueue/spring/spring-jdbc.xml"/>
+</beans>

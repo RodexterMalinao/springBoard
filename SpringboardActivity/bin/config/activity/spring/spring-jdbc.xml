@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="com.activity.dao.dataAccess.ActivityAttachDocDAO" class="com.activity.dao.dataAccess.ActivityAttachDocDAO" scope="prototype">
+    	<property name="dataSource" ref="BomWebPortalDS"/>
+    </bean>
+    
+    <bean id="com.activity.dao.dataAccess.ActivityRemarkDAO" class="com.activity.dao.dataAccess.ActivityRemarkDAO" scope="prototype">
+    	<property name="dataSource" ref="BomWebPortalDS"/>
+    	<property name="rmkSeqORACLE" ref="remarkSeqMaxDAO" />
+    </bean>
+    
+    <bean id="com.activity.dao.dataAccess.ActivityAttributeDAO" class="com.activity.dao.dataAccess.ActivityAttributeDAO" scope="prototype">
+    	<property name="dataSource" ref="BomWebPortalDS"/>
+    </bean>
+    
+    <bean id="com.activity.dao.dataAccess.ActivityAddressDAO" class="com.activity.dao.dataAccess.ActivityAddressDAO" scope="prototype">
+    	<property name="dataSource" ref="BomWebPortalDS"/>
+    </bean>
+    
+    <bean id="com.activity.dao.dataAccess.ActivityCustomerDtlDAO" class="com.activity.dao.dataAccess.ActivityCustomerDtlDAO" scope="prototype">
+    	<property name="dataSource" ref="BomWebPortalDS"/>
+    </bean>
+    
+    <bean id="com.activity.dao.dataAccess.ActivityDAO" class="com.activity.dao.dataAccess.ActivityDAO" scope="prototype">
+    	<property name="dataSource" ref="BomWebPortalDS"/>
+    </bean>
+    
+    <bean id="com.activity.dao.dataAccess.ActivityTaskDAO" class="com.activity.dao.dataAccess.ActivityTaskDAO" scope="prototype">
+    	<property name="dataSource" ref="BomWebPortalDS"/>
+    </bean>
+    
+    <bean id="com.activity.dao.dataAccess.DocumentDetailDAO" class="com.activity.dao.dataAccess.DocumentDetailDAO" scope="prototype">
+    	<property name="dataSource" ref="BomWebPortalDS"/>
+    </bean>
+    
+    <bean id="com.activity.dao.dataAccess.DocumentDAO" class="com.activity.dao.dataAccess.DocumentDAO" scope="prototype">
+    	<property name="dataSource" ref="BomWebPortalDS"/>
+    </bean>
+    
+    <bean id="activityStatusSLVDao" class="com.activity.dao.dataAccess.ActivityStatusDAO" scope="singleton">
+    	<property name="dataSource" ref="BomWebPortalDS"/>
+    </bean>
+    
+    <bean id="activityIdDao" class="com.activity.dao.ActivityIdDAOImpl" scope="singleton">
+    	<property name="dataSource" ref="BomWebPortalDS"/>
+    </bean>
+    
+    <bean id="activityDetailDao" class="com.activity.dao.ActivityDetailDAOImpl" scope="singleton">
+    	<property name="dataSource" ref="BomWebPortalDS"/>
+    </bean>
+    
+	<bean id="sbLockDao" class="com.bomwebportal.dao.SbLockDAOImpl" scope="singleton">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="activityTaskWqActionLookupDAO" class="com.activity.dao.ActivityTaskWqActionLookupDAOImpl" scope="singleton">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+    <bean id="remarkSeqMaxDAO" class="com.pccw.util.db.stringOracleType.OraNumberInsertValueFromSelectMax" scope="prototype">
+        <constructor-arg value="rmkSeq" />
+        <constructor-arg value="SB_ACTV_REMARK"/>
+        <constructor-arg value="actvId,taskSeq"/> 
+    </bean>
+    
+    <bean id="com.activity.dao.ActivityInquiryDAO" class="com.activity.dao.ActivityInquiryDAOImpl" >
+    	<property name="dataSource" ref="BomWebPortalDS"/>
+    </bean>
+    
+</beans>

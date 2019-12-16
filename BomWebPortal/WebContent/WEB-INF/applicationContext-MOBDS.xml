@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	
+    <!-- add by Gary Lai 20130705 -->
+	<bean id="mobDsMrtManagementService" class="com.bomwebportal.mob.ds.service.MobDsMrtManagementServiceImpl">
+		<property name="mobDsMrtManagementDAO" ref="mobDsMrtManagementDAO" />
+		<property name="mobCcsMaintParmLkupService" ref="mobCcsMaintParmLkupService" />
+	</bean> 
+	<bean id="mobDsMrtManagementDAO" class="com.bomwebportal.mob.ds.dao.MobDsMrtManagementDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean> 
+
+    <bean id="mobDsOrderService" class="com.bomwebportal.mob.ds.service.MobDsOrderServiceImpl">
+        <property name="mobDsOrderDAO" ref="mobDsOrderDAO" />
+        <property name="orderDAO" ref="orderDao" />
+        <property name="orderHsrmService" ref="orderHsrmService" />
+        <property name="orderService" ref="orderService" />
+    </bean> 
+    <bean id="mobDsOrderDAO" class="com.bomwebportal.mob.ds.dao.MobDsOrderDAO">
+        <property name="dataSource" ref="BomWebPortalDS" />
+    </bean> 
+
+	<!--  add by Ruby 20130722 -->
+	<bean id="mobDsQaRecordService" class="com.bomwebportal.mob.ds.service.MobDsQaRecordServiceImpl">
+		<property name="mobDsQaRecordDAO" ref="mobDsQaRecordDAO" />
+	</bean>
+	<bean id="mobDsQaRecordDAO" class="com.bomwebportal.mob.ds.dao.MobDsQaRecordDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="mobDsStockManualDAO" class="com.bomwebportal.mob.ds.dao.MobDsStockManualDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	
+	<!--  add by Dennis 20130729 -->
+	<bean id="mobDsFalloutRecordService" class="com.bomwebportal.mob.ds.service.MobDsFalloutRecordServiceImpl">
+		<property name="mobDsFalloutRecordDAO" ref="mobDsFalloutRecordDAO" />
+	</bean>
+	<bean id="mobDsFalloutRecordDAO" class="com.bomwebportal.mob.ds.dao.MobDsFalloutRecordDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="mobDsFalloutLogService" class="com.bomwebportal.mob.ds.service.MobDsFalloutLogServiceImpl">
+		<property name="mobDsFalloutLogDAO" ref="mobDsFalloutLogDAO" />
+	</bean>
+	<bean id="mobDsFalloutLogDAO" class="com.bomwebportal.mob.ds.dao.MobDsFalloutLogDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+</beans>

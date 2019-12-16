@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DelUpgradeEye2AppForm_subreportWebSite" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<field name="printTermsCondition" class="java.lang.Boolean"/>
+	<field name="thirdPartyInd" class="java.lang.Boolean"/>
+	<field name="eyeCustSignatureStream" class="java.io.InputStream"/>
+	<field name="resTelCustSignatureStream" class="java.io.InputStream"/>
+	<field name="applicationDate" class="java.lang.String"/>
+	<field name="eyeApplication" class="java.lang.Boolean"/>
+	<field name="resTelApplication" class="java.lang.Boolean"/>
+	<field name="sectionJ.subTitleEyeBbRental" class="java.lang.String"/>
+	<field name="sectionJ.subTitleEyePeList" class="java.lang.String"/>
+	<field name="sectionJ.subTitleEyeContent" class="java.lang.String"/>
+	<field name="sectionJ.subTitleEyeMoov" class="java.lang.String"/>
+	<field name="sectionJ.subTitleEyeNowTv" class="java.lang.String"/>
+	<field name="sectionJ.subTitleEyeViewAv" class="java.lang.String"/>
+	<field name="sectionJ.subTitleEyeBill" class="java.lang.String"/>
+	<field name="sectionJ.subTitleEyeTvBill" class="java.lang.String"/>
+	<field name="sectionJ.subTitleEyeExistVas" class="java.lang.String"/>
+	<field name="sectionJ.subTitleEyeReplaceVas" class="java.lang.String"/>
+	<field name="sectionJ.subTitleEyeNewVas" class="java.lang.String"/>
+	<field name="sectionJ.subTitleEyeIdd" class="java.lang.String"/>
+	<field name="sectionJ.subTitleEyeOptPremium" class="java.lang.String"/>
+	<field name="sectionJ.subTitleEyeOptAcc" class="java.lang.String"/>
+	<field name="sectionJ.subTitleResTelBill" class="java.lang.String"/>
+	<field name="sectionJ.subTitleResTelExistVas" class="java.lang.String"/>
+	<field name="sectionJ.subTitleResTelReplaceVas" class="java.lang.String"/>
+	<field name="sectionJ.subTitleResTelNewVas" class="java.lang.String"/>
+	<field name="sectionJ.subTitleResTelIdd" class="java.lang.String"/>
+	<field name="sectionJ.subTitleResTelOptPremium" class="java.lang.String"/>
+	<field name="sectionJ.sectionTitle" class="java.lang.String"/>
+	<field name="sectionJ.eyePlanListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionJ.eyePlanList" class="java.util.ArrayList"/>
+	<field name="sectionJ.eyeBbRentalListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionJ.eyeBbRentalList" class="java.util.ArrayList"/>
+	<field name="sectionJ.eyePeListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionJ.eyePeList" class="java.util.ArrayList"/>
+	<field name="sectionJ.eyeContentListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionJ.eyeContentList" class="java.util.ArrayList"/>
+	<field name="sectionJ.eyeMoovListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionJ.eyeMoovList" class="java.util.ArrayList"/>
+	<field name="sectionJ.eyeNowTvListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionJ.eyeNowTvList" class="java.util.ArrayList"/>
+	<field name="sectionJ.eyeViewAv" class="java.lang.Boolean"/>
+	<field name="sectionJ.eyeBillListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionJ.eyeBillList" class="java.util.ArrayList"/>
+	<field name="sectionJ.eyeTvBillListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionJ.eyeTvBillList" class="java.util.ArrayList"/>
+	<field name="sectionJ.eyeExistVasListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionJ.eyeExistVasList" class="java.util.ArrayList"/>
+	<field name="sectionJ.eyeReplaceVasListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionJ.eyeReplaceVasList" class="java.util.ArrayList"/>
+	<field name="sectionJ.eyeNewVasListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionJ.eyeNewVasList" class="java.util.ArrayList"/>
+	<field name="sectionJ.eyeIddListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionJ.eyeIddList" class="java.util.ArrayList"/>
+	<field name="sectionJ.eyeOptPremiumListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionJ.eyeOptPremiumList" class="java.util.ArrayList"/>
+	<field name="sectionJ.eyeOptAccListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionJ.eyeOptAccList" class="java.util.ArrayList"/>
+	<field name="sectionJ.eyeContent" class="java.lang.String"/>
+	<field name="sectionJ.resTelPlanListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionJ.resTelPlanList" class="java.util.ArrayList"/>
+	<field name="sectionJ.resTelBillListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionJ.resTelBillList" class="java.util.ArrayList"/>
+	<field name="sectionJ.resTelExistVasListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionJ.resTelExistVasList" class="java.util.ArrayList"/>
+	<field name="sectionJ.resTelReplaceVasListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionJ.resTelReplaceVasList" class="java.util.ArrayList"/>
+	<field name="sectionJ.resTelNewVasListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionJ.resTelNewVasList" class="java.util.ArrayList"/>
+	<field name="sectionJ.resTelIddListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionJ.resTelIddList" class="java.util.ArrayList"/>
+	<field name="sectionJ.resTelOptPremiumListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionJ.resTelOptPremiumList" class="java.util.ArrayList"/>
+	<field name="sectionJ.resTelContent" class="java.lang.String"/>
+	<field name="sectionJ.eyeListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionJ.resTelListEmpty" class="java.lang.Boolean"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="1" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()]]></printWhenExpression>
+			<staticText>
+				<reportElement x="5" y="13" width="57" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第十節:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="62" y="13" width="483" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionJ.sectionTitle}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="10" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="29" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="10" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="10" width="1" height="20"/>
+			</line>
+		</band>
+		<band height="30">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+  && $F{eyeApplication}.booleanValue()
+  && !$F{sectionJ.eyePlanListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="30" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="30" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="5" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionJ.eyePlanList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportDescription.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+  && $F{eyeApplication}.booleanValue()
+  && !$F{sectionJ.eyePlanListEmpty}.booleanValue()
+  && !$F{sectionJ.eyeListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="540" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[可選禮品，自選服務及增值服務]]></text>
+			</staticText>
+		</band>
+		<band height="40">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+  && $F{eyeApplication}.booleanValue()
+  && !$F{sectionJ.eyeBbRentalListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="18" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionJ.eyeBbRentalList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportDescription.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="5" y="4" width="540" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionJ.subTitleEyeBbRental}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+  && $F{eyeApplication}.booleanValue()
+  && !$F{sectionJ.eyePeListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="18" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionJ.eyePeList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportDescription.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="5" y="4" width="540" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionJ.subTitleEyePeList}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& $F{eyeApplication}.booleanValue()
+&& !$F{sectionJ.eyeContentListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="18" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionJ.eyeContentList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportDescription.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="5" y="4" width="540" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionJ.subTitleEyeContent}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& $F{eyeApplication}.booleanValue()
+&& !$F{sectionJ.eyeMoovListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="18" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionJ.eyeMoovList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportDescription.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="5" y="4" width="540" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionJ.subTitleEyeMoov}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& $F{eyeApplication}.booleanValue()
+&& !$F{sectionJ.eyeNowTvListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="5" y="4" width="540" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionJ.subTitleEyeNowTv}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="28">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& $F{eyeApplication}.booleanValue()
+&& !$F{sectionJ.eyeNowTvListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="28" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="28" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="5" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionJ.eyeNowTvList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportDescription.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="40">
+			<printWhenExpression><![CDATA[false &&
+$F{printTermsCondition}.booleanValue()
+&& $F{eyeApplication}.booleanValue()
+&& !$F{sectionJ.eyeBillListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="18" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionJ.eyeBillList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportDescription.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="5" y="4" width="540" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionJ.subTitleEyeBill}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<printWhenExpression><![CDATA[false &&
+$F{printTermsCondition}.booleanValue()
+&& $F{eyeApplication}.booleanValue()
+&& !$F{sectionJ.eyeTvBillListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="18" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionJ.eyeTvBillList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportDescription.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="5" y="4" width="540" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionJ.subTitleEyeTvBill}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& $F{eyeApplication}.booleanValue()
+&& !$F{sectionJ.eyeExistVasListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="18" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionJ.eyeExistVasList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportDescription.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="5" y="4" width="540" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionJ.subTitleEyeExistVas}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="30">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& $F{eyeApplication}.booleanValue()
+&& !$F{sectionJ.eyeReplaceVasListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="30" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="30" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="5" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionJ.eyeReplaceVasList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportDescription.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="40">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& $F{eyeApplication}.booleanValue()
+&& !$F{sectionJ.eyeNewVasListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="18" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionJ.eyeNewVasList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportDescription.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="5" y="4" width="540" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionJ.subTitleEyeNewVas}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& $F{eyeApplication}.booleanValue()
+&& !$F{sectionJ.eyeIddListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="18" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionJ.eyeIddList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportDescription.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="5" y="4" width="540" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionJ.subTitleEyeIdd}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& $F{eyeApplication}.booleanValue()
+&& !$F{sectionJ.eyeOptPremiumListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="18" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionJ.eyeOptPremiumList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportDescription.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="5" y="4" width="540" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionJ.subTitleEyeOptPremium}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& $F{eyeApplication}.booleanValue()
+&& !$F{sectionJ.eyeOptAccListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="18" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionJ.eyeOptAccList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportDescription.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="5" y="4" width="540" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionJ.subTitleEyeOptAcc}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& $F{eyeApplication}.booleanValue()]]></printWhenExpression>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="5" y="4" width="540" height="13"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionJ.eyeContent}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="30">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+  && $F{resTelApplication}.booleanValue()
+  && !$F{sectionJ.resTelPlanListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="30" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="30" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="5" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionJ.resTelPlanList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportDescription.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+  && $F{resTelApplication}.booleanValue()
+  && !$F{sectionJ.resTelPlanListEmpty}.booleanValue()
+  && !$F{sectionJ.resTelListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="540" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[可選禮品，自選服務及增値服務]]></text>
+			</staticText>
+		</band>
+		<band height="40">
+			<printWhenExpression><![CDATA[false &&
+$F{printTermsCondition}.booleanValue()
+&& $F{resTelApplication}.booleanValue()
+&& !$F{sectionJ.resTelBillListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="18" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionJ.resTelBillList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportDescription.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="5" y="4" width="540" height="13"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionJ.subTitleResTelBill}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& $F{resTelApplication}.booleanValue()
+&& !$F{sectionJ.resTelExistVasListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="18" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionJ.resTelExistVasList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportDescription.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="5" y="4" width="540" height="13"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionJ.subTitleResTelExistVas}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="30">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& $F{resTelApplication}.booleanValue()
+&& !$F{sectionJ.resTelReplaceVasListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="30" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="30" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="5" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionJ.resTelReplaceVasList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportDescription.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="40">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& $F{resTelApplication}.booleanValue()
+&& !$F{sectionJ.resTelNewVasListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="18" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionJ.resTelNewVasList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportDescription.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="5" y="4" width="540" height="13"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionJ.subTitleEyeNewVas}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& $F{resTelApplication}.booleanValue()
+&& !$F{sectionJ.resTelIddListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="18" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionJ.resTelIddList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportDescription.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="5" y="4" width="540" height="13"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionJ.subTitleEyeIdd}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& $F{resTelApplication}.booleanValue()
+&& !$F{sectionJ.resTelOptPremiumListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="18" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionJ.resTelOptPremiumList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportDescription.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="5" y="4" width="540" height="13"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionJ.subTitleResTelOptPremium}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& $F{resTelApplication}.booleanValue()]]></printWhenExpression>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="5" y="4" width="540" height="13"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionJ.resTelContent}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="1" splitType="Prevent">
+			<line>
+				<reportElement x="0" y="0" width="556" height="1"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

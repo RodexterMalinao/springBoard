@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean name="customerSearchDao" class="com.pccw.springboard.svc.server.service.custsearch.CustSearchServiceImpl">
+		<property name="custSearchDAO" ref="custSearchDAO" />
+	</bean>
+
+	<bean name="SlvSbDao" class="com.pccw.springboard.svc.server.dao.slv.SlvSbDaoImpl" />
+
+	<bean name="ImsSbDao" class="com.pccw.springboard.svc.server.dao.ims.ImsSbDaoImpl" />
+
+	<bean name="ltsSbDao" class="com.pccw.springboard.svc.server.dao.lts.LtsSbDaoImpl" scope="singleton">
+		<property name="offerProfileLtsService" ref="offerProfileLtsService" />
+		<property name="itemOfferMappingService" ref="itemOfferMappingService" />
+		<property name="offerProfileService" ref="offerProfileService" />
+		<property name="sbOrderInfoLtsService" ref="sbOrderInfoLtsService" />
+	</bean>
+
+	<bean name="ltsBomDao" class="com.pccw.springboard.svc.server.dao.lts.LtsBomDaoImpl" scope="singleton">
+		<property name="customerProfileLtsService" ref="customerProfileLtsService" />
+		<property name="serviceProfileLtsService" ref="serviceProfileLtsService" />
+		<property name="offerProfileLtsService" ref="offerProfileLtsService" />
+		<property name="idDocTypeLkupCacheService" ref="idDocTypeLkupCacheService" />
+		<property name="custCatgLkupCacheService" ref="custCatgLkupCacheService" />
+		<property name="billFreqLkupCacheService" ref="billFreqLkupCacheService" />
+		<property name="billMediaLkupCacheService" ref="billMediaLkupCacheService" />
+		<property name="langCodeLkupCacheService" ref="langCodeLkupCacheService" />
+		<property name="payMethodLkupCacheService" ref="payMethodLkupCacheService" />
+		<property name="sbOrderInfoLtsService" ref="sbOrderInfoLtsService" />
+		<property name="bomOrderInfoService" ref="bomOrderInfoService" />
+	</bean>
+
+	<bean name="itemOfferMappingService" class="com.bomwebportal.lts.service.order.ItemOfferMappingServiceImpl" scope="singleton">
+		<property name="itemOfferMappingDao" ref="itemOfferMappingDao" />
+		<property name="tpExpireMonthAllowanceLkupCacheService" ref="tpExpireMonthAllowanceLkupCacheService" />
+	</bean>
+	
+	<bean name="tpExpireMonthAllowanceLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="tpExpireMonthAllowanceLkupDao" />
+	</bean>
+
+	<bean name="customerProfileLtsService" class="com.bomwebportal.lts.service.bom.CustomerProfileLtsServiceImpl">
+		<property name="customerProfileLtsDao" ref="customerProfileLtsDao" />
+		<property name="wipMessageCodeLkupCacheService" ref="wipMessageCodeLkupCacheService" />
+		<property name="imsProfileService" ref="imsProfileService" />
+	</bean>
+	
+	<bean name="imsProfileService" class="com.bomwebportal.lts.service.bom.ImsProfileServiceImpl">
+		<property name="imsServiceProfileAccessDAO" ref="imsServiceProfileAccessDAO" />
+	</bean>
+	
+	<bean name="offerProfileLtsService" class="com.bomwebportal.lts.service.bom.OfferProfileLtsServiceImpl">
+		<property name="offerProfileLtsDao" ref="offerProfileLtsDao" />
+		<property name="del2eyeCoreOfferCacheService" ref="del2eyeCoreOfferCacheService" />
+		<property name="eyeOfferCacheService" ref="eyeOfferCacheService" />
+		<property name="eyeDeviceCacheService" ref="eyeDeviceCacheService" />
+	</bean>
+	
+	<bean name="serviceProfileLtsService" class="com.bomwebportal.lts.service.bom.ServiceProfileLtsServiceImpl">
+		<property name="serviceProfileLtsDao" ref="serviceProfileLtsDao" />
+		<property name="inventoryStatusCodeLkupCacheService" ref="inventoryStatusCodeLkupCacheService" />
+	</bean>
+	
+	<bean name="wipMessageCodeLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="wipMessageCodeLkupDao" />
+	</bean>
+
+	<bean name="del2eyeCoreOfferCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="del2eyeCoreOfferLkupDao" />
+	</bean>
+	
+	<bean name="inventoryStatusCodeLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="inventoryStatusCodeLkupDao" />
+	</bean>
+
+	<bean name="offerProfileService" class="com.bomwebportal.lts.service.OfferProfileServiceImpl">
+		<property name="offerDetailProfileDao" ref="offerDetailProfileDao" />
+	</bean>
+	
+	<bean name="idDocTypeLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="idDocTypeLkupDao" />
+	</bean>
+
+	<bean name="custCatgLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="custCatgLkupDao" />
+	</bean>
+	
+	<bean name="billFreqLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="billFreqLkupDao" />
+	</bean>	
+	
+	<bean name="billMediaLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="billMediaLkupDao" />
+	</bean>	
+	
+	<bean name="langCodeLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="langCodeLkupDao" />
+	</bean>	
+	
+	<bean name="payMethodLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="payMethodLkupDao" />
+	</bean>
+	
+	<bean name="eyeOfferCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="eyeOfferLkupDao" />
+	</bean>
+
+	<bean name="eyeDeviceCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="eyeDeviceLkupDao" />
+	</bean>
+	
+	<bean name="sbOrderInfoLtsService" class="com.bomwebportal.lts.service.order.SbOrderInfoLtsServiceImpl">
+		<property name="sbOrderInfoLtsDao" ref="com.bomwebportal.lts.dao.order.SbOrderInfoLtsDAO" />
+		<property name="bomOrderInfoDao" ref="bomOrderInfoDao" />
+	</bean>
+	
+	<bean name="bomOrderInfoService" class="com.bomwebportal.lts.service.bom.BomOrderInfoServiceImpl">
+		<property name="bomOrderInfoDao" ref="bomOrderInfoDao" />
+	</bean>
+	
+	<import resource="classpath:/config/workQueue/spring/spring-service-bean.xml" />
+</beans>

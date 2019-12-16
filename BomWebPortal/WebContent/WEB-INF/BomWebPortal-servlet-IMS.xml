@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+       
+	 	<!-- Raymond -->
+	<bean id="imsCommonInterceptor" class="com.bomwebportal.ims.interceptor.ImsCommonInterceptor">		
+		<property name="appEnv" value="${environment}" />
+	</bean>	
+	
+	<bean id="imsDirectSalesInterceptor" class="com.bomwebportal.ims.interceptor.ImsDirectSalesInterceptor">		
+		<property name="appEnv" value="${environment}" />
+	</bean>	
+ 	
+	<bean class="com.bomwebportal.ims.web.ImsLoginController">
+	    <property name="commandName" value="bomsalesuser"/>
+        <property name="commandClass" value="com.bomwebportal.dto.BomSalesUserDTO"/>
+        <property name="service" ref="loginService"/> 
+		<property name="formView" value="imslogin"/>
+        <property name="environment"  value="${environment}"/>
+        <property name="singleLogin"  value="${singleLogin}"/>
+        <property name="singleLoginReplaceConfirm" value="${singleLoginReplaceConfirm}"/>
+        <property name="authorizeService" ref="authorizeService"/>
+	</bean>
+
+	<bean class="com.bomwebportal.ims.web.LogCeksController">
+		<property name="paymentService" ref="imsPaymentService"/>
+	</bean>
+	<bean class="com.bomwebportal.ims.web.ImsDocImgUploadController">
+		<property name="ordDocService" ref="ordDocService"/>
+		<property name="formView" value="docimguploadform"/>
+		<property name="commandClass" value="com.bomwebportal.dto.DocImgUploadDTO"/>
+		<property name="commandName" value="docImgUploadForm"/>
+		<property name="docRepository" ref="reportRepository"/>
+		<property name="saveDirectory" value="${dataFilePath}"/>
+		<property name="allowedExtensions" value="${orddoc.upload.allowedExtensions}"/>
+		<property name="maxUploadSizeInfo" value="${orddoc.upload.maxSize}"/>
+		<property name="successView" value="redirect:imsdoccapture.html"/>
+		<property name="validator">
+			<bean class="com.bomwebportal.ims.validator.ImsDocImgUploadValidator">
+				<property name="allowedExtensions" value="${orddoc.upload.allowedExtensions}"/>
+			</bean>
+		</property>
+	</bean> 
+	
+	<bean class="com.bomwebportal.ims.web.ImsDocCaptureController">
+		<property name="ordDocService" ref="ordDocService"/>
+		<property name="supportDocService" ref="supportDocService" />
+	</bean> 
+	 	
+	<bean class="com.bomwebportal.ims.web.ImsCustomerSignController">
+		<property name="service" ref="imsReportService" />
+    	<property name="commandName" value="imscustomersign"/>
+    	<property name="commandClass" value="com.bomwebportal.ims.dto.ImsSignoffDTO"/>
+    	<property name="imsOrderDetailService" ref="imsOrderDetailService" />
+		<property name="signOffLogService" ref="imsSignOffLogService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ImsCustomerSignPcdTdoController">
+		<property name="service" ref="imsReportService" />
+    	<property name="commandName" value="imscustomersignpcdtdo"/>
+    	<property name="commandClass" value="com.bomwebportal.ims.dto.ImsSignoffDTO"/>
+    	<property name="imsOrderDetailService" ref="imsOrderDetailService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ImsCustomerSignTvTdoController">
+    	<property name="commandName" value="imscustomersigntvtdo"/>
+    	<property name="commandClass" value="com.bomwebportal.ims.dto.ImsSignoffDTO"/>
+    	<property name="imsOrderDetailService" ref="imsOrderDetailService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ImsCustomerSignMoovTdoController">
+    	<property name="commandName" value="imscustomersignmoovtdo"/>
+    	<property name="commandClass" value="com.bomwebportal.ims.dto.ImsSignoffDTO"/>
+    	<property name="imsOrderDetailService" ref="imsOrderDetailService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.Ims3partySignController">
+    	<property name="commandName" value="ims3partysign"/>
+    	<property name="commandClass" value="com.bomwebportal.ims.dto.ImsSignoffDTO"/>
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ImsCreditCardSignController">
+    	<property name="commandName" value="imscreditcardsign"/>
+    	<property name="commandClass" value="com.bomwebportal.ims.dto.ImsSignoffDTO"/>
+	</bean> 	
+	
+	<bean class="com.bomwebportal.ims.web.ImsCareCashSignController">
+    	<property name="commandName" value="imscarecashsign"/>
+    	<property name="commandClass" value="com.bomwebportal.ims.dto.ImsSignoffDTO"/>
+	</bean> 	
+	 	
+	<bean id="ImsAppntController" class="com.bomwebportal.ims.web.ImsAppointmentController">
+		<property name="ordDocService" ref="ordDocService"/>
+		<property name="supportDocService" ref="supportDocService" />
+		<property name="commandName" value="appointment" />
+		<property name="commandClass" value="com.bomwebportal.ims.dto.ui.AppointmentUI" />
+		<property name="formView" value="imsappointment" />
+		<property name="successView" value="imssummary.html" />
+		<property name="appointmentService" ref="appointmentImsService" />
+		<property name="imsOrderDetailService" ref="imsOrderDetailService" />
+		<property name="validator">
+			<bean class="com.bomwebportal.ims.validator.ImsAppointmentValidator" />
+		</property>  
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ImsBackDoorController">
+	  <property name="commandName" value="CcLtsImsOrderEnquiryUI" /> 
+	  <property name="commandClass" value="com.bomwebportal.ims.dto.ui.CcLtsImsOrderEnquiryUI" />
+		<property name="orderService" ref="imsOrderService" /> 
+		<property name="acqUrl" value="${imsOrderCreate.Acq}"/>
+		<property name="retUrl" value="${imsOrderCreate.Retention}"/>
+		<property name="termUrl" value="${imsOrderCreate.Termination}"/>
+		<property name="nowRetUrl" value="${imsOrderCreate.nowRet}"/>
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ImsOLEnquiryErrorController">
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ImsOrderDetailController">
+  		<property name="orderDetailService" ref="imsOrderDetailService" /> 
+		<property name="signOffLogService" ref="imsSignOffLogService" />
+  		<property name="ntvDomain" value="${ntv.domain}"/>
+  	</bean>
+  	
+	<bean class="com.bomwebportal.ims.web.ImsOrderPreviewController">
+		<property name="retentionRecallUrl" value="${imsOrderEnquiry.Retention}"/>
+		<property name="retentionViewUrl" value="${imsOrderEnquiry.Retention.view}"/>
+		<property name="terminationRecallUrl" value="${imsOrderEnquiry.Termination}"/>
+		<property name="terminationViewUrl" value="${imsOrderEnquiry.Termination.view}"/>
+  	</bean>
+		
+	<bean class="com.bomwebportal.ims.web.ImsTimeSlotController">
+		<property name="appointmentService" ref="appointmentImsService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ImsReserveAppointmentController">
+		<property name="appointmentService" ref="appointmentImsService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ImsSyncOrderController">
+		<property name="syncOrderService" ref="imsSyncOrderService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ImsSyncOrderToBomController">
+		<property name="service" ref="imsSyncOrderService"/>
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ImsSyncOrderFromBomController">			
+		<property name="service" ref="imsAutoSyncBackService" />
+		<property name="imsOrderAmendService" ref="imsOrderAmendService" />					
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ImsCancelOrderController">
+		<property name="service" ref="imsOrderCancelService" />
+		<property name="reLoginSrv" ref="releaseLoginIDService" />
+	</bean>
+	
+	<!-- Raymond End-->
+		<!-- Nanon -->	 
+	<bean class="com.bomwebportal.ims.web.ImsBasketSelectController">	 		
+   		<property name="commandName" value="basketinfo" />
+		<property name="commandClass" value="com.bomwebportal.ims.dto.ui.SubscribedItemUI" />
+		<property name="formView" value="imsbasketselect" /> 
+		<property name="service" ref="imsBasketSelectService"/> 
+        <property name="constantLkupService" ref="constantLkupService"/>
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ImsBasketDetailsController">
+		<property name="commandName" value="basketdetailinfo" />
+		<property name="commandClass" value="com.bomwebportal.ims.dto.ui.BasketDetailUI" />
+		<property name="formView" value="imsbasketdetails" /> 
+		<property name="service" ref="imsBasketDetailsService" ></property> 
+		<property name="imsBasketCommonService" ref="imsBasketCommonService" ></property> 
+		<property name="imsPaymentService" ref="imsPaymentService"/>
+		<property name="validator">
+			<bean class="com.bomwebportal.ims.validator.ImsVASValidator" />
+		</property>  
+		<property name="mobilePINService" ref="mobilePINService" />
+		<property name="message" ref="messageSource" />
+	</bean>
+		
+	<bean class="com.bomwebportal.ims.web.ImsNowTVController">
+		<property name="commandName" value="nowTVdetailinfo" />
+		<property name="commandClass" value="com.bomwebportal.ims.dto.ui.NowTVUI" />
+		<property name="formView" value="imsnowtv" /> 
+		<property name="service" ref="imsNowTVService" ></property> 
+		<property name="basketService" ref="imsBasketDetailsService" ></property> 
+		<property name="validator">
+			<bean class="com.bomwebportal.ims.validator.ImsNowTVValidator" />
+		</property>  
+				<property name="message" ref="messageSource" />
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.CheckDecoderTypeController">
+		<property name="imsNowTVService" ref="imsNowTVService" />
+	</bean>
+	
+	<!-- Nanon End -->	
+	
+		<!-- Terrence Part -->
+	<bean class="com.bomwebportal.ims.web.ImsInstallationController">
+		<property name="commandName" value="imsInstallationUI" />
+		<property name="commandClass" value="com.bomwebportal.ims.dto.ui.ImsInstallationUI" />
+		<property name="getImsCustomerService" ref="getImsCustomerService" />
+		<property name="isImsBlacklistCustService" ref="isImsBlacklistCustService" />
+		<property name="imsAddressInfoService" ref="imsAddressInfoService" />
+ 		<property name="constantLkupService" ref="constantLkupService"/>  
+		<property name="cOrderService" ref="COrderService" />
+		<property name="appFlow" ref="bomWebPortalApplicationFlow" />
+		<property name="formView" value="imsinstallation" />
+		<property name="successView" value="imspayment.html" />
+		<property name="validator">
+			<bean class="com.bomwebportal.ims.validator.ImsInstallationValidator" >
+			<!-- Gary -->
+		<property name="clubHktService" ref="clubHktService" />		
+		<property name="nowIdService" ref="nowIdService" />
+		</bean>
+		</property>
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ImsPaymentController">
+		<property name="commandName" value="imsPaymentUI" />
+		<property name="commandClass" value="com.bomwebportal.ims.dto.ui.PaymentUI" />
+		<property name="imsPaymentService" ref="imsPaymentService"/>
+		<property name="releaseLoginIDService" ref="releaseLoginIDService" />
+		<property name="loginService" ref="loginService" />
+		<property name="imsOrderDetailService" ref="imsOrderDetailService" />
+		<property name="getSourceCodeService" ref="getSourceCodeService" />
+		<property name="appFlow" ref="bomWebPortalApplicationFlow" />
+		<property name="PTS" ref="PTService" />
+		<property name="formView" value="imspayment" />
+		<property name="successView" value="imsappointment.html" />
+		<property name="validator">
+			<bean class="com.bomwebportal.ims.validator.ImsPaymentValidator" />
+		</property>
+		<property name="mobilePINService" ref="mobilePINService" />
+ 		<property name="constantLkupService" ref="constantLkupService"/>  
+	</bean>
+	
+	
+	<bean class="com.bomwebportal.ims.web.ImsSummaryController">
+		<property name="supportDocAdminService" ref="supportDocAdminService" />
+<!--		<property name="imsSupportDocService" ref="imsSupportDocService"/>-->
+		<property name="acqUrl" value="${dataFilePath}"/>
+		<property name="ordDocService" ref="ordDocService"/>
+		<property name="sessionForm" value="true"/>
+		<property name="commandName" value="imsSummaryUI" />
+		<property name="commandClass" value="com.bomwebportal.ims.dto.ui.ImsSummaryUI" />
+		<property name="releaseLoginIDService" ref="releaseLoginIDService" />
+		<property name="basketSummaryService" ref="basketSummaryService" />
+		<property name="imsReport2Service" ref="imsReport2Service" />
+		<property name="imsOrderDetailService" ref="imsOrderDetailService" />
+		<property name="imsOrderService" ref="imsOrderService"/>
+		<property name="validateAccountNumService" ref="validateAccountNumService" />
+		<property name="orderEsignatureService" ref="orderEsignatureService" />
+		<property name="supportDocService" ref="supportDocService" />
+		<property name="appFlow" ref="bomWebPortalApplicationFlow" />
+		<property name="formView" value="imssummary" />
+		<property name="successView" value="imsdone.html" />
+		<property name="service" ref="imsReportService" />
+		<property name="imsSMSService" ref="imsSMSService" />
+		<property name="imsAddressInfoService" ref="imsAddressInfoService" />
+		<property name="imsNowTVService" ref="imsNowTVService" ></property>
+		<property name="basketDetailService" ref="imsBasketDetailsService" ></property> 
+		<property name="validator">
+			<bean class="com.bomwebportal.ims.validator.ImsSummaryValidator">
+				<property name="validateAccountNumService" ref="validateAccountNumService" />
+			</bean>	
+		</property>
+		<property name="ims1AMSEnquiryService" ref="ims1AMSEnquiryService" />
+		<property name="mobilePINService" ref="mobilePINService" />
+	<property name="imsEmailParamHelperDAO" ref="imsEmailParamHelperDAO"/> 
+	</bean>
+	
+
+	<bean class="com.bomwebportal.ims.web.ImsDoneController">
+	    <property name="sessionForm" value="true"/>
+		<property name="supportDocService" ref="supportDocService" />
+		<property name="commandName" value="imsDoneUI" />
+		<property name="commandClass" value="com.bomwebportal.ims.dto.ui.ImsDoneUI" />
+		<property name="releaseLoginIDService" ref="releaseLoginIDService" />
+		<property name="imsReport2Service" ref="imsReport2Service" />
+		<property name="basketSummaryService" ref="basketSummaryService" />
+		<property name="appFlow" ref="bomWebPortalApplicationFlow" ></property>
+		<property name="imsOrderDetailService" ref="imsOrderDetailService" />
+		<property name="appntController" ref="ImsAppntController" />
+		<property name="orderService" ref="imsOrderService" />
+		<property name="imsSMSService" ref="imsSMSService" />
+		<property name="imsNowTVService" ref="imsNowTVService" ></property>
+		<property name="ordEmailReqService" ref="ordEmailReqService" />
+		<property name="orderEsignatureService" ref="orderEsignatureService" />
+		<property name="mobilePINService" ref="mobilePINService" />
+	</bean>
+
+	<bean class="com.bomwebportal.ims.web.CheckLoginNameController">
+		<property name="checkLoginNameService" ref="checkLoginNameService" />
+		<property name="validateLoginIDService" ref="validateLoginIDService" />
+		<property name="reserveLoginIDService" ref="reserveLoginIDService" />
+		<property name="releaseLoginIDService" ref="releaseLoginIDService" />
+		<property name="clubHktService" ref="clubHktService" />		
+		<property name="suggestLoginIDService" ref="suggestLoginIDService" />
+				<property name="message" ref="messageSource" />
+	</bean>
+	
+	
+	<!-- Added by Gary for CS portal -->
+	<bean class="com.bomwebportal.ims.web.ImsCSPortalController">		
+		<property name="clubHktService" ref="clubHktService" />		
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.CustInfoController">
+			<property name="getImsCustomerService" ref="getImsCustomerService" />
+			<property name="reserveLoginIDService" ref="reserveLoginIDService" />
+			<property name="releaseLoginIDService" ref="releaseLoginIDService" />
+			<property name="isImsBlacklistCustService" ref="isImsBlacklistCustService" />
+			<property name="validateHKIDService" ref="validateHKIDService" />
+			<property name="cOrderService" ref="COrderService" />
+ 			<property name="constantLkupService" ref="constantLkupService"/>  
+ 					<property name="message" ref="messageSource" />
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.PreRegCustInfoController">
+			<property name="getImsCustomerService" ref="getImsCustomerService" />
+			<property name="isImsBlacklistCustService" ref="isImsBlacklistCustService" />
+			<property name="validateHKIDService" ref="validateHKIDService" />
+ 					<property name="message" ref="messageSource" />
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ValidateHKIDController">
+			<property name="validateHKIDService" ref="validateHKIDService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ValidateFixedLineController">
+			<property name="validateFixedLineService" ref="validateFixedLineService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.GetSalesNameShopContactController">
+			<property name="imsPaymentService" ref="imsPaymentService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.GetSalesInfoController">
+		<property name="imsPaymentService" ref="imsPaymentService" />
+		<property name="PTS" ref="PTService" />
+	</bean>
+	
+	<!-- kinman -->
+	<bean class="com.bomwebportal.ims.web.GetCCNewSourceCdAppMthController">
+		<property name="imsPaymentService" ref="imsPaymentService" />
+		<property name="getSourceCodeService" ref="getSourceCodeService" />
+		
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.GetSourceCodeController">
+			<property name="getSourceCodeService" ref="getSourceCodeService" />
+	</bean>
+	
+	
+	<bean class="com.bomwebportal.ims.web.ValidateAccountNumController">
+			<property name="validateAccountNumService" ref="validateAccountNumService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ImsCeksController">
+		<property name="ceksService" ref="ceksImsService"/>								
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.CheckMobileNumController">
+	
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.CheckEmailAddrController">
+	
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.CheckCardHolderNameController">
+	
+	</bean>
+	<!-- End -->
+	<!-- Antony Testing -->
+
+      <bean class="com.bomwebportal.ims.web.ImsAddressInfoController">
+            <property name="commandName" value="addressinfo" />
+            <property name="commandClass" value="com.bomwebportal.ims.dto.ui.AddressInfoUI" />
+            <property name="formView" value="imsaddressinfo" />
+            <property name="service" ref="imsAddressInfoService" />
+            <property name="constantLkupService" ref="constantLkupService"/>
+            <property name="validator">
+                 <bean class="com.bomwebportal.ims.validator.ImsAddressValidator" >
+            		<property name="service" ref="imsAddressInfoService" />
+				</bean>	
+            </property>
+      </bean>
+
+      <bean class="com.bomwebportal.ims.web.ImsDsAddressInfoController">
+            <property name="commandName" value="addressinfo" />
+            <property name="commandClass" value="com.bomwebportal.ims.dto.ui.AddressInfoUI" />
+            <property name="formView" value="imsdsaddressinfo" />
+            <property name="service" ref="imsAddressInfoService" />
+            <property name="searchService" ref="imsAddressSearchService" />
+            <property name="appntService" ref="appointmentImsService" />
+      </bean>
+
+	<!-- steven added 20131028-->
+      <bean class="com.bomwebportal.ims.web.ImsOrderAmendmentController">
+		<property name="sessionForm" value="true"/>
+		<property name="imsOrderAmendservice" ref="imsOrderAmendService" />
+		<property name="commandName" value="amendOrderImsUI" />
+		<property name="commandClass" value="com.bomwebportal.ims.dto.ui.AmendOrderImsUI" />
+		<property name="imsOrderDetailService" ref="imsOrderDetailService"/>
+		<property name="appointmentService" ref="appointmentImsService" />
+		<property name="orderService" ref="imsOrderService" />
+		<property name="imsSMSService" ref="imsSMSService" />
+		<property name="ordEmailReqService" ref="ordEmailReqService" />
+		<property name="orderEsignatureService" ref="orderEsignatureService" />
+		<property name="cOrderService" ref="COrderService" />
+		<property name="constantLkupService" ref="constantLkupService"/>
+		<property name="validator">
+			<bean class="com.bomwebportal.ims.validator.ImsOrderAmendValidator">
+				<property name="imsOrderAmendservice" ref="imsOrderAmendService" />
+			</bean>	
+		</property>
+		<property name="ntvDomain" value="${ntv.domain}"/>
+      </bean>
+      
+<!--       <bean class="com.bomwebportal.ims.web.ImsOrderAmendHistoryController"> -->
+<!-- 		<property name="orderService" ref="orderService"/> -->
+<!-- 		<property name="serviceProfileLtsService" ref="serviceProfileLtsService"/>  -->
+<!--       </bean> -->
+	<!-- steven added 20131028-->
+
+	<bean class="com.bomwebportal.ims.web.ImsAddressLookupController">
+		<property name="addressHelper" ref="addressHelper" />
+		<property name="createAddressIndex" ref="createAddressIndex" />
+		<property name="service" ref="imsAddressSearchService" />
+		<property name="addrIdx2Service" ref="addressIndex2Service" />
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ImsAddressDistrictLookupController" />
+	
+	<bean class="com.bomwebportal.ims.web.ImsAddressInfoLookupBySBController">
+		<property name="service" ref="imsAddressInfoService" />
+		<property name="ccsiService" ref="ccSalesInfoService" />
+		<property name="imsAppointmentService" ref="appointmentImsService" />
+		<property name="imsCommonService" ref="imsCommonServiceImpl"></property>
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ImsAddressInfoLookupByFFController">
+		<property name="service" ref="imsAddressInfoService" />
+		<property name="service2" ref="imsAddressInfo2Service" />
+	</bean>
+
+ 	<bean class="com.bomwebportal.ims.web.ImsReportController">
+		<property name="service" ref="imsReportService" />
+		<property name="service2" ref="imsReport2Service" />
+		<property name="orderservice" ref="imsOrderService" />
+	</bean> 
+	
+	<bean class="com.bomwebportal.ims.web.ImsGetPendingOrderController">
+		<property name="imsOrderService" ref="imsOrderService" />
+	</bean>
+	
+	<!-- Antony Testing (End) --> 
+	
+<!-- 	Tony     -->
+
+	<bean class="com.bomwebportal.ims.web.ImsCheckDigitalSignatureController">
+	</bean>
+
+	<bean class="com.bomwebportal.ims.web.ImsCheckCOrderController">
+		<property name="cOrderService" ref="COrderService" />
+		<property name="constantLkupService" ref="constantLkupService"/>  
+	</bean>
+
+	<bean class="com.bomwebportal.ims.web.ImsRefreshFSController">
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ImsCollectDocController" >
+		<property name="imsOrderDocumentService" ref="ImsOrderDocumentService" />
+		<property name="ordDocService" ref="ordDocService"/>
+		<property name="supportDocService" ref="supportDocService" />
+	</bean> 
+	
+	<bean class="com.bomwebportal.ims.web.ImsEdfRefController" >
+		<property name="imsOrderDocumentService" ref="ImsOrderDocumentService" />
+	</bean> 
+	
+		<bean class="com.bomwebportal.ims.web.CheckAsiaMilesAttbController">
+	</bean>
+	
+<!-- 	Tony End -->
+	
+	<bean class="com.bomwebportal.ims.web.ImsIsCurrentTabController"/>	
+	
+	<bean class="com.bomwebportal.ims.web.ImsOLCustomerSearchController">
+		  	    <property name="sessionForm" value="true"/>
+		<property name="commandName" value="customerInformation"/>
+		<property name="commandClass" value="com.bomwebportal.ims.dto.ImsCustomerInformationDTO"/> 
+		<property name="formView" value="imsolcustomersearch"/> 
+<!--		<property name="validator">-->
+<!--			<bean class="com.bomwebportal.validator.CustomerInformationValidator"/>-->
+<!--		</property> -->
+		<property name="custSearchClient" ref="custSearchClient"/>
+		<property name="customerInformationService" ref="customerInformationService"/>
+		<property name="loggingService" ref="loggingService"/>
+		<property name="imsOlOrderSearchService" ref="imsOlOrderSearchService"/>
+	</bean>
+
+	<bean class="com.bomwebportal.ims.web.ImsResendEmailHistoryController">
+        <property name="supportDocService" ref="supportDocService" />
+        <property name="commandName" value="imsResendEmailHistoryUI" />
+        <property name="commandClass" value="com.bomwebportal.ims.dto.ui.ImsResendEmailHistoryUI" />
+        <property name="imsReport2Service" ref="imsReport2Service" />
+        <property name="basketSummaryService" ref="basketSummaryService" />
+        <property name="appFlow" ref="bomWebPortalApplicationFlow" ></property>
+        <property name="ordEmailReqService" ref="ordEmailReqService" />
+        <property name="orderEsignatureService" ref="orderEsignatureService" />
+        <property name="imsOlOrderSearchService" ref="imsOlOrderSearchService"/>
+    </bean>
+    
+    <bean class="com.bomwebportal.ims.web.SboImsOrderSearchController">
+       <property name="imsOlOrderSearchService" ref="imsOlOrderSearchService"/>
+      
+    </bean>
+    
+    <bean class="com.bomwebportal.ims.web.CCOrderSendEmailHistController">
+    	<property name="imsOlOrderSearchService" ref="imsOlOrderSearchService" />
+    	<property name="imsSMSService" ref="imsSMSService" />
+		<property name="ordEmailReqService" ref="ordEmailReqService" />
+		<property name="orderEsignatureService" ref="orderEsignatureService" />
+		<property name="orderRetrieveLtsService" ref="orderRetrieveLtsService" />
+		<property name="imsOrderAmendservice" ref="imsOrderAmendService" /> 
+		<property name="ccsiService" ref="ccSalesInfoService" />
+		<property name="orderservice" ref="imsOrderService" />
+		<property name="imsEmailParamHelperDAO" ref="imsEmailParamHelperDAO" />
+		<property name="signOffLogService" ref="imsSignOffLogService" />
+	</bean>    
+	
+	<bean class="com.bomwebportal.ims.web.CcLtsImsOrderEnquiryController">
+		<property name="retentionRecallUrl" value="${imsOrderEnquiry.Retention}"/>
+		<property name="retentionViewUrl" value="${imsOrderEnquiry.Retention.view}"/>
+		<property name="terminationRecallUrl" value="${imsOrderEnquiry.Termination}"/>
+		<property name="terminationViewUrl" value="${imsOrderEnquiry.Termination.view}"/>
+	  <property name="commandName" value="CcLtsImsOrderEnquiryUI" /> 
+	  <property name="commandClass" value="com.bomwebportal.ims.dto.ui.CcLtsImsOrderEnquiryUI" /> 
+	  <property name="imsOrderAmendservice" ref="imsOrderAmendService" /> 
+	  <property name="ccsiService" ref="ccSalesInfoService" />
+		<property name="ntvDomain" value="${ntv.domain}"/>
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.CcImsOrderEnquiryController">
+		<property name="retentionRecallUrl" value="${imsOrderEnquiry.Retention}"/>
+		<property name="retentionViewUrl" value="${imsOrderEnquiry.Retention.view}"/>
+		<property name="terminationRecallUrl" value="${imsOrderEnquiry.Termination}"/>
+		<property name="terminationViewUrl" value="${imsOrderEnquiry.Termination.view}"/>
+	  <property name="commandName" value="CcLtsImsOrderEnquiryUI" /> 
+	  <property name="commandClass" value="com.bomwebportal.ims.dto.ui.CcLtsImsOrderEnquiryUI" /> 
+	  <property name="imsOrderAmendservice" ref="imsOrderAmendService" /> 
+	  <property name="ccsiService" ref="ccSalesInfoService" />
+		<property name="ntvDomain" value="${ntv.domain}"/>
+	</bean>
+	
+
+	<!--  added by Andy -->
+	<bean class="com.bomwebportal.web.qc.QcImsAdminController">
+	 	<property name="commandName" value="qcImsAdminUI" />
+		<property name="commandClass" value="com.bomwebportal.ims.dto.ui.QcImsAdminUI" />
+		<property name="imsDSQCService" ref="imsDsQcService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.web.qc.qcImsRemarksController">
+		<property name="commandName" value="ImsDsQcProcessDetailUI" />
+		<property name="commandClass" value="com.bomwebportal.ims.dto.ui.ImsDsQcProcessDetailUI" />
+		<property name="imsDSQCService" ref="imsDsQcService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.web.qc.qcImsAmendRemarksController">
+	 	  <property name="commandName" value="ImsDsQcProcessDetailUI" /> 
+		  <property name="commandClass" value="com.bomwebportal.ims.dto.ui.ImsDsQcProcessDetailUI" /> 
+		  <property name="imsDSQCService" ref="imsDsQcService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.web.qc.ImsDsQCStaffAdminController">
+	  <property name="commandName" value="ImsDsQCStaffAdminUI" /> 
+	  <property name="commandClass" value="com.bomwebportal.ims.dto.ui.ImsDsQCStaffAdminUI" /> 
+	  <property name="imsOrderAmendservice" ref="imsOrderAmendService" /> 
+	  <property name="ccsiService" ref="ccSalesInfoService" />
+	  <property name="imsDSQCService" ref="imsDsQcService" />
+	</bean>
+	
+	<!--  added by Andy on 16092014 -->
+	<bean class="com.bomwebportal.web.qc.DsQCImsOrderEnquiryController">
+	  <property name="commandName" value="DsQCImsOrderEnquiryUI" /> 
+	  <property name="commandClass" value="com.bomwebportal.ims.dto.ui.DsQCImsOrderEnquiryUI" /> 
+	  <property name="imsDSQCService" ref="imsDsQcService" />
+	  <property name="ccsiService" ref="ccSalesInfoService" />
+	  <property name="ltsDsQcService" ref="ltsDsQcService" />
+	  <property name="ntvDomain" value="${ntv.domain}"/>
+	  <property name="imsOrderAmendservice" ref="imsOrderAmendService" /> 
+	</bean>
+	
+	<!--  added by Kinman for QC front Order Enquiry -->
+	<bean class="com.bomwebportal.web.qc.QcFrontOrderEnquiryController">
+	  <property name="commandName" value="DsQCImsOrderEnquiryUI" /> 
+	  <property name="commandClass" value="com.bomwebportal.ims.dto.ui.DsQCImsOrderEnquiryUI" /> 
+	  <property name="imsDSQCService" ref="imsDsQcService" />
+	  	<property name="retentionRecallUrl" value="${imsOrderEnquiry.Retention}"/>
+		<property name="retentionViewUrl" value="${imsOrderEnquiry.Retention.view}"/>
+		<property name="terminationRecallUrl" value="${imsOrderEnquiry.Termination}"/>
+		<property name="terminationViewUrl" value="${imsOrderEnquiry.Termination.view}"/>
+		<property name="imsOrderAmendservice" ref="imsOrderAmendService" />
+		<property name="ntvDomain" value="${ntv.domain}"/>
+	</bean>
+	
+	
+	<bean class="com.bomwebportal.web.qc.ImsQcComOrderSearchController">
+	  <property name="commandName" value="imsQcComOrderSearchUI" /> 
+	  <property name="commandClass" value="com.bomwebportal.ims.dto.ui.ImsQcComOrderSearchUI" /> 
+	  <property name="imsOrderAmendservice" ref="imsOrderAmendService" /> 
+	   <property name="imsDSQCService" ref="imsDsQcService" />
+	   <property name="ltsDsQcService" ref="ltsDsQcService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.web.qc.qcImsAssignController">
+		<property name="supportDocService" ref="supportDocService" />
+		<property name="commandName" value="ImsQcAssignUI" />
+		<property name="commandClass" value="com.bomwebportal.ims.dto.ui.ImsQcAssignUI" />
+		<property name="imsReport2Service" ref="imsReport2Service" />
+		<property name="basketSummaryService" ref="basketSummaryService" />
+		<property name="appFlow" ref="bomWebPortalApplicationFlow" ></property>  
+		<property name="imsDSQCService" ref="imsDsQcService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.web.qc.ImsDsQCProcessController">
+	  <property name="commandName" value="ImsDsQCProcessUI" /> 
+	  <property name="commandClass" value="com.bomwebportal.ims.dto.ui.ImsDsQCProcessUI" />
+	  <property name="imsDSQCService" ref="imsDsQcService" />
+	  <property name="ccsiService" ref="ccSalesInfoService" />
+	  <property name="ltsDsQcService" ref="ltsDsQcService" />
+	  <property name="imsOrderAmendservice" ref="imsOrderAmendService" />
+	</bean>
+
+	 <bean class="com.bomwebportal.web.qc.ImsDsQcProcessDetailController">
+	  <property name="commandName" value="ImsDsQcProcessDetailUI" />
+	  <property name="commandClass" value="com.bomwebportal.ims.dto.ui.ImsDsQcProcessDetailUI" />
+	  <property name="imsDSQCService" ref="imsDsQcService" />
+	   <property name="ntvDomain" value="${ntv.domain}"/>
+	</bean>
+	
+	
+	<bean class="com.bomwebportal.ims.web.Ims1AMSController">
+		<property name="ims1AMSEnquiryService" ref="ims1AMSEnquiryService"/>
+    	<property name="commandName" value="Ims1amsUI" /> 
+    	<property name="commandClass" value="com.bomwebportal.ims.dto.ui.Ims1amsUI" />   
+	</bean>
+
+
+	<bean class="com.bomwebportal.ims.web.Ims1AMSEnquiryDtlController">
+		<property name="ims1AMSEnquiryService" ref="ims1AMSEnquiryService"/>
+	</bean>
+
+	<bean class="com.bomwebportal.ims.web.ImsDsAjaxController">
+		<property name="imsDSQCService" ref="imsDsQcService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.web.qc.ImsQcAssignAjaxController">
+		<property name="imsDSQCService" ref="imsDsQcService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.web.qc.ImsChangeAwaitQCOrderStatusController">
+		<property name="imsDSQCService" ref="imsDsQcService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.web.qc.ImsQcProcessAjaxController">
+		<property name="imsDSQCService" ref="imsDsQcService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.GetQRJpgController">
+	      <property name="dataFilePath" value="${dataFilePath}" />
+	</bean> 
+	
+	<bean class="com.bomwebportal.web.qc.ImsQcAdminAjaxController">
+		<property name="imsDSQCService" ref="imsDsQcService" />
+	</bean>
+	
+	<!-- 	<bean class="com.bomwebportal.web.qc.GenImsDSQcComXlsController">
+			<property name="imsDSQCService" ref="imsDsQcService" />
+	</bean> -->
+	
+	<bean class="com.bomwebportal.ims.web.ImsAmendProgOfferController">
+		<property name="orderService" ref="imsOrderService" />
+		<property name="service" ref="imsAddressInfoService" />
+		<property name="basketDetailService" ref="imsBasketDetailsService" ></property> 
+	</bean>
+
+	
+	<!-- celia -->
+		<bean class="com.bomwebportal.web.qc.GenImsDSQcComXlsController">
+			<property name="imsDSQCService" ref="imsDsQcService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ImsDSOrderEnquiryController">
+		<property name="retentionRecallUrl" value="${imsOrderEnquiry.Retention}"/>
+		<property name="retentionViewUrl" value="${imsOrderEnquiry.Retention.view}"/>
+		<property name="terminationRecallUrl" value="${imsOrderEnquiry.Termination}"/>
+		<property name="terminationViewUrl" value="${imsOrderEnquiry.Termination.view}"/>
+	  	<property name="ntvDomain" value="${ntv.domain}"/>
+	<property name="commandName"   value="CcLtsImsOrderEnquiryUI" /> 
+	  <property name="commandClass" value="com.bomwebportal.ims.dto.ui.CcLtsImsOrderEnquiryUI" /> 
+	  <property name="imsOrderAmendservice" ref="imsOrderAmendService" /> 
+	 		<property name="ordEmailReqService" ref="ordEmailReqService" />
+	</bean>
+
+	
+    <bean class="com.bomwebportal.ims.web.DSOrderSendEmailHistController">
+    	<property name="imsSMSService" ref="imsSMSService" />
+		<property name="ordEmailReqService" ref="ordEmailReqService" />
+		<property name="orderEsignatureService" ref="orderEsignatureService" />
+		<property name="imsOrderAmendservice" ref="imsOrderAmendService" /> 
+		<property name="imsEmailParamHelperDAO" ref="imsEmailParamHelperDAO" />
+		<property name="orderservice" ref="imsOrderService" />
+		<property name="signOffLogService" ref="imsSignOffLogService" />
+	</bean>
+    
+
+	<bean class="com.bomwebportal.ims.web.ImsSendAmendNoteController">
+		<property name="orderservice" ref="imsOrderService" />
+		<property name="imsSMSService" ref="imsSMSService" />
+		<property name="ordEmailReqService" ref="ordEmailReqService" />
+		<property name="orderEsignatureService" ref="orderEsignatureService" />
+		<property name="imsEmailParamHelperDAO" ref="imsEmailParamHelperDAO" />
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.pageTrackController">
+		<property name="pageTrackService" ref="pageTrackService"/>
+	</bean>
+
+	<bean class="com.bomwebportal.ims.web.ImsSysFAssignmentController">
+		<property name="imsOrderDetailService" ref="imsOrderDetailService" />
+		<property name="imsAddressInfoService" ref="imsAddressInfoService" />
+		<property name="ims1AMSEnquiryService" ref="ims1AMSEnquiryService" />
+		<property name="custSearchClient" ref="custSearchClient"/>
+		<property name="custProfileClient" ref="custProfileClient" />
+	</bean>
+	 
+	<bean class="com.bomwebportal.ims.web.ImsGetAmendSrdTimeSlotsController"/>
+		
+	<bean class="com.bomwebportal.ims.web.ImsAlertCountAjaxController">
+		<property name="ltsAlertMessageService" ref="ltsAlertMessageService"/>
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.GetDirectSalesSourceCodeController">
+		<property name="imsPaymentService" ref="imsPaymentService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ImsSupportDocCollectedIndRefreshController">
+		<property name="imsSupportDocService" ref="imsSupportDocService" />
+		
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.GetReferrerNameByNoController">
+		<property name="imsPaymentService" ref="imsPaymentService" />
+	</bean>
+
+	<bean class="com.bomwebportal.ims.web.ImsDSNtvInfoController">
+		<property name="imsNowTVService" ref="imsNowTVService" ></property> 
+		<property name="sophieUrl" value="${SOFHIEinfo.NowTVSales}"/>
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ImsKeepAliveController"/>
+	
+	<bean class="com.bomwebportal.ims.web.ImsSysFNowAssignController">
+		<property name="imsOrderDetailService" ref="imsOrderDetailService" />
+		<property name="imsAddressInfoService" ref="imsAddressInfoService" />
+		<property name="ims1AMSEnquiryService" ref="ims1AMSEnquiryService" />
+		<property name="custSearchClient" ref="custSearchClient"/>
+		<property name="custProfileClient" ref="custProfileClient" />
+	</bean>
+	
+
+		<bean class="com.bomwebportal.ims.web.ImsFSOrderEnquiryController">
+	  <property name="retentionRecallUrl" value="${imsOrderEnquiry.Retention}"/>
+	  <property name="retentionViewUrl" value="${imsOrderEnquiry.Retention.view}"/>
+	  <property name="terminationRecallUrl" value="${imsOrderEnquiry.Termination}"/>
+	  <property name="terminationViewUrl" value="${imsOrderEnquiry.Termination.view}"/>
+	  <property name="commandName" value="CcLtsImsOrderEnquiryUI" /> 
+	  <property name="commandClass" value="com.bomwebportal.ims.dto.ui.CcLtsImsOrderEnquiryUI" /> 
+	  <property name="imsOrderAmendservice" ref="imsOrderAmendService" /> 
+	  <property name="ccsiService" ref="ccSalesInfoService" />
+	  <property name="ntvDomain" value="${ntv.domain}"/>
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ImsCheckCslMobileNumController">
+		<property name="service" ref="imsAddressInfoService" ></property> 
+		<property name="validateHKIDService" ref="validateHKIDService" />
+				<property name="message" ref="messageSource" />
+	</bean>
+	
+	<!--  Kevin add on 20170718 -->
+	<bean class="com.bomwebportal.ims.web.DsDedicatedStaffController">
+	 	<property name="commandName" value="dsDedicatedStaffUI" />
+		<property name="commandClass" value="com.bomwebportal.ims.dto.ui.DsDedicatedStaffUI" />
+		<property name="imsDsDedicatedStaffService" ref="imsDsDedicatedStaffService" />
+	</bean>
+	<!--  Kevin add on 20170718 -->
+	
+	<bean class="com.bomwebportal.ims.web.ImsDSWelcomeController">
+		<property name="redirectUrl" value="${imsdsredirecturl}" />
+	</bean>
+	
+	<bean class="com.bomwebportal.ims.web.ImsPreRegistrationController">
+		<property name="commandName" value="preRegistrationUI" />
+		<property name="commandClass" value="com.bomwebportal.ims.dto.ui.PreRegistrationUI" />
+		<property name="imsAddressInfoDao" ref="imsAddressInfoDao" />
+		<property name="constantLkupService" ref="constantLkupService" />
+		<property name="imsCommonService" ref="imsCommonServiceImpl"></property>
+	</bean>
+	
+		
+</beans>

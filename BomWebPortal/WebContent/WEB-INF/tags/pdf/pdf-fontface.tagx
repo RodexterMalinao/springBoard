@@ -1,0 +1,42 @@
+<jsp:root xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:form="http://www.springframework.org/tags/form"
+	version="2.0">
+  <jsp:output omit-xml-declaration="yes" />
+  <jsp:directive.tag import="java.util.*"/>
+  <jsp:directive.tag import="org.springframework.web.context.*"/>
+  <jsp:directive.tag import="org.springframework.web.context.support.*"/>
+  <jsp:directive.tag import="com.bomwebportal.pdf.*"/>
+
+  <jsp:directive.attribute name="fontFamily" type="java.lang.String" required="false" rtexprvalue="true" description="font-family" />
+  <jsp:directive.attribute name="uri" type="java.lang.String" required="true" rtexprvalue="true" description="uri" />
+  <jsp:directive.attribute name="fontEncoding" type="java.lang.String" required="false" rtexprvalue="true" description="font-encoding" />
+  <jsp:directive.attribute name="embedded" type="java.lang.Boolean" required="false" rtexprvalue="true" description="embedded" />
+
+  <jsp:scriptlet>
+    <![CDATA[
+		synchronized(jspContext) {
+			String fontFamily = (String)jspContext.getAttribute("fontFamily");
+			String uri = (String)jspContext.getAttribute("uri");
+			Boolean embedded = (Boolean)jspContext.getAttribute("embedded");
+			String fontEncoding = (String)jspContext.getAttribute("fontEncoding");
+			FontFaceInfo ffi = new FontFaceInfo();
+			ffi.setUri(uri);
+			ffi.setFontFamily(fontFamily);
+			ffi.setEmbedded(Boolean.TRUE == embedded);
+			ffi.setFontEncoding(fontEncoding);
+			List<FontFaceInfo> ffs = (List<FontFaceInfo>)jspContext.getAttribute("__PDF_FONT_FACES__", PageContext.REQUEST_SCOPE);
+			System.out.println("lksjfsfjslkfdslkfjdsfsldf fffs = " + ffs );
+			if (ffs == null) {
+				ffs = new ArrayList<FontFaceInfo>();
+				jspContext.setAttribute("__PDF_FONT_FACES__", ffs, PageContext.REQUEST_SCOPE);
+			}
+			ffs.add(ffi);
+			
+		}
+    ]]>
+  </jsp:scriptlet>
+</jsp:root>

@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+	<bean id="staffInfoService" class="com.bomwebportal.mob.ccs.service.StaffInfoServiceImpl">
+		<property name="staffInfoDao" ref="staffInfoDAO" />
+	</bean>
+	
+	<bean id="staffInfoDAO" class="com.bomwebportal.mob.ccs.dao.StaffInfoDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="stockService"
+		class="com.bomwebportal.mob.ccs.service.StockServiceImpl">
+		<property name="stockdao" ref="stockDAO" />
+		<property name="dsStockdao" ref="MobDsStockDAO" />
+		<property name="mobCcsMaintParmLkupService" ref="mobCcsMaintParmLkupService" />
+		<property name="mobDsMrtManagementDAO" ref="mobDsMrtManagementDAO" />
+	</bean>
+	
+	<bean id="stockModelService"
+		class="com.bomwebportal.mob.ccs.service.StockModelServiceImpl">
+		<property name="stockdao" ref="stockDAO" />
+	</bean>
+
+	<bean id="stockModelDetailsService"
+		class="com.bomwebportal.mob.ccs.service.StockModelDetailsServiceImpl">
+		<property name="stockdao" ref="stockDAO" />
+	</bean>
+
+	<bean id="stockInService"
+		class="com.bomwebportal.mob.ccs.service.StockInServiceImpl">
+		<property name="stockdao" ref="stockDAO" />
+		<property name="stockIndao" ref="stockInDAO" />
+	</bean>
+	
+	<bean id="stockUpdateService"
+		class="com.bomwebportal.mob.ccs.service.StockUpdateServiceImpl">
+		<property name="stockdao" ref="stockDAO" />
+		<property name="stockIndao" ref="stockInDAO" />
+		<property name="dsStockdao" ref="MobDsStockDAO" />
+	</bean>
+
+	<bean id="stockDAO" class="com.bomwebportal.mob.ccs.dao.StockDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="stockInDAO" class="com.bomwebportal.mob.ccs.dao.StockInDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="MobDsStockDAO" class="com.bomwebportal.mob.ds.dao.MobDsStockDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="codeLkupDao" class="com.bomwebportal.mob.ccs.dao.CodeLkupDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="codeLkupService" class="com.bomwebportal.mob.ccs.service.CodeLkupServiceImpl">
+		<property name="codeLkupDao" ref="codeLkupDao" />
+	</bean>
+
+
+	<!-- add 20111117 Eliot -->
+	<bean id="goldenMrtAdminDao" class="com.bomwebportal.mob.ccs.dao.GoldenMrtAdminDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="mrtInventoryDao" class="com.bomwebportal.mob.ccs.dao.MrtInventoryDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="hsTradeDescDao" class="com.bomwebportal.dao.HSTradeDescDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean name="goldenMrtAdminService"
+		class="com.bomwebportal.mob.ccs.service.GoldenMrtAdminServiceImpl">
+		<property name="goldenMrtAdminDao" ref="goldenMrtAdminDao" />
+	</bean>
+
+	<bean name="mrtInventoryService"
+		class="com.bomwebportal.mob.ccs.service.MrtInventoryServiceImpl">
+		<property name="mobCcsMrtStatusService" ref="mobCcsMrtStatusService" />
+		<property name="mrtInventoryDao" ref="mrtInventoryDao" />
+		<property name="mobCcsMaintParmLkupService" ref="mobCcsMaintParmLkupService" />
+	</bean>
+
+	<bean name="mobCcsSupportDocService"
+		class="com.bomwebportal.mob.ccs.service.MobCcsSupportDocServiceImpl">
+		<property name="mobCcsSupportDocDAO" ref="mobCcsSupportDocDAO" />
+	</bean>
+
+	<bean id="mobCcsSupportDocDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsSupportDocDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<!-- XBPU11002 Start -->
+	<bean name="mobCcsPaymentAdminService"
+		class="com.bomwebportal.mob.ccs.service.MobCcsPaymentAdminServiceImpl">
+		<property name="codeLkupDao" ref="codeLkupDao" />
+		<property name="mobCcsPaymentTransDAO" ref="mobCcsPaymentTransDAO" />
+		<property name="vasDetailDao" ref="vasDetailDao" />
+	</bean>
+	<bean id="mobCcsPaymentTransDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsPaymentTransDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<!-- XBPU11002 End -->
+
+	<bean id="customerInformationQuotaService"
+		class="com.bomwebportal.service.CustomerInformationQuotaServiceImpl">
+		<property name="customerInformationQuotaDAO" ref="customerInformationQuotaDAO" />
+		<property name="eligibilityDAO" ref="eligibilityDAO" />
+		<property name="custCreditCheckClient" ref="custCreditCheckClient" />
+	</bean>
+
+	<bean id="customerInformationQuotaDAO" class="com.bomwebportal.dao.CustomerInformationQuotaDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="eligibilityDAO" class="com.bomwebportal.dao.EligibilityDAO">
+		<property name="dataSource" ref="BomDS" />
+	</bean>
+
+	<!--  moved to applicationContext.xml 
+	
+	<bean id="custCreditCheckClient" class="com.bomwebportal.wsclient.CustCreditCheckClient">
+		<constructor-arg index="0" value="${ws.keystore}" />
+		<constructor-arg index="1" value="${ws.keyStorePassword}" />
+		<constructor-arg index="2" value="${ws.trustStore}" />
+		<constructor-arg index="3" value="${ws.trustStorePassword}" />
+		<constructor-arg index="4" value="${ws.custCreditCheck}" />
+	</bean>
+	 -->
+	
+	<!-- 20111207 MRT Inventory order -->
+	<bean id="mrtInventoryOrderService"
+		class="com.bomwebportal.mob.ccs.service.MrtInventoryOrderServiceImpl">
+		<property name="mrtInvertoryOrderDAO" ref="mrtInvertoryOrderDAO" />
+	</bean>
+
+	<bean id="mrtInvertoryOrderDAO" class="com.bomwebportal.mob.ccs.dao.MrtInvertoryOrderDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<!-- add 20111214 Eric Basket Associate -->
+	<bean id="mobCcsBasketAssoJobListService"
+		class="com.bomwebportal.mob.ccs.service.MobCcsBasketAssoJobListServiceImpl">
+		<property name="mobCcsBasketAssoJobListDAO" ref="mobCcsBasketAssoJobListDAO" />
+	</bean>
+
+	<bean id="mobCcsBasketAssoJobListTeamAssoService"
+		class="com.bomwebportal.mob.ccs.service.MobCcsBasketAssoJobListTeamAssoServiceImpl">
+		<property name="mobCcsBasketAssoJobListTeamAssoDAO" ref="mobCcsBasketAssoJobListTeamAssoDAO" />
+	</bean>
+
+	<bean id="mobCcsBasketAssoJobListBskAssoService"
+		class="com.bomwebportal.mob.ccs.service.MobCcsBasketAssoJobListBskAssoServiceImpl">
+		<property name="mobCcsBasketAssoJobListBskAssoDAO" ref="mobCcsBasketAssoJobListBskAssoDAO" />
+	</bean>
+
+	<bean id="mobCcsBasketAssoSalesAssignService"
+		class="com.bomwebportal.mob.ccs.service.MobCcsBasketAssoSalesAssignServiceImpl">
+		<property name="mobCcsBasketAssoSalesAssignDAO" ref="mobCcsBasketAssoSalesAssignDAO" />
+	</bean>
+
+	<bean id="mobCcsBasketAssoWBasketService"
+		class="com.bomwebportal.mob.ccs.service.MobCcsBasketAssoWBasketServiceImpl">
+		<property name="mobCcsBasketAssoWBasketDAO" ref="mobCcsBasketAssoWBasketDAO" />
+	</bean>
+
+	<bean id="mobCcsBasketAssoJobListDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsBasketAssoJobListDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="mobCcsBasketAssoJobListTeamAssoDAO"
+		class="com.bomwebportal.mob.ccs.dao.MobCcsBasketAssoJobListTeamAssoDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="mobCcsBasketAssoJobListBskAssoDAO"
+		class="com.bomwebportal.mob.ccs.dao.MobCcsBasketAssoJobListBskAssoDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="mobCcsBasketAssoSalesAssignDAO"
+		class="com.bomwebportal.mob.ccs.dao.MobCcsBasketAssoSalesAssignDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="mobCcsBasketAssoWBasketDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsBasketAssoWBasketDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<!-- Eliot -->
+	<bean id="mobCcsMrtDAO"  class="com.bomwebportal.mob.ccs.dao.MobCcsMrtDAO">
+  		<property name="dataSource" ref="BomWebPortalDS" />
+ 	</bean>
+ 
+ 	<bean id="mobCcsMrtService"  class="com.bomwebportal.mob.ccs.service.MobCcsMrtServiceImpl">
+  		<property name="mobCcsMrtDAO" ref="mobCcsMrtDAO" />
+  		<property name="mnpDAO" ref="mnpDAO" />
+ 	</bean> 
+	
+	<!-- Eliot -->
+	
+	
+	<!-- EricHui -->
+ 	<bean id="mobCcsCeksService"  class="com.bomwebportal.mob.ccs.service.MobCcsCeksServiceImpl">
+		<property name="propertyConfigurer" ref="propertyConfigurer"/>
+		<property name="ceksDao" ref="ceksDao" />
+ 	</bean>
+	<!-- EricHui -->
+
+	<bean id="deliveryDao" class="com.bomwebportal.mob.ccs.dao.DeliveryDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="deliveryService" class="com.bomwebportal.mob.ccs.service.DeliveryServiceImpl">
+		<property name="deliveryDao" ref="deliveryDao" />
+		<property name="mobCcsUtilDAO" ref="mobCcsUtilDAO" />
+		<property name="mobCcsBulkPrintDAO" ref="mobCcsBulkPrintDAO" />
+	</bean>
+	
+	<!-- add by herbert 201120105 -->
+	<bean id="paymentUpfrontDao" class="com.bomwebportal.mob.ccs.dao.PaymentUpfrontDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="mobCcsPaymentUpfrontService" class="com.bomwebportal.mob.ccs.service.MobCcsPaymentUpfrontServiceImpl">
+		<property name="paymentUpfrontDao" ref="paymentUpfrontDao" />
+		<property name="mobCcsPaymentTransDAO" ref="mobCcsPaymentTransDAO" />
+	</bean>
+	
+	<!--  add by EricHui 20120118 -->
+	<bean id="mobCcsBasketAssoWBasketAttrDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsBasketAssoWBasketAttrDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="mobCcsBasketAssoWBasketAttrService"
+		class="com.bomwebportal.mob.ccs.service.MobCcsBasketAssoWBasketAttrServiceImpl">
+		<property name="mobCcsBasketAssoWBasketAttrDAO" ref="mobCcsBasketAssoWBasketAttrDAO" />
+	</bean>
+	<!--  end 20120118 EricHui -->
+	
+	<bean id="mrtReserveDao" class="com.bomwebportal.mob.ccs.dao.MrtReserveDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="mrtReserveService"
+		class="com.bomwebportal.mob.ccs.service.MrtReserveServiceImpl">
+		<property name="mrtReserveDao" ref="mrtReserveDao" />
+	</bean>
+	
+	<!-- add by Erichui 20120209 -->
+	
+	<bean id="mobCcsBulkPrintDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsBulkPrintDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="mobCcsBulkPrintService"
+		class="com.bomwebportal.mob.ccs.service.MobCcsBulkPrintServiceImpl">
+		<property name="mobCcsBulkPrintDAO" ref="mobCcsBulkPrintDAO" />
+	</bean>
+	
+	<!-- end by Erichui 20120209 -->
+	
+	<bean id="stockManualService"
+		class="com.bomwebportal.mob.ccs.service.StockManualServiceImpl">
+		<property name="stockdao" ref="stockDAO" />
+		<property name="mobDsStockManualDAO" ref="mobDsStockManualDAO" />
+	</bean>
+	
+	<bean id="stockManualDetailService"
+		class="com.bomwebportal.mob.ccs.service.StockManualDetailServiceImpl">
+		<property name="stockdao" ref="stockDAO" />
+		<property name="mobDsStockManualDAO" ref="mobDsStockManualDAO" />
+		<property name="orderService" ref="orderService" />
+	</bean>
+	
+	<bean id="stockManualAssgnService"
+		class="com.bomwebportal.mob.ccs.service.StockManualAssgnServiceImpl">
+		<property name="stockdao" ref="stockDAO" />
+		<property name="mobDsStockManualDAO" ref="mobDsStockManualDAO" />
+	</bean>
+	
+	<!-- add by EricHui 20120222 -->
+	<bean id="mobCcsOrderRescueDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsOrderRescueDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="mobCcsIncidentCauseDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsIncidentCauseDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="mobCcsIncidentCauseService" class="com.bomwebportal.mob.ccs.service.MobCcsIncidentCauseServiceImpl">
+		<property name="mobCcsIncidentCauseDAO" ref="mobCcsIncidentCauseDAO" />
+	</bean>
+	<bean id="mobCcsOrderRescueService" class="com.bomwebportal.mob.ccs.service.MobCcsOrderRescueServiceImpl">
+		<property name="mobCcsIncidentCauseService" ref="mobCcsIncidentCauseService" />
+		<property name="mobCcsOrderRescueDAO" ref="mobCcsOrderRescueDAO" />
+	</bean>
+	<!-- end by EricHui 20120222 -->
+	
+	<bean id="mobCcsReportService"
+		class="com.bomwebportal.mob.ccs.service.MobCcsReportServiceImpl">
+		<property name="imageFilePath" value="${imageFilePath}" />
+		<property name="pdfFilePath" value="${pdfFilePath}" />
+		<property name="mobPdfFilePath" value="${mobPdfFilePath}" />
+		<property name="codeLkupDao" ref="codeLkupDao" />
+		<property name="deliveryDao" ref="deliveryDao" />
+		<property name="displayLkupDAO" ref="displayLkupDAO" />
+		<property name="orderDao" ref="orderDao" />
+		<property name="mobCcsSupportDocDAO" ref="mobCcsSupportDocDAO"></property>
+		<property name="paymentUpfrontDAO" ref="paymentUpfrontDao"></property>
+		<property name="hsTradeDescDAO" ref="hsTradeDescDao" />
+		<property name="vasDetailDao" ref="vasDetailDao" />
+		<property name="propertyConfigurer" ref="propertyConfigurer" />
+		<property name="depositService" ref="depositService" />
+		<property name="vasDetailService" ref="vasDetailService" />
+		<property name="codeLkupService" ref="codeLkupService" />
+		<property name="reportService" ref="reportService" />
+		<property name="orderService" ref="orderService" />
+		<property name="mobCcsPaymentUpfrontService" ref="mobCcsPaymentUpfrontService" />
+		<property name="staffInfoDao" ref="staffInfoDAO" />
+		<property name="genericReportHelper" ref="genericReportHelper" />
+		<property name="iGuardDAO" ref="iGuardDAO" />
+		<property name="itemDisplayService" ref="itemDisplayService" />
+	</bean>
+	
+	<bean id="genericReportHelper" class="com.bomwebportal.web.util.GenericReportHelper">
+		<property name="reportService" ref="reportService" />
+		<property name="itemDisplayService" ref="itemDisplayService" />
+	</bean>
+	
+	<bean id="mobCcsOrderSearchService" class="com.bomwebportal.mob.ccs.service.MobCcsOrderSearchServiceImpl">
+		<property name="mobCcsOrderDao" ref="mobCcsOrderDao" />
+		<property name="bomOrderDAO" ref="bomOrderDAO" />
+		<property name="codeLkupDAO" ref="codeLkupDao" />
+	</bean>
+	
+	<bean id="mobCcsUrgentOrderSearchService" class="com.bomwebportal.mob.ccs.service.MobCcsUrgentOrderSearchServiceImpl">
+		<property name="mobCcsOrderDao" ref="mobCcsOrderDao" />
+	</bean>
+	
+	<!-- MobCcs AutoPorcess add by Herbert 20120301 - Start -->
+	
+	<bean id="ccsCreateBomOrder" class="com.bomwebportal.thread.CcsCreateBomOrder">
+		<property name="shopCode" value="${ws.mobccs.shopCode}" />
+		<property name="orderService" ref="orderService" />
+		<property name="customerProfileService" ref="customerProfileService" />
+		<property name="bulkNewActClient" ref="bulkNewActClient" />
+		<property name="mobCcsMrtService" ref="mobCcsMrtService" />
+		<property name="mobileSimInfoService" ref="mobileSimInfoService" />
+	</bean>
+	
+	<bean name="mobCcsAutoProcess" class="com.bomwebportal.quartz.MobCcsAutoProcess">
+		<property name="ccsCreateBomOrder" ref="ccsCreateBomOrder" />
+		<property name="mobCcsOrderDao" ref="mobCcsOrderDao" />
+		<property name="propertyConfigurer" ref="propertyConfigurer" />
+	</bean>
+
+	<bean id="mobCcsJobDetail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="mobCcsAutoProcess" />
+		<property name="targetMethod" value="mobCcsAutoUpdateBomweb_orderStatus" />
+	</bean>
+
+	<bean name="mobCcsSimpleTriggerBean"
+		class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="mobCcsJobDetail" />
+		<!-- start Delay 5mins. -->
+		<property name="startDelay" value="300000" />
+		<!-- update every 15 sec. -->
+		<property name="repeatInterval" value="15000" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="jobData">
+					<ref bean="mobCcsAutoProcess" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<!-- MobCcs AutoPorcess add by Herbert 20120301 - End -->
+	
+	<bean id="bomOrderDAO" class="com.bomwebportal.mob.dao.bom.BomOrderDAO">
+		<property name="dataSource" ref="BomDS" />
+	</bean>
+	
+	<bean id="stockQuantityEnquiryService" class="com.bomwebportal.mob.ccs.service.StockQuantityEnquiryServiceImpl">
+		<property name="stockdao" ref="stockDAO" />
+		<property name="dsStockdao" ref="MobDsStockDAO" />
+	</bean>
+	
+	<!-- add by EricHui 20120314 -->
+	<bean id="mobCcsSalesInfoDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsSalesInfoDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="mobCcsApprovalLogDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsApprovalLogDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="mobCcsSalesInfoService" class="com.bomwebportal.mob.ccs.service.MobCcsSalesInfoServiceImpl">
+		<property name="mobCcsSalesInfoDAO" ref="mobCcsSalesInfoDAO" />
+		<property name="bomSalesInfoDAO" ref="bomSalesInfoDAO" />
+	</bean>
+	<bean id="mobCcsApprovalLogService" class="com.bomwebportal.mob.ccs.service.MobCcsApprovalLogServiceImpl">
+		<property name="mobCcsApprovalLogDAO" ref="mobCcsApprovalLogDAO" />
+	</bean>
+	
+	<!--  add by EricHui 20120315 -->
+	<bean id="mobCcsMrtStatusDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsMrtStatusDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="mobCcsMrtStatusService" class="com.bomwebportal.mob.ccs.service.MobCcsMrtStatusServiceImpl">
+		<property name="mobCcsMrtStatusDAO" ref="mobCcsMrtStatusDAO" />
+	</bean>
+	
+	<!-- add by EricHui 20120320 -->
+	<bean id="mobCcsOrderRemarkDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsOrderRemarkDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="mobCcsOrderRemarkService" class="com.bomwebportal.mob.ccs.service.MobCcsOrderRemarkServiceImpl">
+		<property name="mobCcsOrderRemarkDAO" ref="mobCcsOrderRemarkDAO"></property>
+	</bean>
+	
+	<!-- add by EricHui 20120405 -->
+	<bean id="mobCcsDoaRequestDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsDoaRequestDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="mobCcsDoaRequestSelectedCdDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsDoaRequestSelectedCdDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="mobCcsDoaRequestService" class="com.bomwebportal.mob.ccs.service.MobCcsDoaRequestServiceImpl">
+		<property name="orderService" ref="orderService" />
+		<property name="mobCcsOrderRemarkService" ref="mobCcsOrderRemarkService" />
+		<property name="mobCcsDoaRequestDAO" ref="mobCcsDoaRequestDAO" />
+		<property name="mobCcsDoaRequestSelectedCdDAO" ref="mobCcsDoaRequestSelectedCdDAO" />
+		<property name="mobCcsDoaItemDAO" ref="mobCcsDoaItemDAO" />
+	</bean>
+	
+	<!-- add by EricHui 20120411 Force Cancel Fallout -->
+	<bean id="mobCcsForceCancelDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsForceCancelDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="mobCcsForceCancelService" class="com.bomwebportal.mob.ccs.service.MobCcsForceCancelServiceImpl">
+		<property name="mobCcsCancelService" ref="mobCcsCancelService" />
+		<property name="mobCcsForceCancelDAO" ref="mobCcsForceCancelDAO" />
+	</bean>
+	<bean name="mobCcsForceCancelFalloutAutoProcessJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="com.bomwebportal.quartz.MobCcsForceCancelFalloutAutoProcess" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="mobCcsForceCancelService" value-ref="mobCcsForceCancelService" />
+				<entry key="propertyConfigurer" value-ref="propertyConfigurer" />
+			</map>
+		</property>
+	</bean>
+	<bean id="mobCcsForceCancelFalloutAutoProcessTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="mobCcsForceCancelFalloutAutoProcessJob" />
+		<property name="cronExpression" value="${mobccs.forceCancelFallout.schedule}" />
+	</bean>
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+<!-- 				<ref bean="mobCcsForceCancelFalloutAutoProcessTrigger" /> -->
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Add by Herbert 20120413 -->
+	<bean id="mobCcsOrderHistoryDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsOrderHistoryDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="orderHistoryService" class="com.bomwebportal.mob.ccs.service.OrderHistoryServiceImpl">
+		<property name="mobCcsOrderHistoryDAO" ref="mobCcsOrderHistoryDAO" />
+	</bean>
+	
+	<bean id="ccsCreateBomOrderHistory" class="com.bomwebportal.thread.CcsCreateBomOrderHistory">
+		<property name="orderService" ref="orderService" />
+		<property name="shopCode" value="${ws.mobccs.shopCode}" />
+		<property name="orderHistoryService" ref="orderHistoryService" />
+		<property name="bulkNewActClient" ref="bulkNewActClient" />
+		<property name="mobCcsMrtService" ref="mobCcsMrtService" />
+		<property name="mobileSimInfoService" ref="mobileSimInfoService" />
+	</bean>
+	
+	<bean name="mobCcsHistoryAutoProcess" class="com.bomwebportal.quartz.MobCcsHistoryAutoProcess">
+		<property name="ccsCreateBomOrderHistory" ref="ccsCreateBomOrderHistory" />
+		<property name="mobCcsOrderHistoryDAO" ref="mobCcsOrderHistoryDAO" />
+		<property name="mobCcsOrderDao" ref="mobCcsOrderDao" />
+		<property name="propertyConfigurer" ref="propertyConfigurer" />
+	</bean>
+	
+	<bean id="mobCcsHistJobDetail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="mobCcsHistoryAutoProcess" />
+		<property name="targetMethod" value="execute" />
+	</bean>
+
+	<bean name="mobCcsHistSimpleTriggerBean"
+		class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="mobCcsHistJobDetail" />
+		<!-- start Delay 5mins. -->
+		<property name="startDelay" value="300000" />
+		<!-- update every 15 sec. -->
+		<property name="repeatInterval" value="15000" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="jobData">
+					<ref bean="mobCcsHistoryAutoProcess" />
+				</entry>
+			</map>
+		</property>
+	</bean>	
+	
+	<!-- add by Erichui 20120417 -->
+	<bean id="mobCcsCancelService" class="com.bomwebportal.mob.ccs.service.MobCcsCancelServiceImpl">
+		<property name="orderService" ref="orderService" />
+		<property name="mobCcsOrderRemarkService" ref="mobCcsOrderRemarkService" />
+	</bean>
+	
+	<!-- add by EricHui 20120426 -->
+	<bean id="mappingLkupDAO" class="com.bomwebportal.mob.ccs.dao.MappingLkupDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="mappingLkupService" class="com.bomwebportal.mob.ccs.service.MappingLkupServiceImpl">
+		<property name="mappingLkupDAO" ref="mappingLkupDAO" />
+	</bean>
+	
+	<bean id="mobCcsUtilService" class="com.bomwebportal.mob.ccs.service.MobCcsUtilServiceImpl">
+		<property name="mobCcsUtilDAO" ref="mobCcsUtilDAO" />
+	</bean>
+	
+	<bean id="mobCcsUtilDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsUtilDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<!-- add by EricHui 20120504 -->
+	
+	<bean id="mobCcsDoaItemDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsDoaItemDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="displayLkupDAO" class="com.bomwebportal.dao.DisplayLkupDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<!-- add by EricHui 20120514 -->
+	<bean id="mobCcsSbOrderAmendDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsSbOrderAmendDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="mobCcsSbOrderAmendService" class="com.bomwebportal.mob.ccs.service.MobCcsSbOrderAmendServiceImpl">
+		<property name="mobCcsSbOrderAmendDAO" ref="mobCcsSbOrderAmendDAO" />
+	</bean>
+	<bean id="mobCcsDoaUpdateMrtDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsDoaUpdateMrtDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="mobCcsOrderFalloutDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsOrderFalloutDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="mobCcsOrderFalloutService" class="com.bomwebportal.mob.ccs.service.MobCcsOrderFalloutServiceImpl">
+		<property name="mobCcsOrderFalloutDAO" ref="mobCcsOrderFalloutDAO" />
+	</bean>
+	<bean id="mobCcsDoaUpdateMrtService" class="com.bomwebportal.mob.ccs.service.MobCcsDoaUpdateMrtServiceImpl">
+		<property name="orderService" ref="orderService" />
+		<property name="mobCcsSbOrderAmendService" ref="mobCcsSbOrderAmendService" />
+		<property name="deliveryService" ref="deliveryService" />
+		<property name="mobCcsOrderSearchService" ref="mobCcsOrderSearchService" />
+		<property name="mobCcsDoaRequestService" ref="mobCcsDoaRequestService" />
+		<property name="mobCcsOrderFalloutService" ref="mobCcsOrderFalloutService" />
+		<property name="mnpService" ref="mnpService" />
+		<property name="mobCcsMrtService" ref="mobCcsMrtService" />
+		<property name="mobCcsDoaUpdateMrtDAO" ref="mobCcsDoaUpdateMrtDAO" />
+		<property name="bServiceDAO" ref="bServiceDAO" />
+		<property name="mobCcsMaintParmLkupService" ref="mobCcsMaintParmLkupService" />
+	</bean>
+
+	<!-- add by Herbert 20120605 -->
+	<bean id="mobCcsCsiCaseDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsCsiCaseDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="mobCcsCsiCaseService" class="com.bomwebportal.mob.ccs.service.MobCcsCsiCaseServiceImpl">
+		<property name="mobCcsCsiCaseDAO" ref="mobCcsCsiCaseDAO" />
+	</bean>
+	
+	<!-- add by Herbert 20120605 -->
+	<bean id="mobCcsCsiCaseLogDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsCsiCaseLogDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="mobCcsCsiCaseLogService" class="com.bomwebportal.mob.ccs.service.MobCcsCsiCaseLogServiceImpl">
+		<property name="mobCcsCsiCaseLogDAO" ref="mobCcsCsiCaseLogDAO" />
+	</bean>
+	
+	<!-- add by Gary Lai 20120601 -->
+	<bean id="mobCcsUrgentDeliveryReportService" class="com.bomwebportal.mob.ccs.service.MobCcsUrgentDeliveryReportServiceImpl">
+		<property name="mobCcsUrgentDeliveryReportDAO" ref="mobCcsUrgentDeliveryReportDAO" />
+	</bean> 
+	<bean id="mobCcsUrgentDeliveryReportDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsUrgentDeliveryReportDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean> 
+
+	<!-- add by Herbert 20120611 -->
+	<bean id="mobCcsCsiSmsLogDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsCsiSmsLogDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="mobCcsCsiSmsLogService" class="com.bomwebportal.mob.ccs.service.MobCcsCsiSmsLogServiceImpl">
+		<property name="mobCcsCsiSmsLogDAO" ref="mobCcsCsiSmsLogDAO" />
+	</bean>
+	
+	<!-- add by ErichHui 20120619 -->
+	<bean id="mobCcsCcsChannelDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsCcsChannelDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="mobCcsCcsChannelService" class="com.bomwebportal.mob.ccs.service.MobCcsCcsChannelServiceImpl">
+		<property name="mobCcsCcsChannelDAO" ref="mobCcsCcsChannelDAO" />
+	</bean>
+
+	<!-- add by erichui 20121101 -->
+	<bean id="mobCcsUrgentOrderAlertService" class="com.bomwebportal.mob.ccs.service.MobCcsUrgentOrderAlertServiceImpl">
+		<property name="mailService" ref="mailService"/>
+		<property name="codeLkupService" ref="codeLkupService"/>
+		<property name="senderEmailAddr" value="sbmadmin@pccw.com"/>
+		<property name="receiverEmailAddr" value="${mobccs.urgentOrderAlert.to}"/>
+		<property name="emailTemplate" value="classpath:MobCcsUrgentOrderEmailTemplate.txt"/>
+	</bean>
+	
+	<!-- add by erichui 20130206 -->
+	<bean id="mobCcsEligibilityDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsEligibilityDAO">
+		<property name="dataSource" ref="BomDS" />
+	</bean>
+	<bean id="mobCcsEligibilityService" class="com.bomwebportal.mob.ccs.service.MobCcsEligibilityServiceImpl">
+		<property name="mobCcsEligibilityDAO" ref="mobCcsEligibilityDAO" />
+	</bean>
+	<!-- add by erichui 20130411 -->
+	<bean id="mobCcsMaintParmLkupDAO" class="com.bomwebportal.mob.ccs.dao.MobCcsMaintParmLkupDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="mobCcsMaintParmLkupService" class="com.bomwebportal.mob.ccs.service.MobCcsMaintParmLkupServiceImpl">
+		<property name="mobCcsMaintParmLkupDAO" ref="mobCcsMaintParmLkupDAO" />
+	</bean>
+	
+	 <bean id="bCccLookupDAO" class="com.bomwebportal.mob.dao.bom.BCccLookupDAO">
+    <property name="dataSource" ref="BomDS" />
+  </bean>
+  <bean id="bCccLookupService" class="com.bomwebportal.mob.ccs.service.BCccLookupServiceImpl">
+    <property name="bCccLookupDAO" ref="bCccLookupDAO" />
+  </bean> 
+  
+  
+ 	 <!-- added by Fiona Chan 20130926 -->
+	
+	<bean id="specialMRTReserveDao" class="com.bomwebportal.mob.ccs.dao.SpecialMRTReserveDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	
+	<bean id="specialMRTReserveService" class="com.bomwebportal.mob.ccs.service.SpecialMRTReserveServiceImpl">
+		<property name="specialMRTReserveDao" ref="specialMRTReserveDao" />
+	</bean>
+	
+	
+	<bean id="mobCcsSpecialMRTSummaryDao" class="com.bomwebportal.mob.ccs.dao.MobCcsSpecialMRTSummaryDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	
+	<bean id="mobCcsSpecialMRTSummaryService" class="com.bomwebportal.mob.ccs.service.MobCcsSpecialMRTSummayServiceImpl">
+		<property name="mobCcsSpecialMRTSummaryDao" ref="mobCcsSpecialMRTSummaryDao"/>
+	</bean>
+
+
+	<!-- add by dennis 20130926 -->
+	<bean id="specialMrtRequestDAO" class="com.bomwebportal.mob.ccs.dao.SpecialMrtRequestDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="mobCcsSpecialMrtRequestService" class="com.bomwebportal.mob.ccs.service.MobCcsSpecialMrtRequestServiceImpl">
+		<property name="specialMrtRequestDAO" ref="specialMrtRequestDAO" />
+		<property name="mrtInventoryDAO" ref="mrtInventoryDao" />
+	</bean>
+	<bean id="mobReqLogDAO" class="com.bomwebportal.dao.MobReqLogDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<bean id="mobReqLogService" class="com.bomwebportal.service.MobReqLogServiceImpl">
+		<property name="mobReqLogDAO" ref="mobReqLogDAO" />
+	</bean>
+	
+	<!-- add by dennis 20140204 -->
+	<bean id="bomSalesInfoDAO" class="com.bomwebportal.mob.dao.bom.BomSalesInfoDAO">
+		<property name="dataSource" ref="BomDS" />
+	</bean>
+	
+	<!--  add by Tommy 20160929 for IguardCareCash -->
+	<bean id="ordDocService" class="com.bomwebportal.service.OrdDocServiceImpl">
+		<property name="ordDocDAO" ref="ordDocDAO"/>
+		<property name="allOrdDocWriteDAO" ref="allOrdDocWriteDAO"/>
+		<property name="orderDAO" ref="orderDao" />
+		<property name="allOrdDocAssgnDAO" ref="allOrdDocAssgnDAO" />
+		<property name="allOrdDocAssgnWriteDAO" ref="allOrdDocAssgnWriteDAO" />		
+	</bean>
+		<!--  add by Tommy 20160929 for IguardCareCash -->
+	 <bean id="orderEsignatureService" class="com.bomwebportal.service.OrderEsignatureServiceImpl">
+		<property name="mailService" ref="mailService"/>
+		<property name="orderService" ref="orderService"/>
+		<property name="emailTemplateDAO" ref="emailTemplateDAO"/>
+		<property name="senderEmailAddr" value="${senderEmailAddr}"/>
+		<property name="senderEmailName" value="${senderEmailName}"/>
+		<property name="senderEmailAddrCsl" value="${senderEmailAddr.csl}"/>
+		<property name="senderEmailNameCsl" value="${senderEmailName.csl}"/>
+		
+		<property name="senderEmailAddrHKTcsl" value="${senderEmailAddr.HKT.csl}"/>
+		<property name="senderEmailAddrcslcsl" value="${senderEmailAddr.csl.csl}"/>
+		<property name="senderEmailAddr1010csl" value="${senderEmailAddr.1010.csl}"/>
+		<property name="senderEmailAddr10101010" value="${senderEmailAddr.1010.1010}"/>
+		
+		<property name="senderEmailNameHKTcsl" value="${senderEmailName.HKT.csl}"/>
+		<property name="senderEmailNamecslcsl" value="${senderEmailName.csl.csl}"/>
+		<property name="senderEmailName1010csl" value="${senderEmailName.1010.csl}"/>
+		<property name="senderEmailName10101010" value="${senderEmailName.1010.1010}"/>
+		
+		<property name="reportServerPath" value="${dataFilePath}"/>
+		<property name="SMSAFPath" value="${SMSAFPath}"/>
+		<property name="SMSQRPath" value="${SMSQRPath}"/>
+		<property name="CPQSMSQRPath" value="${CPQSMSQRPath}"/>
+		<property name="ltsEmailSenderLkupCacheService" ref="ltsEmailSenderLkupCacheService"/>
+		<property name="orderRetrieveLtsService" ref="orderRetrieveLtsService"/>
+		<property name="ltsMessageSource" ref="ltsMessageSource" />
+		<property name="ordEmailReqService" ref="ordEmailReqService"/>
+
+		<property name="imsEmailParamHelperDAO" ref="imsEmailParamHelperDAO"/> 
+		<property name="customerProfileService" ref="customerProfileService"/>
+		<property name="emailWEB100Link" value="${emailWEB100Link}"></property>
+		<property name="emailWEB100Link_standalone" value="${emailWEB100Link_standalone}"></property>
+		<property name="imsOrderDetailService" ref="imsOrderDetailService"/>
+		<property name="srdAmendUrl" value="${srdAmendUrl}"></property>
+		<property name="nsdFormUploadUrl" value="${nsdFormUploadUrl}"></property>
+		<property name="mobMessageSource" ref="mobMessageSource" />
+	</bean> 
+	 <bean id="ordEmailReqService" class="com.bomwebportal.service.OrdEmailReqServiceImpl">
+	 </bean>
+</beans>

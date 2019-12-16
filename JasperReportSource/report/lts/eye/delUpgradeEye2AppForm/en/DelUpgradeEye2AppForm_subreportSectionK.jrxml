@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DelUpgradeEye2AppForm_subreportWebSite" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="636"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<field name="printTermsCondition" class="java.lang.Boolean"/>
+	<field name="thirdPartyInd" class="java.lang.Boolean"/>
+	<field name="eyeCustSignatureStream" class="java.io.InputStream"/>
+	<field name="resTelCustSignatureStream" class="java.io.InputStream"/>
+	<field name="applicationDate" class="java.lang.String"/>
+	<field name="eyeApplication" class="java.lang.Boolean"/>
+	<field name="resTelApplication" class="java.lang.Boolean"/>
+	<field name="orderMode" class="java.lang.String"/>
+	<field name="customerCopy" class="java.lang.Boolean"/>
+	<field name="sectionK.sectionTitle" class="java.lang.String"/>
+	<field name="sectionK.existPaymentMethodInd" class="java.lang.String"/>
+	<field name="sectionK.paymentMethodInd" class="java.lang.String"/>
+	<field name="sectionK.cardType" class="java.lang.String"/>
+	<field name="sectionK.cardHolderName" class="java.lang.String"/>
+	<field name="sectionK.cardNum" class="java.lang.String"/>
+	<field name="sectionK.expiryDate" class="java.lang.String"/>
+	<field name="sectionK.creditCardStatement" class="java.lang.String"/>
+	<field name="sectionK.autoPayStatement" class="java.lang.String"/>
+	<field name="sectionK.cardVerified" class="java.lang.Boolean"/>
+	<field name="sectionK.acctNum" class="java.lang.String"/>
+	<field name="sectionK.acctHolderName" class="java.lang.String"/>
+	<field name="sectionK.idDocType" class="java.lang.String"/>
+	<field name="sectionK.idDocNum" class="java.lang.String"/>
+	<field name="sectionK.bankCd" class="java.lang.String"/>
+	<field name="sectionK.branchCd" class="java.lang.String"/>
+	<field name="sectionK.bankAcctNum" class="java.lang.String"/>
+	<field name="sectionK.cardHolderSignatureStream" class="java.io.InputStream"/>
+	<field name="sectionK.autoPayCustSignatureStream" class="java.io.InputStream"/>
+	<field name="sectionK.existPaymentStatement" class="java.lang.String"/>
+	<field name="sectionK.prepaymentList" class="java.util.ArrayList"/>
+	<field name="sectionK.prepaymentListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionK.salesMemoNum" class="java.lang.String"/>
+	<field name="sectionK.salesMemoNumEmpty" class="java.lang.Boolean"/>
+	<field name="sectionK.thirdPartyContentA" class="java.lang.String"/>
+	<field name="sectionK.thirdPartyContentB" class="java.lang.String"/>
+	<field name="sectionK.thirdPartyContentC" class="java.lang.String"/>
+	<field name="sectionK.thirdPartyIdDocType" class="java.lang.String"/>
+	<field name="sectionK.thirdPartyIdDocNum" class="java.lang.String"/>
+	<field name="sectionK.thirdPartyCreditCard" class="java.lang.Boolean"/>
+	<field name="sectionK.thirdPartyCreditCardStatement" class="java.lang.String"/>
+	<field name="sectionK.olsPrepaymentAmt" class="java.lang.String"/>
+	<field name="sectionK.olsPrepaymentText" class="java.lang.String"/>
+	<field name="sectionK.deviceType" class="java.lang.String"/>
+	<field name="orderType" class="java.lang.String"/>
+	<field name="sectionA.customer.signoffMode" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="1" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Prevent">
+			<staticText>
+				<reportElement x="5" y="13" width="57" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECTION K:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="62" y="13" width="483" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-Arial" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionK.sectionTitle}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="10" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="29" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="10" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="10" width="1" height="20"/>
+			</line>
+		</band>
+		<band height="40" splitType="Prevent">
+			<printWhenExpression><![CDATA[!$F{sectionK.prepaymentListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="540" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[PREPAYMENT:]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="1" y="18" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionK.prepaymentList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/en/DelUpgradeEye2AppForm_subreportDescription.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[!$F{sectionK.salesMemoNumEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField>
+				<reportElement x="103" y="2" width="100" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionK.salesMemoNum}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="2" width="95" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Sales Memo number:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="103" y="16" width="100" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{sectionK.paymentMethodInd}.isEmpty()
+&& !$F{sectionK.existPaymentMethodInd}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="196" height="15">
+					<printWhenExpression><![CDATA[!"SBA".equals($F{orderType})]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[EXISTING PCCW PAYMENT METHOD:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="204" y="2" width="167" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["C".equals($F{sectionK.existPaymentMethodInd}) ? "Credit Card" :
+   ("A".equals($F{sectionK.existPaymentMethodInd}) ? "Bank Auto-pay" :
+   ("M".equals($F{sectionK.existPaymentMethodInd}) ? "Cash" : ""))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="2" width="196" height="15">
+					<printWhenExpression><![CDATA["SBA".equals($F{orderType})]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[PAYMENT METHOD:]]></text>
+			</staticText>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{sectionK.paymentMethodInd}.isEmpty()
+&& !$F{sectionK.existPaymentMethodInd}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField>
+				<reportElement x="5" y="2" width="540" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionK.existPaymentStatement}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[!$F{sectionK.paymentMethodInd}.isEmpty()
+&& $F{sectionK.existPaymentMethodInd}.isEmpty() && !"O".equals($F{orderMode})]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="119" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[PAYMENT METHOD:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="127" y="2" width="167" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["C".equals($F{sectionK.paymentMethodInd}) ? "Credit Card" :
+   ("A".equals($F{sectionK.paymentMethodInd}) ? "Bank Auto-pay" :
+   ("M".equals($F{sectionK.paymentMethodInd}) ? "Cash" : ""))]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[!$F{sectionK.acctNum}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="119" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Account No.:
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="127" y="2" width="343" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionK.acctNum}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="127" y="16" width="343" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA["C".equals($F{sectionK.paymentMethodInd})
+&& $F{sectionK.thirdPartyCreditCard}.booleanValue()
+&& !$F{sectionK.thirdPartyContentA}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField>
+				<reportElement x="5" y="3" width="462" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionK.thirdPartyContentA}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA["C".equals($F{sectionK.paymentMethodInd}) && !"O".equals($F{orderMode})]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="3" width="462" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[CREDIT CARD PAYMENT AUTHORISATION & CARD HOLDER'S SIGNAURE]]></text>
+			</staticText>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA["C".equals($F{sectionK.paymentMethodInd}) && "O".equals($F{orderMode})]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="3" width="462" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[CREDIT CARD PAYMENT AUTHORISATION]]></text>
+			</staticText>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA["C".equals($F{sectionK.paymentMethodInd})
+&& $F{sectionK.thirdPartyCreditCard}.booleanValue()
+&& !$F{sectionK.thirdPartyContentB}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField>
+				<reportElement x="5" y="3" width="462" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionK.thirdPartyContentB}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA["C".equals($F{sectionK.paymentMethodInd})]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="3" width="80" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Type:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="3" width="100" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["01".equals($F{sectionK.cardType}) ? "Visa Card" :
+   ("02".equals($F{sectionK.cardType}) ? "MasterCard" :
+   ("03".equals($F{sectionK.cardType}) ? "OTB" :
+   ("04".equals($F{sectionK.cardType}) ? "American Express" : "")))]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="130" y="17" width="100" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA["C".equals($F{sectionK.paymentMethodInd}) && !"O".equals($F{orderMode})]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="3" width="122" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Cardholder Name: (in English)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="130" y="17" width="199" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="130" y="3" width="199" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionK.cardHolderName}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40" splitType="Prevent">
+			<printWhenExpression><![CDATA["C".equals($F{sectionK.paymentMethodInd})]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="3" width="80" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Credit Card No.: ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="130" y="17" width="140" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="130" y="3" width="140" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{customerCopy}.booleanValue()? $F{sectionK.cardNum}.substring( 0, 5 ) + "******" + $F{sectionK.cardNum}.substring( 12, 15 ) :$F{sectionK.cardNum}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="279" y="4" width="12" height="12">
+					<printWhenExpression><![CDATA[!"O".equals($F{orderMode})]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<line>
+				<reportElement x="280" y="11" width="4" height="4">
+					<printWhenExpression><![CDATA[$F{sectionK.cardVerified}.booleanValue() && !"O".equals($F{orderMode})]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="284" y="6" width="6" height="10">
+					<printWhenExpression><![CDATA[$F{sectionK.cardVerified}.booleanValue() && !"O".equals($F{orderMode})]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="295" y="3" width="39" height="15">
+					<printWhenExpression><![CDATA[!"O".equals($F{orderMode})]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Verified]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="336" y="3" width="61" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Expiry Date:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="403" y="3" width="85" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionK.expiryDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="492" y="3" width="55" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[(MM / YYYY)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="336" y="19" width="215" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[(must be more than 3 months after Application Date)]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="1" y="39" width="555" height="1" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[!$F{sectionK.thirdPartyCreditCard}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="403" y="17" width="144" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="22" splitType="Prevent">
+			<printWhenExpression><![CDATA["C".equals($F{sectionK.paymentMethodInd})
+&& $F{sectionK.thirdPartyCreditCard}.booleanValue()
+&& !"C".equals($F{orderMode})
+&& !"P".equals($F{orderMode})]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="22" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="22" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField>
+				<reportElement x="279" y="3" width="254" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionK.thirdPartyIdDocNum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="3" width="263" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Third Party Credit Holder " +
+   ("PASS".equals($F{sectionK.thirdPartyIdDocType}) ?  "Passport" : "HKID") +
+   " No.:"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="279" y="17" width="254" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="1" y="21" width="555" height="1" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[$F{sectionK.thirdPartyContentC}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+		</band>
+		<band height="22" splitType="Prevent">
+			<printWhenExpression><![CDATA["C".equals($F{sectionK.paymentMethodInd})
+&& $F{sectionK.thirdPartyCreditCard}.booleanValue()
+&& !$F{sectionK.thirdPartyContentC}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="21" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="22" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="22"/>
+			</line>
+			<textField>
+				<reportElement x="5" y="3" width="462" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionK.thirdPartyContentC}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="100" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& "C".equals($F{sectionK.paymentMethodInd})
+&& !"O".equals($F{orderMode})
+&& !"C".equals($F{orderMode})
+&& (!"P".equals($F{orderMode}) || ("P".equals($F{orderMode}) && "R".equals($F{sectionA.customer.signoffMode})))]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="100" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="100" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="335" y="0" width="1" height="100" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="339" y="3" width="113" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Card Holder Signature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="339" y="81" width="17" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="5" y="3" width="325" height="93" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[!$F{sectionK.thirdPartyCreditCard}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionK.creditCardStatement}]]></textFieldExpression>
+			</textField>
+			<image isUsingCache="false" onErrorType="Blank">
+				<reportElement positionType="FixRelativeToBottom" x="355" y="68" width="133" height="28"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<imageExpression class="java.io.InputStream"><![CDATA[$F{sectionK.cardHolderSignatureStream}]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="5" y="3" width="325" height="93" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[$F{sectionK.thirdPartyCreditCard}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionK.thirdPartyCreditCardStatement}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& "C".equals($F{sectionK.paymentMethodInd})
+&& "O".equals($F{orderMode})
+&& $F{sectionK.thirdPartyCreditCard}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="22" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="22" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="5" y="3" width="528" height="15" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionK.thirdPartyCreditCardStatement}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="23" splitType="Prevent">
+			<printWhenExpression><![CDATA["A".equals($F{sectionK.paymentMethodInd}) && $F{printTermsCondition}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="23" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="23" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="4" width="120" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Bank:
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="127" y="4" width="343" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionK.bankCd}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="127" y="18" width="343" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="110" splitType="Prevent">
+			<printWhenExpression><![CDATA["A".equals($F{sectionK.paymentMethodInd}) && !$F{printTermsCondition}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="110" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="110" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="194" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Account No.:
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="202" y="2" width="343" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionK.acctNum}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="19" width="194" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Bank Account Holder Name:
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="202" y="19" width="343" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionK.acctHolderName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="202" y="36" width="343" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionK.idDocNum}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="53" width="194" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Bank:
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="202" y="53" width="343" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionK.bankCd}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="71" width="194" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Branch:
+
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="202" y="71" width="343" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionK.branchCd}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="89" width="194" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Bank Account No.:
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="202" y="89" width="343" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionK.bankAcctNum}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="202" y="16" width="343" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="202" y="33" width="343" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="202" y="50" width="343" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="202" y="67" width="343" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="202" y="85" width="343" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="202" y="103" width="343" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="5" y="36" width="194" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Bank Account Holder " +
+   ("PASS".equals($F{sectionK.idDocType}) ? "Passport" : "HKID") +
+   " No.:"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="100" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& "A".equals($F{sectionK.paymentMethodInd})
+&& !"C".equals($F{orderMode})
+&& (!"P".equals($F{orderMode}) || ("P".equals($F{orderMode}) && "R".equals($F{sectionA.customer.signoffMode})))]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="100" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="100" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="335" y="0" width="1" height="100" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="338" y="2" width="129" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Customer Signature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="85" width="17" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="5" y="3" width="325" height="93"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionK.autoPayStatement}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<image isUsingCache="false" onErrorType="Blank">
+				<reportElement x="355" y="72" width="133" height="28"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<imageExpression class="java.io.InputStream"><![CDATA[$F{sectionK.autoPayCustSignatureStream}]]></imageExpression>
+			</image>
+		</band>
+		<band height="1" splitType="Prevent">
+			<line>
+				<reportElement x="0" y="0" width="556" height="1"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

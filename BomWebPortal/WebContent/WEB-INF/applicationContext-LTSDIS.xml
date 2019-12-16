@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+	<bean id="ltsTerminateOrderService" class="com.bomwebportal.lts.service.disconnect.LtsTerminateOrderServiceImpl">
+        <property name="orderSuspendLtsService" ref="orderSuspendLtsService" />
+        <property name="orderRetrieveLtsService" ref="orderRetrieveLtsService" />
+        <property name="orderPostSubmitLtsService" ref="orderPostSubmitLtsService" />
+        <property name="orderCancelLtsService" ref="orderCancelLtsService" />
+		<property name="disconnectOrderCreateService" ref="disconnectOrderCreateService" />
+		<property name="disconnectOrderRecallService" ref="disconnectOrderRecallService" />
+		<property name="disconnectOrderModifyService" ref="disconnectOrderModifyService" />
+    </bean>
+    
+    <bean id="disconnectOrderCreateService" class="com.bomwebportal.lts.service.order.DisconnectOrderCreateServiceImpl">
+        <property name="ltsAppointmentService" ref="ltsAppointmentService" />
+        <property name="ltsRetrieveFsaService" ref="ltsRetrieveFsaService" />
+        <property name="ltsSalesInfoService" ref="ltsSalesInfoService" />
+        <property name="offerChangeService" ref="offerChangeService" />
+    </bean>
+    
+    <bean id="disconnectOrderModifyService" class="com.bomwebportal.lts.service.order.DisconnectOrderModifyServiceImpl" parent="disconnectOrderCreateService">
+        <property name="ltsOrderDocumentService" ref="ltsOrderDocumentService" />
+        <property name="orderRetrieveLtsService" ref="orderRetrieveLtsService" />
+        <property name="orderModifyDao" ref="orderModifyDao" />
+    </bean>
+    
+    <bean id="disconnectOrderRecallService" class="com.bomwebportal.lts.service.order.DisconnectOrderRecallServiceImpl">
+        <property name="ltsPaymentService" ref="ltsPaymentService" />
+        <property name="addressRolloutService" ref="addressRolloutService" />
+        <property name="ltsRelatedPcdOrderService" ref="ltsRelatedPcdOrderService" />
+        <property name="ltsOrderDocumentService" ref="ltsOrderDocumentService" />
+		<property name="relationshipCodeLkupCacheService" ref="relationshipCodeLkupCacheService" />
+		<property name="ltsOfferService" ref="ltsOfferService" />
+		<property name="orderRetrieveLtsService" ref="orderRetrieveLtsService" />
+		<property name="loggingService" ref="loggingService" />
+		<property name="sbOrderInfoLtsService" ref="sbOrderInfoLtsService" />
+		<property name="serviceProfileLtsService" ref="serviceProfileLtsService" />
+    </bean>
+    
+	<bean id="waiveLossPenaltyReasonLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="WAIVE_PENALTY_CD" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>
+	
+	<bean name="waiveLossPenaltyReasonLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="waiveLossPenaltyReasonLkupDao" />
+	</bean>
+	
+	<bean name="summaryDisconnectService" class="com.bomwebportal.lts.service.disconnect.SummaryDisconnectServiceImpl">
+		<property name="ltsOfferService" ref="ltsOfferService"/>
+		<property name="ltsPaymentService" ref="ltsPaymentService"/>
+		<property name="ltsBasketService" ref="ltsBasketService"/>
+		<property name="ltsDeviceService" ref="ltsDeviceService"/>
+		<property name="creditCardTyepCodeLkupCacheService" ref="creditCardTyepCodeLkupCacheService"/>
+		<property name="serviceProfileLtsDrgService" ref="serviceProfileLtsDrgService"/>
+		<property name="idDocTypeLkupCacheService" ref="idDocTypeLkupCacheService"/>
+		<property name="penaltyHandleLtsLkupCacheService" ref="penaltyHandleLtsLkupCacheService"/>
+		<property name="recontractSrvHandleCacheService" ref="recontractSrvHandleCacheService"/>
+		<property name="recontractModeCacheService" ref="recontractModeCacheService"/>
+		<property name="erEyeHandleCacheService" ref="erEyeHandleCacheService"/>
+		<property name="erDelHandleCacheService" ref="erDelHandleCacheService"/>
+		<property name="orderDetailDao" ref="orderDetailDao"/>
+		<property name="orderDetailService" ref="orderDetailService"/>
+		<property name="eyeDisconnectReasonLkupCacheService" ref="eyeDisconnectReasonLkupCacheService"/>
+		<property name="delDisconnectReasonLkupCacheService" ref="delDisconnectReasonLkupCacheService"/>
+		<property name="waiveDFormReasonLkupCacheService" ref="waiveDFormReasonLkupCacheService"/>
+		<property name="callPlanLtsService" ref="callPlanLtsService"/>
+		<property name="ltsWaiveReasonCacheService" ref="ltsWaiveReasonCacheService"/>
+		<property name="waiveReasonLkupCacheService" ref="waiveReasonLkupCacheService"/>
+		<property name="ltsDocTypeLkupCacheService" ref="ltsDocTypeLkupCacheService"/>
+		<property name="ltsOrderDocumentService" ref="ltsOrderDocumentService"/>
+	</bean>
+	
+	<bean id="restrictPsefLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="RESTRICT_PSEF" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>
+	
+	<bean name="restrictPsefLkupCacheService" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+		<property name="codeLkupDAO" ref="restrictPsefLkupDao" />
+	</bean>
+
+	<import resource="spring-ws-lts.xml"/>
+</beans>

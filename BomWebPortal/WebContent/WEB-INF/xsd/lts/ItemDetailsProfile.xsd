@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://schemas.wsServiceLts.lts.bomwebportal.com" xmlns:schema="http://schemas.wsServiceLts.lts.bomwebportal.com">     
+
+  <xs:element name="ItemDetailsProfileRequest" >
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="OfferDetailsProfile" minOccurs="1" maxOccurs="unbounded">
+        <xs:complexType >
+           <xs:sequence>
+            <xs:element name="conditionEffEndDate" type="xs:string" minOccurs="0"/>
+            <xs:element name="conditionEffStartDate" type="xs:string" minOccurs="0"/>
+            <xs:element name="expiredMonths" type="xs:double"/>
+            <xs:element name="offerId" type="xs:string" minOccurs="0"/>
+            <xs:element name="promotionEndDate" type="xs:string" minOccurs="0"/>
+            <xs:element name="promotionExpiredMonths" type="xs:string" minOccurs="0"/>
+            <xs:element name="promotionStartDate" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+         </xs:element>
+         <xs:element name="iddCallPlanCds" type="xs:string" nillable="true" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ItemDetailsProfileResponse" >
+    <xs:complexType>
+      <xs:sequence> 
+        <xs:element name="OfferDetailsResult" minOccurs="1" maxOccurs="unbounded">
+        <xs:complexType >
+           <xs:sequence>      
+        <xs:element name="arpuType" type="xs:string" minOccurs="0"/>
+        <xs:element name="tpEndDate" type="xs:string" minOccurs="0"/>
+        <xs:element name="tpEffDate" type="xs:string" minOccurs="0"/>
+        <xs:element name="grossEffPrice" type="xs:string" minOccurs="0"/>
+        <xs:element name="iddFreeMin" type="xs:string" minOccurs="0"/>
+        <xs:element name="netEffPrice" type="xs:string" minOccurs="0"/>        
+        <xs:element name="promoEndDate" type="xs:string" minOccurs="0"/>
+        <xs:element name="promotionExpiredMonths" type="xs:string" minOccurs="0"/>
+        <xs:element name="promoStartDate" type="xs:string" minOccurs="0"/>
+        <xs:element name="returnCd" type="xs:int"/>
+        <xs:element name="returnMsg" type="xs:string" minOccurs="0"/>
+        <xs:element name="category" type="xs:string" minOccurs="0"/>
+        <xs:element name="description" type="xs:string" minOccurs="0"/>
+        <xs:element name="tpExpiredMonths" type="xs:double"/>
+           </xs:sequence>
+          </xs:complexType>
+         </xs:element>        
+      </xs:sequence>
+    </xs:complexType>    
+ </xs:element>
+
+
+  
+</xs:schema>
+

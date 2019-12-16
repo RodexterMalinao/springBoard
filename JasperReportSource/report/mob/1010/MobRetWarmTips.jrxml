@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MobileNumPortAppForm" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="1"/>
+	<property name="ireport.y" value="450"/>
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<field name="jasperName" class="java.lang.String"/>
+	<field name="companyLogo" class="java.lang.String"/>
+	<field name="companyBottomLogo" class="java.lang.String"/>
+	<field name="companyBottomLeftLogo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="68" splitType="Stretch">
+			<image>
+				<reportElement x="1" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyLogo}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="579">
+			<frame>
+				<reportElement x="1" y="32" width="533" height="291" isRemoveLineWhenBlank="true"/>
+				<staticText>
+					<reportElement x="30" y="0" width="470" height="21"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1252"/>
+					</textElement>
+					<text><![CDATA[1010 - 提提你]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="30" y="25" width="470" height="30"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[多謝你繼續選用1010。提提你，請於指定的時間更換附上之新的SIM卡，並請留意下列重要事項。 如有任何查詢，可隨時致電客戶服務熱線2888 1010或親臨各門市，讓我們為你提供協助。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="30" y="55" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="59" y="71" width="450" height="16"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[如有通訊錄或其他資料儲存於現有SIM卡內，請於更換新SIM卡前，複製至手機記憶體內，以免遺失。]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="51" y="76" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="51" y="113" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="50" y="55" width="454" height="15"/>
+					<textElement textAlignment="Left">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[更換SIM卡前需複製舊SIM卡資料至手機記憶體]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="30" y="91" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[2.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="50" y="91" width="454" height="15"/>
+					<textElement textAlignment="Left">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[更換SIM卡後需重設以下設定]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="59" y="107" width="450" height="16"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[如你有自設留言信箱歡迎語，請撥打*988重新錄製。原有的留言紀錄將會繼續被保留。]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="51" y="129" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="59" y="123" width="450" height="16"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[須重新設定已預設的話音飛線服務指令。]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="51" y="145" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="59" y="139" width="450" height="16"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[須重新設定轉駁至流動秘書的話音飛線服務指令。]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="51" y="161" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="59" y="155" width="450" height="16"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[(如適用) 須重新設定有關SMS BOXX的服務指令，原有的短訊紀錄將會繼續被保留。]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="51" y="177" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="59" y="171" width="450" height="16"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[(如適用) 須重新設定有關接駁鈴聲服務指令。]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement x="1" y="282" width="535" height="273" isRemoveLineWhenBlank="true"/>
+				<staticText>
+					<reportElement x="30" y="1" width="470" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="12" isBold="true" isUnderline="false" pdfEncoding="Cp1252"/>
+					</textElement>
+					<text><![CDATA[1O1O – warm tips]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="30" y="25" width="470" height="46"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Thank you for your continued use of 1O1O. Please make sure to have the attached new SIM Card in place on the date scheduled for activation and take note of the key items below. If you need any assistance, feel free to call our customer service hotline on 2888 1010 or visit any of our retail shops, where service representatives will be delighted to serve you. ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="30" y="71" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="59" y="87" width="450" height="26"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[If personal contacts or other data are stored in the existing SIM Card, please copy them to your phone memory to avoid data loss before SIM Card replacement.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="50" y="71" width="454" height="15"/>
+					<textElement textAlignment="Left">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Copy data stored in existing SIM Card to your handset’s memory before you use new SIM Card]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="51" y="92" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="59" y="133" width="450" height="26"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[If you have a personal voice mail greeting, please dial *988 to re-record your personal greeting. The saved voice messages are automatically retained in the voice mailbox.]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="51" y="138" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="30" y="117" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[2.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="50" y="117" width="454" height="15"/>
+					<textElement textAlignment="Left">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Remember to reestablish the following settings after you used the new SIM Card]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="51" y="163" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="59" y="159" width="450" height="16"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[The instruction rules of all call forwarding features have to be reset.]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="51" y="180" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="59" y="175" width="450" height="16"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[The instruction rules of call forwarding features to Mobile Secretarial Service have to be reset. ]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="51" y="196" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="59" y="191" width="450" height="26"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[(If applicable) The service instruction rules of SMS BOXX have to be reset. The saved messages in your SMS BOXX are automatically retained. ]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="51" y="222" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="59" y="217" width="450" height="16"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[(If applicable) The service instruction rules of Connecting Tone has to be reset.]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="50">
+			<image hAlign="Right" vAlign="Bottom">
+				<reportElement x="415" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyBottomLogo}]]></imageExpression>
+			</image>
+			<image vAlign="Bottom">
+				<reportElement x="2" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyBottomLeftLogo}]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="iGuardCareCash" language="groovy" pageWidth="595" pageHeight="842" columnWidth="558" leftMargin="37" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="2.479338842975211"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="1492"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<field name="orderId" class="java.lang.String"/>
+	<field name="shopCd" class="java.lang.String"/>
+	<field name="staffId" class="java.lang.String"/>
+	<field name="idDocNum" class="java.lang.String"/>
+	<field name="custEngName" class="java.lang.String"/>
+	<field name="emailAddr" class="java.lang.String"/>
+	<field name="contactPhone" class="java.lang.String"/>
+	<field name="lts" class="java.lang.String"/>
+	<field name="mob" class="java.lang.String"/>
+	<field name="ims" class="java.lang.String"/>
+	<field name="ntv" class="java.lang.String"/>
+	<field name="appDate" class="java.util.Date"/>
+	<field name="dob" class="java.util.Date"/>
+	<field name="privacyInd" class="java.lang.String"/>
+	<field name="custSignature" class="java.io.InputStream"/>
+	<field name="signatureInd" class="java.lang.String"/>
+	<variable name="TOTAL_PAYABLE" class="java.lang.Double" resetType="Page" incrementType="Report" calculation="Sum">
+		<initialValueExpression><![CDATA[0.0]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText-1" x="7" y="30" width="212" height="31" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="PCCW-zh-Ming" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[i-GUARD CARECash Customer Information Form 嘉保 貼心錢客戶資料表]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="336" y="29" width="141" height="15"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Form No. : " + $F{orderId}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="427" y="44" width="120" height="15"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Staff No. : " + $F{staffId}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="336" y="44" width="91" height="15"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Channel Code :" + $F{shopCd}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="134" splitType="Prevent">
+			<frame>
+				<reportElement key="frame-1" x="7" y="0" width="519" height="133" isRemoveLineWhenBlank="true"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-31" x="0" y="0" width="519" height="18" backcolor="#000000"/>
+					<box leftPadding="0">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="11" isBold="false"/>
+					</textElement>
+					<text><![CDATA[<b>CUSTOMER INFORMATION 客戶資料</b>]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-5" x="116" y="35" width="179" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{idDocNum}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-137" x="1" y="20" width="116" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Registered Name In English：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-137" x="295" y="35" width="113" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Date of birth 出生日期:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="117" y="20" width="178" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{custEngName}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-137" x="1" y="35" width="115" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[HKID 香港身份證：]]></text>
+				</staticText>
+				<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement key="textField-20" x="408" y="35" width="108" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.util.Date"><![CDATA[$F{dob}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-137" x="1" y="66" width="309" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Please indicate which service(s) you have subscribed to enjoy the CARECash offer]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-137" x="1" y="50" width="115" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[E-mail Address 電郵地址：]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-5" x="116" y="51" width="179" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{emailAddr}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-137" x="295" y="51" width="113" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Contact tel no. 聯絡電話： ]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-5" x="408" y="50" width="108" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{contactPhone}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="nonNfc" x="111" y="96" width="35" height="15"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="6"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-137" x="1" y="96" width="105" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Fixed Line 固網電話]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-137" x="209" y="96" width="80" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Mobile 流動電話]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="nonNfc" x="294" y="97" width="35" height="15"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="6"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-137" x="1" y="116" width="105" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Netvigator 網上行]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="nonNfc" x="111" y="116" width="35" height="15"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="6"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-137" x="209" y="116" width="80" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Now TV]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="nonNfc" x="294" y="116" width="35" height="15"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="6"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement isPrintRepeatedValues="false" x="111" y="95" width="35" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="11" isUnderline="false" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{lts}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="295" y="97" width="35" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="11" isUnderline="false" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{mob}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="111" y="115" width="35" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="11" isUnderline="false" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{ims}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="294" y="115" width="35" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="11" isUnderline="false" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{ntv}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-137" x="1" y="81" width="309" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[請提供您所登記之服務以享有嘉保 貼心錢之保障]]></text>
+				</staticText>
+			</frame>
+			<elementGroup>
+				<elementGroup/>
+			</elementGroup>
+			<elementGroup/>
+		</band>
+		<band height="156" splitType="Prevent">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="527" height="155"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-31" x="7" y="0" width="519" height="18" backcolor="#000000"/>
+					<box leftPadding="0">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="11" isBold="false"/>
+					</textElement>
+					<text><![CDATA[<b>SERVICE INFORMATION 服務資料</b>]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-145" x="7" y="18" width="95" height="13"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Service Plan 服務計劃:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-144" x="7" y="33" width="95" height="13"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Coverage Period 保障期﹕]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-144" x="7" y="48" width="507" height="34"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[In the unfortunate event you involuntarily lose your employment for at least 30 days continuously, or have sickness or an injury and are hospitalized for at least 15 days continuously, you will receive a lump sum cash benefit up to a maximum amount of HK$6,000 and subject to one claim only during insured period.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-144" x="7" y="83" width="507" height="23"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[(The benefit is subject to a waiting period of 30 days from the effective date except hospitalization due to accident and it provides a
+continuous 12 months coverage. Please refer to the i-Guard CARECash Terms and Conditions Part 2: Benefits and Exclusions)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-144" x="7" y="106" width="507" height="24"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[假如閣下在受保期內被非自願性喪失就業達至少連續30日，或因疾病或意外受傷需要住院至少連續15日，此計劃為受保人提供可高達港幣$6,000現金賠償，受保人在受保期內只可享有一次賠償。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-144" x="7" y="130" width="507" height="22"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[(除因意外受傷需要院外，此保障須經30日等候期，並於生效日起提供連續12個月保障，詳情請參閱嘉保貼心錢條款及細則的第二部份：保障範圍及不承保事項)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-145" x="107" y="20" width="164" height="13"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[i-GUARD CARECash 嘉保貼心錢]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-145" x="107" y="34" width="164" height="13"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[12 months個月]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="127" splitType="Prevent">
+			<frame>
+				<reportElement key="frame-6" stretchType="RelativeToBandHeight" x="8" y="0" width="519" height="125"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-46" x="0" y="0" width="519" height="17" isPrintWhenDetailOverflows="true"/>
+					<box leftPadding="0">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="11"/>
+					</textElement>
+					<text><![CDATA[<b>DECLARATION 聲明</b>]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-137" x="0" y="17" width="10" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[1]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-145" x="11" y="17" width="493" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[I confirm that the details provided above are correct and agree to promptly notify you of any change.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-145" x="11" y="32" width="493" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[本人確認以上資料正確無誤，並同意日後儘快通知貴公司任何資料更新。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-137" x="0" y="47" width="10" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[2]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-145" x="11" y="47" width="493" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[I have read, and agree to, the terms and conditions of this i-GUARD CARECash service, and agree to be bound by, and comply with such terms and conditions.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-145" x="11" y="62" width="493" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[本人確認已經清楚閱讀此嘉保貼心錢服務的條款及細則並同意受其約束，並遵守這些條款及細則。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-137" x="0" y="77" width="10" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[3]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-145" x="11" y="77" width="492" height="30"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[I have read the Personal Information Collection Statement attached with this form, and consent to the use, processing, handling and transfer of my personal information in accordance with such statement and the terms and conditions.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-145" x="11" y="107" width="492" height="15"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[本人確認已經清楚閱讀附件的個人資料收集聲明，並同意其對本人的個人資料的使用，處理及轉移所列出的條款及細則。]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="142" splitType="Prevent">
+			<frame>
+				<reportElement key="frame-6" stretchType="RelativeToBandHeight" x="9" y="0" width="519" height="142"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-145" x="0" y="17" width="508" height="65"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Personal Information Usage: The protection of the data you shared with i-Guard Direct is of the utmost importance to us.
+Your personal data will be kept secured and will only be used by i-Guard Direct or its representative parties where necessary for processing your application and, subject to your consent, for promotion of product policy renewal discounts, products services or special offers including food, entertainment, travel, insurance, home and education . Please refer to the full text of i-GUARD CARECashPersonal Information Collection Statement attached for further details. For access to or correction of your data, please write to Data Protection Officer of RMI at Unit 11A, Capella HTR, 47 Hung To Road, Kwun Tong, Kowloon, Hong Kong.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-209" x="1" y="0" width="517" height="16"/>
+					<box leftPadding="0">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="1.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="11" isBold="false"/>
+					</textElement>
+					<text><![CDATA[<b>Personal Information Collection and Usage 個人資料收集及使用</b>]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-145" x="1" y="83" width="503" height="57"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[個人資料使用: 嘉保營銷有限公司十分重視閣下所提供的資料。 閣下的個人資料將被小心保管，並只會提供予嘉保營銷及其代表人士以處理閣下申請，及根據閣下的意願，作為產品續保折扣或推廣其他產品，服務或優惠之用，當中包括飲食、娛樂、旅遊、保險 、家居和教育產品。
+詳情請參閱附件的嘉保貼心錢個人資料收集聲明全文。如需查閱或更正閣下的個人資料，請以書面寄往香港九龍觀塘鴻圖道47號嘉鴻中心11A室與RMI資料私隱主任聯絡。]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="70" splitType="Prevent">
+			<frame>
+				<reportElement key="frame-2" stretchType="RelativeToBandHeight" x="8" y="0" width="519" height="69" isRemoveLineWhenBlank="true"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement key="nonNfc" x="4" y="4" width="14" height="15"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="6"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-144" x="22" y="4" width="493" height="35"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[If you do not wish to be contacted by i-Guard Direct through the use of your personal data provided in this i-GUARD CARECash for policy renewal discounts, new product information, or other special offers as stated in the above“Personal Information Usage”, please tick.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-144" x="22" y="39" width="493" height="25"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[如閣下不希望嘉保營銷如以上 “個人資料使用 ”所述透過閣下於此嘉保貼心錢服務提供的個人資料接收續保折扣、 新產品或其他優惠資訊，請在方格填上√號。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-137" x="5" y="5" width="8" height="12">
+						<printWhenExpression><![CDATA["Y".equals($F{privacyInd})]]></printWhenExpression>
+					</reportElement>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[√]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="110" splitType="Prevent">
+			<staticText>
+				<reportElement x="272" y="3" width="252" height="30"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[Registration Date
+登記日期]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="5" y="70" width="209" height="1"/>
+			</line>
+			<staticText>
+				<reportElement key="staticText-224" positionType="Float" x="12" y="55" width="12" height="15"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<image hAlign="Center" isUsingCache="false" onErrorType="Blank">
+				<reportElement positionType="Float" x="66" y="42" width="148" height="28">
+					<printWhenExpression><![CDATA["Y".equals($F{signatureInd})]]></printWhenExpression>
+				</reportElement>
+				<imageExpression class="java.io.InputStream"><![CDATA[$F{custSignature}]]></imageExpression>
+			</image>
+			<textField isBlankWhenNull="true">
+				<reportElement x="272" y="54" width="219" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{appDate})]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="272" y="70" width="220" height="1"/>
+			</line>
+			<staticText>
+				<reportElement key="staticText-144" x="6" y="77" width="522" height="33"/>
+				<box leftPadding="3">
+					<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+					<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[i-GUARD Direct is a subsidiary of Relevant Marketing (HK) Limited (RMI).
+嘉保營銷是Relevant Marketing (HK) Limited (RMI) 的附屬 公司 之一。
+i-GUARD Direct Ltd. Unit 11A, Capella HTR, 47 Hung To Road, Kwun Tong, Kowloon, Hong Kong Tel: 8209 0098 Fax: 3020 5042 Email: care@i-guard.hk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="3" width="252" height="30"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[Customer Signature
+客戶簽署]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="37" width="186" height="33">
+					<printWhenExpression><![CDATA["N".equals($F{signatureInd})]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[This application is by verbal confirmation and no signature is required.
+此申請乃口頭同意而無須簽署         ]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

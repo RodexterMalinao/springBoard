@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="keyInfoSheet" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="41"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\pvcs\\working\\BOM\\Programs\\Springboard\\SBWPR2\\JasperReportSource\\report\\lts\\eye\\keyInfoSheet\\en\\"]]></defaultValueExpression>
+	</parameter>
+	<field name="formLogo" class="java.lang.String"/>
+	<field name="applicationNo" class="java.lang.String"/>
+	<field name="custName" class="java.lang.String"/>
+	<field name="packageTitle" class="java.lang.String"/>
+	<field name="keyInfoList" class="java.util.ArrayList"/>
+	<field name="custSignatureStream" class="java.io.InputStream"/>
+	<field name="applicationDate" class="java.lang.String"/>
+	<field name="formTitle" class="java.lang.String"/>
+	<field name="formSubject" class="java.lang.String"/>
+	<field name="formText" class="java.lang.String"/>
+	<field name="formCustSignText" class="java.lang.String"/>
+	<field name="customerCopy" class="java.lang.Boolean"/>
+	<field name="customerCopyText" class="java.lang.String"/>
+	<field name="companyBottomBar" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="10" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="68" splitType="Stretch">
+			<staticText>
+				<reportElement x="345" y="25" width="48" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[表格編號: ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="393" y="25" width="152" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{applicationNo}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="343" y="22" width="212" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement x="343" y="42" width="212" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="343" y="22" width="1" height="40"/>
+			</line>
+			<staticText>
+				<reportElement x="345" y="45" width="48" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[客戶姓名: ]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="343" y="61" width="212" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="393" y="45" width="151" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{custName}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="554" y="22" width="1" height="40"/>
+			</line>
+			<image onErrorType="Blank">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="14" width="120" height="40"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{formLogo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="220" y="0" width="120" height="15">
+					<printWhenExpression><![CDATA[$F{customerCopy}.booleanValue() && $F{customerCopyText}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[<客戶副本>]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="220" y="0" width="120" height="15">
+					<printWhenExpression><![CDATA[$F{customerCopy}.booleanValue() && !$F{customerCopyText}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{customerCopyText}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="500" y="0" width="55" height="22"/>
+				<textElement textAlignment="Right" markup="html">
+					<font fontName="PCCW-zh-Ming" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[機密]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Prevent">
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="20" forecolor="#FFFFFF" backcolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{formTitle}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20" splitType="Prevent">
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="20" forecolor="#FFFFFF" backcolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{packageTitle}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent"/>
+		<band height="22">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="5" y="4" width="202" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{formSubject}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="25">
+			<subreport>
+				<reportElement x="1" y="0" width="554" height="25"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{keyInfoList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["tdo/keyInfoSheet/zh_HK/KeyInfoSheet_subreportImptInfo.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="35" splitType="Prevent">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="5" y="4" width="545" height="28"/>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{formText}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="45" splitType="Stretch">
+			<image onErrorType="Blank">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="555" height="45"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyBottomBar}]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="45">
+			<image onErrorType="Blank">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="555" height="45"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyBottomBar}]]></imageExpression>
+			</image>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band height="10" splitType="Stretch"/>
+	</summary>
+	<noData>
+		<band height="10"/>
+	</noData>
+</jasperReport>

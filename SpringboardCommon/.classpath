@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/iText-2.1.7.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/iTextAsian.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/iTextAsianCmaps.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/jasperreports-4.5.0.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/jasperreports-fonts-4.5.0.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/spring.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/commons-lang-2.5.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/bcprov-ext-jdk16-1.45.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/commons-io-2.2.jar"/>
+	<classpathentry kind="lib" path="lib/pccwUtilities.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/dozer-5.3.2.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/mail-1.4.1.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/mail.jar"/>
+	<classpathentry kind="lib" path="/SpringboardLibrary/lib/groovy-all-1.7.5.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

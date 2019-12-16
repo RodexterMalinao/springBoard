@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="iGuardCustInfo" language="groovy" pageWidth="595" pageHeight="842" columnWidth="550" leftMargin="37" rightMargin="0" topMargin="0" bottomMargin="0" whenResourceMissingType="Empty">
+	<property name="ireport.zoom" value="1.7715610000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="480"/>
+	<import value="java.io.*"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<field name="title" class="java.lang.String"/>
+	<field name="custLastName" class="java.lang.String"/>
+	<field name="custFirstName" class="java.lang.String"/>
+	<field name="msisdn" class="java.lang.String"/>
+	<field name="orderId" class="java.lang.String"/>
+	<field name="appInDate" class="java.util.Date"/>
+	<field name="custSignature" class="java.io.InputStream"/>
+	<field name="companyLogo" class="java.lang.String"/>
+	<field name="octFormP1" class="java.lang.String"/>
+	<field name="octFormP2" class="java.lang.String"/>
+	<field name="companyBottomLogo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="110" splitType="Stretch">
+			<frame>
+				<reportElement x="220" y="20" width="300" height="90"/>
+				<staticText>
+					<reportElement x="0" y="0" width="300" height="30"/>
+					<box leftPadding="3">
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+						<paragraph leftIndent="2"/>
+					</textElement>
+					<text><![CDATA[表格編號 Application No.:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="170" y="0" width="130" height="30"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{orderId}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="30" width="300" height="30"/>
+					<box leftPadding="3">
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+						<paragraph leftIndent="2"/>
+					</textElement>
+					<text><![CDATA[客戶姓名 Customer Name:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="170" y="30" width="130" height="30"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{title} + " " + $F{custLastName} + " " + $F{custFirstName}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="60" width="300" height="30"/>
+					<box leftPadding="3">
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+						<paragraph leftIndent="2"/>
+					</textElement>
+					<text><![CDATA[PCCW-HKT 流動通訊服務電話號碼:
+PCCW-HKT mobile No.:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="170" y="60" width="130" height="30"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{msisdn}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<image>
+				<reportElement x="0" y="20" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyLogo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="10" splitType="Stretch"/>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="520" height="35" forecolor="#FFFFFF" backcolor="#000000"/>
+				<box leftPadding="3">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="12" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[NFC Mobile Payment服務客戶資料披露同意書 <br/>Agreement for Consent to Disclosure of Customer Information for NFC mobile Payment Service]]></text>
+			</staticText>
+		</band>
+		<band height="258" splitType="Stretch">
+			<frame>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="520" height="258"/>
+				<frame>
+					<reportElement positionType="Float" x="0" y="3" width="520" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="5" y="0" width="510" height="10"/>
+						<box rightPadding="0"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["本同意書為閣下與<u><b>PCCW Mobile HK Limited</b></u> (「<b>本公司</b>」) 或「<b>我們</b>」) 今天簽署申請PCCW-HKT流動通訊服務 (「<b>流動通訊服務</b>」) 合約 (包括閣下的申請書、服務指南及其他相關的條款及條件) 的一部份。"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="20" width="520" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="5" y="0" width="510" height="10"/>
+						<box rightPadding="0"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["This Agreement forms part of the Contract (including your Application, your Service Guide and other relevant terms and conditions) which you have signed today for the PCCW-HKT mobile service (“Mobile Service”) you have subscribed with PCCW Mobile HK Limited (“Company” or “we” or “us”)."]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="37" width="520" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="5" y="0" width="510" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["當閣下(「客戶」或「你」)申請NFC Mobile Payment服務(「MP服務」)，本公司會提供一張支援NFC技術的SIM卡，並根據客戶帳戶配上客戶的流動電話號碼。客戶可使用本MP服務向個別的金融機構分別申請/安排他們相關的NFC支付服務。當閣下成功申請本MP服務，即明確地表示閣下確認、同意及允許我們向金融機構提供其要求有關閣下之流動通訊服務的資料，以便金融機構提供NFC支付服務。"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="54" width="520" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="5" y="0" width="510" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["Where you (“Customer” or “You”) have applied for the NFC Mobile Payment Service (“MP Service”), the Company shall provide the Customer with a special NFC-enabled SIM card (“SIM”) with an assigned mobile number (“Mobile Number”) registered under the Customer’s account.  The MP Service is provided to the Customer for facilitating the NFC payment service to be provided by the relevant financial institution(s) with which the Customer has made/will make an arrangement for NFC payment service by using the MP Service. Upon successful application/arrangement of the MP Service, you expressly acknowledge, agree and give consent to us to provide information in relation to your Mobile Service with us to the financial institution(s) as required by them in order for financial institution(s) to provide their NFC payment service."]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="71" width="520" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="5" y="0" width="510" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["本公司就MP服務接受金融機構詢問及回答閣下的資料包括："]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="88" width="520" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="5" y="0" width="510" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["The information which will be answered by us to financial institution upon enquiry for MP Service includes:"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="105" width="520" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="40" y="0" width="475" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["閣下是否正使用支援NFC的SIM 卡。<br/>if Customer is using NFC-enabled SIM card."]]></textFieldExpression>
+					</textField>
+					<ellipse>
+						<reportElement x="25" y="6" width="3" height="3" forecolor="#000000" backcolor="#000000"/>
+						<graphicElement>
+							<pen lineWidth="0.25"/>
+						</graphicElement>
+					</ellipse>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="122" width="520" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="5" y="0" width="510" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["本公司就MP服務將會向為閣下提供NFC服務的金融機構提供閣下的資料，資料包括："]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="139" width="520" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="5" y="0" width="510" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["The information which will be provided by us to financial institution with NFC payment service in Customer’s SIM for MP service includes:"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="156" width="520" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="40" y="0" width="475" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["閣下的流動通訊服務號碼或刻在SIM卡上的參考編號;<br/>your Mobile Number or serial numbers engraved on the SIM card;"]]></textFieldExpression>
+					</textField>
+					<ellipse>
+						<reportElement x="25" y="6" width="3" height="3" forecolor="#000000" backcolor="#000000"/>
+						<graphicElement>
+							<pen lineWidth="0.25"/>
+						</graphicElement>
+					</ellipse>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="173" width="520" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="40" y="0" width="475" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["閣下流動通訊服務的任何啟動、暫停、取消或重新啟動(如適用);<br/>any Mobile Service activation, suspension, termination or reactivation(If applicable);"]]></textFieldExpression>
+					</textField>
+					<ellipse>
+						<reportElement x="25" y="6" width="3" height="3" forecolor="#000000" backcolor="#000000"/>
+						<graphicElement>
+							<pen lineWidth="0.25"/>
+						</graphicElement>
+					</ellipse>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="190" width="520" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="40" y="0" width="475" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["因任何情況下報失SIM卡或附有SIM卡的流動電話，或轉換新的SIM卡;及<br/>any reported loss of the SIM or of a mobile device with the SIM installed, or replacement of the SIM; and"]]></textFieldExpression>
+					</textField>
+					<ellipse>
+						<reportElement x="25" y="6" width="3" height="3" forecolor="#000000" backcolor="#000000"/>
+						<graphicElement>
+							<pen lineWidth="0.25"/>
+						</graphicElement>
+					</ellipse>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="207" width="520" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="40" y="0" width="475" height="10"/>
+						<box rightPadding="3"/>
+						<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["因任何情況下而更改流動電話號碼所分配的新流動電話號碼。<br/>new Mobile Number(s) assigned in the event of any change of the Mobile Number."]]></textFieldExpression>
+					</textField>
+					<ellipse>
+						<reportElement x="25" y="6" width="3" height="3" forecolor="#000000" backcolor="#000000"/>
+						<graphicElement>
+							<pen lineWidth="0.25"/>
+						</graphicElement>
+					</ellipse>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="224" width="520" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="5" y="0" width="510" height="10"/>
+						<box rightPadding="0"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["閣下兹確認及同意如閣下的PCCW-HKT流動通訊服務計劃因任何原因被終止，本同意書有關上述所指披露閣下資料之安排亦將立即停止。"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="241" width="520" height="10"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="5" y="0" width="510" height="10"/>
+						<box rightPadding="0"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["You acknowledge and agree that the arrangement in this Agreement in relation to disclosure of your information as specified above will cease immediately if your Mobile Service is terminated for any reason."]]></textFieldExpression>
+					</textField>
+				</frame>
+			</frame>
+		</band>
+		<band height="9" splitType="Stretch"/>
+		<band height="142" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="1" width="520" height="137"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<frame>
+					<reportElement positionType="Float" x="0" y="40" width="520" height="15"/>
+					<staticText>
+						<reportElement x="5" y="0" width="510" height="15"/>
+						<textElement verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[我明確地確認、同意及允許貴公司將會如上述所指就相關金融機構服務披露有關我所指定的資料。]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="0" y="57" width="520" height="40"/>
+					<staticText>
+						<reportElement x="5" y="0" width="510" height="33"/>
+						<textElement verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[I expressly acknowledge, agree and give consent to the Company that the Company may disclose the information as specified above in relation to relevant financial institution's Service.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="0" y="97" width="520" height="25"/>
+					<image hAlign="Center" isUsingCache="true" isLazy="true" onErrorType="Blank">
+						<reportElement positionType="Float" x="15" y="0" width="260" height="25"/>
+						<box>
+							<bottomPen lineWidth="0.0"/>
+						</box>
+						<imageExpression class="java.io.InputStream"><![CDATA[$F{custSignature}]]></imageExpression>
+					</image>
+					<staticText>
+						<reportElement x="325" y="0" width="30" height="25"/>
+						<textElement verticalAlignment="Middle">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[日期:
+Date:]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="355" y="0" width="160" height="25"/>
+						<box leftPadding="3">
+							<topPen lineWidth="0.0"/>
+							<leftPen lineWidth="0.0"/>
+							<bottomPen lineWidth="1.0"/>
+							<rightPen lineWidth="0.0"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Bottom" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy", java.util.Locale.US).format($F{appInDate})]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="5" y="0" width="10" height="25"/>
+						<textElement verticalAlignment="Bottom">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<text><![CDATA[x]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="15" y="0" width="260" height="25"/>
+						<box leftPadding="3">
+							<topPen lineWidth="0.0"/>
+							<leftPen lineWidth="0.0"/>
+							<bottomPen lineWidth="1.0"/>
+							<rightPen lineWidth="0.0"/>
+						</box>
+						<textElement verticalAlignment="Bottom" markup="none">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+							<paragraph lineSpacing="Single"/>
+						</textElement>
+					</textField>
+				</frame>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="520" height="25" forecolor="#FFFFFF" backcolor="#000000"/>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="12" isBold="true" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[客戶簽署 Customer's Signature]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="520" height="15"/>
+				<staticText>
+					<reportElement x="0" y="0" width="160" height="15"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Octopus Consent Form (20130606)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="360" y="0" width="160" height="15"/>
+					<textElement textAlignment="Right" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[© 2013 PCCW Mobile HK Limited]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="842" splitType="Stretch">
+			<image scaleImage="FillFrame" vAlign="Bottom">
+				<reportElement x="-37" y="0" width="595" height="842"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{octFormP1}]]></imageExpression>
+			</image>
+		</band>
+		<band height="842" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="-37" y="0" width="595" height="842"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{octFormP2}]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="ReportDTO-slv.paymentNotice" class="com.pccw.rpt.schema.dto.slv.paymentNotice.PaymentNoticeRptDTO" scope="prototype"/>
+
+	<bean id="ReportDTO-slv.salesAgreement" class="com.pccw.rpt.schema.dto.slv.salesAgreement.SalesAgreementRptDTO" scope="prototype"/>
+	<bean id="ReportDTO-slv.fieldJob" class="com.pccw.rpt.schema.dto.slv.fieldJob.FieldJobRptDTO" scope="prototype"/>
+	<bean id="ReportDTO-wq.bulkPrintCoverSheet" class="com.pccw.rpt.schema.dto.wq.BulkPrintRptDTO" scope="prototype"/>
+
+	<bean id="ReportDTO-lts.eye.delUpgradeEye2AppForm" class="com.pccw.rpt.schema.dto.eye.eyeAppForm.EyeAppFormRptDTO" scope="prototype"/>
+	
+	<bean id="ReportDTO-lts.paymentSlip" class="com.pccw.rpt.schema.dto.paymentSlip.PaymentSlipRptDTO" scope="prototype"/>
+	<!--added by LTS Trevor 20161013 MB2016081 start  -->
+	<bean id="ReportDTO-lts.iguardCareCash" class="com.pccw.rpt.schema.dto.iGuardCareCash.iGuardCareCashDTO" scope="prototype"/>
+	<bean id="ReportDTO-pdfTemplate.lts.iguardPics" class="com.pccw.rpt.schema.dto.iGuardCareCash.iGuardCareCashDTO" scope="prototype"/>
+	<!--added by LTS Trevor 20161013 MB2016081 end	-->	
+	
+	<bean id="ReportDTO-wq.wqCoverSheet" class="com.pccw.rpt.schema.dto.wq.WorkQueueRptDTO" scope="prototype"/>
+	<!--added by ims steven 20130205 start	-->
+	<bean id="ReportDTO-wq.IMSwqCoverSheet" class="com.pccw.rpt.schema.dto.wq.ImsWorkQueueRptDTO" scope="prototype"/>
+	<!--added by ims steven 20130205 end	-->
+	<bean id="ReportDTO-pdfTemplate.lts.nsdForm" class="com.pccw.rpt.schema.dto.nsdForm.NsdFormRptDTO" scope="prototype"/>
+	<bean id="ReportDTO-tdo.keyInfoSheet" class="com.pccw.rpt.schema.dto.tdo.keyInfoSheet.KeyInfoSheetRptDTO" scope="prototype" />
+	
+	<bean id="ReportDTO-pdfTemplate.lts.productSpec" class="com.pccw.rpt.schema.dto.productSpec.ProductSpecRptDTO" scope="prototype"/>
+    <bean id="ReportDTO-pdfTemplate.lts.itemSpec" class="com.pccw.rpt.schema.dto.itemSpec.ItemSpecRptDTO" scope="prototype"/>
+    
+	<bean id="ReportDTO-pdfTemplate.lts.eye3a.apple_iPad.productSpec" class="com.pccw.rpt.schema.dto.productSpec.ProductSpecRptDTO" scope="prototype"/>
+	<bean id="ReportDTO-pdfTemplate.lts.eye3a.tab3.productSpec" class="com.pccw.rpt.schema.dto.productSpec.ProductSpecRptDTO" scope="prototype"/>
+	<bean id="ReportDTO-pdfTemplate.lts.eye3a.tab3_10.productSpec" class="com.pccw.rpt.schema.dto.productSpec.ProductSpecRptDTO" scope="prototype"/>
+	<bean id="ReportDTO-pdfTemplate.lts.eye3a.tab4.productSpec" class="com.pccw.rpt.schema.dto.productSpec.ProductSpecRptDTO" scope="prototype"/>
+	<bean id="ReportDTO-pdfTemplate.lts.eye3a.tab4_10.productSpec" class="com.pccw.rpt.schema.dto.productSpec.ProductSpecRptDTO" scope="prototype"/>
+	<bean id="ReportDTO-pdfTemplate.lts.eye3a.tabA6_10.productSpec" class="com.pccw.rpt.schema.dto.productSpec.ProductSpecRptDTO" scope="prototype"/>
+	<bean id="ReportDTO-pdfTemplate.lts.eye3a.LG_tab7.productSpec" class="com.pccw.rpt.schema.dto.productSpec.ProductSpecRptDTO" scope="prototype"/>
+	<bean id="ReportDTO-pdfTemplate.lts.eye3a.yoga_10.productSpec" class="com.pccw.rpt.schema.dto.productSpec.ProductSpecRptDTO" scope="prototype"/>
+	<bean id="ReportDTO-pdfTemplate.lts.eye3a.tabA2_8.productSpec" class="com.pccw.rpt.schema.dto.productSpec.ProductSpecRptDTO" scope="prototype"/>
+	<bean id="ReportDTO-pdfTemplate.lts.eye3a.tabA2_8_LTE.productSpec" class="com.pccw.rpt.schema.dto.productSpec.ProductSpecRptDTO" scope="prototype"/>
+	<bean id="ReportDTO-pdfTemplate.lts.eye3a.tabA_97.productSpec" class="com.pccw.rpt.schema.dto.productSpec.ProductSpecRptDTO" scope="prototype"/>
+	<bean id="ReportDTO-pdfTemplate.lts.eye3a.tabA_8.productSpec" class="com.pccw.rpt.schema.dto.productSpec.ProductSpecRptDTO" scope="prototype"/>
+	<bean id="ReportDTO-pdfTemplate.lts.eye3a.tab2_7.productSpec" class="com.pccw.rpt.schema.dto.productSpec.ProductSpecRptDTO" scope="prototype"/>
+	<bean id="ReportDTO-pdfTemplate.lts.eye3a.YOGA_tab38.productSpec" class="com.pccw.rpt.schema.dto.productSpec.ProductSpecRptDTO" scope="prototype"/>
+	<bean id="ReportDTO-pdfTemplate.lts.eye3a.YOGA_tab310.productSpec" class="com.pccw.rpt.schema.dto.productSpec.ProductSpecRptDTO" scope="prototype"/>
+	<bean id="ReportDTO-pdfTemplate.lts.eye2a.productSpec" class="com.pccw.rpt.schema.dto.productSpec.ProductSpecRptDTO" scope="prototype"/>
+	<bean id="ReportDTO-pdfTemplate.lts.recontractForm" class="com.pccw.rpt.schema.dto.recontractForm.RecontractFormRptDTO" scope="prototype"/>
+	<bean id="ReportDTO-pdfTemplate.lts.recontractForm2017" class="com.pccw.rpt.schema.dto.recontractForm2017.RecontractForm2017RptDTO" scope="prototype"/>
+	<bean id="ReportDTO-pdfTemplate.lts.recontractFormSuppl" class="com.pccw.rpt.schema.dto.recontractFormSuppl.RecontractFormSupplRptDTO" scope="prototype"/>
+    <bean id="ReportDTO-pdfTemplate.lts.nsdFormPipb" class="com.pccw.rpt.schema.dto.nsdFormPipb.NsdFormPipbRptDTO" scope="prototype"/>
+    <bean id="ReportDTO-pdfTemplate.lts.crfFormPipb" class="com.pccw.rpt.schema.dto.crfFormPipb.CrfFormPipbRptDTO" scope="prototype"/>
+  	<bean id="ReportDTO-pdfTemplate.lts.amendmentForm" class="com.pccw.rpt.schema.dto.amendmentForm.AmendmentFormDTO" scope="prototype"/>
+    <bean id="ReportDTO-pdfTemplate.lts.smartWrtyForm" class="com.pccw.rpt.schema.dto.smartWarrantyForm.SmartWrtyRptDTO" scope="prototype"/>
+    <bean id="ReportDTO-pdfTemplate.lts.cslSimForm" class="com.pccw.rpt.schema.dto.cslSimForm.CslSimRptDTO" scope="prototype"/>
+    <bean id="ReportDTO-pdfTemplate.lts.concertTicketForm" class="com.pccw.rpt.schema.dto.concertTicketForm.ConcertTicketRptDTO" scope="prototype"/>
+    <bean id="ReportDTO-pdfTemplate.lts.samsungGalaxy.galaxy_A8.itemSpec" class="com.pccw.rpt.schema.dto.itemSpec.ItemSpecRptDTO" scope="prototype"/>
+    <bean id="ReportDTO-pdfTemplate.lts.samsungGalaxy.galaxy_Note8.itemSpec" class="com.pccw.rpt.schema.dto.itemSpec.ItemSpecRptDTO" scope="prototype"/>
+    <bean id="ReportDTO-pdfTemplate.lts.xiaomi.redmi5.itemSpec" class="com.pccw.rpt.schema.dto.itemSpec.ItemSpecRptDTO" scope="prototype"/>
+    <bean id="ReportDTO-pdfTemplate.lts.lenovo.lenovoK8.itemSpec" class="com.pccw.rpt.schema.dto.itemSpec.ItemSpecRptDTO" scope="prototype"/>
+    <bean id="ReportDTO-pdfTemplate.lts.nokia.nokia8.itemSpec" class="com.pccw.rpt.schema.dto.itemSpec.ItemSpecRptDTO" scope="prototype"/>
+    <bean id="ReportDTO-pdfTemplate.lts.lg.lg_V30.itemSpec" class="com.pccw.rpt.schema.dto.itemSpec.ItemSpecRptDTO" scope="prototype"/>
+    <bean id="ReportDTO-pdfTemplate.lts.huawei.huawei_Mate10Pro.itemSpec" class="com.pccw.rpt.schema.dto.itemSpec.ItemSpecRptDTO" scope="prototype"/>
+    <bean id="ReportDTO-pdfTemplate.lts.theClub.theClubSim.itemSpec" class="com.pccw.rpt.schema.dto.itemSpec.ItemSpecRptDTO" scope="prototype"/>
+    <bean id="ReportDTO-pdfTemplate.lts.samsungGalaxy.galaxy_S9.itemSpec" class="com.pccw.rpt.schema.dto.itemSpec.ItemSpecRptDTO" scope="prototype"/>
+    <bean id="ReportDTO-pdfTemplate.lts.samsungGalaxy.galaxy_S9Plus.itemSpec" class="com.pccw.rpt.schema.dto.itemSpec.ItemSpecRptDTO" scope="prototype"/>
+    <bean id="ReportDTO-pdfTemplate.lts.sony.sony_XperiaXZ2.itemSpec" class="com.pccw.rpt.schema.dto.itemSpec.ItemSpecRptDTO" scope="prototype"/>
+    <bean id="ReportDTO-pdfTemplate.lts.tapAndGo.itemSpec" class="com.pccw.rpt.schema.dto.itemSpec.ItemSpecRptDTO" scope="prototype"/>
+    <bean id="ReportDTO-pdfTemplate.lts.weeeForm" class="com.pccw.rpt.schema.dto.weeeForm.WeeeFormRptDTO" scope="prototype"/>
+</beans>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="DaoBase-BomWebPortalDS" class="com.pccw.util.db.DaoBaseImpl" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<!--added by ims steven 20130218 start	-->
+	<bean id="onlineSalesDAO" class="com.pccw.rpt.dao.WorkQueueImsDataDAO">
+		<property name="dataSource" ref="BomWebPortalDS"/>
+	</bean>
+	<!--added by ims steven 20130218 end	-->
+	
+	<bean id="com.pccw.rpt.dao.BomwebRptTemplateDAO" class="com.pccw.rpt.dao.BomwebRptTemplateDAOImpl" parent="DaoBase-BomWebPortalDS" scope="prototype" />
+
+	<bean id="com.pccw.rpt.dao.BomwebRptTemplateVDAO" class="com.pccw.rpt.dao.BomwebRptTemplateVDAOImpl" parent="DaoBase-BomWebPortalDS" scope="prototype" />
+
+	<bean id="com.pccw.rpt.dao.WItemDisplayLkupDAO" class="com.pccw.rpt.dao.WItemDisplayLkupDAOImpl" parent="DaoBase-BomWebPortalDS" scope="prototype" />
+
+	<bean id="com.pccw.rpt.dao.WItemRptTemplateVDAO" class="com.pccw.rpt.dao.WItemRptTemplateVDAOImpl" parent="DaoBase-BomWebPortalDS" scope="prototype" />
+	
+</beans>

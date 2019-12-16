@@ -1,0 +1,14 @@
+SBM Fallout Alert-Fallout - ${falloutDesc}
+
+Dear F&S team,
+ 
+Please kindly follow up the following fallout (${falloutDesc}) order(s):
+
+${orderId}
+
+Regards, 
+
+Springboard Support
+
+
+Note: THIS IS AN AUTO-GENERATED EMAIL. PLEASE DO NOT REPLY!

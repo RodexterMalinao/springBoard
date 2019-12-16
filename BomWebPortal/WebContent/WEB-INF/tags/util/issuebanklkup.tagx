@@ -1,0 +1,68 @@
+<jsp:root xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:form="http://www.springframework.org/tags/form"
+	version="2.0">
+  <jsp:output omit-xml-declaration="yes" />
+  <jsp:directive.tag import="java.util.*"/>
+  <jsp:directive.tag import="com.bomwebportal.bean.LookupTableBean"/>
+  <jsp:directive.tag import="com.bomwebportal.dto.IssueBankDTO"/>
+
+  <jsp:directive.attribute name="var" type="java.lang.String" required="false" rtexprvalue="true" description="variable" />
+  <jsp:directive.attribute name="bankCd" type="java.lang.String" required="false" rtexprvalue="true" description="bank Code" />
+  <jsp:directive.attribute name="asEntryList" type="java.lang.Boolean" required="false" rtexprvalue="true" description="as array of Entry&lt;K,V&gt;" />
+  
+  <jsp:scriptlet>
+    <![CDATA[
+		synchronized(jspContext) {
+             List<IssueBankDTO> codeList = LookupTableBean.getInstance().getIssueBankList();
+             Map<String,String> codeMap = new HashMap<String,String>();
+             if (codeList != null) {
+            	 for (IssueBankDTO codeLkup : codeList) {
+            		 String id = codeLkup.getBankCd();
+            		 String desc = codeLkup.getBankName();
+            		 codeMap.put(id, desc);
+            	 }
+             }
+             jspContext.setAttribute("codeMap", codeMap, PageContext.PAGE_SCOPE);
+             
+             Boolean asEntryList = (Boolean)jspContext.getAttribute("asEntryList");
+	       	 if (asEntryList != null && asEntryList == true) {
+	       		 if (codeMap != null) {
+	       		  jspContext.setAttribute("entryList", new ArrayList(codeMap.entrySet()) );
+	       		 }
+	       	 }
+		}
+    ]]>
+  </jsp:scriptlet>
+  <c:choose>
+    <c:when test="${bankCd==null and asEntryList}">
+      <c:set var="data" value="${entryList}"/>
+    </c:when>
+  	<c:when test="${bankCd==null}">
+  		<c:set var="data" value="${codeMap}"/>
+  	</c:when>
+  	<c:otherwise>
+  		<c:set var="data" value="${codeMap[bankCd]}"/>
+  		<c:set var="data" value="${data == null ? bankCd : data}"/>
+  	</c:otherwise>
+  </c:choose>
+  <c:choose>
+  	<c:when test="${not empty var}">
+  	<jsp:scriptlet>
+	    <![CDATA[
+			synchronized(jspContext) {
+	             String var = (String)jspContext.getAttribute("var");
+	             Object data = jspContext.getAttribute("data");
+	             jspContext.setAttribute(var, data, PageContext.REQUEST_SCOPE);
+			}
+	    ]]>
+    </jsp:scriptlet>
+  	</c:when>
+  	<c:otherwise>
+  		<jsp:text>${data}</jsp:text>
+  	</c:otherwise>
+  </c:choose>
+</jsp:root>

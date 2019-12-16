@@ -1,0 +1,3328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ServiceGuide" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.6934217901613335"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<subDataset name="dataset1"/>
+	<subDataset name="dataset2"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\Springboard\\SB_workspace\\sb_R2SVN\\mob_now\\"]]></defaultValueExpression>
+	</parameter>
+	<field name="companyLogo" class="java.lang.String"/>
+	<field name="agreementNum" class="java.lang.String"/>
+	<field name="companyBottomLogo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="67" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement key="staticText-1" x="15" y="50" width="232" height="15" backcolor="#FFFFFF"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["PCCW-HKT mobile Service Guide"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="447" y="36" width="88" height="14"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{agreementNum}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-43" x="373" y="36" width="74" height="14"/>
+				<box topPadding="1" leftPadding="3">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[Application No.]]></text>
+			</staticText>
+			<image>
+				<reportElement x="15" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyLogo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[About this Service Guide]]></text>
+			</staticText>
+		</band>
+		<band height="22" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="22" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["This PCCW-HKT mobile Service Guide provides further information relating to PCCW mobile Service, the Service Plans, Offers, Rebates, Deposits and options in your PCCW-HKT mobile service Application."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="22" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Please read this Service Guide carefully as it contains important information that applies to PCCW-HKT mobile service, any value-added services and options that you may select under your PCCW-HKT mobile service Application."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<line>
+				<reportElement positionType="Float" x="15" y="5" width="520" height="1"/>
+			</line>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PART I.     IMPORTANT INFORMATION]]></text>
+			</staticText>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Service Providers]]></text>
+			</staticText>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>PCCW Mobile HK Limited</b> provides PCCW-HKT mobile service upon the terms of your PCCW-HKT mobile service Application, this Service Guide, and General Conditions of Telecommunications Service (Consumer Customers) which you may download at: http://www.pccw.com/Terms+of+Use/ and the Special Conditions of PCCW-HKT mobile service for Consumer Customers (available at http://e.pccw-hkt.com/specialcondition-e)"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="24" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="22"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>PCCW Media Limited</b> provides the now TV services under your PCCW-HKT mobile service Application, this Service Guide, and the now TV Terms and Conditions (which can be viewed and downloaded at: http://www.now-tv.com). PCCW Media Limited provides MOOV and NEWSIC DAILY services upon the terms of your PCCW-HKT mobile service Application, this Service Guide, and corresponding Terms and Conditions, available at http://moov.hk and http://e.pccw-hkt.com/newictnc-e."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="24" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="22"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>Hong Kong Telecommunications (HKT) Limited</b> (HKT) provides all telecommunications Services (other than PCCW-HKT mobile service) upon the terms of your PCCW-HKT mobile service Application, this Service Guide, and the General Conditions of Telecommunications Service (Consumer Customers) (which you may download at http://www.pccw.com/Terms+of+Use/) and the applicable special conditions. The Special Conditions of IDD 0060 International Call Service are available at www.pccw.com/Consumer/International+Telephone+Services. The Special Conditions of WiFi Service are available at http://cs.netvigator.com/support/software/download/wifi_tnc_e.pdf. HKT also provides uHub service upon the terms and conditions of your PCCW-HKT mobile service Application, this Service Guide, the General Conditions of uHub Service and Special Conditions of uHub Service (available at http://www.uhub.com). The Special Conditions of RoamSave Service are available at http://e.pccw-hkt.com/RoamSave. The Special Conditions of KingKing Service are available at http://e.pccw-hkt.com/KK."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Things You Need to Know]]></text>
+			</staticText>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>PCCW-HKT mobile service APPLICATION:</u></b> When processing your PCCW-HKT mobile service Application (including, for the avoidance of doubt, the VAS Package Menu) and your PCCW-HKT mobile service Application contains any missing or incorrectly entered charges that are payable by you, Service Entitlements under a Service Plan, details of any Rebates or Offers, your selected options in your PCCW-HKT mobile service Application (including the VAS Package Menu) is not offered by us or there are any other discrepancies or errors, then our customer service will contact you as soon as practicable to rectify such discrepancies and errors and we will resume processing your PCCW-HKT mobile service Application when all discrepancies and errors have been rectified."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>CAN I TERMINATE A SERVICE?:</u></b> You can terminate PCCW-HKT mobile service by giving us at least 30 days' prior notice by calling our hotline on 1000. However, if you terminate your PCCW-HKT mobile service, any of your SIM Cards under the same Service plan, all value-added services under your PCCW-HKT mobile service Application and any optional services that you may from time to time subscribe are non-severable services and will also be terminated at the same time. You are required to pay us the Early Termination Charges, if you terminate your PCCW-HKT mobile service, value-added services or optional services during a Commitment Period. When you terminate any PCCW-HKT mobile service, value-added services and /or optional services that have a Commitment Period, any pre-paid charges for the next billing cycle will not be refunded on a pro-rata basis upon termination and for the purposes of early termination of the relevant Commitment Period, the Early Termination Charge may include any pre-paid service charges for the billing month commencing in the last month of the relevant Commitment Period for the terminated PCCW-HKT mobile service and/or value-added services. If you wish to have full use of services for the prepaid charges which are not refundable, you should choose a termination date which falls on the last day of your bill period by giving us at least 30 days' prior notice. When you terminate any PCCW-HKT mobile service, value-added services and /or optional services that do not have a Commitment Period and are provided by us on a monthly basis. However, there is no need for you to pay us the early termination charges, and, any pre-paid charges for the next billing cycle will not be refunded on a pro-rata basis upon termination. Please refer to Clause 13.3 of the General Conditions of Telecommunications Service (Consumer Customers) for details."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>WHAT HAPPENS WHEN THE COMMITMENT PERIOD ENDS?:</u></b> At the end of the Commitment Period of PCCW-HKT mobile service or any value-added services, if we are unable to contact you or you do not contact us or you are undecided as to whether to renew your existing Contract, we will continue to provide PCCW-HKT mobile service and value-added services to you under the existing Contract on a month to month basis subject to payment of the charges after the Commitment Period (i.e. the Monthly Rate within Commitment Period) specified in the existing Contract until you cancel PCCW-HKT mobile service or value-added services by giving us at least 30 days' advance notice by calling our hotline on 1000 or submitting a completed service termination form at our shops. In some cases, you may have to pay a Monthly Rate after Commitment Period for the value-added services within VAS package under the Service Plan that you have selected after the Commitment Period has expired. The Monthly Rates after Commitment Period for value-added services included in the VAS Package for a Service Plan are specified in the VAS Package Menu. If you have not committed to a Commitment Period, or if we are unable to contact you or you are undecided as to whether to renew your existing Contract by the end of the Commitment Period, you will be charged the Monthly Rate within Commitment Period for the services applied for under your PCCW-HKT mobile service Application. We also charge you other miscellaneous charges as listed your PCCW-HKT mobile service Application when applicable. You may refer to Clauses 23.6 and 23.7 of the General Conditions of Telecommunications Service (Consumer Customers) for details."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>CAN I EXTEND THE COMMITMENT PERIOD?:</u></b> You can extend the Commitment Period of PCCW-HKT mobile service or value-added services by agreeing to an additional Commitment Period. You can also agree to replace the Contract with another new Contract upon expiry of the Commitment Period of PCCW-HKT mobile service or value-added services."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>WHICH CONTRACT TERMS CAN BE CHANGED?:</u></b> We can change all terms and conditions of PCCW-HKT mobile service or value-added services, including changing the charges, by publishing the changes online at the websites listed in SECTION B of Part III of this Service Guide. If we believe that the change causes you material disadvantage or will result in an increase in your charges for PCCW-HKT mobile service or any value-added services (other than IDD or roaming services), we shall give you at least 30 days' prior notice. You have the right to terminate your Contract in certain circumstances without incurring any charges in respect of that termination (other than incidental costs) when we increase Charges or change other terms and conditions of PCCW-HKT mobile service or any value-added services which are telecommunications Services by giving 15 days prior notice to the change coming into effect. Please refer to clause 22.4 of the General Conditions of Telecommunications Service (Consumer Customers) for details."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>MOBILE NUMBER PORTING (MNP):</u></b> If you require porting of your mobile number from another mobile operator and if through no fault of us, the mobile number porting is unsuccessful, you will have to choose a new PCCW-HKT mobile service number for your PCCW-HKT mobile service Application. In such a case all promotions including Rebates and charges' waivers which are conditional upon successful porting will be forfeited. If you do not choose a new PCCW-HKT mobile service number, we will regard you to have cancelled your PCCW-HKT mobile service Application and you will have to pay us the Pre-activation Cancellation Charge."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>CANCELLATION:</u></b> If for any reason you cancel your PCCW-HKT mobile service Application or that you do not provide us with all necessary documentation by such time as we may require so that we can provide PCCW-HKT mobile service to you by the Target Commencement Date, you will have to pay us the Pre-activation Cancellation Charge."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>QoS MEASURES:</u></b> In order to meet our commitment to ensure quality of service, we may take traffic control measures to optimize the performance of our mobile network. Our traffic control measures may be triggered when there is actual or anticipated congestion in our mobile network and typically involve prioritizing certain types of traffic over others (for example, we may prioritize e-mail or web browsing traffic over peer-to-peer traffic)."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>COMPATIBILITY:</u></b> Whether or not you are able to use PCCW-HKT mobile service or value-added services depends on whether or not your device is compatible with the service, network configuration, roaming status and any limitations of the service."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>REBATES:</u></b> We may give different types of rebates to Customers under different Service Plans, offers and promotions. We will indicate in your PCCW-HKT mobile service Application any rebate(s) which is/are applicable to you, the rebate amount and rebate schedule. Unless otherwise specified, all rebates will be credited to your account in consecutive months starting from the 1st month. All outstanding rebates will be forfeited if for any reason PCCW-HKT mobile service or value-added services are suspended or terminated."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>PROMOTIONS TO PCCW CUSTOMERS:</u></b> Promotions may be offered to existing PCCW customers (i.e. customers of NETVIGATOR, now TV, fixed line and PCCW-HKT mobile service) with good payment standing. If at any time during your subscription to PCCW-HKT mobile service you terminate these other PCCW service(s) or cease to have a good payment standing, all promotions including Rebates will be terminated automatically."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>PREPAYMENT OTHER THAN DEPOSIT:</u></b> You are required to make prepayments if they are specified by us in your PCCW-HKT mobile service Application or this Service Guide. Unless we tell you otherwise in this Service Guide, prepayment will be refunded to you as Rebates as specified in your PCCW-HKT mobile service Application. We shall cease to refund the prepayment to you immediately if you terminate PCCW-HKT mobile service before the Commitment Period ends."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>OVERSEAS USAGE:</u></b> Unless otherwise specified, all PCCW-HKT mobile service, value-added services are intended for use in Hong Kong only. If you use PCCW-HKT mobile service or any value-added services outside Hong Kong, roaming charges may apply."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>CHARGES:</u></b> If you subscribe to a service plan with a Commitment Period, you will be charged (i) the Monthly Rate within Commitment Period for the services you have applied for under your PCCW-HKT mobile service Application during the Commitment Period and afterwards; (ii) any usage based charges (if applicable) and (iii) any other miscellaneous charges listed in your PCCW-HKT mobile service Application and Service Guide when applicable. You will also be charged a Monthly Rate after Commitment Period as specified in the VAS Package Menu for the value-added services within the VAS package under the Service Plan you have selected after the Commitment Period has expired as specified in the VAS Package Menu (if any). If you subscribe to a month-to-month service plan, you will be charged the Month-to-Month Charges set out in section D of the Application, any usage based charges (if applicable) and any other miscellaneous charges (if applicable) listed in your PCCW-HKT mobile service Application and Service Guide."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>BLACKBERRY:</u></b> If you switch to our BlackBerry Internet Service, you must request your prior BlackBerry service provider to release your BlackBerry account to us. If by the Target Commencement Date, your prior BlackBerry service provider shall have failed to release your BlackBerry account to us, the Commitment Period of your BlackBerry Internet Service Plan will still commence as scheduled on the Target Commencement Date. If you purchase a BlackBerry smartphone from us, we will provide limited warranty to you for a period of 24 months according to our prevailing maintenance policy provided that you can provide the Application relating to the purchase of such BlackBerry smartphone. The repair work will be performed by the manufacturer (Research In Motion) in accordance with its limited warranty policy in respect of the BlackBerry Wireless Handheld, battery and accessory. Please visit http://www.blackberry.com/legal/warranty/handheld.shtml for details."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>NETWORK SPECIFICATION:</u></b>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["150Mbps/73Mbps downlink and 50Mbps/25Mbps uplink operating on the frequency band 2600MHz/1800MHz respectively, if you subscribe to a Top-Up service plan. You will be provided with a 4G-LTE mobile data service in those areas where we have appropriate coverage. In areas where we cannot provide 4G-LTE service, you will be provided with a 3G mobile data service"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["14.4Mbps downlink and 5.76Mbps uplink if you subscribe to a BlackBerry Internet Service plan"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["384Kbps downlink and 384Kbps uplink if you subscribe to a \$88/\$99 Non Top Up service plan"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["However, the actual speed that you experience will be considerably less than the network specifications and will be affected by your device, transmission technology, individual network and software used, network configuration, coverage, usage level, International bandwidth and other extraneous factors."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>DEPOSITS:</u></b> You shall be responsible for all charges under this Contract. Deposits paid by you will be jointly held by all our service providers who provide services to you. Deposits paid in relation to a service provided by one service provider may be used to pay outstanding charges in relation to another service provided by the same or another service provider within the PCCW group companies or used to settle the outstanding amount of any payment at PCCW-HKT mobile service. Any remaining deposits will be refunded to you when all charges are paid at the end of this Contract or at the end of your subscription to relevant service. Please refer to clause 13.5 of the General Conditions of Telecommunications Service (Consumer Customers) for details."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="100" splitType="Stretch">
+			<line>
+				<reportElement positionType="Float" x="15" y="20" width="520" height="1"/>
+			</line>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PART II.     PCCW-HKT mobile service Application]]></text>
+			</staticText>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECTION A   CUSTOMER DETAILS]]></text>
+			</staticText>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>Registered Address:</u></b> This is the registered address for your PCCW-HKT mobile service. We do not accept PO Box address as registered address. You must provide us address proof for this address for the last 3 months."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="24" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="22"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>Correspondence Address:</u></b> This is the correspondence address to be used by us for all kinds of customer correspondence including billing. If you do not provide a correspondence address, all correspondences will be sent to your registered address."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="5" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>Existing registered PCCW customer:</u></b> Please provide your account information for us to check the account status."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECTION B   CONTRACT TERM]]></text>
+			</staticText>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>Commitment Period:</u></b> This is the Commitment Period which you agree to subscribe to PCCW-HKT mobile service and any value-added services under your PCCW-HKT mobile service Application. The Commitment Period commences on the actual Commencement Date."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>Target Commencement Date:</u></b> This is the target date on which services applied for under your PCCW-HKT mobile service Application will commence. You must timely submit necessary information and documentation in order for all of the services you applied for to commence on or before this target date. We will inform you if the Target Commencement Date changes. If your payment is paid by cheque, service will be activated on the target Commencement Date after clearance of the cheque."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECTION C   SERVICE NUMBER AND SUBSCRIPTION TYPE]]></text>
+			</staticText>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>PCCW-HKT mobile service No.:</u></b> This is the mobile number selected by you for PCCW-HKT mobile service and any value-added services under the PCCW-HKT mobile service Application. If we have to port-in this number from another operator and the port-in process is unsuccessful, you will need to select another number."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>SIM No.:</u></b> This is the number specified on the back side of the SIM Card provided to you."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>SIM only:</u></b> SIM only subscription."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>SIM + Devices:</u></b> SIM subscription along with a purchase of a device from us."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECTION D   SERVICE NUMBER AND SUBSCRIPTION TYPE]]></text>
+			</staticText>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Service Plans]]></text>
+			</staticText>
+		</band>
+		<band height="22" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="22" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["There are four categories of Service Plans - Top Up (4G-LTE) Plan, Top Up (3G) Plan, Non Top Up Plan and Blackberry Internet Service Plan. A Service Plan includes PCCW-HKT mobile service basic core Services and a package of value-added services. Unless otherwise specified, all your entitlements are for use within Hong Kong only."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Service Entitlements]]></text>
+			</staticText>
+		</band>
+		<band height="22" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="22" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Service entitlements to PCCW-HKT mobile service core Services and value-added services under different Service Plans vary. Please refer to your PCCW-HKT mobile service Application for your monthly entitlements to PCCW-HKT mobile service core Service; and to VAS Package Menu for your entitlements to any value-added services under the Service Plan. You will have to pay thereafter charges if your usage exceeds your monthly entitlements. Please see below for brief descriptions of PCCW-HKT mobile service core Serviceand any value-added services."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Commitment Period for Optional Value-added Services (VAS)]]></text>
+			</staticText>
+		</band>
+		<band height="22" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="22" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["This is the Commitment Period for the Optional VAS that you selected (if any) as described in item (B) of Section D Sub-section II of your Application. The Commitment Period for the Optional VAS commences on the Commencement Date."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Service Plan Descriptions]]></text>
+			</staticText>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["See your PCCW-HKT mobile service Application to identify which of the core services below you have selected to."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>Voice Call:</u></b> Outgoing/incoming voice calls between any local mobile or fixed-line networks or RoamSave calls or KingKing calls to non Hong Kong numbers. All voice calls will be rounded up to the next minute."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>Video Call:</u></b> Video Call (intra-network): Local outgoing/incoming video calls within PCCW-HKT mobile service network only. All video calls will be rounded up to the next minute."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>SMS / MMS -</u></b> SMS/MMS (intra-network): Local outgoing SMS/MMS to local PCCW-HKT mobile service number."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mobile Data]]></text>
+			</staticText>
+		</band>
+		<band height="50" splitType="Stretch">
+			<rectangle>
+				<reportElement x="286" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="295" y="0" width="240" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["The following applies to Top Up Plans:"]]></textFieldExpression>
+			</textField>
+			<elementGroup/>
+			<elementGroup/>
+			<frame>
+				<reportElement x="15" y="0" width="260" height="10"/>
+				<rectangle>
+					<reportElement x="1" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Downloading and/or uploading of local data with \"PCCW\" set as the Access Point Name (APN)."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="10" width="260" height="10"/>
+				<elementGroup/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Usage is rounded up to the next KB unless otherwise specified."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="20" width="260" height="10"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Internet tethering: Use of mobile data by other device connected to your mobile via any kind of connectivity."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="30" width="260" height="20"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["The following applies to Non Top Up and BlackBerry Internet Service Plans:"]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<ellipse>
+					<reportElement positionType="Float" x="13" y="14" width="2" height="2" backcolor="#333333"/>
+				</ellipse>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="10" width="230" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["If you use peer-to-peer and Internet Tethering on mobile data service, it will be included in your mobile data service entitlement (if any) and you will also be charged for that data use at the Usage Based Pay-As-You-Go charge rate."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="275" y="10" width="260" height="10"/>
+				<ellipse>
+					<reportElement positionType="Float" x="23" y="4" width="2" height="2" backcolor="#333333"/>
+				</ellipse>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Local mobile data service will be suspended after the mobile data service entitlements for a billing month are consumed. You are required to pay for additional mobile data service entitlement in order to resume the mobile data service."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="275" y="20" width="260" height="10"/>
+				<ellipse>
+					<reportElement positionType="Float" x="23" y="4" width="2" height="2" backcolor="#333333"/>
+				</ellipse>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["If you use any mobile data service including Internet tethering and peer-to-peer, it will be included in your mobile data usage"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="95" splitType="Prevent"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BlackBerry Internet Service]]></text>
+			</staticText>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Email data usage is applicable only to sending and receiving email via BlackBerry handhelds."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Mobile data is available on a pay-as-you-go rate, or as part of your VAS package or as an optional service."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["BlackBerry Roaming Email Data – China: Monthly service entitlement is only applicable to usage in China."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["BlackBerry Roaming Email Data – International (designated destinations): Monthly service entitlement is only applicable to usage in the designated destinations. Please visit http://e.pccw-hkt.com/bbtariff for details"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["BlackBerry Internet Service: enables users to maintain always-on Connectivity to business or personal email without BlackBerry server software. It allows POP3, IMAP4 and web-based email integration for individual personal user. BlackBerry Internet Service allows up to 10 email accounts to be accessed in two types of email accounts."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["POP3 / IMAP4 email accounts from Internet Service Provides, e.g. Netvigator"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement positionType="Float" x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Web-based email accounts, e.g. Gmail, Hotmail, OWA (Outlook Web Access)"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement positionType="Float" x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["BlackBerry Internet Service cannot be used on the following email platforms: Novell Groupwise/ IBM Lotus Domino/ Microsoft Exchange). You will be bound by the BlackBerry Internet Service End User Agreement and BlackBerry End User/ Software License Agreement."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["You can activate own BlackBerry Internet Service email account, please visit http://www.pccw-hkt.blackberry.com"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20" splitType="Prevent"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Value Added Services Descriptions]]></text>
+			</staticText>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["See your PCCW-HKT mobile service Application to identify which of the value-added services below you have selected to."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>Connecting Tone</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Choice of songs to replace the traditional normal tone when the call is being connected "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Details please refer to http://e.pccw-hkt.com/connectingtone"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>EasyCare</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Offers 300 location searching requests and status updates enabling you to keep in touch with family and friends"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/easycare"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>Extra Voice Call</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Voice Call (normal): Outgoing/incoming voice calls between any local mobile or fixed-line networks or RoamSave / KingKing calls to non Hong Kong numbers."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["All voice calls will be rounded up to the next minute "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>Financial Info Quote</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Financial news and stock quote service "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/financialquote"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>Football 360 Pack</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Enjoy viewing of BPL live match goal, highlights & match preview video clips"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Subscribers need to download Football 360 App* from Google Play to enjoy the service"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="42" y="0" width="493" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Football 360 App is available only on Android devices now"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="8" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["*"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Local mobile data charges may be incurred when using the Football 360 App and viewing its contents. Roaming data charges will be incurred when using the Football 360 App overseas"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["BPL video clips under the Football 360 Pack is only available for viewing in Hong Kong and cannot be viewed outside of Hong Kong"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/football360"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>FOX SPORTS MOBILE Service Package</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Viewing of international sport events and the latest news and results from a variety of other major world sport event on mobile devices. "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/foxsports"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>GOTV Monthly Pass</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Enjoy viewing of TVB dramas on mobile devices."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["The Service is provided by Television Broadcasts Limited (\"TVB\") and is provided pursuant to the terms and conditions of TVB’s GOTV Service set out in http://www.tvb.com."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["The Service is provided to PCCW-HKT mobile service customers who subscribed for mobile service plans with a data entitlement. To utilize the Service, you are required to subscribe for the TVB GOTV monthly pass and download and successfully install the TVB GOTV app from Google Play."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["If you are using local mobile data to access to the Service, the utilized data usage will be deducted from the entitlement of your PCCW-HKT mobile service plans. You will have to pay thereafter charges or top up charges if your usage exceeds your monthly entitlements."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["The use and the provision of the Service are governed by the relevant terms and conditions of the Service by TVB (http://www.tvb.com) and PCCW Mobile HK Limited (http://e.pccw-hkt.com/tvbgotv), as amended from time to time. The customer shall be deemed to have agreed to and be bound by such terms and conditions of Service upon the downloading and opening of the GOTV app."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Video quality depends on customer’s mobile device, service location, network coverage and usage."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["PCCW Mobile HK Limited is not the provider of the Service and hence PCCW Mobile HK Limited does not provide any representations or warranties regarding the Service. PCCW Mobile HK Limited shall not be responsible for any matters arising from any dealings or transactions between you and TVB."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["The customer acknowledges that should the customer subscribe for the Service via PCCW Mobile HK Limited, PCCW Mobile HK Limited shall act as the billing agent to bill the customer for the use of the Service and shall receive from the customer the fees for the Service."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For the purposes of providing the Service, verifying the customer’s eligibility to use the Service or to any related offers, determining the service fees applicable to the customer, billing and all related purposes, the customer agrees that the PCCW-HKT mobile number used by the customer in accessing the Service, as well as the customer’s mobile service operator will be provided to TVB by PCCW Mobile HK Limited."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["The customer’s subscription for the Service will form part of the contract for the PCCW-HKT mobile service between us which you have signed."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="40" splitType="Stretch"/>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["GOTV 14-Day Free Trial (\"14-Day Free Trial\") Terms and Conditions:"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="42" y="0" width="492" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["The 14-Day Free Trial is only available to PCCW-HKT mobile service customers who have not subscribed to the PCCW-HKT GOTV monthly pass previously. Each eligible PCCW-HKT mobile service subscriber is entitled to one 14-Day Free Trial."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="8" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["-"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="42" y="0" width="492" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["If the customer subscribed to any PCCW-HKT GOTV monthly pass during the 14-Day Free Trial, the 14-Day Free Trial will terminate immediately without notice to the customer."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="8" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["-"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details of GOTV Monthly Pass, please refer to http://e.pccw-hkt.com/tvbgotv."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>Smart Pama Service Plan</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Smart Pama Service Plan does not provide data top-up function and roaming service. If you need to use additional data or roaming service, you have to subscribe to other monthly service plan."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>Hong Kong Connecting Tone </u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Whenever you roam, callers always hear standard local connecting tone that enables you to enjoy privacy while roaming"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/hkconnectingtone"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>IDD \$18 Package</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Free call minute : First 100 IDD call minute* "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["- Thereafter charge for call minute: \$0.18/min* "]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["- Local call minute entitlement will be deducted"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["* Applicable only to making outgoing call from HK to fixed line or mobile number in Mainland China, Canada and the USA (excludes Alaska and offshore islands such as Hawaii or fixed line in UK, Australia and Taiwan)"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For other IDD services, please refer to http://e.pccw-hkt.com/idd"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>Info Express</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Daily weather, weather forecast, weather alert and Mark 6 result "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Contents will be automatically sent to your mobile devices by SMS"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/infoexpress"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>Inter-network SMS </u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Local outgoing SMS to non PCCW-HKT mobile service Hong Kong based number "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>International Call Forwarding Package</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["If you have an international mobile or fixed-line number, you can now activate international call forwarding and forward all calls made to your PCCW-HKT mobile service phone to your international number, mobile or fixed-line. "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["International Call Forwarding Package includes:<br/> - entitlement of 50 min* for each month; <br/> - thereafter charge for subsequent call minute: \$0.48/min"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["* Only applicable in Canada, China, Singapore and USA"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Details please refer to http://e.pccw-hkt.com/icfs"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>Live Horse Racing</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Enjoy viewing of live races on your device"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/livehorse"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>Mobile Data</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Downloading and/or uploading of local data with “PCCW” set as the Access Point Name (APN) "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Applicable only to certain devices and cannot be used for any kind of connectivity for Internet tethering"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Internet tethering: Use of mobile data by other device connected to your mobile via any kind of connectivity"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>Mobile Secretarial Service / Premium Mobile Secretarial Service </u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Unanswered calls will be picked up by an operator and return the message by SMS "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Premium Mobile Secretarial Service offers you a dedicated secretarial service number "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/vas"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>Mobile Security Package</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Provides comprehensive Android device security including antivirus, safe mobile surfing, app protection and call/SMS filter "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["PCCW-HKT mobile service customer service representatives can provide remote device locking and PIN resetting services if your device is lost "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Mobile Security Package is a service provided via McAfee Antivirus & Security App by McAfee Inc. PCCW-HKT mobile service is only the reseller and customer service provider, PCCW-HKT mobile service expressly disclaim all or any liability for any loss (including any loss of data and content) and damage (including any damage to the Mobile Devices) suffered by the Customer or any other persons arising, directly or indirectly, from the Mobile Security Package "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["This service cannot be used on two different mobile devices simultaneously. If you need to use the service on another device, you are required to download, install and register the McAfee Antivirus & Security App again for such device. The service on all previously registered device(s) will then be suspended immediately "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["This service is applicable only to designated Android device models "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details and terms and conditions, please refer to http://e.pccw-hkt.com/mobilesecurity"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>MOOV (PC) Unlimited</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["MOOV online digital music service (only available for use in Hong Kong)"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://moov.hk"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>Multi SIM Value Added Service - Secondary PCCW-HKT mobile service No. & Associated SIM No</u>"]]></textFieldExpression>
+			</textField>
+
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Subscribers to Multi SIM Value Added Service will be provided with secondary SIM Card(s) (\"Secondary SIM Cards\"). Each of the SIM Cards has a different SIM Card Number and PCCW-HKT mobile service Number. The SIM Card Number and the associated PCCW-HKT mobile service Number are set out in Section C of the PCCW-HKT mobile service Application."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["You can use the Primary SIM Card to make voice calls, video calls and to access KingKing / RoamSave service, but the Secondary SIM Card(s) do not have voice and video calls functionality unless you subscribe to an \"Extra Voice Call\" package for any particular Secondary SIM Card in the PCCW-HKT mobile service Optional Service Application.  If you have subscribed to an \"Extra Voice Call\" package for a Secondary SIM Card, you can make voice calls and video calls by using that Secondary SIM Card. If you have registered Roaming Services for your Primary SIM Card, you can use data roaming services (but not voice unless you have subscribed to an \"Extra Voice Call\" package for any particular Secondary SIM Card mentioned above) under the Secondary SIM Card(s). The Mobile Data Service entitlement under the Service Plan of your Primary SIM Card (as mentioned in Section D of your Primary SIM Card’s PCCW-HKT mobile service Application) will be shared by the Secondary SIM Card(s). Mobile Data Service will be suspended after the combined usage of Mobile Data Service entitlement for a billing month is consumed or exceeded. You are required to pay for additional Mobile Data Service (as mentioned in Section E of your PCCW-HKT mobile service Application) in order to resume the Mobile Data Service. The shared Mobile Data Service provided under the Primary SIM Card and the Secondary SIM Cards are non-severable services."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+        <band height="10" splitType="Stretch"/>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["You can use any of the SIM Cards to send or receive SMS/MMS, however any SMS/MMS will be associated with the PCCW-HKT mobile service Number of the relevant SIM Card and any intra or inter-network SMS/MMS will be charged on a thereafter Charges basis as in Section E of your PCCW-HKT mobile service Application."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["You may also subscribe to any VAS or Optional Services under any of your SIM Cards, however, such VAS or Optional Services will be provided separately under the relevant SIM Card that you use for the subscription."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["The Charges for the Services provided under the Secondary SIM Cards will appear on the bill of Primary SIM Card.   Primary SIM Card subscriber should be responsible for the charges incurred by the Secondary SIM Card(s)."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Multi SIM Value Added service cannot be used in conjunction with AIO Roaming Day Pass."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>NBA TV</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["A 24-hour linear channel, offering a wide range of NBA games plus club-related programs "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/nbatv"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>Newsic</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["The Newsic app provides music to suit mood, place and time for your lifestyle enjoyment."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/newsic"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>NFC Mobile Payment Service (\"MP Service\") </u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[" The Near Field Communications (NFC) Mobile Payment Service (\"MP Service\") is provided to the Customer for facilitating the NFC payment service to be provided by the relevant financial institution(s) with which the Customer has made an arrangement for NFC payment by using the MP Service. The Company shall not be responsible for any matters arising from dealings between the Customer and the relevant Financial Institution or any other persons. "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/mobilepayment"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["You should read and understand the terms & conditions of Octopus function. The terms and conditions of Octopus function is available at http://e.pccw-hkt.com/mobilepayment"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>now Golf</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Viewing of the world's top players compete at events on mobile devices"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/nowgolf"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>now player PCCW-HKT</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Viewing of now 101, now Entertainment Channel, now Mango live streaming channels and on-demand programs on your mobile devices"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/nowplay-e"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>now SPORTS</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Viewing of football matches and world-class sports events on mobile devices "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/nowsports"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>now TV</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Viewing of financial info, news, sports and entertainment programs 24 hours a day on mobile devices"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/nowtv"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>now TV BPL Channel 621</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Enjoy viewing of now 621 on mobile device"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/nowtvbpl"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>now TV BPL Channel 620, 622 - 625</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Enjoy viewing of PLTV, now 622 - 625 on mobile device"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/nowtvbpl"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>now TV Premium Finance </u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Viewing of China and global market information on mobile devices"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/nowtvfinance"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>PCCW-HKT Wi-Fi Single Device Plan</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Automatic login to and unlimited Wi-Fi usage at any PCCW-HKT Wi-Fi hotspots for Wi-Fi enabled mobile devices "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["If you also subscribe to Wi-Fi Auto-Connect, you cannot simultaneously connect to PCCW-HKT Wi-Fi hotspot through both PCCW-HKT Wi-Fi Single Device Plan and Wi-Fi Auto Connect "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/wifi"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>PCCW-HKT Wi-Fi</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Unlimited Wi-Fi usage at any PCCW-HKT Wi-Fi hotspots for Wi-Fi enabled devices"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/wifi  > PCCW-HKT Wi-Fi Monthly Plan"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>Push To Talk </u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["A chargeable mobile application to provide instant voice communication (“push to talk”) service. Only available to designated mobile devices."]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/pushtotalk"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>Smart Apps Data Package </u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Mobile Data: 60GB per month"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Provides local mobile data for use of the following Apps: BPL Channel, uHub, News always ON, HD on mobile TV player, Newsic, MOOV on mobile, MOOV, now player, now free TV"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/smartapps"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>SMS BOXX</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Offers unprecedented SMS management service and save all your SMS and MMS automatically in the SMS BOXX"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Basic service includes 1MB storage"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["MMS plus service includes 10MB storage"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/smsboxx"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>Smart Visual Voice Mail</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Voicemail messages will be downloaded from the system automatically and saved to your handsets "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Roaming data or voice charges will be incurred for synchronization or listening to voicemail via 63880000 on a mobile phone when roaming "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["If you de-activate Smart Voice Mail Premium Package or Smart Voice Mail Package, the user will de-activate the Smart Visual Voice Mail at the same time "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/smartvvm"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+<band height="40" splitType="Stretch"/>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>Super HD pass</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Enjoy super HD quality viewing (720p or 1080p)* on our video channels ^"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["* Depending on the HD picture quality delivered by individual video channel"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["^ Super HD service is only available to PLTV, now 621 to 625 and other designated now TV channels. The picture quality of other designated now TV channels may vary from time to time without prior notice"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Windows Phone 8 device temporarily doesn't support \"Super HD Pass\" service "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/superhdpass"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>uHub</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["uHub Storage is a revolutionary cloud-based digital content storage service from PCCW. You can save data in uHub Storage external cloud storage system, which enables you to retrieve it from any location served by Internet access "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to www.uhub.com "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>Voice Mail, Call Management Package</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Voice Mail"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Call Management Package: Includes Unconditional Call Forward, Unanswered Call Forward, Busy Call Forward and Unreachable Call Forward to a Hong Kong number, Call Waiting, Call Conference, Call Hold and Caller ID Display "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>WeChat Data Package</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["A communication tool for sending/receiving voice, video, photo, text messages and emoticons, only local mobile data charge will be wavied for using the above-mentioned WeChat features in Hong Kong"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Only available to designated OS system"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/wechat"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>Wi-Fi Auto Connect </u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Add-on feature for PCCW-HKT Wi-Fi Single Device Plan "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Automatic connection to any PCCW-HKT Wi-Fi hotspot and unlimited Wi-Fi usage for Wi-Fi enabled mobile devices "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["You cannot simultaneously connect to PCCW-HKT Wi-Fi hotspot through both PCCW-HKT Wi-Fi Single Device Plan and Wi-Fi Auto Connect "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/autoconnect"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="520" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IDD AND ROAMING SERVICES]]></text>
+			</staticText>
+		</band>
+		<band height="94" splitType="Prevent">
+			<elementGroup/>
+			<elementGroup/>
+			<frame>
+				<reportElement positionType="Float" x="275" y="50" width="260" height="10"/>
+				<rectangle>
+					<reportElement x="10" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="20" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Hong Kong Telecommunications (HKT) Limited provides IDD 0060 Services. For charges and enquiries, please call 10060."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="275" y="60" width="260" height="10"/>
+				<elementGroup/>
+				<rectangle>
+					<reportElement positionType="Float" x="10" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["If you are a new 0060 customer, you will be entitled to 30 free minutes per month for the first 2 months for calls made to any mobile/fixed –line telephone numbers in China, USA, Canada, and any fixed-line telephone numbers in United Kingdom and Australia. You will receive a confirmation letter if you are entitled to these free minutes."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="275" y="70" width="260" height="20"/>
+				<rectangle>
+					<reportElement positionType="Float" x="10" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["KingKing/RoamSave – A VoIP service based on Wi-Fi connectivity for use in Hong Kong or while you are abroad. KingKing/RoamSave is compatible only with certain handsets. PCCW-HKT mobile service cannot guarantee KingKing service/RoamSave service performance or call quality at any Wi-Fi Hotspots or any other place where Wi-Fi is available. For details, please refer to http://e.pccw-hkt.com/KK or http://e.pccw-hkt.com/RoamSave."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="10" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Via KingKing service/ RoamSave service, there is no charge  for (i) making outgoing voice calls to Hong Kong phone numbers; (ii) receiving incoming voice calls from anywhere in the world; (iii) making outgoing and receiving incoming video calls via KingKing service/ RoamSave service. IDD charges will apply if making voice calls to non Hong Kong phone numbers, and local voice call minutes will be deducted/charged for the duration of such a call during all voice calls. Charges for Wi-Fi connectivity and IDD charges (if any) are additional."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="0" width="260" height="40"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["PCCW mobile HK Limited provides IDD, International Roaming, and China Roaming Service. The details of PCCW-HKT mobile service IDD, International Roaming, and China Roaming fees and charges may be found at:"]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<frame>
+					<reportElement positionType="Float" x="10" y="10" width="240" height="10"/>
+					<ellipse>
+						<reportElement positionType="Float" x="3" y="4" width="2" height="2" backcolor="#333333"/>
+					</ellipse>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="10" y="0" width="230" height="10"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["IDD allows you to make international calls in Hong Kong. For details, please refer to http://e.pccw-hkt.com/idd"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="10" y="20" width="240" height="10"/>
+					<ellipse>
+						<reportElement positionType="Float" x="3" y="4" width="2" height="2" backcolor="#333333"/>
+					</ellipse>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="10" y="0" width="230" height="10"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["International Roaming / China Roaming allows you to use voice, mobile data and SMS services while International Wi-Fi Roaming allows you to use Wi-Fi service via selected hotspots outside Hong Kong. For details, please refer to http://e.pccw-hkt.com/roaming"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="10" y="30" width="240" height="10"/>
+					<ellipse>
+						<reportElement positionType="Float" x="3" y="4" width="2" height="2" backcolor="#333333"/>
+					</ellipse>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="10" y="0" width="230" height="10"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["The details of PCCW-HKT mobile service IDD, International Roaming, and China Roaming fees and charges are subject to change and may be found at http://e.pccw-hkt.com/intservice"]]></textFieldExpression>
+					</textField>
+				</frame>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="275" y="0" width="260" height="10"/>
+				<ellipse>
+					<reportElement positionType="Float" x="23" y="4" width="2" height="2" backcolor="#333333"/>
+				</ellipse>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["AIO Roaming Day Pass enables you to enjoy a special rate for standard voice roaming calls in mainland China at \$1.9 per minute"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="275" y="40" width="260" height="10"/>
+				<ellipse>
+					<reportElement positionType="Float" x="23" y="4" width="2" height="2" backcolor="#333333"/>
+				</ellipse>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["For details, please refer to http://e.pccw-hkt.com/rp."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="40" width="260" height="50"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["AIO Roaming Day Pass allows you to use mobile data, Wi-Fi (Aircraft Wi-Fi roaming excluded) and enjoy a special rate of \$1.9 per minute for standard voice roaming calls in mainland China."]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<frame>
+					<reportElement positionType="Float" x="10" y="10" width="240" height="10"/>
+					<ellipse>
+						<reportElement positionType="Float" x="3" y="4" width="2" height="2" backcolor="#333333"/>
+					</ellipse>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="10" y="0" width="230" height="10"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["The day pass will be activated 24 hours after you apply and will remain valid from 00:00 to 23:59 daily, Hong Kong time. You will not be charged for a day pass if no mobile data roaming or Wi-Fi roaming usage occurs within a day. If you use mobile data or Wi-Fi roaming in more than one place during the same day, only one day pass will be charged for."]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="10" y="20" width="240" height="10"/>
+					<ellipse>
+						<reportElement positionType="Float" x="3" y="4" width="2" height="2" backcolor="#333333"/>
+					</ellipse>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="10" y="0" width="230" height="10"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["Mobile data roaming service will be suspended after you use up the daily free entitlement of 10MB for a \$48 Day Pass/20MB for a \$88 Day Pass/50MB for a \$168 Day Pass in a billing day. You are required to top up and pay for additional mobile data service entitlement at \$38/5MB for a \$48 day pass/\$38/10MB for a \$88 or \$168 day pass in order for service to be restored. The amount of additional mobile data purchased can only be used that same day."]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="10" y="30" width="240" height="10"/>
+					<ellipse>
+						<reportElement positionType="Float" x="3" y="4" width="2" height="2" backcolor="#333333"/>
+					</ellipse>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="10" y="0" width="230" height="10"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["A flat rate \$ 1.5 per min applies after the daily Wi-Fi roaming entitlement of 60 minutes for a billing day is consumed. Details of Wi-Fi roaming, please visit http://e.pccw-hkt.com/wificm"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="10" y="40" width="240" height="10"/>
+					<ellipse>
+						<reportElement positionType="Float" x="3" y="4" width="2" height="2" backcolor="#333333"/>
+					</ellipse>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="10" y="0" width="230" height="10"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["In order to enjoy this offer, you must also subscribe to International/China Roaming and IDD services"]]></textFieldExpression>
+					</textField>
+				</frame>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="275" y="10" width="260" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["- The \$1.9 per minute special rate for standard voice roaming calls in mainland China is applicable only to customers subscribing to the AIO Roaming Day Pass."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="275" y="20" width="260" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["- This special rate is applicable to receiving calls in mainland China, making outgoing calls to Hong Kong and mainland China numbers (excluding outgoing calls to non-Hong Kong numbers or non-mainland China numbers while in China)."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="275" y="30" width="260" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["- If you cancel the AIO Roaming Day Pass, the special rate for standard voice roaming call in China will be cancelled at the same time."]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="10" splitType="Stretch">
+
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECTION E     CHARGES AND PAYMENT]]></text>
+			</staticText>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUB-SECTIONS I AND II     ADDITIONAL AND MISCELLANEOUS CHARGE]]></text>
+			</staticText>
+		</band>
+		<band height="30" splitType="Prevent">
+			<elementGroup/>
+			<elementGroup/>
+			<frame>
+				<reportElement positionType="Float" x="275" y="0" width="260" height="10"/>
+				<elementGroup/>
+				<rectangle>
+					<reportElement positionType="Float" x="10" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Pre-activation Cancellation Charges: Charges for cancelling your PCCW-HKT mobile service Application prior to service activation."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="275" y="10" width="260" height="10"/>
+				<rectangle>
+					<reportElement positionType="Float" x="10" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Transfer of Ownership: Applicable if you acquire a PCCW-HKT mobile service number from another PCCW customer who is subscribing to PCCW-HKT mobile service on a monthly service plan. You must sign up a new Service Plan with Commitment Period and be responsible for all accrued charges prior to the transfer."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="0" width="260" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Pay-As-You-Go Charges: These rates apply where you do not have any monthly entitlements for these services."]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="10" width="260" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Thereafter Charges: These rates apply if your usage exceeds your monthly entitlements under any Service Plan, Upgrades or Packages."]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="20" width="260" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Early Termination Charges: Monthly Rate within Commitment Period X remaining months of the Commitment Period. Any partial month will be regarded as one full month. Rebates and monthly fee waivers will be automatically forfeited and will not be applied to offset any Early Termination Charges payable."]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+			</frame>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUB-SECTIONS III     PAYMENT DETAILS]]></text>
+			</staticText>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["The amount of the initial payment due under your Contract and any Deposit, Prepayment and Rebates payable are specified in Section E Sub-section III of your Application."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEPOSIT]]></text>
+			</staticText>
+		</band>
+		<band height="200" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECTION F     BILL PREFERENCES]]></text>
+			</staticText>
+		</band>
+		<band height="30" splitType="Prevent">
+			<elementGroup/>
+			<elementGroup/>
+			<frame>
+				<reportElement positionType="Float" x="275" y="0" width="260" height="10"/>
+				<elementGroup/>
+				<rectangle>
+					<reportElement positionType="Float" x="10" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["You can further apply for email bill service in which case we will email your monthly bill statements to your email address."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="275" y="10" width="260" height="10"/>
+				<rectangle>
+					<reportElement positionType="Float" x="10" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["A monthly fee of \$10 will apply if you wish to receive a paper copy of your bill statements."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="0" width="260" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Bills will be issued in the language and by such means as selected by you. Paper bills will be issued, subject to payment of additional charges as specified in your PCCW-HKT mobile service Application."]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="10" width="260" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["SMS bills will be sent to your PCCW-HKT mobile service number monthly."]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="20" width="260" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["You can also login to 'My Account' on web or wap to view last 3 months' bill statements."]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+			</frame>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{agreementNum}.contains("SBO")?
+"SECTION G     PAYMENT" :
+"SECTION G     PAYMENT & AUTHORISATION"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{agreementNum}.contains("SBO")?
+"All charges and any deposit payable to us shall be charged to the credit card set out in Section G of the Application." :
+"All charges and any deposit payable to us shall be charged to the credit card or bank account set out in Section G of the Application unless and until you tell us not to."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<line>
+				<reportElement positionType="Float" x="15" y="5" width="520" height="1"/>
+			</line>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PART III.     OTHER INFORMATION]]></text>
+			</staticText>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>PCCW-HKT mobile service Login ID & password:</u></b> You may login to the Service Website to view Customer's account and to send SMS through the Service Website. Your login ID is Customer's PCCW-HKT mobile service number; the preset password is the first 6 digits of Customer's HKID card number or passport number as provided in your PCCW-HKT mobile service Application. This preset password will be required when you set up remote call forwarding via IVRS at our hotline 1000 and for other services which require a password unless we provide you with an alternate password. For security reasons, please change your password regularly."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>GIFTS AND PREMIUMS:</u></b> All gifts and premiums are only available while supplies last and are non-exchangeable, non-redeemable for cash or other benefits. Please refer to the manufacturer's warranty statement included with the product for a detailed explanation of the product warranty terms applicable to a particular product."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>REDEMPTION PROCEDURE FOR GIFTS AND OTHER PREMIUMS:</u></b> We will send a redemption letter by mail to your correspondence address or a redemption SMS to your mobile number in approximately 4 weeks after the commencement of PCCW-HKT mobile service. You are required to redeem the product at a designated address during the redemption period in accordance with the redemption letter / SMS."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="9" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="9"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>PCCW-HKT mobile service CUSTOMER SERVICE:</u></b> You may call our customer service hotline at 1000 or send your email to csmobile@pccw-hkt.com."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>My HKT Customer Service:</u></b>  \"My HKT Customer Service\" (http://cs.hkt.com) is an all-in-one online service platform for you to manage your fixedline /eye, mobile, NETVIGATOR and now TV services with HKT and PCCW through a single login."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>OUR SERVICE WEBSITE:</u></b> www.pccw-hkt.com"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="50">
+			<image>
+				<reportElement x="415" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyBottomLogo}]]></imageExpression>
+			</image>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

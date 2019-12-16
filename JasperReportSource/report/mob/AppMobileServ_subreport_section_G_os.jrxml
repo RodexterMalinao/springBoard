@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AppMobileServ_subreport_section_G" language="groovy" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="autopayUpperLimitAmt" class="java.lang.String"/>
+	<field name="bankAcctHolderName" class="java.lang.String"/>
+	<field name="bankAcctNum" class="java.lang.String"/>
+	<field name="bankCode" class="java.lang.String"/>
+	<field name="branchCode" class="java.lang.String"/>
+	<field name="creditCardHolderName" class="java.lang.String"/>
+	<field name="creditCardNum" class="java.lang.String"/>
+	<field name="creditCardType" class="java.lang.String"/>
+	<field name="creditExpiryMonth" class="java.lang.String"/>
+	<field name="creditExpiryYear" class="java.lang.String"/>
+	<field name="custSignatureAutoPay" class="java.io.InputStream"/>
+	<field name="payMethodType" class="java.lang.String"/>
+	<field name="thirdPartyInd" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="18" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText-38" x="8" y="0" width="519" height="18" backcolor="#000000"/>
+				<box leftPadding="10">
+					<pen lineWidth="0.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECTION G: PAYMENT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="58">
+			<frame>
+				<reportElement key="frame-8" positionType="Float" x="8" y="0" width="519" height="58"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-101" x="3" y="1" width="125" height="14"/>
+					<box leftPadding="0">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[CREDIT CARD DETAILS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-40" x="3" y="14" width="70" height="14"/>
+					<box leftPadding="0"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Type:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField" x="75" y="14" width="175" height="14"/>
+					<box leftPadding="0">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[("04".equalsIgnoreCase($F{creditCardType}) ? "American Express" :
+("02".equalsIgnoreCase($F{creditCardType}) ? "Master Card" :
+("01".equalsIgnoreCase($F{creditCardType}) ? "VISA Card" : "")))]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-101" x="3" y="28" width="131" height="14"/>
+					<box leftPadding="0">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Cardholder Name: (in English)]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="133" y="28" width="174" height="14"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{creditCardHolderName}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-101" x="3" y="42" width="70" height="14"/>
+					<box leftPadding="0">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Credit Card No.:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="75" y="42" width="175" height="14"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{creditCardNum}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-101" x="276" y="43" width="55" height="13"/>
+					<box leftPadding="0">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Expiry Date:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="331" y="43" width="165" height="13"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[new String(( $F{creditExpiryMonth}==null ? "" : $F{creditExpiryMonth}+"/" )
+ + ( $F{creditExpiryYear}==null ? "" : $F{creditExpiryYear})).trim() + "     (MM/YYYY)"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

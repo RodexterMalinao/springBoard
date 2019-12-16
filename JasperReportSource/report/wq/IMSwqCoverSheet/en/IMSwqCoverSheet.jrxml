@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank A4" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<field name="wqId" class="java.lang.String"/>
+	<field name="sbId" class="java.lang.String"/>
+	<field name="sbDtlId" class="java.lang.String"/>
+	<field name="sbShopCode" class="java.lang.String"/>
+	<field name="typeOfService" class="java.lang.String"/>
+	<field name="serviceId" class="java.lang.String"/>
+	<field name="srd" class="java.lang.String"/>
+	<field name="bomOcId" class="java.lang.String"/>
+	<field name="bomDtlId" class="java.lang.String"/>
+	<field name="bomDtlSeq" class="java.lang.String"/>
+	<field name="bomStatus" class="java.lang.String"/>
+	<field name="bomLegacyOrderStatus" class="java.lang.String"/>
+	<field name="wqSerial" class="java.lang.String"/>
+	<field name="wqReceiveDate" class="java.lang.String"/>
+	<field name="wqStatus" class="java.lang.String"/>
+	<field name="wqStatusDesc" class="java.lang.String"/>
+	<field name="wqStatusDate" class="java.lang.String"/>
+	<field name="assignee" class="java.lang.String"/>
+	<field name="wqNatureDesc" class="java.lang.String"/>
+	<field name="wqType" class="java.lang.String"/>
+	<field name="wqTypeDesc" class="java.lang.String"/>
+	<field name="wqSubType" class="java.lang.String"/>
+	<field name="printDate" class="java.lang.String"/>
+	<field name="wqSubTypeDesc" class="java.lang.String"/>
+	<field name="wqNature" class="java.lang.String"/>
+	<field name="remarksList" class="java.util.ArrayList"/>
+	<field name="relatedSrvType" class="java.lang.String"/>
+	<field name="relatedSrvNum" class="java.lang.String"/>
+	<field name="applicationDate" class="java.lang.String"/>
+	<field name="applicationMethod" class="java.lang.String"/>
+	<field name="sourceCode" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="15" width="555" height="15"/>
+				<textElement textAlignment="Center">
+					<font fontName="PCCW-Arial" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Ims Work Queue Cover Sheet]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="105" splitType="Stretch">
+			<textField>
+				<reportElement x="100" y="1" width="170" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{wqSerial}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="1" width="100" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[Work Queue Serial:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="45" width="100" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[Springboard ID:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="45" width="170" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sbId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="1" width="150" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{wqReceiveDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="1" width="111" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[Receive Date / Time:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="90" width="100" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[WQ Type / WQ:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="90" width="450" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{wqTypeDesc} + " / " + $F{wqSubTypeDesc}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="15" width="111" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[Print Date / Time:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="15" width="150" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{printDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="45" width="111" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[Shop Code:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="45" width="150" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sbShopCode}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="60" width="100" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[Service Type / Num:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="60" width="170" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{typeOfService} + " / " + $F{serviceId}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="15" width="100" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[Assignee:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="15" width="170" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{assignee}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="75" width="100" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[Original SRD:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="100" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[Work Queue Status:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="30" width="111" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[Status Date / Time:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="30" width="150" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{wqStatusDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="30" width="170" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{wqStatusDesc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="75" width="170" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{srd}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[WQ Nature:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="100" y="0" width="450" height="15" isPrintWhenDetailOverflows="true"/>
+				<textElement markup="html">
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{wqNatureDesc}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="54">
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="267" y="0" width="288" height="40" isPrintWhenDetailOverflows="true"/>
+			</rectangle>
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="93" y="0" width="174" height="40" isPrintWhenDetailOverflows="true"/>
+			</rectangle>
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="93" height="40" isPrintWhenDetailOverflows="true"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="2" y="2" width="90" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="2" width="170" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[WQ Nature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="1" width="280" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial"/>
+				</textElement>
+				<text><![CDATA[Remarks]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="16" width="555" height="1"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="17" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{remarksList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["wq/IMSwqCoverSheet/en/ImsWqCoverSheet_subreportRemarks.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

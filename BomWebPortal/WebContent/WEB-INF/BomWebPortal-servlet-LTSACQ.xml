@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqAddressRolloutController">
+	 	<property name="validator">
+            <bean class="com.bomwebportal.lts.validator.acq.LtsAcqAddressRolloutValidator"/>
+        </property>
+		<property name="ltsAddressRolloutService" ref="ltsAddressRolloutService"/>
+		<property name="ltsSalesInfoService" ref="ltsSalesInfoService"/>
+		<property name="ltsCommonService" ref="ltsCommonService" />
+		<property name="messageSource" ref="ltsMessageSource" />
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqRolloutCheckController">
+		<property name="ltsAcqAppointmentService" ref="ltsAcqAppointmentService"/>
+		<property name="addressRolloutService" ref="addressRolloutService" />
+		<property name="eyeProfileCountService" ref="eyeProfileCountService" />
+	</bean>
+	
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqAppointmentController">
+	 	<property name="validator">
+            <bean class="com.bomwebportal.lts.validator.acq.LtsAcqAppointmentValidator">
+            	<property name="ltsCommonService" ref="ltsCommonService" />
+            </bean>
+        </property>
+		<property name="ltsAcqAppointmentService" ref="ltsAcqAppointmentService" />
+		<property name="ltsAppointmentService" ref="ltsAppointmentService" />
+		<property name="appointmentDwfmService" ref="appointmentDwfmService" />
+		<property name="suspendReasonLkupCacheService" ref="suspendReasonLkupCacheService" />
+		<property name="ltsDsSuspendReasonLkupCacheService" ref="ltsDsSuspendReasonLkupCacheService" />
+		<property name="ltsAcqRelatedPcdOrderService" ref="ltsAcqRelatedPcdOrderService"/>
+		<property name="sbOrderInfoLtsService" ref="sbOrderInfoLtsService"/>
+		<property name="ltsOfferService" ref="ltsOfferService"/>
+		<property name="messageSource" ref="ltsMessageSource" />
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqAppointmentTimeSlotLkupController">
+		<property name="ltsAcqAppointmentService" ref="ltsAcqAppointmentService" />
+		<property name="appointmentDwfmService" ref="appointmentDwfmService" />
+		<property name="ltsAppointmentService" ref="ltsAppointmentService" />
+	</bean>
+	
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqBasketSelectionController">
+		<property name="ltsBasketService" ref="ltsBasketService" />
+		<property name="imsServiceProfileAccessService" ref="imsServiceProfileAccessService" />
+		<property name="imsProfileService" ref="imsProfileService" /> 		
+		<property name="ltsAcqRelatedPcdOrderService" ref="ltsAcqRelatedPcdOrderService"/>
+		<property name="ltsOfferService" ref="ltsOfferService" />
+		<property name="messageSource" ref="ltsMessageSource" />
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqBasketServiceController">
+		<property name="validator">
+			<bean class="com.bomwebportal.lts.validator.acq.LtsAcqBasketServiceValidator" />
+		</property>
+		<property name="ltsOfferService" ref="ltsOfferService" />
+		<property name="installFeeArpuLkupCacheService" ref="installFeeArpuLkupCacheService" />
+		<property name="messageSource" ref="ltsMessageSource" />
+		<property name="ltsBasketService" ref="ltsBasketService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqBasketVasDetailController">
+		<property name="validator">
+            <bean class="com.bomwebportal.lts.validator.acq.LtsAcqBasketVasDetailValidator" />
+        </property>		
+		<property name="ltsBasketService" ref="ltsBasketService" />
+		<property name="ltsOfferService" ref="ltsOfferService" />
+		<property name="customerProfileLtsService" ref="customerProfileLtsService" />
+		<property name="ltsIddCampaignLkupCacheService" ref="ltsIddCampaignLkupCacheService" />
+		<property name="offerItemService" ref="offerItemService" />
+		<property name="offerProfileLtsService" ref="offerProfileLtsService" />
+		<property name="sbOrderInfoLtsService" ref="sbOrderInfoLtsService" />
+		<property name="messageSource" ref="ltsMessageSource" />
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqOtherVoiceServiceController">
+	    <property name="validator">
+            <bean class="com.bomwebportal.lts.validator.acq.LtsAcqOtherVoiceServiceValidator">
+            	<property name="ltsOfferService" ref="ltsOfferService"/>
+            </bean>
+        </property>	
+		<property name="ltsOfferService" ref="ltsOfferService" />
+		<property name="ltsProfileService" ref="ltsProfileService" />
+		<property name="offerItemService" ref="offerItemService" />
+		<property name="ltsAcqDnPoolService" ref="ltsAcqDnPoolService"/>
+		<property name="addressDetailLtsService" ref="addressDetailLtsService"/>
+		<property name="messageSource" ref="ltsMessageSource" />
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqPremiumSelectionController">
+		<property name="validator">
+			<bean class="com.bomwebportal.lts.validator.acq.LtsAcqPremiumSelectionValidator" >
+				<property name="ltsOfferService" ref="ltsOfferService"/>
+			</bean>
+		</property>
+		<property name="ltsOfferService" ref="ltsOfferService" />
+		<property name="premiumItemSetDetailService" ref="premiumItemSetDetailService" />
+		<property name="ltsBasketService" ref="ltsBasketService" />
+		<property name="messageSource" ref="ltsMessageSource" />
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqNumSelectionAndPipbController">
+		<property name="validator">
+            <bean class="com.bomwebportal.lts.validator.acq.LtsAcqNumSelectionAndPipbValidator">
+            	<property name="ltsCommonService" ref="ltsCommonService" />
+            </bean>
+        </property>
+		<property name="ltsAcqDnPoolService" ref="ltsAcqDnPoolService"/>
+		<property name="pipb2NPortingLkupCacheService" ref="pipb2NPortingLkupCacheService"/>
+		<property name="newCustTitleAcqLkupCacheService" ref="newCustTitleAcqLkupCacheService"/>
+		<property name="ltsCommonService" ref="ltsCommonService" />
+		<property name="messageSource" ref="ltsMessageSource" />
+	</bean>	
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqNumConfirmationController">
+		<property name="ltsAcqDnPoolService" ref="ltsAcqDnPoolService"/>	
+		<property name="suspendReasonLkupCacheService" ref="suspendReasonLkupCacheService"/>
+		<property name="ltsDsSuspendReasonLkupCacheService" ref="ltsDsSuspendReasonLkupCacheService" />
+		<property name="validator">
+			<bean class="com.bomwebportal.lts.validator.acq.LtsAcqNumConfirmationValidator" />
+		</property>
+		<property name="messageSource" ref="ltsMessageSource" />
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqModemArrangementController">
+		<property name="validator">
+            <bean class="com.bomwebportal.lts.validator.LtsModemArrangementValidator"/>
+        </property> 
+		<property name="ltsAcqRelatedPcdOrderService" ref="ltsAcqRelatedPcdOrderService"/>
+		<property name="ltsAcqRetrieveFsaService" ref="ltsAcqRetrieveFsaService"/>
+		<property name="ltsRetrieveFsaService" ref="ltsRetrieveFsaService"/>
+		<property name="upgradePcdSrvService" ref="upgradePcdSrvService"/>
+		<property name="ltsAddressRolloutService" ref="ltsAddressRolloutService"/>
+		<property name="imsServiceProfileAccessService" ref="imsServiceProfileAccessService" />
+		<property name="ltsBasketService" ref="ltsBasketService"/>
+		<property name="addressDetailLtsService" ref="addressDetailLtsService" />
+		<property name="modemAssignService" ref="modemAssignService" />
+		<property name="messageSource" ref="ltsMessageSource" />
+		<property name="ltsOfferService" ref="ltsOfferService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqModemLkupController">
+		<property name="upgradePcdSrvService" ref="upgradePcdSrvService"/>
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqSalesInfoController">
+		<property name="ltsSalesInfoService" ref="ltsSalesInfoService"/>
+		<property name="svcDnisCodeLkupCacheService" ref="svcDnisCodeLkupCacheService"/>
+		<property name="validator">
+            <bean class="com.bomwebportal.lts.validator.acq.LtsAcqSalesInfoValidator">
+            <property name="ltsSalesInfoService" ref="ltsSalesInfoService"/>
+            <property name="ltsCommonService" ref="ltsCommonService" />
+            </bean>
+        </property>
+		<property name="messageSource" ref="ltsMessageSource" />
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqPersonalInfoController">
+		<property name="validator">
+            <bean class="com.bomwebportal.lts.validator.acq.LtsAcqPersonalInfoValidator">
+            	<property name="ltsCommonService" ref="ltsCommonService" />
+            </bean>
+        </property>
+     	<property name="bomWsCreateCustClient" ref="bomWsCreateCustClient" />
+     	<property name="customerProfileLtsService" ref="customerProfileLtsService"/>
+     	<property name="relationshipCodeLkupCacheService" ref="relationshipCodeLkupCacheService"/>
+     	<property name="relationshipBrCodeLkupCacheService" ref="relationshipBrCodeLkupCacheService"/>
+     	<property name="titleAcqLkupCacheService" ref="titleAcqLkupCacheService"/>
+     	<property name="newCustTitleAcqLkupCacheService" ref="newCustTitleAcqLkupCacheService"/>
+		<property name="ltsCommonService" ref="ltsCommonService" />
+     	<property name="custPdpoProfileService" ref="custPdpoProfileService" />
+        <property name="wsUrl" value="${ws.lts.acq.wsclient}" /> 
+        <property name="user" value="${ws.lts.acq.user}" /> 
+        <property name="password" value="${ws.lts.acq.password}" />
+        <property name="customerInformationService" ref="customerInformationService"/> 
+        <property name="ltsAcqCustomerDetailService" ref="ltsAcqCustomerDetailService" />
+		<property name="imsSbOrderService" ref="imsSbOrderService" />
+		<property name="messageSource" ref="ltsMessageSource" />
+    </bean>
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqAccountSelectionController">
+		<property name="ltsAcqAccountProfileService" ref="ltsAcqAccountProfileService"/>	
+		<property name="customerProfileLtsService" ref="customerProfileLtsService"/>
+		<property name="ltsCommonService" ref="ltsCommonService" />
+		<property name="messageSource" ref="ltsMessageSource" />
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqCustomerInfoLkupController">
+		<property name="custPdpoProfileService" ref="custPdpoProfileService"/>
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsCustAcctLookupController">
+		<property name="customerProfileLtsService" ref="customerProfileLtsService"/>
+		<property name="customerInformationService" ref="customerInformationService"/> 
+	</bean>
+		
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqBillingAddressController">
+		<property name="validator">
+			<bean class="com.bomwebportal.lts.validator.acq.LtsAcqBillingAddressValidator" />
+		</property>
+		<property name="messageSource" ref="ltsMessageSource" />
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqBillMediaBillLangController">
+		<property name="csPortalService" ref="csPortalLtsService"/>
+		<property name="ltsPaymentService" ref="ltsPaymentService"/>
+		<property name="ltsOfferService" ref="ltsOfferService"/>
+		<property name="validator">
+            <bean class="com.bomwebportal.lts.validator.acq.LtsAcqBillMediaBillLangValidator">
+            	<property name="ltsCommonService" ref="ltsCommonService" />
+            	<property name="ltsSalesInfoService" ref="ltsSalesInfoService" />
+            </bean>
+        </property>
+        <property name="bomWsCreateAcctClient" ref="bomWsCreateAcctClient" />
+		<property name="customerProfileLtsService" ref="customerProfileLtsService"/>
+        <property name="wsUrl" value="${ws.lts.acq.acct.wsclient}" /> 
+        <property name="user" value="${ws.lts.acq.acct.user}" /> 
+        <property name="password" value="${ws.lts.acq.acct.password}" />
+        <property name="ltsCommonService" ref="ltsCommonService"/> 
+        <property name="ltsAcqAccountDetailService" ref="ltsAcqAccountDetailService" />
+        <property name="theClubPremiumCacheService" ref="theClubPremiumCacheService"/>
+        <property name="optOutReasonLkupCacheService" ref="optOutReasonLkupCacheService" />
+		<property name="waiveReasonPropertiesLkupCacheService" ref="waiveReasonPropertiesLkupCacheService" />
+		<property name="ltsIguardCarecashLkupCacheService" ref="ltsIguardCarecashLkupCacheService" />
+		<property name="messageSource" ref="ltsMessageSource" />
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqPaymentMethodController">
+		<property name="ltsPaymentService" ref="ltsPaymentService"/>
+		<property name="ltsOfferService" ref="ltsOfferService"/>
+		<property name="ltsProfileService" ref="ltsProfileService"/>
+		<property name="imsProfileService" ref="imsProfileService"/>
+		<property name="creditCardTypeLkupCacheService" ref="creditCardTypeLkupCacheService"/>
+		<property name="suspendReasonLkupCacheService" ref="suspendReasonLkupCacheService"/>
+		<property name="ltsDsSuspendReasonLkupCacheService" ref="ltsDsSuspendReasonLkupCacheService" />
+		<property name="ltsCommonService" ref="ltsCommonService"/>
+		<property name="customerProfileLtsService" ref="customerProfileLtsService"/>
+		<property name="validator">
+			<bean class="com.bomwebportal.lts.validator.acq.LtsAcqPaymentMethodValidator" />
+		</property>
+		<property name="ltsAcqPrepayTenureLkupCacheService" ref="ltsAcqPrepayTenureLkupCacheService" />	
+		<property name="messageSource" ref="ltsMessageSource" />
+		<property name="eyeProfileCountService" ref="eyeProfileCountService"/>
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqSupportDocController" >
+	    <property name="ltsOrderDocumentService" ref="ltsOrderDocumentService"/>
+		<property name="suspendReasonLkupCacheService" ref="suspendReasonLkupCacheService"/>
+		<property name="ltsDsSuspendReasonLkupCacheService" ref="ltsDsSuspendReasonLkupCacheService" />
+		<property name="ltsCommonService" ref="ltsCommonService"/>
+		<property name="validator">
+			<bean class="com.bomwebportal.lts.validator.acq.LtsAcqSupportDocValidator">
+				<property name="ltsCommonService" ref="ltsCommonService"/>
+			</bean>
+		</property> 
+		<property name="messageSource" ref="ltsMessageSource" />
+	</bean> 
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqSummaryController">
+<!--    <property name="commandName" value="serviceSummary"/>
+		<property name="commandClass" value="com.bomwebportal.lts.dto.form.acq.LtsAcqSummaryFormDTO"/>-->	    
+		<property name="ltsAcqSummaryEyeService" ref="ltsAcqSummaryEyeService"/>
+		<property name="ltsAcqSummaryDelService" ref="ltsAcqSummaryDelService"/>
+		<property name="ltsAcqSummary2ndDelService" ref="ltsAcqSummary2ndDelService"/>
+		<property name="orderStatusService" ref="orderStatusService"/>
+		<property name="orderRetrieveLtsService" ref="orderRetrieveLtsService"/>
+		<property name="ltsOrderDocumentService" ref="ltsOrderDocumentService"/>
+		<property name="suspendReasonLkupCacheService" ref="suspendReasonLkupCacheService"/>
+		<property name="ltsDsSuspendReasonLkupCacheService" ref="ltsDsSuspendReasonLkupCacheService" />
+		<property name="ltsProfileService" ref="ltsProfileService" />
+		<property name="validator">
+			<bean class="com.bomwebportal.lts.validator.acq.LtsAcqSummaryValidator"/>
+		</property>
+		<property name="ltsAcqDnPoolService" ref="ltsAcqDnPoolService"/>
+		<property name="ltsSignatureService" ref="ltsSignatureService"/>
+		<property name="ltsCommonService" ref="ltsCommonService" />
+		<property name="awaitQcReasonLkupCacheService" ref="awaitQcReasonLkupCacheService"/>
+		<property name="prepaymentCancelReasonLkupCacheService" ref="prepaymentCancelReasonLkupCacheService"/>	
+		<property name="ltsDsOrderService" ref="ltsDsOrderService"/>		
+		<property name="messageSource" ref="ltsMessageSource" />
+		<property name="ltsOfferService" ref="ltsOfferService" />
+	</bean>  
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqOrderController" >
+		<property name="ltsAcqOrderService" ref="ltsAcqOrderService"/>
+		<property name="orderStatusService" ref="orderStatusService"/>
+		<property name="csPortalService" ref="csPortalLtsService"/>
+		<property name="ltsCommonService" ref="ltsCommonService"/>
+		<property name="workQueueService" ref="workQueueService"/>
+		<property name="customerProfileLtsService" ref="customerProfileLtsService"/>
+		<property name="ltsAcqDnPoolService" ref="ltsAcqDnPoolService"/>
+		<property name="ltsSignatureService" ref="ltsSignatureService"/>
+		<property name="saveSbOrderLtsService" ref="saveSbOrderLtsService"/>	
+		<property name="ltsAcqOrderPostSubmitLtsService" ref="ltsAcqOrderPostSubmitLtsService"/>
+		<property name="ltsDsOrderApprovalSubmitService" ref="ltsDsOrderApprovalSubmitService"/>
+		<property name="ltsAcqOrderInitSignoffService" ref="ltsAcqOrderInitSignoffService" />
+		<property name="custContactInfoService" ref="custContactInfoService" />
+		<property name="messageSource" ref="ltsMessageSource" />
+		<property name="ltsOfferService" ref="ltsOfferService" />
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqEdfRefController" >
+		<property name="validator">
+			<bean class="com.bomwebportal.lts.validator.acq.LtsAcqEdfRefValidator"/>
+		</property>
+        <property name="orderModifyService" ref="orderModifyService" />	
+	</bean> 
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqReportController" >
+		<property name="ltsAcqOrderRecallService" ref="ltsAcqOrderRecallService"/>
+		<property name="reportCreationLtsService" ref="reportCreationLtsService"/>
+		<property name="reportSetLkupCacheService" ref="reportSetLkupCacheService"/>
+		<property name="ltsSignatureService" ref="ltsSignatureService"/>
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqDigitalSignatureController" >
+		<property name="ltsSignatureService" ref="ltsSignatureService"/>
+		<property name="validator">
+			<bean class="com.bomwebportal.lts.validator.LtsDigitalSignatureValidator"/>
+		</property>
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqReservedDnLkupController">
+     	<property name="bomWsBackendClient" ref="bomWsBackendClient" />
+     	<property name="ltsProfileService" ref="ltsProfileService" />
+     	<property name="ltsOrderSearchDAO" ref="ltsOrderSearchDAO" /> 	 
+    </bean>
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqCollectDocController" >
+		<property name="faxSerialHelper" ref="faxSerialHelper"/>
+		<property name="ltsWaiveReasonCacheService" ref="ltsWaiveReasonCacheService"/>
+		<property name="ltsDocTypeLkupCacheService" ref="ltsDocTypeLkupCacheService"/>
+		<property name="ltsOrderDocumentService" ref="ltsOrderDocumentService"/>
+	</bean>
+	
+	<bean class="com.bomwebportal.lts.web.acq.LtsAcqPipbDnLkupController">
+     	<property name="bomWsBackendClient" ref="bomWsBackendClient" />
+     	<property name="ltsProfileService" ref="ltsProfileService" />
+     	<property name="ltsOrderSearchDAO" ref="ltsOrderSearchDAO" />
+    </bean>
+    
+    <bean class="com.bomwebportal.lts.web.acq.LtsAcqPrepaymentOrderStatusController">
+     	<property name="orderStatusService" ref="orderStatusService" />
+    </bean>
+   	
+   	<bean class="com.bomwebportal.lts.web.acq.LtsDsOrderServiceController">
+		<property name="orderStatusService" ref="orderStatusService"/>
+		<property name="ltsDsOrderService" ref="ltsDsOrderService"/>
+		<property name="ltsAcqOrderPostSubmitLtsService" ref="ltsAcqOrderPostSubmitLtsService"/>
+		<property name="ltsSignatureService" ref="ltsSignatureService"/>
+		<property name="saveSbOrderLtsService" ref="saveSbOrderLtsService"/>	
+		<property name="ltsAcqOrderService" ref="ltsAcqOrderService"/>
+		<property name="csPortalService" ref="csPortalLtsService"/>		
+		<property name="ltsCommonService" ref="ltsCommonService" />
+		<property name="ltsProfileService" ref="ltsProfileService" />
+		<property name="ltsAcqDnPoolService" ref="ltsAcqDnPoolService"/>
+		<property name="awaitQcReasonLkupCacheService" ref="awaitQcReasonLkupCacheService"/>
+		<property name="ltsDsSuspendReasonLkupCacheService" ref="ltsDsSuspendReasonLkupCacheService"/>
+		<property name="suspendReasonLkupCacheService" ref="suspendReasonLkupCacheService"/>	
+		<property name="reportCreationLtsService" ref="reportCreationLtsService"/>
+		<property name="reportSetLkupCacheService" ref="reportSetLkupCacheService"/>
+		<property name="orderRetrieveLtsService" ref="orderRetrieveLtsService"/>
+		<property name="ltsOrderDocumentService" ref="ltsOrderDocumentService"/>
+		<property name="ltsDsOrderApprovalSubmitService" ref="ltsDsOrderApprovalSubmitService" />
+		<property name="ltsAcqOrderInitSignoffService" ref="ltsAcqOrderInitSignoffService" />
+		<property name="messageSource" ref="ltsMessageSource" />
+	</bean>
+</beans>

@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CreditCardDDAuthorization_os" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="1118"/>
+	<field name="companyLogo" class="java.lang.String"/>
+	<field name="orderId" class="java.lang.String"/>
+	<field name="ccos1" class="java.lang.String"/>
+	<field name="ccos2" class="java.lang.String"/>
+	<field name="custName" class="java.lang.String"/>
+	<field name="msisdn" class="java.lang.String"/>
+	<field name="creditCardType" class="java.lang.String"/>
+	<field name="creditCardNum" class="java.lang.String"/>
+	<field name="creditCardValidMonth" class="java.lang.String"/>
+	<field name="creditCardValidYear" class="java.lang.String"/>
+	<field name="creditCardHolderName" class="java.lang.String"/>
+	<field name="idDocNum" class="java.lang.String"/>
+	<field name="contactPhone" class="java.lang.String"/>
+	<field name="ccos3" class="java.lang.String"/>
+	<field name="ccos4" class="java.lang.String"/>
+	<field name="ccos5" class="java.lang.String"/>
+	<field name="ccos6" class="java.lang.String"/>
+	<field name="custSignature" class="java.io.InputStream"/>
+	<field name="appDate" class="java.lang.String"/>
+	<field name="ccos7" class="java.lang.String"/>
+	<field name="ccos8" class="java.lang.String"/>
+	<field name="companyBottomLogo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="370" y="35" width="150" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Application No.: " + $F{orderId}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyLogo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText-5" x="0" y="0" width="520" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Autopay Via Credit Card – Direct Debit Authorization]]></text>
+			</staticText>
+		</band>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText-6" x="0" y="0" width="520" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[信用卡自動轉賬授權書]]></text>
+			</staticText>
+		</band>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="250" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="PCCW-zh-Ming" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ccos1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="270" y="0" width="250" height="20"/>
+				<textElement textAlignment="Justified">
+					<font fontName="PCCW-zh-Ming" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ccos2}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="5" splitType="Stretch"/>
+		<band height="48" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="520" height="48"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="5" y="0" width="515" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[To : PCCW mobile and the Credit Card Issuing Bank/Company]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="5" y="15" width="160" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Customer Name 客戶姓名：]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="165" y="15" width="200" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{custName}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="5" y="30" width="160" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Mobile Phone Number 流動電話號碼：]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="165" y="30" width="200" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{msisdn}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="108" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="520" height="108"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="5" y="0" width="515" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Credit Card Account Details 信用卡戶口資料]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="5" y="15" width="210" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Credit Card Type 信用卡類別：]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="215" y="15" width="150" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{creditCardType}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="5" y="30" width="200" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Credit Card Number 信用卡號碼：]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="5" y="45" width="200" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{creditCardNum}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="260" y="30" width="200" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Credit Card Valid Thru 信用卡有效期至：]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="260" y="45" width="50" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{creditCardValidMonth}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="315" y="52" width="10" height="1"/>
+				</line>
+				<textField isBlankWhenNull="true">
+					<reportElement x="330" y="45" width="50" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{creditCardValidYear}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="5" y="60" width="210" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Credit Card Holder's Name 信用卡持有人姓名：]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="215" y="60" width="200" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{creditCardHolderName}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="5" y="75" width="210" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[HKID Number 香港身分證號碼：]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="215" y="75" width="200" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{idDocNum}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="5" y="90" width="210" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Contact Telephone Number 聯絡電話：]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="215" y="90" width="200" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{contactPhone}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="148" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="520" height="148"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="5" y="5" width="245" height="20"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{ccos3}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="5" y="25" width="245" height="20"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{ccos4}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="5" y="45" width="245" height="30"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{custSignature}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" x="5" y="75" width="245" height="15"/>
+					<box>
+						<topPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[Signature of Credit Card Holder 信用卡持有人簽署]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="5" y="90" width="245" height="20"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{ccos5}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="5" y="110" width="245" height="20"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{ccos6}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" x="5" y="130" width="60" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Date 日期：]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="65" y="130" width="185" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{appDate}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="250" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ccos7}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="270" y="0" width="250" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ccos8}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="50">
+			<image>
+				<reportElement x="400" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyBottomLogo}]]></imageExpression>
+			</image>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,83 @@
+package com.bomwebportal.ims.service;
+
+import java.util.List;
+
+import com.bomwebportal.dto.BomSalesUserDTO;
+import com.bomwebportal.exception.DAOException;
+import com.bomwebportal.ims.dto.AmendWqDTO;
+import com.bomwebportal.ims.dto.AmendmentModeDTO;
+import com.bomwebportal.ims.dto.AppointmentTimeSlotDTO;
+import com.bomwebportal.ims.dto.DelayReasonDTO;
+import com.bomwebportal.ims.dto.HousingTypeDTO;
+import com.bomwebportal.ims.dto.ImsAlertMsgDTO;
+import com.bomwebportal.ims.dto.ImsAutoSyncWQDTO;
+import com.bomwebportal.ims.dto.ui.AmendOrderImsUI;
+import com.bomwebportal.ims.dto.ui.CcLtsImsOrderEnquiryUI;
+import com.bomwebportal.ims.dto.ui.OrderImsUI;
+import com.pccw.wq.schema.dto.WorkQueueDTO;
+import com.pccw.wq.schema.dto.WorkQueueNatureDTO;
+
+
+public interface ImsOrderAmendService {
+	public String getEqtReturnMethod(String ocid, String fsa) ;
+	public Boolean isPonTo1G1GProfilePonAndNot1G1G(String orderId);
+	public Boolean isPonTo1G1GSpecialServiceCode(String orderId);
+	public Boolean isPonTo1G1GNewBuyBasket1G1G(String orderId);
+	public void add_PRIORITY_WP_ID(OrderImsUI order, WorkQueueDTO wqDTO, String grpId);
+	public String getIsRetPreRenew (String orderId);
+	public AppointmentTimeSlotDTO getAmendSRDInfoStorProd(String orderId, String amendType) throws DAOException;
+	public List<WorkQueueNatureDTO> getTypeSubtypeByNatureID(List<String> WQ_NATURE_ID);
+	public List<DelayReasonDTO> getCancelReason();
+	public List<AmendWqDTO> getAmendNature(String system);
+	public void updateBomwebAmendCategory(AmendOrderImsUI amend) throws DAOException;
+	public void updateBomwebAmendCategoryMarkX(AmendOrderImsUI amend) throws DAOException;
+	public void insertBomwebAmendCategory(AmendOrderImsUI amend, String rmk, String isNowRetAmendTvOnly);
+	public String createWqCombinedCoverSheetRemark(AmendOrderImsUI amend, Boolean needSalesInfo);
+	public List<HousingTypeDTO>  getHousingTypeByOrderID (String orderId);
+	public List<DelayReasonDTO> getDelayReasons(String what);
+	public Boolean  isPendingExist (String orderId);
+	public Boolean  isOCIDexist (String orderId);
+	public List<WorkQueueDTO> imsAmendWorkQueue(AmendOrderImsUI amend);
+	public List<ImsAlertMsgDTO> getImsAlertMsgList(List<String> sbid);
+	public List<ImsAlertMsgDTO> getLtsImsOrderEnquiryListInfo(CcLtsImsOrderEnquiryUI enquiry, BomSalesUserDTO bomSalesUserDTO);
+	public List<ImsAlertMsgDTO> getImsDSOrderEnquiryListInfo(CcLtsImsOrderEnquiryUI enquiry, BomSalesUserDTO bomSalesUserDTO);
+	public Boolean checkIfSalesManager(String user);
+	public List<String> getRoleCodeByUserIDLkupCode(String userId, String lkupCode, String lkupFuncCode);
+	public List<String> getChannelCodeListByChannelID (int channelId);
+	public List<String> getSBEndingStatus ();
+	public List<ImsAutoSyncWQDTO> getPendingFromSpringBoard();
+	public ImsAutoSyncWQDTO getPendingFromBOM (ImsAutoSyncWQDTO sbIds);
+	public Boolean insertNewWQStatus(String wqWpAssgnId);
+	public Boolean setWQStatusOutdated(String wqWpAssgnId);
+	public Boolean updateBomwebAmendCategory(String sbid, String wqNatureId);
+	public Boolean updateBomwebAmendCategoryFS(String sbid);
+	public List<String> getPrivilegedOrderIdList(List<String> orderIdList, BomSalesUserDTO userDto, String lkupCode, String lkupFuncCode);
+	public List<String> getOrderStatusList();
+	public Boolean  isPaymentMethodIsCC (String orderId);
+	public String lockBy(String orderId);
+	public void updateWqSrd(AmendOrderImsUI amend);
+	public Boolean isShortage(String orderId);
+	public void setWqSrdNull(String orderId);
+	public Boolean isL1Distributed(String orderId);
+	public Boolean checkIfNeedAppointment(String orderId);
+	public Boolean isNowRetNeedAppointment(String orderId);
+	public Boolean isEyeGroupAttach(String orderId);
+	public String getOrgStaffID(String id);
+	public void updateFsAmendToDummy(AmendOrderImsUI amend);
+	public void updateNowRetAmendTvOnlyToAuto(AmendOrderImsUI amend);
+	public Boolean isOpenRetailAmend();
+	public Boolean isRmkEmpty(AmendOrderImsUI amend);
+	public Boolean  isOrderStatusOkayForAmend (String orderId);
+	public String  getOrderStatusDesc (String orderId);
+	public String getBomLastestTechBySbId(String orderId, String sbType);
+	public Boolean isBomDRC55(String orderId);
+	public String getBomSB(String orderId); 
+	public List<String> getTeamCodeListOfCentreCd(String username);
+	public Boolean isBomOrderSuspended(String orderId);
+	public String getOcidBySbid(String orderId);
+	public List<String> getWqNatureWhichNeedSyncBackFromBom ();
+	public String auto_term_camp_order_amend(String orderId);   //summer
+	public AmendmentModeDTO getPreInstallAmendMode(String orderId);
+	public Boolean  isRemakeAppointmentNeeded (String orderId);
+	public List<ImsAlertMsgDTO> getImsOrderEnquiryListInfo(CcLtsImsOrderEnquiryUI enquiry, BomSalesUserDTO bomSalesUserDTO);
+}

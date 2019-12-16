@@ -1,0 +1,121 @@
+/* ==================== layout ==================== */
+
+body	{background-image:url('../images/grass.jpg');
+background-color: #1A2E0B;}
+
+.BGgrey {
+		background-color: #BEBEBE;
+		}
+		
+		.BGgrey2 {
+		background-color: #e9e8e8;
+		}
+.BGgreen2 {
+	background-color: #e2f5d3;
+	font-family:    "Helvetica","Verdana", "Arial",  "sans-serif",  新細明體;
+	vertical-align:top;
+	padding-left: 5px;
+	font-size: 14px;
+	color: #000000;
+	text-align: center;
+		}	
+		
+.tablegrey {
+	border:1px none #bebebe;
+	margin:1px;
+	background-color: #bebebe;
+}		
+
+#container	{width: 92%;
+	margin: auto;}
+
+#wrapper	{padding: 0 20px 20px;
+	background-image:url('../images/background2.jpg');}
+	
+	#wrapper2	{padding: 0 20px 20px;
+	background-image:url('../images/sky.jpg');
+	background-repeat:no-repeat;
+	background-color: white;}
+
+	#wrapper3	{padding: 0 20px 20px;
+	background-image:url('../images/sky.jpg');
+	background-color: white;}
+
+#main {display:-moz-box;
+display:-webkit-box;}
+
+#content_image	{
+	width: auto;
+	float: left;
+	-moz-box-flex:1;
+	-webkit-box-left:1;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 230px;
+}
+
+#content	{width: 100%;
+	float: right;
+	margin: 30px 0;
+	-moz-box-flex:1;
+	-webkit-box-left:1;}
+	
+#content_inner	{
+	margin-left: 0px;}
+
+#sidebar	{
+	width: 200px;
+	float: left;
+}
+
+#foot	{
+	clear: both;
+	width: 100%;
+	margin: 0px;
+	border-top-width: 2px;
+	border-top-style: solid;
+	border-top-color: #090;
+	background-color: #FFF;
+}
+
+
+/* ==================== header ==================== */
+
+#header	{width: auto;
+	height: 100px;
+	background-color: white;}
+	
+#header2	{width: auto;
+	height: 100px;
+	background-color: white;}
+
+#header_inner	{padding: 20px;}
+
+#header h1	{margin: 0;
+	font-size: 24pt;
+	color: #4e4e4e;
+	font-family: Helvetica, Verdana, sans-serif,  新細明體;}
+	
+	#header h2	{margin: 0;
+	font-size: 18pt;
+	color: #4e4e4e;
+	font-family: Helvetica, Verdana, sans-serif,  新細明體;}
+
+#header p	{margin: 0;
+	margin-top: 8px;
+	font-size: 1em;}
+	
+/* ==================== progress bar ==================== */
+
+.clear { /* generic container (i.e. div) for floating buttons */
+    overflow: hidden;
+    width: 100%;
+}
+
+
+
+
+/* ==================== content ==================== */
+
+

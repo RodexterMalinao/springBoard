@@ -1,0 +1,93 @@
+/*
+    CSS
+
+    ceks.css
+
+    Style Sheet 
+
+    History
+    -------
+
+    24-Sep-09   AL              Introduction
+
+    Keywords
+    --------
+    $URL$
+    $Rev$
+    $Date$
+    $Author$
+*/
+
+.lbl
+{
+  font-family: Arial, Sans-serif;
+  font-size: 12px;
+}
+
+.errbox
+{
+  font-family: Arial, Sans-serif;
+  font-size: 14px;
+  border: 1px solid #ff0033;
+  padding: 5px;
+}
+
+.errtxt
+{
+  font-family: Arial, Sans-serif;
+  font-size: 14px;
+}
+
+.box
+{
+  font-family: Arial, Sans-serif;
+  font-size: 14px;
+  border: 1px solid #00ff00;
+  padding: 5px;
+}
+
+.inp
+{
+  font-family: Arial, Sans-serif;
+  font-size: 12px;
+  border: 1px solid #7ade7a;
+  padding: 1px;
+  height: 22px;
+  width: 150px;
+}
+
+.rdo
+{
+  font-family: Arial, Sans-serif;
+  font-size: 12px;
+  background-color: #ccffa3;
+  border: 1px solid #7ade7a;
+  padding: 1px;
+  height: 22px;
+  width: 150px;
+}
+
+/* start modify */
+.style1
+{
+  font-family:Arial;
+  text-align:justify;
+  font-size:10px;
+}
+
+.style2
+{
+  font-family:Arial;
+  text-align:justify;
+  font-size:10px;
+  color:#FF0000;
+}
+
+.style3
+{
+  font-family:Arial;
+  text-align:left;
+  font-size:10px;
+}
+
+/* end modify */

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DelUpgradeEye2AppForm_subreportWebSite" language="groovy" pageWidth="802" pageHeight="555" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.8150000000000013"/>
+	<property name="ireport.x" value="503"/>
+	<property name="ireport.y" value="0"/>
+	<field name="number" class="java.lang.String"/>
+	<field name="wqSerial" class="java.lang.String"/>
+	<field name="wqType" class="java.lang.String"/>
+	<field name="wq" class="java.lang.String"/>
+	<field name="shopCode" class="java.lang.String"/>
+	<field name="totalPage" class="java.lang.String"/>
+	<field name="assignee" class="java.lang.String"/>
+	<field name="printStatus" class="java.lang.String"/>
+	<field name="srvType" class="java.lang.String"/>
+	<field name="srvNum" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="1" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="5" y="1" width="21" height="13"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{number}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="122" y="1" width="86" height="13"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{wqSerial}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="212" y="1" width="60" height="13"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{wqType}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="276" y="1" width="109" height="13"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{wq}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="650" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="389" y="1" width="51" height="13"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{shopCode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="1" width="74" height="13"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{totalPage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="527" y="1" width="53" height="13"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{assignee}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="587" y="1" width="62" height="13"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{printStatus}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="32" y="1" width="86" height="13"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{srvType} + ":" + $F{srvNum}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

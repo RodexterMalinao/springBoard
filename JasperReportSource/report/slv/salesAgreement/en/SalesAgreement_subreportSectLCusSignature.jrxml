@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SalesAgreement_subreportSectLCusSignature" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="4"/>
+	<field name="printTermsCondition" class="java.lang.Boolean"/>
+	<field name="thirdPartyInd" class="java.lang.Boolean"/>
+	<field name="slvCustSignatureStream" class="java.io.InputStream"/>
+	<field name="applicationDate" class="java.lang.String"/>
+	<field name="orderMode" class="java.lang.String"/>
+	<field name="sectionK.sectionTitle" class="java.lang.String"/>
+	<field name="sectionK.slvContent" class="java.lang.String"/>
+	<field name="sectionK.svcSpecificContent" class="java.lang.String"/>
+	<field name="sectionO.sectionTitle" class="java.lang.String"/>
+	<field name="sectionO.content" class="java.lang.String"/>
+	<field name="sectionA.customer.idDocType" class="java.lang.String"/>
+	<field name="companyChopStatement" class="java.lang.String"/>
+	<field name="companyChopStream" class="java.io.InputStream"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="1" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()]]></printWhenExpression>
+			<staticText>
+				<reportElement x="5" y="13" width="57" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECTION K:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="62" y="13" width="483" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-Arial" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionK.sectionTitle}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="10" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="29" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="10" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="10" width="1" height="20"/>
+			</line>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()]]></printWhenExpression>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="5" y="3" width="540" height="13"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionK.slvContent}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()]]></printWhenExpression>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="5" y="3" width="540" height="13"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionK.svcSpecificContent}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="30" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue() && $F{thirdPartyInd}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement x="0" y="0" width="556" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="13" width="57" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECTION O:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="62" y="13" width="483" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-Arial" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionO.sectionTitle}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="10" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="29" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="10" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="10" width="1" height="20"/>
+			</line>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& $F{thirdPartyInd}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="5" y="2" width="540" height="15"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionO.content}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="102" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& "BS".equals($F{sectionA.customer.idDocType})]]></printWhenExpression>
+			<line>
+				<reportElement x="0" y="0" width="556" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="2" y="4" width="151" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COMPANY CHOP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="20" width="96" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Application Date:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="20" width="118" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{applicationDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="85" width="17" height="12"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="96" width="180" height="1"/>
+			</line>
+			<image isUsingCache="false" onErrorType="Blank">
+				<reportElement x="20" y="68" width="133" height="28"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<imageExpression class="java.io.InputStream"><![CDATA[$F{companyChopStream}]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="2" y="37" width="543" height="15"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{companyChopStatement}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="78" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& !"BS".equals($F{sectionA.customer.idDocType})]]></printWhenExpression>
+			<line>
+				<reportElement x="0" y="0" width="556" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="2" y="4" width="151" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CUSTOMER'S SIGNATURE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="20" width="96" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Application Date:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="20" width="118" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{applicationDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="62" width="17" height="12"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="73" width="180" height="1"/>
+			</line>
+			<image isUsingCache="false" onErrorType="Blank">
+				<reportElement x="20" y="45" width="133" height="28"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<imageExpression class="java.io.InputStream"><![CDATA[$F{slvCustSignatureStream}]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

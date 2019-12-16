@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:sws="http://www.springframework.org/schema/web-services"
+       xmlns:oxm="http://www.springframework.org/schema/oxm"
+          xsi:schemaLocation=
+           "http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+            http://www.springframework.org/schema/web-services
+           http://www.springframework.org/schema/web-services/web-services-2.0.xsd
+           http://www.springframework.org/schema/oxm
+           http://www.springframework.org/schema/oxm/spring-oxm-1.5.xsd">
+ 
+ <bean id="webServiceTemplate" class="org.springframework.ws.client.core.WebServiceTemplate"
+  p:marshaller-ref="jaxbMarshaller"
+  p:unmarshaller-ref="jaxbMarshaller"
+  p:defaultUri="${ws.lts.wsclient}"
+  p:messageSender-ref="messageSender">
+  <constructor-arg ref="messageFactory"/>
+  <property name="interceptors">
+   <list>
+    <ref local="wss4jSecurityInterceptor"/>
+   </list>
+  </property>  
+ </bean>
+ 
+ <bean id="webServiceCreateCustTemplate" class="org.springframework.ws.client.core.WebServiceTemplate"
+  p:marshaller-ref="jaxbMarshallerAcqCust"
+  p:unmarshaller-ref="jaxbMarshallerAcqCust"
+  p:defaultUri="${ws.lts.acq.wsclient}"
+  p:messageSender-ref="drgMessageSender">
+  <constructor-arg ref="messageFactory"/>
+  <property name="interceptors">
+   <list>
+    <ref local="wss4jSecurityInterceptorAcqCust"/>
+   </list>
+  </property>  
+ </bean>
+
+ <bean id="webServiceCreateAcctTemplate" class="org.springframework.ws.client.core.WebServiceTemplate"
+  p:marshaller-ref="jaxbMarshallerAcqAcct"
+  p:unmarshaller-ref="jaxbMarshallerAcqAcct"
+  p:defaultUri="${ws.lts.acq.acct.wsclient}"
+  p:messageSender-ref="drgMessageSender">
+  <constructor-arg ref="messageFactory"/>
+  <property name="interceptors">
+   <list>
+    <ref local="wss4jSecurityInterceptorAcqAcct"/>
+   </list>
+  </property>  
+ </bean>
+ 
+<bean id="wss4jSecurityInterceptor"
+ class="org.springframework.ws.soap.security.wss4j.Wss4jSecurityInterceptor">
+ <property name="securementActions" value="UsernameToken" />
+ <property name="securementUsername" value="${ws.lts.user}" />
+ <property name="securementPassword" value="${ws.lts.password}" />
+ <property name="securementPasswordType" value="PasswordText"/>  
+</bean>
+
+ <bean id="wss4jSecurityInterceptorAcqCust"
+  class="org.springframework.ws.soap.security.wss4j.Wss4jSecurityInterceptor">
+  <property name="securementActions" value="UsernameToken" />
+  <property name="securementUsername" value="${ws.lts.acq.user}" />
+  <property name="securementPassword" value="${ws.lts.acq.password}" />
+  <property name="securementPasswordType" value="PasswordText"/>  
+ </bean>
+
+ <bean id="wss4jSecurityInterceptorAcqAcct"
+  class="org.springframework.ws.soap.security.wss4j.Wss4jSecurityInterceptor">
+  <property name="securementActions" value="UsernameToken" />
+  <property name="securementUsername" value="${ws.lts.acq.acct.user}" />
+  <property name="securementPassword" value="${ws.lts.acq.acct.password}" />
+  <property name="securementPasswordType" value="PasswordText"/>  
+ </bean>
+ 
+  <bean id="webServiceTemplateSecondary" class="org.springframework.ws.client.core.WebServiceTemplate"
+  p:marshaller-ref="jaxbMarshaller"
+  p:unmarshaller-ref="jaxbMarshaller"
+  p:defaultUri="${ws.lts.wsclient.secondary}"
+  p:messageSender-ref="messageSender">
+  <constructor-arg ref="messageFactory"/>
+  <property name="interceptors">
+   <list>
+    <ref local="wss4jSecurityInterceptorSecondary"/>
+   </list>
+  </property>  
+ </bean>
+
+ <bean id="wss4jSecurityInterceptorSecondary"
+  class="org.springframework.ws.soap.security.wss4j.Wss4jSecurityInterceptor">
+  <property name="securementActions" value="UsernameToken" />
+  <property name="securementUsername" value="${ws.lts.user.secondary}" />
+  <property name="securementPassword" value="${ws.lts.password.secondary}" />
+  <property name="securementPasswordType" value="PasswordText"/>  
+ </bean>
+ 
+ <bean id="messageSender" class="org.springframework.ws.transport.http.CommonsHttpMessageSender"/>
+ 
+ <bean id="drgMessageSender" class="org.springframework.ws.transport.http.CommonsHttpMessageSender">
+   <property name="readTimeout" value="120000" />
+ </bean>
+  
+ <bean id="messageFactory" class="org.springframework.ws.soap.saaj.SaajSoapMessageFactory"/>
+   
+ <bean id="jaxbMarshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller"
+   p:contextPath="com.bomwebportal.lts.wsClientLts"/>
+   
+ <bean id="jaxbMarshallerAcqCust" class="org.springframework.oxm.jaxb.Jaxb2Marshaller"
+   p:contextPath="com.pccw.custProfileGateway.custProfile"/>
+   
+ <bean id="jaxbMarshallerAcqAcct" class="org.springframework.oxm.jaxb.Jaxb2Marshaller"
+   p:contextPath="com.pccw.custProfileGateway.acctInfo"/>
+   
+ <bean id="bomWsClient" class="com.bomwebportal.lts.wsClientLts.BomWsClient">
+   <property name="webServiceTemplate" ref="webServiceTemplate" />
+   <property name="webServiceTemplateSecondary" ref="webServiceTemplateSecondary" />
+ </bean>
+ 
+ <bean id="bomWsCreateCustClient" class="com.bomwebportal.lts.wsClientLts.BomCustProfileWsClient">
+   <property name="webServiceTemplate" ref="webServiceCreateCustTemplate" />
+ </bean>   
+ 
+ <bean id="bomWsCreateAcctClient" class="com.bomwebportal.lts.wsClientLts.BomCreateAccountWsClient">
+   <property name="webServiceTemplate" ref="webServiceCreateAcctTemplate" />
+ </bean>    
+ 
+ <!-- ViQuadplay Web Service -->
+ <bean id="viQuadplayWebServiceTemplate" class="org.springframework.ws.client.core.WebServiceTemplate"
+  p:marshaller-ref="viQuadplayJaxbMarshaller"
+  p:unmarshaller-ref="viQuadplayJaxbMarshaller"
+  p:defaultUri="${ws.viQuadplay.wsclient}"
+  p:messageSender-ref="messageSender">
+  <constructor-arg ref="messageFactory"/>
+  <property name="interceptors">
+   <list>
+    <ref local="viQuadplayWss4jSecurityInterceptor"/>
+   </list>
+  </property>  
+ </bean>
+ 
+ <bean id="viQuadplayWss4jSecurityInterceptor"
+   class="org.springframework.ws.soap.security.wss4j.Wss4jSecurityInterceptor">
+   <property name="securementActions" value="NoSecurity" />
+ </bean>
+     
+ <bean id="viQuadplayJaxbMarshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller"
+   p:contextPath="com.bomwebportal.lts.wsViQuadplayClient"/>
+   
+ <bean id="viQuadplayWsClient" class="com.bomwebportal.lts.wsClientLts.ViQuadplayWsClient">
+   <property name="webServiceTemplate" ref="viQuadplayWebServiceTemplate" />
+ </bean> 
+  
+ <bean id="wsLtsPlainTextSecurityHandler"
+     class="org.springframework.ws.soap.security.wss4j.callback.SimplePasswordValidationCallbackHandler"> 
+     <property name="users">
+         <props>
+             <prop key="sblwsuser">${ws.lts.client.user}</prop>
+         </props>
+     </property>
+ </bean>  
+  
+</beans>

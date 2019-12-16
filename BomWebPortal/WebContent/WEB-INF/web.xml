@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app version="2.5"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    
+    
+    <servlet>
+         <servlet-name>jsp</servlet-name>
+         <servlet-class>org.apache.jasper.servlet.JspServlet</servlet-class>
+         <init-param>
+             <param-name>fork</param-name>
+             <param-value>false</param-value>
+         </init-param>
+         <init-param>
+             <param-name>xpoweredBy</param-name>
+             <param-value>false</param-value> 
+        </init-param>
+ 	<init-param> 
+            <param-name>mappedfile</param-name>
+             <param-value>false</param-value>
+     	</init-param>
+        <load-on-startup>3</load-on-startup>
+     </servlet> 
+    
+
+<!-- Configuring Log4J, used by Log4JConfigListener --> 
+
+   <listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
+
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>/WEB-INF/log4j.properties</param-value>
+	</context-param>
+	<context-param>
+		<param-name>log4jRefreshInterval</param-name>
+		<param-value>1000</param-value>
+	</context-param>
+	<context-param>
+	     <param-name>log4jExposeWebAppRoot</param-name>
+	     <param-value>false</param-value>
+  	</context-param>
+
+<!-- Configuring encoding --> 
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>	
+  	
+ 
+  <listener>
+	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+	
+  <context-param><param-name>contextConfigLocation</param-name>
+	<param-value>
+		/WEB-INF/applicationContext.xml
+	</param-value>
+  </context-param>
+
+  <listener>
+	<listener-class>com.bomwebportal.listener.BomWebPortalListener</listener-class>
+  </listener>
+  
+   <listener>
+	<listener-class>com.bomwebportal.util.ConfigProperties</listener-class>
+  </listener>
+  
+  <!-- IMS's SessionTimeoutListener -->
+   <listener>
+	<listener-class>com.bomwebportal.ims.listener.SessionTimeoutListener</listener-class>
+  </listener>
+  <!-- End -->
+
+  <servlet>
+    <servlet-name>BomWebPortal</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>BomWebPortal</servlet-name>
+    <url-pattern>*.html</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>OrdDocCaptureApp</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>OrdDocCaptureApp</servlet-name>
+    <url-pattern>/docapp/*</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <jsp-config>
+  	 <taglib>
+		<taglib-uri>http://www.mobccs.com/mob-taglib</taglib-uri>
+		<taglib-location>/WEB-INF/lib/mob-taglib.tld</taglib-location>
+	</taglib>
+  </jsp-config>
+
+  <servlet>
+    <servlet-name>ImsResource</servlet-name>
+    <servlet-class>com.bomwebportal.ims.http.ImsResourceServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ImsResource</servlet-name>
+    <url-pattern>/basket/*</url-pattern>
+  </servlet-mapping>
+  
+  	<servlet-mapping>
+    <servlet-name>ImsResource</servlet-name>
+    <url-pattern>/imspdfs/*</url-pattern>
+  </servlet-mapping>
+
+ 
+  <!-- WS Changes -->
+  <servlet>
+      <servlet-name>spring-ws-lts</servlet-name>
+      <servlet-class>org.springframework.ws.transport.http.MessageDispatcherServlet</servlet-class>
+  </servlet> 
+
+  <servlet-mapping>
+        <servlet-name>spring-ws-lts</servlet-name>
+        <url-pattern>/ws/lts/*</url-pattern>
+  </servlet-mapping>
+  <!-- LTS WS Changes -->
+  
+  <servlet>
+    <servlet-name>static-resources</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+        <servlet-name>static-resources</servlet-name>
+        <url-pattern>/phone/*</url-pattern>
+        <url-pattern>/vas/*</url-pattern>
+  </servlet-mapping>
+  
+  
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>SB Admin</web-resource-name>
+      <url-pattern>/bcp.jsp</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>sbadmin</role-name>
+    </auth-constraint>
+  </security-constraint>
+  
+  <login-config>
+    <auth-method>BASIC</auth-method>
+    <realm-name>SB Admin</realm-name>
+  </login-config>   
+</web-app>

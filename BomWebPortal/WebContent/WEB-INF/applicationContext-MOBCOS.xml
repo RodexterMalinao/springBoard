@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+           
+	<bean id="mobCosChangeInboundService" class="com.bomwebportal.mob.cos.service.MobCosChangeInboundServiceImpl">
+		<property name="mobCosChangeInboundDAO" ref="mobCosChangeInboundDAO" />
+	</bean>
+	
+	<bean id="mobCosChangeInboundDAO" class="com.bomwebportal.mob.cos.dao.MobCosChangeInboundDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	
+	<bean id="mobCosCopService" class="com.bomwebportal.mob.cos.service.MobCosCopServiceImpl">
+		<property name="mobCosCopDAO" ref="mobCosCopDAO" />
+	</bean>
+	
+	<bean id="mobCosCopDAO" class="com.bomwebportal.mob.cos.dao.MobCosCopDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="mobCosCampaignService" class="com.bomwebportal.mob.cos.service.MobCosCampaignServiceImpl">
+		<property name="mobCosCampaignDAO" ref="mobCosCampaignDAO" />
+	</bean>
+	
+	<bean id="mobCosCampaignDAO" class="com.bomwebportal.mob.cos.dao.MobCosCampaignDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<import resource="spring-bom-cos-ws.xml"/>
+	
+</beans>

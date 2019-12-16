@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 	<bean id="BomDS" class="org.springframework.jndi.JndiObjectFactoryBean">
+  		<property name="jndiName" value="jdbc/BomDS"/>
+  		<property name="resourceRef" value="true"/>
+	</bean>
+-->
+	<bean id="OracleSelectHelper" class="com.pccw.util.db.OracleSelectHelper" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="OracleSelectHelper-WorkQueueDS" class="com.pccw.util.db.OracleSelectHelper" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	<!-- 
+	<bean id="com.bomwebportal.lts.dao.bom.BLookupDAO" class="com.bomwebportal.lts.dao.bom.BLookupDAO" scope="prototype">
+		<property name="dataSource" ref="BomDS" />
+	</bean>
+	 -->
+	<bean id="com.bomwebportal.lts.dao.order.OfferItemMappingDAO" class="com.bomwebportal.lts.dao.order.OfferItemMappingDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="com.bomwebportal.lts.dao.WorkQueueOrderSearchDAO" class="com.bomwebportal.lts.dao.WorkQueueOrderSearchDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>	
+</beans>

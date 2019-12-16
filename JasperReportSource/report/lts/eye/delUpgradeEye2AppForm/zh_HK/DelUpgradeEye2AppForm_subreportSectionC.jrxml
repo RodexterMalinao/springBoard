@@ -1,0 +1,1558 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DelUpgradeEye2AppForm_subreportWebSite" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="868"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<field name="printTermsCondition" class="java.lang.Boolean"/>
+	<field name="thirdPartyInd" class="java.lang.Boolean"/>
+	<field name="eyeCustSignatureStream" class="java.io.InputStream"/>
+	<field name="resTelCustSignatureStream" class="java.io.InputStream"/>
+	<field name="applicationDate" class="java.lang.String"/>
+	<field name="eyeApplication" class="java.lang.Boolean"/>
+	<field name="resTelApplication" class="java.lang.Boolean"/>
+	<field name="orderMode" class="java.lang.String"/>
+	<field name="orderType" class="java.lang.String"/>
+	<field name="action" class="java.lang.String"/>
+	<field name="highlightSectionTitle" class="java.lang.Boolean"/>
+	<field name="sectionC.sectionTitle" class="java.lang.String"/>
+	<field name="sectionC.sectionPreviewTitle" class="java.lang.String"/>
+	<field name="sectionC.sectionName" class="java.lang.String"/>
+	<field name="sectionC.eyeContractPeriod" class="java.lang.String"/>
+	<field name="sectionC.eyeInstallDate" class="java.lang.String"/>
+	<field name="sectionC.eyeApptTime" class="java.lang.String"/>
+	<field name="sectionC.eyeSrvNum" class="java.lang.String"/>
+	<field name="sectionC.eyePlanList" class="java.util.ArrayList"/>
+	<field name="sectionC.resTelContractPeriod" class="java.lang.String"/>
+	<field name="sectionC.resTelInstallDate" class="java.lang.String"/>
+	<field name="sectionC.resTelApptTime" class="java.lang.String"/>
+	<field name="sectionC.resTelSrvNum" class="java.lang.String"/>
+	<field name="sectionC.resTelPlanList" class="java.util.ArrayList"/>
+	<field name="sectionC.eyePrewiringDate" class="java.lang.String"/>
+	<field name="sectionC.eyePrewiringTime" class="java.lang.String"/>
+	<field name="sectionC.resTelPrewiringDate" class="java.lang.String"/>
+	<field name="sectionC.resTelPrewiringTime" class="java.lang.String"/>
+	<field name="sectionC.eyeCutOrderDate" class="java.lang.String"/>
+	<field name="sectionC.eyeCutOrderTime" class="java.lang.String"/>
+	<field name="sectionC.resTelCutOrderDate" class="java.lang.String"/>
+	<field name="sectionC.resTelCutOrderTime" class="java.lang.String"/>
+	<field name="sectionC.workingDNInd" class="java.lang.Boolean"/>
+	<field name="sectionC.exDirectory" class="java.lang.Boolean"/>
+	<field name="sectionC.exDirectoryText" class="java.lang.String"/>
+	<field name="sectionC.notExDirectoryText" class="java.lang.String"/>
+	<field name="sectionC.portIn" class="java.lang.Boolean"/>
+	<field name="sectionC.fieldVisitInd" class="java.lang.Boolean"/>
+	<field name="sectionC.pipbType" class="java.lang.String"/>
+	<field name="sectionC.switchingSrvNum" class="java.lang.String"/>
+	<field name="sectionC.reuseSocketInd" class="java.lang.String"/>
+	<field name="sectionC.pipbTargetSwitchTime" class="java.lang.String"/>
+	<field name="sectionC.pipbTargetSwitchDate" class="java.lang.String"/>
+	<field name="sectionC.pipbTargetInstallTime" class="java.lang.String"/>
+	<field name="sectionC.pipbTargetInstallDate" class="java.lang.String"/>
+	<field name="sectionC.newSrvNum" class="java.lang.String"/>
+	<field name="sectionC.duplexNum" class="java.lang.String"/>
+	<field name="sectionC.newDuplexNum" class="java.lang.String"/>
+	<field name="sectionC.orderSubType" class="java.lang.String"/>
+	<field name="sectionC.eyePreinstallation" class="java.lang.Boolean"/>
+	<field name="sectionC.resTelPreinstallation" class="java.lang.Boolean"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="1" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Prevent">
+			<staticText>
+				<reportElement x="5" y="13" width="57" height="15">
+					<printWhenExpression><![CDATA[!$F{highlightSectionTitle}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第三節:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="62" y="13" width="483" height="15">
+					<printWhenExpression><![CDATA[!$F{highlightSectionTitle}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.sectionTitle}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="10" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="29" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="10" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="10" width="1" height="20"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="62" y="13" width="483" height="15">
+					<printWhenExpression><![CDATA[$F{highlightSectionTitle}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.sectionPreviewTitle}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="5" y="13" width="57" height="15">
+					<printWhenExpression><![CDATA[$F{highlightSectionTitle}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.sectionName}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue() && !"SB_STANDALONE_VAS".equals($F{sectionC.orderSubType})]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="3" width="145" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[承諾期:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="3" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["0".equals($F{sectionC.eyeContractPeriod}) ? "不適用" : ($F{sectionC.eyeContractPeriod} + "個月")]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="17" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="37" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue()
+&& $F{sectionC.eyePreinstallation}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="37" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="37" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="145" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[預計預佈安裝日期:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="2" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.eyeInstallDate}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="16" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="209" y="19" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.eyeApptTime}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="19" width="145" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[預計預佈安裝時間:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="209" y="33" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="335" y="5" width="115" height="12"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[(日/ 月 / 年)]]></text>
+			</staticText>
+		</band>
+		<band height="37" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue()
+&& !$F{sectionC.eyePrewiringDate}.isEmpty()
+&& !$F{sectionC.eyePrewiringTime}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="37" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="37" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="145" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[預計預佈線路日期:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="2" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.eyePrewiringDate}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="16" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="209" y="19" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.eyePrewiringTime}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="19" width="145" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[預計預佈線路時間:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="209" y="33" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="335" y="5" width="115" height="12"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[(日/ 月 / 年)]]></text>
+			</staticText>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue()]]></printWhenExpression>
+			<staticText>
+				<reportElement x="5" y="2" width="145" height="15">
+					<printWhenExpression><![CDATA[$F{sectionC.fieldVisitInd}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[預計安裝日期:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="2" width="145" height="15">
+					<printWhenExpression><![CDATA[!$F{sectionC.fieldVisitInd}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[預計開始日期:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="3" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.eyeInstallDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="336" y="4" width="115" height="12"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[(日/ 月 / 年)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="209" y="17" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue()
+&& $F{sectionC.fieldVisitInd}.booleanValue()]]></printWhenExpression>
+			<staticText>
+				<reportElement x="5" y="3" width="145" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[預計安裝時間:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="3" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.eyeApptTime}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="17" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="37" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue()
+&& !$F{sectionC.eyeCutOrderDate}.isEmpty()
+&& !$F{sectionC.eyeCutOrderTime}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="37" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="37" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="200" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[攜帶原有電話號碼轉至本公司的預計日期:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="2" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.eyeCutOrderDate}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="16" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="209" y="19" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.eyeCutOrderTime}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="19" width="200" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[攜帶原有電話號碼轉至本公司的預計時段:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="209" y="33" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="335" y="5" width="115" height="12"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[(日/ 月 / 年)]]></text>
+			</staticText>
+		</band>
+		<band height="40" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField>
+				<reportElement x="209" y="2" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.eyeInstallDate}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="16" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="145" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[預計生效日:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="21" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.eyePreinstallation}.booleanValue() ? $F{sectionC.switchingSrvNum} : $F{sectionC.eyeSrvNum}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="35" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="335" y="5" width="112" height="12"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[(日/ 月 / 年)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="5" y="21" width="200" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.portIn}.booleanValue() ? "立即攜帶原有電話號碼轉至本公司" : (("申請本服務的" +
+   (!$F{sectionC.workingDNInd}.booleanValue() ? "新" : "現有") +
+   "家居電話號碼:"))]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue()
+&& !$F{sectionC.newSrvNum}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="3" width="145" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[更改後的家居電話號碼:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="3" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.newSrvNum}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="18" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue()
+&& !$F{sectionC.duplexNum}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="3" width="145" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[原有家居電話號碼(duplex):]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="3" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.duplexNum}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="18" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue()
+&& !$F{sectionC.newDuplexNum}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="3" width="145" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[更改後的家居電話號碼(duplex):]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="3" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.newDuplexNum}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="18" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="37" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue() && $F{sectionC.pipbType}!= null]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="37" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="37" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="182" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[轉至本公司的電話號碼:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="2" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.switchingSrvNum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="21" width="478" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NEW_DN".equals($F{sectionC.pipbType}) ? "(新安裝及稍後攜帶原有電話號碼轉至本公司)" : ("PIPB_DN".equals($F{sectionC.pipbType})? "(立即攜帶原有電話號碼轉至本公司)" : "")]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="17" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue() && $F{sectionC.pipbType}!= null && "SBA".equals($F{orderType})]]></printWhenExpression>
+			<staticText>
+				<reportElement x="5" y="2" width="200" height="15">
+					<printWhenExpression><![CDATA[$F{sectionC.fieldVisitInd}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[攜帶原有電話號碼轉至本公司的預計安裝日期:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="2" width="200" height="15">
+					<printWhenExpression><![CDATA[!$F{sectionC.fieldVisitInd}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[攜帶原有電話號碼轉至本公司的預計開始日期:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="3" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.pipbTargetInstallDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="336" y="4" width="115" height="12"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[(日/ 月 / 年)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="209" y="17" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue() && $F{sectionC.pipbType}!= null && "SBA".equals($F{orderType})]]></printWhenExpression>
+			<staticText>
+				<reportElement x="5" y="3" width="200" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[攜帶原有電話號碼轉至本公司的預計安裝時間:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="3" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.pipbTargetInstallTime}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="17" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="37" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue() && $F{sectionC.pipbType}!= null && "SBA".equals($F{orderType})]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="37" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="37" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="200" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[攜帶原有電話號碼轉至本公司的預計日期:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="2" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.pipbTargetSwitchDate}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="16" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="209" y="19" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.pipbTargetSwitchTime}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="19" width="200" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[攜帶原有電話號碼轉至本公司的預計時段:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="209" y="33" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="335" y="5" width="115" height="12"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[(日/ 月 / 年)]]></text>
+			</staticText>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue() && $F{sectionC.pipbType}!= null && $F{sectionC.reuseSocketInd}!= null]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="145" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[電話線插座選項:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="2" width="336" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["F".equals($F{sectionC.reuseSocketInd}) ? "繼續使用你之前的固網營運商的電話線插座(需要師傅再次上門安裝)" : ("P".equals($F{sectionC.reuseSocketInd})? "繼續使用本公司的電話線插座(不需要師傅再次上門安裝)" : "N/A")]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue() &&  ( "O".equals($F{orderMode}) || "SBA".equals($F{orderType}))]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField>
+				<reportElement x="5" y="2" width="441" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{sectionC.exDirectory}.booleanValue() ? $F{sectionC.exDirectoryText} : $F{sectionC.notExDirectoryText})]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="5">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue() && $F{eyeApplication}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="5" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="5" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{resTelApplication}.booleanValue() && !"SB_STANDALONE_VAS".equals($F{sectionC.orderSubType})]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="3" width="145" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[承諾期:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="3" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["0".equals($F{sectionC.resTelContractPeriod}) ? "不適用" : ($F{sectionC.resTelContractPeriod} + "個月")]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="17" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="38" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{resTelApplication}.booleanValue()
+&& $F{sectionC.resTelPreinstallation}.booleanValue()
+&& false]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="37" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="37" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="145" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[預計預佈安裝日期:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="2" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.resTelInstallDate}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="16" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="209" y="19" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.resTelApptTime}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="19" width="145" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[預計預佈安裝時間:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="209" y="33" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="335" y="5" width="115" height="12"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[(日/ 月 / 年)]]></text>
+			</staticText>
+		</band>
+		<band height="38" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{resTelApplication}.booleanValue()
+&& !$F{sectionC.resTelPrewiringDate}.isEmpty()
+&& !$F{sectionC.resTelPrewiringTime}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="37" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="37" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="145" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[預計預佈線路日期:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="2" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.resTelPrewiringDate}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="16" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="209" y="19" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.resTelPrewiringTime}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="19" width="145" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[預計預佈線路時間:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="209" y="33" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="335" y="5" width="115" height="12"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[(日/ 月 / 年)]]></text>
+			</staticText>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{resTelApplication}.booleanValue()]]></printWhenExpression>
+			<staticText>
+				<reportElement x="5" y="2" width="145" height="15">
+					<printWhenExpression><![CDATA[$F{sectionC.fieldVisitInd}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[預計安裝日期:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="2" width="145" height="15">
+					<printWhenExpression><![CDATA[!$F{sectionC.fieldVisitInd}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[預計開始日期:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="3" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.resTelInstallDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="336" y="4" width="115" height="12"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[(日/ 月 / 年)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="209" y="17" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{resTelApplication}.booleanValue()
+&& $F{sectionC.fieldVisitInd}.booleanValue()]]></printWhenExpression>
+			<staticText>
+				<reportElement x="5" y="3" width="145" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[預計安裝時間:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="3" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.resTelApptTime}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="17" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="37" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{resTelApplication}.booleanValue()
+&& !$F{sectionC.resTelCutOrderDate}.isEmpty()
+&& !$F{sectionC.resTelCutOrderTime}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="37" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="37" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="200" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[攜帶原有電話號碼轉至本公司的預計日期:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="2" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.resTelCutOrderDate}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="16" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="209" y="19" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.resTelCutOrderTime}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="19" width="200" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[攜帶原有電話號碼轉至本公司的預計時段:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="209" y="33" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="335" y="5" width="115" height="12"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[(日/ 月 / 年)]]></text>
+			</staticText>
+		</band>
+		<band height="40" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{resTelApplication}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField>
+				<reportElement x="209" y="2" width="120" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[!$F{sectionC.resTelPreinstallation}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.resTelInstallDate}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="16" width="120" height="1">
+					<printWhenExpression><![CDATA[!$F{sectionC.resTelPreinstallation}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="145" height="15">
+					<printWhenExpression><![CDATA[!$F{sectionC.resTelPreinstallation}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[預計生效日:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="21" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.resTelPreinstallation}.booleanValue() ? $F{sectionC.switchingSrvNum} : $F{sectionC.resTelSrvNum}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="35" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="335" y="5" width="112" height="12">
+					<printWhenExpression><![CDATA[!$F{sectionC.resTelPreinstallation}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[(日/ 月 / 年)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="5" y="20" width="200" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.portIn}.booleanValue() ? "立即攜帶原有電話號碼轉至本公司" : ("申請本服務的" +
+   (!$F{sectionC.workingDNInd}.booleanValue() ? "新" : "現有") +
+   "家居電話號碼:")]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{resTelApplication}.booleanValue()
+&& !$F{sectionC.newSrvNum}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="3" width="145" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[更改後的家居電話號碼:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="3" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.newSrvNum}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="18" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{resTelApplication}.booleanValue()
+&& !$F{sectionC.duplexNum}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="3" width="145" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[原有家居電話號碼(duplex):]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="3" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.duplexNum}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="18" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{resTelApplication}.booleanValue()
+&& !$F{sectionC.newDuplexNum}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="3" width="145" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[更改後的家居電話號碼(duplex):]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="3" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.newDuplexNum}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="18" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="37" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{resTelApplication}.booleanValue() && $F{sectionC.pipbType}!= null]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="37" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="37" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="182" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[轉至本公司的電話號碼:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="2" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.switchingSrvNum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="21" width="478" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NEW_DN".equals($F{sectionC.pipbType}) ? "(新安裝及稍後攜帶原有電話號碼轉至本公司)" : ("PIPB_DN".equals($F{sectionC.pipbType})? "(立即攜帶原有電話號碼轉至本公司)" : "")]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="17" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{resTelApplication}.booleanValue() && $F{sectionC.pipbType}!= null && "SBA".equals($F{orderType})]]></printWhenExpression>
+			<staticText>
+				<reportElement x="5" y="2" width="200" height="15">
+					<printWhenExpression><![CDATA[$F{sectionC.fieldVisitInd}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[攜帶原有電話號碼轉至本公司的預計安裝日期:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="2" width="200" height="15">
+					<printWhenExpression><![CDATA[!$F{sectionC.fieldVisitInd}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[攜帶原有電話號碼轉至本公司的預計開始日期:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="3" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.pipbTargetInstallDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="336" y="4" width="115" height="12"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[(日/ 月 / 年)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="209" y="17" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{resTelApplication}.booleanValue() && $F{sectionC.pipbType}!= null && "SBA".equals($F{orderType})]]></printWhenExpression>
+			<staticText>
+				<reportElement x="5" y="3" width="200" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[攜帶原有電話號碼轉至本公司的預計安裝時間:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="3" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.pipbTargetInstallTime}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="17" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="37" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{resTelApplication}.booleanValue() && $F{sectionC.pipbType}!= null && "SBA".equals($F{orderType})]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="37" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="37" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="200" height="15">
+					<printWhenExpression><![CDATA[!$F{sectionC.resTelPreinstallation}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[攜帶原有電話號碼轉至本公司的預計日期:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="2" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.pipbTargetSwitchDate}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="209" y="16" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="209" y="19" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionC.pipbTargetSwitchTime}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="19" width="200" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[攜帶原有電話號碼轉至本公司的預計時段:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="209" y="33" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="335" y="5" width="115" height="12"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[(日/ 月 / 年)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="2" width="200" height="15">
+					<printWhenExpression><![CDATA[$F{sectionC.resTelPreinstallation}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[攜帶原有電話號碼轉至本公司的預計日期:]]></text>
+			</staticText>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{resTelApplication}.booleanValue() && $F{sectionC.pipbType}!= null && $F{sectionC.reuseSocketInd}!= null]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="145" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[電話線插座選項:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="2" width="336" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["F".equals($F{sectionC.reuseSocketInd}) ? "繼續使用你之前的固網營運商的電話線插座(需要師傅再次上門安裝)" : ("P".equals($F{sectionC.reuseSocketInd})? "繼續使用本公司的電話線插座(不需要師傅再次上門安裝)" : "N/A")]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{resTelApplication}.booleanValue() && ( "O".equals($F{orderMode}) || "SBA".equals($F{orderType}))]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField>
+				<reportElement x="5" y="2" width="441" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[($F{sectionC.exDirectory}.booleanValue() ? $F{sectionC.exDirectoryText} : $F{sectionC.notExDirectoryText})]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="5">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue() && $F{resTelApplication}.booleanValue() && !"SB_STANDALONE_VAS".equals($F{sectionC.orderSubType})]]></printWhenExpression>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="5" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="5" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="25">
+			<printWhenExpression><![CDATA[!"SB_STANDALONE_VAS".equals($F{sectionC.orderSubType})]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="25" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="25" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="335" y="0" width="1" height="25" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="445" y="0" width="1" height="25" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="336" y="0" width="108" height="22"/>
+				<textElement textAlignment="Center">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[承諾期內月費]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="446" y="0" width="108" height="22"/>
+				<textElement textAlignment="Center">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[月費]]></text>
+			</staticText>
+		</band>
+		<band height="25">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue() && !"O".equals($F{orderMode}) && !"SB_STANDALONE_VAS".equals($F{sectionC.orderSubType})]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="25" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="25" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="335" y="0" width="1" height="25" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="445" y="0" width="1" height="25" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="5" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionC.eyePlanList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportPlanList.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="25">
+			<printWhenExpression><![CDATA[$F{resTelApplication}.booleanValue() && !"O".equals($F{orderMode}) && !"SB_STANDALONE_VAS".equals($F{sectionC.orderSubType})]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="25" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="25" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="335" y="0" width="1" height="25" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="445" y="0" width="1" height="25" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="5" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionC.resTelPlanList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportPlanList.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="25">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue() && "O".equals($F{orderMode}) && !"SB_STANDALONE_VAS".equals($F{sectionC.orderSubType})]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="25" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="25" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="335" y="0" width="1" height="25" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="445" y="0" width="1" height="25" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="5" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionC.eyePlanList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportOnlinePlanList.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="25">
+			<printWhenExpression><![CDATA[$F{resTelApplication}.booleanValue() && "O".equals($F{orderMode}) && !"SB_STANDALONE_VAS".equals($F{sectionC.orderSubType})]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="25" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="25" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="335" y="0" width="1" height="25" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="445" y="0" width="1" height="25" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="5" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionC.resTelPlanList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/zh_HK/DelUpgradeEye2AppForm_subreportOnlinePlanList.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="1" splitType="Prevent">
+			<line>
+				<reportElement x="0" y="0" width="556" height="1"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

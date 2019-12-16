@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	                    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<import resource="classpath:/config/bomwebportal/common/spring/spring-bean.xml" />
+
+	<bean name="customerInformationService" class="com.bomwebportal.service.CustomerInformationServiceImpl">
+		<property name="customerOrderHistoryDao" ref="customerOrderHistoryDao" />
+		<property name="bomCustomerValidationDAO" ref="bomCustomerValidationDAO" />
+		<property name="addrLkupDAO" ref="addrLkupDao" />
+	</bean>
+	
+	<bean id="bomCustomerValidationDAO" class="com.bomwebportal.dao.BomCustomerValidationDAO">
+		<property name="dataSource" ref="BomDS" />
+	</bean>	
+
+	<bean id="addrLkupDao" class="com.bomwebportal.dao.AddrLkupDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="customerOrderHistoryDao" class="com.bomwebportal.dao.CustomerOrderHistoryDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="imsWorkQueueStatusDAO" class="com.bomwebportal.dao.ImsWorkQueueStatusDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />		
+		<property name="mobilePINService" ref="mobilePINService"/>
+	</bean>
+	
+	<bean id="imsBomBCustomerDAO" class="com.bomwebportal.dao.ImsBomBCustomerDAO">
+		<property name="dataSource" ref="BomDS" />
+	</bean>
+
+	<bean id="com.bomwebportal.service.AcknowledgeSbService" class="com.bomwebportal.service.AcknowledgeSbServiceImpl">
+		<property name="imsdao" ref="imsWorkQueueStatusDAO" />
+		<property name="imsBomdao" ref="imsBomBCustomerDAO" />
+		<property name="bomwebDnPoolDAO" ref="bomwebDnPoolDAO" />
+		<property name="offerActionDao" ref="offerActionDao" />
+	</bean>
+
+	<bean id="com.bomwebportal.dao.BomwebOrderLatestStatusDAO" class="com.bomwebportal.dao.BomwebOrderLatestStatusDAOImpl" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="OracleSelectHelper-BomWebPortalDS" class="com.pccw.util.db.OracleSelectHelper" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="com.bomwebportal.dao.BomwebOrderServiceLtsDAO" class="com.bomwebportal.dao.BomwebOrderServiceLtsDAOImpl" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="com.bomwebportal.dao.BomBOrdDtlDAO" class="com.bomwebportal.dao.BomBOrdDtlDAO" scope="prototype">
+		<property name="dataSource" ref="BomDS" />
+	</bean>
+	
+	<bean id="bomwebDnPoolDAO" class="com.bomwebportal.dao.BomwebDnPoolDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="offerActionDao" class="com.bomwebportal.dao.OfferActionDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="fieldPropertyDao" class="com.bomwebportal.dao.FieldPropertyDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>	
+    <bean name="fieldPropertyCache" class="com.bomwebportal.service.CodeLkupCacheServiceImpl" scope="singleton">
+        <property name="codeLkupDAO" ref="fieldPropertyDao" />
+    </bean>
+    
+    <bean name="dtoPropertyService" class="com.bomwebportal.service.DtoPropertyServiceImpl" scope="singleton">
+        <property name="fieldPropertyCache" ref="fieldPropertyCache" />
+    </bean>
+    
+    <bean name="formDtoCommonValidator" class="com.bomwebportal.validator.FormDtoCommonValidator" scope="singleton">
+        <property name="dtoPropertyService" ref="dtoPropertyService" />
+    </bean>
+</beans>

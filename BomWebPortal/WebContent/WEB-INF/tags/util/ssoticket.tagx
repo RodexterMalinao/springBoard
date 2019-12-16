@@ -1,0 +1,62 @@
+<jsp:root xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:form="http://www.springframework.org/tags/form"
+	xmlns:pccw-util="urn:jsptagdir:/WEB-INF/tags/util/"
+	version="2.0">
+  <jsp:output omit-xml-declaration="yes" />
+  <jsp:directive.tag import="java.util.*"/>
+  <jsp:directive.tag import="com.bomwebportal.dto.*"/>
+  <jsp:directive.tag import="com.bomwebportal.sso.SSOAuthContext"/>
+  <jsp:directive.tag import="com.bomwebportal.sso.service.SSOService"/>
+
+
+  <jsp:directive.attribute name="appId" type="java.lang.String" required="false" rtexprvalue="true" description="Target App Id" />
+  <jsp:directive.attribute name="var" type="java.lang.String" required="false" rtexprvalue="false" description="variable" />
+
+  <pccw-util:bean var="ssoService" name="ssoService" />
+  
+  <jsp:scriptlet>
+    <![CDATA[
+		synchronized(jspContext) {
+			
+			SSOAuthContext authContext = (SSOAuthContext)session.getAttribute("ssoAuthContext");
+			String ticket = "";
+			if (authContext != null) {
+
+				String hash = authContext.getHash();
+				String thisAppId = authContext.getAppId();
+				String targetAppId = (String)jspContext.getAttribute("appId");
+				
+				if (targetAppId == null || targetAppId.trim().isEmpty()) {
+					targetAppId=thisAppId;
+				}
+
+				SSOService ssoService = (SSOService)jspContext.getAttribute("ssoService");
+				ticket = ssoService.allocEt(thisAppId, hash, targetAppId);
+
+			}
+			
+			jspContext.setAttribute("ticket", ticket);
+		}
+    ]]>
+  </jsp:scriptlet>
+  <c:choose>
+  	<c:when test="${not empty var}">
+  	<jsp:scriptlet>
+	    <![CDATA[
+			synchronized(jspContext) {
+	             String var = (String)jspContext.getAttribute("var");
+	             Object data = jspContext.getAttribute("ticket");
+	             jspContext.setAttribute(var, data, PageContext.REQUEST_SCOPE);
+			}
+	    ]]>
+    </jsp:scriptlet>
+  	</c:when>
+  	<c:otherwise>
+  		<jsp:text>${ticket }</jsp:text>
+  	</c:otherwise>
+  </c:choose>
+</jsp:root>

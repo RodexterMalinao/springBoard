@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- add by Moses 201403021 -->
+	<bean class="com.bomwebportal.mob.cos.web.MobCosChangeInboundController">
+		<!-- 		
+		<property name="validator">
+            <bean class="com.bomwebportal.mob.ds.validator.MobDsMrtManagementValidator">
+            	<property name="mobDsMrtManagementService" ref="mobDsMrtManagementService"/>	
+            	<property name="stockInService" ref="stockInService"/>	
+            </bean>
+        </property>  -->
+		<property name="commandName" value="mobCosChangeInbound" />
+		<property name="commandClass" value="com.bomwebportal.mob.cos.dto.MobCosChangeInboundDTO" />
+		<property name="mobCosChangeInboundService" ref="mobCosChangeInboundService" />
+        <property name="sessionForm" value="true" />
+	</bean>
+	
+	<bean class="com.bomwebportal.mob.cos.web.MobCosChangeInboundAJAXController">
+		<property name="mobCosChangeInboundService" ref="mobCosChangeInboundService" />
+	</bean>	
+	
+	<bean class="com.bomwebportal.mob.cos.web.MobCosCampaignController">
+		<property name="commandName" value="mobCosCampaign" />
+		<property name="commandClass" value="com.bomwebportal.mob.cos.dto.ui.MobCosCampaignUI" />
+		<property name="mobCosCampaignService" ref="mobCosCampaignService" />
+		<property name="sessionForm" value="true" />
+	</bean>
+	
+	<bean class="com.bomwebportal.mob.cos.web.MobCosCampaignAJAXController">
+		<property name="mobCosCampaignService" ref="mobCosCampaignService" />
+	</bean>	
+	
+	<bean class="com.bomwebportal.mob.cos.web.AddCampaignBasketController">
+		<property name="commandName" value="addCampaignBasket" />
+		<property name="commandClass" value="com.bomwebportal.mob.cos.dto.ui.AddCampaignBasketUI" />
+		<property name="mobCosCampaignService" ref="mobCosCampaignService" />
+		<property name="sessionForm" value="true" />
+	</bean>
+	
+	<bean class="com.bomwebportal.mob.cos.web.AddCampaignBasketAJAXController">
+		<property name="mobCosCampaignService" ref="mobCosCampaignService" />
+	</bean>	
+	
+	<bean class="com.bomwebportal.mob.cos.web.EditCampaignVasController">
+		<property name="commandName" value="editCampaignVas" />
+		<property name="commandClass" value="com.bomwebportal.mob.cos.dto.ui.EditCampaignVasUI" />
+		<property name="mobCosCampaignService" ref="mobCosCampaignService" />
+		<property name="sessionForm" value="true" />
+	</bean>
+	
+	<bean class="com.bomwebportal.mob.cos.web.PreviewCampaignDtlController">
+		<property name="commandName" value="previewCampaignDtl" />
+		<property name="mobCosCampaignService" ref="mobCosCampaignService" />
+		<property name="sessionForm" value="true" />
+	</bean>
+</beans>

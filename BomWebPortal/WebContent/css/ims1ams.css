@@ -1,0 +1,36 @@
+.paper_w
+{background-image:url('../images/paper1_w.jpg');
+background-repeat:repeat;
+	}	
+
+.paper_w2
+{background-image:url('../images/paper1_w2.jpg');
+background-repeat:repeat;
+	}
+	
+.paper_no
+	{
+		background-color:#FFF;
+	}		
+	
+	
+/*kinman*/
+.table_button{
+	display:inline;
+	padding: 1px 15px 0px 15px;
+	color:#f3f3f3;
+	background-color:#ec7a00;
+	margin-left:3px;
+	margin-right:3px;
+	border:none;
+	font-size:1.2em;
+	-moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -khtml-border-radius: 6px;
+    border-radius: 6px;
+	
+}
+
+.detail_picked{
+	background-color: blue !important;
+}

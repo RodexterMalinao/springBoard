@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    
+    <bean id="actvDozerMapper" class="org.dozer.spring.DozerBeanMapperFactoryBean" scope="singleton">
+		<property name="mappingFiles" value="classpath:/config/activity/dozer/dozer-bean-mappings.xml"/>
+    </bean>	
+	
+    <bean name="activityAttachDocService" class="com.activity.service.dataAccess.ActivityAttachDocServiceImpl" scope="singleton">
+		<property name="dao" ref="com.activity.dao.dataAccess.ActivityAttachDocDAO" />
+		<property name="dozerMapper" ref="actvDozerMapper" />
+	</bean>
+        
+    <bean name="activityRemarkService" class="com.activity.service.dataAccess.ActivityRemarkServiceImpl" scope="singleton">
+		<property name="dao" ref="com.activity.dao.dataAccess.ActivityRemarkDAO" />
+		<property name="dozerMapper" ref="actvDozerMapper" />
+	</bean>
+	
+	<bean name="activityAttributeService" class="com.activity.service.dataAccess.ActivityAttributeServiceImpl" scope="singleton">
+		<property name="dao" ref="com.activity.dao.dataAccess.ActivityAttributeDAO" />
+		<property name="dozerMapper" ref="actvDozerMapper" />
+	</bean>
+	
+	<bean name="activityAddressService" class="com.activity.service.dataAccess.ActivityAddressServiceImpl" scope="singleton">
+		<property name="dao" ref="com.activity.dao.dataAccess.ActivityAddressDAO" />
+		<property name="dozerMapper" ref="actvDozerMapper" />
+	</bean>
+	
+	<bean name="activityCustDtlService" class="com.activity.service.dataAccess.ActivityCustomerDtlServiceImpl" scope="singleton">
+		<property name="dao" ref="com.activity.dao.dataAccess.ActivityCustomerDtlDAO" />
+		<property name="dozerMapper" ref="actvDozerMapper" />
+	</bean>		
+	        
+    <bean name="activityService" class="com.activity.service.dataAccess.ActivityServiceImpl" scope="singleton">
+		<property name="dao" ref="com.activity.dao.dataAccess.ActivityDAO" />
+		<property name="dozerMapper" ref="actvDozerMapper" />
+	</bean>
+        
+    <bean name="activityTaskService" class="com.activity.service.dataAccess.ActivityTaskServiceImpl" scope="singleton">
+		<property name="dao" ref="com.activity.dao.dataAccess.ActivityTaskDAO" />
+		<property name="dozerMapper" ref="actvDozerMapper" />
+	</bean>
+    
+    <bean name="documentService" class="com.activity.service.dataAccess.DocumentServiceImpl" scope="singleton">
+		<property name="dao" ref="com.activity.dao.dataAccess.DocumentDAO" />
+		<property name="dozerMapper" ref="actvDozerMapper" />
+	</bean>
+	
+    <bean name="documentDetailService" class="com.activity.service.dataAccess.DocumentDetailServiceImpl" scope="singleton">
+		<property name="dao" ref="com.activity.dao.dataAccess.DocumentDetailDAO" />
+		<property name="dozerMapper" ref="actvDozerMapper" />
+	</bean>
+		
+	<bean name="activityStatusService" class="com.activity.service.dataAccess.ActivityStatusServiceImpl" scope="singleton">
+		<property name="activityStatusSLVDao" ref="activityStatusSLVDao" />
+	</bean>
+
+	<bean name="documentSubmissionService" class="com.activity.service.DocumentSubmissionServiceImpl" scope="singleton">
+		<property name="documentService" ref="documentService" />
+		<property name="documentDetailService" ref="documentDetailService" />
+		<property name="activityIdFactory" ref="activityIdFactory" />
+	</bean>
+	
+	<bean name="saveDocumentService" class="com.activity.service.dataAccess.SaveDocumentServiceImpl" scope="prototype">
+		<property name="retrieveActivityService" ref="retrieveActivityService" />
+		<property name="activityAttachDocService" ref="activityAttachDocService" />
+	</bean>
+
+	<bean name="retrieveActivityService" class="com.activity.service.dataAccess.RetrieveActivityServiceImpl" scope="prototype">
+		<property name="activityService" ref="activityService" />
+		<property name="documentService" ref="documentService" />
+		<property name="documentDetailService" ref="documentDetailService" />
+		<property name="activityTaskService" ref="activityTaskService" />
+		<property name="activityAttachDocService" ref="activityAttachDocService" />
+		<property name="activityRemarkService" ref="activityRemarkService" />
+		<property name="activityAttributeService" ref="activityAttributeService" />
+		<property name="activityAddressService" ref="activityAddressService" />
+		<property name="activityCustDtlService" ref="activityCustDtlService" />		
+		<property name="activityStatusService" ref="activityStatusService" />
+	</bean>
+
+	<bean name="saveActivityService" class="com.activity.service.dataAccess.SaveActivityServiceImpl" scope="prototype">
+		<property name="activityService" ref="activityService" />
+		<property name="documentService" ref="documentService" />
+		<property name="documentSubmissionService" ref="documentSubmissionService" />
+		<property name="activityTaskService" ref="activityTaskService" />
+		<property name="activityAttachDocService" ref="activityAttachDocService" />
+		<property name="activityRemarkService" ref="activityRemarkService" />
+		<property name="activityAttributeService" ref="activityAttributeService" />
+		<property name="activityAddressService" ref="activityAddressService" />
+		<property name="activityCustDtlService" ref="activityCustDtlService" />
+		<property name="saveDocumentService" ref="saveDocumentService" />
+	</bean>
+	
+	<bean name="activityIdFactory" class="com.activity.util.ActivityIdFactory" scope="singleton">
+		<property name="activityIdDao" ref="activityIdDao" />
+	</bean>
+	
+	<bean name="activityDetailService" class="com.activity.service.ActivityDetailServiceImpl" scope="singleton">
+		<property name="activityDetailDao" ref="activityDetailDao" />
+	</bean>
+		
+	<bean name="sbLockService" class="com.bomwebportal.service.SbLockServiceImpl" scope="singleton">
+		<property name="sbLockDao" ref="sbLockDao" />
+	</bean>
+	
+	<bean name="activityTaskFactory" class="com.activity.service.ActivityTaskFactory" scope="singleton"/>
+	
+	<bean name="activityWorkQueueService" class="com.activity.service.ActivityWorkQueueServiceImpl" scope="singleton"/>
+
+	<bean id="activityDocumentDAO" class="smartliving.backend.dao.ActivityDocumentDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean name="smartliving.backend.service.ActivityDocumentService" class="smartliving.backend.service.ActivityDocumentServiceImpl">
+		<property name="activityDocumentDAO" ref="activityDocumentDAO" />
+	</bean>	
+	
+	<bean name="uploadActvDocumentService" class="com.activity.service.UploadActvDocumentServiceImpl" scope="singleton">
+		<property name="saveDirectory" value="${dataFilePath}"/>
+	</bean>
+	
+	<bean name="workQueueStatusChangeService" class="com.activity.service.WorkQueueStatusChangeServiceImpl"/>
+    <bean name="workQueueStatusChangeServiceSCS" class="com.activity.service.WorkQueueStatusChangeServiceSCSImpl">
+         <property name="url" value="${scs.wqStatusChangeRest.url}"/>
+         <property name="scsRequestTimeOut" value="${scsRequestTimeOut}"/>
+         <property name="taskExecutor" ref="taskExecutor"/>
+         
+    </bean>
+        
+    <bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+         <property name="corePoolSize" value="1" />
+         <property name="maxPoolSize" value="1" />
+         <property name="queueCapacity" value="10" />
+    </bean>
+    
+</beans>

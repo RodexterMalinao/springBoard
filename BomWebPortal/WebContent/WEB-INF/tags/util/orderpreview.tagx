@@ -1,0 +1,68 @@
+<jsp:root xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:form="http://www.springframework.org/tags/form"
+	xmlns:sb-util="urn:jsptagdir:/WEB-INF/tags/util/"
+	version="2.0">
+
+  <jsp:output omit-xml-declaration="yes" />
+  <jsp:directive.tag import="java.util.*"/>
+  <jsp:directive.tag import="org.springframework.web.context.*"/>
+  <jsp:directive.tag import="org.springframework.web.context.support.*"/>
+    <jsp:directive.tag import="org.springframework.web.context.support.*"/>
+
+  
+
+  <jsp:directive.attribute name="orderId" type="java.lang.String" required="true" rtexprvalue="true" description="Order Id" />
+  <jsp:directive.attribute name="shopCd" type="java.lang.String" required="true" rtexprvalue="true" description="Shop Cd" />
+  <jsp:directive.attribute name="mobcosbaseurl" type="java.lang.String" required="false" rtexprvalue="true" description="mobcosbaseurl" />
+ 
+  <jsp:directive.attribute name="var" type="java.lang.String" required="false" rtexprvalue="true" description="variable" />
+  <!-- Order Search -->
+
+    <c:set var="mobcosUrl" value="${mobcosbaseurl}"/>
+  	<c:set var="orderType" value="${fn:substring(orderId, fn:length(shopCd) + 1, fn:length(shopCd) + 3)}" />
+  	<c:choose>
+	<c:when test="${orderType == 'MR' || orderType == 'MU' || orderType == 'MC' || orderType == 'MB' || orderType == 'MT'}">
+			
+			<sb-util:sso url="${mobcosUrl}enquiryorder.html?orderId=${orderId}&amp;staffId=${bomsalesuser.username}&amp;action=ENQUIRY" var="cosOrderPreviewUrl"/>
+			<a href="${cosOrderPreviewUrl}" title="Order Enquiry for MOB">${orderId}</a>
+			
+
+	</c:when>
+	<c:when test="${orderType == 'MS'}">
+			
+			<sb-util:sso url="${mobcosUrl}csimsummary/enquiryorder.html?orderId=${orderId}&amp;action=ENQUIRY" var="csimOrderPreviewUrl"/>
+			<a href="${csimOrderPreviewUrl}" title="Order Enquiry for MOB">${orderId}</a>
+	</c:when>
+	<c:when test="${orderType == 'MP'}">
+			
+			<sb-util:sso url="${mobcosUrl}cpmsummary/enquiryorder.html?orderId=${orderId}&amp;action=ENQUIRY" var="cpmOrderPreviewUrl"/>
+			<a href="${cpmOrderPreviewUrl}" title="Order Enquiry for MOB">${orderId}</a>
+			
+	</c:when>
+	<c:otherwise>
+	  	<c:if test="${fn:startsWith(orderId, 'R') || fn:startsWith(orderId, 'P') || fn:startsWith(orderId, 'D')}">
+	  		<a 
+	  			href="orderdetail.html?orderId=${orderId}&amp;action=ENQUIRY" 
+	  			title="Order Enquiry for MOB">${orderId}</a>
+	  	</c:if>
+		<c:if test="${fn:startsWith(orderId, 'C')}">
+			<c:choose>
+				<c:when test="${fn:startsWith(orderId, 'CSBS')}">
+					<a
+					href="sbsorderdetail.html?orderId=${orderId}"
+					title="Order Enquiry for MOB">${orderId}</a>
+				</c:when>
+				<c:otherwise>
+					<a
+						href="mobccspreview.html?orderId=${orderId}&amp;action=ENQUIRY"
+						title="Order Enquiry for MOB">${orderId}</a>
+				</c:otherwise>
+			</c:choose>
+		</c:if>
+	</c:otherwise>
+	</c:choose>
+</jsp:root>

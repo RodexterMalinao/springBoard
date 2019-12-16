@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AppMobileServ1_subreport7" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="2.31325973657719"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Documents and Settings\\admin\\Desktop\\mob\\"]]></defaultValueExpression>
+	</parameter>
+	<field name="multiMsisdn" class="java.lang.String"/>
+	<field name="multiSimIccid" class="java.lang.String"/>
+	<field name="multiSimType" class="java.lang.String"/>
+	<field name="memberNum" class="java.lang.String"/>
+	<field name="multiSimMainServDtls" class="java.util.List"/>
+	<field name="multiSimvasDtls" class="java.util.List"/>
+	<field name="multiSimvasOptionalDtls" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText-46" x="0" y="0" width="519" height="22" isPrintWhenDetailOverflows="true"/>
+				<box leftPadding="10">
+					<pen lineWidth="0.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[SERVICE NUMBER:]]></text>
+			</staticText>
+		</band>
+		<band height="35" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="518" height="15"/>
+				<staticText>
+					<reportElement x="55" y="0" width="145" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[) PCCW-HKT mobile service Number:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="205" y="0" width="64" height="15"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{multiMsisdn}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="275" y="16" width="223" height="15"/>
+				<staticText>
+					<reportElement x="75" y="3" width="9" height="9">
+						<printWhenExpression><![CDATA[$F{multiSimType}.equals("NFC")]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="6"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-101" x="85" y="0" width="41" height="13"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[NFC SIM]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-101" x="138" y="0" width="81" height="13"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[NFC SIM (Octopus)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-101" x="13" y="0" width="62" height="13"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Non-NFC SIM]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="127" y="3" width="9" height="9">
+						<printWhenExpression><![CDATA[$F{multiSimType}.equals("Octopus")]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="6"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="3" width="9" height="9">
+						<printWhenExpression><![CDATA[$F{multiSimType}.equals("Normal")]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="6"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-101" x="6" y="5" width="6" height="6"/>
+					<box leftPadding="3">
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-101" x="77" y="5" width="6" height="6"/>
+					<box leftPadding="3">
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-101" x="129" y="5" width="6" height="6"/>
+					<box leftPadding="3">
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+			</frame>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="46" y="2" width="13" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{memberNum}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="0" width="46" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[Secondary (]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="16" width="57" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[SIM Number:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="61" y="16" width="208" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{multiSimIccid}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="62" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{multiSimMainServDtls}!=null]]></printWhenExpression>
+			<frame>
+				<reportElement key="frame-4" stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="0" y="0" width="519" height="62"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-46" x="0" y="0" width="519" height="26" isPrintWhenDetailOverflows="true"/>
+					<box leftPadding="10">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true" isItalic="false"/>
+					</textElement>
+					<text><![CDATA[SERVICE PLAN:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-149" positionType="Float" x="15" y="40" width="504" height="15" isPrintWhenDetailOverflows="true"/>
+					<box leftPadding="20">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Note: All PCCW-HKT mobile Services may be subject to QoS Measures]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-148" x="415" y="0" width="103" height="26"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+						<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+						<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Monthly Rate within
+Commitment Period
+]]></text>
+				</staticText>
+				<line>
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="415" y="0" width="1" height="62" isPrintWhenDetailOverflows="true"/>
+				</line>
+				<subreport>
+					<reportElement key="subreport-12a" stretchType="RelativeToBandHeight" x="0" y="32" width="518" height="2" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true"/>
+					<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{multiSimMainServDtls})]]></dataSourceExpression>
+					<subreportExpression class="java.lang.String"><![CDATA["mob/AppMobileServ_subreport12a.jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+		</band>
+		<band height="44">
+			<printWhenExpression><![CDATA[$F{multiSimvasDtls}!=null]]></printWhenExpression>
+			<frame>
+				<reportElement key="frame-6" stretchType="RelativeToBandHeight" x="0" y="0" width="519" height="44"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<subreport>
+					<reportElement key="subreport-12a" stretchType="RelativeToBandHeight" x="0" y="31" width="518" height="2" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true"/>
+					<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{multiSimvasDtls})]]></dataSourceExpression>
+					<subreportExpression class="java.lang.String"><![CDATA["mob/AppMobileServ_subreport12b.jasper"]]></subreportExpression>
+				</subreport>
+				<staticText>
+					<reportElement key="staticText-209" x="0" y="0" width="519" height="27" isPrintWhenDetailOverflows="true"/>
+					<box leftPadding="10">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Additional VAS Features for Service Plan:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-242" x="343" y="0" width="85" height="26" isPrintWhenDetailOverflows="true"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Monthly Rate within
+Commitment Period
+]]></text>
+				</staticText>
+				<line>
+					<reportElement key="frame-6" positionType="Float" stretchType="RelativeToBandHeight" x="342" y="0" width="1" height="44" isPrintWhenDetailOverflows="true"/>
+				</line>
+				<line>
+					<reportElement key="frame-6" positionType="Float" stretchType="RelativeToBandHeight" x="427" y="0" width="1" height="44" isPrintWhenDetailOverflows="true"/>
+				</line>
+				<staticText>
+					<reportElement key="staticText-242" x="427" y="1" width="92" height="26" isPrintWhenDetailOverflows="true"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Monthly Rate after
+Commitment Period
+]]></text>
+				</staticText>
+				<elementGroup/>
+			</frame>
+		</band>
+		<band height="44">
+			<printWhenExpression><![CDATA[$F{multiSimvasOptionalDtls}!=null]]></printWhenExpression>
+			<frame>
+				<reportElement key="frame-7" stretchType="RelativeToBandHeight" x="0" y="0" width="519" height="44"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-209" x="0" y="0" width="519" height="27" isPrintWhenDetailOverflows="true"/>
+					<box leftPadding="10">
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+						<topPen lineWidth="0.0" lineStyle="Solid"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Optional VAS Features (Not included in the Service Plan):]]></text>
+				</staticText>
+				<subreport>
+					<reportElement key="subreport-12a" stretchType="RelativeToBandHeight" x="0" y="31" width="518" height="2" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true"/>
+					<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{multiSimvasOptionalDtls})]]></dataSourceExpression>
+					<subreportExpression class="java.lang.String"><![CDATA["mob/AppMobileServ_subreport12c.jasper"]]></subreportExpression>
+				</subreport>
+				<staticText>
+					<reportElement key="staticText-242" x="343" y="0" width="85" height="26" isPrintWhenDetailOverflows="true"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Monthly Rate within
+Commitment Period
+]]></text>
+				</staticText>
+				<line>
+					<reportElement key="frame-6" positionType="Float" stretchType="RelativeToBandHeight" x="342" y="0" width="1" height="44" isPrintWhenDetailOverflows="true"/>
+				</line>
+				<line>
+					<reportElement key="frame-6" positionType="Float" stretchType="RelativeToBandHeight" x="427" y="0" width="1" height="44" isPrintWhenDetailOverflows="true"/>
+				</line>
+				<staticText>
+					<reportElement key="staticText-242" x="427" y="1" width="92" height="26" isPrintWhenDetailOverflows="true"/>
+					<box leftPadding="3">
+						<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Monthly Rate after
+Commitment Period
+]]></text>
+				</staticText>
+				<elementGroup/>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

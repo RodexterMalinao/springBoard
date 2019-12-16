@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="com.bomwebportal.lts.dao.order.ThirdPartyApplnDAO" class="com.bomwebportal.lts.dao.order.ThirdPartyApplnDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="com.bomwebportal.lts.dao.order.SbOrderLtsDAO" class="com.bomwebportal.lts.dao.order.SbOrderLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="com.bomwebportal.lts.dao.order.AccountLtsDAO" class="com.bomwebportal.lts.dao.order.AccountLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="com.bomwebportal.lts.dao.order.AddressLtsDAO" class="com.bomwebportal.lts.dao.order.AddressLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="com.bomwebportal.lts.dao.order.AppointmentLtsDAO" class="com.bomwebportal.lts.dao.order.AppointmentLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="com.bomwebportal.lts.dao.order.ChannelLtsDAO" class="com.bomwebportal.lts.dao.order.ChannelLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="com.bomwebportal.lts.dao.order.CustomerLtsDAO" class="com.bomwebportal.lts.dao.order.CustomerLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="com.bomwebportal.lts.dao.order.ItemAttributeLtsDAO" class="com.bomwebportal.lts.dao.order.ItemAttributeLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="com.bomwebportal.lts.dao.order.ItemLtsDAO" class="com.bomwebportal.lts.dao.order.ItemLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="com.bomwebportal.lts.dao.order.NowtvDetailLtsDAO" class="com.bomwebportal.lts.dao.order.NowtvDetailLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="com.bomwebportal.lts.dao.order.PaymentLtsDAO" class="com.bomwebportal.lts.dao.order.PaymentLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="com.bomwebportal.lts.dao.order.RemarkLtsDAO" class="com.bomwebportal.lts.dao.order.RemarkLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="com.bomwebportal.lts.dao.order.ResDnLtsDAO" class="com.bomwebportal.lts.dao.order.ResDnLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="com.bomwebportal.lts.dao.order.PipbLtsDAO" class="com.bomwebportal.lts.dao.order.PipbLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+		
+	<bean id="com.bomwebportal.lts.dao.order.CustomerIguardRegDAO" class="com.bomwebportal.lts.dao.order.CustomerIguardRegDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="com.bomwebportal.lts.dao.order.LtsDsOrderInfoDAO" class="com.bomwebportal.lts.dao.order.LtsDsOrderInfoDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="com.bomwebportal.lts.dao.order.PrepayLtsDAO" class="com.bomwebportal.lts.dao.order.PrepayLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="com.bomwebportal.lts.dao.order.ServiceDetailDAO" class="com.bomwebportal.lts.dao.order.ServiceDetailDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="com.bomwebportal.lts.dao.order.ServiceDetailLtsDAO" class="com.bomwebportal.lts.dao.order.ServiceDetailLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="com.bomwebportal.lts.dao.order.ServiceDetailOtherDAO" class="com.bomwebportal.lts.dao.order.ServiceDetailOtherDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="com.bomwebportal.lts.dao.order.Service0060DetailLtsDAO" class="com.bomwebportal.lts.dao.order.Service0060DetailLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="com.bomwebportal.lts.dao.order.ServiceCallPlanDetailLtsDAO" class="com.bomwebportal.lts.dao.order.ServiceCallPlanDetailLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="com.bomwebportal.lts.dao.order.OrderStatusDAO" class="com.bomwebportal.lts.dao.order.OrderStatusDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="com.bomwebportal.lts.dao.order.AddressInventoryLtsDAO" class="com.bomwebportal.lts.dao.order.AddressInventoryLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+			
+	<bean id="com.bomwebportal.lts.dao.order.ImsOfferDetailDAO" class="com.bomwebportal.lts.dao.order.ImsOfferDetailDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="com.bomwebportal.lts.dao.order.ChannelAttbLtsDAO" class="com.bomwebportal.lts.dao.order.ChannelAttbLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="com.bomwebportal.lts.dao.order.AllOrdDocAssgnLtsDAO" class="com.bomwebportal.lts.dao.order.AllOrdDocAssgnLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="com.bomwebportal.lts.dao.order.CustOptOutInfoLtsDAO" class="com.bomwebportal.lts.dao.order.CustOptOutInfoLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="com.bomwebportal.lts.dao.order.BillingAddressLtsDAO" class="com.bomwebportal.lts.dao.order.BillingAddressLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+
+	<bean id="com.bomwebportal.lts.dao.order.RecontractLtsDAO" class="com.bomwebportal.lts.dao.order.RecontractLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="com.bomwebportal.lts.dao.order.AllOrdDocLtsDAO" class="com.bomwebportal.lts.dao.order.AllOrdDocLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="com.bomwebportal.lts.dao.order.StaffInfoLtsDAO" class="com.bomwebportal.lts.dao.order.StaffInfoLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="com.bomwebportal.lts.dao.order.ContactLtsDAO" class="com.bomwebportal.lts.dao.order.ContactLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="ltsOfferActionLookupDao" class="com.bomwebportal.lts.dao.order.OfferActionLookupDAO">
+        <property name="dataSource" ref="BomWebPortalDS" />
+        <property name="lkupCode" value="lob = 'LTS' and type in ('V', 'C')" />
+    </bean>
+    
+    <bean id="imsOfferActionLookupDao" class="com.bomwebportal.lts.dao.order.OfferActionLookupDAO">
+        <property name="dataSource" ref="BomWebPortalDS" />
+        <property name="lkupCode" value="lob = 'IMS' and type = 'C'" />
+    </bean>
+    
+    <bean id="imsViOfferActionLookupDao" class="com.bomwebportal.lts.dao.order.OfferActionLookupDAO">
+        <property name="dataSource" ref="BomWebPortalDS" />
+        <property name="lkupCode" value="lob = 'IMS' and type = 'VI'" />
+    </bean>
+    
+    <bean id="ltsEquipOfferActionLookupDao" class="com.bomwebportal.lts.dao.order.OfferActionLookupDAO">
+        <property name="dataSource" ref="BomWebPortalDS" />
+        <property name="lkupCode" value="lob = 'LTS' and type = 'E'" />
+    </bean>
+    
+    <bean id="ltsTvOfferActionLookupDao" class="com.bomwebportal.lts.dao.order.OfferActionLookupDAO">
+        <property name="dataSource" ref="BomWebPortalDS" />
+        <property name="lkupCode" value="lob = 'LTS' and type = 'T'" />
+    </bean>
+    
+    <bean id="ltsChannelOfferActionLkupDao" class="com.bomwebportal.lts.dao.order.OfferActionLookupDAO">
+        <property name="dataSource" ref="BomWebPortalDS" />
+        <property name="lkupCode" value="lob = 'LTS' and type = 'CH'" />
+    </bean>
+    
+    <bean id="ltsRestrictedOfferActionLkupDao" class="com.bomwebportal.lts.dao.order.OfferActionLookupDAO">
+        <property name="dataSource" ref="BomWebPortalDS" />
+        <property name="lkupCode" value="lob = 'LTS' and type = 'R'" />
+    </bean>
+   
+	<bean id="deviceCodeLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="3000" />
+		<property name="lkupTable" value="W_DISPLAY_LKUP" />
+	</bean>
+	
+	<bean id="remarkTemplateDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="EYE_RMK_TEMPLATE" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>
+	
+	<bean id="delayReasonCodeLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="DELAY_REASON" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>
+	
+	<bean id="wqPriorityonCodeLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="WQ_PRIOR" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>
+	
+	<bean id="rptPrintCustCopyLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="RPT_PRINT_CUST_COPY" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>
+	
+	<bean id="idDocTypeLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomDS" />
+		<property name="lkupCode" value="IDDOCTYP" />
+		<property name="lkupTable" value="B_LOOKUP" />
+	</bean>
+	
+	<bean id="penaltyHandleLtsLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="PENALTY_HANDLE_LTS" />
+		<property name="lkupTable" value="BOMWEB_CODE_LKUP" />
+	</bean>
+	
+	<bean id="applMethodLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomDS" />
+		<property name="lkupTable" value="SB_APPL_METHOD_CACHE_V" />
+	</bean>
+	
+	<bean id="sourceCdLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomDS" />
+		<property name="lkupTable" value="SB_SOURCE_CD_CACHE_V" />
+	</bean>
+	
+	<bean id="recontractSrvHandleLtsLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="RECONTRACT_SRV_HANDLE_LTS" />
+		<property name="lkupTable" value="BOMWEB_CODE_LKUP" />
+	</bean>
+	
+	<bean id="recontractModeLtsLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="RECONTRACT_MODE_LTS" />
+		<property name="lkupTable" value="BOMWEB_CODE_LKUP" />
+	</bean>
+	
+	<bean id="relationshipCdCodeLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="RELATION_CD" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>
+	
+	<bean id="relationshipBrCodeLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="RELATION_CD_BR" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>
+	
+	<bean id="pipbDayLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="PIPB_DAY" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>
+	
+	<bean id="cntctInfoPeriodLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="CNTCT_PERIOD" />
+		<property name="lkupTable" value="W_CODE_LKUP" />
+	</bean>
+	
+	<bean id="erEyeHandleLtsLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="ER_EYE_CHARGE_HANDLE_LTS" />
+		<property name="lkupTable" value="BOMWEB_CODE_LKUP" />
+	</bean>
+	
+	<bean id="erDelHandleLtsLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="ER_DEL_CHARGE_HANDLE_LTS" />
+		<property name="lkupTable" value="BOMWEB_CODE_LKUP" />
+	</bean>
+	
+	<bean id="erHandleLtsLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="ER_CHARGE_HANDLE_LTS" />
+		<property name="lkupTable" value="BOMWEB_CODE_LKUP" />
+	</bean>
+	
+	<bean id="creditCardTyepCodeLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomDS" />
+		<property name="lkupCode" value="LTS_CCARDTYP" />
+		<property name="lkupTable" value="B_LOOKUP" />
+	</bean>
+	
+	<bean id="ltsDocTypeLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="LTS" />
+		<property name="lkupTable" value="BOMWEB_ALL_DOC" />
+	</bean>
+	
+	<bean id="ltsWaiveReasonLkupDao" class="com.bomwebportal.dao.CodeLkupDAOImpl">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="lkupCode" value="LTS" />
+		<property name="lkupTable" value="BOMWEB_ALL_ORD_DOC_WAIVE" />
+	</bean>
+	
+	<bean id="conditionLkupDao" class="com.bomwebportal.lts.dao.order.ConditionLkupDAO">
+        <property name="dataSource" ref="BomWebPortalDS" />
+    </bean>
+    
+    <bean id="reportSetLkupDao" class="com.bomwebportal.dao.ReportSetLkupDAO">
+        <property name="dataSource" ref="BomWebPortalDS" />
+    	<property name="lkupCode" value="LTS" />
+    </bean>
+    
+    <bean id="com.bomwebportal.lts.dao.order.AccountServiceAssignLtsDAO" class="com.bomwebportal.lts.dao.order.AccountServiceAssignLtsDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="com.bomwebportal.lts.dao.order.OrderLtsAmendDAO" class="com.bomwebportal.lts.dao.order.OrderLtsAmendDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="com.bomwebportal.lts.dao.order.OrderLtsAmendDetailDAO" class="com.bomwebportal.lts.dao.order.OrderLtsAmendDetailDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+    
+    <bean id="dsServiceLtsDAO" class="com.bomwebportal.lts.dao.DsServiceLtsDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="amendLtsDao" class="com.bomwebportal.lts.dao.AmendLtsDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="ordEmailReqDAO" class="com.bomwebportal.dao.OrdEmailReqDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="ordEmailReqWriteDAO" class="com.bomwebportal.dao.OrdEmailReqWriteDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="wqNatureCodeLkupDao" class="com.bomwebportal.lts.dao.WqNatureLkupDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="pipbLtsServiceDAO" class="com.bomwebportal.lts.dao.PipbLtsServiceDAO" scope="prototype">	
+		<property name="dataSource" ref="BomDS" />
+		<property name="dsService" ref="dsServiceLtsDAO" />
+	</bean>	
+	
+	<bean id="formPrintReqDao" class="com.bomwebportal.lts.dao.order.FormPrintReqDAO" >
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="pipbLtsWQServiceDAO" class="com.bomwebportal.lts.dao.PipbLtsWQServiceDAO" >
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="ltsAcqDnPoolDAO" class="com.bomwebportal.lts.dao.LtsAcqDnPoolDAO" >
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>	
+	
+	<bean id="bankCodeLkupDAO" class="com.bomwebportal.lts.dao.bom.BankCodeLkupDAO">
+		<property name="dataSource" ref="BomDS" />
+	</bean>
+	
+	<bean id="lostModemDAO" class="com.bomwebportal.lts.dao.LostModemDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="com.bomwebportal.lts.dao.order.OrderAttbDAO" class="com.bomwebportal.lts.dao.order.OrderAttbDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="eyeProfileCountDAO" class="com.bomwebportal.lts.dao.bom.EyeProfileCountDAO">
+		<property name="dataSource" ref="BomDS" />
+	</bean>
+	
+	<bean id="prepaymentLkupDAO" class="com.bomwebportal.lts.dao.PrepaymentLkupDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+		<!-- bom serivce data privacy Opt-Out checking (moved from BomWebPortal) -->
+	<bean id="bCustDataPrivacyLtsDAO" class="com.bomwebportal.lts.dao.bom.BCustDataPrivacyLtsDAO">
+		<property name="dataSource" ref="BomDS" />
+	</bean>	
+	
+	<bean id="com.bomwebportal.lts.dao.order.ImsL2JobDAO" class="com.bomwebportal.lts.dao.order.ImsL2JobDAO" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+</beans>

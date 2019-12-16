@@ -1,0 +1,3316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ServiceGuide" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="478"/>
+	<property name="ireport.y" value="2938"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<subDataset name="dataset1"/>
+	<subDataset name="dataset2"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\Springboard\\SB_workspace\\sb_R2SVN\\mob_now\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[]]>
+	</queryString>
+	<field name="companyLogo" class="java.lang.String"/>
+	<field name="agreementNum" class="java.lang.String"/>
+	<field name="companyBottomLogo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="67" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement key="staticText-1" x="15" y="50" width="232" height="15" backcolor="#FFFFFF"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["PCCW-HKT流動通訊服務指南"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="452" y="37" width="83" height="14"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{agreementNum}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-43" x="378" y="37" width="74" height="14"/>
+				<box topPadding="1" leftPadding="3">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[表格編號:]]></text>
+			</staticText>
+			<image>
+				<reportElement x="15" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyLogo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[服務指南簡介]]></text>
+			</staticText>
+		</band>
+		<band height="22" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="22" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["本PCCW-HKT流動通訊服務指南載有關於PCCW-HKT流動通訊服務申請書(\"申請\")中的PCCW-HKT流動通訊服務、服務計劃、優惠、回贈、保證金及自選項目的進一步資料。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="22" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["由於本服務指南載列適用於您可根據您的申請所選擇的PCCW-HKT流動通訊服務、任何其他增值服務及自選項目的重要資料，故務須仔細閱讀本服務指南。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<line>
+				<reportElement positionType="Float" x="15" y="5" width="520" height="1"/>
+			</line>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第 I 部     重要資料]]></text>
+			</staticText>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[服務供應商]]></text>
+			</staticText>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>PCCW Mobile HK Limited</b> 根據本申請書、服務指南、電訊服務總則(個人客戶)(可於http：//www.pccw.com/Terms+of+Use/下載)及個人客戶PCCW-HKT流動通訊服務之特別條款提供PCCW-HKT流動通訊服務(可於http://e.pccw-hkt.com/specialcondition查閱)。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="24" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="6" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="22"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>電訊盈科媒體有限公司</b> 根據本申請、服務指南及now寬頻電視條款及條件 (可於www.now-tv.com下載) 提供本申請下的now寬頻電視服務。MOOV及樂透社是由電訊盈科媒體有限公司根據本申請書、服務指南及有關條款及細則所提供（此文件可在：http://moov.hk及http://e.pccw-hkt.com/newictnc-e查閱）。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="24" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="6" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="22"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b>Hong Kong Telecommunications (HKT) Limited (\"HKT\")</b> 根據本申請書、服務指南及電訊服務總則(個人客戶)(可於http：//www.pccw.com/Terms+of+Use/下載)及有關之特別條款提供所有電訊服務(PCCW-HKT流動通訊服務除外)。IDD 0060國際直撥電話服務特別條款可於www.pccw.com/Consumer/International+Telephone+Services查閱。Wi-Fi服務特別條款可於http://cs.netvigator.com/support/software/download/wi_tnc_c.pdf查閱。HKT亦根據本申請書、服務指南、uHub服務的服務總則及特別條款提供uHub服務(可於http://www.uhub.com查閱)。RoamSave服務特別條款可於http://e.pccw-hkt.com/RoamSave查閱。「傾King」服務特別條款可於http://e.pccw-hkt.com/KK查閱。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[須知事項]]></text>
+			</staticText>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>申請PCCW-HKT流動通訊服務：</u></b> 在處理您的PCCW-HKT流動通訊服務申請時(包括，為免存異，增值服務組合選項單)，若本公司發現PCCW-HKT流動通訊服務申請書上有遺漏或未有正確填寫任何您應繳付的費用、服務計劃下的可享用量、回贈或優惠詳情、或本公司未有提供您在申請書內(包括增值服務組合選項單)所選的自選項目，又或申請書出現任何其他差異或錯誤，則本公司的客戶服務人員將在切實可行範圍內盡快與您聯絡，以便修正所有差異或錯誤。待所有差異錯誤被修正後，本公司將會繼續處理您的申請。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>我可否終止服務?:</u></b> 您可於最少30天前，致電本公司客戶服務熱線1000通知本公司，要求終止PCCW-HKT流動通訊服務。然而，若您終止PCCW-HKT流動通訊服務，在同一個服務計劃下之任何智能卡及於申請書訂購的任何增值服務及您不時訂購的自選服務為不可獨立提供的服務亦將會同時終止。若您在承諾期內終止PCCW-HKT流動通訊服務、增值服務或自選服務，您須向本公司支付提早終止費用。於承諾期內，當您終止任何PCCW-HKT流動通訊服務，增值服務及/或自選服務，您所預繳下一期賬單之費用，本公司將不會按比例由終止服務日起計退還，而有關之提早終止費用亦可能視情況而定包括該承諾期之最後一期賬單下您所預繳之費用。如果您希望完全使用不可退回的預繳費用，您可以選擇於賬單截數日當日終止服務，但必須於服務終止日的30日前作出通知。當您終止由本公司按月提供而沒有承諾期之任何PCCW-HKT流動通訊服務, 增值服務及/或自選服務，您毋需向本公司支付提早終止費用，但您所預繳下一期賬單之費用，本公司亦將不會按比例由終止服務日起計退還。詳情請查閱電訊服務總則（個人客戶）第13.3條。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>承諾期結束後會出現甚麼情況？：</u></b> 在PCCW-HKT流動通訊服務或任何增值服務的承諾期結束時，若本公司無法與您聯絡或您沒有聯絡本公司，或您未決定是否續約，本公司會繼續依現有合約按月為您提供PCCW-HKT流動通訊服務及增值服務，惟須繳付現有合約中所訂明的承諾期結束後的費用（即承諾期內月費），直至您於最少30天前，致電本公司客戶服務熱線1000或在本公司專門店提交已填妥的終止服務表格通知本公司，要求終止訂購PCCW-HKT流動通訊服務及增值服務。在某些情況下，於承諾期結束後，您可能須就服務計劃下的增值服務組合內的增值服務支付承諾期後月費。服務計劃下的增值服務組合內的增值服務的承諾期後月費在增值服務組合選項單上有所訂明。若您並未選用承諾期，或倘若本公司在承諾期結束前無法與您聯絡，或您未決定是否續約，您須根據您的申請下所申請的服務繳付承諾期內月費。本公司亦會在適用時向您收取在您的申請中所列明的其他雜項服務費用。詳情可參閱電訊服務總則（個人客戶）第23.6及23.7條。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>我可否延長承諾期？：</u></b> 您可透過同意以額外承諾期的方式，延長PCCW-HKT流動通訊服務或增值服務的承諾期。您亦可同意於PCCW-HKT流動通訊服務或增值服務承諾期屆滿時，以新合約取代現有合約。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>哪些服務合約條款可以更改？：</u></b> 本公司可以透過PCCW-HKT流動通訊網站（本服務指南第III部有所列明）在網上公佈更改詳情，以更改PCCW-HKT流動通訊服務及增值服務的任何條款及條件，包括更改費用。若本公司認為有關更改會對您造成重大負面影響或導致您須繳付的PCCW-HKT流動通訊服務或任何增值服務（國際直撥電話或漫遊服務除外）的費用有所增加，則本公司會向您發出最少30天的事先通知。如本公司增加任何電訊服務類別的PCCW-HKT流動通訊服務或增值服務的費用，或更改前述服務的其他條款及條件時，您有權在某些情況下，在有關更改生效前，發出15天的事先通知終止有關服務，而毋須就終止有關服務支付任何費用（附帶成本/費用除外）。詳情請參閱電訊總則（個人客戶）第22.4條。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>流動電話號碼轉攜（MNP）：</u></b> 倘若您要求從另外一家流動電話營運商轉攜您的流動電話號碼至本公司，而該轉攜並非因本公司原因而未能成功，則您須就您的申請選擇一個新的PCCW-HKT流動電話號碼。在此情況下，所有推廣優惠，包括以成功轉攜為條件的回贈及費用豁免將會被沒收。若您未選擇一個新的PCCW-HKT流動電話號碼，本公司會視為您已經取消您的申請，您將須向本公司支付啟動前取消費用。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>取消：</u></b> 若您因任何理由取消您的申請，或您未能按本公司可能要求的時間內向本公司提供所有必要的文件，以便本公司能夠由預計生效日開始向您提供PCCW-HKT流動通訊服務，您將須向本公司支付啟動前取消費用。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>服務優化措施：</u></b> 為了履行提供優質服務的承諾，我們可能會採取數據流量管制措施，以優化我們流動網絡的性能表現。當實際上或預期出現流動網絡擠塞，我們可能會採取數據流量管制措施，一般會安排某類數據流量優先於其他用途 (例如我們可能會在處理點對點傳輸前，優先處理電子郵件或網頁瀏覽等數據流量)。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>兼容性：</u></b> 您能否使用PCCW-HKT流動通訊服務或增值服務，將視乎您的儀器是否與此等服務、網絡配置、漫遊狀態及任何服務限制所兼容。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>回贈：</u></b> 本公司會根據不同服務計劃、優惠及推廣優惠向客戶提供不同類型的回贈。本公司會在您的申請中列明適用於您的任何回贈、回贈金額及回贈時間表。除非另有指定，所有回贈將從首月起連續按月計入您的賬戶。若PCCW-HKT流動通訊服務或增值服務因任何原因暫停或終止，所有未支付的回贈將會被沒收。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>提供予PCCW-HKT客戶的推廣優惠：</u></b> 本公司可能向具有良好繳款信譽的PCCW-HKT現有客戶（即網上行、now寬頻電視、固網及PCCW-HKT流動通訊服務客戶）提供推廣優惠。若您在選用PCCW-HKT流動通訊服務的任何期間終止此等其他PCCW-HKT服務或不再擁有良好繳款信譽，所有推廣優惠，包括回贈，將自動被終止。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>除保證金外的預繳款項：</u></b> 若本公司在您的PCCW-HKT流動通訊服務申請書或本服務指南中訂明您需支付預繳款項，您必須如此行事。除本公司在本服務指南內另有說明，本公司會按申請書中所訂明，將預繳款項以回贈方式退還給您。若您在承諾期屆滿前終止PCCW-HKT流動通訊服務，本公司將立刻停止將預繳款項退還給您。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>海外使用：</u></b> 除另有訂明外，所有PCCW-HKT流動通訊服務及增值服務僅旨在香港使用。若您在香港以外地區使用PCCW-HKT流動通訊服務或任何增值服務，漫遊費將會適用。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>費用：</u></b> 若您選購承諾期合約服務計劃，本公司會向您收取（i）就根據您在PCCW-HKT流動通訊服務申請書上您所申請之服務的承諾期內或隨後期間的承諾期內月費；（ii）任何按用量的收費（如適用）；及（iii）您的PCCW-HKT流動通訊服務申請書及服務指南中所列明的任何其他雜項費用（如適用）。本公司亦會按增值服務組合選項單所訂明（如有）， 就您在承諾期屆滿後於服務計劃下的增值服務組合內所選定的增值服務向您徵收承諾期後月費。若您選購按月計之服務計劃，本公司會向您收取依申請表第四節內所列出之按月計月費；任何按用量的收費（如適用）及於申請書及服務指南下所列明之任何其他雜項費用（如適用）。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>BLACKBERRY:</u></b> 若您轉換到本公司的BlackBerry Internet Service，您必須要求您之前BlackBerry的服務供應商釋放您的BlackBerry賬戶給本公司。若在預計生效日前，您之前的BlackBerry服務供應商未能釋放您的BlackBerry賬戶給本公司，您的BlackBerry Internet Service 之承諾期仍會如期在預計生效日生效。若您向本公司購買BlackBerry智能手機並能出示有關購買BlackBerry智能手機之申請書，本公司將根據本公司現行保養政策向您提供為期24 個月的有限保證。BlackBerry智能手機之維修服務由生產商 (Research In Motion)依據其對有關BlackBerry智能手機、電池及配件的局限性保用政策提供。詳情可瀏覽http://www.blackberry.com/legal/warranty/handheld.shtml。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>網絡規格:</u></b>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["您選擇Top-Up服務計劃，您於2600MHz/1800MHz頻譜的網絡規格是下傳達到150Mbps/73Mbps，上傳達到50Mbps/25Mbps。在我們4G-LTE網絡覆蓋之地方，我們將會提供4G-LTE的流動數據服務。在我們4G-LTE網絡暫時沒有覆蓋之地方，我們將會提供3G流動數據服務"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["如您選擇BlackBerry Internet Service服務計劃，您的網絡規格是下傳達到14.4Mbps，上傳達到5.76Mbps"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["您選擇\$88/\$99非Top Up服務計劃，您的網絡規格是下傳達到384Kbps，上傳達到384Kbps"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["然而，您使用時的實際速度會比網絡規格相當地減少，亦會受到您的裝置、傳輸技術、所使用的個別網絡及軟件、網絡配置、覆蓋範圍、網絡流量、海外頻寬及其他外在因素所影響。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>保證金：</u></b> 您應負責支付本合約下的所有費用。您所支付的保證金會由向您提供服務的所有PCCW-HKT服務供應商共同持有。就一個服務供應商所提供的一項服務而支付的保證金可被用於支付由相同或另一電訊盈科集團內的服務供應商提供的另一服務的應付費用，或用於抵銷您在PCCW-HKT流動通訊服務的應付款項。若於本合約或您相關服務結束時所有費用均已付清，剩餘保證金則將會退還給您。詳情請查閱電訊服務總則（個人客戶）第13.5條。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="30" splitType="Stretch">
+			<line>
+				<reportElement positionType="Float" x="15" y="15" width="520" height="1"/>
+			</line>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第 II 部     PCCW-HKT流動通訊服務申請書]]></text>
+			</staticText>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第 一 節   客戶資料]]></text>
+			</staticText>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>登記地址：</u></b> 此為您PCCW-HKT流動通訊服務申請書的登記地址。本公司概不接受郵政信箱地址作為登記地址。您須向本公司提供該地址過往三個月內的地址證明。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="24" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="6" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="2" width="510" height="22"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>通訊地址：</u></b> 本公司將用此進行各類客戶通訊的通訊地址，包括發送賬單。若您未有提供通訊地址，則所有的通訊將會寄往您的登記地址。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="6" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="2" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>PCCW-HKT現有登記客戶：</u></b> 請提供您的賬戶資料，以核對賬戶狀況。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第 二 節   合約期限]]></text>
+			</staticText>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>承諾期：</u></b> 此乃是您於申請內所同意訂購PCCW-HKT流動通訊服務及任何增值服務的承諾期限，該承諾期於預計生效日起生效。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>預計生效日：</u></b> 此乃是本公司將會提供您於申請內已申請服務的預計日期。您必須準時提交所有必要的資料及文件，以便本公司能夠在此生效日當日或之前向您提供您所申請的所有服務。若預計生效日有變，本公司會通知您。若您以支票支付款項，則服務將在支票清算後在預計生效日啟動。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第 三 節   服務號碼及上台類別]]></text>
+			</staticText>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>PCCW-HKT流動通訊服務電話號碼：</u></b> 此乃是您在申請內就PCCW-HKT流動通訊服務及任何增值服務所選擇的流動電話號碼。如本公司需要將此號碼從另外一家營運商轉攜至本公司但轉攜未能成功，則您必須選擇另一號碼。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>智能卡號碼：</u></b> 此乃是已提供給您的智能卡(SIM)背面所訂明的號碼。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>攜機上台：</u></b> 只訂購服務計劃。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>買機上台：</u></b> 向本公司購買儀器並訂購服務計劃上台。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第 四 節   服務]]></text>
+			</staticText>
+		</band>
+		<band height="22" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="22" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["現提供四類服務計劃，即：Top Up (4G-LTE) 服務計劃、Top Up (3G) 服務計劃、非Top Up 服務計劃及BlackBerry Internet Service 服務計劃。每個服務計劃包括PCCW-HKT流動通訊服務基本核心服務及一組增值服務。除非另有訂明外，所有服務計劃每月可享用量僅供在香港境內使用。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[服務計劃可享用量]]></text>
+			</staticText>
+		</band>
+		<band height="22" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="22" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["不同服務計劃下所包含的PCCW-HKT流動通訊基本核心服務及增值服務的可享用量有所不同。如欲了解您每月所享有的PCCW-HKT流動通訊基本核心服務之可享用量，請參閱您的PCCW-HKT流動通訊服務申請書，或參閱增值服務組合選項單以了解您在服務計劃下所享有的各項增值服務的可享用量。若您的用量超出您每月服務計劃可享用量，則您須就額外用量支付附加費用。請見下文有關各種PCCW-HKT流動通訊基本核心服務及有關任何增值服務的簡要說明。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>話音通話</u></b> - 任何本地流動電話網絡或固網網絡之間的打出╱打入話音通話或以RoamSave/「傾King」致電非香港電話號碼。所有話音通話均以每分鐘向上取整。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>視像通話</u></b> - 視像通話（網內）：僅在PCCW-HKT流動通訊網絡內進行的本地打出╱打入視像通話。所有視像通話均以每分鐘向上取整。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>短訊╱多媒體訊息</u></b> - 短訊╱多媒體訊息（網內）：向本地PCCW-HKT流動通訊服務電話號碼發出的本地短訊╱多媒體訊息。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[流動數據]]></text>
+			</staticText>
+		</band>
+		<band height="50" splitType="Stretch">
+			<rectangle>
+				<reportElement x="286" y="3" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="295" y="0" width="240" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["以下各項適用於Top Up服務計劃："]]></textFieldExpression>
+			</textField>
+			<elementGroup/>
+			<elementGroup/>
+			<frame>
+				<reportElement x="15" y="0" width="260" height="10"/>
+				<rectangle>
+					<reportElement x="1" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="10" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["將接入點名稱（APN）設定為「PCCW」下傳及/或上傳本地數據。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="10" width="260" height="10"/>
+				<elementGroup/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["除非另有訂明，用量均以KB向上取整。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="20" width="260" height="10"/>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["網絡共享：將其他儀器透過任何類別的連接方式連接到您的儀器以使用流動數據。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="30" width="260" height="20"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["以下各項適用於非Top Up及BlackBerry Internet Service服務計劃："]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<ellipse>
+					<reportElement positionType="Float" x="13" y="14" width="2" height="2" backcolor="#333333"/>
+				</ellipse>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="10" width="230" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["使用點對點及網絡共享傳輸，流動用量將會計入你的流動數據可享用量（如有），及該用量會以按用量收取的費用收費。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="275" y="10" width="260" height="10"/>
+				<ellipse>
+					<reportElement positionType="Float" x="23" y="4" width="2" height="2" backcolor="#333333"/>
+				</ellipse>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["當該月可享的本地流動數據用量耗盡時，本地流動數據服務將會被暫停。您需要購買額外數據用量才可恢復流動數據服務"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="275" y="20" width="260" height="10"/>
+				<ellipse>
+					<reportElement positionType="Float" x="23" y="4" width="2" height="2" backcolor="#333333"/>
+				</ellipse>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["如你使用任何流動數據服務包括網絡共享及點對點，用量將會計入你的流動數據用量。"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BlackBerry Internet Service]]></text>
+			</staticText>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["電郵數據祗適用於透過BlackBerry手機收發電郵。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["流動數據之收費是按每次用量為單位，或根據您的增值服務組合或自選服務內收費。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["BlackBerry電郵數據漫遊 – 中國：服務計劃每月可享用量僅適用於中國使用"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["BlackBerry電郵數據漫遊 – 國際(指定國家及地區)：服務計劃每月可享用量僅適用於指定國家及地區使用，詳情請瀏覽http://e.pccw-hkt.com/bbtariff。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["BlackBerry Internet Service讓用戶能夠時刻接收商務或個人電郵，毋須安裝任何伺服器軟件，支援個人用戶的POP3, IMAP4及web-based的電郵賬戶整合，而且能夠於兩類電郵帳戶連接最多10個電郵帳戶。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["POP3╱IMAP4電郵帳戶的互聯網服務供應商帳戶(如Netvigator等)"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement positionType="Float" x="28" y="5" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Web-based的電郵帳戶(如Gmail、Hotmail、OWA(Outlook Web Access)等)"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement positionType="Float" x="28" y="5" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["BlackBerry Internet Service不可用於以下電郵平台：Novell Groupwise/ IBM Lotus Domino/ Microsoft Exchange。您受以下特許協議約束：\"BlackBerry Internet Service最終用戶協議\"及\"BlackBerry最終用戶╱軟件特許協議\"。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["您可以於http://www.pccw-hkt.blackberry.com 啟動您的BlackBerry Internet Service 電郵賬戶"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[增值服務說明]]></text>
+			</staticText>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["請見您的PCCW-HKT流動通訊服務申請書並從下列資料識別您所選擇的增值服務。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>接駁鈴聲</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["可選擇接駁來電時播放的歌曲，取代傳統的接駁鈴聲"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱http://e.pccw-hkt.com/connectingtone"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>關心 • 易</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["提供300次位置搜尋及狀況更新服務，讓您與親友更貼近"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱http://e.pccw-hkt.com/easycare"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>額外話音通話</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["話音通話（一般）：於任何本地流動網絡或固網之間打出／接聽的電話或以RoamSave／傾King致電非香港電話號碼"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["所有不足一分鐘的通話均會按一分鐘計算收費"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>財經資訊報價</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["財經新聞及股票報價服務"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱http://e.pccw-hkt.com/financialquote"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>足球360組合</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["欣賞英超即場入球、精華及比賽前瞻等短片"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["客戶必須於Google Play下載「足球360」App*方可使用服務"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="42" y="0" width="493" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["「足球360」App現暫只適用於Android流動裝置"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="8" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["*"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["使用足球360 App及觀看其內容有可能會產生流動數據用量。而於海外使用則會產生漫遊數據收費"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["足球360組合內之英超短片只提供於本地收看，客戶於海外時並不能收看英超短片"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱http://e.pccw-hkt.com/football360"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>FOX SPORTS MOBILE 資訊套餐</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["手機直播世界頂級賽事 ，更提供其他世界級體壇賽事的新聞及賽果"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱http://e.pccw-hkt.com/foxsports"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>GOTV月費計劃</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["於手機收看TVB電視劇集"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["此服務由電視廣播有限公司(「TVB」)提供及依據於http://www.tvb.com有關該服務所列之條款及細則提供。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["此服務只提供予已登記使用附有流動數據用量之服務計劃的PCCW-HKT流動通訊服務用戶。您須申請GOTV月費計劃及於Google Play下載並成功安裝TVB GOTV應用程式方可使用此服務。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["使用PCCW-HKT流動數據收看TVB GOTV服務，數據用量將於您的PCCW-HKT流動通訊服務計劃之用量內扣除。如數據用量超過您的服務計劃所包含用量，您需繳付額外費用或需購買額外數據用量。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["此服務之使用及提供受刊載於TVB(http://www.tvb.com) 及PCCW Mobile HK Limited (http://e.pccw-hkt.com/tvbgotv) 不時頌佈的條款及細則監管。客戶一旦下載及開啟GOTV應用程式將被視為已同意並受該等條款及細則約束。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["視像質素會受客戶的流動裝置、服務地點、網絡覆蓋及網絡流量而有所影響。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["PCCW Mobile HK Limited非此服務之供應商，因此並不會提供有關該服務的任何陳述或保證。PCCW Mobile HK Limited概不對您與TVB之間的任何買賣或交易產生的任何事宜承擔責任。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["客戶確認透過PCCW Mobile HK Limited申請此服務，PCCW Mobile HK Limited將充當收費代理人向客戶收取服務費用及接收由客戶繳付之費用。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["為提供服務、核實客戶是否合資格使用本服務或享用任何相關優惠、確定客戶所適用之服務費用、記帳及所有相關用途，客戶同意PCCW Mobile HK Limited將客戶使用此服務之PCCW-HKT流動通訊服務電話號碼及客戶正使用之網絡營運商提供予TVB。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["客戶登記此服務將為與客戶所簽訂的PCCW-HKT流動通訊合約的一部份。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["GOTV 14日免費試用(「14日免費試用」)之條款及細則："]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="42" y="0" width="493" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["GOTV 14日免費試用只適用於仍未申請PCCW-HKT GOTV月費計劃之PCCW-HKT流動通訊服務用戶，而每個PCCW-HKT流動通訊服務客戶只可享GOTV 14日免費試用一次。"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="8" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["-"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="42" y="0" width="493" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["如客戶於正使用14日免費試用期間申請任何PCCW-HKT GOTV月費計劃，14日免費試用將會即時停止而不會作另行通知。"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="8" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["-"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["GOTV月費計劃詳情請參閱http://e.pccw-hkt.com/tvbgotv。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>Smart 爸媽月費計劃</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Smart 爸媽月費計劃並不提供購買額外數據用量功能及漫遊服務，如您需使用額外數據用量或漫遊服務，您需另外選擇其他月費計劃"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>香港接駁鈴聲</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["當您使用漫遊服務時，來電者均會聽到標準本地接駁鈴聲，即使您身處外地亦可保障私隱"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱http://e.pccw-hkt.com/hkconnectingtone"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>IDD \$18月費組合</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["每月通話分鐘：首100分鐘*"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["- 額外用量分鐘收費： \$0.18/分鐘*"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["- 需扣除本地通話分鐘用量"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["* 只適用於香港致電中國、加拿大、美國 (只限本土，不包括阿拉斯加及夏威夷等外島) 的固網及手提電話或英國、澳洲及台灣的固網電話"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["如欲了解其他IDD國家長途電話服務，請參閱http://e.pccw-hkt.com/idd"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>資訊速遞</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["每日天氣報告、天氣預測、天氣警報及六合彩結果"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["資訊內容會透過短訊自動發送到您的手機"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱http://e.pccw-hkt.com/infoexpress"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>網外短訊</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["向非PCCW-HKT流動通訊服務之香港號碼發出本地短訊"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>國際來電轉駁組合</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["當您身處海外時只須將PCCW-HKT流動通訊服務電話號碼轉駁至海外任何一個固網或流動電話號碼，便可以海外電話接聽所有來電"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["國際來電轉駁組合包括："]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["- 每月可享通話分鐘：首50分鐘*"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["- 額外用量分鐘收費： \$0.48/分鐘"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["* 只適用於加拿大, 中國, 新加坡及美國"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱http://e.pccw-hkt.com/icfs"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>賽馬直播</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["可於您的手機收看賽馬直播"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱http://e.pccw-hkt.com/livehorse"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>流動數據</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["透過將「PCCW」設定為手機存取點名稱(APN)，下傳及／或上傳本地數據"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["僅適用於若干儀器，不可以任何種類的連接作網絡共享"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["網絡共享：將其他儀器透過任何類別的連接方式連接到您的儀器以使用流動數據"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>流動秘書服務 / 卓越流動秘書服務</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["未接來電會由接線員接聽，並以短訊將訊息發送到手機"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["卓越流動秘書服務會為您提供一個專有秘書服務號碼"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱http://e.pccw-hkt.com/vas"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>流動保護服務組合</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["為Android裝置提供全面性保護，功能涵蓋︰防毒、過濾有害網站、應用程式保護以及通話及簡訊篩選，從今以後，使用流動裝置用得更放心、私隱更得到保障"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["如您裝置不幸遺失，PCCW-HKT 流動通訊服務客戶服務團隊更可為您提供遙距鎖機及重設密碼服務"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["流動保護服務組合乃透過由McAfee Inc開發的McAfee Antivirus & Security應用程式所提供的流動裝置保護服務，而PCCW-HKT 流動通訊服務只作為此服務的分銷商及只限於提供客戶服務，如客戶使用流動裝置防護服務組合時直接或間接所引致客戶或任何人仕蒙受的任何損失(包括任何資料及內容遺失)及損毀(包括流動裝置之損毀)，概不負上任何法律責任"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["此服務不可同時於兩部流動裝置上使用，如您有需要於另一流動裝置上使用此服務，須於該流動裝置上重新下載、安裝及註冊McAfee Antivirus & Security應用程式，該服務並會即時於所有之前曾註冊的裝置上失效"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["此服務組合只適用於指定型號Android裝置"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情及條款及細則請參閱http://e.pccw-hkt.com/mobilesecurity"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>MOOV (PC) 足本版音樂服務</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["MOOV網上數碼音樂服務（僅供在香港使用"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱 http://moov.hk"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>Multi SIM增值服務- 次PCCW-HKT流動通訊服務電話號碼及相關的智能卡號碼</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Multi SIM增值服務會向您提供次智能卡(\"次智能卡\")。 每張智能卡各自有不同的PCCW-HKT流動通訊服務電話號碼及智能卡號碼。相關的PCCW-HKT流動通訊服務電話號碼列明於PCCW-HKT流動通訊服務申請書第三節內。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["您可使用主智能卡進行話音通話及視像通話並連接傾King/RoamSave服務，但次智能卡並無話音通話及視像通話此等功能，除非您在個別次智能卡下經PCCW-HKT流動通訊服務自選服務申請書額外選購通話分鐘組合，該個別次智能卡方能進行話音通話及視像通話服務。若您的主智能卡已申請漫遊服務，您亦可以次智能卡使用數據漫遊(非話音漫遊，除非上列之該次智能卡已額外選購通話分鐘組合)服務。次智能卡可共享主智能卡的服務計劃之流動數據服務可享用量（於主智能卡的PCCW-HKT流動通訊服務申請書第四節列明）。在某一帳單月內，如主智能卡和次智能卡合共的流動數據服務用量超出在服務計劃下流動數據服務可享用量，我們會暫停您的流動數據服務。若您需恢復流動數據服務，您需繳付於PCCW-HKT流動通訊服務申請書第五節所提及之額外用量費用。主智能卡和次智能卡下提供的共享流動數據服務是不可分割的服務。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["您可使用您的任何一張次智能卡發送或接收短訊/多媒體訊息，但該等短訊/多媒體訊息將與相關智能卡的PCCW-HKT流動通訊服務電話號碼聯繫，任何網內或網外之短訊/多媒體訊息，將按於PCCW-HKT流動通訊服務申請書第五節所提及之額外用量費用收取。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["您亦可為您的次智能卡訂購任何增值服務或自選服務，但該等增值服務或自選服務只將在用作訂購該等服務的相關智能卡下提供。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["次智能卡的服務費用將在主智能卡的賬單上列明。主智能卡之登記用戶有責任繳付由次智能卡所產生的任何費用。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Multi SIM增值服務不可與「智全面漫遊日費計劃」同時使用。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+    
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>NBA TV</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["24小時不停播放的NBA電視頻道，為您放送大量NBA賽事及球會相關節目"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱http://e.pccw-hkt.com/nbatv"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>樂透社</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["樂透社應用程式對應不同時間及人和地等作主題，每日提供相關文章及歌曲供您欣賞"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱 http://e.pccw-hkt.com/newsic"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+<band height="20" splitType="Stretch"/>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>NFC Mobile Payment服務 (\"MP服務\") </u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["本近場通訊 (NFC) Mobile Payment服務 (\"MP服務\") 只用作支援客戶向個別金融機構所申請的NFC支付服務。本公司並不負責客戶與個別金融機構之交易上引起的任何事宜"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱http://e.pccw-hkt.com/mobilepayment"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["客戶應閱讀及同意八達通功能的條款及細則，該條款及細則詳載於 http://e.pccw-hkt.com/mobilepayment"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>	<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>now Golf</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["利用手機觀賞各世界頂尖球手在各場賽事中一較高下"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱http://e.pccw-hkt.com/nowgolf"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>now 隨身睇PCCW-HKT</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["於手機收看now 101, now觀星台及now芒果台頻道及節目重溫"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱http://e.pccw-hkt.com/nowplayer"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>now SPORTS</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["利用手機收看各地足球賽事及世界級體育賽事"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱http://e.pccw-hkt.com/nowsports"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>now TV</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["24小時隨時以流動裝置收看財經、新聞、體育及娛樂節目"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱 http://e.pccw-hkt.com/nowtv"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>now TV 英超頻道 621</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["於手機欣賞now 621"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱http://e.pccw-hkt.com/nowtvbpl"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>now TV 英超頻道 620, 622 - 625</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["於手機欣賞PLTV，now 622 至 625"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱http://e.pccw-hkt.com/nowtvbpl"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>now TV 特選財經</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["利用流動裝置瀏覽中國及國際財經資訊"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱 http://e.pccw-hkt.com/nowtvfinance"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>PCCW-HKT Wi-Fi 一機無限服務計劃</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["於任何PCCW-HKT Wi-Fi熱點，以支援Wi-Fi功能的手提流動裝置自動登入，無限次使用Wi-Fi服務"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["如您亦有申請Wi-Fi Auto-Connect，則不可同時透過PCCW-HKT Wi-Fi一機無限服務及Wi-Fi Auto Connect於PCCW-HKT Wi-Fi熱點連接Wi-Fi"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱http://e.pccw-hkt.com/wifi"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>PCCW-HKT Wi-Fi</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["於任何PCCW-HKT Wi-Fi熱點利用備有Wi-Fi功能的裝置無限任用Wi-Fi"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請查閱 http://e.pccw-hkt.com/wifi  > PCCW-HKT Wi-Fi 月費計劃"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>流動對講機</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["以對講機形式作為群組通訊工具的收費流動應用程式，只適用於指定手機型號。"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱 http://e.pccw-hkt.com/pushtotalk"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>Smart Apps 數據組合</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["數據用量：每月60GB"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["提供本地數據用量供以下應用程式使用：英超頻道, uHub, News always ON, HD on mobile TV player, 樂透社, MOOV on mobile, MOOV, now 隨身睇, now 免費電視"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱http://e.pccw-hkt.com/smartapps"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>SMS BOXX</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["讓您體驗前所未有的訊息管理服務，並替您把所有短訊及多媒體訊息自動儲存於SMS BOXX "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["基本服務提供1MB儲存量"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["MMS plus服務提供10MB儲存量"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱http://e.pccw-hkt.com/smsboxx"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>語音留言信箱</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["自動同步下載最新留言到客戶手機"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["如於海外使用服務，包括啟動漫遊時使用流動數據自動同步化功能及於手機致電63880000收聽留言，須繳付漫遊數據傳輸費及/或話音通話費"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["如客戶取消至尊智能留言信箱套餐或智能留言信箱套餐，亦會同時終止語音留言信箱服務"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請瀏覽http://e.pccw-hkt.com/smartvvm"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>超高清服務</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["以超高清質素(720p或1080p)* 欣賞各頻道內容 ^"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["* 取決於個別頻道所提供的影像高清質素"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["^ 支援超高清服務之頻道為PLTV、now 621至625及其他指定now TV頻道，而其他指定now TV頻道之影像質素有可能會改變而不作另行通知"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Windows Phone 8 裝置暫不支援「超高清服務」"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱http://e.pccw-hkt.com/superhdpass"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>uHub匣子儲存服務</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["「uHub匣子」儲存服務為電訊盈科革命性的雲端儲存服務，無論您正使用手機還是平板電腦，只要接通互聯網，uHub便讓你隨時隨地上下載任何檔案，方便又安全"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請查閱www.uhub.com"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>留言信箱、來電管理組合</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["留言信箱"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["來電管理組合：包括所有來電轉駁、未接來電轉駁、通話中來電轉駁及未能接通來電轉駁至香港電話號碼、來電待接、會議通話、通話保留及來電顯示"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>WeChat數據組合</u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["一款多功能手機通訊程式，以傳送或接收語音短訊、影片、圖片、文字和動畫表情，於香港使用上述WeChat功能的本地流動數據可豁免"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["只適用於指定手機平台"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱http://e.pccw-hkt.com/wechat"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+<band height="40" splitType="Stretch"/>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<u>Wi-Fi Auto Connect </u>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["PCCW-HKT Wi-Fi一機無限服務的附加功能"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["利用支援Wi-Fi功能的手提流動裝置，在任何PCCW-HKT Wi-Fi熱點自動連接及無限次使用Wi-Fi服務"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["不可同時透過PCCW-HKT Wi-Fi一機無限服務及Wi-Fi Auto Connect於PCCW-HKT Wi-Fi熱點連接Wi-Fi "]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="10" splitType="Prevent">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="35" y="0" width="500" height="10"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["詳情請參閱 http://e.pccw-hkt.com/autoconnect"]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="28" y="4" width="2" height="2" backcolor="#333333"/>
+			</ellipse>
+		</band>
+		<band height="30" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IDD及漫遊服務]]></text>
+			</staticText>
+		</band>
+		<band height="91" splitType="Stretch">
+			<elementGroup/>
+			<elementGroup/>
+			<frame>
+				<reportElement positionType="Float" x="275" y="50" width="260" height="10"/>
+				<rectangle>
+					<reportElement x="10" y="2" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="20" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Hong Kong Telecommunications (HKT) Limited提供IDD 0060服務。有關費用及查詢，請致電10060。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="275" y="60" width="260" height="10"/>
+				<elementGroup/>
+				<rectangle>
+					<reportElement positionType="Float" x="10" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["若您是0060新客戶，您將於首2個月就打出中國、美國、加拿大任何流動╱固網電話號碼及打出英國及澳大利亞任何固網電話號碼每月享有30分鐘免費通話時間優惠。若您享有此等免費通話時間，您將會收到確認函。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="275" y="70" width="260" height="20"/>
+				<rectangle>
+					<reportElement positionType="Float" x="10" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["「傾King」/RoamSave– 以Wi-Fi連接並於香港及海外使用的漫遊話音服務/網絡電話服務。PCCW-HKT流動通訊服務不會保証「傾King」/RoamSave於每個個別Wi-Fi熱點或任何提供Wi-Fi地方的服務質素。只適用於指定型號智能手機，詳情請查閱http://e.pccw-hkt.com/KK 或http://e.pccw-hkt.com/RoamSave。透過「傾King」/RoamSave應用程式(i) 撥打香港之電話號碼 (ii) 接聽任何地方的話音來電 (iii) 撥打或接聽「傾King」/RoamSave應用程式用戶的視像通話均為免費。但撥打話音通話至非香港之電話號碼會收取IDD通話分鐘費用及扣除本地通話分鐘/產生額外通話分鐘收費。您須繳付IDD費用及連接Wi-Fi服務收費(如有)。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="0" width="260" height="40"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["PCCW Mobile HK Limited提供IDD、國際漫遊及中國漫遊服務。有關詳情可見於："]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<frame>
+					<reportElement positionType="Float" x="10" y="10" width="240" height="10"/>
+					<ellipse>
+						<reportElement positionType="Float" x="3" y="4" width="2" height="2" backcolor="#333333"/>
+					</ellipse>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="10" y="0" width="230" height="10"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["IDD讓你於香港打出國際直撥電話，收費和費用詳情請查閱http://e.pccw-hkt.com/idd"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="10" y="20" width="240" height="10"/>
+					<ellipse>
+						<reportElement positionType="Float" x="3" y="4" width="2" height="2" backcolor="#333333"/>
+					</ellipse>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="10" y="0" width="230" height="10"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["國際漫遊╱中國漫遊讓你於香港以外使用話音、流動數據及短訊服務，而國際Wi-Fi漫遊則讓你在香港以外的指定熱點使用Wi-Fi服務。收費和費用詳情請查閱http://e.pccw-hkt.com/roaming"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="10" y="30" width="240" height="10"/>
+					<ellipse>
+						<reportElement positionType="Float" x="3" y="4" width="2" height="2" backcolor="#333333"/>
+					</ellipse>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="10" y="0" width="230" height="10"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["IDD、國際漫遊及中國漫遊的收費及費用可能會變動，詳情請查閱http://e.pccw-hkt.com/intservice。"]]></textFieldExpression>
+					</textField>
+				</frame>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="275" y="0" width="260" height="10"/>
+				<ellipse>
+					<reportElement positionType="Float" x="23" y="4" width="2" height="2" backcolor="#333333"/>
+				</ellipse>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["於「智全面漫遊日費計劃」有效期內您可享中國漫遊通話特惠價每分鐘\$1.9"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="275" y="10" width="260" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["- 中國漫遊通話特惠價每分鐘\$1.9只適用於申請「智全面漫遊日費計劃」之客戶。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="275" y="40" width="260" height="10"/>
+				<ellipse>
+					<reportElement positionType="Float" x="23" y="4" width="2" height="2" backcolor="#333333"/>
+				</ellipse>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["詳情請查閱 http://e.pccw-hkt.com/rp。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="40" width="260" height="50"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["「智全面漫遊日費計劃」讓您於香港以外的指定地區使用流動數據、Wi-Fi(航空Wi-Fi漫遊除外)。另可享中國漫遊通話優惠價每分鐘HK\$1.9。"]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<frame>
+					<reportElement positionType="Float" x="10" y="10" width="240" height="10"/>
+					<ellipse>
+						<reportElement positionType="Float" x="3" y="4" width="2" height="2" backcolor="#333333"/>
+					</ellipse>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="10" y="0" width="230" height="10"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["智全面漫遊日費計劃將於申請後24小時生效，有效時段為每日00:00至23:59(以香港時間計算)。如當天沒有流動數據或Wi-Fi漫遊用量，將不收取當天之日費。如你於同一日內於超過一個地區使用流動數據或Wi-Fi漫遊，都只會以一個日費計劃收費。"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="10" y="20" width="240" height="10"/>
+					<ellipse>
+						<reportElement positionType="Float" x="3" y="4" width="2" height="2" backcolor="#333333"/>
+					</ellipse>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="10" y="0" width="230" height="10"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["如當日可享的免費流動數據漫遊用量之10MB(就\$48日費計劃而言)/ 20MB(就\$88日費計劃而言)/ 50MB(就\$168日費計劃而言)耗盡時，流動數據漫遊服務將會被暫停。您須要增值及購買額外流動數據服務用量組合\$38/5MB (就\$48日費計劃而言)/ \$38/10MB (就\$88/\$168日費計劃而言)才可恢復流動數據漫遊服務。已購買的額外流動數據服務亦只能於當日享用。"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="10" y="30" width="240" height="10"/>
+					<ellipse>
+						<reportElement positionType="Float" x="3" y="4" width="2" height="2" backcolor="#333333"/>
+					</ellipse>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="10" y="0" width="230" height="10"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["當日可享的Wi-Fi漫遊用量60分鐘耗盡時，額外用量會以每分鐘\$1.5劃一收費。國際Wi-Fi漫遊詳情請瀏覽http://e.pccw-hkt.com/wificm"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement positionType="Float" x="10" y="40" width="240" height="10"/>
+					<ellipse>
+						<reportElement positionType="Float" x="3" y="4" width="2" height="2" backcolor="#333333"/>
+					</ellipse>
+					<textField isStretchWithOverflow="true">
+						<reportElement positionType="Float" x="10" y="0" width="230" height="10"/>
+						<textElement textAlignment="Justified" markup="html">
+							<font fontName="PCCW-zh-Ming" size="9"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["您須要登記國際/中國漫遊以及IDD服務方可享有此優惠。"]]></textFieldExpression>
+					</textField>
+				</frame>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="275" y="20" width="260" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["- 此特惠價適用於中國接聽來電、致電香港及內地電話號碼(即於中國致電非香港或非內地電話並不適用)。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="275" y="30" width="260" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="30" y="0" width="230" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["- 如你取消「智全面漫遊日費計劃」將會同時取消中國漫遊通話特惠價優惠。"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="5" splitType="Stretch">
+			<break>
+				<reportElement x="0" y="3" width="100" height="1"/>
+			</break>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第 五 節     收費及付款]]></text>
+			</staticText>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第一及二段   附加及雜項服務費用]]></text>
+			</staticText>
+		</band>
+		<band height="30" splitType="Stretch">
+			<elementGroup/>
+			<elementGroup/>
+			<frame>
+				<reportElement positionType="Float" x="275" y="0" width="260" height="10"/>
+				<elementGroup/>
+				<rectangle>
+					<reportElement positionType="Float" x="10" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["<b>啟動前取消費用：</b> 適用於當您於服務啟動前取消您的PCCW-HKT流動通訊服務申請。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="275" y="10" width="260" height="10"/>
+				<rectangle>
+					<reportElement positionType="Float" x="10" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["<b>更改登記用戶：</b> 適用於您從另一位以每月服務計劃訂購PCCW-HKT流動通訊服務的電訊盈科客戶獲得一個PCCW-HKT流動電話號碼的情況。您須簽訂一份新的承諾期服務計劃，並負責支付更改登記用戶前所有已產生的費用。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="0" width="260" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["<b>每次按用量收取的費用：</b> 適用於當您就此等服務並未有任何服務計劃每月可享用量。"]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="10" width="260" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["<b>額外用量費用：</b> 適用於當您的用量超出任何服務計劃、升級或組合的每月可享用量。"]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="20" width="260" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["<b>提早終止費用：</b> 承諾期內月費 X 承諾期剩餘月數。不足一個月者視為一個月。回贈及月費豁免將自動被沒收，且不會用於抵銷任何應付的提早終止費用。"]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+			</frame>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第 三 段   付款詳情]]></text>
+			</staticText>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["您在合約下首次支付的金額及任何應支付的保證金、預繳款項及回贈在您的申請書內的第五節第三段列明。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[保證金]]></text>
+			</staticText>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["在某些情況下，您須支付保證金，請參閱您的PCCW-HKT流動通訊服務申請書。若您終止該保證金有關的服務，該保證金首先會用於抵銷您對本公司的欠款，及按電訊服務總則（個人客戶）第13.5 條用於抵銷您對任何其他電訊盈科集團成員公司的欠款，剩餘保證金將會退還給您。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第 六 節   賬單選項]]></text>
+			</staticText>
+		</band>
+		<band height="30" splitType="Stretch">
+			<elementGroup/>
+			<elementGroup/>
+			<frame>
+				<reportElement positionType="Float" x="275" y="0" width="260" height="10"/>
+				<elementGroup/>
+				<rectangle>
+					<reportElement positionType="Float" x="10" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["您更可申請電郵賬單服務，在此情況下，本公司每月會將賬單以電郵方式按月發送至您的電郵地址。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="275" y="10" width="260" height="10"/>
+				<rectangle>
+					<reportElement positionType="Float" x="10" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="20" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["若您要收取賬單的郵寄副本乙份，本公司將向您收取每月\$10的費用。"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="0" width="260" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["賬單將按您所選定的語言及方式發出。若您選擇郵寄賬單，您須支付申請書上所列明之附加收費。"]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="10" width="260" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["賬單短訊將每月發送到您的PCCW-HKT流動通訊電話號碼上。"]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" x="15" y="20" width="260" height="10"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="10" y="0" width="240" height="10"/>
+					<textElement textAlignment="Justified" markup="html">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["您亦可到網頁或wap上登入\"我的戶口\"查閱最近3個月的賬單。"]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement positionType="Float" x="1" y="3" width="4" height="4" backcolor="#000000"/>
+				</rectangle>
+			</frame>
+		</band>
+		<band height="10" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{agreementNum}.contains("SBO")?
+"第 七 節   付款" :
+"第 七 節   付款及授權"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="0" width="520" height="10" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{agreementNum}.contains("SBO")?
+"應付予本公司的所有費用及任何保證金將從申請書中第七節所述的信用卡扣賬。" :
+"應付予本公司的所有費用及任何保證金將從申請書中第七節所述的信用卡/銀行戶口扣賬，直至您通知本公司停止如此行事。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Stretch">
+			<line>
+				<reportElement positionType="Float" x="15" y="5" width="520" height="1"/>
+			</line>
+		</band>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="520" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第 III 部     其他資料]]></text>
+			</staticText>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>PCCW-HKT流動通訊服務登入賬號及密碼：</u></b> 您可以登入服務網站查看您的賬戶，並可透過服務網站發送短訊。您的登入賬號是您的PCCW-HKT流動通訊服務電話號碼；預設密碼是您的PCCW-HKT流動通訊服務申請書中所提供的身份證或護照號碼頭6位數字。在您致電本公司熱線電話1000透過話音系統設定遙控來電轉駁或其他要求提供密碼的服務時，須提供該預設密碼，除非本公司向您提供另外一個密碼。為保安理由，請定期更改密碼。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>贈品及禮品：</u></b> 所有贈品及禮品數量有限，且不可轉換或兌換現金或其他利益。有關特定產品所適用的保證條款的詳細解釋，請參閱產品附帶的製造商保證聲明。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="22" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="22"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>贈品及禮品換領程序：</u></b> PCCW-HKT流動通訊服務生效後約4個星期內，本公司會發出一份換領通知函，並郵寄至您的通訊地址，或發送換領短訊到您的流動電話號碼。您須根據該換領通知函╱短訊在換領期間於指定地址換領禮品。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>電訊盈科客戶服務：</u></b> 您可致電本公司客戶服務熱線電話1000或發送電郵至csmobile@pccw-hkt.com。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>My HKT網上客戶服務</u>:</b>「My HKT 網上客戶服務」(http://cs.hkt.com) 是一站式網上服務平台，讓您同時管理您於HKT及PCCW的固網／eye、流動通訊、網上行及now TV服務。"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="10" splitType="Prevent">
+			<rectangle>
+				<reportElement x="16" y="4" width="4" height="4" backcolor="#000000"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="0" width="510" height="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<b><u>本公司服務網站：</u></b> www.pccw-hkt.com。"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="50">
+			<image>
+				<reportElement x="415" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyBottomLogo}]]></imageExpression>
+			</image>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

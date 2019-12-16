@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jsp:root xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:form="http://www.springframework.org/tags/form"
+	version="2.0">
+  <jsp:output omit-xml-declaration="yes" />
+  <jsp:directive.tag import="java.util.*"/>
+
+  <jsp:directive.attribute name="value" type="com.bomwebportal.dto.ActualUserDTO" required="true" rtexprvalue="true" description="ActualUserDTO" />
+  <jsp:directive.attribute name="sameascust" type="java.lang.Boolean" required="true" rtexprvalue="true" description="SameAsCust" />
+
+			<table width="100%" border="0" cellspacing="0" class="contenttext">
+
+					<tr>
+						<td colspan="4" class="table_title">Actual User</td>
+					</tr>
+					<tr>
+						<td valign="top" bgcolor="#FFFFFF">
+						
+
+
+							<table width="100%" border="0" cellspacing="1">
+								<c:choose>
+								<c:when test="${sameascust eq false}" >
+
+								<tr class="contenttext">
+									<td width="6%"></td>
+									<td style="width:400px"><b>Document Type</b></td>
+									<td colspan="2" class="contenttext_blk"> <!--add by eliot 20110609--> <c:choose>
+										<c:when test='${value.subDocType == "BS"}'>
+										HKBR
+										</c:when>
+										<c:when test='${value.subDocType == "PASS"}'>
+										Passport
+										</c:when>
+										<c:otherwise>
+										HKID
+										</c:otherwise>
+									</c:choose></td>
+								</tr>
+				
+								<tr class="contenttext">
+									<td width="6%"></td>
+									<td><b>Document Number</b></td>
+									<td colspan="2" class="contenttext_blk">${value.subDocNum}</td>
+								</tr>
+								
+								<c:if test='${value.subDocType == "BS"}'>
+								<tr class="contenttext">
+									<td width="6%"></td>
+									<td><b>Company Name</b></td>
+									<td colspan="2" class="contenttext_blk">${value.subCompanyName}</td>
+								</tr>													
+								</c:if>
+								
+								<tr class="contenttext">
+									<td width="6%"></td>
+									<td><b>Title</b></td>
+									<td colspan="2" class="contenttext_blk">${value.subTitle}
+									</td>
+								</tr>
+				
+								<tr class="contenttext">
+									<td width="6%"></td>
+									<td><b>Name in English</b></td>
+									<!--add by eliot 20110609-->
+				
+									<td colspan="2" class="contenttext_blk">${value.subLastName}
+									${value.subFirstName}</td>
+								</tr>
+				
+								<tr class="contenttext">
+									<td width="6%"></td>
+									<td><b>Date of birth</b></td>
+									<td colspan="2" class="contenttext_blk">${value.subDateOfBirthStr}</td>
+								</tr>
+
+								<tr>
+									<td width="6%"></td>
+									<td><b>Contact phone no.</b>
+									</td>
+									<td colspan="2" class="contenttext_blk">${value.subContactTel}</td>
+								</tr>
+
+
+								<tr>
+									<td width="6%"></td>
+									<td><b>Email address</b>
+									</td>
+									<td colspan="2" class="contenttext_blk">${value.subEmailAddr}</td>
+								</tr>	
+								</c:when>
+								<c:otherwise>
+									<span>Same as Registered User</span>	
+								</c:otherwise>
+								</c:choose>												
+							</table></td>
+					</tr>
+
+
+				</table>
+</jsp:root>

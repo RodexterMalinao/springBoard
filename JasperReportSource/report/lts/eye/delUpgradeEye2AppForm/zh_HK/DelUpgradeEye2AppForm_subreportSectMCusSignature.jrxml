@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DelUpgradeEye2AppForm_subreportWebSite" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="644"/>
+	<field name="printTermsCondition" class="java.lang.Boolean"/>
+	<field name="thirdPartyInd" class="java.lang.Boolean"/>
+	<field name="eyeCustSignatureStream" class="java.io.InputStream"/>
+	<field name="resTelCustSignatureStream" class="java.io.InputStream"/>
+	<field name="applicationDate" class="java.lang.String"/>
+	<field name="eyeApplication" class="java.lang.Boolean"/>
+	<field name="resTelApplication" class="java.lang.Boolean"/>
+	<field name="orderMode" class="java.lang.String"/>
+	<field name="cspItemType" class="java.lang.String"/>
+	<field name="sectionM.sectionTitle" class="java.lang.String"/>
+	<field name="sectionM.eyeContent" class="java.lang.String"/>
+	<field name="sectionM.resTelContent" class="java.lang.String"/>
+	<field name="sectionM.eyeResTelContent" class="java.lang.String"/>
+	<field name="sectionN.sectionTitle" class="java.lang.String"/>
+	<field name="sectionN.applicantName" class="java.lang.String"/>
+	<field name="sectionN.idDocNum" class="java.lang.String"/>
+	<field name="sectionN.idDocType" class="java.lang.String"/>
+	<field name="sectionN.contactNum" class="java.lang.String"/>
+	<field name="sectionN.relationship" class="java.lang.String"/>
+	<field name="sectionN.idVerified" class="java.lang.Boolean"/>
+	<field name="sectionN.content" class="java.lang.String"/>
+	<field name="sectionO.sectionTitle" class="java.lang.String"/>
+	<field name="sectionO.content" class="java.lang.String"/>
+	<field name="sectionA.customer.idDocType" class="java.lang.String"/>
+    <field name="sectionA.customer.signoffMode" class="java.lang.String"/>
+	<field name="companyChopStatement" class="java.lang.String"/>
+	<field name="companyChopStream" class="java.io.InputStream"/>
+	<field name="sectionP.sectionTitle2csp" class="java.lang.String"/>
+	<field name="sectionP.sectionTitleHkt" class="java.lang.String"/>
+	<field name="sectionP.sectionTitleClub" class="java.lang.String"/>
+	<field name="sectionP.content1HktClub" class="java.lang.String"/>
+	<field name="sectionP.content1HktClubver2" class="java.lang.String"/>
+	<field name="sectionP.content2HktClub" class="java.lang.String"/>
+	<field name="sectionP.content1Club" class="java.lang.String"/>
+	<field name="sectionP.content2Club" class="java.lang.String"/>
+	<field name="sectionP.content1Hkt" class="java.lang.String"/>
+	<field name="sectionP.content2Hkt" class="java.lang.String"/>
+	<field name="sectionP.content" class="java.lang.String"/>
+	<field name="sectionP.contentInfo1csp" class="java.lang.String"/>
+	<field name="sectionP.contentInfo2csp" class="java.lang.String"/>
+	<field name="sectionP.emailAddr" class="java.lang.String"/>
+	<field name="sectionP.mobileNum" class="java.lang.String"/>
+	<field name="sectionP.bothRegistered" class="java.lang.String"/>
+	<field name="sectionP.bothInvalidEmailMsg" class="java.lang.String"/>
+	<field name="sectionP.clubInvalidEmailMsg" class="java.lang.String"/>
+	<field name="sectionP.hktInvalidEmailMsg" class="java.lang.String"/>
+	<field name="sectionL.csPortal" class="java.lang.Boolean"/>
+	<field name="sectionL.cspDummy" class="java.lang.Boolean"/>
+	<field name="sectionQ.contentWaive" class="java.lang.String"/>
+	<field name="sectionQ.contentNotWaive" class="java.lang.String"/>
+	<field name="sectionQ.sectionTitle" class="java.lang.String"/>
+	<field name="sectionQ.coolingOffRequired" class="java.lang.Boolean"/>
+	<field name="sectionQ.waiveCoolingOff" class="java.lang.Boolean"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="1" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()]]></printWhenExpression>
+			<staticText>
+				<reportElement x="5" y="13" width="57" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第十三節:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="62" y="13" width="483" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionM.sectionTitle}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="10" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="29" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="10" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="10" width="1" height="20"/>
+			</line>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& $F{eyeApplication}.booleanValue()
+&& !$F{resTelApplication}.booleanValue()]]></printWhenExpression>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="5" y="3" width="540" height="13"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionM.eyeContent}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& !$F{eyeApplication}.booleanValue()
+&& $F{resTelApplication}.booleanValue()]]></printWhenExpression>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="5" y="3" width="540" height="13"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionM.resTelContent}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& $F{eyeApplication}.booleanValue()
+&& $F{resTelApplication}.booleanValue()]]></printWhenExpression>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="5" y="3" width="540" height="13"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionM.eyeResTelContent}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="30" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{thirdPartyInd}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement x="0" y="0" width="556" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="13" width="57" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第十四節:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="62" y="13" width="483" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionN.sectionTitle}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="10" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="29" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="10" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="10" width="1" height="20"/>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& $F{thirdPartyInd}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="5" y="2" width="540" height="15"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionN.content}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="75">
+			<printWhenExpression><![CDATA[$F{thirdPartyInd}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="75" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="75" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="4" width="180" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[申請人姓名:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="188" y="4" width="140" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionN.applicantName}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="188" y="18" width="140" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="21" width="52" height="15">
+					<printWhenExpression><![CDATA[!"PASS".equals($F{sectionN.idDocType})]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[香港身份證:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="188" y="37" width="100" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="188" y="23" width="100" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionN.idDocNum}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="188" y="52" width="100" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="188" y="40" width="100" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionN.contactNum}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="38" width="177" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[聯絡電話號碼 (流動電話號碼):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="55" width="180" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[與登記客戶之關係:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="188" y="69" width="140" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="188" y="55" width="140" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionN.relationship}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="293" y="24" width="12" height="12"/>
+			</rectangle>
+			<line direction="BottomUp">
+				<reportElement x="298" y="26" width="6" height="10">
+					<printWhenExpression><![CDATA[$F{sectionN.idVerified}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="308" y="23" width="39" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[已核實]]></text>
+			</staticText>
+			<line>
+				<reportElement x="294" y="31" width="4" height="4">
+					<printWhenExpression><![CDATA[$F{sectionN.idVerified}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="5" y="21" width="83" height="15">
+					<printWhenExpression><![CDATA["PASS".equals($F{sectionN.idDocType})]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[護照號碼:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="21" width="100" height="15">
+					<printWhenExpression><![CDATA["BS".equals($F{sectionN.idDocType})]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[商業登記號碼:]]></text>
+			</staticText>
+		</band>
+		<band height="30" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue() && $F{thirdPartyInd}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement x="0" y="0" width="556" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="13" width="57" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第十五節:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="62" y="13" width="483" height="15"/>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionO.sectionTitle}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="10" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="29" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="10" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="10" width="1" height="20"/>
+			</line>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& $F{thirdPartyInd}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="5" y="2" width="540" height="15"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionO.content}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="30" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{sectionL.csPortal}.booleanValue() && $F{printTermsCondition}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement x="0" y="0" width="556" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="13" width="57" height="15">
+					<printWhenExpression><![CDATA[$F{thirdPartyInd}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第十六節:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="62" y="13" width="483" height="15">
+					<printWhenExpression><![CDATA["MYHKT-CLUB".equals($F{cspItemType})]]></printWhenExpression>
+				</reportElement>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionP.sectionTitle2csp}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="62" y="13" width="483" height="15">
+					<printWhenExpression><![CDATA["THE-CLUB".equals($F{cspItemType})]]></printWhenExpression>
+				</reportElement>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionP.sectionTitleClub}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="62" y="13" width="483" height="15">
+					<printWhenExpression><![CDATA["MYHKT-BILL".equals($F{cspItemType})]]></printWhenExpression>
+				</reportElement>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionP.sectionTitleHkt}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="62" y="13" width="483" height="15">
+					<printWhenExpression><![CDATA["EXST-MYHKT".equals($F{cspItemType})]]></printWhenExpression>
+				</reportElement>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionP.sectionTitle2csp}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="10" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="29" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="10" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="10" width="1" height="20"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="13" width="57" height="15">
+					<printWhenExpression><![CDATA[!$F{thirdPartyInd}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第十四節:]]></text>
+			</staticText>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[$F{sectionL.csPortal}.booleanValue() && "EXST-MYHKT".equals($F{cspItemType}) && $F{printTermsCondition}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="3" y="3" width="540" height="15"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionP.bothRegistered}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[$F{sectionL.csPortal}.booleanValue() && "MYHKT-CLUB".equals($F{cspItemType}) && !$F{sectionL.cspDummy}.booleanValue() && $F{printTermsCondition}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="3" y="3" width="540" height="15"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionP.content1HktClub}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[$F{sectionL.csPortal}.booleanValue() && "MYHKT-CLUB".equals($F{cspItemType}) && $F{sectionL.cspDummy}.booleanValue() && $F{printTermsCondition}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="3" y="3" width="540" height="15"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionP.content1HktClubver2}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[$F{sectionL.csPortal}.booleanValue() && "THE-CLUB".equals($F{cspItemType}) && !"MYHKT-BILL".equals($F{cspItemType}) && $F{printTermsCondition}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="3" y="3" width="540" height="15"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionP.content1Club}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[$F{sectionL.csPortal}.booleanValue() && !"THE-CLUB".equals($F{cspItemType}) && "MYHKT-BILL".equals($F{cspItemType}) && !$F{sectionL.cspDummy}.booleanValue() && $F{printTermsCondition}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="3" y="3" width="540" height="15"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionP.content1Hkt}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="38" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{sectionL.csPortal}.booleanValue() && !"EXST-MYHKT".equals($F{cspItemType}) && $F{printTermsCondition}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="38" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="38" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="3" y="2" width="100" height="15">
+					<printWhenExpression><![CDATA[$F{sectionL.csPortal}.booleanValue() && !"EXST-MYHKT".equals($F{cspItemType})]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[電郵地址 / 登入名稱:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="111" y="17" width="209" height="1"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="111" y="2" width="210" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{sectionL.csPortal}.booleanValue() && !"EXST-MYHKT".equals($F{cspItemType})]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionP.emailAddr}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="20" width="100" height="15">
+					<printWhenExpression><![CDATA[$F{sectionL.csPortal}.booleanValue() && !"EXST-MYHKT".equals($F{cspItemType})]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[手機號碼:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="111" y="35" width="209" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="111" y="20" width="120" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{sectionL.csPortal}.booleanValue() && !"EXST-MYHKT".equals($F{cspItemType})]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionP.mobileNum}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[$F{sectionL.csPortal}.booleanValue() && "MYHKT-CLUB".equals($F{cspItemType}) && $F{sectionL.cspDummy}.booleanValue() && $F{printTermsCondition}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="3" y="3" width="540" height="15"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionP.bothInvalidEmailMsg}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[$F{sectionL.csPortal}.booleanValue() && "THE-CLUB".equals($F{cspItemType}) && !"MYHKT-BILL".equals($F{cspItemType}) && $F{printTermsCondition}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="3" y="3" width="540" height="15"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionP.clubInvalidEmailMsg}]]></textFieldExpression>
+			</textField>
+		</band>	
+		<band height="20">
+			<printWhenExpression><![CDATA[$F{sectionL.csPortal}.booleanValue() && !"THE-CLUB".equals($F{cspItemType}) && "MYHKT-BILL".equals($F{cspItemType}) && $F{sectionL.cspDummy}.booleanValue() && $F{printTermsCondition}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="3" y="3" width="540" height="15"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionP.hktInvalidEmailMsg}]]></textFieldExpression>
+			</textField>
+		</band>		
+		<band height="30" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{sectionQ.coolingOffRequired}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement x="0" y="0" width="556" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="13" width="57" height="15">
+					<printWhenExpression><![CDATA[$F{thirdPartyInd}.booleanValue() && $F{sectionL.csPortal}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第十七節:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="13" width="57" height="15">
+					<printWhenExpression><![CDATA[$F{thirdPartyInd}.booleanValue() && !$F{sectionL.csPortal}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第十八節:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="13" width="57" height="15">
+					<printWhenExpression><![CDATA[!$F{thirdPartyInd}.booleanValue() && $F{sectionL.csPortal}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第十五節:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="13" width="57" height="15">
+					<printWhenExpression><![CDATA[!$F{thirdPartyInd}.booleanValue() && !$F{sectionL.csPortal}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[第十四節:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="62" y="13" width="483" height="15">
+					<printWhenExpression><![CDATA[$F{sectionQ.coolingOffRequired}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement markup="html">
+					<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionQ.sectionTitle}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="10" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="29" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="10" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="10" width="1" height="20"/>
+			</line>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[$F{sectionQ.coolingOffRequired}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="20" y="3" width="523" height="15">
+					<printWhenExpression><![CDATA[$F{sectionQ.waiveCoolingOff}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionQ.contentWaive}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="20" y="3" width="523" height="15">
+					<printWhenExpression><![CDATA[!$F{sectionQ.waiveCoolingOff}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionQ.contentNotWaive}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="5" y="3" width="12" height="12"/>
+			</rectangle>
+			<line>
+				<reportElement x="7" y="11" width="4" height="4"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="11" y="5" width="6" height="10"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="98" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& !"O".equals($F{orderMode}) && !"C".equals($F{orderMode})
+&& (!"P".equals($F{orderMode}) || ("P".equals($F{orderMode}) && "R".equals($F{sectionA.customer.signoffMode})))
+&& "BS".equals($F{sectionA.customer.idDocType})]]></printWhenExpression>
+			<line>
+				<reportElement x="0" y="0" width="556" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="2" y="4" width="151" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[公司蓋印]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="20" width="96" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[申請日期:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="20" width="118" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{applicationDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="86" width="17" height="12"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<image isUsingCache="false" onErrorType="Blank">
+				<reportElement x="19" y="69" width="133" height="28"/>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<imageExpression class="java.io.InputStream"><![CDATA[$F{companyChopStream}]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="2" y="37" width="540" height="15"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{companyChopStatement}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="96" width="180" height="1"/>
+			</line>
+		</band>
+		<band height="74" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& !"O".equals($F{orderMode}) && !"C".equals($F{orderMode})
+&& (!"P".equals($F{orderMode}) || ("P".equals($F{orderMode}) && "R".equals($F{sectionA.customer.signoffMode})))
+&& !"BS".equals($F{sectionA.customer.idDocType})]]></printWhenExpression>
+			<line>
+				<reportElement x="0" y="0" width="556" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="2" y="4" width="151" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[客戶簽署]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="20" width="96" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[申請日期:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="20" width="118" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{applicationDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="62" width="17" height="12"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="73" width="180" height="1"/>
+			</line>
+			<image isUsingCache="false" onErrorType="Blank">
+				<reportElement x="20" y="45" width="133" height="28">
+					<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<imageExpression class="java.io.InputStream"><![CDATA[$F{eyeCustSignatureStream}]]></imageExpression>
+			</image>
+			<image isUsingCache="false" onErrorType="Blank">
+				<reportElement x="20" y="45" width="133" height="28">
+					<printWhenExpression><![CDATA[$F{resTelApplication}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<imageExpression class="java.io.InputStream"><![CDATA[$F{resTelCustSignatureStream}]]></imageExpression>
+			</image>
+		</band>
+		<band height="25" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{printTermsCondition}.booleanValue()
+&& ("O".equals($F{orderMode}) || "C".equals($F{orderMode})
+    ||  "P".equals($F{orderMode}))]]></printWhenExpression>
+			<line>
+				<reportElement x="0" y="0" width="556" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="2" y="5" width="96" height="15"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[申請日期:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="5" width="118" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{applicationDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="HSTradeDescForm" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="719"/>
+	<field name="companyLogo" class="java.lang.String"/>
+	<field name="agreementNum" class="java.lang.String"/>
+	<field name="brand" class="java.lang.String"/>
+	<field name="model" class="java.lang.String"/>
+	<field name="placeOfManufacture" class="java.lang.String"/>
+	<field name="networkFrequency" class="java.lang.String"/>
+	<field name="keyFeatures" class="java.lang.String"/>
+	<field name="operatingSystem" class="java.lang.String"/>
+	<field name="internalMemory" class="java.lang.String"/>
+	<field name="storageType" class="java.lang.String"/>
+	<field name="storageCapacity" class="java.lang.String"/>
+	<field name="display" class="java.lang.String"/>
+	<field name="networkProtocol" class="java.lang.String"/>
+	<field name="cameraResolution" class="java.lang.String"/>
+	<field name="packagingList" class="java.lang.String"/>
+	<field name="price" class="java.lang.String"/>
+	<field name="additionalDeliveryCharge" class="java.lang.String"/>
+	<field name="repairSrvProvider" class="java.lang.String"/>
+	<field name="repairSrvAddress" class="java.lang.String"/>
+	<field name="exchangePolicy" class="java.lang.String"/>
+	<field name="warrantyHandset" class="java.lang.String"/>
+	<field name="warrantyAccessory" class="java.lang.String"/>
+	<field name="companyChop" class="java.lang.String"/>
+	<field name="companyBottomLogo" class="java.lang.String"/>
+	<field name="appInDate" class="java.util.Date"/>
+	<field name="custSignature" class="java.io.InputStream"/>
+	<field name="showSignAndDate" class="java.lang.Boolean"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="69" splitType="Stretch">
+			<staticText>
+				<reportElement x="371" y="49" width="80" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[Application No.:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="451" y="49" width="80" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{agreementNum}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="30" y="1" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyLogo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="219" y="36" width="134" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="PCCW-zh-Ming" size="11"/>
+				</textElement>
+				<text><![CDATA[Product Information Sheet]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="585" splitType="Stretch">
+			<frame>
+				<reportElement x="30" y="15" width="501" height="568"/>
+				<staticText>
+					<reportElement x="0" y="0" width="205" height="15"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.75"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[牌子 / Brand]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="15" width="205" height="15"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.75"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[型號 / Model]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="45" width="205" height="25"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.75"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[網絡頻率或操作頻率或頻帶 / Network frequency or operating frequency or band]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="30" width="205" height="15"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.75"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[原產地 / Place of manufacture]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="175" width="117" height="40"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.75"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[支援記憶卡的種類及容量 / Type and storage capacity of support memory card]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="117" y="175" width="88" height="15"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[種類 / Type]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="117" y="190" width="88" height="25"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[最大容量
+Maximum Capacity]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="230" width="205" height="25"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.75"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[數據傳輸 / 網絡連接制式
+Data transfer / network connectivity protocol]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="255" width="205" height="35"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.75"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[以像數列出的該相機鏡頭解像度 (如電話具備內置相機)
+Resolution of the camera in terms of pixels (where the phone has a built-in camera)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="395" width="205" height="15"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.75"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[保修人身份 / Identity of repair service provider]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="410" width="205" height="60"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.75"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[保修人地址 / Repair service address]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="515" width="117" height="50"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.75"/>
+						<bottomPen lineWidth="0.75"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[保修期 / Warranty Period]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="117" y="515" width="88" height="15"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[機身 / Handset]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="117" y="530" width="88" height="35"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.75"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[配件 / Accessory]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="205" y="0" width="296" height="15"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{brand}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="205" y="15" width="296" height="15"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{model}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="205" y="30" width="296" height="15"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{placeOfManufacture}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="205" y="45" width="296" height="25"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{networkFrequency}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="205" y="175" width="296" height="15"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{storageType}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="205" y="230" width="296" height="25"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{networkProtocol}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="205" y="255" width="296" height="35"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{cameraResolution}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="205" y="395" width="296" height="15"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{repairSrvProvider}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="205" y="410" width="296" height="60"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{repairSrvAddress}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="205" y="515" width="296" height="15"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{warrantyHandset}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="205" y="190" width="296" height="25"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{storageCapacity}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="205" y="530" width="296" height="35"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.75"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{warrantyAccessory}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="70" width="205" height="75"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.75"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[主要功能 / Key features]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="145" width="205" height="15"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.75"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[作業系統 / Operation system]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="160" width="205" height="15"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.75"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[系統記憶體 / Internal memory]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="205" y="145" width="296" height="15"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{operatingSystem}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="205" y="160" width="296" height="15"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{internalMemory}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="215" width="205" height="15"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.75"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[螢幕 / Display]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="205" y="215" width="296" height="15"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{display}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="290" width="205" height="55"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.75"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[配套 / Packaging List]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="205" y="290" width="296" height="55"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{packagingList}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="345" width="205" height="25"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.75"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[產品價格 / Price]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="370" width="205" height="25"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.75"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[附加費 / Additional Delivery Charge]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="205" y="70" width="296" height="75"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{keyFeatures}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="205" y="345" width="296" height="25"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{price}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="205" y="370" width="296" height="25"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{additionalDeliveryCharge}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="470" width="205" height="45"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.75"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[換貨政策 / Exchange policy]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="205" y="470" width="296" height="45"/>
+					<box>
+						<topPen lineWidth="0.75"/>
+						<leftPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{exchangePolicy}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="138" splitType="Prevent">
+			<image>
+				<reportElement x="411" y="88" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyBottomLogo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="30" y="25" width="501" height="85">
+					<printWhenExpression><![CDATA[$F{showSignAndDate}]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="7"/>
+				</textElement>
+				<text><![CDATA[本人確認知悉、明白及注意到上述的產品資料
+I expressly acknowledge that I understand  and am aware of the above information  regarding this product(s)
+
+客戶簽署  Customer’s Signature
+
+
+
+
+
+日期 Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="112" width="341" height="26"/>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="7"/>
+				</textElement>
+				<text><![CDATA[Hong Kong Telecommunications (HKT) Limited / PCCW Mobile HK Limited
+查詢熱線 Enquiry hotline: 2888 0008
+http://www.pccw-hkt.com]]></text>
+			</staticText>
+			<image>
+				<reportElement x="30" y="62" width="117" height="38">
+					<printWhenExpression><![CDATA[$F{showSignAndDate}]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<imageExpression class="java.lang.String"><![CDATA[$F{custSignature}]]></imageExpression>
+			</image>
+			<textField isBlankWhenNull="true">
+				<reportElement x="70" y="100" width="77" height="11">
+					<printWhenExpression><![CDATA[$F{showSignAndDate}]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="PCCW-zh-Ming" size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{appInDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="0" width="501" height="25"/>
+				<textElement textAlignment="Left">
+					<font fontName="PCCW-zh-Ming" size="7"/>
+				</textElement>
+				<text><![CDATA[上述產品資料摘錄自生產商/供應商文獻及/或由生產商/供應商所提供之資料
+The above information is extracted from literature and / or information  on this product by manufacturer / supplier]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

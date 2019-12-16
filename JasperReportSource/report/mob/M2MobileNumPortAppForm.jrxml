@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MobileNumPortAppForm" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.3636363636363635"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<field name="msisdn" class="java.lang.String">
+		<fieldDescription><![CDATA[msisdn]]></fieldDescription>
+	</field>
+	<field name="jasperName" class="java.lang.String"/>
+	<field name="agreementNum" class="java.lang.String"/>
+	<field name="cutoverDate" class="java.util.Date"/>
+	<field name="cutoverTime" class="java.lang.String"/>
+	<field name="appInDate" class="java.util.Date"/>
+	<field name="dno" class="java.lang.String"/>
+	<field name="custName" class="java.lang.String">
+		<fieldDescription><![CDATA[custName]]></fieldDescription>
+	</field>
+	<field name="shopCd" class="java.lang.String"/>
+	<field name="salesCd" class="java.lang.String"/>
+	<field name="companyLogo" class="java.lang.String"/>
+	<field name="custIdDocNum" class="java.lang.String"/>
+	<field name="mnpTicketNum" class="java.lang.String"/>
+	<field name="custNameChi" class="java.lang.String"/>
+	<field name="custSignature" class="java.io.InputStream"/>
+	<field name="prePaidSimDocWithCert" class="java.lang.Boolean"/>
+	<field name="prePaidSimDocWithoutCert" class="java.lang.Boolean"/>
+	<field name="companyBottomLogo" class="java.lang.String"/>
+	<field name="companyBottomLeftLogo" class="java.lang.String"/>
+	<field name="rno" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="85" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyLogo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement key="staticText-1" x="378" y="29" width="87" height="14"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<text><![CDATA[Application No.:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="465" y="29" width="69" height="14"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{agreementNum}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-5" x="1" y="50" width="534" height="16"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mobile Number Portability Application Form]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-6" x="0" y="66" width="535" height="16"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="PCCW-zh-Ming" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[流動電話號碼可攜服務申請表格]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="608" splitType="Stretch">
+			<frame>
+				<reportElement key="frame" x="1" y="2" width="534" height="329"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-9" x="11" y="27" width="80" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9" pdfEncoding="Cp1250"/>
+					</textElement>
+					<text><![CDATA[Name in English]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-10" x="11" y="76" width="102" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Mobile Phone Number ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-41" x="91" y="27" width="53" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming"/>
+					</textElement>
+					<text><![CDATA[英文姓名：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-42" x="106" y="76" width="75" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming"/>
+					</textElement>
+					<text><![CDATA[流動電話號碼：]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField" x="144" y="27" width="380" height="14"/>
+					<box leftPadding="20">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{custName}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField" x="181" y="76" width="107" height="14"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{msisdn}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-44" x="25" y="246" width="500" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming"/>
+					</textElement>
+					<text><![CDATA[我們 / 我是載有上述流動電話的咭主証明書持有人，現付上証明書副本。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-45" x="159" y="125" width="177" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[現時使用之網絡營辦商 (供號網絡營辦商)：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-12" x="25" y="232" width="500" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[We are / I am the holder of the Cardholder Certificate for the Mobile Number, a copy of which is attached.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-14" x="11" y="149" width="171" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Recipient Network Operator (“RNO”) ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-16" x="11" y="174" width="116" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Requested Cut-over Time ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-50" x="146" y="101" width="157" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[身分證號碼/護照號碼/商業登記號碼：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-49" x="127" y="174" width="56" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[生效時間：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-47" x="183" y="149" width="172" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[擬轉往之網絡營辦商 (受號網絡營辦商)：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-17" x="11" y="101" width="135" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[ID No. / Passport No. / BR No.]]></text>
+				</staticText>
+				<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement key="textField" x="181" y="174" width="134" height="15"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.util.Date"><![CDATA[$F{cutoverDate}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-40" x="11" y="125" width="148" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Donor Network Operator (“DNO”)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-9" x="11" y="52" width="80" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9" pdfEncoding="Cp1250"/>
+					</textElement>
+					<text><![CDATA[Name in Chinese]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-41" x="91" y="52" width="53" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming"/>
+					</textElement>
+					<text><![CDATA[中文姓名：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-12" x="181" y="189" width="134" height="10"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="7"/>
+					</textElement>
+					<text><![CDATA[DD/MM/YYYY]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-12" x="315" y="189" width="126" height="10"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="7"/>
+					</textElement>
+					<text><![CDATA[HH:MM]]></text>
+				</staticText>
+				<textField pattern="HH.mm" isBlankWhenNull="true">
+					<reportElement key="textField" x="315" y="174" width="126" height="15"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[( "1".equals($F{cutoverTime}) ? "12:00 - 14:00" : "1:00 - 4:00" )]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-42" x="394" y="76" width="85" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming"/>
+					</textElement>
+					<text><![CDATA[儲值智能卡服務：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-10" x="303" y="76" width="91" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Prepaid SIM Service]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField" x="477" y="76" width="47" height="14"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[( $F{custName}.equalsIgnoreCase("PREPAID SIM") ? "Yes" : "No" )]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="336" y="125" width="190" height="14"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{dno}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-8" x="0" y="0" width="113" height="16"/>
+					<box leftPadding="5">
+						<bottomPen lineWidth="1.0"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="10"/>
+					</textElement>
+					<text><![CDATA[Customer Information]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="303" y="101" width="221" height="14"/>
+					<box leftPadding="10">
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{custIdDocNum}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-8" x="113" y="0" width="421" height="16"/>
+					<box leftPadding="5">
+						<bottomPen lineWidth="1.0"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="10"/>
+					</textElement>
+					<text><![CDATA[客戶資料]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="355" y="149" width="169" height="14"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{rno}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-44" x="26" y="300" width="500" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming"/>
+					</textElement>
+					<text><![CDATA[我們 / 我已遺失由供號網絡營辦商編配給我們 / 我作儲值智能咭服務而載有上述流動電話號碼的咭主証明書。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-12" x="26" y="272" width="500" height="28"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[We / I have lost our / my Cardholder Certificate for the Prepaid SIM Service associated with the Mobile Number allocated to us / me by the DNO.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-44" x="326" y="208" width="127" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming"/>
+					</textElement>
+					<text><![CDATA[儲值智能咭服務客戶聲明：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-12" x="11" y="208" width="240" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Declaration by Customer of Prepaid SIM Service user:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-12" x="250" y="208" width="76" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[(tick as appropiate)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-44" x="453" y="208" width="80" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[(加上剔號如適用)]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="11" y="234" width="10" height="10"/>
+					<box>
+						<topPen lineWidth="0.75" lineStyle="Solid"/>
+						<leftPen lineWidth="0.75" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.75" lineStyle="Solid"/>
+						<rightPen lineWidth="0.75" lineStyle="Solid"/>
+					</box>
+					<textElement/>
+				</textField>
+				<textField>
+					<reportElement x="11" y="275" width="10" height="10"/>
+					<box>
+						<topPen lineWidth="0.75" lineStyle="Solid"/>
+						<leftPen lineWidth="0.75" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.75" lineStyle="Solid"/>
+						<rightPen lineWidth="0.75" lineStyle="Solid"/>
+					</box>
+					<textElement/>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField" x="144" y="52" width="380" height="14"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+						<paragraph leftIndent="18"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{custNameChi}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="11" y="234" width="10" height="10">
+						<printWhenExpression><![CDATA[$F{prePaidSimDocWithCert}]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="11" y="275" width="10" height="10">
+						<printWhenExpression><![CDATA[$F{prePaidSimDocWithoutCert}]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement key="frame" x="0" y="339" width="534" height="175"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-53" x="323" y="107" width="38" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[日期：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-22" x="11" y="122" width="239" height="28"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[We /I accept the Terms & Conditions printed attached/overleaf
+Customer Signature (with Company Chop if appropiate)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-23" x="297" y="107" width="26" height="15"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Date ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-34" x="11" y="149" width="239" height="24"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="8"/>
+					</textElement>
+					<text><![CDATA[我們 / 我接受本頁背面列印的服務條款與細則
+客戶簽署(公司印鑒如適用)]]></text>
+				</staticText>
+				<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement key="textField" x="361" y="107" width="134" height="15"/>
+					<box leftPadding="3">
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.util.Date"><![CDATA[$F{appInDate}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-12" x="361" y="122" width="134" height="10"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="7"/>
+					</textElement>
+					<text><![CDATA[DD/MM/YYYY]]></text>
+				</staticText>
+				<image hAlign="Center" isUsingCache="false" onErrorType="Blank">
+					<reportElement x="66" y="94" width="133" height="28"/>
+					<box>
+						<bottomPen lineWidth="0.0"/>
+					</box>
+					<imageExpression class="java.io.InputStream"><![CDATA[$F{custSignature}]]></imageExpression>
+				</image>
+				<line>
+					<reportElement x="11" y="122" width="238" height="1"/>
+				</line>
+			</frame>
+			<frame>
+				<reportElement key="frame" x="0" y="523" width="534" height="81"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement key="staticText-19" x="0" y="0" width="120" height="16"/>
+					<box leftPadding="5">
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="10" isBold="false"/>
+					</textElement>
+					<text><![CDATA[For Internal Use Only]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-22" x="11" y="21" width="102" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Prepaid Card SIM No. ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-34" x="113" y="22" width="84" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[儲值智能卡號碼：]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="196" y="22" width="157" height="14"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[($F{custName}.equalsIgnoreCase("PREPAID SIM") ? $F{custIdDocNum} : "" )]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-8" x="120" y="0" width="414" height="16"/>
+					<box leftPadding="5">
+						<bottomPen lineWidth="1.0"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="10"/>
+					</textElement>
+					<text><![CDATA[只供本公司職員使用]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-22" x="11" y="42" width="80" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Salesman Code]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-22" x="11" y="62" width="102" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Branch / Dealer Code]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-34" x="92" y="41" width="54" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[營業員編號:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-34" x="112" y="61" width="87" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[門市 / 經銷商編號:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="147" y="42" width="206" height="14"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{salesCd}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="198" y="61" width="155" height="14"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{shopCd}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="382" y="35" width="142" height="39"/>
+					<graphicElement>
+						<pen lineWidth="0.5"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText-22" x="385" y="35" width="139" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[Ticket no.:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-34" x="385" y="46" width="139" height="14"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<text><![CDATA[票號:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="382" y="60" width="142" height="14"/>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font fontName="PCCW-zh-Ming" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{mnpTicketNum}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="599">
+			<frame>
+				<reportElement x="0" y="10" width="535" height="339"/>
+				<staticText>
+					<reportElement x="16" y="1" width="470" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="12" isBold="true" isUnderline="true" pdfEncoding="Cp1252"/>
+					</textElement>
+					<text><![CDATA[Terms & Conditions]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="21" width="470" height="37"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Subject to the successful porting of the Mobile Number to the RNO, we/I request the DNO to terminate the voice / data / fax services on the Mobile Number with effect from the Requested Cut-over Time. The continuation of other services provided by the DNO, if any, shall be subject to the applicable terms and conditions for such services of the DNO.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="21" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="57" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[2.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="57" width="470" height="28"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[We/I request the DNO and the RNO to effect the porting of the Mobile Number to the RNO's network with effect from the Requested Cut-over Time.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="85" width="470" height="32"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[We/I understand that the porting of the Mobile Number does not affect our/my obligations owing to the DNO incurred prior to the successful porting of the Mobile Number under the applicable service terms and conditions of the DNO.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="85" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[3.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="117" width="470" height="58"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[The Requested Cut-over Time is subject to the DNO's confirmation of the details herein and the technical arrangements between the DNO and the RNO in accordance with the Code of Practice related to the Implementation of Mobile number Portability issued by the Telecommunications Authority. For the purposes of effecting the arrangements as detailed in paragraphs 1 and 2 herein, the RNO is hereby expressly authorized to change the Requested Cut-over Time as the RNO may reasonably consider appropriate.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="117" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[4.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="175" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[5.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="175" width="470" height="35"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[In the event that the Mobile Number cannot be ported to the RNO's network due to the incomplete, wrong or false information provided by us/me or any grounds beyond the reasonable control of the RNO, the RNO has the right to cancel this porting application.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="209" width="470" height="35"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Except for any liability which cannot be excluded by law, we/I agree that the DNO and the RNO will not be liable to us/me or any other party in contract, tort or otherwise for any loss or damage suffered by us/me or any other party howsoever arising from or in relation to this application and the related number porting arrangements.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="209" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[6.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="243" width="470" height="35"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[We/I agree and authorize that our/my personal data disclosed herein may be transferred to all relevant parties who may require access to our/my personal data in connection with his application and we/I understand that we/I may request access to and corrections of our/my personal data.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="277" width="470" height="35"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[We/I confirm and declare that all information provided herein by us/me are accurate and correct and we/L shall be wholly liable for and shall full indemnify each of the RNO and the DNO against any costs, claims, demands, liabilities and expenses resulting from our/my breach of this clause.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="243" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[7.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="277" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[8.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="311" width="470" height="25"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[We/I request the DNO and the RNO to effect the porting of the Mobile Number to the RNO's network with effect from the Requested Cut-over Time.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="311" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[9.]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement x="0" y="348" width="535" height="247"/>
+				<staticText>
+					<reportElement x="16" y="0" width="470" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="PCCW-zh-Ming" size="12" isBold="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[服務條款及細則]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="20" width="470" height="28"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[倘若有關流動數碼成功轉攜至受號網絡營辦商，我們/我要求供號網絡營辦商於生效時間終止有關流動號碼的話音/數據/傳真服務。供號網絡營辦商如繼續提供其他服務，將受限於適用於該等服務的相關條款與細則。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="21" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="49" width="15" height="14"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[2.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="48" width="470" height="14"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[我們/我要求供號網絡營辦商及受號網絡營辦商於生效時間將有關流動號碼轉攜至受號網絡營辦商的網絡。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="62" width="470" height="28"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[我們/我明白有關流動號碼的轉攜並不影響有關流動號碼成功轉攜前，我們/我在供號網絡營辦商適用的服務條款與細則下對供號網絡營商的責任。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="63" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[3.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="89" width="470" height="35"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[生效時間受供號網絡營辦商確認上述資料及供號網絡營辦商與受號網絡營辦商之間按電訊管理局局長所發出的與實施流動電話號碼可攜性有關的實務守則技術安排的限制。為上文第1及2段提及的生效安排的目的，受號網絡營辦商獲明示授權更改受號網絡營辦商合理地認為合適的生效時間。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="90" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[4.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="125" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[5.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="124" width="470" height="26"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[有關流動號碼若由於我們/我未有提供完整的資料，或提供錯誤或失實的資料或因非受號網絡營辦商所能合理控制的任何理由，而導致流動電話號碼無法攜帶至受號網絡營辦商的網絡，受號網絡營辦商有權取消本轉攜申請。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="149" width="470" height="35"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[除任何無法卸除的法律責任外，我們/我同意因本申請和相關號碼轉攜安排引致或造成我們/我或其他任何人士蒙受損失或傷害，供號網絡營辦商及受號網絡營辦商均無需對我們/我或任何其他人士負上法律責任﹝不論是在合約，侵權或其他方面﹞。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="233" width="15" height="14"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[9.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="150" width="15" height="14"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[6.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="184" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[7.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="183" width="470" height="25"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[我們/我同意及授權我們/我在本表格披露的個人資料可能移轉予所有需要查閱我們/我在本申請所提供的個人資料的有關人士。我們/我亦明白我們/我可要求查閱及改正我們/我的個人資料。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="233" width="470" height="14"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[我們/我同意在生效時間前一天下午五時後提出的轉攜申請取消要求將不獲受理。]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="209" width="15" height="20"/>
+					<textElement>
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[8.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="36" y="208" width="470" height="25"/>
+					<textElement textAlignment="Justified">
+						<font fontName="PCCW-zh-Ming" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[我們/我確認及聲明我們/我在本表格提供的所有資料均屬真確。如因我們/我違反本條款而導致任何訟費、申索、要求、責任及開支，我們/我須負上全部負任及向受號網絡營辦商和供號網絡營辦商作出十足賠償。]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="50">
+			<image hAlign="Right" vAlign="Bottom">
+				<reportElement x="414" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyBottomLogo}]]></imageExpression>
+			</image>
+			<image vAlign="Bottom">
+				<reportElement x="0" y="0" width="120" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyBottomLeftLogo}]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

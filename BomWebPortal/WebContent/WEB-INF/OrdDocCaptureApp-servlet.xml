@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+      <list>
+        <value>classpath:configuration.properties</value>
+        <value>classpath:configuration_bwp.properties</value>
+      </list>
+    </property>
+	</bean>
+	
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+	<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+	
+	<bean id="handlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
+		<property name="interceptors">
+			<list>
+				<ref bean="ordDocCaptureAppInterceptor"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="ordDocCaptureAppInterceptor" class="com.bomwebportal.interceptor.OrdDocCaptureAppInterceptor">
+		<property name="service" ref="loginService"/>
+		<property name="singleLogin" value="${singleLogin}"/>
+	</bean>
+	
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" >
+		<property name="maxUploadSize" value="${orddoc.upload.maxSize}"/>
+	</bean>
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
+	
+	<bean name="/upload" class="com.bomwebportal.web.DocImgUploadAppController">
+		<property name="ordDocService" ref="ordDocService"/>
+		<property name="orderService" ref="orderService"/>
+		<property name="orderServiceIms" ref="imsOrderService" /> 
+		<property name="formView" value="json_view"/>
+		<property name="commandClass" value="com.bomwebportal.dto.DocImgUploadDTO"/>
+		<property name="commandName" value="docImgUploadForm"/>
+		<property name="docRepository" ref="reportRepository"/>
+		<property name="saveDirectory" value="${dataFilePath}"/>
+		<property name="imageFileDirectory" value="${uploadImagePath}"/>
+		<property name="successView" value="json_view"/>
+		<property name="allowedExtensions" value="${orddoc.upload.allowedExtensions}"/>
+		<property name="maxUploadSizeInfo" value="${orddoc.upload.maxSize}"/>
+		<property name="md5Util" ref="md5Util"/>
+	</bean>
+
+	<bean name="/*.rpc" class="com.bomwebportal.web.OrdDocAppController">
+		<property name="ordDocService" ref="ordDocService"/>
+		<property name="orderService" ref="orderService"/>
+	</bean>
+	
+	<bean id="ajaxViewResolver"
+        class="com.bomwebportal.web.ext.AjaxViewResolver">
+        <property name="ajaxView">
+            <bean class="com.bomwebportal.web.ext.AjaxView" />
+        </property>
+        <property name="ajaxPrefix" value="json_"></property>      
+    </bean>
+
+	<bean id="viewResolver"
+    	class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
+    	<property name="prefix">
+        	<value>/WEB-INF/jsp/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+ 	</bean>
+
+
+
+</beans>

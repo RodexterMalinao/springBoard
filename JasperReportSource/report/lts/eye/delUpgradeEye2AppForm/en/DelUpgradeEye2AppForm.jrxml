@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EyeAppForm" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="244"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\pvcs\\working\\BOM\\Programs\\Springboard\\SBWPR2\\JasperReportSource\\report\\lts\\eye\\delUpgradeEye2AppForm\\en\\"]]></defaultValueExpression>
+	</parameter>
+	<field name="eyeAppFormRptDTOList" class="java.util.ArrayList"/>
+	<field name="companyLogo" class="java.io.InputStream"/>
+	<field name="applicationNumber" class="java.lang.String"/>
+	<field name="applicationDate" class="java.lang.String"/>
+	<field name="eyeApplication" class="java.lang.Boolean"/>
+	<field name="resTelApplication" class="java.lang.Boolean"/>
+	<field name="orderMode" class="java.lang.String"/>
+	<field name="printTermsCondition" class="java.lang.Boolean"/>
+	<field name="customerCopy" class="java.lang.Boolean"/>
+	<field name="thirdPartyInd" class="java.lang.Boolean"/>
+	<field name="eyeCustSignature" class="java.io.InputStream"/>
+	<field name="resTelCustSignature" class="java.io.InputStream"/>
+	<field name="eyeTitle" class="java.lang.String"/>
+	<field name="resTelTitle" class="java.lang.String"/>
+	<field name="eyeResTelTitle" class="java.lang.String"/>
+	<field name="delLogo" class="java.lang.String"/>
+	<field name="eyeLogo" class="java.lang.String"/>
+	<field name="companyBottomBar" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="2" width="555" height="16">
+					<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue() && !$F{resTelApplication}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="PCCW-Arial" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{eyeTitle}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="2" width="555" height="16">
+					<printWhenExpression><![CDATA[!$F{eyeApplication}.booleanValue() && $F{resTelApplication}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="PCCW-Arial" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{resTelTitle}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="2" width="555" height="16">
+					<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue() && $F{resTelApplication}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="PCCW-Arial" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{eyeResTelTitle}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="460" y="2" width="95" height="18"/>
+				<textElement textAlignment="Right" markup="html">
+					<font fontName="PCCW-Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONFIDENTAL]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="37" splitType="Stretch">
+			<image onErrorType="Blank">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="2" width="120" height="33">
+					<printWhenExpression><![CDATA[!$F{eyeApplication}.booleanValue() && $F{resTelApplication}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<imageExpression class="java.lang.String"><![CDATA[$F{delLogo}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="392" y="20" width="163" height="15"/>
+				<textElement textAlignment="Right">
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Application No. " + $F{applicationNumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="212" y="20" width="82" height="15">
+					<printWhenExpression><![CDATA[$F{customerCopy}.booleanValue() && !"O".equals($F{orderMode})]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[<customer copy>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="199" y="20" width="95" height="15">
+					<printWhenExpression><![CDATA[!$F{printTermsCondition}.booleanValue() && !"O".equals($F{orderMode})]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[<for internal use only>]]></text>
+			</staticText>
+			<image onErrorType="Blank">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="2" width="120" height="33">
+					<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue() && !$F{resTelApplication}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<imageExpression class="java.lang.String"><![CDATA[$F{eyeLogo}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Prevent">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{eyeAppFormRptDTOList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/en/DelUpgradeEye2AppForm_subreportSectionA.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{eyeAppFormRptDTOList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/en/DelUpgradeEye2AppForm_subreportSectionB.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{eyeAppFormRptDTOList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/en/DelUpgradeEye2AppForm_subreportSectionC.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{eyeAppFormRptDTOList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/en/DelUpgradeEye2AppForm_subreportSectionD.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20" splitType="Prevent">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{eyeAppFormRptDTOList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/en/DelUpgradeEye2AppForm_subreportSectionE.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{eyeAppFormRptDTOList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/en/DelUpgradeEye2AppForm_subreportSectionF.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20" splitType="Prevent">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{eyeAppFormRptDTOList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/en/DelUpgradeEye2AppForm_subreportSectionG.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{eyeAppFormRptDTOList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/en/DelUpgradeEye2AppForm_subreportSectionH.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{eyeAppFormRptDTOList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/en/DelUpgradeEye2AppForm_subreportSectionI.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{eyeAppFormRptDTOList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/en/DelUpgradeEye2AppForm_subreportSectionJ.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20" splitType="Prevent">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{eyeAppFormRptDTOList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/en/DelUpgradeEye2AppForm_subreportSectionK.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20" splitType="Prevent">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{eyeAppFormRptDTOList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/en/DelUpgradeEye2AppForm_subreportSectionL.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20" splitType="Prevent">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{eyeAppFormRptDTOList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/en/DelUpgradeEye2AppForm_subreportSectMCusSignature.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20" splitType="Prevent">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{eyeAppFormRptDTOList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/en/DelUpgradeEye2AppForm_subreportSectionSalesInfo.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[!"O".equals($F{orderMode})
+&& !$F{printTermsCondition}.booleanValue()]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{eyeAppFormRptDTOList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/en/DelUpgradeEye2AppForm_subreportSectionInternalUse.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="35" width="555" height="12" isPrintInFirstWholeBand="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="PCCW-Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[<continue>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="35" width="100" height="12"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[V201203301535]]></text>
+			</staticText>
+			<image onErrorType="Blank">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="555" height="35"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyBottomBar}]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="47">
+			<staticText>
+				<reportElement x="0" y="35" width="100" height="12"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[V201203301535]]></text>
+			</staticText>
+			<image onErrorType="Blank">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="555" height="35"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{companyBottomBar}]]></imageExpression>
+			</image>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band/>
+	</summary>
+	<noData>
+		<band/>
+	</noData>
+</jasperReport>

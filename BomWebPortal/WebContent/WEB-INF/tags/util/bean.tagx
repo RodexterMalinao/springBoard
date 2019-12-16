@@ -1,0 +1,29 @@
+<jsp:root xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:form="http://www.springframework.org/tags/form"
+	version="2.0">
+  <jsp:output omit-xml-declaration="yes" />
+  <jsp:directive.tag import="java.util.*"/>
+  <jsp:directive.tag import="org.springframework.web.context.*"/>
+  <jsp:directive.tag import="org.springframework.web.context.support.*"/>
+
+  <jsp:directive.attribute name="name" type="java.lang.String" required="true" rtexprvalue="true" description="Bean Name" />
+  <jsp:directive.attribute name="var" type="java.lang.String" required="true" rtexprvalue="false" description="variable" />
+  <jsp:directive.variable alias="bean" name-from-attribute="var" scope="AT_END"/>
+
+  <jsp:scriptlet>
+    <![CDATA[
+		synchronized(jspContext) {
+			String name = (String)jspContext.getAttribute("name");
+			String var = (String)jspContext.getAttribute("var");
+			
+			WebApplicationContext wac = WebApplicationContextUtils.getWebApplicationContext(((PageContext)jspContext).getServletContext());
+			Object bean = wac.getBean(name);
+			jspContext.setAttribute("bean", bean, PageContext.PAGE_SCOPE);
+		}
+    ]]>
+  </jsp:scriptlet>
+</jsp:root>

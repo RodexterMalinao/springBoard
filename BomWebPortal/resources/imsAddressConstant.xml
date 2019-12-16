@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+	<!-- enable access to externalized properties via PropertyPlaceholderConfigurer -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations"> 
+	            <list>
+	                <value>classpath:imsAddressConstantConfig.properties</value>
+	            </list>
+	    </property>
+	</bean>
+
+	<!-- Address Index Path  -->
+    <bean id="indexPathIms" class="com.bomwebportal.address.AddressIndexPathDTO">
+       <property name="indexPath" value="${luceneIndexPathIms}" />
+    </bean>
+    <bean id="indexPathLts" class="com.bomwebportal.address.AddressIndexPathDTO">
+       <property name="indexPath" value="${luceneIndexPathLts}" />
+    </bean>
+    <bean id="indexPathMob" class="com.bomwebportal.address.AddressIndexPathDTO">
+       <property name="indexPath" value="${luceneIndexPathMob}" />
+    </bean>
+</beans>

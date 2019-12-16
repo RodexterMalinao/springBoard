@@ -1,0 +1,1100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DelUpgradeEye2AppForm_subreportWebSite" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="90"/>
+	<property name="ireport.y" value="336"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<field name="printTermsCondition" class="java.lang.Boolean"/>
+	<field name="thirdPartyInd" class="java.lang.Boolean"/>
+	<field name="eyeCustSignatureStream" class="java.io.InputStream"/>
+	<field name="resTelCustSignatureStream" class="java.io.InputStream"/>
+	<field name="applicationDate" class="java.lang.String"/>
+	<field name="eyeApplication" class="java.lang.Boolean"/>
+	<field name="resTelApplication" class="java.lang.Boolean"/>
+	<field name="orderMode" class="java.lang.String"/>
+	<field name="sectionInternalUse.cmrid" class="java.lang.String"/>
+	<field name="sectionInternalUse.location" class="java.lang.String"/>
+	<field name="sectionInternalUse.uamsNum" class="java.lang.String"/>
+	<field name="sectionInternalUse.refNum" class="java.lang.String"/>
+	<field name="sectionInternalUse.fsa" class="java.lang.String"/>
+	<field name="sectionInternalUse.customerRemarks" class="java.lang.String"/>
+	<field name="sectionInternalUse.orderRemarks" class="java.lang.String"/>
+	<field name="sectionInternalUse.optOutDtlList" class="java.util.ArrayList"/>
+	<field name="sectionInternalUse.optOutDtlListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionInternalUse.chargingList" class="java.util.ArrayList"/>
+	<field name="sectionInternalUse.chargingListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionInternalUse.externalRelocationList" class="java.util.ArrayList"/>
+	<field name="sectionInternalUse.externalRelocationListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionInternalUse.eyeSrvNum" class="java.lang.String"/>
+	<field name="sectionInternalUse.idDocType" class="java.lang.String"/>
+	<field name="sectionInternalUse.idDocNum" class="java.lang.String"/>
+	<field name="sectionInternalUse.earliestSRDReason" class="java.lang.String"/>
+	<field name="sectionInternalUse.blacklistAddr" class="java.lang.Boolean"/>
+	<field name="sectionInternalUse.cancelDnType" class="java.lang.String"/>
+	<field name="sectionInternalUse.cancelDnNum" class="java.lang.String"/>
+	<field name="sectionInternalUse.otherCustRequest" class="java.lang.String"/>
+	<field name="sectionInternalUse.srvType" class="java.lang.String"/>
+	<field name="sectionInternalUse.bandwidth" class="java.lang.String"/>
+	<field name="sectionInternalUse.technology" class="java.lang.String"/>
+	<field name="sectionInternalUse.vimLang" class="java.lang.String"/>
+	<field name="sectionInternalUse.eyeArrangement" class="java.lang.String"/>
+	<field name="sectionInternalUse.fsaArrangement" class="java.lang.String"/>
+	<field name="sectionInternalUse.outImsTpList" class="java.util.ArrayList"/>
+	<field name="sectionInternalUse.outImsTpListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionInternalUse.outLtsTpList" class="java.util.ArrayList"/>
+	<field name="sectionInternalUse.outLtsTpListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionInternalUse.documentList" class="java.util.ArrayList"/>
+	<field name="sectionInternalUse.documentListEmpty" class="java.lang.Boolean"/>
+	<field name="sectionInternalUse.redemptionMedia" class="java.lang.String"/>
+	<field name="sectionInternalUse.smsNumber" class="java.lang.String"/>
+	<field name="sectionInternalUse.acctNum" class="java.lang.String"/>
+	<field name="sectionInternalUse.billType" class="java.lang.String"/>
+	<field name="sectionInternalUse.paperBillCharging" class="java.lang.String"/>
+	<field name="sectionInternalUse.waiveReason" class="java.lang.String"/>
+	<field name="sectionInternalUse.imsL2Job" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="1" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="30">
+			<staticText>
+				<reportElement x="5" y="14" width="540" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[FOR INTERNAL USE]]></text>
+			</staticText>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="10" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement x="0" y="10" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="29" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="10" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[!$F{printTermsCondition}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+			</line>
+		</band>
+		<band height="90" splitType="Prevent">
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="90" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="90" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement x="129" y="-1" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="129" y="2" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.cmrid}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="129" y="16" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="120" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[CMRID:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="19" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.location}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="19" width="120" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Team / Shop Code:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="129" y="33" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="5" y="36" width="120" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[UAMS No.:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="36" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.uamsNum}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="129" y="50" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="129" y="67" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="5" y="53" width="120" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Netvigator Springboard No.:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="53" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.refNum}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="71" width="120" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[FSA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="71" width="348" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.fsa}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="129" y="85" width="348" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{resTelApplication}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField>
+				<reportElement x="129" y="3" width="140" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.eyeSrvNum}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="3" width="120" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Eye Service Number:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="129" y="17" width="140" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue()
+&& !$F{sectionInternalUse.eyeArrangement}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="3" width="120" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Eye Arrangement:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="3" width="140" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.eyeArrangement}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="129" y="18" width="140" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue()
+&& !$F{sectionInternalUse.fsaArrangement}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="3" width="120" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[FSA Arrangement:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="3" width="140" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.fsaArrangement}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="129" y="18" width="140" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue()
+&& !$F{sectionInternalUse.bandwidth}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="3" width="120" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Bandwidth:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="3" width="140" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.bandwidth}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="129" y="17" width="140" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue()
+&& !$F{sectionInternalUse.technology}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="3" width="120" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Technology:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="3" width="140" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.technology}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="129" y="17" width="140" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[!$F{printTermsCondition}.booleanValue()
+&& !$F{sectionInternalUse.idDocNum}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="33" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Dummy]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="2" width="87" height="15">
+					<printWhenExpression><![CDATA["PASS".equals( $F{sectionInternalUse.idDocType} )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Passport Number:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="2" width="87" height="15">
+					<printWhenExpression><![CDATA["HKID".equals( $F{sectionInternalUse.idDocType} )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[HKID Number:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="129" y="16" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="129" y="2" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.idDocNum}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="38" y="2" width="87" height="15">
+					<printWhenExpression><![CDATA["BS".equals( $F{sectionInternalUse.idDocType} )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[HKBR Number:]]></text>
+			</staticText>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[!$F{printTermsCondition}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="129" y="17" width="348" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="129" y="2" width="348" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.earliestSRDReason}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="2" width="120" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Earliest SRD Reason:]]></text>
+			</staticText>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[!$F{printTermsCondition}.booleanValue()
+&& $F{sectionInternalUse.blacklistAddr}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="120" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Blacklist Address]]></text>
+			</staticText>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[!$F{printTermsCondition}.booleanValue()
+&& !$F{sectionInternalUse.cancelDnNum}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="33" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Cancel ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="38" y="2" width="21" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.cancelDnType}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="59" y="2" width="66" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="2" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.cancelDnNum}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="129" y="16" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue()
+&& !$F{sectionInternalUse.vimLang}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="120" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[VIM / SMS Language:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="2" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.vimLang}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="129" y="16" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="60" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue()
+&& !$F{sectionInternalUse.imsL2Job}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="60" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="60" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="120" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Add IMS L2 Job:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="2" width="348" height="45" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.util.List"><![CDATA[$F{sectionInternalUse.imsL2Job}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="129" y="48" width="348" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[!$F{sectionInternalUse.otherCustRequest}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="120" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Other customer request: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="2" width="120" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.otherCustRequest}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="129" y="16" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[!$F{sectionInternalUse.redemptionMedia}.isEmpty()]]></printWhenExpression>
+			<staticText>
+				<reportElement x="5" y="0" width="119" height="17"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Redemption Media: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="0" width="120" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.redemptionMedia}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="129" y="16" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[!$F{sectionInternalUse.smsNumber}.isEmpty()]]></printWhenExpression>
+			<staticText>
+				<reportElement x="5" y="0" width="119" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Redemption SMS Number:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="0" width="120" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.smsNumber}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="129" y="16" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[!$F{sectionInternalUse.acctNum}.isEmpty()]]></printWhenExpression>
+			<staticText>
+				<reportElement x="5" y="0" width="119" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Account Number:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="0" width="120" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.acctNum}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="129" y="16" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[!$F{sectionInternalUse.billType}.isEmpty()]]></printWhenExpression>
+			<staticText>
+				<reportElement x="5" y="0" width="119" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Bill Type:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="0" width="120" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.billType}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="129" y="16" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[!$F{sectionInternalUse.paperBillCharging}.isEmpty()]]></printWhenExpression>
+			<staticText>
+				<reportElement x="5" y="0" width="119" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Paper Bill Charging:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="0" width="120" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.paperBillCharging}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="129" y="16" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[!$F{sectionInternalUse.waiveReason}.isEmpty()]]></printWhenExpression>
+			<staticText>
+				<reportElement x="5" y="0" width="119" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Waive Reason:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="0" width="120" height="20"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.waiveReason}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="129" y="16" width="120" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="15" splitType="Prevent">
+			<printWhenExpression><![CDATA[!$F{sectionInternalUse.documentListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="15" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="15" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="82" height="12"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Document List:]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="40">
+			<printWhenExpression><![CDATA[!$F{sectionInternalUse.documentListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="3" width="170" height="12"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Document Type]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="1" y="19" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionInternalUse.documentList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/en/DelUpgradeEye2AppForm_subreportDocumentList.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="176" y="3" width="220" height="12"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Waive Reason]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="3" width="90" height="12"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Fax Serial Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="397" y="3" width="62" height="12"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Collected]]></text>
+			</staticText>
+		</band>
+		<band height="15" splitType="Prevent">
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="15" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="15" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="82" height="12"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Others:]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="20" splitType="Prevent">
+			<printWhenExpression><![CDATA[$F{eyeApplication}.booleanValue()
+&& !$F{sectionInternalUse.srvType}.isEmpty()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="3" width="120" height="15"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Service Type:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="3" width="140" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.srvType}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="130" y="18" width="140" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="40">
+			<printWhenExpression><![CDATA[!$F{sectionInternalUse.optOutDtlListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="3" width="131" height="12"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Opt Out Dtl:]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="1" y="19" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionInternalUse.optOutDtlList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/en/DelUpgradeEye2AppForm_subreportDescription.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="40">
+			<printWhenExpression><![CDATA[!$F{sectionInternalUse.chargingListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="3" width="131" height="12"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Charging:]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="1" y="19" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionInternalUse.chargingList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/en/DelUpgradeEye2AppForm_subreportDescription.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="40">
+			<printWhenExpression><![CDATA[!$F{sectionInternalUse.externalRelocationListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="40" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="3" width="131" height="12"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[External Relocation:]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="1" y="19" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionInternalUse.externalRelocationList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/en/DelUpgradeEye2AppForm_subreportPremium.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="15">
+			<printWhenExpression><![CDATA[!$F{sectionInternalUse.outLtsTpListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="15" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="15" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="1" width="131" height="12"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[LTS Out Term Plan:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="446" y="1" width="93" height="12"/>
+				<textElement textAlignment="Center">
+					<font fontName="PCCW-Arial" size="9" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Penalty Handling]]></text>
+			</staticText>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[!$F{sectionInternalUse.outLtsTpListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="0" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionInternalUse.outLtsTpList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/en/DelUpgradeEye2AppForm_subreportPremium.jasper"]]></subreportExpression>
+			</subreport>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="15">
+			<printWhenExpression><![CDATA[!$F{sectionInternalUse.outImsTpListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="15" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="15" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="1" width="131" height="12"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[IMS Out Term Plan:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="446" y="1" width="93" height="12"/>
+				<textElement textAlignment="Center">
+					<font fontName="PCCW-Arial" size="9" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Penalty Handling]]></text>
+			</staticText>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[!$F{sectionInternalUse.outImsTpListEmpty}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="0" width="554" height="20"/>
+				<dataSourceExpression><![CDATA[new JRBeanCollectionDataSource($F{sectionInternalUse.outImsTpList})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["lts/eye/delUpgradeEye2AppForm/en/DelUpgradeEye2AppForm_subreportPremium.jasper"]]></subreportExpression>
+			</subreport>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="20" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="15" splitType="Prevent">
+			<printWhenExpression><![CDATA[!$F{printTermsCondition}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="15" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="15" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="131" height="12"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Customer Remarks:]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" mode="Opaque" x="0" y="0" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="15" splitType="Prevent">
+			<printWhenExpression><![CDATA[!$F{printTermsCondition}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="15" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="15" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="5" y="1" width="535" height="13"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.customerRemarks}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="15" splitType="Prevent">
+			<printWhenExpression><![CDATA[!$F{printTermsCondition}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="15" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="15" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="1" width="131" height="12"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Order Remarks:]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="555" height="1" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+		<band height="15" splitType="Prevent">
+			<printWhenExpression><![CDATA[!$F{printTermsCondition}.booleanValue()]]></printWhenExpression>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="15" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="15" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="5" y="0" width="535" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="PCCW-Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sectionInternalUse.orderRemarks}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="1" splitType="Prevent">
+			<line>
+				<reportElement x="0" y="0" width="556" height="1"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

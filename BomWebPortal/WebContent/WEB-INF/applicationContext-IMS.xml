@@ -1,0 +1,629 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+        
+     	<!-- Raymond --> 	
+	
+	<!-- BOM SIT -->
+	
+	<bean name="imsSyncOrderService"
+		class="com.bomwebportal.ims.service.ImsSyncOrderServiceImpl">		
+		<property name="client" ref="bomWsClientIms" />
+		<property name="orderservice" ref="imsOrderService" />
+	</bean>		
+
+	<!-- <bean name="autoProcessIms" class="com.bomwebportal.ims.quartz.ImsAutoProcess">	
+		<property name="service" ref="imsSyncOrderService"/>
+		<property name="propertyConfigurer" ref="propertyConfigurer"/> 
+	</bean>
+
+	<bean id="jobDetailIms"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="autoProcessIms" />
+		<property name="targetMethod" value="autoSyncBomWebImsOrder" />
+	</bean>
+
+	<bean name="simpleTriggerBeanIms"
+		class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="jobDetailIms" />
+		start Delay 5mins.
+		<property name="startDelay" value="310000" />
+		update every 15 sec.
+		<property name="repeatInterval" value="15000" />
+		<property name="jobDataAsMap">
+			<map>
+                <entry key="jobData">
+                    <ref bean="autoProcessIms"/>
+                </entry>
+            </map>
+		</property>
+	</bean> -->
+	
+	<bean name="imsAutoSyncBackService"
+		class="com.bomwebportal.ims.service.ImsAutoSyncBackServiceImpl">		
+		<property name="orderDao" ref="imsOrderDao" />
+		<property name="bomDao" ref="bomOrderDao" />
+		<property name="orderservice" ref="imsOrderService" />
+		<property name="workQueueService" ref="com.pccw.wq.service.WorkQueueService" />
+		<property name="tmpFilePath" value="${dataFilePath}" />
+	</bean>
+	
+	<bean id="NTVUtil" class="com.bomwebportal.util.NTVUtil">
+		<property name="dao" ref="NTVUtlDAO"/>
+	</bean>
+	<bean id="NTVUtlDAO" class="com.bomwebportal.dao.NTVUtlDAO">
+		<property name="dataSource" ref="BomWebPortalDS"/>
+	</bean>
+	
+	<bean name="imsOrderCancelService"
+		class="com.bomwebportal.ims.service.ImsOrderCancelServiceImpl">		
+		<property name="orderDao" ref="imsOrderDao" />
+ 		<property name="reLoginSrv" ref="releaseLoginIDService" />		 
+	</bean>	
+	
+	<!-- <bean name="autoProcessIms2" class="com.bomwebportal.ims.quartz.ImsAutoSyncBack">			
+		<property name="service" ref="imsAutoSyncBackService" />
+		<property name="propertyConfigurer" ref="propertyConfigurer"/>		
+	</bean>
+
+	<bean id="jobDetailIms2"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="autoProcessIms2" />
+		<property name="targetMethod" value="autoSyncBomOcDetail" />
+	</bean>
+
+	<bean name="simpleTriggerBeanIms2"
+		class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="jobDetailIms2" />
+		start Delay 10 mins
+		<property name="startDelay" value="320000" />
+		update every 5 min
+		<property name="repeatInterval" value="300000" />
+		<property name="jobDataAsMap">
+			<map>
+                <entry key="jobData">
+                    <ref bean="autoProcessIms2"/>
+                </entry>
+            </map>
+		</property>
+	</bean>	 -->
+
+	<bean id="appointmentImsDao" class="com.bomwebportal.ims.dao.AppointmentDAO">
+		<property name="dataSource" ref="UamsDS" />
+	</bean>
+	
+	<bean id="bomOrderDao" class="com.bomwebportal.ims.dao.ImsBomOrderDAO">
+		<property name="dataSource" ref="BomDS" />
+	</bean>
+
+	<bean name="appointmentImsService"
+		class="com.bomwebportal.ims.service.ImsAppointmentServiceImpl">
+		<property name="imsAddressInfoDao" ref="imsAddressInfoDao" />
+		<property name="appointmentDao" ref="appointmentImsDao" />
+		<property name="constantLkupDao" ref="constantLkupDao" />
+	</bean>
+	
+	<bean id="imsOrderDetailService" class="com.bomwebportal.ims.service.ImsOrderDetailServiceImpl">
+		<property name="getImsCustomerDAO" ref="getImsCustomerDao" />
+		<property name="service" ref="imsReportService" />
+		<property name="signOffLogService" ref="imsSignOffLogService" />
+		<property name="orderDao" ref="imsOrderDao" />
+      <property name="orderService" ref="imsOrderService" />
+      <property name="cOrderService" ref="COrderService" />
+<!--      add by steven-->
+  		<property name="imsSupportDocDAO" ref="imsSupportDocDao" />
+		<property name="orderDocumentDao" ref="imsorderDocumentDao"/>
+<!--      add by steven end -->
+<!-- Gary -->
+		<property name="clubHktService" ref="clubHktService" />		
+		<property name="mobilePINService" ref="mobilePINService" />
+<!-- 		Tony -->
+		<property name="basketService" ref="imsBasketDetailsService"/>
+	</bean>		
+ 	<!-- End -->	
+ 	
+<!--      add by steven-->
+	<bean id="imsSupportDocDao" class="com.bomwebportal.ims.dao.ImsSupportDocDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean> 
+	
+	<bean id="imsorderDocumentDao" class="com.bomwebportal.ims.dao.ImsOrderDocumentDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+<!--      add by steven end -->
+
+<!-- 	add by Tony -->
+    
+	<bean id="ImsCOrderWQService" class="com.bomwebportal.ims.service.ImsCOrderWQServiceImpl">
+		<property name="imsCOrderWQDao" ref="imsCOrderWQDao" />		
+	</bean> 
+	
+	<bean id="imsCOrderWQDao" class="com.bomwebportal.ims.dao.ImsCOrderWQDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="COrderService" class="com.bomwebportal.ims.service.COrderServiceImpl">
+		<property name="cOrderDAO" ref="COrderDAO" />
+	</bean>	
+	
+	<bean id="ImsOrderDocumentService" class="com.bomwebportal.ims.service.ImsOrderDocumentServiceImpl">
+		<property name="imsOrderDocumentDao" ref="imsorderDocumentDao" />
+	</bean>	
+	
+	<bean id="COrderDAO" class="com.bomwebportal.ims.dao.COrderDAO">
+		<property name="dataSource" ref="BomDS"/>
+	</bean>
+	
+	<bean id="BasketDetailsBomDAO" class="com.bomwebportal.ims.dao.BasketDetailsBomDAO">
+		<property name="dataSource" ref="BomDS"/>
+	</bean>
+	
+<!--  	add by Tony end -->
+ 	 
+	<!-- Add by Nanon --> 
+ 	<bean id="imsBasketSelectService" class="com.bomwebportal.ims.service.ImsBasketSelectServiceImpl">     
+  		<property name="basketSelectDao" ref="basketSelectDao" />
+  		<property name="imsAddressInfoDao" ref="imsAddressInfoDao" />	
+ 	</bean>
+ 	<bean id="basketSelectDao" class="com.bomwebportal.ims.dao.BasketSelectDAO">
+		<property name="dataSource" ref="BomWebPortalDS"/>
+	</bean>
+  	<bean id="imsBasketDetailsService" class="com.bomwebportal.ims.service.ImsBasketDetailsServiceImpl">     
+  		<property name="basketDetailsDao" ref="basketDetailsDao" />
+  		<property name="BVASDetailDao" ref="BVASDetailDao" />
+  		<property name="VASDetailDao" ref="VASDetailDao" />
+  		<property name="nowTVCheckDao" ref="nowTVCheckDao" />
+  		<property name="giftDetailDao" ref="giftDetailDao" />
+  		<property name="basketDetailsBomDao" ref="BasketDetailsBomDAO" />
+ 	</bean>
+ 	<bean id="basketDetailsDao" class="com.bomwebportal.ims.dao.BasketDetailsDAO">
+		<property name="dataSource" ref="BomWebPortalDS"/>
+	</bean>
+	<bean id="BVASDetailDao" class="com.bomwebportal.ims.dao.VASDetailDAO">
+		<property name="dataSource" ref="BomWebPortalDS"/>
+	</bean>
+	<bean id="VASDetailDao" class="com.bomwebportal.ims.dao.VASDetailDAO">
+		<property name="dataSource" ref="BomWebPortalDS"/>
+	</bean>
+	<bean id="imsNowTVService" class="com.bomwebportal.ims.service.ImsNowTVServiceImpl">     
+  		<property name="nowTVDAO" ref="nowTVDAO" />
+  		<property name="nowTVCheckDao" ref="nowTVCheckDao" />
+  		<property name="decoderTypeDao" ref="decoderTypeDao" />
+  		<property name="imsViQuadplayService" ref="imsViQuadplayService" ></property>
+ 	</bean>
+ 	<bean id="nowTVDAO" class="com.bomwebportal.ims.dao.NowTVDAO">
+		<property name="dataSource" ref="BomWebPortalDS"/>
+	</bean>
+	 <bean id="basketInfoDao" class="com.bomwebportal.ims.dao.BasketInfoDAO">
+		<property name="dataSource" ref="BomWebPortalDS"/>
+	</bean>
+	
+	<bean id="decoderTypeDao" class="com.bomwebportal.ims.dao.DecoderTypeDAO">
+		<property name="dataSource" ref="BomDS"/>
+	</bean>
+
+	<bean id="nowTVCheckDao" class="com.bomwebportal.ims.dao.NowTVCheckDAO">
+		<property name="dataSource" ref="BomDS"/>
+	</bean>
+
+	<bean id="giftDetailDao" class="com.bomwebportal.ims.dao.GiftDetailDAO">
+		<property name="dataSource" ref="BomWebPortalDS"/>
+	</bean>
+	
+ 	<!-- Nanon End -->
+ 
+ 	<!-- Terrence Part -->
+
+	<bean id="checkLoginNameDao" class="com.bomwebportal.ims.dao.CheckLoginNameDAO">
+		<property name="dataSource" ref="BomDS"/>
+	</bean>
+	
+	<bean id="validateLoginIDDao" class="com.bomwebportal.ims.dao.ValidateLoginIDDAO">
+		<property name="dataSource" ref="BomDS"/>
+	</bean>
+	
+	<bean id="reserveLoginIDDao" class="com.bomwebportal.ims.dao.ReserveLoginIDDAO">
+		<property name="dataSource" ref="BomDS"/>
+	</bean>
+	
+	<bean id="onetimeChargeDao" class="com.bomwebportal.ims.dao.OnetimeChargeDAO">
+		<property name="dataSource" ref="BomDS"/>
+	</bean>
+	
+	<bean id="releaseLoginIDDao" class="com.bomwebportal.ims.dao.ReleaseLoginIDDAO">
+		<property name="dataSource" ref="BomDS"/>
+	</bean>
+	
+	<bean id="getImsCustomerDao" class="com.bomwebportal.ims.dao.GetImsCustomerDAO">
+		<property name="dataSource" ref="BomDS"/>
+	</bean>
+	
+	<bean id="checkImsCustomerDao" class="com.bomwebportal.ims.dao.CheckImsCustomerDAO">
+		<property name="dataSource" ref="BomDS"/>
+	</bean>
+	
+	<bean id="isImsBlacklistCustDao" class="com.bomwebportal.ims.dao.IsImsBlacklistCustDAO">
+		<property name="dataSource" ref="BomDS"/>
+	</bean>
+	
+	<bean id="validateHKIDDao" class="com.bomwebportal.ims.dao.ValidateHKIDDAO">
+		<property name="dataSource" ref="BomDS"/>
+	</bean>
+	
+	<bean id="validateFixedLineDao" class="com.bomwebportal.ims.dao.ValidateFixedLineDAO">
+		<property name="dataSource" ref="BomDS"/>
+	</bean>
+	
+	<bean id="getShopContactDao" class="com.bomwebportal.ims.dao.GetShopContactDAO">
+		<property name="dataSource" ref="BomWebPortalDS"/>
+	</bean>
+	
+	<bean id="PTDAO" class="com.bomwebportal.ims.dao.PTDAO">
+		<property name="dataSource" ref="BomWebPortalDS"/>
+	</bean>
+	
+	<bean id="GetSourceCodeDAO" class="com.bomwebportal.ims.dao.GetSourceCodeDAO">
+		<property name="dataSource" ref="BomDS"/>
+	</bean>
+	
+	<bean id="CCSalesInfoDAO" class="com.bomwebportal.ims.dao.CCSalesInfoDAO">
+		<property name="dataSource" ref="BomWebPortalDS"/>
+	</bean>
+	
+		<bean id="ImsSignOffLogDAO" class="com.bomwebportal.ims.dao.ImsSignOffLogDAO">
+		<property name="dataSource" ref="BomWebPortalDS"/>
+	</bean>
+	
+	<bean id="imsSignOffLogService" class="com.bomwebportal.ims.service.ImsSignOffLogServiceImpl">
+			<property name="logDao" ref="ImsSignOffLogDAO" />
+	</bean>
+	
+	<!-- Added by Gary -->
+	<bean id="csDao" class="com.bomwebportal.ims.dao.CSPortalDAO">
+		<property name="dataSource" ref="BomWebPortalDS"/>
+	</bean>
+	
+	<!-- 	eSignature CR by Eric Ng -->
+	<bean id="imsEmailParamHelperDAO" class="com.bomwebportal.ims.dao.ImsEmailParamHelperDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+		<property name="grp_id" value="IMS_EMAIL_SENDER" />
+		<property name="lkup_address_code" value="ADDRESS" />
+<!-- 		<property name="sender_name_chn" value="NAME_ENG" />  -->
+		<property name="sender_lkup_table" value="W_CODE_LKUP" /> 
+
+		<property name="sender_name_chn" value="NAME_CHN" />
+		<property name="sender_name_eng" value="NAME_ENG" />
+		<property name="netvigator_sender_name_chn" value="NETVIGATOR_NAME_CHN" />
+		<property name="netvigator_sender_name_eng" value="NETVIGATOR_NAME_ENG" />
+		<property name="ntv_sender_name_chn" value="NTV_NAME_CHN" />
+		<property name="ntv_sender_name_eng" value="NTV_NAME_ENG" />
+		<property name="cc_sender_name_chn" value="CC_NAME_CHN" />
+		<property name="cc_sender_name_eng" value="CC_NAME_ENG" />	
+		<property name="cc_pt_sender_name_chn" value="CC_PT_NAME_CHN" />
+		<property name="cc_pt_sender_name_eng" value="CC_PT_NAME_ENG" />	
+					<property name="ds_pcd_sender_name_chn" value="DS_PCD_NAME_CHN" />
+		<property name="ds_pcd_sender_name_eng" value="DS_PCD_NAME_ENG" />	
+				<property name="ds_ntv_sender_name_chn" value="DS_NTV_NAME_CHN" />
+		<property name="ds_ntv_sender_name_eng" value="DS_NTV_NAME_ENG" />	
+	</bean>
+	
+	<bean id="validateAccountNumDao" class="com.bomwebportal.ims.dao.ValidateAccountNumDAO">
+		<property name="dataSource" ref="BomDS"/>
+	</bean>
+	
+	<bean id="basketSummaryDao" class="com.bomwebportal.ims.dao.BasketSummaryDAO">
+		<property name="dataSource" ref="BomWebPortalDS"/>
+	</bean>
+	
+	<bean id="suggestLoginIDDao" class="com.bomwebportal.ims.dao.SuggestLoginIDDAO">
+		<property name="dataSource" ref="BomDS"/>
+	</bean>
+ 	
+	<bean id="checkLoginNameService" class="com.bomwebportal.ims.service.CheckLoginNameServiceImpl">
+		<property name="checkLoginNameDao" ref="checkLoginNameDao" />		
+	</bean>
+	
+	<bean id="validateLoginIDService" class="com.bomwebportal.ims.service.ValidateLoginIDServiceImpl">
+		<property name="validateLoginIDDao" ref="validateLoginIDDao" />		
+	</bean>
+	
+	<bean id="reserveLoginIDService" class="com.bomwebportal.ims.service.ReserveLoginIDServiceImpl">
+		<property name="reserveLoginIDDao" ref="reserveLoginIDDao" />
+		<property name="client" ref="bomWsClientIms" />
+	</bean>
+	
+	<bean id="releaseLoginIDService" class="com.bomwebportal.ims.service.ReleaseLoginIDServiceImpl">
+		<property name="releaseLoginIDDao" ref="releaseLoginIDDao" />
+		<property name="imsOrderDAO" ref="imsOrderDao" />
+		<property name="client" ref="bomWsClientIms" />
+	</bean>
+	
+	<bean id="getImsCustomerService" class="com.bomwebportal.ims.service.GetImsCustomerServiceImpl">
+		<property name="getImsCustomerDao" ref="getImsCustomerDao" />
+		<property name="checkImsCustomerDao" ref="checkImsCustomerDao" />
+	</bean>
+	
+	<bean id="isImsBlacklistCustService" class="com.bomwebportal.ims.service.IsImsBlacklistCustServiceImpl">
+		<property name="isImsBlacklistCustDao" ref="isImsBlacklistCustDao" />
+	</bean>
+
+	<bean id="validateHKIDService" class="com.bomwebportal.ims.service.ValidateHKIDServiceImpl">
+		<property name="validateHKIDDao" ref="validateHKIDDao" />
+	</bean>
+	
+	<bean id="validateFixedLineService" class="com.bomwebportal.ims.service.ValidateFixedLineServiceImpl">
+		<property name="validateFixedLineDao" ref="validateFixedLineDao" />
+	</bean>
+	
+	<bean id="validateAccountNumService" class="com.bomwebportal.ims.service.ValidateAccountNumServiceImpl">
+		<property name="validateAccountNumDao" ref="validateAccountNumDao" />
+	</bean>
+	
+	<bean id="basketSummaryService" class="com.bomwebportal.ims.service.BasketSummaryServiceImpl">
+		<property name="basketSummaryDao" ref="basketSummaryDao" />
+	</bean>
+	
+	<bean id="suggestLoginIDService" class="com.bomwebportal.ims.service.SuggestLoginIDServiceImpl">
+		<property name="suggestLoginIDDao" ref="suggestLoginIDDao" />
+	</bean>
+		
+	<bean id="imsPaymentService" class="com.bomwebportal.ims.service.ImsPaymentServiceImpl">
+		<property name="bulkNewActClient" ref="bulkNewActClient" />
+		<property name="getShopContactDao" ref="getShopContactDao" />
+		<property name="onetimeChargeDao" ref="onetimeChargeDao" />
+		<property name="basketInfoDao" ref="basketInfoDao" />
+		<property name="ptDao" ref="PTDAO" />
+	</bean>
+	
+	<bean id="imsOrderService" class="com.bomwebportal.ims.service.ImsOrderServiceImpl">
+		<property name="imsAmendOrderDao" ref="imsOrderAmendDAO" />
+      <property name="orderDao" ref="imsOrderDao" />
+      <property name="loginService" ref="loginService"/> 
+      <property name="workQueueService" ref="com.pccw.wq.service.WorkQueueService" />         
+      <property name="addressDao" ref="imsAddressInfoDao" />
+      <property name="tmpFilePath" value="${dataFilePath}" />
+      <property name="imsCOrderWQService" ref="ImsCOrderWQService" />
+		<property name="imsAddressInfoService" ref="imsAddressInfoService" />
+			<property name="reportServerPath" value="${dataFilePath}"/>
+		<property name="getImsCustomerService" ref="getImsCustomerService" />
+		<property name="bomDao" ref="bomOrderDao" />
+		<property name="imsSMSService" ref="imsSMSService" />
+	</bean>
+
+	<bean id="imsOrderDao" class="com.bomwebportal.ims.dao.ImsOrderDAO">
+      <property name="dataSource" ref="BomWebPortalDS"/>
+	</bean>
+
+	<bean id="ceksImsService" class="com.bomwebportal.ims.service.ImsCeksServiceImpl">
+ 		<property name="propertyConfigurer" ref="propertyConfigurer"/>      
+  		<property name="ceksDao" ref="ceksDao" />
+ 	</bean>
+ 		
+	<!-- End -->
+ 
+ 
+	<!--  Antony Testing  -->
+
+ 	<bean id="imsReportService" class="com.bomwebportal.ims.service.ImsReportServiceImpl">
+		<property name="imsReport2Dao" ref="imsReport2Dao" />
+		<property name="imsReport1Dao" ref="imsReport1Dao" />
+		<property name="imageFilePath" value="${imageFilePath}"/>
+		<property name="pdfFilePath" value="${pdfFilePath}"/>
+		<property name="pdfDefaultFilePath" value="${pdfDefaultFilePath}"/>
+		<property name="dataFilePath" value="${dataFilePath}"/>
+		<property name="imsRetailJasperName" value="${ImsRetailJasperName}"/>
+		<property name="imsRetailPTJasperName" value="${ImsRetailPTJasperName}"/>
+		<property name="imsRetail3PartyJasperName" value="${ImsRetail3partyJasperName}"/>
+ 		<property name="imsDsJasperName" value="${ImsDsJasperName}"/> 
+ 		<property name="imsDsCPJasperName" value="${ImsDsCPJasperName}"/> 
+ 		<property name="imsNowTVService" ref="imsNowTVService" />
+		<property name="signOffLogService" ref="imsSignOffLogService" />
+		<property name="imsCareCashJasperName" value="${ImsCareCashJasperName}"/>
+	</bean> 
+
+	<bean id="imsAddressInfoService" class="com.bomwebportal.ims.service.ImsAddressInfoServiceImpl">
+		<property name="imsAddressInfoDao" ref="imsAddressInfoDao" />				
+		<property name="imsAddressInfo2Dao" ref="imsAddressInfo2Dao" />	
+		<property name="onetimeChargeDao" ref="onetimeChargeDao" />
+		<property name="bomDao" ref="bomOrderDao" />
+	</bean>
+	
+ 	<bean id="imsAddressInfoDao" class="com.bomwebportal.ims.dao.ImsAddressInfoDAO">
+ 		 <property name="dataSource" ref="BomDS"/>  
+ 	</bean>
+
+	<bean id="imsAddressInfo2Service" class="com.bomwebportal.ims.service.ImsAddressInfo2ServiceImpl">
+		<property name="imsAddressInfo2Dao" ref="imsAddressInfo2Dao" />
+	</bean>
+
+	<bean id="imsAddressInfo2Dao" class="com.bomwebportal.ims.dao.ImsAddressInfo2DAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean> 
+
+	<bean id="imsAddressSearchService" class="com.bomwebportal.ims.service.ImsAddressSearchServiceImpl">
+		<property name="imsAddressSearchDao" ref="imsAddressSearchDao" />		
+	</bean>
+	
+ 	<bean id="imsAddressSearchDao" class="com.bomwebportal.ims.dao.ImsAddressSearchDAO">
+ 		 <property name="dataSource" ref="BomDS"/>  
+ 	</bean> 	
+ 	
+	<bean id="imsReport2Service" class="com.bomwebportal.ims.service.ImsReport2ServiceImpl">
+		<property name="imsReport1Dao" ref="imsReport1Dao" />
+		<property name="imsReport2Dao" ref="imsReport2Dao" />
+		<property name="imsWQReportDao" ref="imsWQReportDao" />
+		<property name="imsBasketCommonService" ref="imsBasketCommonService" />
+		<property name="imsNowTVService" ref="imsNowTVService" ></property>
+		<property name="nowTVDAO" ref="nowTVDAO" />
+		<property name="VASDetailDao" ref="VASDetailDao" />
+	</bean>
+
+
+	<bean id="imsWQReportDao" class="com.pccw.rpt.dao.WorkQueueImsDataDAO">
+		<property name="dataSource" ref="BomWebPortalDS"/>
+	</bean>
+	
+	<!-- steven added 20131031-->
+	<bean id="imsOrderAmendService" class="com.bomwebportal.ims.service.ImsOrderAmendServiceImpl">
+		<property name="imsAmendOrderDao" ref="imsOrderAmendDAO" />
+		<property name="imsAmendOrderBomDao" ref="imsOrderAmendBomDAO" />
+      	<property name="workQueueService" ref="com.pccw.wq.service.WorkQueueService" />
+		<property name="orderService" ref="imsOrderService" />   
+	</bean>
+
+	<bean id="imsOrderAmendDAO" class="com.bomwebportal.ims.dao.ImsOrderAmendDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean> 
+
+	<bean id="imsOrderAmendBomDAO" class="com.bomwebportal.ims.dao.ImsOrderAmendBomDAO">
+		<property name="dataSource" ref="BomDS"/>
+	</bean> 
+	<!-- steven added 20131031-->
+	
+	<bean id="imsReport2Dao" class="com.bomwebportal.ims.dao.ImsReport2DAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean> 
+	
+	<bean id="imsReport1Dao" class="com.bomwebportal.ims.dao.ImsReport1DAO">
+		<property name="dataSource" ref="BomDS" />
+	</bean> 
+	
+	<bean id="addressIndexService" class="com.bomwebportal.ims.service.AddressIndexServiceImpl">
+		<property name="dataFilePath" value="${dataFilePath}" />
+		<property name="dataSource" ref="BomDS" />
+	</bean>
+
+	<bean id="createAddressIndex" class="com.bomwebportal.ims.address.CreateAddressIndex">
+		<property name="idxFilePath" value="${idxFilePath}" />
+		<property name="dataFilePath" value="${dataFilePath}" />
+		<property name="addrIdxService" ref="addressIndexService"/>	
+	</bean>
+	
+	<bean id="addressIndex2Dao" class="com.bomwebportal.ims.dao.AddressIndex2DAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean> 
+	
+	<bean id="addressIndex2Service" class="com.bomwebportal.ims.service.AddressIndex2ServiceImpl">
+		<property name="addressIndex2Dao" ref="addressIndex2Dao" />
+	</bean>
+	
+	<bean id="getSourceCodeService" class="com.bomwebportal.ims.service.GetSourceCodeServiceImpl">	
+		<property name="dao" ref="GetSourceCodeDAO" />
+	</bean>
+	
+	<bean id="ccSalesInfoService" class="com.bomwebportal.ims.service.CCSalesInfoServiceImpl">
+			<property name="dao" ref="CCSalesInfoDAO" />
+	</bean>
+	
+	<bean id="imsSMSService" class="com.bomwebportal.ims.service.ImsSMSServiceImpl" >
+	    <property name="environment" value="${environment}" />
+		<property name="endpoint" value="${smsPath}"/>
+		<property name="orderService" ref="orderService" />
+		<property name="ordEmailReqService" ref="ordEmailReqService" />
+		<property name="orderEsignatureService" ref="orderEsignatureService" />
+  		<property name="lkupService" ref="constantLkupService" />
+  		<property name="imsEmailParamHelperDAO" ref="imsEmailParamHelperDAO"/> 
+  		<property name="nTVSmsPath" value="${NTVSMSPath}"/>
+  		<property name="nowRetSmsUrl" value="${nowRetSmsUrl}"/>
+  		<property name="nowRetSmsUrl2" value="${nowRetSmsUrl2}"/>
+  		<property name="nowRetSmsMsgParm" value="${nowRetSmsMsgParm}"/>
+  		<property name="nowRetSmsProxyServer" value="${nowRetSmsProxyServer}"/>	
+  		<property name="imsOrderDao" ref="imsOrderDao"/>
+  		<property name="SMSAFPath" value="${SMSAFPathForCreateShorternUrl}"/>
+  		<property name="SMSQRPath" value="${CPQSMSQRPath}"/>
+  		<!-- <property name="googleShortUrlKey" value="${nowRetGoogleShortenKey}" /> -->
+  		<property name="firebaseAPIurl" value="${now.shortenUrl.api.firebaseAPI.url}" />
+  		<property name="firebaseAPIapiKey" value="${now.shortenUrl.api.firebaseAPI.apiKey}" />
+  		<property name="firebaseAPIdomain" value="${now.shortenUrl.api.firebaseAPI.domain}" />
+	</bean>
+	
+	<bean id="PTService" class="com.bomwebportal.ims.service.PTServiceImpl">
+		<property name="dao" ref="PTDAO" />
+	</bean>
+	
+<!--	added by jacky for onlinesales order search-->
+	<bean id="imsOrderSearchDao" class="com.bomwebportal.ims.dao.ImsOLOrderSearchDAO">
+		<property name="dataSource" ref="BomWebPortalDS"/>
+	</bean>
+	<bean id="imsOlOrderSearchService" class="com.bomwebportal.ims.service.ImsOLOrderSearchServiceImpl">
+		<property name="imsOrderSearchDao" ref="imsOrderSearchDao" />
+	</bean>
+<!--	added by jacky for onlinesales order search(End)-->
+	
+	<bean id="imsDsQcDao" class="com.bomwebportal.ims.dao.ImsDSQCDAO">
+		<property name="dataSource" ref="BomWebPortalDS"/>
+	</bean>
+	
+	<bean id="imsDsQcService" class="com.bomwebportal.service.qc.ImsDSQCServiceImpl">
+		<property name="imsDSQCDao" ref="imsDsQcDao" />
+ 		<property name="imsOrderAmendBomDAO" ref = "imsOrderAmendBomDAO"/> 
+ 		<property name="resourceLoaderService" ref="ResourceLoaderService"/>
+	</bean>
+	<bean id="ims1AMSEnquiryService" class="com.bomwebportal.ims.service.Ims1AMSEnquiryServiceImpl">
+		<property name="ims1AMSEnquiryDAO" ref="ims1AMSEnquiryDAO" />
+	</bean>
+	
+	<bean id="ims1AMSEnquiryDAO" class="com.bomwebportal.ims.dao.Ims1AMSEnquiryDAO">
+		<property name="dataSource" ref="BomDS"/>
+	</bean>
+	<!--  Antony Testing (End)  -->
+	
+	<import resource="spring-ws-ims.xml"/>	 
+	
+	<bean id="ResourceLoaderService" class="com.bomwebportal.ims.service.ResourceLoaderService">
+	</bean>	
+    
+	<bean id="OracleSpHelper" class="com.pccw.util.db.OracleSpHelper" scope="prototype">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="pageTrackDAO" class="com.bomwebportal.ims.dao.PageTrackDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+        
+        
+    <bean id="pageTrackService" class="com.bomwebportal.ims.service.PageTrackServiceImpl">
+		<property name="pageTrackDAO" ref="pageTrackDAO" />
+	</bean>    
+	
+	 <bean id="imsSupportDocService" class="com.bomwebportal.ims.service.ImsSupportDocServiceImpl">
+		<property name="imsSupportDocDAO" ref="imsSupportDocDao" />
+	</bean>   
+		 <bean id="imsViQuadplayService" class="com.bomwebportal.ims.service.ImsViQuadplayServiceImpl">
+        <property name="viQuadplayWsClient" ref="viQuadplayWsClient" />
+    </bean> 
+     
+	<bean id = "CPQInterfacingWSService" class = "com.bomwebportal.ims.service.CPQInterfacingWSServiceImpl">
+	     <property name="nowTVDAO" ref="nowTVDAO" />
+	     <property name="desUri1" value="${cpq.desUri1}"/>
+	     <property name="desUri2" value="${cpq.desUri2}"/>
+	     <property name="desUri3" value="${cpq.desUri3}"/>
+	     <property name="desUri4" value="${cpq.desUri4}"/>
+	     <property name="desUri5" value="${cpq.desUri5}"/>
+	</bean>
+	
+	<bean id="imsDSDedicatedStaffDAO" class="com.bomwebportal.ims.dao.ImsDSDedicatedStaffDAO">
+		<property name="dataSource" ref="BomWebPortalDS" />
+	</bean>
+	
+	<bean id="imsDsDedicatedStaffService" class="com.bomwebportal.ims.service.ImsDsDedicatedStaffServiceImpl">
+		<property name="imsDSDedicatedStaffDAO" ref="imsDSDedicatedStaffDAO" />
+	</bean>
+	
+	<bean id="com.bomwebportal.service.ImsCommonService" class="com.bomwebportal.service.ImsCommonServiceImpl">	
+		<property name="bomDao" ref="imsBasketCommonDAO" />
+		<property name="sbDao" ref="imsCommonSBDAO" />
+	</bean>
+			
+<!--	<bean id="pageTrackDao" class="com.bomwebportal.ims.dao.PageTrackDAO">-->
+<!--		<property name="dataSource" ref="BomWebPortalDS" />-->
+<!--	</bean>-->
+	
+</beans>

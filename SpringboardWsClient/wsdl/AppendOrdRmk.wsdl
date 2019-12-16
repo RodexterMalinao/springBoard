@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:conv="http://www.openuri.org/2002/04/soap/conversation/" xmlns:cw="http://www.openuri.org/2002/04/wsdl/conversation/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:jms="http://www.openuri.org/2002/04/wsdl/jms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://www.openuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://www.openuri.org/">
+  <types>
+    <s:schema xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:ope="http://www.openuri.org/" elementFormDefault="qualified" targetNamespace="http://www.openuri.org/">
+      <s:element name="appendOrdRmk">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="pOrderRemarkDTO" type="ope:OrderRemarkDTO" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="appendOrdRmkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="appendOrdRmkResult" type="ope:ServiceResponseDTO" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OrderRemarkDTO">
+        <s:complexContent>
+          <s:extension base="ope:ServiceRequestDTO">
+            <s:sequence>
+              <s:element name="OrderRemark" type="ope:ArrayOfString" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ServiceRequestDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="LegacyOrdNum" type="s:string" minOccurs="0"/>
+              <s:element name="LegacyActvSeq" type="s:string" minOccurs="0"/>
+              <s:element name="StaffNum" type="s:string" minOccurs="0"/>
+              <s:element name="OcId" type="s:string" minOccurs="0"/>
+              <s:element name="DtlId" type="s:string" minOccurs="0"/>
+              <s:element name="DtlSeq" type="s:string" minOccurs="0"/>
+              <s:element name="Boc" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ValueObject">
+        <s:sequence>
+          <s:element name="ValidationRulesID" type="s:string" minOccurs="0"/>
+          <s:element name="ObjectAction" type="s:int"/>
+          <s:element name="ObjectUniqueID" type="s:string" minOccurs="0"/>
+          <s:element name="ModifiedFields" type="ope:ArrayOfString" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element name="String" type="s:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ServiceResponseDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="ErrorSeverity" type="s:string" minOccurs="0"/>
+              <s:element name="RejectMessage" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+
+  </types>
+  <message name="appendOrdRmkSoapIn">
+    <part name="parameters" element="s0:appendOrdRmk"/>
+  </message>
+  <message name="appendOrdRmkSoapOut">
+    <part name="parameters" element="s0:appendOrdRmkResponse"/>
+  </message>
+  <portType name="AppendOrdRmkSoap">
+    <operation name="appendOrdRmk">
+      <input message="s0:appendOrdRmkSoapIn"/>
+      <output message="s0:appendOrdRmkSoapOut"/>
+    </operation>
+  </portType>
+  <binding name="AppendOrdRmkSoap" type="s0:AppendOrdRmkSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="appendOrdRmk">
+      <soap:operation soapAction="http://www.openuri.org/appendOrdRmk" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="AppendOrdRmk">
+    <port name="AppendOrdRmkSoap" binding="s0:AppendOrdRmkSoap">
+      <soap:address location="http://bomeaidev:7581/DwfmGateway/ws/srd/AppendOrdRmk.jws"/>
+    </port>
+  </service>
+</definitions>

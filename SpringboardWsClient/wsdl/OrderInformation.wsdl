@@ -1,0 +1,962 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:conv="http://www.openuri.org/2002/04/soap/conversation/" xmlns:cw="http://www.openuri.org/2002/04/wsdl/conversation/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:jms="http://www.openuri.org/2002/04/wsdl/jms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://www.openuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://www.openuri.org/">
+  <types>
+    <s:schema xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:ope="http://www.openuri.org/" elementFormDefault="qualified" targetNamespace="http://www.openuri.org/">
+      <s:element name="create">
+        <s:complexType>
+          <s:sequence/>
+        </s:complexType>
+      </s:element>
+      <s:element name="createResponse">
+        <s:complexType>
+          <s:sequence/>
+        </s:complexType>
+      </s:element>
+      <s:element name="getOrderInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="pOrderInfo" type="ope:OrderInformationInput" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getOrderInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="getOrderInformationResult" type="ope:OrderInformationResponse" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="determineWorkGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="pDetermineWkgReq" type="ope:ArrayOfDetermineWkgReq" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="determineWorkGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="determineWorkGroupResult" type="ope:OrderInformationResponse" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getOrderDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="pOrderDetailsIn" type="ope:ArrayOfOrderDetailsIn" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getOrderDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="getOrderDetailsResult" type="ope:OrderInformationResponse" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OrderInformationInput">
+        <s:sequence>
+          <s:element name="OrderId" type="s:string" minOccurs="0"/>
+          <s:element name="ContActvSeqNum" type="s:int"/>
+          <s:element name="ContActrmkSeqNum" type="s:int"/>
+          <s:element name="ContPsefSeqNum" type="s:int"/>
+          <s:element name="ContVoiceSeqNum" type="s:int"/>
+          <s:element name="ContImsSeqNum" type="s:int"/>
+          <s:element name="GetActInd" type="s:string" minOccurs="0"/>
+          <s:element name="GetPsefInd" type="s:string" minOccurs="0"/>
+          <s:element name="GetOrdrmkInd" type="s:string" minOccurs="0"/>
+          <s:element name="GetJunrmkInd" type="s:string" minOccurs="0"/>
+          <s:element name="GetActrmkInd" type="s:string" minOccurs="0"/>
+          <s:element name="GetVoiceInd" type="s:string" minOccurs="0"/>
+          <s:element name="GetImsInd" type="s:string" minOccurs="0"/>
+          <s:element name="ContPsefInd" type="s:string" minOccurs="0"/>
+          <s:element name="ContSrvNum" type="s:string" minOccurs="0"/>
+          <s:element name="ContPsefDbkey" type="s:string" minOccurs="0"/>
+          <s:element name="ContActDbkey" type="s:string" minOccurs="0"/>
+          <s:element name="ContOrdrmkDbkey" type="s:string" minOccurs="0"/>
+          <s:element name="ContJunrmkDbkey" type="s:string" minOccurs="0"/>
+          <s:element name="ContActrmkDbkey" type="s:string" minOccurs="0"/>
+          <s:element name="ContVoiceDbkey" type="s:string" minOccurs="0"/>
+          <s:element name="ContImsDbkey" type="s:string" minOccurs="0"/>
+          <s:element name="PsefLimit" type="s:int"/>
+          <s:element name="ActivityLimit" type="s:int"/>
+          <s:element name="OrdrmkLimit" type="s:int"/>
+          <s:element name="JunrmkLimit" type="s:int"/>
+          <s:element name="ActrmkLimit" type="s:int"/>
+          <s:element name="VoiceLimit" type="s:int"/>
+          <s:element name="ImsLimit" type="s:int"/>
+          <s:element name="TwoNTieInd" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderInformationResponse">
+        <s:complexContent>
+          <s:extension base="ope:ServiceResponseDTO">
+            <s:sequence>
+              <s:element name="OrderInformationOutputList" type="ope:OrderInformationOutList" minOccurs="0"/>
+              <s:element name="DetermineWkgReturnList" type="ope:DetermineWkgReturnList" minOccurs="0"/>
+              <s:element name="OrderDetailsOutList" type="ope:OrderDetailsOutList" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ServiceResponseDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="ErrorSeverity" type="s:string" minOccurs="0"/>
+              <s:element name="RejectMessage" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ValueObject">
+        <s:sequence>
+          <s:element name="ValidationRulesID" type="s:string" minOccurs="0"/>
+          <s:element name="ObjectAction" type="s:int"/>
+          <s:element name="ObjectUniqueID" type="s:string" minOccurs="0"/>
+          <s:element name="ModifiedFields" type="ope:ArrayOfString" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element name="String" type="s:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderInformationOutList">
+        <s:complexContent>
+          <s:extension base="ope:DragonReturn">
+            <s:sequence>
+              <s:element name="ActvReturn" type="ope:ArrayOfOrderInformationActivityReturn" minOccurs="0"/>
+              <s:element name="ContinueKeyReturn" type="ope:OrderInformationContinueKeyReturn" minOccurs="0"/>
+              <s:element name="JunctionRmkReturn" type="ope:ArrayOfOrderInformationRemarkReturn" minOccurs="0"/>
+              <s:element name="OrdInfo" type="ope:OrderInformationReturn" minOccurs="0"/>
+              <s:element name="OrdRemarkReturn" type="ope:ArrayOfOrderInformationRemarkReturn" minOccurs="0"/>
+              <s:element name="OrigialVoiceReturn" type="ope:ArrayOfOrderInformationOriVoiceReturn" minOccurs="0"/>
+              <s:element name="PsefReturn" type="ope:ArrayOfOrderInformationPsefReturn" minOccurs="0"/>
+              <s:element name="RmkReturn" type="ope:ArrayOfOrderInformationRemarkReturn" minOccurs="0"/>
+              <s:element name="TargetVoiceReturn" type="ope:ArrayOfOrderInformationTgtVoiceReturn" minOccurs="0"/>
+              <s:element name="OriginalDataReturn" type="ope:ArrayOfOrderInformationOriDataReturn" minOccurs="0"/>
+              <s:element name="TargetDataReturn" type="ope:ArrayOfOrderInformationTgtDataReturn" minOccurs="0"/>
+              <s:element name="TiePairReturn" type="ope:ArrayOfOrderInformationTiePairReturn" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="DragonReturn">
+        <s:sequence>
+          <s:element name="DragonReturnStatus" type="ope:DragonReturnStatus" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DragonReturnStatus">
+        <s:sequence>
+          <s:element name="ErrorDesc" type="s:string" minOccurs="0"/>
+          <s:element name="ErrorDetail" type="s:string" minOccurs="0"/>
+          <s:element name="ErrorMachineid" type="s:string" minOccurs="0"/>
+          <s:element name="ErrorMnemonic" type="s:string" minOccurs="0"/>
+          <s:element name="ErrorSeverity" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrderInformationActivityReturn">
+        <s:sequence>
+          <s:element name="OrderInformationActivityReturn" type="ope:OrderInformationActivityReturn" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderInformationActivityReturn">
+        <s:sequence>
+          <s:element name="ClsOfSrvCd" type="s:string" minOccurs="0"/>
+          <s:element name="CniPcfNum" type="s:string" minOccurs="0"/>
+          <s:element name="CniPcfType" type="s:string" minOccurs="0"/>
+          <s:element name="ExistBbgExchng" type="s:string" minOccurs="0"/>
+          <s:element name="ExistBbgNum" type="s:string" minOccurs="0"/>
+          <s:element name="ExistMbgNum" type="s:string" minOccurs="0"/>
+          <s:element name="ExistPayphonNum" type="s:string" minOccurs="0"/>
+          <s:element name="ExistPayphonPrefix" type="s:string" minOccurs="0"/>
+          <s:element name="ExistSrvNum" type="s:string" minOccurs="0"/>
+          <s:element name="ExistStbType" type="s:string" minOccurs="0"/>
+          <s:element name="FromLalType" type="s:string" minOccurs="0"/>
+          <s:element name="FrVendorCd" type="s:string" minOccurs="0"/>
+          <s:element name="LineClsCd" type="s:string" minOccurs="0"/>
+          <s:element name="ModelNum" type="s:string" minOccurs="0"/>
+          <s:element name="NewBbgNum" type="s:string" minOccurs="0"/>
+          <s:element name="NewBbgExchng" type="s:string" minOccurs="0"/>
+          <s:element name="NewMbgNum" type="s:string" minOccurs="0"/>
+          <s:element name="NewPayphonNum" type="s:string" minOccurs="0"/>
+          <s:element name="NewPayphonPrefix" type="s:string" minOccurs="0"/>
+          <s:element name="NewStbType" type="s:string" minOccurs="0"/>
+          <s:element name="NewTariff" type="s:string" minOccurs="0"/>
+          <s:element name="NewUserName" type="s:string" minOccurs="0"/>
+          <s:element name="OldUserName" type="s:string" minOccurs="0"/>
+          <s:element name="OrdActvSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="OrdactvStsCd" type="s:string" minOccurs="0"/>
+          <s:element name="OrderId" type="s:string" minOccurs="0"/>
+          <s:element name="PcmIndicator" type="s:string" minOccurs="0"/>
+          <s:element name="RelActvNum" type="s:string" minOccurs="0"/>
+          <s:element name="RelatedSrvNum" type="s:string" minOccurs="0"/>
+          <s:element name="RelatedTypeOfSrv" type="s:string" minOccurs="0"/>
+          <s:element name="RelOrderId" type="s:string" minOccurs="0"/>
+          <s:element name="RelOrderTypeCd" type="s:string" minOccurs="0"/>
+          <s:element name="RelToFmId" type="s:string" minOccurs="0"/>
+          <s:element name="SubOwnedEqmtCd" type="s:string" minOccurs="0"/>
+          <s:element name="ToCniPcfNum" type="s:string" minOccurs="0"/>
+          <s:element name="ToLalType" type="s:string" minOccurs="0"/>
+          <s:element name="ToRelActvNum" type="s:string" minOccurs="0"/>
+          <s:element name="ToRelatedSrvNum" type="s:string" minOccurs="0"/>
+          <s:element name="ToRelatedTypeOfSrv" type="s:string" minOccurs="0"/>
+          <s:element name="ToRelOrderId" type="s:string" minOccurs="0"/>
+          <s:element name="ToRelOrderTypeCd" type="s:string" minOccurs="0"/>
+          <s:element name="ToRelToFmId" type="s:string" minOccurs="0"/>
+          <s:element name="ToVendorCd" type="s:string" minOccurs="0"/>
+          <s:element name="FrGroupType" type="s:string" minOccurs="0"/>
+          <s:element name="FrGroupId" type="s:string" minOccurs="0"/>
+          <s:element name="ToGroupType" type="s:string" minOccurs="0"/>
+          <s:element name="ToGroupId" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderInformationContinueKeyReturn">
+        <s:sequence>
+          <s:element name="ContActDbKey" type="s:string" minOccurs="0"/>
+          <s:element name="ContActRmkDbKey" type="s:string" minOccurs="0"/>
+          <s:element name="ContActvRmkSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="ContActvSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="ContImsDbKey" type="s:string" minOccurs="0"/>
+          <s:element name="ContImsSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="ContJunRmkDBKey" type="s:string" minOccurs="0"/>
+          <s:element name="ContOrdRmkDbKey" type="s:string" minOccurs="0"/>
+          <s:element name="ContPsefDbKey" type="s:string" minOccurs="0"/>
+          <s:element name="ContPsefInd" type="s:string" minOccurs="0"/>
+          <s:element name="ContPsefSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="ContSrvNum" type="s:string" minOccurs="0"/>
+          <s:element name="ContVoiceDbKey" type="s:string" minOccurs="0"/>
+          <s:element name="ContVoiceSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="OrderId" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrderInformationRemarkReturn">
+        <s:sequence>
+          <s:element name="OrderInformationRemarkReturn" type="ope:OrderInformationRemarkReturn" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderInformationRemarkReturn">
+        <s:sequence>
+          <s:element name="OrderId" type="s:string" minOccurs="0"/>
+          <s:element name="OrdactvSeqNum" type="s:int"/>
+          <s:element name="RmkLine" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderInformationReturn">
+        <s:sequence>
+          <s:element name="AcctNum" type="s:string" minOccurs="0"/>
+          <s:element name="AddressLine1" type="s:string" minOccurs="0"/>
+          <s:element name="AddressLine2" type="s:string" minOccurs="0"/>
+          <s:element name="AddressLine3" type="s:string" minOccurs="0"/>
+          <s:element name="AddressLine4" type="s:string" minOccurs="0"/>
+          <s:element name="DatCd" type="s:string" minOccurs="0"/>
+          <s:element name="DueDate" type="s:string" minOccurs="0"/>
+          <s:element name="DueTime" type="s:string" minOccurs="0"/>
+          <s:element name="ExistBbgExchng" type="s:string" minOccurs="0"/>
+          <s:element name="ExistBbgNum" type="s:string" minOccurs="0"/>
+          <s:element name="ExistMbgNum" type="s:string" minOccurs="0"/>
+          <s:element name="ExistPilotNum" type="s:string" minOccurs="0"/>
+          <s:element name="FromDueDate" type="s:string" minOccurs="0"/>
+          <s:element name="FromDueTime" type="s:string" minOccurs="0"/>
+          <s:element name="FromPermit" type="s:string" minOccurs="0"/>
+          <s:element name="FromReaCd" type="s:string" minOccurs="0"/>
+          <s:element name="FromVisitInd" type="s:string" minOccurs="0"/>
+          <s:element name="FsaNum" type="s:string" minOccurs="0"/>
+          <s:element name="IssDate" type="s:string" minOccurs="0"/>
+          <s:element name="IssTime" type="s:string" minOccurs="0"/>
+          <s:element name="NewAddressLine1" type="s:string" minOccurs="0"/>
+          <s:element name="NewAddressLine2" type="s:string" minOccurs="0"/>
+          <s:element name="NewAddressLine3" type="s:string" minOccurs="0"/>
+          <s:element name="NewAddressLine4" type="s:string" minOccurs="0"/>
+          <s:element name="NewBbgExchng" type="s:string" minOccurs="0"/>
+          <s:element name="NewBbgNum" type="s:string" minOccurs="0"/>
+          <s:element name="NewDatCd" type="s:string" minOccurs="0"/>
+          <s:element name="NewMbgNum" type="s:string" minOccurs="0"/>
+          <s:element name="NewPilotNum" type="s:string" minOccurs="0"/>
+          <s:element name="Ocid" type="s:string" minOccurs="0"/>
+          <s:element name="OrderStsCd" type="s:string" minOccurs="0"/>
+          <s:element name="OrderTypeCd" type="s:string" minOccurs="0"/>
+          <s:element name="ReaCd" type="s:string" minOccurs="0"/>
+          <s:element name="RelBsnNum" type="s:string" minOccurs="0"/>
+          <s:element name="RelLtwGp" type="s:string" minOccurs="0"/>
+          <s:element name="RelOrdId" type="s:string" minOccurs="0"/>
+          <s:element name="RelOrdSt" type="s:string" minOccurs="0"/>
+          <s:element name="RelOrdTc" type="s:string" minOccurs="0"/>
+          <s:element name="ServiceLevelCd" type="s:string" minOccurs="0"/>
+          <s:element name="SubCatCd" type="s:string" minOccurs="0"/>
+          <s:element name="SubName" type="s:string" minOccurs="0"/>
+          <s:element name="SubSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="ToPermit" type="s:string" minOccurs="0"/>
+          <s:element name="TypeOfSrv" type="s:string" minOccurs="0"/>
+          <s:element name="VisitInd" type="s:string" minOccurs="0"/>
+          <s:element name="Yy" type="s:string" minOccurs="0"/>
+          <s:element name="OrderId" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrderInformationOriVoiceReturn">
+        <s:sequence>
+          <s:element name="OrderInformationOriVoiceReturn" type="ope:OrderInformationOriVoiceReturn" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderInformationOriVoiceReturn">
+        <s:sequence>
+          <s:element name="AftCd" type="s:string" minOccurs="0"/>
+          <s:element name="AgNodeId" type="s:string" minOccurs="0"/>
+          <s:element name="AgTid" type="s:string" minOccurs="0"/>
+          <s:element name="AnExchng" type="s:string" minOccurs="0"/>
+          <s:element name="AnInd" type="s:string" minOccurs="0"/>
+          <s:element name="AnPortNum" type="s:string" minOccurs="0"/>
+          <s:element name="AttenuatnAt1600HzQty" type="s:string" minOccurs="0"/>
+          <s:element name="AttenuatnAt800HzQty" type="s:string" minOccurs="0"/>
+          <s:element name="AudioCarrInd" type="s:string" minOccurs="0"/>
+          <s:element name="BlkWirePairNumPr1" type="s:string" minOccurs="0"/>
+          <s:element name="BlkWirePairNumPr2" type="s:string" minOccurs="0"/>
+          <s:element name="BuildId" type="s:string" minOccurs="0"/>
+          <s:element name="CabinetSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="CableCd" type="s:string" minOccurs="0"/>
+          <s:element name="CablePairNum" type="s:string" minOccurs="0"/>
+          <s:element name="ChannelNum1" type="s:string" minOccurs="0"/>
+          <s:element name="ChannelNum2" type="s:string" minOccurs="0"/>
+          <s:element name="DivrCd" type="s:string" minOccurs="0"/>
+          <s:element name="DnPnExchngeId" type="s:string" minOccurs="0"/>
+          <s:element name="DpCat" type="s:string" minOccurs="0"/>
+          <s:element name="DpsdfCd" type="s:string" minOccurs="0"/>
+          <s:element name="DpsdfPairNum" type="s:string" minOccurs="0"/>
+          <s:element name="DpSubCat" type="s:string" minOccurs="0"/>
+          <s:element name="DsidePairNum" type="s:string" minOccurs="0"/>
+          <s:element name="DslInd" type="s:string" minOccurs="0"/>
+          <s:element name="EnExchange" type="s:string" minOccurs="0"/>
+          <s:element name="EsidePairNum" type="s:string" minOccurs="0"/>
+          <s:element name="ExistLineCls" type="s:string" minOccurs="0"/>
+          <s:element name="ExistSrvNum" type="s:string" minOccurs="0"/>
+          <s:element name="FromAdslInd" type="s:string" minOccurs="0"/>
+          <s:element name="FromBsn" type="s:string" minOccurs="0"/>
+          <s:element name="FromL2Prov" type="s:string" minOccurs="0"/>
+          <s:element name="FromLcCrType" type="s:string" minOccurs="0"/>
+          <s:element name="FromNiden" type="s:string" minOccurs="0"/>
+          <s:element name="FromProdId" type="s:string" minOccurs="0"/>
+          <s:element name="FromRtId" type="s:string" minOccurs="0"/>
+          <s:element name="FromRtPort" type="s:string" minOccurs="0"/>
+          <s:element name="FromStbType" type="s:string" minOccurs="0"/>
+          <s:element name="HorTypeCdPr1" type="s:string" minOccurs="0"/>
+          <s:element name="HorTypeCdPr2" type="s:string" minOccurs="0"/>
+          <s:element name="HostEn" type="s:string" minOccurs="0"/>
+          <s:element name="HostExchng" type="s:string" minOccurs="0"/>
+          <s:element name="JmpInd" type="s:string" minOccurs="0"/>
+          <s:element name="L3Address" type="s:string" minOccurs="0"/>
+          <s:element name="LineEqmtNum" type="s:string" minOccurs="0"/>
+          <s:element name="MdfbarSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="MdfBuildId" type="s:string" minOccurs="0"/>
+          <s:element name="MdfSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="OltNum" type="s:string" minOccurs="0"/>
+          <s:element name="OrderId" type="s:string" minOccurs="0"/>
+          <s:element name="PcmId" type="s:string" minOccurs="0"/>
+          <s:element name="PinNum" type="s:string" minOccurs="0"/>
+          <s:element name="PnNnExchange" type="s:string" minOccurs="0"/>
+          <s:element name="PnNnInd" type="s:string" minOccurs="0"/>
+          <s:element name="RefPnNn" type="s:string" minOccurs="0"/>
+          <s:element name="RelBwBuildId" type="s:string" minOccurs="0"/>
+          <s:element name="RelBwDpsdfCd" type="s:string" minOccurs="0"/>
+          <s:element name="RelBwPairNum" type="s:string" minOccurs="0"/>
+          <s:element name="RelBwVt" type="s:string" minOccurs="0"/>
+          <s:element name="RelNid" type="s:string" minOccurs="0"/>
+          <s:element name="RelRtDpCat" type="s:string" minOccurs="0"/>
+          <s:element name="RelRtDpSubCat" type="s:string" minOccurs="0"/>
+          <s:element name="RelRtDslInd" type="s:string" minOccurs="0"/>
+          <s:element name="RemoteMdfSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="RestncQty" type="s:string" minOccurs="0"/>
+          <s:element name="SbiInd" type="s:string" minOccurs="0"/>
+          <s:element name="TermntrCdPr1" type="s:string" minOccurs="0"/>
+          <s:element name="TermntrCdPr2" type="s:string" minOccurs="0"/>
+          <s:element name="VdslBwSharedInd" type="s:string" minOccurs="0"/>
+          <s:element name="VertTypeCdPr1" type="s:string" minOccurs="0"/>
+          <s:element name="VertTypeCdPr2" type="s:string" minOccurs="0"/>
+          <s:element name="VfId" type="s:string" minOccurs="0"/>
+          <s:element name="VoipInd" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrderInformationPsefReturn">
+        <s:sequence>
+          <s:element name="OrderInformationPsefReturn" type="ope:OrderInformationPsefReturn" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderInformationPsefReturn">
+        <s:sequence>
+          <s:element name="OrderId" type="s:string" minOccurs="0"/>
+          <s:element name="OrdactvSeqNum" type="s:int"/>
+          <s:element name="PsefInd" type="s:string" minOccurs="0"/>
+          <s:element name="PsefCde" type="s:string" minOccurs="0"/>
+          <s:element name="PsefQty" type="s:int"/>
+          <s:element name="PsefActnCd" type="s:string" minOccurs="0"/>
+          <s:element name="EqmtColorCd" type="s:string" minOccurs="0"/>
+          <s:element name="ExtnNum" type="s:string" minOccurs="0"/>
+          <s:element name="PsefExistQty" type="s:int"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrderInformationTgtVoiceReturn">
+        <s:sequence>
+          <s:element name="OrderInformationTgtVoiceReturn" type="ope:OrderInformationTgtVoiceReturn" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderInformationTgtVoiceReturn">
+        <s:sequence>
+          <s:element name="AftCd" type="s:string" minOccurs="0"/>
+          <s:element name="AgNodeId" type="s:string" minOccurs="0"/>
+          <s:element name="AgTid" type="s:string" minOccurs="0"/>
+          <s:element name="AnExchng" type="s:string" minOccurs="0"/>
+          <s:element name="AnInd" type="s:string" minOccurs="0"/>
+          <s:element name="AnPortNum" type="s:string" minOccurs="0"/>
+          <s:element name="AttenuatnAt1600HzQty" type="s:string" minOccurs="0"/>
+          <s:element name="AttenuatnAt800HzQty" type="s:string" minOccurs="0"/>
+          <s:element name="BlkWirePairNum" type="s:string" minOccurs="0"/>
+          <s:element name="BuildId" type="s:string" minOccurs="0"/>
+          <s:element name="CabinetSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="CableCd" type="s:string" minOccurs="0"/>
+          <s:element name="CablePairNum" type="s:string" minOccurs="0"/>
+          <s:element name="CarrierInd" type="s:string" minOccurs="0"/>
+          <s:element name="ChannelNum1" type="s:string" minOccurs="0"/>
+          <s:element name="ChannelNum2" type="s:string" minOccurs="0"/>
+          <s:element name="DivrCd" type="s:string" minOccurs="0"/>
+          <s:element name="DnPnExchngeId" type="s:string" minOccurs="0"/>
+          <s:element name="DpCat" type="s:string" minOccurs="0"/>
+          <s:element name="DpsdfCd" type="s:string" minOccurs="0"/>
+          <s:element name="DpsdfPairNum" type="s:string" minOccurs="0"/>
+          <s:element name="DpSubCat" type="s:string" minOccurs="0"/>
+          <s:element name="DsidePairNum" type="s:string" minOccurs="0"/>
+          <s:element name="DslInd" type="s:string" minOccurs="0"/>
+          <s:element name="EnExchange" type="s:string" minOccurs="0"/>
+          <s:element name="EsidePairNum" type="s:string" minOccurs="0"/>
+          <s:element name="HorTypeCd" type="s:string" minOccurs="0"/>
+          <s:element name="HostEn" type="s:string" minOccurs="0"/>
+          <s:element name="HostExchng" type="s:string" minOccurs="0"/>
+          <s:element name="IntraOfficeInd" type="s:string" minOccurs="0"/>
+          <s:element name="JmpInd" type="s:string" minOccurs="0"/>
+          <s:element name="L3Address" type="s:string" minOccurs="0"/>
+          <s:element name="LineEqmtNum" type="s:string" minOccurs="0"/>
+          <s:element name="MdfbarSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="MdfBuildId" type="s:string" minOccurs="0"/>
+          <s:element name="MdfSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="NewSrvNum" type="s:string" minOccurs="0"/>
+          <s:element name="OltNum" type="s:string" minOccurs="0"/>
+          <s:element name="OrdactvSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="OrderId" type="s:string" minOccurs="0"/>
+          <s:element name="PcmId" type="s:string" minOccurs="0"/>
+          <s:element name="PinNum" type="s:string" minOccurs="0"/>
+          <s:element name="PnNnExchange" type="s:string" minOccurs="0"/>
+          <s:element name="RelBwBuildId" type="s:string" minOccurs="0"/>
+          <s:element name="RelBwdpsdfCd" type="s:string" minOccurs="0"/>
+          <s:element name="RelBwPairNum" type="s:string" minOccurs="0"/>
+          <s:element name="RelBwVt" type="s:string" minOccurs="0"/>
+          <s:element name="RelNid" type="s:string" minOccurs="0"/>
+          <s:element name="RelRtDpCat" type="s:string" minOccurs="0"/>
+          <s:element name="RelRtDpSubCat" type="s:string" minOccurs="0"/>
+          <s:element name="RelRtDslInd" type="s:string" minOccurs="0"/>
+          <s:element name="RemoteMdfSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="RestncQty" type="s:string" minOccurs="0"/>
+          <s:element name="SbiInd" type="s:string" minOccurs="0"/>
+          <s:element name="SrvNn" type="s:string" minOccurs="0"/>
+          <s:element name="TermntrTypeCd" type="s:string" minOccurs="0"/>
+          <s:element name="ToAdslInd" type="s:string" minOccurs="0"/>
+          <s:element name="ToBsn" type="s:string" minOccurs="0"/>
+          <s:element name="ToL2Prov" type="s:string" minOccurs="0"/>
+          <s:element name="ToLcCrType" type="s:string" minOccurs="0"/>
+          <s:element name="ToNiden" type="s:string" minOccurs="0"/>
+          <s:element name="ToProdId" type="s:string" minOccurs="0"/>
+          <s:element name="ToRtId" type="s:string" minOccurs="0"/>
+          <s:element name="ToRtPort" type="s:string" minOccurs="0"/>
+          <s:element name="ToStbType" type="s:string" minOccurs="0"/>
+          <s:element name="VdslBwSharedInd" type="s:string" minOccurs="0"/>
+          <s:element name="VertTypeCd" type="s:string" minOccurs="0"/>
+          <s:element name="VfId" type="s:string" minOccurs="0"/>
+          <s:element name="VoipInd" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrderInformationOriDataReturn">
+        <s:sequence>
+          <s:element name="OrderInformationOriDataReturn" type="ope:OrderInformationOriDataReturn" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderInformationOriDataReturn">
+        <s:sequence>
+          <s:element name="AdslBuildId" type="s:string" minOccurs="0"/>
+          <s:element name="AdslDpsdfPairNum" type="s:string" minOccurs="0"/>
+          <s:element name="AdslInd" type="s:string" minOccurs="0"/>
+          <s:element name="AftCd" type="s:string" minOccurs="0"/>
+          <s:element name="AttenuatnAt1600HzQty" type="s:string" minOccurs="0"/>
+          <s:element name="AttenuatnAt800HzQty" type="s:string" minOccurs="0"/>
+          <s:element name="BlkWirePairNumPr1" type="s:string" minOccurs="0"/>
+          <s:element name="BlkWirePairNumPr2" type="s:string" minOccurs="0"/>
+          <s:element name="BuildId" type="s:string" minOccurs="0"/>
+          <s:element name="CabinetSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="CableCd" type="s:string" minOccurs="0"/>
+          <s:element name="CablePairNum" type="s:string" minOccurs="0"/>
+          <s:element name="CdslBwSharedInd" type="s:string" minOccurs="0"/>
+          <s:element name="DpsdfBuildId" type="s:string" minOccurs="0"/>
+          <s:element name="DpsdfCd19" type="s:string" minOccurs="0"/>
+          <s:element name="DpsdfCd23" type="s:string" minOccurs="0"/>
+          <s:element name="DpsdfPairNum" type="s:string" minOccurs="0"/>
+          <s:element name="DsidePairNum" type="s:string" minOccurs="0"/>
+          <s:element name="EnExchange" type="s:string" minOccurs="0"/>
+          <s:element name="EsidePairNum" type="s:string" minOccurs="0"/>
+          <s:element name="ExistLineCls" type="s:string" minOccurs="0"/>
+          <s:element name="FrL2Id" type="s:string" minOccurs="0"/>
+          <s:element name="FrProdId" type="s:string" minOccurs="0"/>
+          <s:element name="HorTypeCdPr1" type="s:string" minOccurs="0"/>
+          <s:element name="HorTypeCdPr2" type="s:string" minOccurs="0"/>
+          <s:element name="JmpInd" type="s:string" minOccurs="0"/>
+          <s:element name="LcTypeCd" type="s:string" minOccurs="0"/>
+          <s:element name="MdfbarSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="MdfBuildId" type="s:string" minOccurs="0"/>
+          <s:element name="MdfNum" type="s:string" minOccurs="0"/>
+          <s:element name="MdfSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="NidenNum" type="s:string" minOccurs="0"/>
+          <s:element name="NodeId" type="s:string" minOccurs="0"/>
+          <s:element name="OrderId" type="s:string" minOccurs="0"/>
+          <s:element name="PinNum" type="s:string" minOccurs="0"/>
+          <s:element name="RelBwBuildId" type="s:string" minOccurs="0"/>
+          <s:element name="RelBwDpsdfCd" type="s:string" minOccurs="0"/>
+          <s:element name="RelBwPairNum" type="s:string" minOccurs="0"/>
+          <s:element name="RelBwVt" type="s:string" minOccurs="0"/>
+          <s:element name="RemoteMdfSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="RestncQty" type="s:string" minOccurs="0"/>
+          <s:element name="Rpid" type="s:string" minOccurs="0"/>
+          <s:element name="RpidDesc" type="s:string" minOccurs="0"/>
+          <s:element name="RtDpCat" type="s:string" minOccurs="0"/>
+          <s:element name="RtDpSubCat" type="s:string" minOccurs="0"/>
+          <s:element name="RtDslInd" type="s:string" minOccurs="0"/>
+          <s:element name="SbiInd" type="s:string" minOccurs="0"/>
+          <s:element name="TermntrCdPr1" type="s:string" minOccurs="0"/>
+          <s:element name="TermntrCdPr2" type="s:string" minOccurs="0"/>
+          <s:element name="Tid" type="s:string" minOccurs="0"/>
+          <s:element name="VertTypeCdPr1" type="s:string" minOccurs="0"/>
+          <s:element name="VertTypeCdPr2" type="s:string" minOccurs="0"/>
+          <s:element name="VoiceBuildId" type="s:string" minOccurs="0"/>
+          <s:element name="VoiceEn" type="s:string" minOccurs="0"/>
+          <s:element name="VoipInd" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrderInformationTgtDataReturn">
+        <s:sequence>
+          <s:element name="OrderInformationTgtDataReturn" type="ope:OrderInformationTgtDataReturn" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderInformationTgtDataReturn">
+        <s:sequence>
+          <s:element name="AdslBuildId" type="s:string" minOccurs="0"/>
+          <s:element name="AdslDpPairNum" type="s:string" minOccurs="0"/>
+          <s:element name="AdslDpsdfCd" type="s:string" minOccurs="0"/>
+          <s:element name="AdslInd" type="s:string" minOccurs="0"/>
+          <s:element name="AftCd" type="s:string" minOccurs="0"/>
+          <s:element name="AttenuatnAt1600HzQty" type="s:string" minOccurs="0"/>
+          <s:element name="AttenuatnAt800HzQty" type="s:string" minOccurs="0"/>
+          <s:element name="BlkWirePairNum" type="s:string" minOccurs="0"/>
+          <s:element name="CabinetBuildId" type="s:string" minOccurs="0"/>
+          <s:element name="CabinetSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="CableCd" type="s:string" minOccurs="0"/>
+          <s:element name="CablePairNum" type="s:string" minOccurs="0"/>
+          <s:element name="CdslBwSharedInd" type="s:string" minOccurs="0"/>
+          <s:element name="DsidePairNum" type="s:string" minOccurs="0"/>
+          <s:element name="EsidePairNum" type="s:string" minOccurs="0"/>
+          <s:element name="ExchngId" type="s:string" minOccurs="0"/>
+          <s:element name="HorTypeCd" type="s:string" minOccurs="0"/>
+          <s:element name="JmpInd" type="s:string" minOccurs="0"/>
+          <s:element name="LcTypeCd" type="s:string" minOccurs="0"/>
+          <s:element name="MdfbarSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="MdfBuildId" type="s:string" minOccurs="0"/>
+          <s:element name="MdfSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="NewNidNum" type="s:string" minOccurs="0"/>
+          <s:element name="NidenNum" type="s:string" minOccurs="0"/>
+          <s:element name="NodeId" type="s:string" minOccurs="0"/>
+          <s:element name="OrdactvSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="OrderId" type="s:string" minOccurs="0"/>
+          <s:element name="PinNum" type="s:string" minOccurs="0"/>
+          <s:element name="RelBwBuildId" type="s:string" minOccurs="0"/>
+          <s:element name="RelBwDpsdfCd" type="s:string" minOccurs="0"/>
+          <s:element name="RelBwPairNum" type="s:string" minOccurs="0"/>
+          <s:element name="RelBwVt" type="s:string" minOccurs="0"/>
+          <s:element name="RemoteMdfSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="RestncQty" type="s:string" minOccurs="0"/>
+          <s:element name="Rpid" type="s:string" minOccurs="0"/>
+          <s:element name="RpidDesc" type="s:string" minOccurs="0"/>
+          <s:element name="RtBuildId" type="s:string" minOccurs="0"/>
+          <s:element name="RtDpCat" type="s:string" minOccurs="0"/>
+          <s:element name="RtDpPairNum" type="s:string" minOccurs="0"/>
+          <s:element name="RtDpsdfCd" type="s:string" minOccurs="0"/>
+          <s:element name="RtDpSubCat" type="s:string" minOccurs="0"/>
+          <s:element name="RtDslInd" type="s:string" minOccurs="0"/>
+          <s:element name="SbiInd" type="s:string" minOccurs="0"/>
+          <s:element name="TermntrTypeCd" type="s:string" minOccurs="0"/>
+          <s:element name="Tid" type="s:string" minOccurs="0"/>
+          <s:element name="ToL2Id" type="s:string" minOccurs="0"/>
+          <s:element name="ToProdId" type="s:string" minOccurs="0"/>
+          <s:element name="VertTypeCd" type="s:string" minOccurs="0"/>
+          <s:element name="VoiceEn" type="s:string" minOccurs="0"/>
+          <s:element name="VoipInd" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrderInformationTiePairReturn">
+        <s:sequence>
+          <s:element name="OrderInformationTiePairReturn" type="ope:OrderInformationTiePairReturn" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderInformationTiePairReturn">
+        <s:sequence>
+          <s:element name="FromToInd" type="s:string" minOccurs="0"/>
+          <s:element name="LalType" type="s:string" minOccurs="0"/>
+          <s:element name="OrdactvSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="OrderId" type="s:string" minOccurs="0"/>
+          <s:element name="SrvNum" type="s:string" minOccurs="0"/>
+          <s:element name="TwoNTiePairNum" type="s:string" minOccurs="0"/>
+          <s:element name="TwoNTiePairSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="TypeOfSrv" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DetermineWkgReturnList">
+        <s:sequence>
+          <s:element name="DrgRtnSts" type="ope:DragonReturnStatus" minOccurs="0"/>
+          <s:element name="WkgrtnArr" type="ope:ArrayOfDetermineWkgReturn" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDetermineWkgReturn">
+        <s:sequence>
+          <s:element name="DetermineWkgReturn" type="ope:DetermineWkgReturn" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DetermineWkgReturn">
+        <s:sequence>
+          <s:element name="Cxsparmarr" type="ope:ArrayOfCommonCxSparm" minOccurs="0"/>
+          <s:element name="OutAarr" type="ope:ArrayOfDetermineWkgOa" minOccurs="0"/>
+          <s:element name="OutBarr" type="ope:ArrayOfDetermineWkgOb" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCommonCxSparm">
+        <s:sequence>
+          <s:element name="CommonCxSparm" type="ope:CommonCxSparm" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CommonCxSparm">
+        <s:sequence>
+          <s:element name="OrdId" type="s:string" minOccurs="0"/>
+          <s:element name="Req" type="s:string" minOccurs="0"/>
+          <s:element name="ReqItem" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDetermineWkgOa">
+        <s:sequence>
+          <s:element name="DetermineWkgOa" type="ope:DetermineWkgOa" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DetermineWkgOa">
+        <s:sequence>
+          <s:element name="OaApptType" type="s:string" minOccurs="0"/>
+          <s:element name="OaCd2312Ind" type="s:string" minOccurs="0"/>
+          <s:element name="OaCd7adaCd" type="s:string" minOccurs="0"/>
+          <s:element name="OaDatCd" type="s:string" minOccurs="0"/>
+          <s:element name="OaDpCd" type="s:string" minOccurs="0"/>
+          <s:element name="OaEnChngInd" type="s:string" minOccurs="0"/>
+          <s:element name="OaExchId" type="s:string" minOccurs="0"/>
+          <s:element name="OaFrDueDate" type="s:string" minOccurs="0"/>
+          <s:element name="OaFrDueTime" type="s:string" minOccurs="0"/>
+          <s:element name="OaFrReaCd" type="s:string" minOccurs="0"/>
+          <s:element name="OaFrSbNum" type="s:string" minOccurs="0"/>
+          <s:element name="OaFrVisitInd" type="s:string" minOccurs="0"/>
+          <s:element name="OaGrid" type="s:string" minOccurs="0"/>
+          <s:element name="OaIntlInd" type="s:string" minOccurs="0"/>
+          <s:element name="OaOrdSts" type="s:string" minOccurs="0"/>
+          <s:element name="OaOrdTypCd" type="s:string" minOccurs="0"/>
+          <s:element name="OaSbNum" type="s:string" minOccurs="0"/>
+          <s:element name="OaSpMarker_b" type="s:string" minOccurs="0"/>
+          <s:element name="OaSpMarkerD" type="s:string" minOccurs="0"/>
+          <s:element name="OaSubNum" type="s:string" minOccurs="0"/>
+          <s:element name="OaTentativeInd" type="s:string" minOccurs="0"/>
+          <s:element name="OaToDueDate" type="s:string" minOccurs="0"/>
+          <s:element name="OaToDueTime" type="s:string" minOccurs="0"/>
+          <s:element name="OaToReaCd" type="s:string" minOccurs="0"/>
+          <s:element name="OaToSbNum" type="s:string" minOccurs="0"/>
+          <s:element name="OaToVisitInd" type="s:string" minOccurs="0"/>
+          <s:element name="OaTypOfSrv" type="s:string" minOccurs="0"/>
+          <s:element name="OaUserId" type="s:string" minOccurs="0"/>
+          <s:element name="OaVisitReaCd" type="s:string" minOccurs="0"/>
+          <s:element name="OaWeatherCd" type="s:string" minOccurs="0"/>
+          <s:element name="OaWkgContNum" type="s:string" minOccurs="0"/>
+          <s:element name="OaWrkgrp_1" type="s:string" minOccurs="0"/>
+          <s:element name="OaWrkgrp_2" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDetermineWkgOb">
+        <s:sequence>
+          <s:element name="DetermineWkgOb" type="ope:DetermineWkgOb" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DetermineWkgOb">
+        <s:sequence>
+          <s:element name="ObAddDelInd" type="s:string" minOccurs="0"/>
+          <s:element name="ObDp" type="s:string" minOccurs="0"/>
+          <s:element name="ObExch" type="s:string" minOccurs="0"/>
+          <s:element name="ObGridId" type="s:string" minOccurs="0"/>
+          <s:element name="ObIssDate" type="s:string" minOccurs="0"/>
+          <s:element name="ObIssTime" type="s:string" minOccurs="0"/>
+          <s:element name="ObNotifLev" type="s:string" minOccurs="0"/>
+          <s:element name="ObOrdSts" type="s:string" minOccurs="0"/>
+          <s:element name="ObOrdType" type="s:string" minOccurs="0"/>
+          <s:element name="ObUnitId" type="s:string" minOccurs="0"/>
+          <s:element name="ObWrkActn" type="s:string" minOccurs="0"/>
+          <s:element name="ObWorkgrp" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderDetailsOutList">
+        <s:sequence>
+          <s:element name="OrdDtlOutArray" type="ope:ArrayOfOrderDetailsOut" minOccurs="0"/>
+          <s:element name="DrgRtnSts" type="ope:DragonReturnStatus" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrderDetailsOut">
+        <s:sequence>
+          <s:element name="OrderDetailsOut" type="ope:OrderDetailsOut" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderDetailsOut">
+        <s:sequence>
+          <s:element name="OrdDtlOutAArray" type="ope:ArrayOfOrderDetailsOutA" minOccurs="0"/>
+          <s:element name="OrdDtlOutBArray" type="ope:ArrayOfOrderDetailsOutB" minOccurs="0"/>
+          <s:element name="OrdDtlOutDArray" type="ope:ArrayOfOrderDetailsOutD" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrderDetailsOutA">
+        <s:sequence>
+          <s:element name="OrderDetailsOutA" type="ope:OrderDetailsOutA" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderDetailsOutA">
+        <s:sequence>
+          <s:element name="RequestId" type="s:string" minOccurs="0"/>
+          <s:element name="RequestItemId" type="s:string" minOccurs="0"/>
+          <s:element name="OrderId" type="s:string" minOccurs="0"/>
+          <s:element name="OrdactvSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="OrdactvStsCd" type="s:string" minOccurs="0"/>
+          <s:element name="ComplEntryDate" type="s:string" minOccurs="0"/>
+          <s:element name="EffBillDate" type="s:string" minOccurs="0"/>
+          <s:element name="FeaChngInd" type="s:string" minOccurs="0"/>
+          <s:element name="OrderTypeCd" type="s:string" minOccurs="0"/>
+          <s:element name="RelatedTypeOfSrv" type="s:string" minOccurs="0"/>
+          <s:element name="RelatedSrvNum" type="s:string" minOccurs="0"/>
+          <s:element name="CniPcfType" type="s:string" minOccurs="0"/>
+          <s:element name="CniPcfInd" type="s:string" minOccurs="0"/>
+          <s:element name="CniPcfTerm" type="s:string" minOccurs="0"/>
+          <s:element name="CniPcfNum" type="s:string" minOccurs="0"/>
+          <s:element name="SrcTgtInd" type="s:string" minOccurs="0"/>
+          <s:element name="SubNum" type="s:string" minOccurs="0"/>
+          <s:element name="IdTypeCd" type="s:string" minOccurs="0"/>
+          <s:element name="IdDocumentNum" type="s:string" minOccurs="0"/>
+          <s:element name="MembershipInd" type="s:string" minOccurs="0"/>
+          <s:element name="FirstItemNum" type="s:string" minOccurs="0"/>
+          <s:element name="LastItemNum" type="s:string" minOccurs="0"/>
+          <s:element name="FirstActvNum" type="s:string" minOccurs="0"/>
+          <s:element name="LastActvNum" type="s:string" minOccurs="0"/>
+          <s:element name="SalesStaffId" type="s:string" minOccurs="0"/>
+          <s:element name="SalesmanRefId" type="s:string" minOccurs="0"/>
+          <s:element name="SalesStaffInd" type="s:string" minOccurs="0"/>
+          <s:element name="InOutBoundInd" type="s:string" minOccurs="0"/>
+          <s:element name="DisconnectReaCd" type="s:string" minOccurs="0"/>
+          <s:element name="DisconnectReaDesc" type="s:string" minOccurs="0"/>
+          <s:element name="CcnInd" type="s:string" minOccurs="0"/>
+          <s:element name="PendSwapRelDnInd" type="s:string" minOccurs="0"/>
+          <s:element name="SwapDnInd" type="s:string" minOccurs="0"/>
+          <s:element name="SwapDnRelItemId" type="s:string" minOccurs="0"/>
+          <s:element name="SwapDnRelItemSts" type="s:string" minOccurs="0"/>
+          <s:element name="BomInd" type="s:string" minOccurs="0"/>
+          <s:element name="TlOrderId" type="s:string" minOccurs="0"/>
+          <s:element name="TlOrderTypeCd" type="s:string" minOccurs="0"/>
+          <s:element name="TlOrdactvSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="TlRequestItemId" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrderDetailsOutB">
+        <s:sequence>
+          <s:element name="OrderDetailsOutB" type="ope:OrderDetailsOutB" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderDetailsOutB">
+        <s:sequence>
+          <s:element name="OldNewInd" type="s:string" minOccurs="0"/>
+          <s:element name="TypeOfSrv" type="s:string" minOccurs="0"/>
+          <s:element name="DatCd" type="s:string" minOccurs="0"/>
+          <s:element name="PilotAuxInd" type="s:string" minOccurs="0"/>
+          <s:element name="SrvNum" type="s:string" minOccurs="0"/>
+          <s:element name="DuplexNum" type="s:string" minOccurs="0"/>
+          <s:element name="DuplexType" type="s:string" minOccurs="0"/>
+          <s:element name="NnNum" type="s:string" minOccurs="0"/>
+          <s:element name="NnExchngId" type="s:string" minOccurs="0"/>
+          <s:element name="LineClsCd" type="s:string" minOccurs="0"/>
+          <s:element name="TariffCd" type="s:string" minOccurs="0"/>
+          <s:element name="ConcsCd" type="s:string" minOccurs="0"/>
+          <s:element name="VendorCd" type="s:string" minOccurs="0"/>
+          <s:element name="CoeCd" type="s:string" minOccurs="0"/>
+          <s:element name="ExDirInd" type="s:string" minOccurs="0"/>
+          <s:element name="ExUserName" type="s:string" minOccurs="0"/>
+          <s:element name="HuntSeq" type="s:string" minOccurs="0"/>
+          <s:element name="PayphonId" type="s:string" minOccurs="0"/>
+          <s:element name="GatewayNum" type="s:string" minOccurs="0"/>
+          <s:element name="FreeCallAllwnc" type="s:string" minOccurs="0"/>
+          <s:element name="MinChrgAmt" type="s:string" minOccurs="0"/>
+          <s:element name="RevnShrRatio" type="s:string" minOccurs="0"/>
+          <s:element name="VoipInd" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrderDetailsOutD">
+        <s:sequence>
+          <s:element name="OrderDetailsOutD" type="ope:OrderDetailsOutD" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderDetailsOutD">
+        <s:sequence>
+          <s:element name="LalType" type="s:string" minOccurs="0"/>
+          <s:element name="LalShrNum" type="s:string" minOccurs="0"/>
+          <s:element name="LalSrvType" type="s:string" minOccurs="0"/>
+          <s:element name="TwoNTie1" type="s:string" minOccurs="0"/>
+          <s:element name="TwoNTie2" type="s:string" minOccurs="0"/>
+          <s:element name="OldNewInd" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDetermineWkgReq">
+        <s:sequence>
+          <s:element name="DetermineWkgReq" type="ope:DetermineWkgReq" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DetermineWkgReq">
+        <s:sequence>
+          <s:element name="Cxsparm" type="ope:CommonCxSparm" minOccurs="0"/>
+          <s:element name="AppCode" type="s:string" minOccurs="0"/>
+          <s:element name="ApplDate" type="s:string" minOccurs="0"/>
+          <s:element name="BillAdjustInd" type="s:string" minOccurs="0"/>
+          <s:element name="CallCardInd" type="s:string" minOccurs="0"/>
+          <s:element name="CitnetAgentCd" type="s:string" minOccurs="0"/>
+          <s:element name="ClsOfSrv" type="s:string" minOccurs="0"/>
+          <s:element name="DatCd" type="s:string" minOccurs="0"/>
+          <s:element name="DueDate" type="s:string" minOccurs="0"/>
+          <s:element name="EndInd" type="s:string" minOccurs="0"/>
+          <s:element name="GrpId" type="s:string" minOccurs="0"/>
+          <s:element name="GrpType" type="s:string" minOccurs="0"/>
+          <s:element name="InOutBoundInd" type="s:string" minOccurs="0"/>
+          <s:element name="LineCls" type="s:string" minOccurs="0"/>
+          <s:element name="MobileNum" type="s:string" minOccurs="0"/>
+          <s:element name="NoOfCaPrs" type="s:string" minOccurs="0"/>
+          <s:element name="OrdType" type="s:string" minOccurs="0"/>
+          <s:element name="PrjCd" type="s:string" minOccurs="0"/>
+          <s:element name="SalemanRefId" type="s:string" minOccurs="0"/>
+          <s:element name="SalesStaff" type="s:string" minOccurs="0"/>
+          <s:element name="SalesStaffInd" type="s:string" minOccurs="0"/>
+          <s:element name="SocInd" type="s:string" minOccurs="0"/>
+          <s:element name="SpSrvCode" type="s:string" minOccurs="0"/>
+          <s:element name="SrvNum1" type="s:string" minOccurs="0"/>
+          <s:element name="SrvNum2" type="s:string" minOccurs="0"/>
+          <s:element name="TelNum" type="s:string" minOccurs="0"/>
+          <s:element name="TypeOfSrv" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrderDetailsIn">
+        <s:sequence>
+          <s:element name="OrderDetailsIn" type="ope:OrderDetailsIn" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderDetailsIn">
+        <s:sequence>
+          <s:element name="RequestId" type="s:string" minOccurs="0"/>
+          <s:element name="RequestItemId" type="s:string" minOccurs="0"/>
+          <s:element name="OrderId" type="s:string" minOccurs="0"/>
+          <s:element name="OrdactvSeqNum" type="s:string" minOccurs="0"/>
+          <s:element name="ItemActnCd" type="s:string" minOccurs="0"/>
+          <s:element name="ActvActnCd" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+
+  </types>
+  <message name="createSoapIn">
+    <part name="parameters" element="s0:create"/>
+  </message>
+  <message name="createSoapOut">
+    <part name="parameters" element="s0:createResponse"/>
+  </message>
+  <message name="getOrderInformationSoapIn">
+    <part name="parameters" element="s0:getOrderInformation"/>
+  </message>
+  <message name="getOrderInformationSoapOut">
+    <part name="parameters" element="s0:getOrderInformationResponse"/>
+  </message>
+  <message name="determineWorkGroupSoapIn">
+    <part name="parameters" element="s0:determineWorkGroup"/>
+  </message>
+  <message name="determineWorkGroupSoapOut">
+    <part name="parameters" element="s0:determineWorkGroupResponse"/>
+  </message>
+  <message name="getOrderDetailsSoapIn">
+    <part name="parameters" element="s0:getOrderDetails"/>
+  </message>
+  <message name="getOrderDetailsSoapOut">
+    <part name="parameters" element="s0:getOrderDetailsResponse"/>
+  </message>
+  <portType name="OrderInformationSoap">
+    <operation name="create">
+      <input message="s0:createSoapIn"/>
+      <output message="s0:createSoapOut"/>
+    </operation>
+    <operation name="getOrderInformation">
+      <input message="s0:getOrderInformationSoapIn"/>
+      <output message="s0:getOrderInformationSoapOut"/>
+    </operation>
+    <operation name="determineWorkGroup">
+      <input message="s0:determineWorkGroupSoapIn"/>
+      <output message="s0:determineWorkGroupSoapOut"/>
+    </operation>
+    <operation name="getOrderDetails">
+      <input message="s0:getOrderDetailsSoapIn"/>
+      <output message="s0:getOrderDetailsSoapOut"/>
+    </operation>
+  </portType>
+  <binding name="OrderInformationSoap" type="s0:OrderInformationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="create">
+      <soap:operation soapAction="http://www.openuri.org/create" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getOrderInformation">
+      <soap:operation soapAction="http://www.openuri.org/getOrderInformation" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="determineWorkGroup">
+      <soap:operation soapAction="http://www.openuri.org/determineWorkGroup" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getOrderDetails">
+      <soap:operation soapAction="http://www.openuri.org/getOrderDetails" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="OrderInformation">
+    <port name="OrderInformationSoap" binding="s0:OrderInformationSoap">
+      <soap:address location="http://bomeaidev:7581/DwfmGateway/ws/order/OrderInformation.jws"/>
+    </port>
+  </service>
+</definitions>

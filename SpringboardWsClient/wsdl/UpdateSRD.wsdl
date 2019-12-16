@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:conv="http://www.openuri.org/2002/04/soap/conversation/" xmlns:cw="http://www.openuri.org/2002/04/wsdl/conversation/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:jms="http://www.openuri.org/2002/04/wsdl/jms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://www.openuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://www.openuri.org/">
+  <types>
+    <s:schema xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:ope="http://www.openuri.org/" elementFormDefault="qualified" targetNamespace="http://www.openuri.org/">
+      <s:element name="create">
+        <s:complexType>
+          <s:sequence/>
+        </s:complexType>
+      </s:element>
+      <s:element name="createResponse">
+        <s:complexType>
+          <s:sequence/>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSRD">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="pSrdDTO" type="ope:SrdDTO" minOccurs="0"/>
+            <s:element name="pWithAppointment" type="s:string" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSRDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="UpdateSRDResult" type="ope:ServiceResponseDTO" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SrdDTO">
+        <s:complexContent>
+          <s:extension base="ope:ServiceRequestDTO">
+            <s:sequence>
+              <s:element name="FrApptDate" type="s:string" minOccurs="0"/>
+              <s:element name="FrApptType" type="s:string" minOccurs="0"/>
+              <s:element name="FrEndTime" type="s:string" minOccurs="0"/>
+              <s:element name="FrReasonCode" type="s:string" minOccurs="0"/>
+              <s:element name="FrStartTime" type="s:string" minOccurs="0"/>
+              <s:element name="FrVisitInd" type="s:string" minOccurs="0"/>
+              <s:element name="ToApptDate" type="s:string" minOccurs="0"/>
+              <s:element name="ToApptType" type="s:string" minOccurs="0"/>
+              <s:element name="ToEndTime" type="s:string" minOccurs="0"/>
+              <s:element name="ToReasonCode" type="s:string" minOccurs="0"/>
+              <s:element name="ToStartTime" type="s:string" minOccurs="0"/>
+              <s:element name="ToVisitInd" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ServiceRequestDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="LegacyOrdNum" type="s:string" minOccurs="0"/>
+              <s:element name="LegacyActvSeq" type="s:string" minOccurs="0"/>
+              <s:element name="StaffNum" type="s:string" minOccurs="0"/>
+              <s:element name="OcId" type="s:string" minOccurs="0"/>
+              <s:element name="DtlId" type="s:string" minOccurs="0"/>
+              <s:element name="DtlSeq" type="s:string" minOccurs="0"/>
+              <s:element name="Boc" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ValueObject">
+        <s:sequence>
+          <s:element name="ValidationRulesID" type="s:string" minOccurs="0"/>
+          <s:element name="ObjectAction" type="s:int"/>
+          <s:element name="ObjectUniqueID" type="s:string" minOccurs="0"/>
+          <s:element name="ModifiedFields" type="ope:ArrayOfString" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element name="String" type="s:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ServiceResponseDTO">
+        <s:complexContent>
+          <s:extension base="ope:ValueObject">
+            <s:sequence>
+              <s:element name="ErrorSeverity" type="s:string" minOccurs="0"/>
+              <s:element name="RejectMessage" type="s:string" minOccurs="0"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+
+  </types>
+  <message name="createSoapIn">
+    <part name="parameters" element="s0:create"/>
+  </message>
+  <message name="createSoapOut">
+    <part name="parameters" element="s0:createResponse"/>
+  </message>
+  <message name="UpdateSRDSoapIn">
+    <part name="parameters" element="s0:UpdateSRD"/>
+  </message>
+  <message name="UpdateSRDSoapOut">
+    <part name="parameters" element="s0:UpdateSRDResponse"/>
+  </message>
+  <portType name="UpdateSRDSoap">
+    <operation name="create">
+      <input message="s0:createSoapIn"/>
+      <output message="s0:createSoapOut"/>
+    </operation>
+    <operation name="UpdateSRD">
+      <input message="s0:UpdateSRDSoapIn"/>
+      <output message="s0:UpdateSRDSoapOut"/>
+    </operation>
+  </portType>
+  <binding name="UpdateSRDSoap" type="s0:UpdateSRDSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="create">
+      <soap:operation soapAction="http://www.openuri.org/create" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="UpdateSRD">
+      <soap:operation soapAction="http://www.openuri.org/UpdateSRD" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="UpdateSRD">
+    <port name="UpdateSRDSoap" binding="s0:UpdateSRDSoap">
+      <soap:address location="http://bomeaidev:7281/LtsSbOrderGateway/ws/UpdateSRD.jws"/>
+    </port>
+  </service>
+</definitions>

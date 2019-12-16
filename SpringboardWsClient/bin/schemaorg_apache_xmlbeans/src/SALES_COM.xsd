@@ -1,0 +1,42 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="sales_com">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ROWDATA">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ROW">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="Store_ID"/>
+                      <xs:attribute type="xs:string" name="Register_ID"/>
+                      <xs:attribute type="xs:string" name="Trans_Num"/>
+                      <xs:attribute type="xs:string" name="Bus_Date"/>
+                      <xs:attribute type="xs:string" name="Txn_Date"/>
+                      <xs:attribute type="xs:string" name="SM_Type"/>
+                      <xs:attribute type="xs:string" name="Salesman_ID"/>
+                      <xs:attribute type="xs:string" name="Salesman_Name"/>
+                      <xs:attribute type="xs:string" name="CMR"/>
+                      <xs:attribute type="xs:string" name="UM"/>
+                      <xs:attribute type="xs:string" name="Title"/>
+                      <xs:attribute type="xs:string" name="Team_Name"/>
+                      <xs:attribute type="xs:string" name="Dep"/>
+                      <xs:attribute type="xs:string" name="Dep_Name"/>
+                      <xs:attribute type="xs:string" name="Com_Percent"/>
+                      <xs:attribute type="xs:string" name="Seq_Num"/>
+                      <xs:attribute type="xs:string" name="Team_Code"/>
+                      <xs:attribute type="xs:string" name="Salesman_Ext"/>
+                      <xs:attribute type="xs:string" name="Channel"/>
+                      <xs:attribute type="xs:string" name="Salesman_Code"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
